@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Badge_WeaponLevel_Shelter_Compact_00_Lv00.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
