@@ -16,7 +16,8 @@ public struct UserInfo: Codable {
         nsaid: String,
         iksmSession: String,
         sessionToken: String,
-        splatoonToken: String
+        splatoonToken: String,
+        timeInterval: Double = 60 * 60 * 24
     ) {
         self.nickname = nickname
         self.membership = membership
@@ -26,7 +27,8 @@ public struct UserInfo: Codable {
             nsaid: nsaid,
             iksmSession: iksmSession,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken
+            splatoonToken: splatoonToken,
+            timeInterval: timeInterval
         )
     }
 

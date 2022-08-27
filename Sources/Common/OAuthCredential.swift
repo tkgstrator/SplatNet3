@@ -17,7 +17,21 @@ public struct OAuthCredential: AuthenticationCredential, Codable {
         self.splatoonToken = splatoonToken
         self.expiration = {
             #if DEBUG
-            Date(timeIntervalSinceNow: 60)
+            Date(timeIntervalSinceNow: -10)
+            #else
+            Date(timeIntervalSinceNow: 86400)
+            #endif
+        }()
+    }
+
+    internal init(nsaid: String, iksmSession: String, sessionToken: String, splatoonToken: String, timeInterval: Double = 60 * 60 * 24) {
+        self.nsaid = nsaid
+        self.iksmSession = iksmSession
+        self.sessionToken = sessionToken
+        self.splatoonToken = splatoonToken
+        self.expiration = {
+            #if DEBUG
+            Date(timeIntervalSinceNow: timeInterval)
             #else
             Date(timeIntervalSinceNow: 86400)
             #endif

@@ -14,6 +14,10 @@ import Foundation
 
 public class SalmonStats: SplatNet2 {
 
+    public override init(account: UserInfo?) {
+        super.init(account: account)
+    }
+
     public override init() {
         super.init()
     }

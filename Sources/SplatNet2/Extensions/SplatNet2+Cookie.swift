@@ -11,7 +11,7 @@ import Alamofire
 import Common
 
 extension SplatNet2 {
-    private func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
+    internal func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
         return try await session.request(request)
             .cURLDescription(calling: { request in
 #if DEBUG
@@ -49,63 +49,63 @@ extension SplatNet2 {
     }
 
     /// バージョンを取得
-    private func getVersion() async throws -> XVersion.Response {
+    internal func getVersion() async throws -> XVersion.Response {
         let request: XVersion = XVersion()
         return try await authorize(request)
     }
 
     /// イカスミセッションをコードとベリファイアから取得
-    private func getCookie(code: String, verifier: String) async throws -> UserInfo {
+    internal func getCookie(code: String, verifier: String) async throws -> UserInfo {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
         return try await refreshToken(sessionToken: sessionToken.sessionToken)
     }
 
     /// セッショントークン取得
-    private func getSessionToken(code: String, verifier: String) async throws -> SessionToken.Response {
+    internal func getSessionToken(code: String, verifier: String) async throws -> SessionToken.Response {
         let request: SessionToken = SessionToken(code: code, verifier: verifier)
         return try await authorize(request)
     }
 
     /// アクセストークン取得
-    private func getAccessToken(sessionToken: String) async throws -> AccessToken.Response {
+    internal func getAccessToken(sessionToken: String) async throws -> AccessToken.Response {
         let request: AccessToken = AccessToken(sessionToken: sessionToken)
         return try await authorize(request)
     }
 
     /// アクセストークン取得
-    private func getAccessToken(sessionToken: SessionToken.Response) async throws -> AccessToken.Response {
+    internal func getAccessToken(sessionToken: SessionToken.Response) async throws -> AccessToken.Response {
         let request: AccessToken = AccessToken(sessionToken: sessionToken)
         return try await authorize(request)
     }
 
     /// スプラトゥーントークン取得
-    private func getSplatoonToken(accessToken: AccessToken.Response, version: String) async throws -> SplatoonToken.Response {
+    internal func getSplatoonToken(accessToken: AccessToken.Response, version: String) async throws -> SplatoonToken.Response {
         let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
         let request: SplatoonToken = SplatoonToken(imink: imink, accessToken: accessToken.accessToken, version: version)
         return try await authorize(request)
     }
 
     /// スプラトゥーンアクセストークン取得
-    private func getSplatoonAccessToken(accessToken: SplatoonToken.Response, version: String) async throws -> SplatoonAccessToken.Response {
+    internal func getSplatoonAccessToken(accessToken: SplatoonToken.Response, version: String) async throws -> SplatoonAccessToken.Response {
         let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
         let request: SplatoonAccessToken = SplatoonAccessToken(imink: imink, accessToken: accessToken, version: version)
         return try await authorize(request)
     }
 
     /// ハッシュ取得
-    private func getIminkToken(accessToken: AccessToken.Response) async throws -> Imink.Response {
+    internal func getIminkToken(accessToken: AccessToken.Response) async throws -> Imink.Response {
         let request: Imink = Imink(accessToken: accessToken)
         return try await authorize(request)
     }
 
     /// ハッシュ取得
-    private func getIminkToken(accessToken: SplatoonToken.Response) async throws -> Imink.Response {
+    internal func getIminkToken(accessToken: SplatoonToken.Response) async throws -> Imink.Response {
         let request: Imink = Imink(accessToken: accessToken)
         return try await authorize(request)
     }
 
     /// イカスミセッション取得
-    private func getIksmSession(accessToken: SplatoonAccessToken.Response) async throws -> IksmSession.Response {
+    internal func getIksmSession(accessToken: SplatoonAccessToken.Response) async throws -> IksmSession.Response {
         let request: IksmSession = IksmSession(accessToken: accessToken.result.accessToken)
         return try await generate(request)
     }

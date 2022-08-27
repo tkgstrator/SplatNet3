@@ -14,6 +14,11 @@ import Foundation
 
 open class SplatNet2: Authenticator {
 
+    /// デバッグ用のアカウントで認証したインスタンス
+    public init(account: UserInfo? = nil) {
+        self.account = account
+    }
+
     public init() {}
 
     public var account: UserInfo? = nil
@@ -38,13 +43,13 @@ open class SplatNet2: Authenticator {
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 
+    /// リクエストが正しく送られたかどうか
     public func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
-        print("Did Request")
-        return false
+        return response.statusCode == 403
     }
 
+    /// リクエストが失敗したときにリトライするかどうか
     public func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: OAuthCredential) -> Bool {
-        print("Is Request")
         return false
     }
 
@@ -87,25 +92,18 @@ open class SplatNet2: Authenticator {
     }
 
     public func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        let credential: OAuthCredential = {
-#if DEBUG
-            let credential: OAuthCredential = OAuthCredential(
-                nsaid: "91d160aa84e88da6",
-                iksmSession: "3b78964054c63dcb76275fb2123acbf06cd74acb",
-                sessionToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YzFlMmMwMjg1MjRmMDYwIiwiaWF0IjoxNjYxMzkwNjEyLCJ0eXAiOiJzZXNzaW9uX3Rva2VuIiwiZXhwIjoxNzI0NDYyNjEyLCJhdWQiOiI3MWI5NjNjMWI3YjZkMTE5Iiwic3Q6c2NwIjpbMCw4LDksMTcsMjNdLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImp0aSI6OTYzMTY1MjQ0Mn0.A3BEP5W30CWj9Tyy4vY-IguxI1C6TLKkHItXAEa8uIs",
-                splatoonToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjE2MTY5NDQsImlhdCI6MTY2MTYwOTc0NCwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NjQ0NTQ1NzE2OTk3MzI0OCwidHlwIjoiaWRfdG9rZW4ifQ.951ll7aJpVJcBmbTenskx9JoOrWfKULh_wvejTRNo4g"
-            )
-            return credential
-#else
+        // 選択されているアカウントから認証情報を取得
+        let credential: OAuthCredential = try {
             guard let account = account else {
                 throw AFError.responseValidationFailed(reason: .customValidationFailed(error: SP2Error.API.account))
             }
             return account.credential
-#endif
         }()
 
+        // インターセプターを生成
         let interceptor: AuthenticationInterceptor<SplatNet2> = AuthenticationInterceptor(authenticator: self, credential: credential)
 
+        /// インターセプターを利用してリクエスト
         return try await session.request(request, interceptor: interceptor)
             .cURLDescription(calling: { request in
 #if DEBUG
