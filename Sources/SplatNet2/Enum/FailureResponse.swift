@@ -19,28 +19,20 @@ public protocol FailureResponse: Codable {
 public enum Failure {
     /// NSO用のエラーレスポンス
     public struct NSO: FailureResponse {
-        public let errorDescription: String
+        public let errorDescription: SP2Error.NSO
         public let error: String
         public var failureReason: String? {
-            errorDescription
+            errorDescription.rawValue
         }
     }
 
     /// APP用のエラーレスポンス
     public struct APP: FailureResponse {
-        public let errorMessage: String
+        public let errorMessage: SP2Error.APP
         public let status: Int
         public let correlationId: String
         public var failureReason: String? {
-            errorMessage
-        }
-    }
-
-    /// S2S用のエラーレスポンス
-    public struct S2S: FailureResponse {
-        public let error: String
-        public var failureReason: String? {
-            error
+            errorMessage.rawValue
         }
     }
 }

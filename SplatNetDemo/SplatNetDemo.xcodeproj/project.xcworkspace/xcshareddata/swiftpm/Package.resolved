@@ -56,6 +56,15 @@
         }
       },
       {
+        "package": "CodableDictionary",
+        "repositoryURL": "https://github.com/YOCKOW/SwiftCodableDictionary.git",
+        "state": {
+          "branch": null,
+          "revision": "0f09cec3062dfacc4e91f22753126c3ecbc28252",
+          "version": "1.0.1"
+        }
+      },
+      {
         "package": "SwiftLint",
         "repositoryURL": "https://github.com/realm/SwiftLint",
         "state": {

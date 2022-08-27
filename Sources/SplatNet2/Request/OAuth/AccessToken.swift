@@ -20,6 +20,14 @@ internal class AccessToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     var headers: [String: String]?
 
+    init(sessionToken: String) {
+        self.parameters = [
+            "client_id": "71b963c1b7b6d119",
+            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer-session-token",
+            "session_token": sessionToken,
+        ]
+    }
+
     init(sessionToken: SessionToken.Response) {
         self.parameters = [
             "client_id": "71b963c1b7b6d119",

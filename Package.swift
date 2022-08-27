@@ -27,8 +27,7 @@ let package = Package(
         .package(url: "https://github.com/realm/SwiftLint", from: "0.48.0"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.2"),
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.2"),
-        .package(url: "https://github.com/stleamist/BetterSafariView.git", from: "2.4.0"),
-//        .package(url: "https://github.com/YOCKOW/SwiftCodableDictionary.git", from: "1.0.1")
+        .package(url: "https://github.com/stleamist/BetterSafariView.git", from: "2.4.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -53,10 +52,9 @@ let package = Package(
                 "Alamofire",
                 "KeychainAccess",
                 "BetterSafariView",
-//                "SwiftCodableDictionary"
             ]),
         .testTarget(
             name: "SplatNet2Tests",
-            dependencies: ["SplatNet2"]),
+            dependencies: ["SplatNet2", "SalmonStats"]),
     ]
 )

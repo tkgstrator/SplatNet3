@@ -24,6 +24,13 @@ extension UserInfo {
          splatoonToken: SplatoonToken.Response,
          iksmSession: IksmSession.Response
     ) {
+        self.init(sessionToken: sessionToken.sessionToken, splatoonToken: splatoonToken, iksmSession: iksmSession)
+    }
+
+    init(sessionToken: String,
+         splatoonToken: SplatoonToken.Response,
+         iksmSession: IksmSession.Response
+    ) {
         self.init(
             nickname: splatoonToken.result.user.name,
             membership: splatoonToken.result.user.links.nintendoAccount.membership.active,
@@ -31,7 +38,7 @@ extension UserInfo {
             thumbnailURL: URL(unsafeString: splatoonToken.result.user.imageUri),
             nsaid: splatoonToken.result.user.nsaId,
             iksmSession: iksmSession.iksmSession,
-            sessionToken: sessionToken.sessionToken,
+            sessionToken: sessionToken,
             splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
         )
     }

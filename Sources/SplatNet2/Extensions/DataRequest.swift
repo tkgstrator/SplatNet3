@@ -22,17 +22,14 @@ public extension DataRequest {
             DataRequest.ValidationResult(catching: {
                 if let data = data {
                     if let failure = try? decoder.decode(Failure.NSO.self, from: data) {
-                        throw SP2Error.requestAdaptionFailed(reason: failure.failureReason, statusCode: response.statusCode)
+                        throw AFError.responseValidationFailed(reason: .customValidationFailed(error: failure.errorDescription))
                     }
                     if let failure = try? decoder.decode(Failure.APP.self, from: data) {
-                        throw SP2Error.requestAdaptionFailed(reason: failure.failureReason, statusCode: response.statusCode)
-                    }
-                    if let failure = try? decoder.decode(Failure.S2S.self, from: data) {
-                        throw SP2Error.requestAdaptionFailed(reason: failure.failureReason, statusCode: response.statusCode)
+                        throw AFError.responseValidationFailed(reason: .customValidationFailed(error: failure.errorMessage))
                     }
                 }
                 if (response.statusCode < 200) || (response.statusCode >= 400) {
-                    throw SP2Error.requestAdaptionFailed(reason: nil, statusCode: response.statusCode)
+                    throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: response.statusCode))
                 }
             })
         })

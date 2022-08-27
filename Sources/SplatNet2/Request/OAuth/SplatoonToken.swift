@@ -48,7 +48,8 @@ internal class SplatoonToken: RequestType {
     // MARK: - Result
     public struct Result: Codable {
         public let user: User
-        public let webApiServerCredential, firebaseCredential: Credential
+        public let webApiServerCredential: Credential
+        public let firebaseCredential: Credential
     }
 
     // MARK: - Credential
