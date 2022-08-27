@@ -17,6 +17,20 @@ final class SplatNetTests: XCTestCase {
         splatoonToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjE2MTY5NDQsImlhdCI6MTY2MTYwOTc0NCwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NjQ0NTQ1NzE2OTk3MzI0OCwidHlwIjoiaWRfdG9rZW4ifQ.951ll7aJpVJcBmbTenskx9JoOrWfKULh_wvejTRNo4g"
     )
 
+    /// リザルト取得してアップロード
+    func testResult() async throws {
+        let response: Results.Response = try await session.getCoopSummary()
+        let resultId: Int = response.summary.card.jobNum
+        let result: CoopResult.Response = try await session.getCoopResult(resultId: resultId)
+        // 指定したリザルトIDとリザルトのバイトIDが一致しているかチェック
+        XCTAssertEqual(resultId, result.jobId)
+        let upload: UploadResult.Response = try await session.uploadResult(resultId: resultId)
+        let salmonId: Int? = upload.results.first?.salmonId
+        // SalmonIdが正しく返ってきていることのチェック
+        XCTAssertNotNil(salmonId)
+    }
+
+    /// リザルト取得してアップロード
     func testResults() async throws {
         let response: Results.Response = try await session.getCoopSummary()
         let resultId: Int = response.summary.card.jobNum

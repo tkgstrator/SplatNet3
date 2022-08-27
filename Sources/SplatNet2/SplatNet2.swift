@@ -20,18 +20,11 @@ open class SplatNet2: Authenticator {
 
     internal let keychain: Keychain = Keychain(service: "SPLATNET2")
 
-    private let decoder: JSONDecoder = {
+    internal let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
-
-    public var version: String {
-        get {
-            keychain.version
-        }
-        set {}
-    }
 
     /// セッション
     public let session: Session = {
@@ -124,32 +117,6 @@ open class SplatNet2: Authenticator {
             .value
     }
 
-    internal func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        return try await session.request(request)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
-            .validationWithSP2Error()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
-    }
-
-    /// イカスミセッションをセッショントークンから取得
-    internal func refreshToken(sessionToken: String) async throws -> UserInfo {
-        let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
-        let splatoonToken: SplatoonToken.Response = try await getSplatoonToken(accessToken: accessToken)
-        let splatoonAccessToken: SplatoonAccessToken.Response = try await getSplatoonAccessToken(accessToken: splatoonToken)
-        let iksmSession: IksmSession.Response = try await getIksmSession(accessToken: splatoonAccessToken)
-
-        return UserInfo(
-            sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
-            iksmSession: iksmSession
-        )
-    }
-
     /// 概要取得
     internal func getCoopSummary() async throws -> Results.Response {
         let request: Results = Results()
@@ -160,67 +127,5 @@ open class SplatNet2: Authenticator {
     internal func getCoopResult(resultId: Int) async throws -> CoopResult.Response {
         let request: CoopResult = CoopResult(resultId: resultId)
         return try await publish(request)
-    }
-
-    /// バージョンを取得
-    internal func getXProductVersion() async throws -> XVersion.Response {
-        let request: XVersion = XVersion()
-        return try await authorize(request)
-    }
-
-    /// イカスミセッションをコードとベリファイアから取得
-    internal func getCookie(code: String, verifier: String) async throws -> UserInfo {
-        let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
-        return try await refreshToken(sessionToken: sessionToken.sessionToken)
-    }
-
-    /// セッショントークン取得
-    internal func getSessionToken(code: String, verifier: String) async throws -> SessionToken.Response {
-        let request: SessionToken = SessionToken(code: code, verifier: verifier)
-        return try await authorize(request)
-    }
-
-    /// アクセストークン取得
-    internal func getAccessToken(sessionToken: String) async throws -> AccessToken.Response {
-        let request: AccessToken = AccessToken(sessionToken: sessionToken)
-        return try await authorize(request)
-    }
-
-    /// アクセストークン取得
-    internal func getAccessToken(sessionToken: SessionToken.Response) async throws -> AccessToken.Response {
-        let request: AccessToken = AccessToken(sessionToken: sessionToken)
-        return try await authorize(request)
-    }
-
-    /// スプラトゥーントークン取得
-    internal func getSplatoonToken(accessToken: AccessToken.Response) async throws -> SplatoonToken.Response {
-        let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
-        let request: SplatoonToken = SplatoonToken(imink: imink, accessToken: accessToken.accessToken, version: version)
-        return try await authorize(request)
-    }
-
-    /// スプラトゥーンアクセストークン取得
-    internal func getSplatoonAccessToken(accessToken: SplatoonToken.Response) async throws -> SplatoonAccessToken.Response {
-        let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
-        let request: SplatoonAccessToken = SplatoonAccessToken(imink: imink, accessToken: accessToken, version: version)
-        return try await authorize(request)
-    }
-
-    /// ハッシュ取得
-    internal func getIminkToken(accessToken: AccessToken.Response) async throws -> Imink.Response {
-        let request: Imink = Imink(accessToken: accessToken)
-        return try await authorize(request)
-    }
-
-    /// ハッシュ取得
-    internal func getIminkToken(accessToken: SplatoonToken.Response) async throws -> Imink.Response {
-        let request: Imink = Imink(accessToken: accessToken)
-        return try await authorize(request)
-    }
-
-    /// イカスミセッション取得
-    internal func getIksmSession(accessToken: SplatoonAccessToken.Response) async throws -> IksmSession.Response {
-        let request: IksmSession = IksmSession(accessToken: accessToken.result.accessToken)
-        return try await generate(request)
     }
 }
