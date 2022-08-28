@@ -16,14 +16,22 @@ struct ContentView: View {
     var body: some View {
         NavigationView(content: {
             Form(content: {
-                NavigationLink("Localized Message", destination: {
-                    LocalizedMsgView()
+                Section(content: {
+                    NavigationLink("Localized Message", destination: {
+                        LocalizedMsgView()
+                    })
+                    NavigationLink("Localized Error", destination: {
+                        LocalizedErrView()
+                    })
+                }, header: {
+                    Text("Localized")
                 })
-                NavigationLink("Localized Error", destination: {
-                    LocalizedErrView()
+                Section(content: {
+                }, header: {
+                    Text("Authorization")
                 })
             })
-
+            .navigationTitle("SplatNet3 Demo")
         })
         .navigationViewStyle(.split)
     }

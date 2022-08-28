@@ -40,6 +40,7 @@ struct LocalizedMsgView: View {
                 Text("EventType")
             })
         })
+        .navigationTitle("Messages")
     }
 }
 

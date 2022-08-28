@@ -33,6 +33,7 @@ struct LocalizedErrView: View {
                 Text("API")
             })
         })
+        .navigationTitle("Errors")
     }
 }
 
