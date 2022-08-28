@@ -21,7 +21,10 @@ Created by simplelocalize.io
 "gogetter" = "独当一面";
 "goldie-seeking" = "寻找金鲑鱼";
 "griller" = "烤架鱼进发";
+"high" = "满潮";
 "intern" = "";
+"low" = "干潮";
+"normal" = "通常";
 "overachiver" = "熟练";
 "parttimer" = "半吊子";
 "profreshional" = "达人";

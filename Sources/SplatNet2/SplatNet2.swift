@@ -86,7 +86,7 @@ open class SplatNet2: Authenticator {
               let url: URL = response.url,
               let iksmSession: String = HTTPCookie.cookies(withResponseHeaderFields: header, for: url).first?.value
         else {
-            throw AFError.responseValidationFailed(reason: .customValidationFailed(error: SP2Error.API.response))
+            throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.response))
         }
         return IksmSession.Response(iksmSession: iksmSession, nsaid: nsaid)
     }
@@ -95,7 +95,7 @@ open class SplatNet2: Authenticator {
         // 選択されているアカウントから認証情報を取得
         let credential: OAuthCredential = try {
             guard let account = account else {
-                throw AFError.responseValidationFailed(reason: .customValidationFailed(error: SP2Error.API.account))
+                throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.account))
             }
             return account.credential
         }()

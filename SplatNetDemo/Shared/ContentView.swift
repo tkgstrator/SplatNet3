@@ -16,7 +16,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView(content: {
             Form(content: {
+                NavigationLink("Localized Message", destination: {
+                    LocalizedMsgView()
+                })
+                NavigationLink("Localized Error", destination: {
+                    LocalizedErrView()
+                })
             })
+
         })
         .navigationViewStyle(.split)
     }

@@ -5,8 +5,8 @@
 //  Created by tkgstrator on 2021/04/17.
 //  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
-import Foundation
 
+import Foundation
 
 public extension Encodable {
     func asString() throws -> String {

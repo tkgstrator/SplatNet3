@@ -21,7 +21,10 @@ Created by simplelocalize.io
 "gogetter" = "いちにんまえ";
 "goldie-seeking" = "キンシャケ探し";
 "griller" = "グリル発進";
+"high" = "満潮";
 "intern" = "けんしゅう";
+"low" = "干潮";
+"normal" = "通常";
 "overachiver" = "じゅくれん";
 "parttimer" = "はんにんまえ";
 "profreshional" = "たつじん";

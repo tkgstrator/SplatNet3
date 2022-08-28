@@ -16,11 +16,13 @@ public enum GradeId: Int, Codable, CaseIterable {
     case apparentice    = 1
     case intern         = 0
 
+    // エンコード時に数値から文字列に変換する
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode("\(rawValue)")
     }
 
+    // デコード時に文字列から数値に変換する
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let stringValue = try container.decode(String.self)
@@ -48,6 +50,19 @@ public enum GradeId: Int, Codable, CaseIterable {
     }
 }
 
-public extension GradeId {
-    var id: Int { rawValue }
+public enum GradeKey: String, Codable, CaseIterable {
+    case profreshional
+    case overachiver
+    case gogetter
+    case parttimer
+    case apparentice
+    case intern
+}
+
+extension GradeId: Identifiable {
+    public var id: Int { rawValue }
+}
+
+extension GradeKey: Identifiable {
+    public var id: String { rawValue }
 }

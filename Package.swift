@@ -36,7 +36,8 @@ let package = Package(
             name: "SplatNet2",
             dependencies: [
                 "Common"
-            ]),
+            ],
+            resources: [.process("Resources")]),
         .target(
             name: "SplatNet3",
             dependencies: [

@@ -9,8 +9,17 @@
 import Alamofire
 import Foundation
 
-public enum SP2Error {
-    public enum NSO: String, Error, Codable {
+public protocol SP2Error: RawRepresentable, LocalizedError, Codable, Identifiable where RawValue == String {
+
+    var failureReason: String? { get }
+
+    var errorDescription: String? { get }
+
+    var errorMessage: String { get }
+}
+
+public enum NXError {
+    public enum NSO: String, SP2Error, CaseIterable {
         /// リクエストの内容が誤っている
         case request = "The request does not satisfy the schema"
         /// トークンコードが有効期限切れ
@@ -21,7 +30,7 @@ public enum SP2Error {
         case client  = "Client authentication failed"
     }
 
-    public enum APP: String, Error, Codable {
+    public enum APP: String, SP2Error, CaseIterable {
         /// リクエストが誤っている
         case request        = "Bad request."
         /// 要求されているバージョンよりも低い
@@ -36,7 +45,7 @@ public enum SP2Error {
         case unexpected     = "Unexpected Error."
     }
 
-    public enum API: String, Error, Codable {
+    public enum API: String, SP2Error, CaseIterable {
         /// 新しいコンテンツが存在しない
         case content        = "No contents."
         /// 有効でないレスポンス
@@ -46,20 +55,29 @@ public enum SP2Error {
     }
 }
 
-extension SP2Error.NSO: LocalizedError {
-    public var errorDescription: String? {
-        self.rawValue
+extension NXError.APP: LocalizedError {
+    public var localizedDescription: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var failureReason: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
     }
 }
 
-extension SP2Error.APP: LocalizedError {
-    public var errorDescription: String? {
-        self.rawValue
+extension SP2Error {
+    public var id: String { rawValue }
+
+    public var errorMessage: String {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var localizedDescription: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var failureReason: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
     }
 }
 
-extension SP2Error.API: LocalizedError {
-    public var errorDescription: String? {
-        self.rawValue
-    }
-}
