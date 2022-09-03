@@ -45,3 +45,19 @@ public struct UserInfo: Codable {
     /// サーモンランリザルト
 //    public let coop: CoopInfo
 }
+
+extension UserInfo: Identifiable, Hashable, Equatable {
+    public static func == (lhs: UserInfo, rhs: UserInfo) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    public static func != (lhs: UserInfo, rhs: UserInfo) -> Bool {
+        lhs.id != rhs.id
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    public var id: String { credential.nsaid }
+}

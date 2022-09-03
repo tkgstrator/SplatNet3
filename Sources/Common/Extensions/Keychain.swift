@@ -9,17 +9,4 @@ import Foundation
 import KeychainAccess
 
 public extension Keychain {
-    /// X-ProductVersion
-    var version: String {
-        /// 環境変数
-        let env: [String: String] = ProcessInfo.processInfo.environment
-        guard let version = try? get("SPLATNET2_API_VERSION") else {
-            guard let version = env["SPLANET2_API_VERSION"] else {
-                return "2.2.0"
-            }
-            return version
-        }
-
-        return version
-    }
 }

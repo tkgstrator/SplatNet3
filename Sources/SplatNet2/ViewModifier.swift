@@ -33,9 +33,16 @@ public struct Authorize: ViewModifier {
                     }
 
                     Task {
-                        try await session.getCookie(code: sessionTokenCode, verifier: verifier)
+                        let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
+                        try session.add(account)
                     }
                 })
             })
+    }
+}
+
+public extension View {
+    func authorize(isPresented: Binding<Bool>, session: SplatNet2) -> some View {
+        self.modifier(Authorize(isPresented: isPresented, session: session))
     }
 }

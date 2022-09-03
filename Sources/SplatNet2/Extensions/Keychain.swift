@@ -27,7 +27,7 @@ public extension Keychain {
     }
 
     /// アカウント取得
-    func get() throws -> [UserInfo] {
+    func get() -> [UserInfo] {
         let decoder: JSONDecoder = {
             let decoder: JSONDecoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase

@@ -11,7 +11,8 @@ import SplatNet3
 import SwiftyUI
 
 struct ContentView: View {
-    @State private var visibility = NavigationSplitViewVisibility.all
+    @State private var isPresented: Bool = false
+    private let session: SplatNet2 = SplatNet2()
 
     var body: some View {
         NavigationView(content: {
@@ -27,6 +28,19 @@ struct ContentView: View {
                     Text("Localized")
                 })
                 Section(content: {
+                    ForEach(session.accounts, id: \.self) { account in
+                        Text(account.nickname)
+                    }
+                }, header: {
+                    Text("Accounts")
+                })
+                Section(content: {
+                    Button(action: {
+                        isPresented.toggle()
+                    }, label: {
+                        Text("Authorize")
+                    })
+                    .authorize(isPresented: $isPresented, session: session)
                 }, header: {
                     Text("Authorization")
                 })

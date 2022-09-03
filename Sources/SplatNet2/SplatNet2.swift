@@ -23,7 +23,7 @@ open class SplatNet2: Authenticator {
 
     public var account: UserInfo? = nil
 
-    internal let keychain: Keychain = Keychain(service: "SPLATNET2")
+    private let keychain: Keychain = Keychain(service: "SPLATNET2")
 
     internal let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
@@ -43,78 +43,6 @@ open class SplatNet2: Authenticator {
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 
-    /// リクエストが正しく送られたかどうか
-    public func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
-        return response.statusCode == 403
-    }
-
-    /// リクエストが失敗したときにリトライするかどうか
-    public func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: OAuthCredential) -> Bool {
-        return false
-    }
-
-    public func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
-        print("Current Time", Date())
-        print("Expires Time", credential.expiration)
-        print("Is Available", credential.requiresRefresh)
-        // イカスミセッションを設定
-        urlRequest.headers.add(HTTPHeader(name: "cookie", value: "iksm_session=\(credential.iksmSession)"))
-    }
-
-    public func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Swift.Result<OAuthCredential, Error>) -> Void) {
-        Task { [weak self] in
-            do {
-                let response: UserInfo = try await refreshToken(sessionToken: credential.sessionToken)
-                // アカウント情報を上書きする
-                account = response
-                completion(.success(response.credential))
-            } catch(let error) {
-                completion(.failure(error))
-            }
-        }
-    }
-
-    internal func generate(_ request: IksmSession) async throws -> IksmSession.Response {
-        let dataRequest: DataRequest = session
-            .request(request)
-            .validate()
-            .validate(contentType: ["text/html"])
-        let body: String = try await dataRequest.serializingString().value
-        guard let response: HTTPURLResponse = dataRequest.response,
-              let nsaid: String = body.capture(pattern: "data-nsa-id=([/0-f/]{16})", group: 1),
-              let header: [String: String] = response.allHeaderFields as? [String: String],
-              let url: URL = response.url,
-              let iksmSession: String = HTTPCookie.cookies(withResponseHeaderFields: header, for: url).first?.value
-        else {
-            throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.response))
-        }
-        return IksmSession.Response(iksmSession: iksmSession, nsaid: nsaid)
-    }
-
-    public func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        // 選択されているアカウントから認証情報を取得
-        let credential: OAuthCredential = try {
-            guard let account = account else {
-                throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.account))
-            }
-            return account.credential
-        }()
-
-        // インターセプターを生成
-        let interceptor: AuthenticationInterceptor<SplatNet2> = AuthenticationInterceptor(authenticator: self, credential: credential)
-
-        /// インターセプターを利用してリクエスト
-        return try await session.request(request, interceptor: interceptor)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
-            .validationWithSP2Error()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
-    }
-
     /// 概要取得
     internal func getCoopSummary() async throws -> Results.Response {
         let request: Results = Results()
@@ -125,5 +53,31 @@ open class SplatNet2: Authenticator {
     internal func getCoopResult(resultId: Int) async throws -> CoopResult.Response {
         let request: CoopResult = CoopResult(resultId: resultId)
         return try await publish(request)
+    }
+}
+
+extension SplatNet2 {
+    /// アカウント新規追加
+    public func set(_ account: UserInfo) throws {
+        try keychain.set(account)
+    }
+
+    /// アカウント追加
+    public func add(_ account: UserInfo) throws {
+        try keychain.add(account)
+    }
+
+    /// アカウント削除
+    public func remove(_ account: UserInfo) throws {
+    }
+
+    /// アカウント全削除
+    public func removeAll() throws {
+        try keychain.removeAll()
+    }
+
+    /// アカウント
+    public var accounts: [UserInfo] {
+        keychain.get()
     }
 }
