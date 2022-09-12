@@ -11,7 +11,6 @@ import SplatNet3
 import SwiftyUI
 
 struct ContentView: View {
-    @State private var isPresented: Bool = false
     private let session: SplatNet2 = SplatNet2()
 
     var body: some View {
@@ -35,14 +34,14 @@ struct ContentView: View {
                     Text("Accounts")
                 })
                 Section(content: {
-                    Button(action: {
-                        isPresented.toggle()
-                    }, label: {
-                        Text("Authorize")
-                    })
-                    .authorize(isPresented: $isPresented, session: session)
+                    SP2Auth(session: SplatNet2())
                 }, header: {
-                    Text("Authorization")
+                    Text("Splatoon 2")
+                })
+                Section(content: {
+                    SP3Auth(session: SplatNet3())
+                }, header: {
+                    Text("Splatoon 3")
                 })
             })
             .navigationTitle("SplatNet3 Demo")

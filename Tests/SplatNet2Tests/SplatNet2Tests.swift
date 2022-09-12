@@ -12,6 +12,7 @@ final class SplatNetTests: XCTestCase {
     let friendCode: String = "1384-4712-4713"
     let thumbnailURL: URL = URL(unsafeString: "https://cdn-image-e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com/1/1f2fabc4585aa4d7")
     let nsaid: String = "91d160aa84e88da6"
+
     let session: SalmonStats = SalmonStats()
 
     /// イカスミセッション再生成してからアップロード
@@ -86,7 +87,7 @@ final class SplatNetTests: XCTestCase {
         XCTAssertEqual("91d160aa84e88da6", response.credential.nsaid)
     }
 
-    func testCookie() async throws {
+    func testCookieForSP2() async throws {
         guard let result: XVersion.Information = (try await session.getVersion()).results.first else {
             throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: 404))
         }
@@ -106,7 +107,6 @@ final class SplatNetTests: XCTestCase {
         XCTAssertEqual(splatoonToken.result.user.nsaId, iksmSession.nsaid)
         return
     }
-
 
 
     func testExample() throws {

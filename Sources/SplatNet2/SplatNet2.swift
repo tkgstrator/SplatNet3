@@ -23,7 +23,7 @@ open class SplatNet2: Authenticator {
 
     public var account: UserInfo? = nil
 
-    private let keychain: Keychain = Keychain(service: "SPLATNET2")
+    private let keychain: Keychain = Keychain(service: "SPLATNET")
 
     internal let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
@@ -39,7 +39,7 @@ open class SplatNet2: Authenticator {
             config.timeoutIntervalForRequest = 15
             return config
         }()
-        let queue = DispatchQueue(label: "SplatNet2")
+        let queue = DispatchQueue(label: "SplatNet")
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 

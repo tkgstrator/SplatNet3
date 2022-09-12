@@ -31,7 +31,7 @@ extension SplatNet3 {
                 print(request)
 #endif
             })
-            .validationWithSP2Error()
+            .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
     }

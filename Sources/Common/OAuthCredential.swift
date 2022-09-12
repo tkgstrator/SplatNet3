@@ -10,6 +10,22 @@ import Alamofire
 import Foundation
 
 public struct OAuthCredential: AuthenticationCredential, Codable {
+    /// ユーザーID
+    public let nsaid: String
+    /// スプラトゥーン2で使われる認証トークン
+    public let iksmSession: String!
+    /// スプラトゥーン3で使われる認証トークン
+    public let bulletToken: String!
+    /// セッショントークン
+    public let sessionToken: String
+    /// スプラトゥーントークン
+    public let splatoonToken: String
+    /// 有効期限
+    public let expiration: Date
+    /// 更新が必要かどうかのチェック
+    /// 有効期限が現在よりも前ならリフレッシュが必要
+    public var requiresRefresh: Bool { Date(timeIntervalSinceNow: 0) > expiration }
+
     public init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String) {
         self.nsaid = nsaid
         self.iksmSession = iksmSession
@@ -39,20 +55,4 @@ public struct OAuthCredential: AuthenticationCredential, Codable {
             #endif
         }()
     }
-
-    /// ユーザーID
-    public let nsaid: String
-    /// セッション For Splatoon 2
-    public let iksmSession: String?
-    /// セッション For Splatoon 3
-    public let bulletToken: String?
-    /// セッショントークン
-    public let sessionToken: String
-    /// スプラトゥーントークン
-    public let splatoonToken: String
-    /// 有効期限
-    public let expiration: Date
-    /// 更新が必要かどうかのチェック
-    /// 有効期限が現在よりも前ならリフレッシュが必要
-    public var requiresRefresh: Bool { Date(timeIntervalSinceNow: 0) > expiration }
 }

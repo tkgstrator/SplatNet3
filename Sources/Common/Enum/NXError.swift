@@ -9,8 +9,13 @@
 import Alamofire
 import Foundation
 
+public protocol SPError: Error, LocalizedError, Codable, RawRepresentable where RawValue == String {
+    var localizedDescription: String? { get }
+    var failureReason: String? { get }
+}
+
 public enum NXError {
-    public enum NSO: String, Codable, CaseIterable, Error {
+    public enum NSO: String, SPError, CaseIterable {
         /// リクエストの内容が誤っている
         case request = "The request does not satisfy the schema"
         /// トークンコードが有効期限切れ
@@ -21,7 +26,7 @@ public enum NXError {
         case client  = "Client authentication failed"
     }
 
-    public enum APP: String, Codable, CaseIterable, Error {
+    public enum APP: String, SPError, CaseIterable {
         /// リクエストが誤っている
         case request        = "Bad request."
         /// 要求されているバージョンよりも低い
@@ -36,7 +41,7 @@ public enum NXError {
         case unexpected     = "Unexpected Error."
     }
 
-    public enum API: String, Codable, CaseIterable, Error {
+    public enum API: String, SPError, CaseIterable {
         /// 新しいコンテンツが存在しない
         case content        = "No contents."
         /// 有効でないレスポンス
@@ -46,13 +51,32 @@ public enum NXError {
     }
 }
 
-extension NXError.APP: LocalizedError {
-//    public var localizedDescription: String? {
-//        NSLocalizedString(rawValue, bundle: .module, comment: "")
-//    }
-//
-//    public var failureReason: String? {
-//        NSLocalizedString(rawValue, bundle: .module, comment: "")
-//    }
+extension NXError.NSO: LocalizedError {
+    public var localizedDescription: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var failureReason: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
 }
 
+extension NXError.APP: LocalizedError {
+    public var localizedDescription: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var failureReason: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+}
+
+extension NXError.API: LocalizedError {
+    public var localizedDescription: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+
+    public var failureReason: String? {
+        NSLocalizedString(rawValue, bundle: .module, comment: "")
+    }
+}

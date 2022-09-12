@@ -88,7 +88,7 @@ extension SplatNet2 {
     /// スプラトゥーンアクセストークン取得
     internal func getSplatoonAccessToken(accessToken: SplatoonToken.Response, version: String) async throws -> SplatoonAccessToken.Response {
         let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
-        let request: SplatoonAccessToken = SplatoonAccessToken(imink: imink, accessToken: accessToken, version: version)
+        let request: SplatoonAccessToken = SplatoonAccessToken(imink: imink, accessToken: accessToken, version: version, authType: .SP2)
         return try await authorize(request)
     }
 

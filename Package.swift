@@ -59,6 +59,9 @@ let package = Package(
             ]),
         .testTarget(
             name: "SplatNet2Tests",
-            dependencies: ["SplatNet2", "SplatNet3", "SalmonStats"]),
+            dependencies: ["SplatNet2", "SalmonStats"]),
+        .testTarget(
+            name: "SplatNet3Tests",
+            dependencies: ["SplatNet3", "SalmonStats"]),
     ]
 )

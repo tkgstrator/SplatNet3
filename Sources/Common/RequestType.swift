@@ -16,9 +16,9 @@ public protocol RequestType: URLRequestConvertible {
     var parameters: Parameters? { get }
     /// パス
     var path: String { get }
-    /// ヘッダー
     //  swiftlint:disable:next discouraged_optional_collection
-    var headers: [String: String]? { get set }
+    /// ヘッダー
+    var headers: [String: String]? { get }
     /// 基本となるURL
     var baseURL: URL { get }
     /// エンコーディング方式

@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import SplatNet2
+import Common
 
-struct RequestButton<T: SP2Error>: View {
+struct RequestButton<T: SPError>: View {
     @State private var isPresented: Bool = false
     let localizedError: T
 
@@ -19,7 +19,7 @@ struct RequestButton<T: SP2Error>: View {
             Text(localizedError.rawValue)
         })
         .alert("", isPresented: $isPresented, actions: {}, message: {
-            Text(localizedError.errorMessage)
+            Text(localizedError.failureReason!)
         })
     }
 }

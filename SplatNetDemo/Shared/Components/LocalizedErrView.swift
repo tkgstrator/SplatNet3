@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SplatNet2
+import Common
 
 struct LocalizedErrView: View {
     var body: some View {

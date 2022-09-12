@@ -13,7 +13,7 @@ import Alamofire
 extension SplatNet3 {
     /// リクエストが正しく送られたかどうか
     public func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
-        return response.statusCode == 403
+        return response.statusCode == 400
     }
 
     /// リクエストが失敗したときにリトライするかどうか
@@ -25,14 +25,15 @@ extension SplatNet3 {
         print("Current Time", Date())
         print("Expires Time", credential.expiration)
         print("Is Available", credential.requiresRefresh)
-        // イカスミセッションを設定
-        urlRequest.headers.add(HTTPHeader(name: "cookie", value: "iksm_session=\(credential.iksmSession)"))
+        // トークンを設定
+        urlRequest.headers.add(.authorization(bearerToken: credential.bulletToken ?? ""))
     }
 
     public func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Swift.Result<OAuthCredential, Error>) -> Void) {
         Task { [weak self] in
             do {
                 let response: UserInfo = try await refreshToken(sessionToken: credential.sessionToken)
+                print(response)
                 // アカウント情報を上書きする
                 account = response
                 completion(.success(response.credential))

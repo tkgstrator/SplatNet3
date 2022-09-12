@@ -13,7 +13,7 @@ import Foundation
 internal class BulletToken: RequestType {
     typealias ResponseType = BulletToken.Response
 
-    var method: HTTPMethod = .get
+    var method: HTTPMethod = .post
     var baseURL = URL(unsafeString: "https://api.lp1.av5ja.srv.nintendo.net/")
     var path: String = "api/bullet_tokens"
     var parameters: Parameters?
@@ -22,8 +22,8 @@ internal class BulletToken: RequestType {
 
     init(accessToken: SplatoonAccessToken.Response, version: String) {
         self.headers = [
-            "X-Web-View-Ver": version,
-            "X-NaCountry": "US",
+            "x-web-view-ver": version,
+            "x-nacountry": "US",
             "X-GameWebToken": accessToken.result.accessToken,
         ]
     }
@@ -32,5 +32,12 @@ internal class BulletToken: RequestType {
         let bulletToken: String
         let lang: String
         let isNoeCountry: Bool
+
+        init(from decoder: Decoder) throws {
+            let container: KeyedDecodingContainer<BulletToken.Response.CodingKeys> = try decoder.container(keyedBy: BulletToken.Response.CodingKeys.self)
+            self.bulletToken = try container.decode(String.self, forKey: BulletToken.Response.CodingKeys.bulletToken)
+            self.lang = try container.decode(String.self, forKey: BulletToken.Response.CodingKeys.lang)
+            self.isNoeCountry = Bool(try container.decode(String.self, forKey: BulletToken.Response.CodingKeys.isNoeCountry)) ?? false
+        }
     }
 }

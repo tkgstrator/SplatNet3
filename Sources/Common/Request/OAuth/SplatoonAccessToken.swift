@@ -19,7 +19,7 @@ public class SplatoonAccessToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     public var headers: [String: String]?
 
-    public init(imink: Imink.Response, accessToken: SplatoonToken.Response, version: String) {
+    public init(imink: Imink.Response, accessToken: SplatoonToken.Response, version: String, authType: OAuthType) {
         self.headers = [
             "X-Platform": "Android",
             "Authorization": "Bearer \(accessToken.result.webApiServerCredential.accessToken)",
@@ -27,7 +27,7 @@ public class SplatoonAccessToken: RequestType {
         self.parameters = [
             "parameter": [
                 "f": imink.f,
-                "id": 5_741_031_244_955_648,
+                "id": authType.rawValue,
                 "registrationToken": accessToken.result.webApiServerCredential.accessToken,
                 "timestamp": imink.timestamp,
                 "requestId": imink.requestId,

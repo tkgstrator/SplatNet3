@@ -10,6 +10,8 @@
 		100CED7E28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */; };
 		10251A5928B91AA00095DAA7 /* SwiftyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 10251A5828B91AA00095DAA7 /* SwiftyUI */; };
 		10251A5B28B91AEF0095DAA7 /* SplatNet2 in Frameworks */ = {isa = PBXBuildFile; productRef = 10251A5A28B91AEF0095DAA7 /* SplatNet2 */; };
+		10320C5328CEE7DC00666F09 /* SP2Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10320C5228CEE7DC00666F09 /* SP2Auth.swift */; };
+		10320C5528CEE82500666F09 /* SP3Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10320C5428CEE82500666F09 /* SP3Auth.swift */; };
 		1080DA7B28AE3F0700220903 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7A28AE3F0700220903 /* Tests_iOS.swift */; };
 		1080DA7D28AE3F0700220903 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7C28AE3F0700220903 /* Tests_iOSLaunchTests.swift */; };
 		1080DA8728AE3F0700220903 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA8628AE3F0700220903 /* Tests_macOS.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplatNetDemo--iOS--Info.plist"; sourceTree = "<group>"; };
 		10251A5728B91A780095DAA7 /* SwiftyUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftyUI; path = ../../SwiftyUI; sourceTree = "<group>"; };
+		10320C5228CEE7DC00666F09 /* SP2Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SP2Auth.swift; sourceTree = "<group>"; };
+		10320C5428CEE82500666F09 /* SP3Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SP3Auth.swift; sourceTree = "<group>"; };
 		1080DA6228AE3F0600220903 /* SplatNetDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNetDemoApp.swift; sourceTree = "<group>"; };
 		1080DA6328AE3F0600220903 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1080DA6428AE3F0700220903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10320C5128CEE7C100666F09 /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				10320C5228CEE7DC00666F09 /* SP2Auth.swift */,
+				10320C5428CEE82500666F09 /* SP3Auth.swift */,
+			);
+			path = Authorize;
+			sourceTree = "<group>";
+		};
 		1080DA5C28AE3F0600220903 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +203,7 @@
 		10D7A0CD28BB3D0C00DB86CF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				10320C5128CEE7C100666F09 /* Authorize */,
 				10D7A0D128BB3FE500DB86CF /* RequestButton.swift */,
 				10D7A0D528BB411D00DB86CF /* LocalizedMsgView.swift */,
 				10D7A0D828BB415F00DB86CF /* LocalizedErrView.swift */,
@@ -367,6 +381,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D7A0D928BB415F00DB86CF /* LocalizedErrView.swift in Sources */,
+				10320C5528CEE82500666F09 /* SP3Auth.swift in Sources */,
+				10320C5328CEE7DC00666F09 /* SP2Auth.swift in Sources */,
 				1080DA8C28AE3F0700220903 /* ContentView.swift in Sources */,
 				10D7A0D228BB3FE500DB86CF /* RequestButton.swift in Sources */,
 				1080DA8A28AE3F0700220903 /* SplatNetDemoApp.swift in Sources */,
