@@ -1,45 +1,44 @@
 //
 //  Imink.swift
-//  SplatNet2
+//  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
 //  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
 import Alamofire
-import Common
 import Foundation
 
-internal class Imink: RequestType {
-    typealias ResponseType = Imink.Response
+public class Imink: RequestType {
+    public typealias ResponseType = Imink.Response
 
-    var method: HTTPMethod = .post
-    var baseURL = URL(unsafeString: "https://api.imink.app")
-    var path: String = "f"
-    var parameters: Parameters?
+    public var method: HTTPMethod = .post
+    public var baseURL = URL(unsafeString: "https://api.imink.app")
+    public var path: String = "f"
+    public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    var headers: [String: String]?
+    public var headers: [String: String]?
 
-    init(accessToken: AccessToken.Response) {
+    public init(accessToken: AccessToken.Response) {
         self.parameters = [
             "token": accessToken.accessToken,
             "hash_method": String(IminkType.nso.rawValue),
         ]
     }
 
-    init(accessToken: SplatoonToken.Response) {
+    public init(accessToken: SplatoonToken.Response) {
         self.parameters = [
             "token": accessToken.result.webApiServerCredential.accessToken,
             "hash_method": String(IminkType.app.rawValue),
         ]
     }
 
-    enum IminkType: Int, CaseIterable {
+    public enum IminkType: Int, CaseIterable {
         case app = 2
         case nso = 1
     }
 
-    internal struct Response: Codable {
+    public struct Response: Codable {
         let f: String
         let requestId: String
         let timestamp: UInt64

@@ -14,7 +14,8 @@ public struct UserInfo: Codable {
         friendCode: String,
         thumbnailURL: URL,
         nsaid: String,
-        iksmSession: String,
+        iksmSession: String?, // For Splatoon2
+        bulletToken: String?, // For Splatoon3
         sessionToken: String,
         splatoonToken: String,
         timeInterval: Double = 60 * 60 * 24
@@ -26,6 +27,7 @@ public struct UserInfo: Codable {
         self.credential = OAuthCredential(
             nsaid: nsaid,
             iksmSession: iksmSession,
+            bulletToken: bulletToken,
             sessionToken: sessionToken,
             splatoonToken: splatoonToken,
             timeInterval: timeInterval

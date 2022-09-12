@@ -1,26 +1,25 @@
 //
 //  SplatoonToken.swift
-//  SplatNet2
+//  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
 //  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
 import Alamofire
-import Common
 import Foundation
 
-internal class SplatoonToken: RequestType {
-    typealias ResponseType = SplatoonToken.Response
+public class SplatoonToken: RequestType {
+    public typealias ResponseType = SplatoonToken.Response
 
-    var method: HTTPMethod = .post
-    var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
-    var path: String = "v3/Account/Login"
-    var parameters: Parameters?
+    public var method: HTTPMethod = .post
+    public var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
+    public var path: String = "v3/Account/Login"
+    public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    var headers: [String: String]?
+    public var headers: [String: String]?
 
-    init(imink: Imink.Response, accessToken: String, version: String) {
+    public init(imink: Imink.Response, accessToken: String, version: String) {
         self.headers = [
             "X-ProductVersion": "\(version)",
             "X-Platform": "Android",

@@ -1,6 +1,6 @@
 //
 //  XVersion.swift
-//  SplatNet2
+//  SplatNet3
 //
 //  Created by tkgstrator on 2021/11/15.
 //  Copyright © 2021 Magi, Corporation. All rights reserved.
@@ -8,10 +8,9 @@
 // swiftlint:disable discouraged_optional_collection
 
 import Alamofire
-import Common
 import Foundation
 
-public class XVersion: RequestType {
+public struct XVersion: RequestType {
     public typealias ResponseType = XVersion.Response
 
     public var baseURL = URL(unsafeString: "https://itunes.apple.com/")
@@ -20,7 +19,7 @@ public class XVersion: RequestType {
     public var parameters: Parameters?
     public var headers: [String: String]?
 
-    init() {
+    public init() {
         self.path = "lookup?id=1234806557"
     }
 

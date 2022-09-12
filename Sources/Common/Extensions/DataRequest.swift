@@ -11,7 +11,7 @@ import Foundation
 
 public extension DataRequest {
     @discardableResult
-    func validationWithSP2Error() -> Self {
+    func validationWithNXError() -> Self {
         let decoder: JSONDecoder = {
             let decoder: JSONDecoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase

@@ -23,6 +23,7 @@ final class SplatNetTests: XCTestCase {
             thumbnailURL: thumbnailURL,
             nsaid: nsaid,
             iksmSession: iksmSession,
+            bulletToken: nil,
             sessionToken: sessionToken,
             splatoonToken: splatoonToken,
             timeInterval: 0
@@ -50,6 +51,7 @@ final class SplatNetTests: XCTestCase {
             thumbnailURL: thumbnailURL,
             nsaid: nsaid,
             iksmSession: iksmSession,
+            bulletToken: nil,
             sessionToken: sessionToken,
             splatoonToken: splatoonToken,
             timeInterval: 60

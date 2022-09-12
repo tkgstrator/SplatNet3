@@ -13,6 +13,7 @@ extension OAuthCredential {
         self.init(
             nsaid: splatoonToken.result.user.nsaId,
             iksmSession: iksmSession.iksmSession,
+            bulletToken: nil,
             sessionToken: sessionToken.sessionToken,
             splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
         )
@@ -38,6 +39,7 @@ extension UserInfo {
             thumbnailURL: URL(unsafeString: splatoonToken.result.user.imageUri),
             nsaid: splatoonToken.result.user.nsaId,
             iksmSession: iksmSession.iksmSession,
+            bulletToken: nil,
             sessionToken: sessionToken,
             splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
         )

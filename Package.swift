@@ -33,29 +33,32 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "SplatNet2",
-            dependencies: [
-                "Common"
-            ],
-            resources: [.process("Resources")]),
-        .target(
-            name: "SplatNet3",
-            dependencies: [
-                "Common"]),
-        .target(
-            name: "SalmonStats",
-            dependencies: [
-                "Common"
-            ]),
-        .target(
             name: "Common",
             dependencies: [
                 "Alamofire",
                 "KeychainAccess",
                 "BetterSafariView",
+            ],
+            resources: [.process("Resources")]),
+        .target(
+            name: "SplatNet2",
+            dependencies: [
+                "Common"
+            ]),
+        .target(
+            name: "SplatNet3",
+            dependencies: [
+                "Common"
+            ]),
+        .target(
+            name: "SalmonStats",
+            dependencies: [
+                "Common",
+                "SplatNet2",
+                "SplatNet3"
             ]),
         .testTarget(
             name: "SplatNet2Tests",
-            dependencies: ["SplatNet2", "SalmonStats"]),
+            dependencies: ["SplatNet2", "SplatNet3", "SalmonStats"]),
     ]
 )
