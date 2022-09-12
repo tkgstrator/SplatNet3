@@ -30,7 +30,7 @@ public class SplatNet3: Authenticator {
             config.timeoutIntervalForRequest = 15
             return config
         }()
-        let queue = DispatchQueue(label: "SplatNet")
+        let queue = DispatchQueue(label: "SPLATNET3")
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 

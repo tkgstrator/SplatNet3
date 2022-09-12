@@ -23,7 +23,7 @@ public class CoopResult: GraphQL {
         ]
     }
 
-    // MARK: - CoopResult
+    // MARK: - Response
     public struct Response: Codable {
         public let data: DataClass
     }

@@ -6,11 +6,10 @@
 //  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
+import Foundation
 import Alamofire
-import Combine
 import Common
 import KeychainAccess
-import Foundation
 
 open class SplatNet2: Authenticator {
 
@@ -23,7 +22,7 @@ open class SplatNet2: Authenticator {
 
     public var account: UserInfo? = nil
 
-    private let keychain: Keychain = Keychain(service: "SPLATNET")
+    private let keychain: Keychain = Keychain(service: "SPLATNET2")
 
     internal let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
@@ -39,7 +38,7 @@ open class SplatNet2: Authenticator {
             config.timeoutIntervalForRequest = 15
             return config
         }()
-        let queue = DispatchQueue(label: "SplatNet")
+        let queue = DispatchQueue(label: "SPLATNET")
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 
