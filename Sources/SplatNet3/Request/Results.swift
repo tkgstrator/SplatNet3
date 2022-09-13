@@ -37,9 +37,9 @@ extension CoopResult {
             self.jobScore = result.jobScore
             self.gradePoint = result.afterGradePoint
             self.kumaPoint = result.jobPoint
-            self.jobRate = result.jobRate * 100
+            self.jobRate = result.jobRate
             self.jobBonus = result.jobBonus
-            self.dangerRate = result.dangerRate * 100
+            self.dangerRate = result.dangerRate
             self.playTime = Int(formatter.date(from: result.playedTime)!.timeIntervalSince1970)
         }
     }
@@ -56,14 +56,14 @@ extension CoopResult {
         public let specialCounts: [Int]
         public let bossKillCounts: Int
 
-        public init(from result: MyResult) {
-            self.goldenIkuraNum = result.goldenDeliverCount
-            self.ikuraNum = result.deliverCount
-            self.deadCount = result.rescuedCount
-            self.helpCount = result.rescuedCount
-            self.special = result.specialWeapon.id
-            self.weaponList = result.weapons.map({ $0.})
-        }
+//        public init(from result: MyResult) {
+//            self.goldenIkuraNum = result.goldenDeliverCount
+//            self.ikuraNum = result.deliverCount
+//            self.deadCount = result.rescuedCount
+//            self.helpCount = result.rescuedCount
+//            self.special = result.specialWeapon.id
+////            self.weaponList = result.weapons.map({ $0.})
+//        }
     }
 }
 

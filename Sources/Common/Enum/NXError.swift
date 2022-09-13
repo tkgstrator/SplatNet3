@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-public protocol SPError: Error, LocalizedError, Codable, RawRepresentable where RawValue == String {
+public protocol SPError: LocalizedError, Codable, RawRepresentable where RawValue == String {
     var localizedDescription: String? { get }
     var failureReason: String? { get }
 }

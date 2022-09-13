@@ -66,7 +66,7 @@ public enum WeaponType: Int, Codable, CaseIterable, Identifiable {
     case chargerSpark               = 20_020
     case slosherVase                = 20_030
 
-    public enum WeaponKey: String, Codable, CaseIterable {
+    public enum Image: String, Codable, CaseIterable {
         case randomGold                 = "/images/coop_weapons/7076c8181ab5c49d2ac91e43a2d945a46a99c17d.png"
         case randomGreen                = "/images/coop_weapons/746f7e90bc151334f0bf0d2a1f0987e311b03736.png"
         case shooterShort               = "/images/weapon/32d41a5d14de756c3e5a1ee97a9bd8fcb9e69bf5.png"
@@ -193,6 +193,6 @@ public extension WeaponType.WeaponId {
     var id: String { rawValue }
 }
 
-public extension WeaponType.WeaponKey {
+public extension WeaponType.Image {
     var id: String { rawValue }
 }

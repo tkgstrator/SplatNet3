@@ -117,6 +117,11 @@ public class CoopResult: GraphQL {
         @URLRawValue public var url: String
     }
 
+    // MARK: - WeaponImage
+    public struct WeaponImage: Codable {
+        public let url: WeaponType
+    }
+
     // MARK: - EnemyResult
     public struct EnemyResult: Codable {
         public let defeatCount: Int
@@ -198,7 +203,7 @@ public class CoopResult: GraphQL {
     // MARK: - Weapon
     public struct Weapon: Codable {
         public let name: String
-        public let image: Image
+        public let image: WeaponImage
     }
 
     // MARK: - MyResult

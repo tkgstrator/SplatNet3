@@ -22,7 +22,7 @@ public extension Keychain {
 
     /// アカウント追加
     func add(_ account: UserInfo) throws {
-        let accounts: [UserInfo] = (try get() + [account]).sorted(by: { $0.credential.nsaid < $1.credential.nsaid })
+        let accounts: [UserInfo] = (get() + [account]).sorted(by: { $0.credential.nsaid < $1.credential.nsaid })
         try set(accounts)
     }
 

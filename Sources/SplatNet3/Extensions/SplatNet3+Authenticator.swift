@@ -13,7 +13,7 @@ import Alamofire
 extension SplatNet3 {
     /// リクエストが正しく送られたかどうか
     public func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
-        return response.statusCode == 400
+        return response.statusCode == 401
     }
 
     /// リクエストが失敗したときにリトライするかどうか

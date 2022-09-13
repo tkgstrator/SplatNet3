@@ -43,8 +43,8 @@ open class SplatNet2: Authenticator {
     }()
 
     /// 概要取得
-    internal func getCoopSummary() async throws -> Results.Response {
-        let request: Results = Results()
+    internal func getCoopSummary() async throws -> CoopSummary.Response {
+        let request: CoopSummary = CoopSummary()
         return try await publish(request)
     }
 

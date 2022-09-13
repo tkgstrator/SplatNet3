@@ -1,5 +1,5 @@
 //
-//  Results.swift
+//  CoopSummary.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
@@ -10,8 +10,8 @@ import Alamofire
 import Common
 import Foundation
 
-public class Results: RequestType {
-    public typealias ResponseType = Results.Response
+public class CoopSummary: RequestType {
+    public typealias ResponseType = CoopSummary.Response
 
     public var method: HTTPMethod = .get
     public var path: String = "coop_results"
@@ -24,7 +24,7 @@ public class Results: RequestType {
     // MARK: - CoopSummary
     public struct Response: Codable {
         let summary: Summary
-//        let results: [CoopResult.Response]
+//        let CoopSummary: [CoopResult.Response]
 //        let rewardGear: RewardGear
 
         // MARK: - RewardGear
