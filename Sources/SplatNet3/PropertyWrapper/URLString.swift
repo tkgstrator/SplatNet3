@@ -19,7 +19,6 @@ public struct URLRawValue: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let baseURL: URL = URL(unsafeString: try container.decode(String.self))
-        print(baseURL)
         let component: String = baseURL.lastPathComponent
         let hash: String = String(component.dropLast(6))
 

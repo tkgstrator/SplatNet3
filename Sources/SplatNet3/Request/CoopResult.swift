@@ -44,8 +44,8 @@ public class CoopResult: GraphQL {
         public let id: String
         public let afterGrade: Ref?
         public let rule: Rule
-        public let myResult: MyResult
-        public let memberResults: [MemberResult]
+        public let myResult: PlayerResult
+        public let memberResults: [PlayerResult]
         public let bossResult: BossResult?
         public let enemyResults: [EnemyResult]
         public let waveResults: [WaveResult]
@@ -93,6 +93,27 @@ public class CoopResult: GraphQL {
         }
     }
 
+    // MARK: - EnemyResult
+    public struct EnemyResult: Codable {
+        public let defeatCount: Int
+        public let teamDefeatCount: Int
+        public let popCount: Int
+        public let enemy: ImageRef
+    }
+
+    // MARK: - MyResult
+    public struct PlayerResult: Codable {
+        public let player: ResultPlayer
+        public let weapons: [ImageRef]
+        public let specialWeapon: ImageRef
+        public let defeatEnemyCount: Int
+        public let deliverCount: Int
+        public let goldenAssistCount: Int
+        public let goldenDeliverCount: Int
+        public let rescueCount: Int
+        public let rescuedCount: Int
+    }
+
     // MARK: - Ref
     public struct Ref: Codable {
         public let name: String
@@ -137,7 +158,6 @@ public class CoopResult: GraphQL {
                 if let weaponId: Int = WeaponType(hash: hash)?.id {
                     self.id = weaponId
                 } else {
-                    print(hash)
                     throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "No associated Id in response."))
                 }
             }
@@ -147,27 +167,6 @@ public class CoopResult: GraphQL {
     // MARK: - Image
     public struct Image: Codable {
         @URLRawValue public var url: String
-    }
-
-    // MARK: - EnemyResult
-    public struct EnemyResult: Codable {
-        public let defeatCount: Int
-        public let teamDefeatCount: Int
-        public let popCount: Int
-        public let enemy: ImageRef
-    }
-
-    // MARK: - MemberResult
-    public struct MemberResult: Codable {
-        public let player: ResultPlayer
-        public let weapons: [ImageRef]
-        public let specialWeapon: ImageRef
-        public let defeatEnemyCount: Int
-        public let deliverCount: Int
-        public let goldenAssistCount: Int
-        public let goldenDeliverCount: Int
-        public let rescueCount: Int
-        public let rescuedCount: Int
     }
 
     public enum Species: String, CaseIterable, Codable {
@@ -225,19 +224,6 @@ public class CoopResult: GraphQL {
     public struct Badge: Codable {
         @IntegerRawValue public var id: Int
         public let image: Image
-    }
-
-    // MARK: - MyResult
-    public struct MyResult: Codable {
-        public let player: ResultPlayer
-        public let weapons: [ImageRef]
-        public let specialWeapon: ImageRef
-        public let defeatEnemyCount: Int
-        public let deliverCount: Int
-        public let goldenAssistCount: Int
-        public let goldenDeliverCount: Int
-        public let rescueCount: Int
-        public let rescuedCount: Int
     }
 
     // MARK: - HistoryDetailId
