@@ -13,7 +13,7 @@ public class SplatNet2 {
     public struct Result: Codable {
         public let id: String
         public let jobScore: Int?
-        //        public let grade: GradeType?
+        public let grade: GradeType?
         public let kumaPoint: Int?
         public let waveDetails: [WaveResult]
         //        public let jobResult: JobResult
@@ -28,6 +28,7 @@ public class SplatNet2 {
         public let bossKillCounts: [Int]
         public let dangerRate: Double
         public let jobBonus: Int?
+        public let isBossDefeated: Bool?
 
         public init(from response: CoopResult.Response) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
@@ -44,8 +45,13 @@ public class SplatNet2 {
             self.myResult = PlayerResult(from: result.myResult)
             self.otherResults = result.memberResults.map({ PlayerResult(from: $0) })
             self.waveDetails = result.waveResults.map({ WaveResult(from: $0) })
-            self.bossCounts = result.enemyResults.map({ $0.popCount })
-            self.bossKillCounts = result.enemyResults.map({ $0.teamDefeatCount })
+            self.bossCounts = result.enemyResults.popCounts()
+            self.bossKillCounts = result.enemyResults.teamDefeatedCounts()
+            self.grade = GradeType(id: result.afterGrade?.id)
+            self.isBossDefeated = result.bossResult?.hasDefeatBoss
+
+            let specialCounts: [[Int]] = result.waveResults.map({ $0.specialWeapons.map({ $0.id })})
+            print(specialCounts)
         }
      }
 
@@ -66,6 +72,7 @@ public class SplatNet2 {
         public let nameId: Int
 //        public let nameplate: Nameplate
         public let goldenIkuraNum: Int
+        public let goldenIkuraAssistNum: Int
         public let ikuraNum: Int
         public let deadCount: Int
         public let helpCount: Int
@@ -73,7 +80,7 @@ public class SplatNet2 {
         public let special: Int
 //        public let specialCounts: [Int]
         public let bossKillCounts: Int
-//        public let species: Species
+        public let species: CoopResult.Species
 
         public init(from result: CoopResult.PlayerResult) {
             self.id = result.player.id
@@ -81,12 +88,14 @@ public class SplatNet2 {
             self.name = result.player.name
             self.byname = result.player.byname
             self.ikuraNum = result.deliverCount
+            self.goldenIkuraAssistNum = result.goldenAssistCount
             self.goldenIkuraNum = result.goldenDeliverCount
             self.deadCount = result.rescuedCount
             self.helpCount = result.rescuedCount
             self.special = result.specialWeapon.id
             self.weaponList = result.weapons.map({ $0.id })
             self.bossKillCounts = result.defeatEnemyCount
+            self.species = result.player.species
 //            self.nameplate = result.player.nameplate
         }
     }
@@ -112,8 +121,17 @@ public class SplatNet2 {
 }
 
 extension CoopResult.Response {
-
     public func asSplatNet2() -> SplatNet2.Result {
         return SplatNet2.Result(from: self)
+    }
+}
+
+extension Collection where Element == CoopResult.EnemyResult {
+    public func teamDefeatedCounts() -> [Int] {
+        SakelienType.allCases.compactMap({ sakelien in self.first(where: { $0.enemy.id == sakelien.id })?.teamDefeatCount ?? 0 })
+    }
+
+    public func popCounts() -> [Int] {
+        SakelienType.allCases.compactMap({ sakelien in self.first(where: { $0.enemy.id == sakelien.id })?.popCount ?? 0 })
     }
 }
