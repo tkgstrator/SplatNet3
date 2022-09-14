@@ -30,7 +30,7 @@ final class SplatNetTests: XCTestCase {
             timeInterval: 0
         )
         let session: SalmonStats = SalmonStats(account: account)
-        let response: Results.Response = try await session.getCoopSummary()
+        let response: CoopSummary.Response = try await session.getCoopSummary()
         let resultId: Int = response.summary.card.jobNum
         let result: CoopResult.Response = try await session.getCoopResult(resultId: resultId)
         // 指定したリザルトIDとリザルトのバイトIDが一致しているかチェック
@@ -58,7 +58,7 @@ final class SplatNetTests: XCTestCase {
             timeInterval: 60
         )
         let session: SalmonStats = SalmonStats(account: account)
-        let response: Results.Response = try await session.getCoopSummary()
+        let response: CoopSummary.Response = try await session.getCoopSummary()
         let resultId: Int = response.summary.card.jobNum
         let result: CoopResult.Response = try await session.getCoopResult(resultId: resultId)
         // 指定したリザルトIDとリザルトのバイトIDが一致しているかチェック
@@ -71,7 +71,7 @@ final class SplatNetTests: XCTestCase {
 
     /// リザルト取得してアップロード
     func testResults() async throws {
-        let response: Results.Response = try await session.getCoopSummary()
+        let response: CoopSummary.Response = try await session.getCoopSummary()
         let resultId: Int = response.summary.card.jobNum
         let result: CoopResult.Response = try await session.getCoopResult(resultId: resultId)
         // 指定したリザルトIDとリザルトのバイトIDが一致しているかチェック

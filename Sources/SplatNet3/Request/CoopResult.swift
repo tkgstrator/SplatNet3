@@ -55,7 +55,7 @@ public class CoopResult: GraphQL {
         public let dangerRate: Double
 //                public let scenarioCode: JSONNull?
         public let smellMeter: Int?
-        public let weapons: [Weapon]
+        public let weapons: [ImageRef]
         public let afterGradePoint: Int?
 //                public let scale: JSONNull?
         public let jobPoint: Int?
@@ -109,17 +109,44 @@ public class CoopResult: GraphQL {
     public struct ImageRef: Codable {
         public let name: String
         public let image: Image
-        @IntegerRawValue public var id: Int
+        public let id: Int
+
+        enum CodingKeys: String, CodingKey {
+            case name
+            case image
+            case id
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+
+            self.name = try container.decode(String.self, forKey: .name)
+            self.image = try container.decode(Image.self, forKey: .image)
+
+            // 文字列をbase64デコードして末尾の数字を取得
+            if let id: String = try container.decodeIfPresent(String.self, forKey: .id),
+               let data: Data = Data(base64Encoded: id),
+               let decodedText: String = String(data: data, encoding: .utf8),
+               let capture: String = decodedText.capture(pattern: "([0-9]*)$", group: 1),
+               let intValue: Int = Int(capture)
+            {
+                self.id = intValue
+            } else {
+                let hash: String = self.image.url
+
+                if let weaponId: Int = WeaponType(hash: hash)?.id {
+                    self.id = weaponId
+                } else {
+                    print(hash)
+                    throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "No associated Id in response."))
+                }
+            }
+        }
     }
 
     // MARK: - Image
     public struct Image: Codable {
         @URLRawValue public var url: String
-    }
-
-    // MARK: - WeaponImage
-    public struct WeaponImage: Codable {
-        public let url: WeaponType
     }
 
     // MARK: - EnemyResult
@@ -133,7 +160,7 @@ public class CoopResult: GraphQL {
     // MARK: - MemberResult
     public struct MemberResult: Codable {
         public let player: ResultPlayer
-        public let weapons: [Weapon]
+        public let weapons: [ImageRef]
         public let specialWeapon: ImageRef
         public let defeatEnemyCount: Int
         public let deliverCount: Int
@@ -200,16 +227,10 @@ public class CoopResult: GraphQL {
         public let image: Image
     }
 
-    // MARK: - Weapon
-    public struct Weapon: Codable {
-        public let name: String
-        public let image: WeaponImage
-    }
-
     // MARK: - MyResult
     public struct MyResult: Codable {
         public let player: ResultPlayer
-        public let weapons: [Weapon]
+        public let weapons: [ImageRef]
         public let specialWeapon: ImageRef
         public let defeatEnemyCount: Int
         public let deliverCount: Int

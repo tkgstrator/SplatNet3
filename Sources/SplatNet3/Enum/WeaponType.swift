@@ -8,6 +8,7 @@
 
 import Foundation
 
+@dynamicMemberLookup
 public enum WeaponType: Codable, CaseIterable {
     case Random_Gold
     case Random_Green
@@ -16,7 +17,6 @@ public enum WeaponType: Codable, CaseIterable {
     case Shooter_Precision
     case Shooter_Blaze
     case Shooter_Normal
-    case Shooter_Norma
     case Shooter_Gravity
     case Shooter_QuickMiddle
     case Shooter_Expert
@@ -66,6 +66,11 @@ public enum WeaponType: Codable, CaseIterable {
     case Stringer_Short
     case Saber_Normal
     case Saber_Lite
+    case Blaster_Bear_Coop
+    case Charger_Bear_Coop
+    case Shelter_Bear_Coop
+    case Slosher_Bear_Coop
+    case Stringer_Bear_Coop
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -135,6 +140,11 @@ public enum WeaponId: Int, Codable, CaseIterable {
     case Stringer_Short         = 7020
     case Saber_Normal           = 8000
     case Saber_Lite             = 8010
+    case Blaster_Bear_Coop      = 20900
+    case Charger_Bear_Coop      = 22900
+    case Shelter_Bear_Coop      = 26900
+    case Slosher_Bear_Coop      = 23900
+    case Stringer_Bear_Coop     = 27900
 }
 
 public enum WeaponKey: String, Codable, CaseIterable {
@@ -145,7 +155,6 @@ public enum WeaponKey: String, Codable, CaseIterable {
     case Shooter_Precision      = "25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609"
     case Shooter_Blaze          = "5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f"
     case Shooter_Normal         = "e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570"
-    case Shooter_Norma          = "763c0d53dad2161860eee315d1f0a9975043bf8228a1f29aaa845def83849f4f"
     case Shooter_Gravity        = "01e8399a3c56707b6e9f7500d3d583ba1d400eec06449d8fe047cda1956a4ccc"
     case Shooter_QuickMiddle    = "e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255"
     case Shooter_Expert         = "5607f7014bbc7339feeb67218c05ef19c7a466152b1bd056a899b955127ea433"
@@ -195,6 +204,11 @@ public enum WeaponKey: String, Codable, CaseIterable {
     case Stringer_Short         = "9baac6cc774d0e6f2ac8f6e217d700e6f1f47320130598c5f1e922210ccdcc89"
     case Saber_Normal           = "ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082"
     case Saber_Lite             = "3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258"
+    case Blaster_Bear_Coop      = "0962405d6aecff4a075c46e895c42984e33b26c4b2b4b25c5058366db3c35ba4"
+    case Charger_Bear_Coop      = "5cc158250a207241f51d767a47bbb6139fe1c4fb652cc182b73aac93baa659c5"
+    case Shelter_Bear_Coop      = "3380019464e3111a0f40e633be25f73ad34ec1844d2dc7852a349b29b238932b"
+    case Slosher_Bear_Coop      = "bf89bcf3d3a51badd78b436266e6b7927d99ac386e083023df3551da6b39e412"
+    case Stringer_Bear_Coop     = "36e03d8d1e6bc4f7449c5450f4410c6c8449cde0548797d22ab641cd488d2060"
 }
 
 public extension CaseIterable where Self: Equatable {
@@ -237,10 +251,12 @@ public extension WeaponType {
     }
 }
 
-extension WeaponId: Identifiable {
+extension WeaponId {
+    /// ブキID
     public var id: Int { rawValue }
 }
 
-extension WeaponKey: Identifiable {
-    public var id: String { rawValue }
+extension WeaponKey {
+    /// ブキKey
+    public var key: String { rawValue }
 }
