@@ -34,6 +34,8 @@ public class SplatNet2 {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
             let result: CoopResult.CoopHistoryDetail = response.data.coopHistoryDetail
 
+            let specialCounts: [[Int]] = result.waveResults.map({ $0.specialWeapons.map({ $0.id })})
+
             self.id = result.id
             self.jobScore = result.jobScore
             self.gradePoint = result.afterGradePoint
@@ -42,16 +44,13 @@ public class SplatNet2 {
             self.jobBonus = result.jobBonus
             self.dangerRate = result.dangerRate
             self.playTime = Int(formatter.date(from: result.playedTime)!.timeIntervalSince1970)
-            self.myResult = PlayerResult(from: result.myResult)
-            self.otherResults = result.memberResults.map({ PlayerResult(from: $0) })
+            self.myResult = PlayerResult(from: result.myResult, counts: specialCounts)
+            self.otherResults = result.memberResults.map({ PlayerResult(from: $0, counts: specialCounts) })
             self.waveDetails = result.waveResults.map({ WaveResult(from: $0) })
             self.bossCounts = result.enemyResults.popCounts()
             self.bossKillCounts = result.enemyResults.teamDefeatedCounts()
             self.grade = GradeType(id: result.afterGrade?.id)
             self.isBossDefeated = result.bossResult?.hasDefeatBoss
-
-            let specialCounts: [[Int]] = result.waveResults.map({ $0.specialWeapons.map({ $0.id })})
-            print(specialCounts)
         }
      }
 
@@ -76,13 +75,14 @@ public class SplatNet2 {
         public let ikuraNum: Int
         public let deadCount: Int
         public let helpCount: Int
-        public let weaponList: [Int]
+        public let weaponList: [WeaponType]
         public let special: Int
-//        public let specialCounts: [Int]
+        public let specialCounts: [Int]
         public let bossKillCounts: Int
         public let species: CoopResult.Species
 
-        public init(from result: CoopResult.PlayerResult) {
+        public init(from result: CoopResult.PlayerResult, counts: [[Int]]) {
+            let specialId: Int = result.specialWeapon.id
             self.id = result.player.id
             self.nameId = result.player.nameID
             self.name = result.player.name
@@ -91,11 +91,12 @@ public class SplatNet2 {
             self.goldenIkuraAssistNum = result.goldenAssistCount
             self.goldenIkuraNum = result.goldenDeliverCount
             self.deadCount = result.rescuedCount
-            self.helpCount = result.rescuedCount
-            self.special = result.specialWeapon.id
-            self.weaponList = result.weapons.map({ $0.id })
+            self.helpCount = result.rescueCount
+            self.special = specialId
+            self.weaponList = result.weapons.compactMap({ WeaponType(id: $0.id) })
             self.bossKillCounts = result.defeatEnemyCount
             self.species = result.player.species
+            self.specialCounts = counts.map({ ids in ids.filter({ $0 == specialId }).count })
 //            self.nameplate = result.player.nameplate
         }
     }
