@@ -23,10 +23,6 @@ public protocol RawRepresentables: Codable, CaseIterable, Equatable {
 }
 
 public extension RawRepresentables {
-    subscript<T, V>(dynamicMember keyPath: KeyPath<T, V>) -> V? where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable {
-        self[keyPath]
-    }
-
     init?<T>(_ object: T?) where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable {
       switch object {
       case let object? where object.offset < Self.allCases.endIndex:
@@ -36,7 +32,11 @@ public extension RawRepresentables {
         return nil
       }
     }
-    
+
+    subscript<T, V>(dynamicMember keyPath: KeyPath<T, V>) -> V? where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable {
+        self[keyPath]
+    }
+
     subscript<T, V>(_ keyPath: KeyPath<T, V>) -> V? where T: CaseIterable, T.AllCases.Index == AllCases.Index {
       (offset < T.allCases.endIndex) ? T.allCases[offset][keyPath: keyPath] : nil
     }

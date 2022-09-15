@@ -10,6 +10,11 @@ import Foundation
 
 @dynamicMemberLookup
 public enum WeaponType: Codable, CaseIterable {
+
+    public var localizedText: String {
+        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
+    }
+
     case Random_Gold
     case Random_Green
     case Shooter_Short
@@ -148,10 +153,6 @@ public enum WeaponId: Int, Codable, CaseIterable {
 }
 
 public enum WeaponKey: String, Codable, CaseIterable {
-    public var localizedText: String {
-        NSLocalizedString(rawValue, comment: "WeaponKey")
-    }
-
     case Random_Gold            = ""
     case Random_Green           = "473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1"
     case Shooter_Short          = "6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65"
@@ -256,5 +257,5 @@ extension WeaponId {
 
 extension WeaponKey {
     /// ブキKey
-    public var key: String { rawValue }
+    public var sha256Hash: String { rawValue }
 }

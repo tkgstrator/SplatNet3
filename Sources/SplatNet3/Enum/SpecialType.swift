@@ -25,6 +25,10 @@ public enum SpecialType: RawRepresentables {
       self[keyPath]
     }
 
+    public var localizedText: String {
+        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
+    }
+
     /// ウルトラショット
     case SpUltraShot
     /// ナイスダマ
@@ -57,7 +61,7 @@ public enum SpecialId: Int, CaseIterable, Codable {
 }
 
 public enum SpecialKey: String, CaseIterable, Codable {
-    var hash: String { rawValue }
+    var sha256Hash: String { rawValue }
     
     case SpUltraShot        = "7269f1fa71d746d7b86ca2a71fc24c6ea4c764077ee50d692f80eddeaff90f1d"
     case SpShockSonar       = "463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d"

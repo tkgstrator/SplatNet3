@@ -25,6 +25,10 @@ public enum SakelienType: RawRepresentables {
       self[keyPath]
     }
 
+    public var localizedText: String {
+        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
+    }
+
     case SakelienBomber
     case SakelienCupTwins
     case SakelienShield
@@ -63,7 +67,7 @@ public enum SakelienId: Int, CaseIterable, Codable {
 }
 
 public enum SakelienKey: String, CaseIterable, Codable {
-    var hash: String { rawValue }
+    var sha256Hash: String { rawValue }
 
     case SakelienBomber     = "f59fe344bd941f90dc8d3458ffd29b6586c1cffd00864967e7766a5a931dc4f6"
     case SakelienCupTwins   = "03c31763738c5628db6d8e7dd3ba0fd2fcb79a1f47694488b51969375148edde"
