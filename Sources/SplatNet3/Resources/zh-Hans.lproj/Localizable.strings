@@ -1,0 +1,43 @@
+/*
+Created by simplelocalize.io
+*/
+
+"Bad request." = "";
+"Client authentication failed" = "";
+"Invalid response." = "";
+"Invalid token." = "";
+"No accounts." = "";
+"No contents." = "";
+"The provided grant is invalid" = "";
+"The provided session_token_code is expired" = "";
+"The request does not satisfy the schema" = "";
+"Token expired." = "";
+"Unauthorized." = "";
+"Unexpected Error." = "";
+"Upgrade required." = "";
+"apparentice" = "新手";
+"cohock-charge" = "大胖鱼大量出现";
+"fog" = "雾";
+"gogetter" = "独当一面";
+"goldie-seeking" = "寻找金鲑鱼";
+"griller" = "烤架鱼进发";
+"high" = "满潮";
+"intern" = "";
+"low" = "干潮";
+"normal" = "通常";
+"overachiver" = "熟练";
+"parttimer" = "半吊子";
+"profreshional" = "达人";
+"rush" = "狂潮";
+"sakediver" = "鼹鼠鱼";
+"sakedozer" = "烤架鱼";
+"sakelien-bomber" = "炸弹鱼";
+"sakelien-cup-twins" = "垫肩飞鱼";
+"sakelien-golden" = "金鲑鱼";
+"sakelien-shield" = "铁板鱼";
+"sakelien-snake" = "蛇鱼";
+"sakelien-tower" = "高塔鱼";
+"sakerocket" = "蝙蝠鱼";
+"the-mothership" = "走私鱼来袭";
+"water-levels" = "-";
+
