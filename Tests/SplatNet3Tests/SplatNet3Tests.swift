@@ -37,7 +37,7 @@ final class SplatNetTests: XCTestCase {
 
         do {
             let result: CoopResult.Response = (try await session.publish(request))
-            dump(result.asSplatNet2())
+//            dump(result.asSplatNet2())
         } catch(let error) {
             print(error)
             throw error

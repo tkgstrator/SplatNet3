@@ -98,11 +98,21 @@ public class SplatNet2 {
     public struct Nameplate: Codable {
         public let badges: [Int?]
         public let background: Background
+
+        public init(from nameplate: CoopResult.Nameplate) {
+            self.badges = nameplate.badges.map({ $0?.id })
+            self.background = Background(from: nameplate.background)
+        }
     }
 
     public struct Background: Codable {
         public let textColor: CoopResult.TextColor
         public let id: Int
+
+        public init(from background: CoopResult.Background) {
+            self.textColor = background.textColor
+            self.id = background.id
+        }
     }
     
     public struct PlayerResult: Codable {
@@ -110,7 +120,7 @@ public class SplatNet2 {
         public let byname: String
         public let name: String
         public let nameId: Int
-        //        public let nameplate: Nameplate
+        public let nameplate: Nameplate
         public let goldenIkuraNum: Int
         public let goldenIkuraAssistNum: Int
         public let ikuraNum: Int
@@ -141,7 +151,7 @@ public class SplatNet2 {
             self.bossKillCounts = player.player.isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)
             self.species = player.player.species
             self.specialCounts = counts.map({ ids in ids.filter({ $0 == specialId }).count })
-            //            self.nameplate = result.player.nameplate
+            self.nameplate = Nameplate(from: player.player.nameplate)
         }
     }
 
