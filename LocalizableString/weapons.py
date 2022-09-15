@@ -70,4 +70,4 @@ class Data:
 @dataclass_json
 @dataclass
 class Weapons:
-    data: WeaponRecords
+    data: Data

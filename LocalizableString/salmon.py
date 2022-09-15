@@ -180,5 +180,5 @@ class Data:
 
 @dataclass_json
 @dataclass
-class Result:
+class CoopResult:
     data: Data

@@ -1,7 +1,8 @@
 import requests
-import os, json, base64
+import os, json, base64, re
 from enum import Enum
-import weapons as wp
+from weapons import *
+from salmon import *
 
 class Endpoint(Enum):
   WEAPON        = "a0c277c719b758a926772879d8e53ef8"
@@ -88,9 +89,73 @@ def get_coop_results():
   for id in ids:
     get_result(id, language)
 
+def get_hash(url: str) -> str:
+  hash: str = re.search("/([a-f0-9]*)_", url).group(1)
+  return hash
+
 
 if __name__=="__main__":
   for language in languages:
+    specials = []
+    enemies = []
+    weapons = []
+    # ブキ情報
     with open(f"results/{Endpoint.WEAPON.value}/{language}.json", mode="r") as f:
-      print(f.read())
-      weapons = wp.Weapons.from_json(f.read())
+      data: Weapons = Weapons.from_json(f.read())
+      weapons = list(map(lambda x: f"\"{get_hash(x.image.url)}\" = \"{x.name}\";\n", data.data.weaponRecords.nodes))
+      specials = list(map(lambda x: f"\"{get_hash(x.specialWeapon.image.url)}\" = \"{x.specialWeapon.name}\";\n", data.data.weaponRecords.nodes))
+      
+    # サーモンラン情報
+    results = os.listdir(f"results/{Endpoint.COOP_DETAILS.value}/{language}")
+    for result in results:
+      with open(f"results/{Endpoint.COOP_DETAILS.value}/{language}/{result}", mode="r") as f:
+        data: CoopResult = CoopResult.from_json(f.read())
+        enemy: list[EnemyResult] = data.data.coopHistoryDetail.enemyResults
+        enemy: list[str] = list(map(lambda x: f"\"{get_hash(x.enemy.image.url)}\" = \"{x.enemy.name}\";\n", enemy))
+        myResult: MyResult = data.data.coopHistoryDetail.myResult
+
+        enemies.append(enemy)
+    
+    enemies = sum(enemies, [])
+    enemies = list(set(enemies))
+    specials = list(set(specials))
+
+    if language == "en-us":
+      language = "en"
+    if language == "ja-jp":
+      language = "ja"
+    if language == "es-es":
+      language = "es"
+    if language == "es-mx":
+      language = "es-MX"
+    if language == "en-gb":
+      language = "en-GB"
+    if language == "de-de":
+      language = "de"
+    if language == "fr-ca":
+      language = "fr-CA"
+    if language == "fr-fr":
+      language = "fr"
+    if language == "it-it":
+      language = "it"
+    if language == "ko-kr":
+      language = "ko"
+    if language == "nl-nl":
+      language = "nl"
+    if language == "ru-ru":
+      language = "ru"
+    if language == "zh-cn":
+      language = "zh-Hans"
+    if language == "zh-tw":
+      language = "zh-Hant"
+    
+    if os.path.exists(f"../Sources/SplatNet3/Resources/{language}.lproj") == False:
+      os.makedirs(f"../Sources/SplatNet3/Resources/{language}.lproj")
+
+    with open(f"../Sources/SplatNet3/Resources/{language}.lproj/Localizable.strings", mode="w") as f:
+      for special in specials:
+        f.write(special)
+      for enemy in enemies:
+        f.write(enemy)
+      for weapon in weapons:
+        f.write(weapon)
