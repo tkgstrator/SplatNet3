@@ -104,8 +104,8 @@ public class SplatNet2 {
         public let id: Int
         public let waterLevel: Int
         public let eventType: Int
-        public let goldenIkuraNum: Int
-        public let quotaNum: Int
+        public let goldenIkuraNum: Int?
+        public let quotaNum: Int?
         public let goldenIkuraPopNum: Int
 
         public init(from result: CoopResult.WaveResult) {

@@ -57,7 +57,7 @@ public class CoopResult: GraphQL {
         public let smellMeter: Int?
         public let weapons: [ImageRef]
         public let afterGradePoint: Int?
-//                public let scale: JSONNull?
+        public let scale: Scale?
         public let jobPoint: Int?
         public let jobScore: Int?
         public let jobRate: Double?
@@ -83,7 +83,7 @@ public class CoopResult: GraphQL {
             case smellMeter = "smellMeter"
             case weapons = "weapons"
             case afterGradePoint = "afterGradePoint"
-//            case scale = "scale"
+            case scale = "scale"
             case jobPoint = "jobPoint"
             case jobScore = "jobScore"
             case jobRate = "jobRate"
@@ -91,6 +91,13 @@ public class CoopResult: GraphQL {
             case nextHistoryDetail = "nextHistoryDetail"
             case previousHistoryDetail = "previousHistoryDetail"
         }
+    }
+
+    // MARK: - Scale
+    public struct Scale: Codable {
+        public let gold: Int
+        public let silver: Int
+        public let bronze: Int
     }
 
     // MARK: - EnemyResult
@@ -236,9 +243,9 @@ public class CoopResult: GraphQL {
         public let waveNumber: Int
         public let waterLevel: Int
         public let eventWave: Ref?
-        public let deliverNorm: Int
+        public let deliverNorm: Int?
         public let goldenPopCount: Int
-        public let teamDeliverCount: Int
+        public let teamDeliverCount: Int?
         public let specialWeapons: [Ref]
     }
 }
