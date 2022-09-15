@@ -6,7 +6,7 @@ import XCTest
 final class SplatNetTests: XCTestCase {
     let sessionToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJzdDpzY3AiOlswLDgsOSwxNywyM10sImlhdCI6MTY2MjcyMTg5OCwidHlwIjoic2Vzc2lvbl90b2tlbiIsInN1YiI6ImE4MzZhMWQ0NjI1YWZhYjQiLCJleHAiOjE3MjU3OTM4OTgsImF1ZCI6IjcxYjk2M2MxYjdiNmQxMTkiLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImp0aSI6OTc4NzkxMDI4Mn0.UUZ8l4neAp0nZPbcQU7EoUUo02GVI6pg1OeijE9zp1o"
     let iksmSession: String = "3b78964054c63dcb76275fb2123acbf06cd74acb"
-    let bulletToken: String = "HsqfmuHX-llXdZelFKkHhM-E4oPInV-_ujKYcugqKovhHTWM8izyfSeb-Suy6RA8NZPgZSIjGnDq1Lwd150mwpOVeBSVLovn5uPqS0ZXGSXl-Un-Yx1mpQGk-Js="
+    let bulletToken: String = "Rh7PEI3dJzpocPr_aDSiGOdtbk0fi-7Z7MMrQwavyci2ZkMAJZVcLM4yfJLM-4tMSMeIjmgVuoLTYz_uDgSCXHsN0QRgt61F04eU9Vs7a7UQ6Gqprb7tUAug5wg="
     let splatoonToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjE2MTY5NDQsImlhdCI6MTY2MTYwOTc0NCwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NjQ0NTQ1NzE2OTk3MzI0OCwidHlwIjoiaWRfdG9rZW4ifQ.951ll7aJpVJcBmbTenskx9JoOrWfKULh_wvejTRNo4g"
     let nickname: String = "にだいめえむいーです"
     let friendCode: String = "1384-4712-4713"
