@@ -145,6 +145,13 @@ class WaveResult:
 
 @dataclass_json
 @dataclass
+class BossResult:
+    hasDefeatBoss: bool
+    boss: CoopStage
+
+
+@dataclass_json
+@dataclass
 class CoopHistoryDetail:
     # __typename: str
     id: str
@@ -152,7 +159,7 @@ class CoopHistoryDetail:
     rule: str
     myResult: MyResult
     memberResults: List[MemberResult]
-    # bossResult: None
+    bossResult: Optional[BossResult]
     enemyResults: List[EnemyResult]
     waveResults: List[WaveResult]
     resultWave: int

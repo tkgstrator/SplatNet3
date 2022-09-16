@@ -6,38 +6,66 @@
 //
 
 import SwiftUI
-import SplatNet2
+import SplatNet3
 
 struct LocalizedMsgView: View {
     var body: some View {
         Form(content: {
             Section(content: {
-                ForEach(GradeKey.allCases, id: \.self) { gradeKey in
-                    Text(gradeKey.localized)
+                ForEach(StageType.allCases, id: \.self) { stage in
+                    Text(stage.localizedText)
+                        .lineLimit(1)
+                }
+            }, header: {
+                Text("Stage")
+            })
+            Section(content: {
+                ForEach(GradeType.allCases, id: \.self) { grade in
+                    Text(grade.localizedText)
+                        .lineLimit(1)
                 }
             }, header: {
                 Text("Grade")
             })
             Section(content: {
-                ForEach(BossKey.allCases, id: \.self) { bossKey in
-                    Text(bossKey.localized)
+                ForEach(EventType.allCases, id: \.self) { event in
+                    Text(event.localizedText)
+                        .lineLimit(1)
                 }
             }, header: {
-                Text("Boss")
+                Text("Event")
             })
             Section(content: {
-                ForEach(WaterKey.allCases, id: \.self) { waterKey in
-                    Text(waterKey.localized)
+                ForEach(WaterType.allCases, id: \.self) { water in
+                    Text(water.localizedText)
+                        .lineLimit(1)
                 }
             }, header: {
-                Text("WaterLevel")
+                Text("Water")
             })
             Section(content: {
-                ForEach(EventKey.allCases, id: \.self) { eventKey in
-                    Text(eventKey.localized)
+                ForEach(WeaponType.allCases, id: \.self) { weapon in
+                    Text(weapon.localizedText)
+                        .lineLimit(1)
                 }
             }, header: {
-                Text("EventType")
+                Text("Weapon")
+            })
+            Section(content: {
+                ForEach(SpecialType.allCases, id: \.self) { special in
+                    Text(special.localizedText)
+                        .lineLimit(1)
+                }
+            }, header: {
+                Text("Special")
+            })
+            Section(content: {
+                ForEach(SakelienType.allCases, id: \.self) { sakelien in
+                    Text(sakelien.localizedText)
+                        .lineLimit(1)
+                }
+            }, header: {
+                Text("Sakelien")
             })
         })
         .navigationTitle("Messages")

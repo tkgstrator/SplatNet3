@@ -45,8 +45,8 @@ public class SplatNet2 {
         public let dangerRate: Double
         /// バイトボーナス
         public let jobBonus: Int?
-        /// 支給ブキ一覧
-        public let weaponLists: [WeaponType]
+        /// スケジュール
+        public let schedule: Schedule
 
         public init(from response: CoopResult.Response) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
@@ -71,13 +71,23 @@ public class SplatNet2 {
             self.rule = result.afterGrade?.id == nil ? Rule.PRIVATE : Rule.REGULAR
             self.scale = [result.scale?.bronze, result.scale?.silver, result.scale?.gold]
             self.jobResult = JobResult(from: result)
-            self.weaponLists = result.weapons.compactMap({ WeaponType(id: $0.id)})
+            self.schedule = Schedule(from: result)
         }
     }
 
     public enum Rule: String, Codable, CaseIterable {
         case REGULAR    = "REGULAR"
         case PRIVATE    = "PRIVATE"
+    }
+
+    public struct Schedule: Codable {
+        public let weaponLists: [WeaponType]
+        public let stage: StageType
+
+        public init(from result: CoopResult.CoopHistoryDetail) {
+            self.weaponLists = result.weapons.compactMap({ WeaponType(id: $0.id) })
+            self.stage = StageType(id: result.coopStage.id) ?? StageType.Unknown
+        }
     }
 
     public struct JobResult: Codable {
@@ -157,16 +167,16 @@ public class SplatNet2 {
 
     public struct WaveResult: Codable {
         public let id: Int
-        public let waterLevel: Int
-        public let eventType: Int
+        public let waterLevel: WaterType
+        public let eventType: EventType
         public let goldenIkuraNum: Int?
         public let quotaNum: Int?
         public let goldenIkuraPopNum: Int
 
         public init(from result: CoopResult.WaveResult) {
             self.id = result.waveNumber
-            self.waterLevel = result.waterLevel
-            self.eventType = result.eventWave?.id ?? 0
+            self.waterLevel = WaterType(id: result.waterLevel) ?? WaterType.Middle_Tide
+            self.eventType = EventType(id: result.eventWave?.id) ?? EventType.Water_Levels
             self.goldenIkuraNum = result.teamDeliverCount
             self.quotaNum = result.deliverNorm
             self.goldenIkuraPopNum = result.goldenPopCount

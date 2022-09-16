@@ -112,8 +112,11 @@ if __name__=="__main__":
         data: CoopResult = CoopResult.from_json(f.read())
         enemy: list[EnemyResult] = data.data.coopHistoryDetail.enemyResults
         enemy: list[str] = list(map(lambda x: f"\"{get_hash(x.enemy.image.url)}\" = \"{x.enemy.name}\";\n", enemy))
+        if data.data.coopHistoryDetail.bossResult is not None:
+          boss: BossResult = data.data.coopHistoryDetail.bossResult
+          enemy.push(f"{get_hash(boss.boss.image)} = \"{boss.boss.name}\";\n")
+          
         myResult: MyResult = data.data.coopHistoryDetail.myResult
-
         enemies.append(enemy)
     
     enemies = sum(enemies, [])

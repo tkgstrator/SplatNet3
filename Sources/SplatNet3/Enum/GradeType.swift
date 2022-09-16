@@ -64,13 +64,13 @@ public enum GradeId: Int, CaseIterable {
 public enum GradeKey: String, CaseIterable {
     var sha256Hash: String { rawValue }
 
-    case Apprentice             = "e644f83d679df0bb7325778eaeffba7251eb44583a3a58266263699194ab1f74"
-    case Part_Timer             = "f17aafa283b87ec7837a4cea5e81591ea652b46d17de8ce6c65c638fbe98cf61"
-    case Go_Getter              = "7261f66673725c3ef70dc285ee4b5419c0983f8728d67da61e17218eafd0528f"
-    case Overachiever           = "8b571d53feec3adf98d112cb5e17d17b1d0663307bedf2cbdc1b607eafc336e3"
-    case Profreshional          = "f6c91ebc8d14c8963c59286e456ce3f8f68f6414b8ee516bf5137a84e7777021"
-    case Profreshional_1        = "d2a5d5aba604e96d2dc9f10c4b6503719b78d10c0279b5c0a78eeb2b9b49c879"
-    case Profreshional_2        = "07d3c2ff1fea04e52aede9c793f12b988117ed667fcef5c7a061c10c101221ac"
-    case Profreshional_3        = "1a1d337ff77cca15924aa4c399ff5eea03e93451fd7eb41924f4bf84ad654231"
-    case Eggsecutive_VP         = "6e0208ab214e8c72006bc04c6a84fd1695c2d309265572b490b40e87064a5160"
+    case Apprentice             = "b4f1e5a491aa8f1952352fb4831a4e6a82817bc1179b51739928c6c5a1deb484"
+    case Part_Timer             = "a7d6f7f0e87585179ae1e746afef2b67af4eddabd90cb06e1fe9761aef1cce07"
+    case Go_Getter              = "8ced40cefb44e796793d62be1647ee6dd8b16ff92dec956aaebc96efdae9f112"
+    case Overachiever           = "8de95a5c09c429d4a508124c1792240b1559224e21f5450fa6c0776939b85287"
+    case Profreshional          = "ac6997f9bc8f0852d0df6f70137d09f3154dc271c1b9f670dbd1570d69dc8e3a"
+    case Profreshional_1        = "533d5cce4a7efad282acfbbf2188e92653cc91232dfd55d1b0053d9c1aaa51da"
+    case Profreshional_2        = "97aef457a99b051b0ec454e0e44f038d4acce212f82fd6a968f4206e949bbed2"
+    case Profreshional_3        = "ee9651050a08fe058782eea37b988dfe7466760ca4dbb84acb45b19bc1c8476e"
+    case Eggsecutive_VP         = "0c80649527617f716da3ce8142a0924c37cfe598b43da69c2721b7899487b5fc"
 }

@@ -6,13 +6,11 @@
 //
 
 import SwiftUI
+import SwiftyUI
 import SplatNet2
 import SplatNet3
-import SwiftyUI
 
 struct ContentView: View {
-    private let session: SplatNet2 = SplatNet2()
-
     var body: some View {
         NavigationView(content: {
             Form(content: {
@@ -25,13 +23,6 @@ struct ContentView: View {
                     })
                 }, header: {
                     Text("Localized")
-                })
-                Section(content: {
-                    ForEach(session.accounts, id: \.self) { account in
-                        Text(account.nickname)
-                    }
-                }, header: {
-                    Text("Accounts")
                 })
                 Section(content: {
                     SP2Auth(session: SplatNet2())
