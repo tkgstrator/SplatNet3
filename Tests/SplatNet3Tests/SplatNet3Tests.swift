@@ -26,7 +26,7 @@ final class SplatNetTests: XCTestCase {
             bulletToken: bulletToken,
             sessionToken: sessionToken,
             splatoonToken: splatoonToken,
-            timeInterval: 60
+            timeInterval: 0
         )
         let session: SplatNet3 = SplatNet3(account: account)
         let results: CoopSummary.Response = try await session.publish(CoopSummary())
@@ -72,13 +72,15 @@ final class SplatNetTests: XCTestCase {
             let accessToken: AccessToken.Response = try await session.getAccessToken(sessionToken: sessionToken)
             XCTAssertEqual(900, accessToken.expiresIn)
             XCTAssertEqual("Bearer", accessToken.tokenType)
-            let splatoonToken: SplatoonToken.Response = try await session.getSplatoonToken(accessToken: accessToken, version: version)
+            let iminkNSO: Imink.Response = try await session.getIminkToken(accessToken: accessToken)
+            let splatoonToken: SplatoonToken.Response = try await session.getSplatoonToken(accessToken: accessToken, imink: iminkNSO, version: version)
             XCTAssertEqual(0, splatoonToken.status)
             XCTAssertEqual(7200, splatoonToken.result.webApiServerCredential.expiresIn)
             XCTAssertEqual(3600, splatoonToken.result.firebaseCredential.expiresIn)
             XCTAssertEqual(5144807127416832, splatoonToken.result.user.id)
             XCTAssertEqual("53b484d29d9e67d1", splatoonToken.result.user.nsaId)
-            let splatoonAccessToken: SplatoonAccessToken.Response = try await session.getSplatoonAccessToken(accessToken: splatoonToken, version: version)
+            let iminkAPP: Imink.Response = try await session.getIminkToken(accessToken: splatoonToken)
+            let splatoonAccessToken: SplatoonAccessToken.Response = try await session.getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
             XCTAssertEqual(0, splatoonAccessToken.status)
             let bulletToken: BulletToken.Response = try await session.getBulletToken(accessToken: splatoonAccessToken)
             XCTAssertNotNil(bulletToken.bulletToken)
@@ -89,4 +91,126 @@ final class SplatNetTests: XCTestCase {
         }
         return
     }
+
+    /// エラーを返すテスト
+    /// XProduct-Versionが低い場合、427エラーを返す
+    func testCookieWithVersion() async throws {
+        do {
+            let version: String = "2.1.0"
+            let accessToken: AccessToken.Response = try await session.getAccessToken(sessionToken: sessionToken)
+            XCTAssertEqual(900, accessToken.expiresIn)
+            XCTAssertEqual("Bearer", accessToken.tokenType)
+            let iminkNSO: Imink.Response = try await session.getIminkToken(accessToken: accessToken)
+            let splatoonToken: SplatoonToken.Response = try await session.getSplatoonToken(accessToken: accessToken, imink: iminkNSO, version: version)
+            XCTAssertEqual(0, splatoonToken.status)
+            XCTAssertEqual(7200, splatoonToken.result.webApiServerCredential.expiresIn)
+            XCTAssertEqual(3600, splatoonToken.result.firebaseCredential.expiresIn)
+            XCTAssertEqual(5144807127416832, splatoonToken.result.user.id)
+            XCTAssertEqual("53b484d29d9e67d1", splatoonToken.result.user.nsaId)
+            let iminkAPP: Imink.Response = try await session.getIminkToken(accessToken: splatoonToken)
+            let splatoonAccessToken: SplatoonAccessToken.Response = try await session.getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
+            XCTAssertEqual(0, splatoonAccessToken.status)
+            let bulletToken: BulletToken.Response = try await session.getBulletToken(accessToken: splatoonAccessToken)
+            XCTAssertNotNil(bulletToken.bulletToken)
+            debugPrint(bulletToken.bulletToken)
+        } catch (let error) {
+            if let failure = error.asNXError {
+                print(failure)
+                XCTAssertEqual(failure.statusCode, 427)
+                return
+            }
+            throw error
+        }
+        return
+    }
+
+    /// エラーを返すテスト
+    /// Fが誤っていると、403エラーを返す
+    func testCookieWithF() async throws {
+        do {
+            guard let result: XVersion.Information = (try await session.getVersion()).results.first else {
+                throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: 404))
+            }
+            let version: String = result.version
+            let accessToken: AccessToken.Response = try await session.getAccessToken(sessionToken: sessionToken)
+            XCTAssertEqual(900, accessToken.expiresIn)
+            XCTAssertEqual("Bearer", accessToken.tokenType)
+            let response: Imink.Response = try await session.getIminkToken(accessToken: accessToken)
+            let iminkNSO: Imink.Response = Imink.Response(f: String(response.f.shuffled()), requestId: response.requestId, timestamp: response.timestamp)
+            let splatoonToken: SplatoonToken.Response = try await session.getSplatoonToken(accessToken: accessToken, imink: iminkNSO, version: version)
+            XCTAssertEqual(0, splatoonToken.status)
+            XCTAssertEqual(7200, splatoonToken.result.webApiServerCredential.expiresIn)
+            XCTAssertEqual(3600, splatoonToken.result.firebaseCredential.expiresIn)
+            XCTAssertEqual(5144807127416832, splatoonToken.result.user.id)
+            XCTAssertEqual("53b484d29d9e67d1", splatoonToken.result.user.nsaId)
+            let iminkAPP: Imink.Response = try await session.getIminkToken(accessToken: splatoonToken)
+            let splatoonAccessToken: SplatoonAccessToken.Response = try await session.getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
+            XCTAssertEqual(0, splatoonAccessToken.status)
+            let bulletToken: BulletToken.Response = try await session.getBulletToken(accessToken: splatoonAccessToken)
+            XCTAssertNotNil(bulletToken.bulletToken)
+            debugPrint(bulletToken.bulletToken)
+        } catch (let error) {
+            if let failure = error.asNXError {
+                print(failure)
+                XCTAssertEqual(failure.statusCode, 403)
+                return
+            }
+            throw error
+        }
+        return
+    }
+
+    /// エラーを返すテスト
+    /// タイムスタンプがズレていると、500エラーが返る
+    func testCookieWithTimestamp() async throws {
+        do {
+            guard let result: XVersion.Information = (try await session.getVersion()).results.first else {
+                throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: 404))
+            }
+            let version: String = result.version
+            let accessToken: AccessToken.Response = try await session.getAccessToken(sessionToken: sessionToken)
+            XCTAssertEqual(900, accessToken.expiresIn)
+            XCTAssertEqual("Bearer", accessToken.tokenType)
+            let responseNSO: Imink.Response = try await session.getIminkToken(accessToken: accessToken)
+            let iminkNSO: Imink.Response = Imink.Response(f: responseNSO.f, requestId: responseNSO.requestId, timestamp: 0)
+            let splatoonToken: SplatoonToken.Response = try await session.getSplatoonToken(accessToken: accessToken, imink: iminkNSO, version: version)
+            XCTAssertEqual(0, splatoonToken.status)
+            XCTAssertEqual(7200, splatoonToken.result.webApiServerCredential.expiresIn)
+            XCTAssertEqual(3600, splatoonToken.result.firebaseCredential.expiresIn)
+            XCTAssertEqual(5144807127416832, splatoonToken.result.user.id)
+            XCTAssertEqual("53b484d29d9e67d1", splatoonToken.result.user.nsaId)
+            let responseAPP: Imink.Response = try await session.getIminkToken(accessToken: accessToken)
+            let iminkAPP: Imink.Response = Imink.Response(f: responseAPP.f, requestId: responseAPP.requestId, timestamp: 0)
+            let splatoonAccessToken: SplatoonAccessToken.Response = try await session.getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
+            XCTAssertEqual(0, splatoonAccessToken.status)
+            let bulletToken: BulletToken.Response = try await session.getBulletToken(accessToken: splatoonAccessToken)
+            XCTAssertNotNil(bulletToken.bulletToken)
+            debugPrint(bulletToken.bulletToken)
+        } catch (let error) {
+            if let failure = error.asNXError {
+                print(failure)
+                XCTAssertEqual(failure.statusCode, 403)
+                return
+            }
+            throw error
+        }
+        return
+    }
+    /// エラーを返すテスト
+    /// セッショントークンが誤っている場合、400エラーを返す
+    func testCookieWithSessionToken() async throws {
+        do {
+            let accessToken: AccessToken.Response = try await session.getAccessToken(sessionToken: "")
+            XCTAssertEqual(900, accessToken.expiresIn)
+        } catch (let error) {
+            if let failure = error.asNXError {
+                print(failure)
+                XCTAssertEqual(failure.statusCode, 400)
+                return
+            }
+            throw error
+        }
+        return
+    }
 }
+

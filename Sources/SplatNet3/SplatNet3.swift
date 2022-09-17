@@ -11,7 +11,7 @@ import Alamofire
 import Common
 import KeychainAccess
 
-public class SplatNet3: Authenticator {
+open class SplatNet3: Authenticator {
     public var account: UserInfo? = nil
 
     private let keychain: Keychain = Keychain(service: "SPLATNET")
@@ -36,10 +36,31 @@ public class SplatNet3: Authenticator {
 
     public let version: String = "1.0.0-5e2bcdfb"
 
-    public init() {}
+    public init() {
+        let accounts: [UserInfo] = keychain.get()
+        if !accounts.isEmpty {
+            print(accounts.count)
+            self.account = accounts.first
+        }
+    }
 
     public init(account: UserInfo) {
         self.account = account
+    }
+
+    /// リザルト取得
+    open func getCoopResult(id: String) async throws -> SplatNet2.Result {
+        let request: CoopResult = CoopResult(id: id)
+        let result: CoopResult.Response = try await publish(request)
+        return result.asSplatNet2()
+    }
+
+    /// リザルト全件取得
+    open func getCoopResults() async throws -> [SplatNet2.Result] {
+        let summary: CoopSummary.Response = try await getCoopSummary()
+        let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })
+        let results: [SplatNet2.Result] = try await ids.asyncMap({ (try await publish(CoopResult(id: $0))).asSplatNet2() })
+        return results
     }
 }
 

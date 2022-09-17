@@ -34,10 +34,14 @@ extension SplatNet3 {
         let version: String = result.version
         // アクセストークン
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
+        // F
+        let iminkNSO: Imink.Response = try await getIminkToken(accessToken: accessToken)
         // スプラトゥーントークン
-        let splatoonToken: SplatoonToken.Response = try await getSplatoonToken(accessToken: accessToken, version: version)
+        let splatoonToken: SplatoonToken.Response = try await getSplatoonToken(accessToken: accessToken, imink: iminkNSO, version: version)
+        // F
+        let iminkAPP: Imink.Response = try await getIminkToken(accessToken: splatoonToken)
         // スプラトゥーンアクセストークン
-        let splatoonAccessToken: SplatoonAccessToken.Response = try await getSplatoonAccessToken(accessToken: splatoonToken, version: version)
+        let splatoonAccessToken: SplatoonAccessToken.Response = try await getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
         // イカスミセッション
         let bulletToken: BulletToken.Response = try await getBulletToken(accessToken: splatoonAccessToken)
 
@@ -79,15 +83,13 @@ extension SplatNet3 {
     }
 
     /// スプラトゥーントークン取得
-    internal func getSplatoonToken(accessToken: AccessToken.Response, version: String) async throws -> SplatoonToken.Response {
-        let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
+    internal func getSplatoonToken(accessToken: AccessToken.Response, imink: Imink.Response, version: String) async throws -> SplatoonToken.Response {
         let request: SplatoonToken = SplatoonToken(imink: imink, accessToken: accessToken.accessToken, version: version)
         return try await authorize(request)
     }
 
     /// スプラトゥーンアクセストークン取得
-    internal func getSplatoonAccessToken(accessToken: SplatoonToken.Response, version: String) async throws -> SplatoonAccessToken.Response {
-        let imink: Imink.Response = try await getIminkToken(accessToken: accessToken)
+    internal func getSplatoonAccessToken(accessToken: SplatoonToken.Response, imink: Imink.Response, version: String) async throws -> SplatoonAccessToken.Response {
         let request: SplatoonAccessToken = SplatoonAccessToken(imink: imink, accessToken: accessToken, version: version, authType: .SP3)
         return try await authorize(request)
     }

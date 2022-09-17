@@ -10,7 +10,7 @@
 import Foundation
 
 public enum StageType: RawRepresentables {
-    init?(id: Int?) {
+    public init?(id: Int?) {
         if let id = id {
             self.init(StageId(rawValue: id))
         }
@@ -18,19 +18,19 @@ public enum StageType: RawRepresentables {
         return nil
     }
 
-    init?(id: Int) {
+    public init?(id: Int) {
         self.init(StageId(rawValue: id))
     }
 
-    init?(hash: String) {
+    public init?(hash: String) {
         self.init(StageKey(rawValue: hash))
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<StageId, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<StageId, V>) -> V? {
       self[keyPath]
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<StageKey, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<StageKey, V>) -> V? {
       self[keyPath]
     }
 
@@ -46,6 +46,8 @@ public enum StageType: RawRepresentables {
 }
 
 public enum StageId: Int, CaseIterable {
+    public var id: Int { rawValue }
+    
     case Unknown        = -1
     case Tutorial       = 0
     case Shakeup        = 1
@@ -54,7 +56,7 @@ public enum StageId: Int, CaseIterable {
 }
 
 public enum StageKey: String, CaseIterable {
-    var sha256Hash: String { rawValue }
+    public var sha256Hash: String { rawValue }
 
     case Unknown        = "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
     case Tutorial       = "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037"

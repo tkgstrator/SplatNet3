@@ -11,8 +11,17 @@ import BetterSafariView
 import Common
 import Alamofire
 
+struct Failure: LocalizedError {
+    let errorDescription: String?
+    let failureReason: String?
+    let recoverySuggestion: String?
+    let helpAnchor: String?
+}
+
 public struct Authorize: ViewModifier {
-    @Binding var isPresented: Bool
+    @Binding private var isPresented: Bool
+    @State private var isPresentedError: Bool = false
+    @State private var failure: Failure? = nil
     let session: SplatNet3
     let state: String = String.randomString
     let verifier: String = String.randomString
@@ -33,10 +42,36 @@ public struct Authorize: ViewModifier {
                     }
 
                     Task {
-                        let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
-                        try session.add(account)
+                        do {
+                            let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
+                            try session.set(account)
+                            session.account = account
+                        } catch (let error) {
+                            if let failureResponse: FailureResponse = error.asNXError {
+                                failure = Failure(
+                                    errorDescription: failureResponse.errorDescription,
+                                    failureReason: failureResponse.failureReason,
+                                    recoverySuggestion: failureResponse.recoverySuggestion,
+                                    helpAnchor: failureResponse.helpAnchor
+                                )
+                            }
+                        }
                     }
                 })
+            })
+            .alert(isPresented: $isPresentedError,
+                   error: failure,
+                   actions: { error in
+                if let suggestion = error.recoverySuggestion {
+                    Button(suggestion, action: {
+                    })
+                }
+            }, message: { error in
+                if let failureReason = error.failureReason {
+                    Text(failureReason)
+                } else {
+                    Text("Unknown Error")
+                }
             })
     }
 }
@@ -46,3 +81,4 @@ public extension View {
         self.modifier(Authorize(isPresented: isPresented, session: session))
     }
 }
+

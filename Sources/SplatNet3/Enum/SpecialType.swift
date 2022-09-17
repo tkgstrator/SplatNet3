@@ -9,19 +9,19 @@
 import Foundation
 
 public enum SpecialType: RawRepresentables {
-    init?(id: Int) {
+    public init?(id: Int) {
         self.init(SpecialId(rawValue: id))
     }
 
-    init?(hash: String) {
+    public init?(hash: String) {
         self.init(SpecialKey(rawValue: hash))
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<SpecialId, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<SpecialId, V>) -> V? {
       self[keyPath]
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<SpecialKey, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<SpecialKey, V>) -> V? {
       self[keyPath]
     }
 
@@ -48,7 +48,7 @@ public enum SpecialType: RawRepresentables {
 }
 
 public enum SpecialId: Int, CaseIterable, Codable {
-    var id: Int { rawValue }
+    public var id: Int { rawValue }
     
     case SpUltraShot        = 1
     case SpNiceBall         = 20006
@@ -61,7 +61,7 @@ public enum SpecialId: Int, CaseIterable, Codable {
 }
 
 public enum SpecialKey: String, CaseIterable, Codable {
-    var sha256Hash: String { rawValue }
+    public var sha256Hash: String { rawValue }
     
     case SpUltraShot        = "7269f1fa71d746d7b86ca2a71fc24c6ea4c764077ee50d692f80eddeaff90f1d"
     case SpShockSonar       = "463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d"

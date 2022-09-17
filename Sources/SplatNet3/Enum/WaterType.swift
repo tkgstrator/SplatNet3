@@ -10,7 +10,7 @@
 import Foundation
 
 public enum WaterType: RawRepresentables {
-    init?(id: Int?) {
+    public init?(id: Int?) {
         if let id = id {
             self.init(WaterId(rawValue: id))
         }
@@ -18,19 +18,19 @@ public enum WaterType: RawRepresentables {
         return nil
     }
 
-    init?(id: Int) {
+    public init?(id: Int) {
         self.init(WaterId(rawValue: id))
     }
 
-    init?(hash: String) {
+    public init?(hash: String) {
         self.init(WaterKey(rawValue: hash))
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<WaterId, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<WaterId, V>) -> V? {
       self[keyPath]
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<WaterKey, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<WaterKey, V>) -> V? {
       self[keyPath]
     }
 
@@ -44,13 +44,14 @@ public enum WaterType: RawRepresentables {
 }
 
 public enum WaterId: Int, CaseIterable {
+    public var id: Int { rawValue }
     case Low_Tide
     case Middle_Tide
     case High_Tide
 }
 
 public enum WaterKey: String, CaseIterable {
-    var sha256Hash: String { rawValue }
+    public var sha256Hash: String { rawValue }
 
     #warning("データがないので仮割当")
     case Low_Tide       = "55d434662f0976490d8791b3242c1494022602b4e026a4d4804c8a880862bb3e"

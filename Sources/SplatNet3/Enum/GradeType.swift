@@ -10,27 +10,27 @@
 import Foundation
 
 public enum GradeType: RawRepresentables {
-    init?(id: Int?) {
-        if let id = id {
-            self.init(GradeId(rawValue: id))
+    public init?(id: Int?) {
+        if let rawValue = id {
+            self.init(id: rawValue)
+        } else {
+            return nil
         }
-
-        return nil
     }
 
-    init?(id: Int) {
+    public init?(id: Int) {
         self.init(GradeId(rawValue: id))
     }
 
-    init?(hash: String) {
+    public init?(hash: String) {
         self.init(GradeKey(rawValue: hash))
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<GradeId, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<GradeId, V>) -> V? {
       self[keyPath]
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<GradeKey, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<GradeKey, V>) -> V? {
       self[keyPath]
     }
 
@@ -50,15 +50,17 @@ public enum GradeType: RawRepresentables {
 }
 
 public enum GradeId: Int, CaseIterable {
-    case Apprentice
-    case Part_Timer
-    case Go_Getter
-    case Overachiever
-    case Profreshional
-    case Profreshional_1
-    case Profreshional_2
-    case Profreshional_3
-    case Eggsecutive_VP
+    public var id: Int { rawValue }
+
+    case Apprentice         = 0
+    case Part_Timer         = 1
+    case Go_Getter          = 2
+    case Overachiever       = 3
+    case Profreshional      = 4
+    case Profreshional_1    = 5
+    case Profreshional_2    = 6
+    case Profreshional_3    = 7
+    case Eggsecutive_VP     = 8
 }
 
 public enum GradeKey: String, CaseIterable {

@@ -12,7 +12,7 @@ public extension Encodable {
     func asString() throws -> String {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
-            encoder.keyEncodingStrategy = .convertToSnakeCase
+//            encoder.keyEncodingStrategy = .convertToSnakeCase
             return encoder
         }()
 
@@ -22,7 +22,7 @@ public extension Encodable {
     func asData() throws -> Data {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
-            encoder.keyEncodingStrategy = .convertToSnakeCase
+//            encoder.keyEncodingStrategy = .convertToSnakeCase
             return encoder
         }()
 

@@ -27,6 +27,12 @@ extension String {
             .replacingOccurrences(of: "/", with: "_")
     }
 
+    /// Base64文字列から復号する
+    public var base64DecodedString: String {
+        // swiftlint:disable:next force_unwrapping
+        String(data: Data(base64Encoded: self)!, encoding: .utf8)!
+    }
+
     /// HMAC-SHA256文字列に変換する
     public var codeChallenge: String {
         Data(SHA256.hash(data: Data(self.utf8))).base64EncodedString()

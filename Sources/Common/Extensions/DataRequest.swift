@@ -22,14 +22,15 @@ public extension DataRequest {
             DataRequest.ValidationResult(catching: {
                 if let data = data {
                     if let failure = try? decoder.decode(Failure.NSO.self, from: data) {
-                        throw AFError.responseValidationFailed(reason: .customValidationFailed(error: failure.errorDescription))
+                        throw failure
                     }
                     if let failure = try? decoder.decode(Failure.APP.self, from: data) {
-                        throw AFError.responseValidationFailed(reason: .customValidationFailed(error: failure.errorMessage))
+                        throw failure
                     }
                 }
                 if (response.statusCode < 200) || (response.statusCode >= 400) {
-                    throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: response.statusCode))
+                    let failure: Failure.API = Failure.API(statusCode: response.statusCode, failureReason: "Unacceptable status code", errorDescription: nil)
+                    throw failure
                 }
             })
         })

@@ -10,7 +10,7 @@
 import Foundation
 
 public enum EventType: RawRepresentables {
-    init?(id: Int?) {
+    public init?(id: Int?) {
         if let id = id {
             self.init(EventId(rawValue: id))
         }
@@ -18,19 +18,19 @@ public enum EventType: RawRepresentables {
         return nil
     }
 
-    init?(id: Int) {
+    public init?(id: Int) {
         self.init(EventId(rawValue: id))
     }
 
-    init?(hash: String) {
+    public init?(hash: String) {
         self.init(EventKey(rawValue: hash))
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<EventId, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<EventId, V>) -> V? {
       self[keyPath]
     }
 
-    subscript<V>(dynamicMember keyPath: KeyPath<EventKey, V>) -> V? {
+    public subscript<V>(dynamicMember keyPath: KeyPath<EventKey, V>) -> V? {
       self[keyPath]
     }
 
@@ -50,6 +50,7 @@ public enum EventType: RawRepresentables {
 }
 
 public enum EventId: Int, CaseIterable {
+    public var id: Int { rawValue }
     case Water_Levels
     case Rush
     case Goldie_Seeking
@@ -62,7 +63,7 @@ public enum EventId: Int, CaseIterable {
 }
 
 public enum EventKey: String, CaseIterable {
-    var sha256Hash: String { rawValue }
+    public var sha256Hash: String { rawValue }
 
     case Water_Levels       = "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d"
     case Rush               = "82e6cc3e8eb8f0ab22d84eae813f3da61ebef0fa0d79faf66a6378c530a2f7eb"

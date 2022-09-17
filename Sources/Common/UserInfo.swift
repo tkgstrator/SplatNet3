@@ -18,7 +18,7 @@ public struct UserInfo: Codable {
         bulletToken: String?, // For Splatoon3
         sessionToken: String,
         splatoonToken: String,
-        timeInterval: Double = 60 * 60 * 24
+        timeInterval: Double = 60 * 60 * 1.5
     ) {
         self.nickname = nickname
         self.membership = membership

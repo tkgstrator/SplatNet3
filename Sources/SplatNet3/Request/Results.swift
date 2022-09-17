@@ -47,6 +47,14 @@ public class SplatNet2 {
         public let jobBonus: Int?
         /// スケジュール
         public let schedule: Schedule
+        /// 金イクラ納品数
+        public let goldenIkuraNum: Int
+        /// 金イクラアシスト納品数
+        public let goldenIkuraAssistNum: Int
+        /// イクラ納品数
+        public let ikuraNum: Int
+        /// オカシラメーター
+        public let smellMeter: Int?
 
         public init(from response: CoopResult.Response) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
@@ -72,6 +80,12 @@ public class SplatNet2 {
             self.scale = [result.scale?.bronze, result.scale?.silver, result.scale?.gold]
             self.jobResult = JobResult(from: result)
             self.schedule = Schedule(from: result)
+            self.smellMeter = result.smellMeter
+
+            let players: [CoopResult.PlayerResult] = [result.myResult] + result.memberResults
+            self.ikuraNum = players.map({ $0.deliverCount }).reduce(0, +)
+            self.goldenIkuraNum = players.map({ $0.goldenDeliverCount }).reduce(0, +)
+            self.goldenIkuraAssistNum = players.map({ $0.goldenAssistCount }).reduce(0, +)
         }
     }
 
@@ -137,7 +151,7 @@ public class SplatNet2 {
         public let deadCount: Int
         public let helpCount: Int
         public let weaponList: [WeaponType]
-        public let special: Int
+        public let special: SpecialType
         public let specialCounts: [Int]
         public let bossKillCounts: [Int]
         public let bossKillCountsTotal: Int
@@ -146,7 +160,7 @@ public class SplatNet2 {
         public init(from player: CoopResult.PlayerResult, enemies: [CoopResult.EnemyResult], counts: [[Int]]) {
             let specialId: Int = player.specialWeapon.id
 
-            self.id = player.player.id
+            self.id = player.player.id.base64DecodedString
             self.nameId = player.player.nameID
             self.name = player.player.name
             self.byname = player.player.byname
@@ -155,7 +169,7 @@ public class SplatNet2 {
             self.goldenIkuraNum = player.goldenDeliverCount
             self.deadCount = player.rescuedCount
             self.helpCount = player.rescueCount
-            self.special = specialId
+            self.special = SpecialType(id: specialId) ?? SpecialType.SpUltraShot
             self.weaponList = player.weapons.compactMap({ WeaponType(id: $0.id) })
             self.bossKillCountsTotal = player.defeatEnemyCount
             self.bossKillCounts = player.player.isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)
