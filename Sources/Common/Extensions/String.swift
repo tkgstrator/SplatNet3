@@ -27,6 +27,17 @@ extension String {
             .replacingOccurrences(of: "/", with: "_")
     }
 
+    public var sha256Hash: String {
+        NSLocalizedString(
+            SHA256
+               .hash(data: self.data(using: .utf8)!)
+               .compactMap({ String(format: "%02x", $0) })
+               .joined(),
+            bundle: .main,
+            comment: ""
+        )
+    }
+
     /// Base64文字列から復号する
     public var base64DecodedString: String {
         // swiftlint:disable:next force_unwrapping
