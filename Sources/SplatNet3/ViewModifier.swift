@@ -17,11 +17,13 @@ private struct Authorize: ViewModifier {
     let state: String = String.randomString
     let verifier: String = String.randomString
     let oauthURL: URL
+    let onDismiss: () -> Void
 
-    public init(isPresented: Binding<Bool>, session: SplatNet3) {
+    public init(isPresented: Binding<Bool>, session: SplatNet3, onDismiss: @escaping () -> Void = {}) {
         self._isPresented = isPresented
         self.oauthURL = URL(state: state, verifier: verifier)
         self.session = session
+        self.onDismiss = onDismiss
     }
 
     public func body(content: Content) -> some View {
@@ -36,6 +38,7 @@ private struct Authorize: ViewModifier {
                         let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
                         try session.set(account)
                         session.account = account
+                        onDismiss()
                     }
                 })
             })
@@ -45,6 +48,10 @@ private struct Authorize: ViewModifier {
 public extension View {
     func authorize(isPresented: Binding<Bool>, session: SplatNet3) -> some View {
         self.modifier(Authorize(isPresented: isPresented, session: session))
+    }
+
+    func authorize(isPresented: Binding<Bool>, session: SplatNet3, onDismiss: @escaping () -> Void) -> some View {
+        self.modifier(Authorize(isPresented: isPresented, session: session, onDismiss: onDismiss))
     }
 }
 

@@ -51,13 +51,19 @@ open class SplatNet3: Authenticator {
     open func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
         return try await session.request(request)
             .cURLDescription(calling: { request in
-#if DEBUG
+                #if DEBUG
                 print(request)
-#endif
+                #endif
             })
             .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
+    }
+
+    /// 概要取得
+    open func getCoopSummary() async throws -> CoopSummary.Response {
+        let request: CoopSummary = CoopSummary()
+        return try await publish(request)
     }
 
     /// リザルト取得
@@ -68,11 +74,37 @@ open class SplatNet3: Authenticator {
     }
 
     /// リザルト全件取得
-    open func getCoopResults() async throws -> [SplatNet2.Result] {
+    open func getCoopResultIds(resultId: String? = nil) async throws -> [String] {
         let summary: CoopSummary.Response = try await getCoopSummary()
+
+        //
         let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })
-        let results: [SplatNet2.Result] = try await ids.asyncMap({ (try await publish(CoopResult(id: $0))).asSplatNet2() })
-        return results
+
+        // リザルトIDが指定されていれば、そのIDよりも大きい値を返す
+        if let resultId = resultId {
+            return ids.filter({ $0.playTime > resultId.playTime })
+        }
+        return ids
+    }
+}
+
+extension String {
+    var playTime: Int {
+        let formatter: ISO8601DateFormatter = {
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [
+                .withDay,
+                .withMonth,
+                .withYear,
+                .withTime,
+            ]
+            return formatter
+        }()
+        if let playTime: String = self.base64DecodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
+           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
+            return Int(timeInterval)
+        }
+        return 0
     }
 }
 

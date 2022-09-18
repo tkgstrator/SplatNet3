@@ -10,11 +10,6 @@ import Foundation
 import Alamofire
 
 extension SplatNet3 {
-    /// 概要取得
-    public func getCoopSummary() async throws -> CoopSummary.Response {
-        let request: CoopSummary = CoopSummary()
-        return try await publish(request)
-    }
 }
 
 public extension Sequence {

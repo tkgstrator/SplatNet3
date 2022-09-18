@@ -33,9 +33,10 @@ extension SplatNet3 {
         Task { [weak self] in
             do {
                 let response: UserInfo = try await refreshToken(sessionToken: credential.sessionToken)
-                print(response)
                 // アカウント情報を上書きする
                 account = response
+                // アカウント情報を書き込みする
+                try set(response)
                 completion(.success(response.credential))
             } catch(let error) {
                 completion(.failure(error))
