@@ -35,7 +35,7 @@ public enum WaterType: RawRepresentables {
     }
 
     public var localizedText: String {
-        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
+        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .main, comment: "")
     }
 
     case Low_Tide
