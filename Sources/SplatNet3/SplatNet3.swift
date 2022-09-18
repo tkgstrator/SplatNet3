@@ -48,6 +48,18 @@ open class SplatNet3: Authenticator {
         self.account = account
     }
 
+    open func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
+        return try await session.request(request)
+            .cURLDescription(calling: { request in
+#if DEBUG
+                print(request)
+#endif
+            })
+            .validationWithNXError()
+            .serializingDecodable(T.ResponseType.self, decoder: decoder)
+            .value
+    }
+
     /// リザルト取得
     open func getCoopResult(id: String) async throws -> SplatNet2.Result {
         let request: CoopResult = CoopResult(id: id)

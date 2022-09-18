@@ -11,18 +11,6 @@ import Alamofire
 import Common
 
 extension SplatNet3 {
-    internal func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        return try await session.request(request)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
-            .validationWithNXError()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
-    }
-
     /// イカスミセッションをセッショントークンから取得
     internal func refreshToken(sessionToken: String) async throws -> UserInfo {
         // AppStoreから最新のバージョンを取得

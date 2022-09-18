@@ -16,7 +16,7 @@ extension SplatNet3 {
         // 選択されているアカウントから認証情報を取得
         let credential: OAuthCredential = try {
             guard let account = account else {
-                throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.account))
+                throw Failure.API(error: NXError.API.account)
             }
             return account.credential
         }()

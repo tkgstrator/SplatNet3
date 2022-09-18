@@ -12,7 +12,7 @@ import Alamofire
 /// エラーを受け取るプロトコル
 public protocol FailureResponse: LocalizedError, Codable {
     /// エラー内容
-    var localizedDescription : String? { get }
+    var errorDescription : String? { get }
 
     /// エラー理由
     var failureReason: String? { get }
@@ -25,54 +25,59 @@ public protocol FailureResponse: LocalizedError, Codable {
 public enum Failure {
     /// NSO用のエラーレスポンス
     public struct NSO: FailureResponse {
-        public let errorDescription: NXError.NSO
-        public let error: String
-        public var localizedDescription: String? {
-            NSLocalizedString(error, bundle: .module, comment: "")
-        }
-        public var failureReason: String? {
-            NSLocalizedString(errorDescription.rawValue, bundle: .module, comment: "")
-        }
-        /// ステータスコード
-        /// NSOのエラーは全て400っぽい
-        public var statusCode: Int {
-            return 400
+        public var errorDescription: String?
+        public var failureReason: String? = nil
+        public var statusCode: Int = 400
+        // 独自プロパティ
+        public let error: NXError.NSO
+
+        public init(error: NXError.NSO) {
+            self.error = error
+            self.errorDescription = NSLocalizedString(error.rawValue, bundle: .module, comment: "")
         }
     }
 
     /// APP用のエラーレスポンス
     public struct APP: FailureResponse {
+        public var errorDescription: String? {
+            print(errorMessage.rawValue)
+            print(NSLocalizedString(errorMessage.rawValue, comment: ""))
+            print(NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: ""))
+            print(NSLocalizedString(errorMessage.rawValue, bundle: .main, comment: ""))
+            return NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: "")
+        }
+        public var failureReason: String? = nil
+        public var statusCode: Int {
+            status - 9000
+        }
+        // 独自プロパティ
         public let errorMessage: NXError.APP
         public let status: Int
         public let correlationId: String
-        public var localizedDescription: String? {
-            NSLocalizedString(correlationId, bundle: .module, comment: "")
-        }
-        public var failureReason: String? {
-            NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: "")
-        }
-        /// ステータスコード
-        /// 何故か9000のオフセットがついているのでそれを考慮する
-        public var statusCode: Int {
-            status - 9000
+
+        public init(error: NXError.APP) {
+            self.errorMessage = error
+            self.status = 9999
+            self.correlationId = "Dummy data."
         }
     }
 
     /// API用のエラーレスポンス
     public struct API: FailureResponse {
-        public var localizedDescription: String?
-        public let failureReason: String?
-        public let statusCode: Int
+        public let errorDescription: String?
+        public var failureReason: String?
+        public var statusCode: Int
 
-        init(statusCode: Int, failureReason: String?, errorDescription: String?) {
-            self.localizedDescription = errorDescription
-            self.failureReason = {
-                if let failureReason = failureReason {
-                    return NSLocalizedString(failureReason, bundle: .module, comment: "")
-                }
-                return nil
-            }()
+        public init(statusCode: Int) {
+            self.errorDescription = "Unacceptable status code."
+            self.failureReason = "Unacceptable status code."
             self.statusCode = statusCode
+        }
+
+        public init(error: NXError.API) {
+            self.errorDescription = error.rawValue
+            self.failureReason = "Unacceptable status code."
+            self.statusCode = 400
         }
     }
 }

@@ -11,17 +11,8 @@ import BetterSafariView
 import Common
 import Alamofire
 
-struct Failure: LocalizedError {
-    let errorDescription: String?
-    let failureReason: String?
-    let recoverySuggestion: String?
-    let helpAnchor: String?
-}
-
-public struct Authorize: ViewModifier {
+private struct Authorize: ViewModifier {
     @Binding private var isPresented: Bool
-    @State private var isPresentedError: Bool = false
-    @State private var failure: Failure? = nil
     let session: SplatNet3
     let state: String = String.randomString
     let verifier: String = String.randomString
@@ -29,8 +20,8 @@ public struct Authorize: ViewModifier {
 
     public init(isPresented: Binding<Bool>, session: SplatNet3) {
         self._isPresented = isPresented
-        self.session = session
         self.oauthURL = URL(state: state, verifier: verifier)
+        self.session = session
     }
 
     public func body(content: Content) -> some View {
@@ -42,36 +33,11 @@ public struct Authorize: ViewModifier {
                     }
 
                     Task {
-                        do {
-                            let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
-                            try session.set(account)
-                            session.account = account
-                        } catch (let error) {
-                            if let failureResponse: FailureResponse = error.asNXError {
-                                failure = Failure(
-                                    errorDescription: failureResponse.errorDescription,
-                                    failureReason: failureResponse.failureReason,
-                                    recoverySuggestion: failureResponse.recoverySuggestion,
-                                    helpAnchor: failureResponse.helpAnchor
-                                )
-                            }
-                        }
+                        let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
+                        try session.set(account)
+                        session.account = account
                     }
                 })
-            })
-            .alert(isPresented: $isPresentedError,
-                   error: failure,
-                   actions: { error in
-                if let suggestion = error.recoverySuggestion {
-                    Button(suggestion, action: {
-                    })
-                }
-            }, message: { error in
-                if let failureReason = error.failureReason {
-                    Text(failureReason)
-                } else {
-                    Text("Unknown Error")
-                }
             })
     }
 }

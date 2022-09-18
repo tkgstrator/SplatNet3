@@ -11,6 +11,31 @@ import Alamofire
 
 extension Error {
     public var asNXError: FailureResponse? {
+        if let error: Failure.NSO = self as? Failure.NSO {
+            return error
+        }
+
+        if let error: Failure.APP = self as? Failure.APP {
+            return error
+        }
+
+        if let error: Failure.API = self as? Failure.API {
+            return error
+        }
+
+        if let error: NXError.NSO = self as? NXError.NSO {
+            return Failure.NSO(error: error)
+        }
+
+        if let error: NXError.APP = self as? NXError.APP {
+            return Failure.APP(error: error)
+        }
+
+        if let error: NXError.API = self as? NXError.API {
+            let statusCode: Int = self.asAFError?.responseCode ?? 400
+            return Failure.API(statusCode: statusCode)
+        }
+
         if let error: AFError = self.asAFError {
             switch error {
             case .createUploadableFailed(let error):
@@ -49,7 +74,7 @@ extension Error {
                 case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
                     return nil
                 case .unacceptableStatusCode(let code):
-                    return Failure.API(statusCode: code, failureReason: error.failureReason, errorDescription: error.errorDescription)
+                    return Failure.API(statusCode: code)
                 case .customValidationFailed(let error):
                     if let failure = error as? Failure.NSO {
                         return failure

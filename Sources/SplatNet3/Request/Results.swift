@@ -89,7 +89,8 @@ public class SplatNet2 {
         }
     }
 
-    public enum Rule: String, Codable, CaseIterable {
+    public enum Rule: String, Codable, CaseIterable, Identifiable {
+        public var id: String { rawValue }
         case REGULAR    = "REGULAR"
         case PRIVATE    = "PRIVATE"
     }

@@ -9,13 +9,8 @@
 import Alamofire
 import Foundation
 
-public protocol SPError: LocalizedError, Codable, RawRepresentable where RawValue == String {
-    var localizedDescription: String? { get }
-    var failureReason: String? { get }
-}
-
 public enum NXError {
-    public enum NSO: String, SPError, CaseIterable {
+    public enum NSO: String, CaseIterable, Codable {
         /// リクエストの内容が誤っている
         case request = "The request does not satisfy the schema"
         /// トークンコードが有効期限切れ
@@ -26,7 +21,7 @@ public enum NXError {
         case client  = "Client authentication failed"
     }
 
-    public enum APP: String, SPError, CaseIterable {
+    public enum APP: String, CaseIterable, Codable {
         /// リクエストが誤っている
         case request        = "Bad request."
         /// 要求されているバージョンよりも低い
@@ -41,42 +36,12 @@ public enum NXError {
         case unexpected     = "Unexpected Error."
     }
 
-    public enum API: String, SPError, CaseIterable {
+    public enum API: String, CaseIterable, Codable {
         /// 新しいコンテンツが存在しない
         case content        = "No contents."
         /// 有効でないレスポンス
         case response       = "Invalid response."
         /// 設定されているアカウントがない
         case account        = "No accounts."
-    }
-}
-
-extension NXError.NSO: LocalizedError {
-    public var localizedDescription: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
-    }
-
-    public var failureReason: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
-    }
-}
-
-extension NXError.APP: LocalizedError {
-    public var localizedDescription: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
-    }
-
-    public var failureReason: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
-    }
-}
-
-extension NXError.API: LocalizedError {
-    public var localizedDescription: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
-    }
-
-    public var failureReason: String? {
-        NSLocalizedString(rawValue, bundle: .module, comment: "")
     }
 }

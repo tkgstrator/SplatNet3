@@ -29,8 +29,7 @@ public extension DataRequest {
                     }
                 }
                 if (response.statusCode < 200) || (response.statusCode >= 400) {
-                    let failure: Failure.API = Failure.API(statusCode: response.statusCode, failureReason: "Unacceptable status code", errorDescription: nil)
-                    throw failure
+                    throw Failure.API(statusCode: response.statusCode)
                 }
             })
         })
