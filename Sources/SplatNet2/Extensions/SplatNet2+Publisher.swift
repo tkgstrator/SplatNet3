@@ -24,7 +24,7 @@ extension SplatNet2 {
               let url: URL = response.url,
               let iksmSession: String = HTTPCookie.cookies(withResponseHeaderFields: header, for: url).first?.value
         else {
-            throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.response))
+            throw Failure.API(error: NXError.API.content)
         }
         return IksmSession.Response(iksmSession: iksmSession, nsaid: nsaid)
     }
@@ -34,7 +34,7 @@ extension SplatNet2 {
         // 選択されているアカウントから認証情報を取得
         let credential: OAuthCredential = try {
             guard let account = account else {
-                throw AFError.responseValidationFailed(reason: .customValidationFailed(error: NXError.API.account))
+                throw Failure.API(error: NXError.API.account)
             }
             return account.credential
         }()

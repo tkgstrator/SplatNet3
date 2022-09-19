@@ -30,7 +30,10 @@ extension SplatNet3 {
         let iminkAPP: Imink.Response = try await getIminkToken(accessToken: splatoonToken)
         // スプラトゥーンアクセストークン
         let splatoonAccessToken: SplatoonAccessToken.Response = try await getSplatoonAccessToken(accessToken: splatoonToken, imink: iminkAPP, version: version)
-        // イカスミセッション
+        // WebVersionをアップデートしてみる(リアルタイムアップデートされる？)
+        try setVersion(version: try await getWebVersion())
+
+        // トークン
         let bulletToken: BulletToken.Response = try await getBulletToken(accessToken: splatoonAccessToken)
 
         return UserInfo(
@@ -38,6 +41,10 @@ extension SplatNet3 {
             splatoonToken: splatoonToken,
             bulletToken: bulletToken
         )
+    }
+
+    internal func getWebVersion() async throws -> WebVersion.Response {
+        return try await request(WebVersion())
     }
 
     /// バージョンを取得

@@ -22,8 +22,8 @@ internal class BulletToken: RequestType {
 
     init(accessToken: SplatoonAccessToken.Response, version: String) {
         self.headers = [
-            "x-web-view-ver": version,
-            "x-nacountry": "US",
+            "X-Web-View-Ver": version,
+            "X-NaCountry": "US",
             "X-GameWebToken": accessToken.result.accessToken,
         ]
     }

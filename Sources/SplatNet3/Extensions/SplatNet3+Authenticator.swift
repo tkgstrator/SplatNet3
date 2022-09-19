@@ -22,11 +22,9 @@ extension SplatNet3 {
     }
 
     public func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
-        print("Current Time", Date())
-        print("Expires Time", credential.expiration)
-        print("Is Available", credential.requiresRefresh)
         // トークンを設定
         urlRequest.headers.add(.authorization(bearerToken: credential.bulletToken ?? ""))
+        urlRequest.headers.add(.init(name: "X-Web-View-Ver", value: version))
     }
 
     public func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Swift.Result<OAuthCredential, Error>) -> Void) {

@@ -34,14 +34,21 @@ open class SplatNet3: Authenticator {
         return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
     }()
 
-    public let version: String = "1.0.0-5e2bcdfb"
+    /// WebVersion(ヘッダーに利用されるがどのように使われるのかは不明)
+    public var version: String {
+        get {
+            let version: WebVersion.Response = keychain.getVersion()
+            return "\(version.version)-\(version.hash)"
+        }
+
+        set {
+            let version: WebVersion.Response = WebVersion.Response(rawValue: newValue)
+            try? keychain.setVersion(version)
+        }
+    }
 
     public init() {
-        let accounts: [UserInfo] = keychain.get()
-        if !accounts.isEmpty {
-            print(accounts.count)
-            self.account = accounts.first
-        }
+        self.account =  keychain.get().first
     }
 
     public init(account: UserInfo) {
@@ -58,6 +65,19 @@ open class SplatNet3: Authenticator {
             .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
+    }
+
+    open func request(_ request: WebVersion) async throws -> WebVersion.Response {
+        let response: String = try await session.request(request)
+            .cURLDescription(calling: { request in
+                #if DEBUG
+                print(request)
+                #endif
+            })
+            .validationWithNXError()
+            .serializingString()
+            .value
+        return WebVersion.Response(from: response)
     }
 
     /// 概要取得
@@ -109,6 +129,11 @@ extension String {
 }
 
 extension SplatNet3 {
+    /// バージョン書き込み
+    public func setVersion(version: WebVersion.Response) throws {
+        try keychain.setVersion(version)
+    }
+
     /// アカウント新規追加
     public func set(_ account: UserInfo) throws {
         try keychain.set(account)

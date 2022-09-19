@@ -26,14 +26,12 @@ public extension GraphQL {
         "api/graphql"
     }
 
-    var version: Int {
-        1
+    var headers: [String : String]? {
+        nil
     }
 
-    var headers: [String: String]? {
-        [
-            "x-web-view-ver": "1.0.0-5e2bcdfb"
-        ]
+    var version: Int {
+        1
     }
 
     func asURLRequest() throws -> URLRequest {

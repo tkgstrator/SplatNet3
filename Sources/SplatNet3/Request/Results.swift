@@ -55,6 +55,8 @@ public class SplatNet2 {
         public let ikuraNum: Int
         /// オカシラメーター
         public let smellMeter: Int?
+        /// シナリオコード
+        public let scenarioCode: String?
 
         public init(from response: CoopResult.Response) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
@@ -81,6 +83,7 @@ public class SplatNet2 {
             self.jobResult = JobResult(from: result)
             self.schedule = Schedule(from: result)
             self.smellMeter = result.smellMeter
+            self.scenarioCode = result.scenarioCode
 
             let players: [CoopResult.PlayerResult] = [result.myResult] + result.memberResults
             self.ikuraNum = players.map({ $0.deliverCount }).reduce(0, +)
@@ -93,6 +96,7 @@ public class SplatNet2 {
         public var id: String { rawValue }
         case REGULAR    = "RULE_REGULAR"
         case PRIVATE    = "RULE_PRIVATE"
+        case CONTEST    = "RULE_CONTEST"
     }
 
     public struct Schedule: Codable {

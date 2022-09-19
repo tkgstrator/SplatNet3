@@ -53,7 +53,7 @@ public class CoopResult: GraphQL {
         public let playedTime: String
         public let coopStage: ImageRef
         public let dangerRate: Double
-//                public let scenarioCode: JSONNull?
+        public let scenarioCode: String?
         public let smellMeter: Int?
         public let weapons: [ImageRef]
         public let afterGradePoint: Int?
@@ -79,7 +79,7 @@ public class CoopResult: GraphQL {
             case playedTime = "playedTime"
             case coopStage = "coopStage"
             case dangerRate = "dangerRate"
-//            case scenarioCode = "scenarioCode"
+            case scenarioCode = "scenarioCode"
             case smellMeter = "smellMeter"
             case weapons = "weapons"
             case afterGradePoint = "afterGradePoint"
