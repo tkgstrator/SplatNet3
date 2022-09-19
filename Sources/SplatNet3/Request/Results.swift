@@ -156,14 +156,14 @@ public class SplatNet2 {
         public let deadCount: Int
         public let helpCount: Int
         public let weaponList: [WeaponType]
-        public let special: SpecialType
+        public let special: SpecialType?
         public let specialCounts: [Int]
         public let bossKillCounts: [Int]
         public let bossKillCountsTotal: Int
         public let species: CoopResult.Species
 
         public init(from player: CoopResult.PlayerResult, enemies: [CoopResult.EnemyResult], counts: [[Int]]) {
-            let specialId: Int = player.specialWeapon.id
+            let specialId: Int? = player.specialWeapon?.id
 
             self.id = player.player.id.base64DecodedString
             self.nameId = player.player.nameID
@@ -174,7 +174,12 @@ public class SplatNet2 {
             self.goldenIkuraNum = player.goldenDeliverCount
             self.deadCount = player.rescuedCount
             self.helpCount = player.rescueCount
-            self.special = SpecialType(id: specialId) ?? SpecialType.SpUltraShot
+            self.special = {
+                if let specialId = specialId {
+                    return SpecialType(id: specialId)
+                }
+                return nil
+            }()
             self.weaponList = player.weapons.compactMap({ WeaponType(id: $0.id) })
             self.bossKillCountsTotal = player.defeatEnemyCount
             self.bossKillCounts = player.player.isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)

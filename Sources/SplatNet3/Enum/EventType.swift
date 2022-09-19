@@ -13,9 +13,9 @@ public enum EventType: RawRepresentables {
     public init?(id: Int?) {
         if let id = id {
             self.init(EventId(rawValue: id))
+        } else {
+            return nil
         }
-
-        return nil
     }
 
     public init?(id: Int) {

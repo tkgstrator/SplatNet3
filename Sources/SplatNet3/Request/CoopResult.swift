@@ -112,7 +112,7 @@ public class CoopResult: GraphQL {
     public struct PlayerResult: Codable {
         public let player: ResultPlayer
         public let weapons: [ImageRef]
-        public let specialWeapon: ImageRef
+        public let specialWeapon: ImageRef?
         public let defeatEnemyCount: Int
         public let deliverCount: Int
         public let goldenAssistCount: Int

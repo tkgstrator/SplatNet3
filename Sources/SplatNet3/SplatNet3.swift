@@ -108,7 +108,7 @@ open class SplatNet3: Authenticator {
     }
 }
 
-extension String {
+public extension String {
     var playTime: Int {
         let formatter: ISO8601DateFormatter = {
             let formatter = ISO8601DateFormatter()
