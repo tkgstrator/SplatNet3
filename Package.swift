@@ -28,7 +28,8 @@ let package = Package(
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.6.2"),
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.2"),
         .package(url: "https://github.com/stleamist/BetterSafariView.git", from: "2.4.0"),
-        .package(url: "https://github.com/exyte/PopupView.git", from: "1.1.6")
+        .package(url: "https://github.com/exyte/PopupView.git", from: "1.1.6"),
+        .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", from: "1.9.6"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -39,7 +40,8 @@ let package = Package(
                 "Alamofire",
                 "KeychainAccess",
                 "BetterSafariView",
-                "PopupView"
+                "PopupView",
+                "SwiftyBeaver"
             ],
             resources: [.process("Resources")]),
         .target(

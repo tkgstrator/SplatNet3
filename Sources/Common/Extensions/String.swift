@@ -70,4 +70,23 @@ extension String {
             (self as NSString).substring(with: matched.range(at: group))
         }
     }
+
+    /// 文字列をBase64復号して遊んだ時間をUnixTimestampで返す
+    public var playTime: Int {
+        let formatter: ISO8601DateFormatter = {
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [
+                .withDay,
+                .withMonth,
+                .withYear,
+                .withTime,
+            ]
+            return formatter
+        }()
+        if let playTime: String = self.base64DecodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
+           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
+            return Int(timeInterval)
+        }
+        return 0
+    }
 }

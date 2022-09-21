@@ -10,12 +10,21 @@ import Foundation
 import Alamofire
 import Common
 import KeychainAccess
+import SwiftyBeaver
 
 open class SplatNet3: Authenticator {
+    /// SwiftyBeaverのログ管理
+    internal let logger: SwiftyBeaver.Type = SwiftyBeaver.self
+    /// ローカルファイルに保存
+    internal let local: FileDestination = FileDestination()
+
+    /// 利用しているアカウント
     public var account: UserInfo? = nil
 
-    private let keychain: Keychain = Keychain(service: "SPLATNET")
+    /// 利用しているKeychain
+    internal let keychain: Keychain = Keychain(service: "SPLATNET")
 
+    /// JSONDecoder
     internal let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -24,10 +33,11 @@ open class SplatNet3: Authenticator {
 
     /// セッション
     public let session: Session = {
+        /// 五秒でタイムアウトするようにする(将来的に長くするかも)
         let configuration: URLSessionConfiguration = {
             let config = URLSessionConfiguration.default
             config.httpMaximumConnectionsPerHost = 1
-            config.timeoutIntervalForRequest = 15
+            config.timeoutIntervalForRequest = 5
             return config
         }()
         let queue = DispatchQueue(label: "SPLATNET3")
@@ -47,14 +57,57 @@ open class SplatNet3: Authenticator {
         }
     }
 
+    /// エラーログをローカルに保存する
     public init() {
         self.account =  keychain.get().first
+        self.logger.addDestination(local)
     }
 
+    /// エラーログをローカルとクラウドに保存する
+    /// SwiftyBeaverのキーを利用する
+    public init(appId: String, appSecret: String, encryptionKey: String) {
+        self.account =  keychain.get().first
+        /// クラウドにエラーを保存
+        let cloud = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
+        self.logger.addDestination(cloud)
+        self.logger.addDestination(local)
+    }
+
+    /// アカウントを利用して初期化
     public init(account: UserInfo) {
         self.account = account
+        self.logger.addDestination(local)
     }
 
+    /// サーモンラン概要取得
+    open func getCoopSummary() async throws -> CoopSummary.Response {
+        let request: CoopSummary = CoopSummary()
+        return try await publish(request)
+    }
+
+    /// サーモンランリザルト取得
+    open func getCoopResult(id: String) async throws -> SplatNet2.Result {
+        let request: CoopResult = CoopResult(id: id)
+        let result: CoopResult.Response = try await publish(request)
+        return result.asSplatNet2()
+    }
+
+    /// サーモンランリザルト全件取得
+    open func getCoopResultIds(resultId: String? = nil) async throws -> [String] {
+        let summary: CoopSummary.Response = try await getCoopSummary()
+
+        // 全件のIDを取得する
+        let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })
+
+        // リザルトIDが指定されていれば、そのIDよりも大きい値を返す
+        // 新しいリザルトしか取得しない
+        if let resultId = resultId {
+            return ids.filter({ $0.playTime > resultId.playTime })
+        }
+        return ids
+    }
+
+    /// 認証のプロセス
     open func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
         return try await session.request(request)
             .cURLDescription(calling: { request in
@@ -67,6 +120,7 @@ open class SplatNet3: Authenticator {
             .value
     }
 
+    /// リクエストのプロセス
     open func request(_ request: WebVersion) async throws -> WebVersion.Response {
         let response: String = try await session.request(request)
             .cURLDescription(calling: { request in
@@ -80,81 +134,41 @@ open class SplatNet3: Authenticator {
         return WebVersion.Response(from: response)
     }
 
-    /// 概要取得
-    open func getCoopSummary() async throws -> CoopSummary.Response {
-        let request: CoopSummary = CoopSummary()
-        return try await publish(request)
-    }
-
-    /// リザルト取得
-    open func getCoopResult(id: String) async throws -> SplatNet2.Result {
-        let request: CoopResult = CoopResult(id: id)
-        let result: CoopResult.Response = try await publish(request)
-        return result.asSplatNet2()
-    }
-
-    /// リザルト全件取得
-    open func getCoopResultIds(resultId: String? = nil) async throws -> [String] {
-        let summary: CoopSummary.Response = try await getCoopSummary()
-
-        //
-        let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })
-
-        // リザルトIDが指定されていれば、そのIDよりも大きい値を返す
-        if let resultId = resultId {
-            return ids.filter({ $0.playTime > resultId.playTime })
-        }
-        return ids
-    }
-}
-
-public extension String {
-    var playTime: Int {
-        let formatter: ISO8601DateFormatter = {
-            let formatter = ISO8601DateFormatter()
-            formatter.formatOptions = [
-                .withDay,
-                .withMonth,
-                .withYear,
-                .withTime,
-            ]
-            return formatter
+    /// イカリング3のリクエスト
+    open func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
+        // 選択されているアカウントから認証情報を取得
+        let credential: OAuthCredential = try {
+            guard let account = account else {
+                throw Failure.API(error: NXError.API.account)
+            }
+            return account.credential
         }()
-        if let playTime: String = self.base64DecodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
-           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
-            return Int(timeInterval)
+
+        // インターセプターを生成
+        let interceptor: AuthenticationInterceptor<SplatNet3> = AuthenticationInterceptor(authenticator: self, credential: credential)
+
+        do {
+            /// インターセプターを利用してリクエスト
+            return try await session.request(request, interceptor: interceptor)
+                .cURLDescription(calling: { request in
+    #if DEBUG
+                    print(request)
+    #endif
+                })
+                .validationWithNXError()
+                .serializingDecodable(T.ResponseType.self, decoder: decoder)
+                .value
+        } catch(let error) {
+            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+            let data: Data = try await session.request(request, interceptor: interceptor)
+                .validationWithNXError()
+                .serializingData()
+                .value
+            if let response = String(data: data, encoding: .utf8) {
+                logger.warning(response)
+            }
+            logger.error(error.localizedDescription)
+            throw error
         }
-        return 0
-    }
-}
-
-extension SplatNet3 {
-    /// バージョン書き込み
-    public func setVersion(version: WebVersion.Response) throws {
-        try keychain.setVersion(version)
-    }
-
-    /// アカウント新規追加
-    public func set(_ account: UserInfo) throws {
-        try keychain.set(account)
-    }
-
-    /// アカウント追加
-    public func add(_ account: UserInfo) throws {
-        try keychain.add(account)
-    }
-
-    /// アカウント削除
-    public func remove(_ account: UserInfo) throws {
-    }
-
-    /// アカウント全削除
-    public func removeAll() throws {
-        try keychain.removeAll()
-    }
-
-    /// アカウント
-    public var accounts: [UserInfo] {
-        keychain.get()
     }
 }

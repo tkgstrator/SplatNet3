@@ -9,7 +9,19 @@
 import Foundation
 import SwiftUI
 
+/// スプラトゥーンで実際に利用されるカラーコードをSwiftUIで再現したもの
 public enum SPColor {
+    public enum Theme {
+        public static let SPTheme: Color        = Color("Color/Theme/SPTheme", bundle: .module)
+        public static let SPDark: Color         = Color("Color/Theme/SPDark", bundle: .module)
+        public static let SPOrange: Color       = Color("Color/Theme/SPOrange", bundle: .module)
+        public static let SPYellow: Color       = Color("Color/Theme/SPYellow", bundle: .module)
+        public static let SPRed: Color          = Color("Color/Theme/SPRed", bundle: .module)
+        public static let SPBlue: Color         = Color("Color/Theme/SPBlue", bundle: .module)
+        public static let SPPink: Color         = Color("Color/Theme/SPPink", bundle: .module)
+        public static let SPGreen: Color        = Color("Color/Theme/SPGreen", bundle: .module)
+    }
+
     public enum Blitz {
         public static let AlphaTeamColor: Color    = Color("Color/Blitz/AlphaTeamColor", bundle: .module)
         public static let AlphaUIColor: Color      = Color("Color/Blitz/AlphaUIColor", bundle: .module)

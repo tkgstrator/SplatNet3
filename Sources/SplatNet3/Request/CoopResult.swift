@@ -221,10 +221,10 @@ public class CoopResult: GraphQL {
 
     // MARK: - TextColor
     public struct TextColor: Codable {
-        public let a: Int
-        public let b: Int
-        public let g: Int
-        public let r: Int
+        public let a: Double
+        public let b: Double
+        public let g: Double
+        public let r: Double
     }
 
     // MARK: - Badge

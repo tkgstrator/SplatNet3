@@ -11,29 +11,32 @@ import Common
 import Alamofire
 
 extension SplatNet3 {
-    /// Async/Awaitリクエスト
-    public func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        // 選択されているアカウントから認証情報を取得
-        let credential: OAuthCredential = try {
-            guard let account = account else {
-                throw Failure.API(error: NXError.API.account)
-            }
-            return account.credential
-        }()
-
-        // インターセプターを生成
-        let interceptor: AuthenticationInterceptor<SplatNet3> = AuthenticationInterceptor(authenticator: self, credential: credential)
-
-        /// インターセプターを利用してリクエスト
-        return try await session.request(request, interceptor: interceptor)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
-            .validationWithNXError()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
+    /// バージョン書き込み
+    public func setVersion(version: WebVersion.Response) throws {
+        try keychain.setVersion(version)
     }
 
+    /// アカウント新規追加
+    public func set(_ account: UserInfo) throws {
+        try keychain.set(account)
+    }
+
+    /// アカウント追加
+    public func add(_ account: UserInfo) throws {
+        try keychain.add(account)
+    }
+
+    /// アカウント削除
+    public func remove(_ account: UserInfo) throws {
+    }
+
+    /// アカウント全削除
+    public func removeAll() throws {
+        try keychain.removeAll()
+    }
+
+    /// アカウント
+    public var accounts: [UserInfo] {
+        keychain.get()
+    }
 }
