@@ -67,6 +67,20 @@ def get_localized():
     for k, v in data.items():
       params.append(format(k, v))
     
+    data = res["CommonMsg/Byname/BynameAdjective"]
+    for k, v in data.items():
+      v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
+      if len(v) != 0:
+        print(type(v), v)
+        params.append(format(k, v))
+    
+    data = res["CommonMsg/Byname/BynameSubject"]
+    for k, v in data.items():
+      v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
+      if len(v) != 0:
+        print(k)
+        params.append(format(k, v))
+    
     data = res["CommonMsg/Manual/ManualCoop"]
     for k, v in data.items():
       if re.search(r'T_TitleCoop_\d{2}', k) is not None:
@@ -75,6 +89,8 @@ def get_localized():
     k = "T_TitleCoop_45"
     v = "-"
     params.append(format(k, v))
+
+    print(len(params))
 
     # 国コードからXcodeの翻訳コードに変換
     if language == "EUen":
@@ -107,12 +123,11 @@ def get_localized():
       language = "ru"
 
     # ディレクトリ作成
-    makdirs(f"../../Sources/SplatNet3/Resources/{language}.lproj")
+    makdirs(f"../Sources/SplatNet3/Resources/{language}.lproj")
     # 翻訳ファイルを書き込み
-    with open(f"../../Sources/SplatNet3/Resources/{language}.lproj/localizable.strings", mode="w") as f:
+    with open(f"../Sources/SplatNet3/Resources/{language}.lproj/localizable.strings", mode="w") as f:
       print(f"Converting {language}")
-      for param in params:
-        f.write(param)
+      f.writelines(params)
 
 def get_badge(version: str = "111"):
   url = f"https://leanny.github.io/splat3//data/mush/{version}/BadgeInfo.json"
@@ -201,6 +216,6 @@ if __name__=="__main__":
   # 翻訳ファイル
   # get_localized()
   # バッジ
-  get_badge("111")
+  # get_badge("111")
   # ネームプレート
-  # get_nameplate("111")
+  get_nameplate("111")

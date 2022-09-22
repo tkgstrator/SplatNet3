@@ -125,22 +125,27 @@ public class SplatNet2 {
     }
 
     public struct Nameplate: Codable {
-        public let badges: [Int?]
+        public let badges: [BadgeType?]
         public let background: Background
 
         public init(from nameplate: CoopResult.Nameplate) {
-            self.badges = nameplate.badges.map({ $0?.id })
+            self.badges = nameplate.badges.map({ badge in
+                if let id = badge?.id {
+                    return BadgeType(rawValue: id)
+                }
+                return nil
+            })
             self.background = Background(from: nameplate.background)
         }
     }
 
     public struct Background: Codable {
         public let textColor: CoopResult.TextColor
-        public let id: Int
+        public let id: NamePlateType
 
         public init(from background: CoopResult.Background) {
             self.textColor = background.textColor
-            self.id = background.id
+            self.id = NamePlateType(rawValue: background.id) ?? NamePlateType.Npl_Tutorial00
         }
     }
     
@@ -174,6 +179,7 @@ public class SplatNet2 {
             self.goldenIkuraNum = player.goldenDeliverCount
             self.deadCount = player.rescuedCount
             self.helpCount = player.rescueCount
+            self.nameplate = Nameplate(from: player.player.nameplate)
             self.special = {
                 if let specialId = specialId {
                     return SpecialType(id: specialId)
@@ -185,7 +191,6 @@ public class SplatNet2 {
             self.bossKillCounts = player.player.isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)
             self.species = player.player.species
             self.specialCounts = counts.map({ ids in ids.filter({ $0 == specialId }).count })
-            self.nameplate = Nameplate(from: player.player.nameplate)
         }
     }
 
