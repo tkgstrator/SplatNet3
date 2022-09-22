@@ -41,41 +41,40 @@ def get_localized():
     url = f"https://leanny.github.io/splat3/data/language/{language}.json"
     params = []
 
-    with open(f"languages/{language}.json", mode="w") as f:
-      res: dict = requests.get(url).json()
-      
-      data= res["CommonMsg/Coop/CoopEnemy"]
-      for k, v in data.items():
-        params.append(format(k, v))
-
-      data= res["CommonMsg/Coop/CoopGrade"]
-      for k, v in data.items():
-        params.append(format(k, v))
-      
-      data = res["CommonMsg/Coop/CoopSkinName"]
-      for k, v in data.items():
-        params.append(format(k, v))
-
-      data = res["CommonMsg/Coop/CoopStageName"]
-      for k, v in data.items():
-        params.append(format(k, v))
-      
-      data = res["CommonMsg/Weapon/WeaponName_Main"]
-      for k, v in data.items():
-        params.append(format(k, v))
-      
-      data = res["CommonMsg/Weapon/WeaponName_Special"]
-      for k, v in data.items():
-        params.append(format(k, v))
-      
-      data = res["CommonMsg/Manual/ManualCoop"]
-      for k, v in data.items():
-        if re.search(r'T_TitleCoop_\d{2}', k) is not None:
-          v = v.split()[1]
-          params.append(format(k, v))
-      k = "T_TitleCoop_45"
-      v = "-"
+    res: dict = requests.get(url).json()
+    
+    data= res["CommonMsg/Coop/CoopEnemy"]
+    for k, v in data.items():
       params.append(format(k, v))
+
+    data= res["CommonMsg/Coop/CoopGrade"]
+    for k, v in data.items():
+      params.append(format(k, v))
+    
+    data = res["CommonMsg/Coop/CoopSkinName"]
+    for k, v in data.items():
+      params.append(format(k, v))
+
+    data = res["CommonMsg/Coop/CoopStageName"]
+    for k, v in data.items():
+      params.append(format(k, v))
+    
+    data = res["CommonMsg/Weapon/WeaponName_Main"]
+    for k, v in data.items():
+      params.append(format(k, v))
+    
+    data = res["CommonMsg/Weapon/WeaponName_Special"]
+    for k, v in data.items():
+      params.append(format(k, v))
+    
+    data = res["CommonMsg/Manual/ManualCoop"]
+    for k, v in data.items():
+      if re.search(r'T_TitleCoop_\d{2}', k) is not None:
+        v = v.split()[1]
+        params.append(format(k, v))
+    k = "T_TitleCoop_45"
+    v = "-"
+    params.append(format(k, v))
 
     # 国コードからXcodeの翻訳コードに変換
     if language == "EUen":
