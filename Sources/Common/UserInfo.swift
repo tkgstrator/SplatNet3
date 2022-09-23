@@ -34,6 +34,32 @@ public struct UserInfo: Codable {
         )
     }
 
+    public init(
+        nickname: String,
+        membership: Bool,
+        friendCode: String,
+        thumbnailURL: URL,
+        nsaid: String,
+        iksmSession: String?, // For Splatoon2
+        bulletToken: String?, // For Splatoon3
+        sessionToken: String,
+        splatoonToken: String,
+        expiresIn: Date
+    ) {
+        self.nickname = nickname
+        self.membership = membership
+        self.friendCode = friendCode
+        self.thumbnailURL = thumbnailURL
+        self.credential = OAuthCredential(
+            nsaid: nsaid,
+            iksmSession: iksmSession,
+            bulletToken: bulletToken,
+            sessionToken: sessionToken,
+            splatoonToken: splatoonToken,
+            expiresIn: expiresIn
+        )
+    }
+
     /// ニックネーム
     public let nickname: String
     /// メンバーシップ加入しているか

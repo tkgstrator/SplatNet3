@@ -60,7 +60,6 @@ open class SplatNet3: Authenticator {
     /// エラーログをローカルに保存する
     public init() {
         self.account =  keychain.get().first
-        self.logger.addDestination(local)
     }
 
     /// エラーログをローカルとクラウドに保存する
@@ -70,13 +69,11 @@ open class SplatNet3: Authenticator {
         /// クラウドにエラーを保存
         let cloud = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
         self.logger.addDestination(cloud)
-        self.logger.addDestination(local)
     }
 
     /// アカウントを利用して初期化
     public init(account: UserInfo) {
         self.account = account
-        self.logger.addDestination(local)
     }
 
     /// サーモンラン概要取得
@@ -109,19 +106,33 @@ open class SplatNet3: Authenticator {
 
     /// 認証のプロセス
     open func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        return try await session.request(request)
-            .cURLDescription(calling: { request in
-                #if DEBUG
-                print(request)
-                #endif
-            })
-            .validationWithNXError()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
+        do {
+            return try await session.request(request)
+                .cURLDescription(calling: { request in
+                    #if DEBUG
+                    print(request)
+                    #endif
+                })
+                .validationWithNXError()
+                .serializingDecodable(T.ResponseType.self, decoder: decoder)
+                .value
+        } catch(let error) {
+            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+            let data: Data = try await session.request(request)
+                .validationWithNXError()
+                .serializingData()
+                .value
+            if let response = String(data: data, encoding: .utf8) {
+                logger.warning(response)
+            }
+            logger.error(error.localizedDescription)
+            throw error
+        }
     }
 
     /// リクエストのプロセス
     open func request(_ request: WebVersion) async throws -> WebVersion.Response {
+        do {
         let response: String = try await session.request(request)
             .cURLDescription(calling: { request in
                 #if DEBUG
@@ -132,6 +143,18 @@ open class SplatNet3: Authenticator {
             .serializingString()
             .value
         return WebVersion.Response(from: response)
+        } catch(let error) {
+            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+            let data: Data = try await session.request(request)
+                .validationWithNXError()
+                .serializingData()
+                .value
+            if let response = String(data: data, encoding: .utf8) {
+                logger.warning(response)
+            }
+            logger.error(error.localizedDescription)
+            throw error
+        }
     }
 
     /// イカリング3のリクエスト
@@ -139,6 +162,14 @@ open class SplatNet3: Authenticator {
         // 選択されているアカウントから認証情報を取得
         let credential: OAuthCredential = try {
             guard let account = account else {
+                // アカウントがセットされていなければKeychianから読み込む
+                if let account = keychain.get().first {
+                    // 読み込んだものをセットする
+                    self.account = account
+                    // 認証情報を返す
+                    return account.credential
+                }
+                // アカウントが登録されていなければエラーを返す
                 throw Failure.API(error: NXError.API.account)
             }
             return account.credential

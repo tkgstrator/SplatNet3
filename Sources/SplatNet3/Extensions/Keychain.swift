@@ -42,6 +42,28 @@ public extension Keychain {
         try set(try accounts.asData(), key: "SplatNet3_ACCOUNTS")
     }
 
+    @discardableResult
+    func resetExpiresIn() throws -> UserInfo {
+        if let account: UserInfo = get().first {
+            let newValue: UserInfo = UserInfo(
+                nickname: account.nickname,
+                membership: account.membership,
+                friendCode: account.friendCode,
+                thumbnailURL: account.thumbnailURL,
+                nsaid: account.credential.nsaid,
+                iksmSession: account.credential.iksmSession,
+                bulletToken: account.credential.bulletToken,
+                sessionToken: account.credential.sessionToken,
+                splatoonToken: account.credential.splatoonToken,
+                expiresIn: Date(timeIntervalSince1970: 0)
+            )
+            // 上書きして保存
+            try set(newValue)
+            return newValue
+        }
+        throw Failure.API(error: NXError.API.account)
+    }
+
     /// アカウント追加
     func add(_ account: UserInfo) throws {
         let accounts: [UserInfo] = Array(Set(get() + [account]).sorted(by: { $0.credential.nsaid < $1.credential.nsaid }))

@@ -41,7 +41,16 @@ public struct OAuthCredential: AuthenticationCredential, Codable {
         }()
     }
 
-    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String, timeInterval: Double = 60 * 60 * 2) {
+    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String, expiresIn: Date = Date(timeIntervalSinceNow: 60 * 60 * 1.5)) {
+        self.nsaid = nsaid
+        self.iksmSession = iksmSession
+        self.sessionToken = sessionToken
+        self.splatoonToken = splatoonToken
+        self.bulletToken = bulletToken
+        self.expiration = expiresIn
+    }
+
+    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String, timeInterval: Double = 60 * 60 * 1.5) {
         self.nsaid = nsaid
         self.iksmSession = iksmSession
         self.sessionToken = sessionToken

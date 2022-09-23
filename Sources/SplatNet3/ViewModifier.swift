@@ -18,12 +18,22 @@ private struct Authorize: ViewModifier {
     let verifier: String = String.randomString
     let oauthURL: URL
     let onDismiss: () -> Void
+    let onPresent: () -> Void
+    let onFailure: () -> Void
 
-    public init(isPresented: Binding<Bool>, session: SplatNet3, onDismiss: @escaping () -> Void = {}) {
+    public init(
+        isPresented: Binding<Bool>,
+        session: SplatNet3,
+        onPresent: @escaping () -> Void = {},
+        onDismiss: @escaping () -> Void = {},
+        onFailure: @escaping () -> Void = {})
+    {
         self._isPresented = isPresented
-        self.oauthURL = URL(state: state, verifier: verifier)
         self.session = session
+        self.oauthURL = URL(state: state, verifier: verifier)
         self.onDismiss = onDismiss
+        self.onPresent = onPresent
+        self.onFailure = onFailure
     }
 
     public func body(content: Content) -> some View {
@@ -35,10 +45,17 @@ private struct Authorize: ViewModifier {
                     }
 
                     Task {
-                        let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
-                        try session.set(account)
-                        session.account = account
-                        onDismiss()
+                        do {
+                            // サインインが始まったときに実行される
+                            onPresent()
+                            let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
+                            try session.set(account)
+                            session.account = account
+                            // サインインが終わったときに実行される
+                            onDismiss()
+                        } catch {
+                            onFailure()
+                        }
                     }
                 })
             })
@@ -50,8 +67,8 @@ public extension View {
         self.modifier(Authorize(isPresented: isPresented, session: session))
     }
 
-    func authorize(isPresented: Binding<Bool>, session: SplatNet3, onDismiss: @escaping () -> Void) -> some View {
-        self.modifier(Authorize(isPresented: isPresented, session: session, onDismiss: onDismiss))
+    func authorize(isPresented: Binding<Bool>, session: SplatNet3, onPresent: @escaping () -> Void, onDismiss: @escaping () -> Void, onFailure: @escaping () -> Void) -> some View {
+        self.modifier(Authorize(isPresented: isPresented, session: session, onPresent: onPresent, onDismiss: onDismiss, onFailure: onFailure))
     }
 }
 

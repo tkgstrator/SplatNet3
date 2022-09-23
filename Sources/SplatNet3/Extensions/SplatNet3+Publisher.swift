@@ -16,6 +16,12 @@ extension SplatNet3 {
         try keychain.setVersion(version)
     }
 
+    /// 有効期限を上書きして再読み込み
+    public func resetExpiresIn() throws {
+        let newValue: UserInfo = try keychain.resetExpiresIn()
+        self.account = newValue
+    }
+
     /// アカウント新規追加
     public func set(_ account: UserInfo) throws {
         try keychain.set(account)
