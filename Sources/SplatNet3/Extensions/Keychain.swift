@@ -27,7 +27,7 @@ public extension Keychain {
                 return WebVersion.Response(version: "1.0.0", hash: "d3a90678")
             }
             return try decoder.decode(WebVersion.Response.self, from: data)
-        } catch (let error) {
+        } catch (_) {
             return WebVersion.Response(version: "1.0.0", hash: "d3a90678")
         }
     }

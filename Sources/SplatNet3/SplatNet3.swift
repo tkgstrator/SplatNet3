@@ -117,12 +117,14 @@ open class SplatNet3: Authenticator {
                 .serializingDecodable(T.ResponseType.self, decoder: decoder)
                 .value
         } catch(let error) {
-            if let failure: Error = error.asAFError?.underlyingError, let code: Int = (failure as? NSError)?.code {
+            if let failure: Error = error.asAFError?.underlyingError {
+                let code: Int = (failure as NSError).code
                 // エラーコード1001はタイムアウトなので再送する意味がない
                 if code == -1001 {
                     logger.error(error.localizedDescription)
                     throw error
                 }
+
                 // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
                 let data: Data = try await session.request(request)
                     .validationWithNXError()
@@ -152,15 +154,25 @@ open class SplatNet3: Authenticator {
             .value
         return WebVersion.Response(from: response)
         } catch(let error) {
-            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
-            let data: Data = try await session.request(request)
-                .validationWithNXError()
-                .serializingData()
-                .value
-            if let response = String(data: data, encoding: .utf8) {
-                logger.warning(response)
+            if let failure: Error = error.asAFError?.underlyingError {
+                let code: Int = (failure as NSError).code
+                // エラーコード1001はタイムアウトなので再送する意味がない
+                if code == -1001 {
+                    logger.error(error.localizedDescription)
+                    throw error
+                }
+
+                // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+                let data: Data = try await session.request(request)
+                    .validationWithNXError()
+                    .serializingData()
+                    .value
+                if let response = String(data: data, encoding: .utf8) {
+                    logger.warning(response)
+                }
+                logger.error(error.localizedDescription)
+                throw error
             }
-            logger.error(error.localizedDescription)
             throw error
         }
     }
@@ -198,15 +210,25 @@ open class SplatNet3: Authenticator {
                 .serializingDecodable(T.ResponseType.self, decoder: decoder)
                 .value
         } catch(let error) {
-            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
-            let data: Data = try await session.request(request, interceptor: interceptor)
-                .validationWithNXError()
-                .serializingData()
-                .value
-            if let response = String(data: data, encoding: .utf8) {
-                logger.warning(response)
+            if let failure: Error = error.asAFError?.underlyingError {
+                let code: Int = (failure as NSError).code
+                // エラーコード1001はタイムアウトなので再送する意味がない
+                if code == -1001 {
+                    logger.error(error.localizedDescription)
+                    throw error
+                }
+
+                // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+                let data: Data = try await session.request(request)
+                    .validationWithNXError()
+                    .serializingData()
+                    .value
+                if let response = String(data: data, encoding: .utf8) {
+                    logger.warning(response)
+                }
+                logger.error(error.localizedDescription)
+                throw error
             }
-            logger.error(error.localizedDescription)
             throw error
         }
     }
