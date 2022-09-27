@@ -12,17 +12,19 @@ public extension Encodable {
     func asString() throws -> String {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
-//            encoder.keyEncodingStrategy = .convertToSnakeCase
             return encoder
         }()
 
-        return String(data: try encoder.encode(self), encoding: .utf8)!
+        guard let stringValue: String = String(data: try encoder.encode(self), encoding: .utf8) else {
+            throw EncodingError.invalidValue(String.self, .init(codingPath: [], debugDescription: "Could not encode given value."))
+        }
+
+        return stringValue
     }
 
     func asData() throws -> Data {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
-//            encoder.keyEncodingStrategy = .convertToSnakeCase
             return encoder
         }()
 

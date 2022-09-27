@@ -52,9 +52,13 @@ private struct Authorize: ViewModifier {
                             try session.set(account)
                             session.account = account
                             // サインインが終わったときに実行される
-                            onDismiss()
-                        } catch {
-                            onFailure()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                onDismiss()
+                            })
+                        } catch(_) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                onFailure()
+                            })
                         }
                     }
                 })

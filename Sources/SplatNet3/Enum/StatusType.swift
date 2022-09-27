@@ -8,6 +8,6 @@
 import Foundation
 
 public enum StatusType: Int, CaseIterable, Codable {
-    case Rescue = 0
-    case Death  = 1
+    case Rescue     = 0
+    case Death      = 1
 }

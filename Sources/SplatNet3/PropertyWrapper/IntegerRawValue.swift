@@ -20,7 +20,11 @@ public struct StringAcceptable<T: LosslessStringConvertible>: Codable {
         let container = try decoder.singleValueContainer()
         let rawValue: String = try container.decode(String.self)
 
-        self.wrappedValue = T(rawValue)!
+        guard let value: T = T(rawValue) else {
+            throw DecodingError.typeMismatch(T.self, .init(codingPath: container.codingPath, debugDescription: "Input value \(rawValue) could not cast as \(T.self)"))
+        }
+
+        self.wrappedValue = value
     }
 
     public func encode(to encoder: Encoder) throws {
