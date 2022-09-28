@@ -151,9 +151,10 @@ public class SplatNet2 {
     
     public struct PlayerResult: Codable {
         public let id: String
+        public let isMyself: Bool
         public let byname: String
         public let name: String
-        public let nameId: Int
+        public let nameId: String
         public let nameplate: Nameplate
         public let goldenIkuraNum: Int
         public let goldenIkuraAssistNum: Int
@@ -171,7 +172,8 @@ public class SplatNet2 {
             let specialId: Int? = player.specialWeapon?.id
 
             self.id = player.player.id.base64DecodedString
-            self.nameId = player.player.nameID
+            self.isMyself = player.player.isMyself
+            self.nameId = player.player.nameId
             self.name = player.player.name
             self.byname = player.player.byname
             self.ikuraNum = player.deliverCount

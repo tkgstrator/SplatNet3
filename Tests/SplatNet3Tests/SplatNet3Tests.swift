@@ -3,7 +3,7 @@ import XCTest
 @testable import SplatNet3
 @testable import Common
 
-final class SplatNetTests: XCTestCase {
+final class SplatNet3Tests: XCTestCase {
     let sessionToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJzdDpzY3AiOlswLDgsOSwxNywyM10sImlhdCI6MTY2MjcyMTg5OCwidHlwIjoic2Vzc2lvbl90b2tlbiIsInN1YiI6ImE4MzZhMWQ0NjI1YWZhYjQiLCJleHAiOjE3MjU3OTM4OTgsImF1ZCI6IjcxYjk2M2MxYjdiNmQxMTkiLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImp0aSI6OTc4NzkxMDI4Mn0.UUZ8l4neAp0nZPbcQU7EoUUo02GVI6pg1OeijE9zp1o"
     let iksmSession: String = "3b78964054c63dcb76275fb2123acbf06cd74acb"
     let bulletToken: String = "xkQQaqcDNCukmsNdl8TgSesNOjZ0pV9lTPwIkjp3Rprk3n_c_91OqOAQR_CMIyfKqZQ2GCZX7ers9fzykj_-qMoIW9ouI3Z7115cYid7_wUh1Eh2saonUpwkHY4="
@@ -32,6 +32,19 @@ final class SplatNetTests: XCTestCase {
         let request: WebVersion = WebVersion()
         let response: WebVersion.Response = try await session.request(request)
         print(response)
+    }
+
+    func testLoadJSON() throws {
+        let decoder: JSONDecoder = {
+            let decoder: JSONDecoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return decoder
+        }()
+
+        // IDが数値ではないテストデータ
+        let data = Data(fileName: "000000")
+        let result: CoopResult.Response = try decoder.decode(CoopResult.Response.self, from: data)
+        print(result)
     }
 
     func testReuest() async throws {
@@ -249,3 +262,14 @@ final class SplatNetTests: XCTestCase {
     }
 }
 
+extension Data {
+    init(fileName: String) {
+        if let path = Bundle.module.url(forResource: "JSON/\(fileName)", withExtension: "json"),
+           let data = try? Data(contentsOf: path)
+        {
+            self = data
+            return
+        }
+        self = Data("{}".utf8)
+    }
+}

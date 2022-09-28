@@ -22,9 +22,6 @@ extension SplatNet2 {
     }
 
     public func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
-        print("Current Time", Date())
-        print("Expires Time", credential.expiration)
-        print("Is Available", credential.requiresRefresh)
         // イカスミセッションを設定
         urlRequest.headers.add(HTTPHeader(name: "cookie", value: "iksm_session=\(credential.iksmSession)"))
     }

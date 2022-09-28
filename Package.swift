@@ -67,6 +67,9 @@ let package = Package(
             dependencies: ["SplatNet2", "SalmonStats"]),
         .testTarget(
             name: "SplatNet3Tests",
-            dependencies: ["SplatNet3", "SalmonStats"]),
+            dependencies: ["SplatNet3", "SalmonStats"],
+            resources: [
+                .copy("JSON")
+            ]),
     ]
 )

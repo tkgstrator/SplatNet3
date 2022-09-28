@@ -40,10 +40,6 @@ public enum Failure {
     /// APP用のエラーレスポンス
     public struct APP: FailureResponse {
         public var errorDescription: String? {
-            print(errorMessage.rawValue)
-            print(NSLocalizedString(errorMessage.rawValue, comment: ""))
-            print(NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: ""))
-            print(NSLocalizedString(errorMessage.rawValue, bundle: .main, comment: ""))
             return NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: "")
         }
         public var failureReason: String? = nil

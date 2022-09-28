@@ -186,7 +186,7 @@ public class CoopResult: GraphQL {
         public let isPlayer: String
         public let byname: String
         public let name: String
-        @StringAcceptable public var nameID: Int
+        public let nameId: String
         public let nameplate: Nameplate
         public let uniform: ImageRef
         public let id: String
@@ -197,7 +197,7 @@ public class CoopResult: GraphQL {
             case isPlayer = "__isPlayer"
             case byname = "byname"
             case name = "name"
-            case nameID = "nameId"
+            case nameId = "nameId"
             case nameplate = "nameplate"
             case uniform = "uniform"
             case id = "id"

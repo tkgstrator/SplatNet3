@@ -34,6 +34,8 @@ public enum NXError {
         case unauthorized   = "Unauthorized."
         /// パラメータfのタイムスタンプがズレている
         case unexpected     = "Unexpected Error."
+        /// ニンテンドースイッチオンラインに加入していない
+        case required       = "Membership required error."
     }
 
     public enum API: String, CaseIterable, Codable {
