@@ -45,8 +45,8 @@ public enum EventType: RawRepresentables {
     case The_Mothership
     case Fog
     case Cohock_Charge
-    case Mudmouth
     case Giant
+    case Mudmouth
 }
 
 public enum EventId: Int, CaseIterable {
@@ -58,8 +58,8 @@ public enum EventId: Int, CaseIterable {
     case The_Mothership
     case Fog
     case Cohock_Charge
-    case Mudmouth
     case Giant
+    case Mudmouth
 }
 
 public enum EventKey: String, CaseIterable {
@@ -72,6 +72,6 @@ public enum EventKey: String, CaseIterable {
     case The_Mothership     = "c7aed9d8d6d8f32d080ec80cc87eae891817f9b5f73272e65553ebae7d0e1bd5"
     case Fog                = "235d53ced4bf574d22c6d77ba8d27d4f43529aa143d3b15f2275a06e3e93dffe"
     case Cohock_Charge      = "718dccf9ce30d24822f963d24c10887da64557f950e701914a0564dd1d2b983f"
-    case Mudmouth           = "03985f469211fa99567dfd344c1a32aef6f4d83cdead80351a0340dcc2d70cc1"
     case Giant              = "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449"
+    case Mudmouth           = "03985f469211fa99567dfd344c1a32aef6f4d83cdead80351a0340dcc2d70cc1"
 }
