@@ -11,68 +11,46 @@ import BetterSafariView
 import Common
 import Alamofire
 
+public typealias CompletionHandler = (Result<String, Error>) -> Void
+
 private struct Authorize: ViewModifier {
+
     @Binding private var isPresented: Bool
-    let session: SplatNet3
     let state: String = String.randomString
     let verifier: String = String.randomString
     let oauthURL: URL
-    let onDismiss: () -> Void
-    let onPresent: () -> Void
-    let onFailure: () -> Void
+    let completion: CompletionHandler
 
     public init(
         isPresented: Binding<Bool>,
-        session: SplatNet3,
-        onPresent: @escaping () -> Void = {},
-        onDismiss: @escaping () -> Void = {},
-        onFailure: @escaping () -> Void = {})
+        completion: @escaping CompletionHandler)
     {
         self._isPresented = isPresented
-        self.session = session
         self.oauthURL = URL(state: state, verifier: verifier)
-        self.onDismiss = onDismiss
-        self.onPresent = onPresent
-        self.onFailure = onFailure
+        self.completion = completion
     }
 
     public func body(content: Content) -> some View {
         content
             .webAuthenticationSession(isPresented: $isPresented, content: {
                 WebAuthenticationSession(url: oauthURL, callbackURLScheme: "npf71b963c1b7b6d119", completionHandler: { (callbackURL, error) in
-                    guard let sessionTokenCode: String = callbackURL?.absoluteString.capture(pattern: "de=(.*)&", group: 1) else {
+                    if let error = error {
+                        completion(.failure(error))
                         return
                     }
-
-                    Task {
-                        do {
-                            // サインインが始まったときに実行される
-                            onPresent()
-                            let account: UserInfo = try await session.getCookie(code: sessionTokenCode, verifier: verifier)
-                            try session.set(account)
-                            session.account = account
-                            // サインインが終わったときに実行される
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                onDismiss()
-                            })
-                        } catch(_) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                onFailure()
-                            })
-                        }
+                    guard let sessionTokenCode: String = callbackURL?.absoluteString.capture(pattern: "de=(.*)&", group: 1) else {
+                        completion(.failure(Failure.API(error: .response)))
+                        return
                     }
+                    completion(.success(sessionTokenCode))
                 })
             })
     }
 }
 
 public extension View {
-    func authorize(isPresented: Binding<Bool>, session: SplatNet3) -> some View {
-        self.modifier(Authorize(isPresented: isPresented, session: session))
-    }
-
-    func authorize(isPresented: Binding<Bool>, session: SplatNet3, onPresent: @escaping () -> Void, onDismiss: @escaping () -> Void, onFailure: @escaping () -> Void) -> some View {
-        self.modifier(Authorize(isPresented: isPresented, session: session, onPresent: onPresent, onDismiss: onDismiss, onFailure: onFailure))
+    func authorize(isPresented: Binding<Bool>, completion: @escaping CompletionHandler) -> some View {
+        self.modifier(Authorize(isPresented: isPresented, completion: completion))
     }
 }
 
