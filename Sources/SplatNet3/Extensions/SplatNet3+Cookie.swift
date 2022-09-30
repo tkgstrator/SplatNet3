@@ -54,7 +54,7 @@ extension SplatNet3 {
     }
 
     /// イカスミセッションをコードとベリファイアから取得
-    internal func getCookie(code: String, verifier: String) async throws {
+    public func getCookie(code: String, verifier: String) async throws {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
         let account: UserInfo =  try await refreshToken(sessionToken: sessionToken.sessionToken)
         try set(account)

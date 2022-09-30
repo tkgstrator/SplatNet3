@@ -11,10 +11,9 @@ import BetterSafariView
 import Common
 import Alamofire
 
-public typealias CompletionHandler = (Result<String, Error>) -> Void
+public typealias CompletionHandler = (Result<(String, String), Error>) -> Void
 
 private struct Authorize: ViewModifier {
-
     @Binding private var isPresented: Bool
     let state: String = String.randomString
     let verifier: String = String.randomString
@@ -38,11 +37,11 @@ private struct Authorize: ViewModifier {
                         completion(.failure(error))
                         return
                     }
-                    guard let sessionTokenCode: String = callbackURL?.absoluteString.capture(pattern: "de=(.*)&", group: 1) else {
+                    guard let code: String = callbackURL?.absoluteString.capture(pattern: "de=(.*)&", group: 1) else {
                         completion(.failure(Failure.API(error: .response)))
                         return
                     }
-                    completion(.success(sessionTokenCode))
+                    completion(.success((code, verifier)))
                 })
             })
     }
