@@ -40,7 +40,7 @@ public extension RequestType {
         request.timeoutInterval = TimeInterval(10)
         request.allHTTPHeaderFields = headers
         // UAを設定
-        request.headers.update(.userAgent("SplatNet2/@tkgling"))
+        request.headers.update(.userAgent("SplatNet3/@tkgling"))
         // パラメータが設定されていればエンコードして設定する
         if let params = parameters {
             return try encoding.encode(request, with: params)

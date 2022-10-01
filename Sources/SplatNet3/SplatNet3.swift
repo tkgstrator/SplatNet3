@@ -17,10 +17,6 @@ open class SplatNet3: Authenticator {
     internal let logger: SwiftyBeaver.Type = SwiftyBeaver.self
     /// ローカルファイルに保存
     internal let local: FileDestination = FileDestination()
-    /// State
-    internal let state: String = String.randomString
-    /// Verifier
-    internal let verifier: String = String.randomString
 
     /// 利用しているアカウント
     public var account: UserInfo? = nil
@@ -44,8 +40,7 @@ open class SplatNet3: Authenticator {
             config.timeoutIntervalForRequest = 5
             return config
         }()
-        let queue = DispatchQueue(label: "SPLATNET3")
-        return Session(configuration: configuration, rootQueue: queue, requestQueue: queue)
+        return Session(configuration: configuration, rootQueue: .main, requestQueue: .main)
     }()
 
     /// WebVersion(ヘッダーに利用されるがどのように使われるのかは不明)
