@@ -1,0 +1,282 @@
+[
+  {
+    "id": 0,
+    "locale": "locale99",
+    "hash": "dee547ff",
+    "xcode": "en",
+    "internal_code": "USen",
+    "event_waves": [
+      "Rush",
+      "Goldie Seeking",
+      "The Griller",
+      "The Mothership",
+      "Fog",
+      "Cohock Charge",
+      "Giant Tornado",
+      "Mudmouth Eruptions"
+    ],
+    "king_sakelien": [
+      "Cohozuna"
+    ]
+  },
+  {
+    "id": 31,
+    "locale": "locale8",
+    "hash": "d3aaa3e7",
+    "xcode": "ja",
+    "internal_code": "JPja",
+    "event_waves": [
+      "ラッシュ",
+      "キンシャケ探し",
+      "グリル発進",
+      "ハコビヤ襲来",
+      "霧",
+      "ドスコイ大量発生",
+      "巨大タツマキ",
+      "ドロシャケ噴出"
+    ],
+    "king_sakelien": [
+      "ヨコヅナ"
+    ]
+  },
+  {
+    "id": 56,
+    "locale": "locale13",
+    "hash": "a41fb232",
+    "xcode": "zh-Hant",
+    "internal_code": "CNzh",
+    "event_waves": [
+      "狂潮",
+      "寻找金鲑鱼",
+      "烤架鱼进发",
+      "走私鱼来袭",
+      "雾",
+      "大胖鱼大量出现",
+      "巨型龙卷风",
+      "泥鲑鱼喷发"
+    ],
+    "king_sakelien": [
+      "横纲"
+    ]
+  },
+  {
+    "id": 139,
+    "locale": "locale0",
+    "hash": "1118ed16",
+    "xcode": "de",
+    "internal_code": "EUde",
+    "event_waves": [
+      "Ansturm",
+      "Goldie-Suche",
+      "Killgrills",
+      "Das Mutterschiff",
+      "Nebel",
+      "Brocken-Sturmangriff",
+      "Riesentornados",
+      "Schlämmermaul-Eruptionen"
+    ],
+    "king_sakelien": [
+      "Malmsalm"
+    ]
+  },
+  {
+    "id": 153,
+    "locale": "locale12",
+    "hash": "803a6cba",
+    "xcode": "zh-Hans",
+    "internal_code": "TWzh",
+    "event_waves": [
+      "狂潮",
+      "尋找金鮭魚",
+      "烤架魚出動",
+      "走私魚來襲",
+      "霧",
+      "大胖魚大量出現",
+      "巨型龍捲風",
+      "泥鮭魚噴發"
+    ],
+    "king_sakelien": [
+      "橫綱"
+    ]
+  },
+  {
+    "id": 277,
+    "locale": "locale6",
+    "hash": "58dc66b6",
+    "xcode": "fr",
+    "internal_code": "EUfr",
+    "event_waves": [
+      "Ruées",
+      "Chasse aux Dorax",
+      "Barbeurks",
+      "Vaisseaux mères",
+      "Brouillard",
+      "Charges de Sumoches",
+      "Tornade géante",
+      "Émergence de Salmonoïdes de boue"
+    ],
+    "king_sakelien": [
+      "Salmotori"
+    ]
+  },
+  {
+    "id": 286,
+    "locale": "locale10",
+    "hash": "21d35be9",
+    "xcode": "nl",
+    "internal_code": "EUnl",
+    "event_waves": [
+      "Stormloop",
+      "Het zoeken van Goldies",
+      "Grillers",
+      "Het moederschip",
+      "Mist",
+      "Storm van Sallogs",
+      "Reuzentornado",
+      "Uitbarstingen van Moddermuilen"
+    ],
+    "king_sakelien": [
+      "Sumosalmo"
+    ]
+  },
+  {
+    "id": 303,
+    "locale": "locale11",
+    "hash": "14cecdff",
+    "xcode": "ru",
+    "internal_code": "EUru",
+    "event_waves": [
+      "Озверевшие самониды",
+      "Поиски Великого Сам О’Нида",
+      "Жаровнер",
+      "Нерестилище",
+      "Туман",
+      "Штурм сковорейдеров",
+      "Гигантский торнадо",
+      "Появление илистого ревуна"
+    ],
+    "king_sakelien": [
+      "Исполид"
+    ]
+  },
+  {
+    "id": 401,
+    "locale": "locale9",
+    "hash": "3a3c98ac",
+    "xcode": "ko",
+    "internal_code": "KRko",
+    "event_waves": [
+      "러시",
+      "황금연어 찾기",
+      "그릴 발진",
+      "운반함 급습",
+      "안개",
+      "덩치연어 대량 발생",
+      "거대 회오리",
+      "진흙연어 분출"
+    ],
+    "king_sakelien": [
+      "천하장사"
+    ]
+  },
+  {
+    "id": 448,
+    "locale": "locale7",
+    "hash": "65a2c7e2",
+    "xcode": "it",
+    "internal_code": "EUit",
+    "event_waves": [
+      "Orde",
+      "Scovare i Pinne d'oro",
+      "Grill",
+      "Astronave madre",
+      "Nebbia",
+      "Orde di Pinne Pingui",
+      "Tornado gigante",
+      "Eruzioni di Fangonoidi"
+    ],
+    "king_sakelien": [
+      "Colossalmonoide"
+    ]
+  },
+  {
+    "id": 479,
+    "locale": "locale5",
+    "hash": "0e4bd551",
+    "xcode": "fr-CA",
+    "internal_code": "USfr",
+    "event_waves": [
+      "Frenesíes",
+      "Detección de orónidos",
+      "Brasaletas",
+      "La salmonodriza",
+      "Niebla",
+      "Ataques de agallones",
+      "Tornados gigantes",
+      "Erupciones de bocalodos"
+    ],
+    "king_sakelien": [
+      "Salmonote"
+    ]
+  },
+  {
+    "id": 495,
+    "locale": "locale1",
+    "hash": "d164251f",
+    "xcode": "en-GB",
+    "internal_code": "EUen",
+    "event_waves": [
+      "Rush",
+      "Goldie Seeking",
+      "The Griller",
+      "The Mothership",
+      "Fog",
+      "Cohock Charge",
+      "Giant Tornado",
+      "Mudmouth Eruptions"
+    ],
+    "king_sakelien": [
+      "Cohozuna"
+    ]
+  },
+  {
+    "id": 835,
+    "locale": "locale4",
+    "hash": "a890b6bf",
+    "xcode": "es-MX",
+    "internal_code": "USes",
+    "event_waves": [
+      "Frenesíes",
+      "Detección de orónidos",
+      "Brasaletas",
+      "La salmonodriza",
+      "Niebla",
+      "Ataques de agallones",
+      "Tornados gigantes",
+      "Erupciones de bocalodos"
+    ],
+    "king_sakelien": [
+      "Salmonote"
+    ]
+  },
+  {
+    "id": 888,
+    "locale": "locale3",
+    "hash": "847f8c40",
+    "xcode": "es",
+    "internal_code": "EUes",
+    "event_waves": [
+      "Avalanchas",
+      "Detección de salmóreos",
+      "Chaparrillas",
+      "Aerocriaderos",
+      "Niebla",
+      "Ataques de escamacarras",
+      "Tornados gigantes",
+      "Erupciones de morrolodos"
+    ],
+    "king_sakelien": [
+      "Salmonote"
+    ]
+  }
+]

@@ -1,0 +1,499 @@
+{
+  "data": {
+    "coopHistoryDetail": {
+      "__typename": "CoopHistoryDetail",
+      "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMVQwMjIxMjdfYjNhYjI1YjEtYTYyZS00ODI5LWI0ODQtNDk1MjdjMjRlNTVl",
+      "afterGrade": null,
+      "rule": "REGULAR",
+      "myResult": {
+        "player": {
+          "__isPlayer": "CoopPlayer",
+          "byname": "카오폴리스의 젊은이",
+          "name": "devonly",
+          "nameId": "1435",
+          "nameplate": {
+            "badges": [
+              null,
+              null,
+              null
+            ],
+            "background": {
+              "textColor": {
+                "a": 1.0,
+                "b": 1.0,
+                "g": 1.0,
+                "r": 1.0
+              },
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/npl_img/ef8a9390e1a4ee4da709c69cf572586b57b80100f521b16a9d8f2c1b764b0dd9_0.png?Expires=1673308800&Signature=P3pMSyXl7Qf3pk7JhwVPu3CK~DzhT-JK1IvnDcIidPD3~AB5qA~KvANlAdXzFjnjNGxHPU19jI7N24Czx2mjsA4lYOrHhV8derjXeQj48R4gDDuQOLrV1M6Fo15-tBeOKJ8bC8fVpvkwglbAOW628CRPmZauJDsOe~AlRD~IQJuyTcPgKkIQnafVXpTD~3VUDZmhZn6z5Vx0Y21MHfOZLWz4QxEo5o7Heqoyywi~Co88om1SYldPdLNkJkD~ATV7yrHCnxrskgxW~oykb1p6GH1VA24pprZ-mbzktsfkzmWptGq5qrEbpCaPz~6-IKU-sWDgwGBTmJEjfFHVE9hlnw__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "TmFtZXBsYXRlQmFja2dyb3VuZC0yMDAx"
+            }
+          },
+          "uniform": {
+            "name": "오렌지 작업복",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_skin_img/89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53_0.png?Expires=1673308800&Signature=bvBmFDRGLDBYIggJF08sqpbM7F8zeiIc5eNJMHWSYwXDVNUIfCTNDy2Sjj5dSB3-H0P63RcDiPDu7EeA1SJZalwwf69H-ozEJqEN2eaFCLK0JL1UnqUXpFBKr6gWvC0MKzEJ2rSU-3q8Maq4Le3y0zYKljKeXhYiXbdGwXbCLof66vzMgPfoc2efYTugowTup0S63Sp2cCDe92sflSAuHtOcvYm2Ssm5g4Ivc-IdIEyu4pMJWfZYvFuB7GAfdp4hi-FfruFH028Og8X91tqw8XoilkdS9YdT3oQACoW0APIJZ5pTuMGipXv1ORnQPVIsYD1Iagbge1YRFnzMS4cSYA__&Key-Pair-Id=KNBS2THMRC385"
+            },
+            "id": "Q29vcFVuaWZvcm0tMQ=="
+          },
+          "id": "Q29vcFBsYXllci11LWFnbXdqbnlnaHZ6YmFhdnQ1bW1tOjIwMjIwOTExVDAyMjEyN19iM2FiMjViMS1hNjJlLTQ4MjktYjQ4NC00OTUyN2MyNGU1NWU6dS1hZ213am55Z2h2emJhYXZ0NW1tbQ==",
+          "isMyself": true,
+          "species": "INKLING"
+        },
+        "weapons": [
+          {
+            "name": "익스플로셔",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png?Expires=1673308800&Signature=hvmIGR9kLExIXOcOU9Y-UuA773ZnGynECsgGNqEL6423yB4hpbDKsrbJf3xzgWnjT6tHOwcBmev-3ssZtqdzTJLueO5cGncsLaia~YyAJu0nzogC6YFMpGn58nc7BN6rrD1ff8Mqo3CDgDri-B7Iu9DmNB1gE-uvNJs~e7KfLbjhZsdMOVqbj402gcItHef9V5X3P5UW6Hur-YkwZ8IVcm6xp5jk8pgfk9RsVqsdwMq9ZQN0tTuKeCGyNYAma54OuUwjLbdiMZYmafUpY3INwWz14FLxOqcNZ45UAslXilX86MjfthemGcuqa-EsYy5QFeXK8mPXl~Kx~QhbZ5AZ4g__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          },
+          {
+            "name": "익스플로셔",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png?Expires=1673308800&Signature=hvmIGR9kLExIXOcOU9Y-UuA773ZnGynECsgGNqEL6423yB4hpbDKsrbJf3xzgWnjT6tHOwcBmev-3ssZtqdzTJLueO5cGncsLaia~YyAJu0nzogC6YFMpGn58nc7BN6rrD1ff8Mqo3CDgDri-B7Iu9DmNB1gE-uvNJs~e7KfLbjhZsdMOVqbj402gcItHef9V5X3P5UW6Hur-YkwZ8IVcm6xp5jk8pgfk9RsVqsdwMq9ZQN0tTuKeCGyNYAma54OuUwjLbdiMZYmafUpY3INwWz14FLxOqcNZ45UAslXilX86MjfthemGcuqa-EsYy5QFeXK8mPXl~Kx~QhbZ5AZ4g__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          },
+          {
+            "name": "익스플로셔",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png?Expires=1673308800&Signature=hvmIGR9kLExIXOcOU9Y-UuA773ZnGynECsgGNqEL6423yB4hpbDKsrbJf3xzgWnjT6tHOwcBmev-3ssZtqdzTJLueO5cGncsLaia~YyAJu0nzogC6YFMpGn58nc7BN6rrD1ff8Mqo3CDgDri-B7Iu9DmNB1gE-uvNJs~e7KfLbjhZsdMOVqbj402gcItHef9V5X3P5UW6Hur-YkwZ8IVcm6xp5jk8pgfk9RsVqsdwMq9ZQN0tTuKeCGyNYAma54OuUwjLbdiMZYmafUpY3INwWz14FLxOqcNZ45UAslXilX86MjfthemGcuqa-EsYy5QFeXK8mPXl~Kx~QhbZ5AZ4g__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        ],
+        "specialWeapon": {
+          "name": "나이스옥",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/bd327d1b64372dedefd32adb28bea62a5b6152d93aada5d9fc4f669a1955d6d4_0.png?Expires=1673308800&Signature=bSQSnCd92kGh99thLfoiCuUUzghDBY-j1UHVcHCgaV3umcufZUWCXq-Lj2Hn1z3na4ocHdZZGluqVA2Ql~wnSF0XfA-6NG5h8yJ95wUz8Oscc7EWU66e1sZhQslQFnvsjTcbsFzliwt5nQuCXk1f2fGUbZLuTVKSZ1ExtzLvWR-RbzrtW5TtY3Xzsci5lqHGF-fkFLKaOrY6CRax-PgSqW~BydRucyxY4paVjjlJja-k765qzMcr0M~jUO-~27x17f2AeL5vp1CRne1YilO9OsCMOIHMv798T5h8dgwgTrgQAWjU-W7qgNhvcwWq8recETIxUoJjs1gXIl8wAeX76Q__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "id": "U3BlY2lhbFdlYXBvbi0yMDAwNg=="
+        },
+        "defeatEnemyCount": 20,
+        "deliverCount": 1239,
+        "goldenAssistCount": 3,
+        "goldenDeliverCount": 4,
+        "rescueCount": 1,
+        "rescuedCount": 1
+      },
+      "memberResults": [
+        {
+          "player": {
+            "__isPlayer": "CoopPlayer",
+            "byname": "카오폴리스의 젊은이",
+            "name": "ヘンゼルとスゲーデス",
+            "nameId": "1334",
+            "nameplate": {
+              "badges": [
+                {
+                  "id": "QmFkZ2UtNTIwMDA3MA==",
+                  "image": {
+                    "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/badge_img/07d45b877fef8ae11a5b0595a29d1a68d3963906f57dcceaefe892b00ae314db_0.png?Expires=1673308800&Signature=KaIbeYL4tvUPraKW8WE9Q-3j~Th1ffQqLCeTZezCHpmzLLpIU9tNSypMPwjYpzwbsJso53x1S2Cl3MXzAz-1juyQyT3pO-UNsvCytNH9erpbN-CpGihMMvQsRVjfA3gROpBXq9v-RCodN359JycRGuhKvJg8zkYR6TJYTuyRZZvkR~bUtPsvnjLSzC-gcRo0kC9YtqDEtkzAXcRvaDZC~aMOwpZP4tYuMLdN9w8sCjOhlF1lEtcIW7ZG7VtYmvJuabGLSiMf8AttnQmbCFOX-jtFh4c4HQbS-RDoC43sdHBLdzHKxfxP2tSONqDUKTfUrpTHpgjcBoQiFGKf-XTyMQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id": "QmFkZ2UtNTIwMDA0MA==",
+                  "image": {
+                    "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/badge_img/b7d49101d87012584acd4954fe4efd71fc31293412d88d334255d87f9870c086_0.png?Expires=1673308800&Signature=XBiqJZ0MGdoOptVFj3LNLf5Sv3AxkyiHhOn8DSWxr3ZKTgEMJDeRF5HEBBBslUYYGhGOkr0nEQ9B9zzmiiuzit231eVSQT3t0ce6BNstcWTyA78zUwj6Vbo~JU40wU0g0SaEgyH0gLr7FxIRCPbBVkztpzdU3PMyIGVTc1Mj14D-ODL1HnMIdMGshTYAwPxFcwONa9MKq5U0IcO-H8sftWjT4j6aSTrhKxh-rkp9MzjNs2qg3NVfBUe7EQMaTB4foWFyX-8Kat8og3-SvF-buyiRoo4OHXiJp--QKsu0upd09kDYQr48sC~8phwuTa2xrA1ybbtOqo3WpvcUp0r~2A__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                {
+                  "id": "QmFkZ2UtNTIwMDAzMA==",
+                  "image": {
+                    "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/badge_img/346cb45e78b5366f0d5591fdd3a5d7edcfde7685dd987f2a7564e1bfb4797c93_0.png?Expires=1673308800&Signature=MGveHci-MaekfQYBAEVPWyLgC~S30YsDDTjnLhUf3bsuD8S0PMtuY~0PNbXKo~Mv6BQWaqGgRUnGYwjkewNyBsX9UcmQctWYklELJzMutXw7AKSL1DEe1ldpu9sLCqKjj8Hzt4fJYwTq4t901Iu4Qp7xOkPc7x2H4SEx8M1t5QNR2vNeYqg41lva4-7afinVuWTdYMUIOFumgsCRGGYwZfj9mWOAslzVSMscWcxzCKkDbHdJX1NJu036DKEP749q1pI~AoMBNVhjiKF3lWpGwPe1w9J5iBkK6x1Hmw4e9KdijasVOAk4fQnYeZf~gkT40U2c16fVIPGHM2XYiwBq8g__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                }
+              ],
+              "background": {
+                "textColor": {
+                  "a": 1.0,
+                  "b": 1.0,
+                  "g": 1.0,
+                  "r": 1.0
+                },
+                "image": {
+                  "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/npl_img/dba78c8ed1013d420aacb669d31a002691f2bb4ec0c1c853e34244c40dc68ea8_0.png?Expires=1673308800&Signature=j5nWh6ySG8Ro6MAysNYr3puyu6I9T49qHa4xinujjVT1lkW9siM6GEB-otWXsKZOHiRgH0T9Hgt04OPjuQuiBGMarD4edOXOXBfLxRrYtS4LK7ObMzPkTCwFlaRJZPnxfQ5FfBEKBes5jhU5WDGTSaMAU2etAuaqiJ~HRgJfD2yFjBiCg89hIkybtzTZfo~uAi0rsSXm8dMip3P6bdO8GJRnqFP8VqfAZ~OZg4juE6nf6Ge5eO8Ev7S0IpiP8i9-P5G1SIO~~koAOjoid8zYzTEcwmjSBaW0H0sMfL3mhybGtloU85F4W6laGv97eq1xcKWWWyTM6YGsVRc3Pj15fA__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "id": "TmFtZXBsYXRlQmFja2dyb3VuZC0x"
+              }
+            },
+            "uniform": {
+              "name": "오렌지 작업복",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_skin_img/89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53_0.png?Expires=1673308800&Signature=bvBmFDRGLDBYIggJF08sqpbM7F8zeiIc5eNJMHWSYwXDVNUIfCTNDy2Sjj5dSB3-H0P63RcDiPDu7EeA1SJZalwwf69H-ozEJqEN2eaFCLK0JL1UnqUXpFBKr6gWvC0MKzEJ2rSU-3q8Maq4Le3y0zYKljKeXhYiXbdGwXbCLof66vzMgPfoc2efYTugowTup0S63Sp2cCDe92sflSAuHtOcvYm2Ssm5g4Ivc-IdIEyu4pMJWfZYvFuB7GAfdp4hi-FfruFH028Og8X91tqw8XoilkdS9YdT3oQACoW0APIJZ5pTuMGipXv1ORnQPVIsYD1Iagbge1YRFnzMS4cSYA__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "Q29vcFVuaWZvcm0tMQ=="
+            },
+            "id": "Q29vcFBsYXllci11LWFnbXdqbnlnaHZ6YmFhdnQ1bW1tOjIwMjIwOTExVDAyMjEyN19iM2FiMjViMS1hNjJlLTQ4MjktYjQ4NC00OTUyN2MyNGU1NWU6dS1hNzNza29hcTVyMnhiZjdoYW5tbQ==",
+            "isMyself": false,
+            "species": "OCTOLING"
+          },
+          "weapons": [
+            {
+              "name": "스퍼터리",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png?Expires=1673308800&Signature=azVAD49AtMuuZU9-V4oj-GVJyD0SnJmWveeIpfPeLfqA9nxsnR7v4hfJsxtpd8ydNR5-ZwA7zFbn-28OfpatvZXm3LeiHGE1rzQhd707tvX73076oKx5NgnwTq2OC5yAWM-bwbpFx1uUEuR6ceBL8uk8G9U2enDqSmmO8bRzKqz-wXPemeN2uZfAxPAfJyLgJqHldl8XKkLf8Qhfvg5cglBc~qXb215fmpan0FuYUZSwo1FhlWNpsEIqJD30xKRnwlxECZGLSy9S8xZOXNyg08cY8frHw4T9vFn2IKEaqoFK5qvbTDCcW3-mwtGFPqgzBCZ1JEdcrFGsXV6KkMWBEw__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            },
+            {
+              "name": "스퍼터리",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png?Expires=1673308800&Signature=azVAD49AtMuuZU9-V4oj-GVJyD0SnJmWveeIpfPeLfqA9nxsnR7v4hfJsxtpd8ydNR5-ZwA7zFbn-28OfpatvZXm3LeiHGE1rzQhd707tvX73076oKx5NgnwTq2OC5yAWM-bwbpFx1uUEuR6ceBL8uk8G9U2enDqSmmO8bRzKqz-wXPemeN2uZfAxPAfJyLgJqHldl8XKkLf8Qhfvg5cglBc~qXb215fmpan0FuYUZSwo1FhlWNpsEIqJD30xKRnwlxECZGLSy9S8xZOXNyg08cY8frHw4T9vFn2IKEaqoFK5qvbTDCcW3-mwtGFPqgzBCZ1JEdcrFGsXV6KkMWBEw__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            },
+            {
+              "name": "스퍼터리",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png?Expires=1673308800&Signature=azVAD49AtMuuZU9-V4oj-GVJyD0SnJmWveeIpfPeLfqA9nxsnR7v4hfJsxtpd8ydNR5-ZwA7zFbn-28OfpatvZXm3LeiHGE1rzQhd707tvX73076oKx5NgnwTq2OC5yAWM-bwbpFx1uUEuR6ceBL8uk8G9U2enDqSmmO8bRzKqz-wXPemeN2uZfAxPAfJyLgJqHldl8XKkLf8Qhfvg5cglBc~qXb215fmpan0FuYUZSwo1FhlWNpsEIqJD30xKRnwlxECZGLSy9S8xZOXNyg08cY8frHw4T9vFn2IKEaqoFK5qvbTDCcW3-mwtGFPqgzBCZ1JEdcrFGsXV6KkMWBEw__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            }
+          ],
+          "specialWeapon": {
+            "name": "홉 소나",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d_0.png?Expires=1673308800&Signature=lRXNZS8EqnNkdf8C0SeQRQjaUlW~Ec6f5hmEft1wEbIuDS-Tz5UiU-~YPL~Xklrk3c~rJwMOmtvq9gkTqVPGWVbmDKwsgON6kWy0GDdM2hkBY1auqAIa8Q4BqDX3IUjRsf7mgfpDfI8euoiaejhynib~zRKY5BmcD9TR8hD94aDXDruN2UXAdcPCQTLdx7OJLXxldTXmPI6pV~aASRO2JTRkJJQZP82-H8LyXAtilOzTvFGHhmQh7Ak9LdaHJjr4UdxZM24vx~q-zv17Yi-blcsg4bCXPno-2wiMKIatmVYs1auDRlzXy-tLbntU8A2qpHX89f7xVh7xrGj6GLrc-Q__&Key-Pair-Id=KNBS2THMRC385"
+            },
+            "id": "U3BlY2lhbFdlYXBvbi0yMDAwNw=="
+          },
+          "defeatEnemyCount": 16,
+          "deliverCount": 1777,
+          "goldenAssistCount": 0,
+          "goldenDeliverCount": 64,
+          "rescueCount": 0,
+          "rescuedCount": 1
+        },
+        {
+          "player": {
+            "__isPlayer": "CoopPlayer",
+            "byname": "성장 중인 인생",
+            "name": "うめめ",
+            "nameId": "2583",
+            "nameplate": {
+              "badges": [
+                {
+                  "id": "QmFkZ2UtNTEwMDAwMA==",
+                  "image": {
+                    "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/badge_img/9e57b2bca3abaa7f78b499cf0023818bd984d77f12abb79c789bb0bcf3c78c0e_0.png?Expires=1673308800&Signature=r16peJ7I0tgeYdV-AyB4ku33ncFi7Ro1n8oyiIoo-wodLmF8v-K58BcfzPnUTwoYb3M8prJmsu7AYCTeSTMkTJKAd9zz2dNymOoBx~237JTg5y5VyHaxUCoqUP3rD~-kVEEF6gmxce3sCbjXK-bsl0~bHtbmRJx6AL~wFD4IH0T9iFHHGEErXmbFXeil5Xwt31ausThADPV6JEdp9Jtq9KMOIh8jWFbcqp0yFCJuin-EZ6IyIKSHSyFMeGwzwYyp9B9ksQjeJ6NEyNJhC0iKTuvE1VsNk5TaivyPjIlVsu5Dhcaa2qt4u1Uf7xeWLB2gYxjKGLTzjAEgDkjI2edyIQ__&Key-Pair-Id=KNBS2THMRC385"
+                  }
+                },
+                null,
+                null
+              ],
+              "background": {
+                "textColor": {
+                  "a": 1.0,
+                  "b": 1.0,
+                  "g": 1.0,
+                  "r": 1.0
+                },
+                "image": {
+                  "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/npl_img/80d9f1bb2e4504a17fbb9d2c72603358d9e4a941a6619c890429d459629b677a_0.png?Expires=1673308800&Signature=Bixo3FxyVyNUpwDVjIxDqTG9p-AQzzlJkkRp1wMMv4ljbUaSLd-TsO~TgbrOwJh2mthXPNjIfpDqunLfBKWVmehn0gu02nzd-NSyYD4thW1kQeEAUu3RPeMLfJFTIcLmD6MbVDRD7E5rcSifZm3vfBPKkWq4WUyZdO6bR0kNexE4xdaL3nlNK8xSJHYkTsAzP7y821iXg9JiE4zQkWGs3zMyRHzYHtnCWMRYQ0ft7hb1wBs~stqTYl6dbDuc0YiWWrubvqFzSsoaOZFXwAo9ArC6eqlkHv~u6KoBdPYrVdtNZW8PiTRWdr7BGTSd2su~9FNt8LWq~GW5aLCFBXH7KQ__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "id": "TmFtZXBsYXRlQmFja2dyb3VuZC0xMTA4MQ=="
+              }
+            },
+            "uniform": {
+              "name": "옐로 작업복",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_skin_img/7c0c19d3267f4ff1db3f579f48058c750357fa289b796f6772003500d20225f3_0.png?Expires=1673308800&Signature=RqIDjvu5-GjuYwO45kfNaP-dsm2wVUoidxv8b3uF~uhsvJup2RRbp9Mi-zaHI35M77q3fQlqGOkYUp-bjS64ZlicjAdxL3Xy139JdE3kZLFhAvtdBsTisoz2ZCpCuQFcVwidiHz1fDhs7cI9shrNUTXflqmPLB5UQvrt1FdfxvdNrOqiFDFX3tkf5Z6Kvwz3z8aK37MxvVJDSVitEeLcTi6eNpTNWtnwdfZOyG0b8w523VpseVGScMWbqk0~LZFIr6wE7CjOX6PG1qAsER-C1W5AN7zkWyGW29CAnRjxewzu5vDSG3yCuA-e~8LxCgJAcs3AI~jyuagIVqMMRfnoHA__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "Q29vcFVuaWZvcm0tMw=="
+            },
+            "id": "Q29vcFBsYXllci11LWFnbXdqbnlnaHZ6YmFhdnQ1bW1tOjIwMjIwOTExVDAyMjEyN19iM2FiMjViMS1hNjJlLTQ4MjktYjQ4NC00OTUyN2MyNGU1NWU6dS1xaGFxM3oydXFmNGtydXBpYW5tbQ==",
+            "isMyself": false,
+            "species": "OCTOLING"
+          },
+          "weapons": [
+            {
+              "name": "스플랫 차저",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0_0.png?Expires=1673308800&Signature=prPTYQL21I6Sp4ftfVeOdYsE4UefqyVbYl1PpWh7aR8XqirtOqem-AewQT-YTX-iX0ay9TyU5oNGztDAAC9S3piiwQWTZqgwfoD4IIIp8j--yIr78dQZZC74oVUXka4sUbFuPfR80DwgEnXA5TNY4fRdcJc25QgoQULRik5yJ4c8kOPBm1teoxzYMA2hRWKkuTzJhEoTRDMl4oHqihTPbY2kMJIULYht696MKGHV3diWIv0MzOPrf2GdA9bgCutOBdcB8jbdLHuboaFl4FwARf5kWjZhUkhx3X43U5RvvVl8b~nkJOLmn1XoPLCgEqL~mClTglrFUjQU5NOy82Tl4Q__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            },
+            {
+              "name": "스퀵 클린 α",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png?Expires=1673308800&Signature=UY8m5xdQ55u0uZRZSeNHL9H46I7TEqgawlF81WhQ2pfhI4bJwzl-NBzAzFYvwqTsrFJr8-nMEPnlSseDYmePK68EqYxjNqgKqBeh53wTUTihE203m1d3dKHM6wxz5U-I8qmlw80oXKQ8QJDLFRrbJHCXLL8eZHj3e5YYbpySzLS5vI0-sPCdhpaKVz5kfDHxHJgAGG9IQx1FIEpBfUjFGpN~Qs1l-1XL1X~N3-hd9ayk76F9YY~FmiLL1R1zf9H1lRLlPP5GkbeyZBXPNRtS1Q4MtiAHliFATMuCU6RI8e1ezL~z5gukHoqjF9fm2Ya3UUKeD5ZCnPdrPECEDSiB5A__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            },
+            {
+              "name": "하이드런트",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/34fe0401b6f6a0b09839696fc820ece9570a9d56e3a746b65f0604dec91a9920_0.png?Expires=1673308800&Signature=pVribTLBPm-BYU5oKpTJRaoPUGPe3qh8-2w9o4lGS1~8godPmljoljZg4zFkC80qqQGwERVmBWffAXB6sZAi~~Xw33dCBWE3pb~EkzjiyisxTyG5AN0rTFV89etM-G~6GMjrcUtgUi8gw5zfspjYOGUIXyF60bUVru45kG-A00z0KFnXP~uGFGTYtaTQ39au5OoEQlaTdYNvRtHEDVFbyOQSjqb5bZccNiS7jNcNk3hbPyGKTHoRcw-pNbuCdDfUFQiMq3ug6Glb~Yg-hMAazzMYjJ0if5~j2UuZp4-ke9Y62o2i5gngOTIEfmATtCGdjMGFWJ5EwMD15x2lIOPHig__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            }
+          ],
+          "specialWeapon": {
+            "name": "제트 팩",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/252059408283fbcb69ca9c18b98effd3b8653ab73b7349c42472281e5a1c38f9_0.png?Expires=1673308800&Signature=hhTQl-3msKlQry7IrIg-Zzotyr1z-eEM-D-UEfjRUXbj~9RvbDT2LckGMTcgDKjSd7N922chycHe5RgPMUN-cJLRxwuH6Dg3cdyZIhBITmXEyT3Lh7iTZ8Mlqc3QCn9Hsr3EcsULZTb4mNUuZsWdnPoY0NPkmr4vkvbOdV6wivbvnx1aHqGZHmnLIzFZz5ZbASNn5VEfSqO31U-ACDu~CsRZKH9vNQDTwguWDZBoke0t6kvnYY4vb11i-~dDSJpRQL0raeA0bXQ04oJFtsBjRcV1n-0JBE0kFpW8iC5yL1~6LvF443AJvmhlTWq3eM~Lk0BMb5mp3rjTk0ghImbsIw__&Key-Pair-Id=KNBS2THMRC385"
+            },
+            "id": "U3BlY2lhbFdlYXBvbi0yMDAxMA=="
+          },
+          "defeatEnemyCount": 17,
+          "deliverCount": 1161,
+          "goldenAssistCount": 1,
+          "goldenDeliverCount": 17,
+          "rescueCount": 2,
+          "rescuedCount": 1
+        }
+      ],
+      "bossResult": null,
+      "enemyResults": [
+        {
+          "defeatCount": 1,
+          "teamDefeatCount": 6,
+          "popCount": 7,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTQ=",
+            "name": "폭탄",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/f59fe344bd941f90dc8d3458ffd29b6586c1cffd00864967e7766a5a931dc4f6_0.png?Expires=1673308800&Signature=UlXZGy8~6x0FkRPnlRyDa3UU9DlYT2rvfxX1hN7nTJ8B2CEz-4~rX-ntL1mbsS1TOXzzmz7q8nxrQUGiM0H8l45KZxdigP7USbyl2eKFBP~U0oFYhiNRsuTk7-Pg0oi1HJWJ-pP0sVWKxqo77Sxevj1lOtlgLh78eoqL5ys5Q3TbZin~9EQiOIcHCum1XSWIDfyVyrmc5poTpf1TX6cI~FfkHYWoU0-WiGnAFyBg5w-zOK7vSo9zIlVyuzO2JzQO8XBdYWxs~Ea3VyyzY65F9RECQ~2hLNUG~6HNhM1ma6tpSOgPzxcfRLQ38tDOsyRdjLowW0ud4OPsvO1L5PZNMA__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 5,
+          "teamDefeatCount": 5,
+          "popCount": 5,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTU=",
+            "name": "어깨 패드",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/03c31763738c5628db6d8e7dd3ba0fd2fcb79a1f47694488b51969375148edde_0.png?Expires=1673308800&Signature=UV320k0JelPdFeLXuwETdcLXG--8X-Nc1jbM31esGtT86DbtxOxu6yx5oQ8FgzGrCsTtjJQr2GzvQDV4z0m0JtmLgnOfNbl8ozaoNn6Qb73uqp255J1~HKpmHfXNoH3zBQ7T~N8vye3joIVrD4bujMVadrNoEtnkOBe1PYL~-sSE44bJ0vXmIjXOgyVMuJr7NYYw71raY8moiOfF12q5ij-A-XJ~Rn616gjXihXohtY712V8RdmnJRlSV5p7z4hABcj5TQhd2cAEKEzxiK1XR4ZQo26ne9db~yIqxAPbAQdXswl-ZYHYSvfS8sGptJCeA0gmurnElv9Am2khZl9ooA__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 0,
+          "teamDefeatCount": 1,
+          "popCount": 1,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTY=",
+            "name": "철판",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/3a3e2c87b96b92e31ffc59a273b7d6aca20f9941e05ad84d6ae26092a627aa34_0.png?Expires=1673308800&Signature=Hs-wKibQeaUJJ8kxUQ76vRjjGEJXoLh6OrzR5mRZ15NUJvmwzfX9lyKnbfPXPYTY9cKEf~SVJxA-Yaq-H~N2uYxr~WQmyltIZdld8MeTjvilO4JlycX4NfjPZMZdMqUXqJBjjszKwgbCJpmMnODdu7VhOaPmmNnWpBKjjOQTSCnHXKcHRSCpaURu8jlOv-AL8qiXHPfPi4cyGfOaiRyQpztkDIPznEXa946DFODR9X0qvnNJlwiCYKn2rmh9qkvTwGoSqZnrwuVTqKBLYEZcrWWUoHzoVS-WnaXuRpQ2b2OkFAXgNixJllIxCcbstjhqF23zF-TC~JBSY1Pg~rz-Lw__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 1,
+          "teamDefeatCount": 8,
+          "popCount": 8,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTc=",
+            "name": "뱀",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/999097a0908a4560f05a16e3f97c07b5d10bed22bee6d2ce0eedb2e6a6dcb9d0_0.png?Expires=1673308800&Signature=MD5vXpH8cuqBTX~J-mzucaezgq6H5PN4w65IOgV4WDm2aUJgMRSKMTID0nu4ODj8ZR4Bt2f7SqthBXkJlc62fofWaYMZqAp7jJxpcEDReHSly~TPPdiKG5T~hocfWKC8YFYHxZwOVKTZtLf42xnmn67XWTmKBJy6h2vsKJx9X~I575dHo3eCbUZF17Vs7WUX8SX5gTZujVr-dhiaBsfLlAAha-iQa4FvLvVKpNVGCbL0RBj2QBoImZ78mE5jZ7wDV3eWWvWxDt6403e1H2FkbHCcPXFjT-XW658dg5JaBWAM2KjS00-OchOmUtvOp5PF-ZF82iGGO1v7jsSuUa4gkQ__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 3,
+          "teamDefeatCount": 8,
+          "popCount": 8,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTg=",
+            "name": "타워",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/2d740da6f03364c3c289625455374f734fd8a96b25c26fde13912e90f3aea68c_0.png?Expires=1673308800&Signature=KsiLT~sZPbFgR8JBk4Z161OrRo8SOwf-JiaM0dPL3tlzndm7NljUSMu~wRgIfWXaOB~4wAeL6ZlFIOuxOuv1Zcs360dbnLLgVrSlmEM21Y0N06EnZP8PzsMVQaf6gx9ZPLXA83wi42Z6AHlZZ~wFmYn7ZCi~a~WWGUJRifpRx75~chkeVe39Fdg1jm2FAflf6PbbneDs~2bgeGOvkaj6gpCva8FQj78w0PTILrB1dx8cOfwh1gBDCX2vnEhfJvZez6Ibhz2iWbUEvxFwc8GphJsZ60LE40xkZIqcYgiaQYG8cXOFSQ16OnxjUW4qUT~eNKi5TO3Gr9H8rU9u3odUzg__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 0,
+          "teamDefeatCount": 5,
+          "popCount": 5,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTk=",
+            "name": "두더지",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/fd5abb7a9087c528e45a7a4e29c9c03d673b69d6f0ba2f424f6df8b732d9919a_0.png?Expires=1673308800&Signature=AxfUnUDxKiHxDPOtcdX~X-LLCPB3LPckT8CzzODtiH2BFP3Bpvqq-2lhelfyUsY5aQPvOIQz2SRSdI2WuaDLxJDgZbuuR-v7NMnb6B2r7HnaK0bUShzUS5HEOt8iTPFnSuDz3iLAtmdAUIdlS6Y1lXO-fNk4GK35NeFRECu2Wq47vnZirV-jLzJYTcR4JP6aHKrBUZ5CWkVbDmpbiwtP8lnsGCJl8Bh-dpnsyaCf~HIinmOFvv0ZyxEhbV3Lannt95xfBI6Mt2bXq3IJkn8GlPMad2G0NbpRHi6KTEuS5pXUpxaaV~MAx3~HWDygFAKiUvtFnIS2UeW0mzt4Hzre2A__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 1,
+          "teamDefeatCount": 3,
+          "popCount": 5,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTEw",
+            "name": "박쥐",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/faed7977b2144ac5979de0ca7d23aefd507e517c3fbe19431054ac5a6ba300fa_0.png?Expires=1673308800&Signature=MniHV~Zv3L-FYwN1z7O7Wd3t2hGJU2-i~K75bl7GWu83Iq~R6EFlK8--mdrrAKlu06ECLyL6m1R9GoDqtlFRfCiF81JdY72OKbYO2gxtMN8RfvQiqZH8oz74lA622WCKFHNzRYtIedSChr~qRhgrEmYC2BaP1RAOUgEa6LyFAgREHYDwS6XZjzLA7aM3rS9BEiLTAwU7SOygoekK1xcILV42Lp3UrHp-rzyBF4yYOo0KHmHfGWmaL89Q5AAYN8j0dWp571179z5e8ReepJEE~-ZuXXdHtA7ctGuIzxix05Iz6FSNFqQfYyBlEH2w6jFip-dTZFIkK7KqG7bqmAmuLg__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 0,
+          "teamDefeatCount": 2,
+          "popCount": 4,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTEx",
+            "name": "기둥",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/fb4851c75f62b8b50d9bac2128d6ef1c703c7884b63402762ddf78c1555e364a_0.png?Expires=1673308800&Signature=aQzMpXOTcpXqthsLPpILSjyDDVD~N-kGTv6HHxwGoUXJ7wxCSrtsA5rTYzCf1yzLr1Ef9NUlG906rNYv3uuQjBMsStLhonD71EYrASua7L6NN1X10Qc-YrvcXF0Hgca-iQV0lWFnblV0O0AqhovsegB2Clav0jFGGar2cwIkWh8SyLWZ-Qzo~U3Em8UeQWsuJwMVesf73xEbN9m7OZDg0sBes8123i~hZzV2041V3Pw8wgEQUSDD61ubFZ3ux9NPNVMEs-PWuJGL9-0DRJNsga1F~Z7fcV9E~8lPw7GU46jb1L8sIggZyuARLWdJliecb6Og7YCn6JcTOq2H-Hj80Q__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 5,
+          "teamDefeatCount": 10,
+          "popCount": 12,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTEy",
+            "name": "다이버",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/dbbf89da359fd880db49730ecc4f66150b148274aa005e22c1152cbf1a45e378_0.png?Expires=1673308800&Signature=k5FvkPkROhkmro4wOG6YrR21rN~ZoS6Pvo1SrLr~5I0jzzv3oNrJsC0VmzuBiAPSi9Zyu2RrL85NlADQ5o~FFEHBcIsC2pXe9t85SpR0uglfjwZAzSJni~WQeq9Hz3Te6HvZUKOIbzhXhmN5wXi-A3ReRNQfitSfaiamPhtmAFFY9~~syk3YEtSt1BWTvlmOaqec1g28gfE1F6pYJbeCdIE5kqL9BIvmR2nhRoVzDkEu8p7ue5vtr0fUsl3Aa~iecuD01mLvWcwI3haCqNWl8GpcvhUGr6w6EAuW8JOgEwvMIydJCqR1QPYthCkf7J~P9R7I4ks8inP7kBI1XAc2Jw__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 0,
+          "teamDefeatCount": 1,
+          "popCount": 2,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTEz",
+            "name": "철 구슬",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/2c7a648b4c73f291b5ede9c55f33d4e3f99c263d3a27ef3d2eb2a96d328d66ac_0.png?Expires=1673308800&Signature=tsXhiRY-rkxKz4ls8NkB0OeddHtiy81Ox8W5pSGmk9Enlwycmw~5IVSVXi8W~7n8OeyHOP2VDr5SByZKAkRUq4ZKLEvVXcJAD5kBX9oUaXUxdZ6PO~HfmifUDYsx55T9CVjmwJmPtmQRU~Ft08mEn7aDNjVDumdUPAvqR9m9IjAKxyAW9e4NKgj3DzCY3KZYz21yVlOw6S1h2SxJRiUKteh-dEb9kbRR~rXIMwSSZPVkQkxi54nFx37jhIdy9mldiUK8iTYYpceJaXvKof9sulWqsFzEqMRdJ1lNjW5iIwF5hpYzlAyTGk9zCN0jGSMdqY-fdYB7A7zw3jk5W-E2wA__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 4,
+          "teamDefeatCount": 4,
+          "popCount": 5,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTE0",
+            "name": "냄비 뚜껑",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/2185696079cc39328cd69f0570e219f09b61d4a56508260fe97b16347ae8a55f_0.png?Expires=1673308800&Signature=SliDRyD5aklew9vmrQjfYKLqRyE80JxhXHXU7C5QyZaslQIWm7wYvcD~cDF58FqHMcJODpR3WIwQX-IEpxnD3nJ27oRI27eaa3sLBeOklZbKRs2CGvS~tDI59Dpc3sN4V8CNcMV3YlZvraic5uBP5rUCq9VnvlGzz3zC8TjZv9wKHJyJDU7aqUKfqdM2i15dPQzJAn32mkATN~5ZWkW0tFhVjTW8Q8bqHBV6CRsSQgqjAFvlV2aQ7JposPo820wgyW9WA29jzezXxnWDk-0aZl6F-Wh1nixXwkrG3Ch3GdNX1Q-gCjE27FH2kPFxpeJDEW5vvW-5~2McSz8ePBtu7Q__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        },
+        {
+          "defeatCount": 0,
+          "teamDefeatCount": 3,
+          "popCount": 4,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTE1",
+            "name": "황금연어",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/a35aa2982499e9a404fdb81f72fbaf553bc47f7682cc67f9b8c32ca9910e2cbf_0.png?Expires=1673308800&Signature=wKifrTSy0JmGndGigWp0Jb4Zu--FuvJjpRjJ7358koNFlOKS2PwkFsJ7Kr0-m65gN4xsiRchcgZhz~vtaYFlt1BZlQWjpkXuetXhLqZQpk9lqQpWcKK40z~eJVZCXpAaxdIYqu26W8M8mP92c7LHceuGvUIcNFvSAJTBC-dUdG3GaDEnbI5OBwM5qD6dLngVr3X7apFEDAdZxzEPLTFogyCZcvfpQvlez0lkgSiqGoAA6kflxYBgFKVD-q~AseAM7aBfjtKloiUa2r~ObgusKYM3kc4gP-GD-CHInitC-RfaV8oQAAuFu~r4tl9STrioOktDjvWARXAcLFul-L7CJA__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        }
+      ],
+      "waveResults": [
+        {
+          "waveNumber": 1,
+          "waterLevel": 0,
+          "eventWave": {
+            "name": "덩치연어 대량 발생",
+            "id": "Q29vcEV2ZW50V2F2ZS02"
+          },
+          "deliverNorm": 19,
+          "goldenPopCount": 57,
+          "teamDeliverCount": 24,
+          "specialWeapons": [
+            {
+              "name": "홉 소나",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d_0.png?Expires=1673308800&Signature=lRXNZS8EqnNkdf8C0SeQRQjaUlW~Ec6f5hmEft1wEbIuDS-Tz5UiU-~YPL~Xklrk3c~rJwMOmtvq9gkTqVPGWVbmDKwsgON6kWy0GDdM2hkBY1auqAIa8Q4BqDX3IUjRsf7mgfpDfI8euoiaejhynib~zRKY5BmcD9TR8hD94aDXDruN2UXAdcPCQTLdx7OJLXxldTXmPI6pV~aASRO2JTRkJJQZP82-H8LyXAtilOzTvFGHhmQh7Ak9LdaHJjr4UdxZM24vx~q-zv17Yi-blcsg4bCXPno-2wiMKIatmVYs1auDRlzXy-tLbntU8A2qpHX89f7xVh7xrGj6GLrc-Q__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "U3BlY2lhbFdlYXBvbi0yMDAwNw=="
+            }
+          ]
+        },
+        {
+          "waveNumber": 2,
+          "waterLevel": 2,
+          "eventWave": {
+            "name": "안개",
+            "id": "Q29vcEV2ZW50V2F2ZS01"
+          },
+          "deliverNorm": 21,
+          "goldenPopCount": 70,
+          "teamDeliverCount": 40,
+          "specialWeapons": [
+            {
+              "name": "홉 소나",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d_0.png?Expires=1673308800&Signature=lRXNZS8EqnNkdf8C0SeQRQjaUlW~Ec6f5hmEft1wEbIuDS-Tz5UiU-~YPL~Xklrk3c~rJwMOmtvq9gkTqVPGWVbmDKwsgON6kWy0GDdM2hkBY1auqAIa8Q4BqDX3IUjRsf7mgfpDfI8euoiaejhynib~zRKY5BmcD9TR8hD94aDXDruN2UXAdcPCQTLdx7OJLXxldTXmPI6pV~aASRO2JTRkJJQZP82-H8LyXAtilOzTvFGHhmQh7Ak9LdaHJjr4UdxZM24vx~q-zv17Yi-blcsg4bCXPno-2wiMKIatmVYs1auDRlzXy-tLbntU8A2qpHX89f7xVh7xrGj6GLrc-Q__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "U3BlY2lhbFdlYXBvbi0yMDAwNw=="
+            }
+          ]
+        },
+        {
+          "waveNumber": 3,
+          "waterLevel": 1,
+          "eventWave": null,
+          "deliverNorm": 22,
+          "goldenPopCount": 57,
+          "teamDeliverCount": 21,
+          "specialWeapons": [
+            {
+              "name": "제트 팩",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/252059408283fbcb69ca9c18b98effd3b8653ab73b7349c42472281e5a1c38f9_0.png?Expires=1673308800&Signature=hhTQl-3msKlQry7IrIg-Zzotyr1z-eEM-D-UEfjRUXbj~9RvbDT2LckGMTcgDKjSd7N922chycHe5RgPMUN-cJLRxwuH6Dg3cdyZIhBITmXEyT3Lh7iTZ8Mlqc3QCn9Hsr3EcsULZTb4mNUuZsWdnPoY0NPkmr4vkvbOdV6wivbvnx1aHqGZHmnLIzFZz5ZbASNn5VEfSqO31U-ACDu~CsRZKH9vNQDTwguWDZBoke0t6kvnYY4vb11i-~dDSJpRQL0raeA0bXQ04oJFtsBjRcV1n-0JBE0kFpW8iC5yL1~6LvF443AJvmhlTWq3eM~Lk0BMb5mp3rjTk0ghImbsIw__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "U3BlY2lhbFdlYXBvbi0yMDAxMA=="
+            },
+            {
+              "name": "제트 팩",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/252059408283fbcb69ca9c18b98effd3b8653ab73b7349c42472281e5a1c38f9_0.png?Expires=1673308800&Signature=hhTQl-3msKlQry7IrIg-Zzotyr1z-eEM-D-UEfjRUXbj~9RvbDT2LckGMTcgDKjSd7N922chycHe5RgPMUN-cJLRxwuH6Dg3cdyZIhBITmXEyT3Lh7iTZ8Mlqc3QCn9Hsr3EcsULZTb4mNUuZsWdnPoY0NPkmr4vkvbOdV6wivbvnx1aHqGZHmnLIzFZz5ZbASNn5VEfSqO31U-ACDu~CsRZKH9vNQDTwguWDZBoke0t6kvnYY4vb11i-~dDSJpRQL0raeA0bXQ04oJFtsBjRcV1n-0JBE0kFpW8iC5yL1~6LvF443AJvmhlTWq3eM~Lk0BMb5mp3rjTk0ghImbsIw__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "U3BlY2lhbFdlYXBvbi0yMDAxMA=="
+            }
+          ]
+        }
+      ],
+      "resultWave": 3,
+      "playedTime": "2022-09-11T02:21:27Z",
+      "coopStage": {
+        "name": "뫼니 엘 해양 발전소",
+        "image": {
+          "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/stage_img/banner/low_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_3.png?Expires=1673308800&Signature=A-eyu50L3HBdYzDZLFITjC9XF914KEc9lt1CG2kyMMzYNUIub9duxfY9hpI9CdsJNiRbbmVp12XhfBrlZQS1q7o3hOLlc7ro3OenWwuBTlDKcXtzRBwBfXaImf-ZFJgU1oW2FDzfO4YbJyCKxnycXAYE-X7-fIgK-C4sGkB7xSWeXN5kjg0mLK8dx0CfpiU5UekSO3g4z0E-jUo6KTAowaq1BYulA9ssjiMeI1jJ~ycqHd~tfr~2OJ7QGJhqL-eQDBfooT2RLmiqCyWas6QIN1pJpKh~UQVWI2aykn-9hqfiOj6HNGd94gZj87EdqTYAgsQzqVT-2NEyIbQs5PiAfA__&Key-Pair-Id=KNBS2THMRC385"
+        },
+        "id": "Q29vcFN0YWdlLTc="
+      },
+      "dangerRate": 2.0,
+      "scenarioCode": null,
+      "smellMeter": null,
+      "weapons": [
+        {
+          "name": "스퍼터리",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9_0.png?Expires=1673308800&Signature=azVAD49AtMuuZU9-V4oj-GVJyD0SnJmWveeIpfPeLfqA9nxsnR7v4hfJsxtpd8ydNR5-ZwA7zFbn-28OfpatvZXm3LeiHGE1rzQhd707tvX73076oKx5NgnwTq2OC5yAWM-bwbpFx1uUEuR6ceBL8uk8G9U2enDqSmmO8bRzKqz-wXPemeN2uZfAxPAfJyLgJqHldl8XKkLf8Qhfvg5cglBc~qXb215fmpan0FuYUZSwo1FhlWNpsEIqJD30xKRnwlxECZGLSy9S8xZOXNyg08cY8frHw4T9vFn2IKEaqoFK5qvbTDCcW3-mwtGFPqgzBCZ1JEdcrFGsXV6KkMWBEw__&Key-Pair-Id=KNBS2THMRC385"
+          }
+        },
+        {
+          "name": "랜덤",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/ui_img/473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1_0.png?Expires=1673308800&Signature=UAbFGtK6Mvv8kptSXqzRf7~03iz1-O4IuqwdyUgpA-O7Ik~00rKChsJKjxkoZwGvc2tttpsWIQBjovM~KFGNAhXm94GOBjp0LpfKYZMY45v~zEqd6S-AsY~xTy1vzAduLHKL-ZkFMBTC9Z85-BIhfGYPOrpXBOhgbAVebtjiDNo12NoWy30CQiQl8hwanb1kScBOJ7RXb8zgRPTvrVvQhY9M9as~Le1q92P00JID297d601a4pXNXmacN-XilBXeZt4j8qj2BtD1bsOCH5KYd2f5j6ZkGA6vKUpsj2gyYDr-lozoN6TKMcI-D~b5kwhGlfporGOcgPX3f2G~S7C8Ww__&Key-Pair-Id=KNBS2THMRC385"
+          }
+        },
+        {
+          "name": "익스플로셔",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe_0.png?Expires=1673308800&Signature=hvmIGR9kLExIXOcOU9Y-UuA773ZnGynECsgGNqEL6423yB4hpbDKsrbJf3xzgWnjT6tHOwcBmev-3ssZtqdzTJLueO5cGncsLaia~YyAJu0nzogC6YFMpGn58nc7BN6rrD1ff8Mqo3CDgDri-B7Iu9DmNB1gE-uvNJs~e7KfLbjhZsdMOVqbj402gcItHef9V5X3P5UW6Hur-YkwZ8IVcm6xp5jk8pgfk9RsVqsdwMq9ZQN0tTuKeCGyNYAma54OuUwjLbdiMZYmafUpY3INwWz14FLxOqcNZ45UAslXilX86MjfthemGcuqa-EsYy5QFeXK8mPXl~Kx~QhbZ5AZ4g__&Key-Pair-Id=KNBS2THMRC385"
+          }
+        }
+      ],
+      "afterGradePoint": null,
+      "scale": null,
+      "jobPoint": null,
+      "jobScore": null,
+      "jobRate": null,
+      "jobBonus": null,
+      "nextHistoryDetail": {
+        "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMVQwMjI4MDhfYjNhYjI1YjEtYTYyZS00ODI5LWI0ODQtNDk1MjdjMjRlNTVl"
+      },
+      "previousHistoryDetail": {
+        "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMVQwMjE0NDhfYjNhYjI1YjEtYTYyZS00ODI5LWI0ODQtNDk1MjdjMjRlNTVl"
+      }
+    }
+  }
+}
