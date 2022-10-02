@@ -14,25 +14,55 @@ struct ContentView: View {
     var body: some View {
         NavigationView(content: {
             Form(content: {
-                Section(content: {
-                    NavigationLink("Localized Message", destination: {
-                        LocalizedMsgView()
+                NavigationLink(destination: {
+                    List(content: {
+                        ForEach(EventType.allCases, id: \.self) { eventId in
+                            Text(eventId.localizedText)
+                        }
                     })
-                    NavigationLink("Localized Error", destination: {
-                        LocalizedErrView()
+                    .navigationTitle("EventType")
+                }, label: {
+                    Text("EventType")
+                })
+                NavigationLink(destination: {
+                    List(content: {
+                        ForEach(WaterType.allCases, id: \.self) { waterId in
+                            Text(waterId.localizedText)
+                        }
                     })
-                }, header: {
-                    Text("Localized")
+                    .navigationTitle("WaterType")
+                }, label: {
+                    Text("WaterType")
                 })
-                Section(content: {
-                    SP2Auth(session: SplatNet2())
-                }, header: {
-                    Text("Splatoon 2")
+                NavigationLink(destination: {
+                    List(content: {
+                        ForEach(SakelienType.allCases, id: \.self) { sakelienId in
+                            Text(sakelienId.localizedText)
+                        }
+                    })
+                    .navigationTitle("SakelienType")
+                }, label: {
+                    Text("SakelienType")
                 })
-                Section(content: {
-                    SP3Auth(session: SplatNet3())
-                }, header: {
-                    Text("Splatoon 3")
+                NavigationLink(destination: {
+                    List(content: {
+                        ForEach(GradeType.allCases, id: \.self) { gradeId in
+                            Text(gradeId.localizedText)
+                        }
+                    })
+                    .navigationTitle("GradeType")
+                }, label: {
+                    Text("GradeType")
+                })
+                NavigationLink(destination: {
+                    List(content: {
+                        ForEach(StageType.allCases, id: \.self) { stageId in
+                            Text(stageId.localizedText)
+                        }
+                    })
+                    .navigationTitle("StageType")
+                }, label: {
+                    Text("StageType")
                 })
             })
             .navigationTitle("SplatNet3 Demo")
