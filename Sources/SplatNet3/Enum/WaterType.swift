@@ -35,7 +35,7 @@ public enum WaterType: RawRepresentables {
     }
 
     public var localizedText: String {
-        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .main, comment: "")
+        NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
     }
 
     case Low_Tide
@@ -53,8 +53,7 @@ public enum WaterId: Int, CaseIterable {
 public enum WaterKey: String, CaseIterable {
     public var sha256Hash: String { rawValue }
 
-    #warning("データがないので仮割当")
-    case Low_Tide       = "55d434662f0976490d8791b3242c1494022602b4e026a4d4804c8a880862bb3e"
-    case Middle_Tide    = "b9710c77af3bb946ed2990c09104a20bd7b98a3852dd95e09a0647edc5693733"
-    case High_Tide      = "9d6ff8f3cf2247c1dd604c97f52c8d92320d6290922491b1410ae2563a576a16"
+    case Low_Tide       = "0a2a1ec6c93ff93a003bacf3082c6e79d7be7ce75aa68ae885c8ec14d658e9c6"
+    case Middle_Tide    = "b38e6eae48f980d5fedf4d4b32c511f8f2f246ee7c3062c9386455e90b5f7c41"
+    case High_Tide      = "526e505f8816a1ef36d3b648adc3a31bcc69c4da79ab8d779c8074547b902657"
 }

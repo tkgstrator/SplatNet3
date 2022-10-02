@@ -4,7 +4,7 @@
 /*.xcodeproj
 xcuserdata/
 DerivedData/
-AssetGen
+AssetsGen
 .swiftpm/config/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
