@@ -37,7 +37,7 @@ open class SplatNet3: Authenticator {
         let configuration: URLSessionConfiguration = {
             let config = URLSessionConfiguration.default
             config.httpMaximumConnectionsPerHost = 1
-            config.timeoutIntervalForRequest = 5
+            config.timeoutIntervalForRequest = 10
             return config
         }()
         return Session(configuration: configuration, rootQueue: .main, requestQueue: .main)

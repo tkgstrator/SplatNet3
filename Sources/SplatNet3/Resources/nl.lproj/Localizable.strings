@@ -3378,6 +3378,12 @@
 "060f2108d8bcbe4f87ae20d6dd355923dd50d07055cbce3233569690cf016527" = "Salmon Run";
 // CoopHistory_TotalPoint
 "b2373d7c0e6f7e0aafda962c366adefa978e8f454f51de4784344aa8ca4ee4d6" = "Puntentotaal";
+// CoopHistory_Wave1
+"9fee890ae2d6bb7f916691c0f4cdd948fb2539fe77d57945700aacb53735aca1" = "1";
+// CoopHistory_Wave2
+"f979e54cad66243f388c4b899141cfeb168b7d602f7404e3b00593bcbdae7824" = "2";
+// CoopHistory_Wave3
+"c76dc4e8e2a4cb85a80e776484b7d48339b8b2620bffff9ff509b356994f5164" = "3";
 // CoopHistory_Wave
 "39ab68c2639757df99e7a0032a115a01c136beaa88dfc937599dc4828c4ec4b3" = "{ 0 }e golf";
 // CoopHistory_WaveLevel0
