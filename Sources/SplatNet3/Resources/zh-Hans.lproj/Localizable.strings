@@ -76,20 +76,6 @@
 "b4b150ab7addb3281db723372902472c65a673a61d1750d1f729e427aaeebc08" = "达人+3 打工仔";
 // Grade_Arbeiter_08
 "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0" = "传说 打工仔";
-// COP001
-"89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53" = "打工连身工作服 橘色";
-// COP002
-"87f1b945e1dc58370d4843365714a296ab7d012d2ee6b31eedd3d7fdd840c9a9" = "打工连身工作服 绿色";
-// COP003
-"7c0c19d3267f4ff1db3f579f48058c750357fa289b796f6772003500d20225f3" = "打工连身工作服 黄色";
-// COP004
-"61acba988871d0e9ce259138cde62f9b8f83bb8014ef14c9abb3acf0aa38c51f" = "打工连身工作服 粉红色";
-// COP005
-"6f122e0df7ea751edae1a786e0b279abde7b31a0fce3c2962b9e87bace175f6f" = "打工连身工作服 蓝色";
-// COP006
-"f82fae832ee52b0843db0d99151c8d7c9afa67b50b77b5588bc46d2e4554deb8" = "打工连身工作服 黑色";
-// COP007
-"58af0bebd80a91fea27b302938365f215d7cd2d735635d3e26f7e4140145643d" = "打工连身工作服 白色";
 // Shakedent
 "8fe373c92b524b39cbae4d90aabdc718e705ef11bbfb2fab46c8fb88c735a401" = "麦年海洋发电所";
 // Shakespiral
@@ -100,6 +86,7 @@
 "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037" = "新卷堡";
 // Unknown
 "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14" = "？？？";
+<<<<<<< HEAD
 // Blaster_Bear_Coop
 "0962405d6aecff4a075c46e895c42984e33b26c4b2b4b25c5058366db3c35ba4" = "熊先生印章爆破枪";
 // Blaster_LightLong_00
@@ -4155,6 +4142,8 @@
 "03985f469211fa99567dfd344c1a32aef6f4d83cdead80351a0340dcc2d70cc1" = "泥鲑鱼喷发";
 // T_TitleCoop_44
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "巨型龙卷风";
+=======
+>>>>>>> 489e275 (remove: unused translations)
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
 // Carousel_CoopHistory

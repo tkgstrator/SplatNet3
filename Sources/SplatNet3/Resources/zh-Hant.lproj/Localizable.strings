@@ -77,6 +77,7 @@
 // Grade_Arbeiter_08
 "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0" = "傳說 打工仔";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // COP001
 "89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53" = "打工連身工作服 橘色";
@@ -93,6 +94,8 @@
 // COP007
 "58af0bebd80a91fea27b302938365f215d7cd2d735635d3e26f7e4140145643d" = "打工連身工作服 白色";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 489e275 (remove: unused translations)
 // Shakedent
 "8fe373c92b524b39cbae4d90aabdc718e705ef11bbfb2fab46c8fb88c735a401" = "麥年海洋發電所";
 // Shakespiral
@@ -103,6 +106,7 @@
 "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037" = "新卷堡";
 // Unknown
 "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14" = "？？？";
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Blaster_LightLong_00
 "954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215" = "快速爆破槍 精英";
@@ -3003,6 +3007,8 @@
 // T_TitleCoop_44
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "巨型龍捲風";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 489e275 (remove: unused translations)
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
 // Carousel_CoopHistory
