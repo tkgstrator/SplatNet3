@@ -94,9 +94,16 @@ public class SplatNet2 {
 
     public enum Rule: String, Codable, CaseIterable, Identifiable {
         public var id: String { rawValue }
-        case REGULAR    = "RULE_REGULAR"
-        case PRIVATE    = "RULE_PRIVATE"
-        case CONTEST    = "RULE_CONTEST"
+        /// いつものバイト
+        case REGULAR        = "RULE_REGULAR"
+        /// プライベートバイト
+        case PRIVATE        = "RULE_PRIVATE"
+        /// コンテスト
+        case CONTEST        = "RULE_CONTEST"
+        /// ペア
+        case PAIR           = "RULE_PAIR"
+        /// アンダーグラウンド
+        case UNDERGROUND    = "RULE_UNDERGROUND"
     }
 
     public struct Schedule: Codable {

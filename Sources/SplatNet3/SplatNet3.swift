@@ -123,18 +123,16 @@ open class SplatNet3: Authenticator {
                     logger.error(error.localizedDescription)
                     throw error
                 }
-
-                // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
-                let data: Data = try await session.request(request)
-                    .validationWithNXError()
-                    .serializingData()
-                    .value
-                if let response = String(data: data, encoding: .utf8) {
-                    logger.warning(response)
-                }
-                logger.error(error.localizedDescription)
-                throw error
             }
+
+            // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
+            let data: Data = try await session.request(request)
+                .serializingData()
+                .value
+            if let response = String(data: data, encoding: .utf8) {
+                logger.warning(response)
+            }
+            logger.error(error.localizedDescription)
             throw error
         }
     }
@@ -163,7 +161,6 @@ open class SplatNet3: Authenticator {
 
                 // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
                 let data: Data = try await session.request(request)
-                    .validationWithNXError()
                     .serializingData()
                     .value
                 if let response = String(data: data, encoding: .utf8) {
@@ -219,7 +216,6 @@ open class SplatNet3: Authenticator {
 
                 // エラーが発生したらとりあえずJSONSerializationで変換してデータ送信
                 let data: Data = try await session.request(request)
-                    .validationWithNXError()
                     .serializingData()
                     .value
                 if let response = String(data: data, encoding: .utf8) {

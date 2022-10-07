@@ -11,6 +11,14 @@ import SwiftUI
 
 /// スプラトゥーンで実際に利用されるカラーコードをSwiftUIで再現したもの
 public enum SPColor {
+    public enum SplatNet2 {
+        public static let SPBackground: Color           = Color("Color/SplatNet2/SPBackground", bundle: .module)
+        public static let SPGreen: Color                = Color("Color/SplatNet2/SPGreen", bundle: .module)
+        public static let SPOrange: Color               = Color("Color/SplatNet2/SPOrange", bundle: .module)
+        public static let SPWhite: Color                = Color("Color/SplatNet2/SPWhite", bundle: .module)
+        public static let SPYellow: Color               = Color("Color/SplatNet2/SPYellow", bundle: .module)
+    }
+
     public enum SplatNet3 {
         public static let SPBackground: Color           = Color("Color/SplatNet3/SPBackground", bundle: .module)
         public static let SPBankara: Color              = Color("Color/SplatNet3/SPBankara", bundle: .module)
