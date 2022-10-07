@@ -15,7 +15,7 @@ public class CoopSummary: GraphQL {
 
     public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var hash: SHA256Hash = .COOP_SUMMARY
+    public var hash: SHA256Hash = .CoopHistoryQuery
     public var variables: [String: String] = [:]
 
     internal init() {}

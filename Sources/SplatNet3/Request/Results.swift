@@ -135,7 +135,7 @@ public class SplatNet2 {
         public let badges: [BadgeType?]
         public let background: Background
 
-        public init(from nameplate: CoopResult.Nameplate) {
+        public init(from nameplate: Common.Nameplate) {
             self.badges = nameplate.badges.map({ badge in
                 if let id = badge?.id {
                     return BadgeType(rawValue: id)
@@ -147,10 +147,10 @@ public class SplatNet2 {
     }
 
     public struct Background: Codable {
-        public let textColor: CoopResult.TextColor
+        public let textColor: Common.TextColor
         public let id: NamePlateType
 
-        public init(from background: CoopResult.Background) {
+        public init(from background: Common.Background) {
             self.textColor = background.textColor
             self.id = NamePlateType(rawValue: background.id) ?? NamePlateType.Npl_Tutorial00
         }

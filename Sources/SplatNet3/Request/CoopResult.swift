@@ -14,7 +14,7 @@ public class CoopResult: GraphQL {
 
     public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var hash: SHA256Hash = .COOP_RESULT
+    public var hash: SHA256Hash = .CoopHistoryDetailQuery
     public var variables: [String: String] = [:]
 
     internal init(id: String) {
@@ -136,7 +136,7 @@ public class CoopResult: GraphQL {
     // MARK: - Ref
     public struct ImageRef: Codable {
         public let name: String
-        public let image: Image
+        public let image: Common.Image
         public let id: Int
 
         enum CodingKeys: String, CodingKey {
@@ -149,7 +149,7 @@ public class CoopResult: GraphQL {
             let container = try decoder.container(keyedBy: CodingKeys.self)
 
             self.name = try container.decode(String.self, forKey: .name)
-            self.image = try container.decode(Image.self, forKey: .image)
+            self.image = try container.decode(Common.Image.self, forKey: .image)
 
             // 文字列をbase64デコードして末尾の数字を取得
             if let id: String = try container.decodeIfPresent(String.self, forKey: .id),
@@ -171,11 +171,6 @@ public class CoopResult: GraphQL {
         }
     }
 
-    // MARK: - Image
-    public struct Image: Codable {
-        @URLRawValue public var url: String
-    }
-
     public enum Species: String, CaseIterable, Codable {
         case INKLING = "INKLING"
         case OCTOLING = "OCTOLING"
@@ -187,7 +182,7 @@ public class CoopResult: GraphQL {
         public let byname: String
         public let name: String
         public let nameId: String
-        public let nameplate: Nameplate
+        public let nameplate: Common.Nameplate
         public let uniform: ImageRef
         public let id: String
         public let isMyself: Bool
@@ -204,33 +199,6 @@ public class CoopResult: GraphQL {
             case isMyself = "isMyself"
             case species = "species"
         }
-    }
-
-    // MARK: - PurpleNameplate
-    public struct Nameplate: Codable {
-        public let badges: [Badge?]
-        public let background: Background
-    }
-
-    // MARK: - Background
-    public struct Background: Codable {
-        public let textColor: TextColor
-        public let image: Image
-        @IntegerRawValue public var id: Int
-    }
-
-    // MARK: - TextColor
-    public struct TextColor: Codable {
-        public let a: Double
-        public let b: Double
-        public let g: Double
-        public let r: Double
-    }
-
-    // MARK: - Badge
-    public struct Badge: Codable {
-        @IntegerRawValue public var id: Int
-        public let image: Image
     }
 
     // MARK: - HistoryDetailId
