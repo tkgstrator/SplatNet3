@@ -27,6 +27,7 @@ public class FriendList: GraphQL {
 
     // MARK: - DataClass
     public struct DataClass: Codable {
+        /// フレンド
         public let friends: Friends
 //        public let currentFest: JSONNull?
     }
@@ -37,22 +38,34 @@ public class FriendList: GraphQL {
     }
 
     public enum OnlineStatus: String, CaseIterable, Codable {
+        /// サーモンラン中
         case COOP_MODE_ONLINE
+        /// ナワバリバトル/バンカラマッチ
+        case VS_MODE_FIGHTING
+        /// オンライン
         case ONLINE
+        /// オフライン
         case OFFLINE
-        case UNKNOWN
     }
 
     // MARK: - Node
     public struct Node: Codable {
+        /// ID
         public let id: String
+        /// ステータス
         public let onlineState: OnlineStatus
-        public let nickname: String
+        /// ニックネーム
+        public let nickname: String?
+        /// プレイヤー名
         public let playerName: String?
+        /// アイコン
         public let userIcon: UserIcon
-//        public let vsMode: JSONNull?
+//        public let vsMode: VSMode?
+        /// お気に入り
         public let isFavorite: Bool
+        /// ロック
         public let isLocked: Bool?
+        /// ボイスチャット
         public let isVcEnabled: Bool?
 
         enum CodingKeys: String, CodingKey {
@@ -71,26 +84,36 @@ public class FriendList: GraphQL {
             let container = try decoder.container(keyedBy: CodingKeys.self)
 
             self.id = try container.decode(String.self, forKey: .id).base64DecodedString.capture(pattern: #"Friend-([a-f0-9]{16})"#, group: 1)!
-            self.onlineState = {
-                do {
-                    return try container.decode(OnlineStatus.self, forKey: .onlineState)
-                } catch {
-                    return OnlineStatus.UNKNOWN
-                }
-            }()
+            self.onlineState = try container.decode(OnlineStatus.self, forKey: .onlineState)
             self.nickname = try container.decode(String.self, forKey: .nickname)
-            self.playerName = try container.decode(String.self, forKey: .playerName)
+            self.playerName = try container.decodeIfPresent(String.self, forKey: .playerName)
             self.userIcon = try container.decode(UserIcon.self, forKey: .userIcon)
             self.isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
-            self.isLocked = try container.decode(Bool.self, forKey: .isLocked)
-            self.isVcEnabled = try container.decode(Bool.self, forKey: .isVcEnabled)
+            self.isLocked = try container.decodeIfPresent(Bool.self, forKey: .isLocked)
+            self.isVcEnabled = try container.decodeIfPresent(Bool.self, forKey: .isVcEnabled)
         }
+    }
+
+    public enum Mode: String, CaseIterable, Codable {
+        case BANKARA
+    }
+
+    public struct VSMode: Codable {
+        /// 名前
+        public let name: String
+        /// モード
+        public let mode: Mode
+        /// ステージの内部ID
+        @IntegerIdRawValue public var id: Int
     }
 
     // MARK: - UserIcon
     public struct UserIcon: Codable {
+        /// アイコン
         public let url: String
+        /// 幅
         public let width: Int
+        /// 高さ
         public let height: Int
     }
 }
