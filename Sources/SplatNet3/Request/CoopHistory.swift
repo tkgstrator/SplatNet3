@@ -90,7 +90,7 @@ public class CoopHistory: GraphQL {
         /// 最高記録
         public let highestResult: HighestResult?
         /// 履歴詳細
-        public let historyDetails: HistoryDetails
+        public var historyDetails: HistoryDetails
     }
 
     // MARK: - HighestResult
@@ -106,7 +106,7 @@ public class CoopHistory: GraphQL {
     // MARK: - HistoryDetails
     public struct HistoryDetails: Codable {
         /// 履歴詳細
-        public let nodes: [HistoryDetailNode]
+        public var nodes: [HistoryDetailNode]
     }
 
     // MARK: - HistoryDetailNode

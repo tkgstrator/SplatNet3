@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 public class SplatNet2 {
     public struct Result: Codable {
@@ -58,7 +59,7 @@ public class SplatNet2 {
         /// シナリオコード
         public let scenarioCode: String?
 
-        public init(from response: CoopHistoryDetail.Response) {
+        public init(from response: CoopHistoryDetail.Response, schedule: CoopHistoryElement) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
             let result: CoopHistoryDetail.Detail = response.data.coopHistoryDetail
 
@@ -81,7 +82,7 @@ public class SplatNet2 {
             self.rule = result.afterGrade?.id == nil ? Rule.PRIVATE : Rule.REGULAR
             self.scale = [result.scale?.bronze, result.scale?.silver, result.scale?.gold]
             self.jobResult = JobResult(from: result)
-            self.schedule = Schedule(from: result)
+            self.schedule = Schedule(schedule: schedule)
             self.smellMeter = result.smellMeter
             self.scenarioCode = result.scenarioCode
 
@@ -107,12 +108,20 @@ public class SplatNet2 {
     }
 
     public struct Schedule: Codable {
+        public let startTime: String?
+        public let endTime: String?
+        public let mode: CoopHistory.Mode
+        public let rule: CoopHistory.Rule
         public let weaponLists: [WeaponType]
         public let stage: StageType
 
-        public init(from result: CoopHistoryDetail.Detail) {
-            self.weaponLists = result.weapons.compactMap({ WeaponType(id: $0.id) })
-            self.stage = StageType(id: result.coopStage.id) ?? StageType.Unknown
+        public init(schedule: CoopHistoryElement) {
+            self.startTime = schedule.startTime
+            self.endTime = schedule.endTime
+            self.mode = schedule.mode
+            self.rule = schedule.rule
+            self.weaponLists = schedule.weaponList
+            self.stage = schedule.stage
         }
     }
 
@@ -224,8 +233,8 @@ public class SplatNet2 {
 }
 
 extension CoopHistoryDetail.Response {
-    public func asSplatNet2() -> SplatNet2.Result {
-        return SplatNet2.Result(from: self)
+    public func asSplatNet2(schedule: CoopHistoryElement) -> SplatNet2.Result {
+        return SplatNet2.Result(from: self, schedule: schedule)
     }
 }
 

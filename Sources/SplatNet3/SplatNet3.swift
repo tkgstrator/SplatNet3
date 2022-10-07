@@ -82,25 +82,30 @@ open class SplatNet3: Authenticator {
     }
 
     /// サーモンランリザルト取得
-    open func getCoopResult(id: String) async throws -> SplatNet2.Result {
-        let request: CoopHistoryDetail = CoopHistoryDetail(id: id)
+    open func getCoopResult(element: CoopHistoryElement) async throws -> SplatNet2.Result {
+        let request: CoopHistoryDetail = CoopHistoryDetail(id: element.id)
         let result: CoopHistoryDetail.Response = try await publish(request)
-        return result.asSplatNet2()
+        return result.asSplatNet2(schedule: element)
     }
 
-    /// サーモンランリザルト全件取得
-    open func getCoopResultIds(resultId: String? = nil) async throws -> [String] {
+    /// サーモンランリザルト一覧をプレイ時間でソートして取得
+    open func getCoopResultIds(resultId: String? = nil) async throws -> [CoopHistoryElement] {
+        /// リザルト一覧取得
         let summary: CoopHistory.Response = try await getCoopHistory()
 
         // 全件のIDを取得する
-        let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })
+        let historyGroups: [CoopHistory.HistoryGroupsNode] = summary.data.coopResult.historyGroups.nodes
 
         // リザルトIDが指定されていれば、そのIDよりも大きい値を返す
         // 新しいリザルトしか取得しない
         if let resultId = resultId {
-            return ids.filter({ $0.playTime > resultId.playTime })
+            return historyGroups.map({ group -> CoopHistory.HistoryGroupsNode in
+                var historyGroup: CoopHistory.HistoryGroupsNode = group
+                historyGroup.historyDetails.nodes = group.historyDetails.nodes.filter({ $0.id.playTime > resultId.playTime })
+                return historyGroup
+            }).asElement().sorted(by: { $0.id.playTime < $1.id.playTime })
         }
-        return ids
+        return historyGroups.asElement().sorted(by: { $0.id.playTime < $1.id.playTime })
     }
 
     /// 認証のプロセス
