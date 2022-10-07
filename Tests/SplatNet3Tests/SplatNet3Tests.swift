@@ -15,6 +15,11 @@ final class SplatNet3Tests: XCTestCase {
 
     let session: SplatNet3 = SplatNet3()
 
+    func testAppVersion() async throws {
+        let response: Version.Response = try await session.getVersionFromAppStore()
+        print(response)
+    }
+
     func testVersion() async throws {
         let account: UserInfo = UserInfo(
             nickname: nickname,

@@ -137,19 +137,36 @@ open class SplatNet3: Authenticator {
         }
     }
 
+    open func request(_ request: Version) async throws -> Version.Response {
+        do {
+            let response: String = try await session.request(request)
+                .cURLDescription(calling: { request in
+                    #if DEBUG
+                    print(request)
+                    #endif
+                })
+                .validationWithNXError()
+                .serializingString()
+                .value
+            return Version.Response(from: response)
+        } catch(let error) {
+            throw error
+        }
+    }
+
     /// リクエストのプロセス
     open func request(_ request: WebVersion) async throws -> WebVersion.Response {
         do {
-        let response: String = try await session.request(request)
-            .cURLDescription(calling: { request in
-                #if DEBUG
-                print(request)
-                #endif
-            })
-            .validationWithNXError()
-            .serializingString()
-            .value
-        return WebVersion.Response(from: response)
+            let response: String = try await session.request(request)
+                .cURLDescription(calling: { request in
+                    #if DEBUG
+                    print(request)
+                    #endif
+                })
+                .validationWithNXError()
+                .serializingString()
+                .value
+            return WebVersion.Response(from: response)
         } catch(let error) {
             if let failure: Error = error.asAFError?.underlyingError {
                 let code: Int = (failure as NSError).code

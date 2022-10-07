@@ -13,13 +13,8 @@ import Common
 extension SplatNet3 {
     /// イカスミセッションをセッショントークンから取得
     internal func refreshToken(sessionToken: String) async throws -> UserInfo {
-        // AppStoreから最新のバージョンを取得
-        guard let result: XVersion.Information = try await getVersion().results.first else {
-            // なければエラーを返す
-            throw AFError.responseValidationFailed(reason: .unacceptableStatusCode(code: 404))
-        }
         // バージョンを取得
-        let version: String = result.version
+        let version: String = try await getVersionFromAppStore().version
         // アクセストークン
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         // F
@@ -43,6 +38,7 @@ extension SplatNet3 {
         )
     }
 
+    /// ハッシュバージョンを取得
     internal func getWebVersion() async throws -> WebVersion.Response {
         return try await request(WebVersion())
     }
@@ -51,6 +47,11 @@ extension SplatNet3 {
     internal func getVersion() async throws -> XVersion.Response {
         let request: XVersion = XVersion()
         return try await authorize(request)
+    }
+
+    /// スクレイピングで最新のバージョンを取得
+    internal func getVersionFromAppStore() async throws -> Version.Response {
+        return try await request(Version())
     }
 
     /// イカスミセッションをコードとベリファイアから取得

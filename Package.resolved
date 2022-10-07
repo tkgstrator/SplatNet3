@@ -28,15 +28,6 @@
       }
     },
     {
-      "identity" : "popupview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/exyte/PopupView.git",
-      "state" : {
-        "revision" : "3122129fba0f5501e1f59161db3210282efd2cea",
-        "version" : "1.1.6"
-      }
-    },
-    {
       "identity" : "sourcekitten",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/SourceKitten.git",
