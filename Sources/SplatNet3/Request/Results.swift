@@ -58,9 +58,9 @@ public class SplatNet2 {
         /// シナリオコード
         public let scenarioCode: String?
 
-        public init(from response: CoopResult.Response) {
+        public init(from response: CoopHistoryDetail.Response) {
             let formatter: ISO8601DateFormatter = ISO8601DateFormatter()
-            let result: CoopResult.CoopHistoryDetail = response.data.coopHistoryDetail
+            let result: CoopHistoryDetail.Detail = response.data.coopHistoryDetail
 
             let specialCounts: [[Int]] = result.waveResults.map({ $0.specialWeapons.map({ $0.id })})
 
@@ -85,7 +85,7 @@ public class SplatNet2 {
             self.smellMeter = result.smellMeter
             self.scenarioCode = result.scenarioCode
 
-            let players: [CoopResult.PlayerResult] = [result.myResult] + result.memberResults
+            let players: [CoopHistoryDetail.PlayerResult] = [result.myResult] + result.memberResults
             self.ikuraNum = players.map({ $0.deliverCount }).reduce(0, +)
             self.goldenIkuraNum = players.map({ $0.goldenDeliverCount }).reduce(0, +)
             self.goldenIkuraAssistNum = players.map({ $0.goldenAssistCount }).reduce(0, +)
@@ -110,7 +110,7 @@ public class SplatNet2 {
         public let weaponLists: [WeaponType]
         public let stage: StageType
 
-        public init(from result: CoopResult.CoopHistoryDetail) {
+        public init(from result: CoopHistoryDetail.Detail) {
             self.weaponLists = result.weapons.compactMap({ WeaponType(id: $0.id) })
             self.stage = StageType(id: result.coopStage.id) ?? StageType.Unknown
         }
@@ -124,7 +124,7 @@ public class SplatNet2 {
         /// オカシラシャケ討伐したか
         public let isBossDefeated: Bool?
 
-        public init(from result: CoopResult.CoopHistoryDetail) {
+        public init(from result: CoopHistoryDetail.Detail) {
             self.isClear = result.resultWave == 0
             self.failureWave = result.resultWave == 0 ? nil : result.resultWave
             self.isBossDefeated = result.bossResult?.hasDefeatBoss
@@ -173,9 +173,9 @@ public class SplatNet2 {
         public let specialCounts: [Int]
         public let bossKillCounts: [Int]
         public let bossKillCountsTotal: Int
-        public let species: CoopResult.Species
+        public let species: CoopHistoryDetail.Species
 
-        public init(from player: CoopResult.PlayerResult, enemies: [CoopResult.EnemyResult], counts: [[Int]]) {
+        public init(from player: CoopHistoryDetail.PlayerResult, enemies: [CoopHistoryDetail.EnemyResult], counts: [[Int]]) {
             let specialId: Int? = player.specialWeapon?.id
 
             self.id = player.player.id.base64DecodedString
@@ -211,7 +211,7 @@ public class SplatNet2 {
         public let quotaNum: Int?
         public let goldenIkuraPopNum: Int
 
-        public init(from result: CoopResult.WaveResult) {
+        public init(from result: CoopHistoryDetail.WaveResult) {
             self.id = result.waveNumber
             self.waterLevel = WaterType(id: result.waterLevel) ?? WaterType.Middle_Tide
             self.eventType = EventType(id: result.eventWave?.id) ?? EventType.Water_Levels
@@ -223,13 +223,13 @@ public class SplatNet2 {
 
 }
 
-extension CoopResult.Response {
+extension CoopHistoryDetail.Response {
     public func asSplatNet2() -> SplatNet2.Result {
         return SplatNet2.Result(from: self)
     }
 }
 
-extension Collection where Element == CoopResult.EnemyResult {
+extension Collection where Element == CoopHistoryDetail.EnemyResult {
     public func teamDefeatedCounts() -> [Int] {
         SakelienType.allCases.compactMap({ sakelien in self.first(where: { $0.enemy.id == sakelien.id })?.teamDefeatCount ?? 0 })
     }

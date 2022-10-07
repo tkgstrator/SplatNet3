@@ -76,21 +76,21 @@ open class SplatNet3: Authenticator {
     }
 
     /// サーモンラン概要取得
-    open func getCoopSummary() async throws -> CoopSummary.Response {
-        let request: CoopSummary = CoopSummary()
+    open func getCoopHistory() async throws -> CoopHistory.Response {
+        let request: CoopHistory = CoopHistory()
         return try await publish(request)
     }
 
     /// サーモンランリザルト取得
     open func getCoopResult(id: String) async throws -> SplatNet2.Result {
-        let request: CoopResult = CoopResult(id: id)
-        let result: CoopResult.Response = try await publish(request)
+        let request: CoopHistoryDetail = CoopHistoryDetail(id: id)
+        let result: CoopHistoryDetail.Response = try await publish(request)
         return result.asSplatNet2()
     }
 
     /// サーモンランリザルト全件取得
     open func getCoopResultIds(resultId: String? = nil) async throws -> [String] {
-        let summary: CoopSummary.Response = try await getCoopSummary()
+        let summary: CoopHistory.Response = try await getCoopHistory()
 
         // 全件のIDを取得する
         let ids: [String] = summary.data.coopResult.historyGroups.nodes.flatMap({ node in node.historyDetails.nodes.map({ $0.id }) })

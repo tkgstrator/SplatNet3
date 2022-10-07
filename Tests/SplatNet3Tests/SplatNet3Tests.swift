@@ -6,7 +6,7 @@ import XCTest
 final class SplatNet3Tests: XCTestCase {
     let sessionToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJzdDpzY3AiOlswLDgsOSwxNywyM10sImlhdCI6MTY2MjcyMTg5OCwidHlwIjoic2Vzc2lvbl90b2tlbiIsInN1YiI6ImE4MzZhMWQ0NjI1YWZhYjQiLCJleHAiOjE3MjU3OTM4OTgsImF1ZCI6IjcxYjk2M2MxYjdiNmQxMTkiLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImp0aSI6OTc4NzkxMDI4Mn0.UUZ8l4neAp0nZPbcQU7EoUUo02GVI6pg1OeijE9zp1o"
     let iksmSession: String = "3b78964054c63dcb76275fb2123acbf06cd74acb"
-    let bulletToken: String = "m5lhpskb_4jacwxVOfH9YHHnn_KZzdVytLjnLORDsop3tt_95-cU26W8DeSYuS46eU_wgJUo3TWc2612nGKGq_UpxdivwajC5WM-f-N6eG4FNEs-cHw5uMqWXXs="
+    let bulletToken: String = "PcqTqovH80KjDR83sP5hlZIkvt_DkpytCllHwIT4B5638AaEyMqLNuPQ1D72QeuY9H2MdhGprtK-Usz86l1R4z_LQaS8vpVv-1Z61vGRY77V-LEL2fEwrBGfN6Y="
     let splatoonToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjE2MTY5NDQsImlhdCI6MTY2MTYwOTc0NCwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NjQ0NTQ1NzE2OTk3MzI0OCwidHlwIjoiaWRfdG9rZW4ifQ.951ll7aJpVJcBmbTenskx9JoOrWfKULh_wvejTRNo4g"
     let nickname: String = "にだいめえむいーです"
     let friendCode: String = "1384-4712-4713"
@@ -48,24 +48,8 @@ final class SplatNet3Tests: XCTestCase {
 
         // IDが数値ではないテストデータ
         let data = Data(fileName: "000000")
-        let result: CoopResult.Response = try decoder.decode(CoopResult.Response.self, from: data)
+        let result: CoopHistoryDetail.Response = try decoder.decode(CoopHistoryDetail.Response.self, from: data)
         print(result)
-    }
-
-    func testReuest() async throws {
-        let account: UserInfo = UserInfo(
-            nickname: nickname,
-            membership: true,
-            friendCode: friendCode,
-            thumbnailURL: thumbnailURL,
-            nsaid: nsaid,
-            iksmSession: iksmSession,
-            bulletToken: bulletToken,
-            sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
-            timeInterval: 0
-        )
-        let session: SplatNet3 = SplatNet3(account: account)
     }
 
     func testHistoryRecord() async throws {
@@ -90,7 +74,6 @@ final class SplatNet3Tests: XCTestCase {
         }
     }
 
-
     func testCoopResult() async throws {
         let account: UserInfo = UserInfo(
             nickname: nickname,
@@ -105,15 +88,14 @@ final class SplatNet3Tests: XCTestCase {
             timeInterval: 0
         )
         let session: SplatNet3 = SplatNet3(account: account)
-        let results: CoopSummary.Response = try await session.publish(CoopSummary())
+        let results: CoopHistory.Response = try await session.publish(CoopHistory())
         guard let lastPlayedId: String = results.data.coopResult.historyGroups.nodes.last?.historyDetails.nodes.last?.id else {
             throw Failure.API(error: NXError.API.content)
         }
-        let request: CoopResult = CoopResult(id: lastPlayedId)
+        let request: CoopHistoryDetail = CoopHistoryDetail(id: lastPlayedId)
 
         do {
-            let result: CoopResult.Response = (try await session.publish(request))
-//            dump(result.asSplatNet2())
+            let result: CoopHistoryDetail.Response = (try await session.publish(request))
         } catch(let error) {
             print(error)
             throw error
@@ -121,22 +103,27 @@ final class SplatNet3Tests: XCTestCase {
     }
 
     func testCoopSummary() async throws {
-        let account: UserInfo = UserInfo(
-            nickname: nickname,
-            membership: true,
-            friendCode: friendCode,
-            thumbnailURL: thumbnailURL,
-            nsaid: nsaid,
-            iksmSession: iksmSession,
-            bulletToken: nil,
-            sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
-            timeInterval: 0
-        )
-        let session: SplatNet3 = SplatNet3(account: account)
-        let request: CoopSummary = CoopSummary()
-        let response: CoopSummary.Response = try await session.publish(request)
-        print(response)
+        do {
+            let account: UserInfo = UserInfo(
+                nickname: nickname,
+                membership: true,
+                friendCode: friendCode,
+                thumbnailURL: thumbnailURL,
+                nsaid: nsaid,
+                iksmSession: iksmSession,
+                bulletToken: bulletToken,
+                sessionToken: sessionToken,
+                splatoonToken: splatoonToken,
+                timeInterval: 60
+            )
+            let session: SplatNet3 = SplatNet3(account: account)
+            let request: CoopHistory = CoopHistory()
+            let response: CoopHistory.Response = try await session.publish(request)
+            print(response)
+        } catch (let error) {
+            print(error.localizedDescription)
+            throw error
+        }
     }
 
     func testCookie() async throws {

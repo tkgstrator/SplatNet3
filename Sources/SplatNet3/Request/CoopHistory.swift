@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 import Common
 
-public class CoopSummary: GraphQL {
-    public typealias ResponseType = CoopSummary.Response
+public class CoopHistory: GraphQL {
+    public typealias ResponseType = CoopHistory.Response
 
     public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
@@ -22,111 +22,154 @@ public class CoopSummary: GraphQL {
 
     // MARK: - CoopSummary
     public struct Response: Codable {
+        /// データ
         public let data: DataClass
     }
 
     // MARK: - DataClass
     public struct DataClass: Codable {
+        /// サーモンランリザルト
         public let coopResult: CoopResult
     }
 
     // MARK: - CoopResult
     public struct CoopResult: Codable {
-        public let historyGroupsOnlyFirst: HistoryGroupsOnlyFirst
+//        public let historyGroupsOnlyFirst: HistoryGroupsOnlyFirst
+        /// 平均クリアWAVE数
         public let regularAverageClearWave: Double
+        /// 称号
         public let regularGrade: Grade
+        /// 評価レート
         public let regularGradePoint: Int
+        /// 月別ギア
         public let monthlyGear: MonthlyGear
+        /// ウロコ
         public let scale: Scale
+        /// ポイントカード
         public let pointCard: PointCard
+        /// ヒストリーグループ
         public let historyGroups: HistoryGroups
     }
 
     // MARK: - HistoryGroups
     public struct HistoryGroups: Codable {
+        /// ノード
         public let nodes: [HistoryGroupsNode]
+    }
+
+    /// サーモンランのモード
+    public enum Mode: String, CaseIterable, Codable {
+        /// いつものバイト
+        case REGULAR
+        /// プライベートバイト
+        case PRIVATE_CUSTOM
+    }
+
+    /// サーモンランのルール
+    public enum Rule: String, CaseIterable, Codable {
+        /// 通常のサーモンラン
+        case REGULAR
+        /// ビッグラン
+        case BIGRUN
+        /// コンテスト
+        case CONTEST
+        /// ペア
+        case PAIR
     }
 
     // MARK: - HistoryGroupsNode
     public struct HistoryGroupsNode: Codable {
+        /// 開始時間
         public let startTime: String?
+        /// 終了時間
         public let endTime: String?
-        public let mode: String
-        public let rule: String
+        /// モード
+        public let mode: Mode
+        /// ルール
+        public let rule: Rule
+        /// 最高記録
         public let highestResult: HighestResult?
-        public let historyDetails: PurpleHistoryDetails
+        /// 履歴詳細
+        public let historyDetails: HistoryDetails
     }
 
     // MARK: - HighestResult
     public struct HighestResult: Codable {
+        /// 称号
         public let grade: Grade
+        /// 評価レート
         public let gradePoint: Int
+        /// クマサンポイント
         public let jobScore: Int
     }
 
     // MARK: - Grade
     public struct Grade: Codable {
+        /// 称号名
         public let name: String
+        /// 内部ID
         @IntegerRawValue public var id: Int
     }
 
-    //    public enum RegularGradeID: String, Codable {
-    //        case q29VcEdyYWRlLTg = "Q29vcEdyYWRlLTg="
-    //    }
-    //
-    //    public enum RegularGradeName: String, Codable {
-    //        case eggsecutiveVP = "Eggsecutive VP"
-    //    }
-
-    // MARK: - PurpleHistoryDetails
-    public struct PurpleHistoryDetails: Codable {
-        public let nodes: [PurpleNode]
+    // MARK: - HistoryDetails
+    public struct HistoryDetails: Codable {
+        /// 履歴詳細
+        public let nodes: [HistoryDetailNode]
     }
 
-    // MARK: - PurpleNode
-    public struct PurpleNode: Codable {
+    // MARK: - HistoryDetailNode
+    public struct HistoryDetailNode: Codable {
+        /// 識別ID
         public let id: String
+        // ブキリスト
         public let weapons: [Weapon]
-        public let nextHistoryDetail: NextHistoryDetailElement?
-        public let previousHistoryDetail: NextHistoryDetailElement?
+        /// 次のリザルト
+        public let nextHistoryDetail: HistoryDetail?
+        /// 前のリザルト
+        public let previousHistoryDetail: HistoryDetail?
+        /// クリアしたWAVE数
         public let resultWave: Int
+        /// ステージ
         public let coopStage: CoopStage
+        /// 称号
         public let afterGrade: Grade?
+        /// 評価レート
         public let afterGradePoint: Int?
+        /// 評価レート差分
         public let gradePointDiff: GradePointDiff?
+        /// オカシラシャケリザルト
         public let bossResult: BossResult?
+        /// 個人リザルト
         public let myResult: Result
+        /// メンバーリザルト
         public let memberResults: [Result]
+        /// WAVEリザルト
         public let waveResults: [WaveResult]
     }
 
     // MARK: - BossResult
     public struct BossResult: Codable {
+        /// オカシラシャケをたおしたか
         public let hasDefeatBoss: Bool
+        /// オカシラシャケ
         public let boss: Boss
     }
 
     // MARK: - Boss
     public struct Boss: Codable {
+        /// 名前
         public let name: String
+        /// 内部ID
         @IntegerRawValue var id: Int
     }
 
     // MARK: - CoopStage
     public struct CoopStage: Codable {
+        /// 名前
         public let name: String
+        /// 内部ID
         @IntegerRawValue public var id: Int
     }
-
-    //    public enum CoopStageID: String, Codable {
-    //        case q29VcFN0YWdlLTE = "Q29vcFN0YWdlLTE="
-    //        case q29VcFN0YWdlLTc = "Q29vcFN0YWdlLTc="
-    //    }
-    //
-    //    public enum CoopStageName: String, Codable {
-    //        case goneFissionHydroplant = "Gone Fission Hydroplant"
-    //        case spawningGrounds = "Spawning Grounds"
-    //    }
 
     public enum GradePointDiff: String, Codable {
         case down   = "DOWN"
@@ -136,23 +179,29 @@ public class CoopSummary: GraphQL {
 
     // MARK: - Result
     public struct Result: Codable {
+        /// イクラ数
         public let deliverCount: Int
+        /// 金イクラ数
         public let goldenDeliverCount: Int
     }
 
     // MARK: - NextHistoryDetailElement
-    public struct NextHistoryDetailElement: Codable {
+    public struct HistoryDetail: Codable {
+        /// 識別ID
         public let id: String
     }
 
     // MARK: - WaveResult
     public struct WaveResult: Codable {
+        /// WAVE識別ID
         public let waveNumber: Int
     }
 
     // MARK: - Weapon
     public struct Weapon: Codable {
+        /// 名前
         public let name: String
+        /// 画像
         public let image: Image
     }
 
@@ -161,39 +210,13 @@ public class CoopSummary: GraphQL {
         @URLRawValue public var url: String
     }
 
-    //    public enum WeaponName: String, Codable {
-    //        case aerosprayMG = "Aerospray MG"
-    //        case dappleDualies = "Dapple Dualies"
-    //        case darkTetraDualies = "Dark Tetra Dualies"
-    //        case explosher = "Explosher"
-    //        case heavySplatling = "Heavy Splatling"
-    //        case random = "Random"
-    //        case slosher = "Slosher"
-    //        case splashOMatic = "Splash-o-matic"
-    //        case splatBrella = "Splat Brella"
-    //        case splatanaWiper = "Splatana Wiper"
-    //        case splooshOMatic = "Sploosh-o-matic"
-    //    }
-
-    // MARK: - HistoryGroupsOnlyFirst
-    public struct HistoryGroupsOnlyFirst: Codable {
-        public let nodes: [HistoryGroupsOnlyFirstNode]
-    }
-
-    // MARK: - HistoryGroupsOnlyFirstNode
-    public struct HistoryGroupsOnlyFirstNode: Codable {
-        public let historyDetails: FluffyHistoryDetails
-    }
-
-    // MARK: - FluffyHistoryDetails
-    public struct FluffyHistoryDetails: Codable {
-        public let nodes: [NextHistoryDetailElement]
-    }
-
     // MARK: - MonthlyGear
     public struct MonthlyGear: Codable {
+        /// タイプネーム
         public let typename: String
+        /// 名前
         public let name: String
+        /// 画像
         public let image: Image
 
         enum CodingKeys: String, CodingKey {
@@ -205,19 +228,29 @@ public class CoopSummary: GraphQL {
 
     // MARK: - PointCard
     public struct PointCard: Codable {
+        /// オオモノシャケ討伐数
         public let defeatBossCount: Int
+        /// イクラ数
         public let deliverCount: Int
+        /// 金イクラ数
         public let goldenDeliverCount: Int
+        /// バイト回数
         public let playCount: Int
+        /// 救助回数
         public let rescueCount: Int
+        /// クマサンポイント
         public let regularPoint: Int
+        /// 総クマサンポイント
         public let totalPoint: Int
     }
 
     // MARK: - Scale
     public struct Scale: Codable {
+        /// 金ウロコ数
         public let gold: Int
+        /// 銀ウロコ数
         public let silver: Int
+        /// 銅ウロコ数
         public let bronze: Int
     }
 }

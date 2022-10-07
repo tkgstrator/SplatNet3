@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-public class CoopResult: GraphQL {
-    public typealias ResponseType = CoopResult.Response
+public class CoopHistoryDetail: GraphQL {
+    public typealias ResponseType = CoopHistoryDetail.Response
 
     public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
@@ -30,7 +30,7 @@ public class CoopResult: GraphQL {
 
     // MARK: - DataClass
     public struct DataClass: Codable {
-        public let coopHistoryDetail: CoopHistoryDetail
+        public let coopHistoryDetail: Detail
     }
 
     // MARK: - Rule
@@ -39,7 +39,7 @@ public class CoopResult: GraphQL {
     }
 
     // MARK: - CoopHistoryDetail
-    public struct CoopHistoryDetail: Codable {
+    public struct Detail: Codable {
         public let typename: String
         public let id: String
         public let afterGrade: Ref?
