@@ -1,5 +1,5 @@
 //
-//  CoopSummary.swift
+//  CoopHistory.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
@@ -38,13 +38,13 @@ public class CoopHistory: GraphQL {
         /// 平均クリアWAVE数
         public let regularAverageClearWave: Double
         /// 称号
-        public let regularGrade: Grade
+        public let regularGrade: Common.Grade
         /// 評価レート
         public let regularGradePoint: Int
         /// 月別ギア
         public let monthlyGear: MonthlyGear
         /// ウロコ
-        public let scale: Scale
+        public let scale: Common.Scale
         /// ポイントカード
         public let pointCard: PointCard
         /// ヒストリーグループ
@@ -96,19 +96,11 @@ public class CoopHistory: GraphQL {
     // MARK: - HighestResult
     public struct HighestResult: Codable {
         /// 称号
-        public let grade: Grade
+        public let grade: Common.Grade
         /// 評価レート
         public let gradePoint: Int
         /// クマサンポイント
         public let jobScore: Int
-    }
-
-    // MARK: - Grade
-    public struct Grade: Codable {
-        /// 称号名
-        public let name: String
-        /// 内部ID
-        @IntegerRawValue public var id: Int
     }
 
     // MARK: - HistoryDetails
@@ -130,45 +122,21 @@ public class CoopHistory: GraphQL {
         /// クリアしたWAVE数
         public let resultWave: Int
         /// ステージ
-        public let coopStage: CoopStage
+        public let coopStage: Common.CoopStage
         /// 称号
-        public let afterGrade: Grade?
+        public let afterGrade: Common.Grade?
         /// 評価レート
         public let afterGradePoint: Int?
         /// 評価レート差分
         public let gradePointDiff: GradePointDiff?
         /// オカシラシャケリザルト
-        public let bossResult: BossResult?
+        public let bossResult: Common.BossResult?
         /// 個人リザルト
         public let myResult: Result
         /// メンバーリザルト
         public let memberResults: [Result]
         /// WAVEリザルト
         public let waveResults: [WaveResult]
-    }
-
-    // MARK: - BossResult
-    public struct BossResult: Codable {
-        /// オカシラシャケをたおしたか
-        public let hasDefeatBoss: Bool
-        /// オカシラシャケ
-        public let boss: Boss
-    }
-
-    // MARK: - Boss
-    public struct Boss: Codable {
-        /// 名前
-        public let name: String
-        /// 内部ID
-        @IntegerRawValue var id: Int
-    }
-
-    // MARK: - CoopStage
-    public struct CoopStage: Codable {
-        /// 名前
-        public let name: String
-        /// 内部ID
-        @IntegerRawValue public var id: Int
     }
 
     public enum GradePointDiff: String, Codable {
@@ -242,15 +210,5 @@ public class CoopHistory: GraphQL {
         public let regularPoint: Int
         /// 総クマサンポイント
         public let totalPoint: Int
-    }
-
-    // MARK: - Scale
-    public struct Scale: Codable {
-        /// 金ウロコ数
-        public let gold: Int
-        /// 銀ウロコ数
-        public let silver: Int
-        /// 銅ウロコ数
-        public let bronze: Int
     }
 }

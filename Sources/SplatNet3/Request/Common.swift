@@ -101,4 +101,46 @@ public enum Common {
         public let name: String
         public let image: Image
     }
+
+    // MARK: - Scale
+    public struct Scale: Codable {
+        /// 金ウロコ数
+        public let gold: Int
+        /// 銀ウロコ数
+        public let silver: Int
+        /// 銅ウロコ数
+        public let bronze: Int
+    }
+
+    // MARK: - Grade
+    public struct Grade: Codable {
+        /// 称号名
+        public let name: String
+        /// 内部ID
+        @IntegerRawValue public var id: Int
+    }
+
+    // MARK: - Boss
+    public struct Boss: Codable {
+        /// 名前
+        public let name: String
+        /// 内部ID
+        @IntegerRawValue var id: Int
+    }
+
+    // MARK: - CoopStage
+    public struct CoopStage: Codable {
+        /// 名前
+        public let name: String
+        /// 内部ID
+        @IntegerRawValue public var id: Int
+    }
+
+    // MARK: - BossResult
+    public struct BossResult: Codable {
+        /// オカシラシャケをたおしたか
+        public let hasDefeatBoss: Bool
+        /// オカシラシャケ
+        public let boss: Boss
+    }
 }

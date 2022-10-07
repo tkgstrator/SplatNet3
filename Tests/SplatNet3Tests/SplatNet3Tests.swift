@@ -15,6 +15,12 @@ final class SplatNet3Tests: XCTestCase {
 
     let session: SplatNet3 = SplatNet3()
 
+    let decoder: JSONDecoder = {
+        let decoder: JSONDecoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
+
     func testAppVersion() async throws {
         let response: Version.Response = try await session.getVersionFromAppStore()
         print(response)
@@ -39,16 +45,21 @@ final class SplatNet3Tests: XCTestCase {
         print(response)
     }
 
-    func testLoadJSON() throws {
-        let decoder: JSONDecoder = {
-            let decoder: JSONDecoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return decoder
-        }()
-
-        // IDが数値ではないテストデータ
-        let data = Data(fileName: "000000")
+    func testLoadJSONForCoopHistoryDetail() throws {
+        let data = Data(fileName: "000000", type: .CoopHistoryDetail)
         let result: CoopHistoryDetail.Response = try decoder.decode(CoopHistoryDetail.Response.self, from: data)
+        print(result)
+    }
+
+    func testLoadJSONForFriendList() throws {
+        let data = Data(fileName: "000000", type: .FriendList)
+        let result: FriendList.Response = try decoder.decode(FriendList.Response.self, from: data)
+        print(result)
+    }
+
+    func testLoadJSONForCoopHistory() throws {
+        let data = Data(fileName: "000000", type: .CoopHistory)
+        let result: CoopHistory.Response = try decoder.decode(CoopHistory.Response.self, from: data)
         print(result)
     }
 
@@ -301,9 +312,15 @@ final class SplatNet3Tests: XCTestCase {
     }
 }
 
+enum JSONType: String, CaseIterable, Codable {
+    case CoopHistory
+    case CoopHistoryDetail
+    case FriendList
+}
+
 extension Data {
-    init(fileName: String) {
-        if let path = Bundle.module.url(forResource: "JSON/\(fileName)", withExtension: "json"),
+    init(fileName: String, type: JSONType) {
+        if let path = Bundle.module.url(forResource: "JSON/\(type.rawValue)/\(fileName)", withExtension: "json"),
            let data = try? Data(contentsOf: path)
         {
             self = data

@@ -42,7 +42,7 @@ public class CoopHistoryDetail: GraphQL {
     public struct Detail: Codable {
         public let typename: String
         public let id: String
-        public let afterGrade: Ref?
+        public let afterGrade: Common.Grade?
         public let rule: Rule
         public let myResult: PlayerResult
         public let memberResults: [PlayerResult]
@@ -57,7 +57,7 @@ public class CoopHistoryDetail: GraphQL {
         public let smellMeter: Int?
         public let weapons: [ImageRef]
         public let afterGradePoint: Int?
-        public let scale: Scale?
+        public let scale: Common.Scale?
         public let jobPoint: Int?
         public let jobScore: Int?
         public let jobRate: Double?
@@ -91,13 +91,6 @@ public class CoopHistoryDetail: GraphQL {
             case nextHistoryDetail = "nextHistoryDetail"
             case previousHistoryDetail = "previousHistoryDetail"
         }
-    }
-
-    // MARK: - Scale
-    public struct Scale: Codable {
-        public let gold: Int
-        public let silver: Int
-        public let bronze: Int
     }
 
     // MARK: - EnemyResult
