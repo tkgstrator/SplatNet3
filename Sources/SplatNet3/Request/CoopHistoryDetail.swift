@@ -33,17 +33,12 @@ public class CoopHistoryDetail: GraphQL {
         public let coopHistoryDetail: Detail
     }
 
-    // MARK: - Rule
-    public enum Rule: String, CaseIterable, Codable {
-        case REGULAR = "REGULAR"
-    }
-
     // MARK: - CoopHistoryDetail
     public struct Detail: Codable {
         public let typename: String
         public let id: String
         public let afterGrade: Common.Grade?
-        public let rule: Rule
+        public let rule: Common.Rule
         public let myResult: PlayerResult
         public let memberResults: [PlayerResult]
         public let bossResult: BossResult?

@@ -57,26 +57,6 @@ public class CoopHistory: GraphQL {
         public let nodes: [HistoryGroupsNode]
     }
 
-    /// サーモンランのモード
-    public enum Mode: String, CaseIterable, Codable {
-        /// いつものバイト
-        case REGULAR
-        /// プライベートバイト
-        case PRIVATE_CUSTOM
-    }
-
-    /// サーモンランのルール
-    public enum Rule: String, CaseIterable, Codable {
-        /// 通常のサーモンラン
-        case REGULAR
-        /// ビッグラン
-        case BIGRUN
-        /// コンテスト
-        case CONTEST
-        /// ペア
-        case PAIR
-    }
-
     // MARK: - HistoryGroupsNode
     public struct HistoryGroupsNode: Codable {
         /// 開始時間
@@ -84,9 +64,9 @@ public class CoopHistory: GraphQL {
         /// 終了時間
         public let endTime: String?
         /// モード
-        public let mode: Mode
+        public let mode: Common.Mode
         /// ルール
-        public let rule: Rule
+        public let rule: Common.Rule
         /// 最高記録
         public let highestResult: HighestResult?
         /// 履歴詳細

@@ -15,7 +15,7 @@ public class WebVersion: RequestType {
 
     public var method: HTTPMethod = .get
     public var baseURL = URL(unsafeString: "https://api.lp1.av5ja.srv.nintendo.net/")
-    public var path: String = "static/js/main.cf1388fb.js"
+    public var path: String = "static/js/main.23b703bb.js"
     public var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
     public var headers: [String: String]?
@@ -29,10 +29,15 @@ public class WebVersion: RequestType {
         let hash: String
 
         public init(from response: String) {
-            let matches: [String] = response.capture(pattern: #""(\d\.\d\.\d)-".*"([a-f0-9]{40})""#, group: [1, 2])
+            if let hash: String = response.capture(pattern: #""([a-f0-9]{40})""#, group: [1]).first,
+               let version: String = response.capture(pattern: #"(\d\.\d\.\d)-".concat"#, group: [1]).first {
+                self.hash = String(hash.prefix(8))
+                self.version = version
+                return
+            }
 
-            self.version = matches[0]
-            self.hash = String(matches[1].prefix(8))
+            self.version = "1.0.0"
+            self.hash = "216d0219"
         }
 
         public init(version: String, hash: String) {

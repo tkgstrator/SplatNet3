@@ -17,8 +17,8 @@ public struct CoopHistoryElement: Codable {
         stage: StageType,
         startTime: String?,
         endTime: String?,
-        mode: CoopHistory.Mode,
-        rule: CoopHistory.Rule
+        mode: Common.Mode,
+        rule: Common.Rule
     ) {
         self.id = id
         self.weaponList = weaponList
@@ -40,9 +40,9 @@ public struct CoopHistoryElement: Codable {
     /// 終了時間
     public let endTime: String?
     /// モード
-    public let mode: CoopHistory.Mode
+    public let mode: Common.Mode
     /// ルール
-    public let rule: CoopHistory.Rule
+    public let rule: Common.Rule
 }
 
 extension Array where Element == CoopHistory.HistoryGroupsNode {
@@ -50,8 +50,8 @@ extension Array where Element == CoopHistory.HistoryGroupsNode {
         self.flatMap({ groupNode -> [CoopHistoryElement] in
             let startTime: String? = groupNode.startTime
             let endTime: String? = groupNode.endTime
-            let rule: CoopHistory.Rule = groupNode.rule
-            let mode: CoopHistory.Mode = groupNode.mode
+            let rule: Common.Rule = groupNode.rule
+            let mode: Common.Mode = groupNode.mode
             return groupNode.historyDetails.nodes.compactMap({ node in
                 CoopHistoryElement(
                     id: node.id,

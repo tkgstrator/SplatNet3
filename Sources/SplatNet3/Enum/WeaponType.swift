@@ -89,9 +89,13 @@ public enum WeaponType: Codable, CaseIterable {
 }
 
 public enum WeaponId: Int, Codable, CaseIterable {
+    /// 金ランダム
     case Random_Gold            = -2
+    /// 緑ランダム
     case Random_Green           = -1
+    /// ボールドマーカー
     case Shooter_Short          = 0
+    /// わかばシューター
     case Shooter_First          = 10
     case Shooter_Precision      = 20
     case Shooter_Blaze          = 30

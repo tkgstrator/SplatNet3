@@ -45,10 +45,24 @@ final class SplatNet3Tests: XCTestCase {
         print(response)
     }
 
+    func testAllCoopSchedule() async throws {
+        let request: CoopSchedule = CoopSchedule()
+        let response: [CoopSchedule.Response] = try await session.publish(request)
+        print(response)
+    }
+
     func testLoadJSONForCoopHistoryDetail() throws {
         let data = Data(fileName: "000000", type: .CoopHistoryDetail)
         let result: CoopHistoryDetail.Response = try decoder.decode(CoopHistoryDetail.Response.self, from: data)
         print(result)
+    }
+
+    func testLoadJSONForCoopSchedule() throws {
+        for fileName in ["000000", "000001"] {
+            let data = Data(fileName: fileName, type: .Schedule)
+            let result: [CoopSchedule.Response] = try decoder.decode([CoopSchedule.Response].self, from: data)
+            print(result)
+        }
     }
 
     func testLoadJSONForFriendList() throws {
@@ -61,6 +75,17 @@ final class SplatNet3Tests: XCTestCase {
         let data = Data(fileName: "000000", type: .CoopHistory)
         let result: CoopHistory.Response = try decoder.decode(CoopHistory.Response.self, from: data)
         print(result)
+    }
+
+    func testLoadJSONForStageSchedule() async throws {
+        do {
+            let data = Data(fileName: "000000", type: .StageSchedule)
+            let result: StageSchedule.Response = try decoder.decode(StageSchedule.Response.self, from: data)
+            dump(result.data.coopGroupingSchedule.regularSchedules.nodes.map({ $0.asSplatNet2() }))
+        } catch (let error) {
+            print(error)
+            throw error
+        }
     }
 
     func testHistoryRecord() async throws {
@@ -344,6 +369,8 @@ enum JSONType: String, CaseIterable, Codable {
     case CoopHistory
     case CoopHistoryDetail
     case FriendList
+    case StageSchedule
+    case Schedule
 }
 
 extension Data {

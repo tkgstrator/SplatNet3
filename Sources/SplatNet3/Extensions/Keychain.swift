@@ -84,7 +84,6 @@ public extension Keychain {
             let accounts: [UserInfo] = try decoder.decode([UserInfo].self, from: data)
             return accounts
         } catch (let error) {
-            print(error)
             return []
         }
     }

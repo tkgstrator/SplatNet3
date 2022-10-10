@@ -17,7 +17,6 @@ public extension DataRequest {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             return decoder
         }()
-        
         return validate({ request, response, data in
             DataRequest.ValidationResult(catching: {
                 if let data = data {
@@ -32,6 +31,15 @@ public extension DataRequest {
                     throw Failure.API(statusCode: response.statusCode)
                 }
             })
+        })
+    }
+
+    @discardableResult
+    func cURLDescription() -> Self {
+        cURLDescription(calling: { request in
+            #if DEBUG
+            print(request)
+            #endif
         })
     }
 }

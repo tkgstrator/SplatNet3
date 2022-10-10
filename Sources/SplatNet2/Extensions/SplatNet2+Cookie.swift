@@ -13,11 +13,7 @@ import Common
 extension SplatNet2 {
     internal func authorize<T: RequestType>(_ request: T) async throws -> T.ResponseType {
         return try await session.request(request)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
+            .cURLDescription()
             .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value

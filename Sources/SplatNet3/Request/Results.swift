@@ -14,8 +14,6 @@ public class SplatNet2 {
     public struct Result: Codable {
         /// ID
         public let id: String
-        /// ルール
-        public let rule: Rule
         /// ウロコ
         public let scale: [Int?]
         /// バイトスコア
@@ -79,7 +77,6 @@ public class SplatNet2 {
             self.bossCounts = result.enemyResults.popCounts()
             self.bossKillCounts = result.enemyResults.teamDefeatedCounts()
             self.grade = GradeType(id: result.afterGrade?.id)
-            self.rule = result.afterGrade?.id == nil ? Rule.PRIVATE : Rule.REGULAR
             self.scale = [result.scale?.bronze, result.scale?.silver, result.scale?.gold]
             self.jobResult = JobResult(from: result)
             self.schedule = Schedule(schedule: schedule)
@@ -93,25 +90,11 @@ public class SplatNet2 {
         }
     }
 
-    public enum Rule: String, Codable, CaseIterable, Identifiable {
-        public var id: String { rawValue }
-        /// いつものバイト
-        case REGULAR        = "RULE_REGULAR"
-        /// プライベートバイト
-        case PRIVATE        = "RULE_PRIVATE"
-        /// コンテスト
-        case CONTEST        = "RULE_CONTEST"
-        /// ペア
-        case PAIR           = "RULE_PAIR"
-        /// アンダーグラウンド
-        case UNDERGROUND    = "RULE_UNDERGROUND"
-    }
-
     public struct Schedule: Codable {
         public let startTime: String?
         public let endTime: String?
-        public let mode: CoopHistory.Mode
-        public let rule: CoopHistory.Rule
+        public let mode: Common.Mode
+        public let rule: Common.Rule
         public let weaponLists: [WeaponType]
         public let stage: StageType
 

@@ -143,4 +143,24 @@ public enum Common {
         /// オカシラシャケ
         public let boss: Boss
     }
+
+    /// サーモンランのモード
+    public enum Mode: String, CaseIterable, Codable {
+        /// いつものバイト
+        case REGULAR
+        /// プライベートバイト
+        case PRIVATE_CUSTOM
+    }
+
+    /// サーモンランのルール
+    public enum Rule: String, CaseIterable, Codable {
+        /// 通常のサーモンラン
+        case REGULAR
+        /// ビッグラン
+        case BIGRUN
+        /// コンテスト
+        case CONTEST
+        /// ペア
+        case PAIR
+    }
 }

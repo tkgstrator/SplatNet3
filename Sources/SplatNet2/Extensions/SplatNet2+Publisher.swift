@@ -44,11 +44,7 @@ extension SplatNet2 {
 
         /// インターセプターを利用してリクエスト
         return try await session.request(request, interceptor: interceptor)
-            .cURLDescription(calling: { request in
-#if DEBUG
-                print(request)
-#endif
-            })
+            .cURLDescription()
             .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
