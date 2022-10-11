@@ -442,10 +442,14 @@
 "526e505f8816a1ef36d3b648adc3a31bcc69c4da79ab8d779c8074547b902657" = "High Tide";
 // Error_BackToHome
 "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0" = "Back to Home";
+// Error_CurrentlyNotAvailable
+"34b89df6875cbe1ec65e9b19a3744f68947d2d3416a85fd0fd5b95c208d74072" = "Currently unavailable.<br />Please wait a bit, then try again.";
 // Error_Error
 "d6575457e33f5bd80f6de41a146493d6683b70499bb30aed977c9cacac63d9d0" = "Error";
 // Error_ErrorOccurred
 "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf" = "An error occurred.";
+// Error_ErrorReopen
+"cc900042cc144f501f15092ca5a9b8edca3e3844d6ec4cda2af0661a5b6d828b" = "Loading failed.";
 // Error_MaintenanceDescription
 "a45102f1353103fdd45e40e9cf995b586e2c91d952a898fb17b8b4b7d4931421" = "The server is currently undergoing maintenance. Please wait a bit, then try again.";
 // Error_MaintenanceTitle
@@ -544,6 +548,8 @@
 "4b7193190e4857b0fa985df52b998f76a7ffa6865b936a5051758e05ce82042a" = "Playing";
 // FriendList_IsLocked
 "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e" = "Password Locked";
+// FriendList_NoFriends
+"194677bb0f36b580e4e3e61453d9ca87c6934d5f954946b585ca8679f1e50d48" = "When you add friends, their play statuses will display here.";
 // FriendList_Offline
 "f1e2f1ebce51fc39de9a3556b341eed19e7182b120d49fe21c5500b2d39cd454" = "Offline";
 // FriendList_Online

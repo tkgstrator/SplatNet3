@@ -3379,12 +3379,15 @@
 "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0" = "返回主頁";
 // Error_CurrentlyNotAvailable
 "34b89df6875cbe1ec65e9b19a3744f68947d2d3416a85fd0fd5b95c208d74072" = "目前無法使用，請稍待片刻。";
+<<<<<<< HEAD
 =======
 "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0" = "返回主页";
 >>>>>>> f286e32 (update: add localized enum)
 =======
 "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0" = "返回主頁";
 >>>>>>> c406a37 (fix: Chinese localized files)
+=======
+>>>>>>> f6426df (add: localized string)
 // Error_Error
 "d6575457e33f5bd80f6de41a146493d6683b70499bb30aed977c9cacac63d9d0" = "錯誤";
 // Error_ErrorOccurred
@@ -3393,12 +3396,15 @@
 "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf" = "發生錯誤。";
 // Error_ErrorReopen
 "cc900042cc144f501f15092ca5a9b8edca3e3844d6ec4cda2af0661a5b6d828b" = "讀取失敗。";
+<<<<<<< HEAD
 =======
 "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf" = "发生错误。";
 >>>>>>> f286e32 (update: add localized enum)
 =======
 "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf" = "發生錯誤。";
 >>>>>>> c406a37 (fix: Chinese localized files)
+=======
+>>>>>>> f6426df (add: localized string)
 // Error_MaintenanceDescription
 "a45102f1353103fdd45e40e9cf995b586e2c91d952a898fb17b8b4b7d4931421" = "目前伺服器正在維護中，請稍後再重新連接。";
 // Error_MaintenanceTitle
@@ -3511,12 +3517,15 @@
 "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e" = "有密碼";
 // FriendList_NoFriends
 "194677bb0f36b580e4e3e61453d9ca87c6934d5f954946b585ca8679f1e50d48" = "朋友的遊玩狀況將在此顯示";
+<<<<<<< HEAD
 =======
 "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e" = "有密码";
 >>>>>>> f286e32 (update: add localized enum)
 =======
 "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e" = "有密碼";
 >>>>>>> c406a37 (fix: Chinese localized files)
+=======
+>>>>>>> f6426df (add: localized string)
 // FriendList_Offline
 "f1e2f1ebce51fc39de9a3556b341eed19e7182b120d49fe21c5500b2d39cd454" = "離線";
 // FriendList_Online
