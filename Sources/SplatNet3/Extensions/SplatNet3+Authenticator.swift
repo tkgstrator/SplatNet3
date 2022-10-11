@@ -30,7 +30,12 @@ extension SplatNet3 {
     public func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Swift.Result<OAuthCredential, Error>) -> Void) {
         Task { [weak self] in
             do {
-                let response: UserInfo = try await refreshToken(sessionToken: credential.sessionToken)
+                let response: UserInfo = try await {
+                    if credential.requiresGameWebTokenRefresh {
+                        return try await refreshToken(sessionToken: credential.sessionToken)
+                    }
+                    return try await refreshTokenByGameWebToken(gameWebToken: credential.gameWebToken)
+                }()
                 // アカウント情報を上書きする
                 account = response
                 // アカウント情報を書き込みする

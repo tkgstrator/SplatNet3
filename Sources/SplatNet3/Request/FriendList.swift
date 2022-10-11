@@ -83,7 +83,13 @@ public class FriendList: GraphQL {
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
 
-            self.id = try container.decode(String.self, forKey: .id).base64DecodedString.capture(pattern: #"Friend-([a-f0-9]{16})"#, group: 1)!
+            let id: String = try container.decode(String.self, forKey: .id)
+
+            guard let decodedId: String = id.base64DecodedString,
+                  let rawValue: String = decodedId.capture(pattern: #"Friend-([a-f0-9]{16})"#, group: 1) else {
+                throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Invalid user id"))
+            }
+            self.id = rawValue
             self.onlineState = try container.decode(OnlineStatus.self, forKey: .onlineState)
             self.nickname = try container.decode(String.self, forKey: .nickname)
             self.playerName = try container.decodeIfPresent(String.self, forKey: .playerName)

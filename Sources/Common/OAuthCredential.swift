@@ -19,19 +19,30 @@ public struct OAuthCredential: AuthenticationCredential, Codable {
     /// セッショントークン
     public let sessionToken: String
     /// スプラトゥーントークン
-    public let splatoonToken: String
+    public let gameServiceToken: String
+    /// スプラトゥーンアクセストークン
+    public let gameWebToken: String
     /// 有効期限
     public let expiration: Date
     /// 更新が必要かどうかのチェック
     /// 有効期限が現在よりも前ならリフレッシュが必要
     public var requiresRefresh: Bool { Date(timeIntervalSinceNow: 0) > expiration }
 
-    public init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String) {
+    public var requiresGameWebTokenRefresh: Bool {
+        guard let gameWebToken: JWT = try? JWT(gameWebToken: self.gameWebToken) else {
+            return true
+        }
+        let expiredTime: Date = Date(timeIntervalSince1970: TimeInterval(gameWebToken.payload.exp))
+        return expiredTime <= Date()
+    }
+
+    public init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, gameServiceToken: String, gameWebToken: String) {
         self.nsaid = nsaid
         self.iksmSession = iksmSession
         self.bulletToken = bulletToken
         self.sessionToken = sessionToken
-        self.splatoonToken = splatoonToken
+        self.gameServiceToken = gameServiceToken
+        self.gameWebToken = gameWebToken
         self.expiration = {
             #if DEBUG
             Date(timeIntervalSinceNow: -10)
@@ -41,20 +52,22 @@ public struct OAuthCredential: AuthenticationCredential, Codable {
         }()
     }
 
-    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String, expiresIn: Date = Date(timeIntervalSinceNow: 60 * 60 * 1.5)) {
+    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, gameServiceToken: String, gameWebToken: String, expiresIn: Date = Date(timeIntervalSinceNow: 60 * 60 * 1.5)) {
         self.nsaid = nsaid
         self.iksmSession = iksmSession
         self.sessionToken = sessionToken
-        self.splatoonToken = splatoonToken
+        self.gameServiceToken = gameServiceToken
+        self.gameWebToken = gameWebToken
         self.bulletToken = bulletToken
         self.expiration = expiresIn
     }
 
-    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, splatoonToken: String, timeInterval: Double = 60 * 60 * 1.5) {
+    internal init(nsaid: String, iksmSession: String?, bulletToken: String?, sessionToken: String, gameServiceToken: String, gameWebToken: String, timeInterval: Double = 60 * 60 * 1.5) {
         self.nsaid = nsaid
         self.iksmSession = iksmSession
         self.sessionToken = sessionToken
-        self.splatoonToken = splatoonToken
+        self.gameServiceToken = gameServiceToken
+        self.gameWebToken = gameWebToken
         self.bulletToken = bulletToken
         self.expiration = {
             #if DEBUG

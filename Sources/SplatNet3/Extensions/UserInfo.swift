@@ -9,39 +9,61 @@ import Foundation
 import Common
 
 extension OAuthCredential {
-    init(sessionToken: SessionToken.Response, splatoonToken: SplatoonToken.Response, bulletToken: BulletToken.Response) {
+    init(
+        sessionToken: SessionToken.Response,
+        gameServiceToken: SplatoonToken.Response,
+        gameWebToken: SplatoonAccessToken.Response,
+        bulletToken: BulletToken.Response
+    ) {
         self.init(
-            nsaid: splatoonToken.result.user.nsaId,
+            nsaid: gameServiceToken.result.user.nsaId,
             iksmSession: nil,
             bulletToken: bulletToken.bulletToken,
             sessionToken: sessionToken.sessionToken,
-            splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
+            gameServiceToken: gameServiceToken.result.webApiServerCredential.accessToken,
+            gameWebToken: gameWebToken.result.accessToken
         )
     }
 }
 
 extension UserInfo {
+    /// イカリング3
     init(sessionToken: SessionToken.Response,
-         splatoonToken: SplatoonToken.Response,
-         bulletToken: BulletToken.Response
-    ) {
-        self.init(sessionToken: sessionToken.sessionToken, splatoonToken: splatoonToken, bulletToken: bulletToken)
-    }
-
-    init(sessionToken: String,
-         splatoonToken: SplatoonToken.Response,
+         gameServiceToken: SplatoonToken.Response,
+         gameWebToken: SplatoonAccessToken.Response,
          bulletToken: BulletToken.Response
     ) {
         self.init(
-            nickname: splatoonToken.result.user.name,
-            membership: splatoonToken.result.user.links.nintendoAccount.membership.active,
-            friendCode: splatoonToken.result.user.links.friendCode.id,
-            thumbnailURL: URL(unsafeString: splatoonToken.result.user.imageUri),
-            nsaid: splatoonToken.result.user.nsaId,
+            nickname: gameServiceToken.result.user.name,
+            membership: gameServiceToken.result.user.links.nintendoAccount.membership.active,
+            friendCode: gameServiceToken.result.user.links.friendCode.id,
+            thumbnailURL: URL(unsafeString: gameServiceToken.result.user.imageUri),
+            nsaid: gameServiceToken.result.user.nsaId,
+            iksmSession: nil,
+            bulletToken: bulletToken.bulletToken,
+            sessionToken: sessionToken.sessionToken,
+            gameServiceToken: gameServiceToken.result.webApiServerCredential.accessToken,
+            gameWebToken: gameWebToken.result.accessToken
+        )
+    }
+
+    /// イカリング3
+    init(sessionToken: String,
+         gameServiceToken: SplatoonToken.Response,
+         gameWebToken: SplatoonAccessToken.Response,
+         bulletToken: BulletToken.Response
+    ) {
+        self.init(
+            nickname: gameServiceToken.result.user.name,
+            membership: gameServiceToken.result.user.links.nintendoAccount.membership.active,
+            friendCode: gameServiceToken.result.user.links.friendCode.id,
+            thumbnailURL: URL(unsafeString: gameServiceToken.result.user.imageUri),
+            nsaid: gameServiceToken.result.user.nsaId,
             iksmSession: nil,
             bulletToken: bulletToken.bulletToken,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
+            gameServiceToken: gameServiceToken.result.webApiServerCredential.accessToken,
+            gameWebToken: gameWebToken.result.accessToken
         )
     }
 }

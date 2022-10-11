@@ -9,13 +9,19 @@ import Foundation
 import Common
 
 extension OAuthCredential {
-    init(sessionToken: SessionToken.Response, splatoonToken: SplatoonToken.Response, iksmSession: IksmSession.Response) {
+    init(
+        sessionToken: SessionToken.Response,
+        splatoonToken: SplatoonToken.Response,
+        splatoonAccessToken: SplatoonAccessToken.Response,
+        iksmSession: IksmSession.Response
+    ) {
         self.init(
             nsaid: splatoonToken.result.user.nsaId,
             iksmSession: iksmSession.iksmSession,
             bulletToken: nil,
             sessionToken: sessionToken.sessionToken,
-            splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
+            gameServiceToken: splatoonToken.result.webApiServerCredential.accessToken,
+            gameWebToken: splatoonAccessToken.result.accessToken
         )
     }
 }
@@ -23,13 +29,20 @@ extension OAuthCredential {
 extension UserInfo {
     init(sessionToken: SessionToken.Response,
          splatoonToken: SplatoonToken.Response,
+         splatoonAccessToken: SplatoonAccessToken.Response,
          iksmSession: IksmSession.Response
     ) {
-        self.init(sessionToken: sessionToken.sessionToken, splatoonToken: splatoonToken, iksmSession: iksmSession)
+        self.init(
+            sessionToken: sessionToken.sessionToken,
+            splatoonToken: splatoonToken,
+            splatoonAccessToken: splatoonAccessToken,
+            iksmSession: iksmSession
+        )
     }
 
     init(sessionToken: String,
          splatoonToken: SplatoonToken.Response,
+         splatoonAccessToken: SplatoonAccessToken.Response,
          iksmSession: IksmSession.Response
     ) {
         self.init(
@@ -41,7 +54,8 @@ extension UserInfo {
             iksmSession: iksmSession.iksmSession,
             bulletToken: nil,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken.result.webApiServerCredential.accessToken
+            gameServiceToken: splatoonToken.result.webApiServerCredential.accessToken,
+            gameWebToken: splatoonAccessToken.result.accessToken
         )
     }
 }

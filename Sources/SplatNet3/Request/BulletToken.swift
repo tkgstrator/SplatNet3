@@ -20,11 +20,20 @@ internal class BulletToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     var headers: [String: String]?
 
+    /// レスポンスからリクエスト生成
     init(accessToken: SplatoonAccessToken.Response, version: String) {
         self.headers = [
             "X-Web-View-Ver": version,
             "X-NaCountry": "US",
             "X-GameWebToken": accessToken.result.accessToken,
+        ]
+    }
+
+    init(accessToken: String, version: String) {
+        self.headers = [
+            "X-Web-View-Ver": version,
+            "X-NaCountry": "US",
+            "X-GameWebToken": accessToken,
         ]
     }
 

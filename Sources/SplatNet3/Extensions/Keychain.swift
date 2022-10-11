@@ -54,7 +54,8 @@ public extension Keychain {
                 iksmSession: account.credential.iksmSession,
                 bulletToken: account.credential.bulletToken,
                 sessionToken: account.credential.sessionToken,
-                splatoonToken: account.credential.splatoonToken,
+                gameServiceToken: account.credential.gameServiceToken,
+                gameWebToken: account.credential.gameWebToken,
                 expiresIn: Date(timeIntervalSince1970: 0)
             )
             // 上書きして保存

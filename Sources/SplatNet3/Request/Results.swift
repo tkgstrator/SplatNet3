@@ -170,7 +170,7 @@ public class SplatNet2 {
         public init(from player: CoopHistoryDetail.PlayerResult, enemies: [CoopHistoryDetail.EnemyResult], counts: [[Int]]) {
             let specialId: Int? = player.specialWeapon?.id
 
-            self.id = player.player.id.base64DecodedString
+            self.id = player.player.id
             self.isMyself = player.player.isMyself
             self.nameId = player.player.nameId
             self.name = player.player.name

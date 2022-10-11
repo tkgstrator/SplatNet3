@@ -39,9 +39,12 @@ extension String {
     }
 
     /// Base64文字列から復号する
-    public var base64DecodedString: String {
-        // swiftlint:disable:next force_unwrapping
-        String(data: Data(base64Encoded: self)!, encoding: .utf8)!
+    public var base64DecodedString: String? {
+        let formatedString: String = self + Array(repeating: "=", count: self.count % 4).joined()
+        if let data: Data = Data(base64Encoded: formatedString, options: [.ignoreUnknownCharacters]) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
     }
 
     /// HMAC-SHA256文字列に変換する
@@ -83,7 +86,9 @@ extension String {
             ]
             return formatter
         }()
-        if let playTime: String = self.base64DecodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
+
+        if let decodedString: String = self.base64DecodedString,
+           let playTime: String = decodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
            let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
             return Int(timeInterval)
         }

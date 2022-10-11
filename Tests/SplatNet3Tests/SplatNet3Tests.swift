@@ -7,6 +7,7 @@ final class SplatNet3Tests: XCTestCase {
     let sessionToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJzdDpzY3AiOlswLDgsOSwxNywyM10sImlhdCI6MTY2MjcyMTg5OCwidHlwIjoic2Vzc2lvbl90b2tlbiIsInN1YiI6ImE4MzZhMWQ0NjI1YWZhYjQiLCJleHAiOjE3MjU3OTM4OTgsImF1ZCI6IjcxYjk2M2MxYjdiNmQxMTkiLCJpc3MiOiJodHRwczovL2FjY291bnRzLm5pbnRlbmRvLmNvbSIsImp0aSI6OTc4NzkxMDI4Mn0.UUZ8l4neAp0nZPbcQU7EoUUo02GVI6pg1OeijE9zp1o"
     let iksmSession: String = "3b78964054c63dcb76275fb2123acbf06cd74acb"
     let bulletToken: String = "rdVwS9CqHMzdtY006X7zUz9P3iYFqwhOppZW_q6fn6ZOPW641sTAa1l5le3DNApqiyXQ3bx_-5sSmQTecVZmN-jvxp75TqHj3KRH7ZPXA3qIPEte7nJ3yc08R5U="
+    let splatoonAccessToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IktTaS1qeGNBMi1ieGE1dVJJakxyczh1T3dubyIsImprdSI6Imh0dHBzOi8vYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldC92MS9XZWJTZXJ2aWNlL0NlcnRpZmljYXRlL0xpc3QifQ.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsImF1ZCI6IjY2MzM2NzcyOTE1NTI3NjgiLCJleHAiOjE2NjU0NjYyMTksImlhdCI6MTY2NTQ0MjgxOSwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsImp0aSI6IjZkMDZhY2I0LTQxMDQtNDA5NS05NGQxLTExYWQ0NTIxYjFiNiIsInN1YiI6NDczNzM2MDgzMTM4MTUwNCwibGlua3MiOnsibmV0d29ya1NlcnZpY2VBY2NvdW50Ijp7ImlkIjoiM2Y4OWMzNzkxYzQzZWE1NyJ9fSwidHlwIjoiaWRfdG9rZW4iLCJtZW1iZXJzaGlwIjp7ImFjdGl2ZSI6dHJ1ZX19.FQzZ8UcGvPsjCsc8tbUarALvqimqUT_hnvkHC6stCStwPYsLcLfCdUmZbKWnLRIs5C5fCIREXrbE_9C2TWU9HsdWXreLy7SVgNWTrzbsPwJtVFtht8tasbHYU9RSLEMDYDjzassHA7oTwgSDtDPbEW-vyYYhtKASaNDiB3Df4gO2xGXIhnYiSVwxQFcWm4yDhYikQIvdnZQTNWUn7P_JWsnLvMrwwSod_VErnxgKvMMxDO5EbOxpcn4zcv2SmfFTbAHJFB3Nqm20cJxXodsZsSrgc4MNIScQmlx9hTj0Gr0qE44GTdHVlUxuQ7k_1Mq5GjXbfIRdJDBOJ_Ct-wqZ5g"
     let splatoonToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc0NoaWxkUmVzdHJpY3RlZCI6ZmFsc2UsIm1lbWJlcnNoaXAiOnsiYWN0aXZlIjp0cnVlfSwiYXVkIjoiZjQxN2UxdGlianFkOTFjaDk5dTQ5aXd6NXNuOWNoeTMiLCJleHAiOjE2NjE2MTY5NDQsImlhdCI6MTY2MTYwOTc0NCwiaXNzIjoiYXBpLWxwMS56bmMuc3J2Lm5pbnRlbmRvLm5ldCIsInN1YiI6NjQ0NTQ1NzE2OTk3MzI0OCwidHlwIjoiaWRfdG9rZW4ifQ.951ll7aJpVJcBmbTenskx9JoOrWfKULh_wvejTRNo4g"
     let nickname: String = "にだいめえむいーです"
     let friendCode: String = "1384-4712-4713"
@@ -26,6 +27,16 @@ final class SplatNet3Tests: XCTestCase {
         print(response)
     }
 
+    func testExpiredIn() async throws {
+        do {
+            let jwt: JWT = try JWT(gameWebToken: splatoonAccessToken)
+            print(jwt)
+        } catch(let error) {
+            print(error)
+            throw error
+        }
+    }
+
     func testVersion() async throws {
         let account: UserInfo = UserInfo(
             nickname: nickname,
@@ -36,7 +47,8 @@ final class SplatNet3Tests: XCTestCase {
             iksmSession: iksmSession,
             bulletToken: bulletToken,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
+            gameServiceToken: splatoonToken,
+            gameWebToken: splatoonAccessToken,
             timeInterval: 0
         )
         let session: SplatNet3 = SplatNet3(account: account)
@@ -90,18 +102,19 @@ final class SplatNet3Tests: XCTestCase {
 
     func testHistoryRecord() async throws {
         do {
-        let account: UserInfo = UserInfo(
-            nickname: nickname,
-            membership: true,
-            friendCode: friendCode,
-            thumbnailURL: thumbnailURL,
-            nsaid: nsaid,
-            iksmSession: iksmSession,
-            bulletToken: bulletToken,
-            sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
-            timeInterval: 60
-        )
+            let account: UserInfo = UserInfo(
+                nickname: nickname,
+                membership: true,
+                friendCode: friendCode,
+                thumbnailURL: thumbnailURL,
+                nsaid: nsaid,
+                iksmSession: iksmSession,
+                bulletToken: bulletToken,
+                sessionToken: sessionToken,
+                gameServiceToken: splatoonToken,
+                gameWebToken: splatoonAccessToken,
+                timeInterval: 0
+            )
         let session: SplatNet3 = SplatNet3(account: account)
         let response = try await session.publish(HistoryRecord())
         } catch (let error) {
@@ -120,8 +133,9 @@ final class SplatNet3Tests: XCTestCase {
             iksmSession: iksmSession,
             bulletToken: bulletToken,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
-            timeInterval: 60
+            gameServiceToken: splatoonToken,
+            gameWebToken: splatoonAccessToken,
+            timeInterval: 0
         )
         let session: SplatNet3 = SplatNet3(account: account)
         let results: CoopHistory.Response = try await session.publish(CoopHistory())
@@ -149,8 +163,9 @@ final class SplatNet3Tests: XCTestCase {
                 iksmSession: iksmSession,
                 bulletToken: bulletToken,
                 sessionToken: sessionToken,
-                splatoonToken: splatoonToken,
-                timeInterval: 60
+                gameServiceToken: splatoonToken,
+                gameWebToken: splatoonAccessToken,
+                timeInterval: 0
             )
             let session: SplatNet3 = SplatNet3(account: account)
             let resultId: String = "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkyM1QxMjI4MDNfMTdmYTQ2MDItODRmMy00YzIyLTg0MGMtMTVlNzBmODA2NDBl"
@@ -177,8 +192,9 @@ final class SplatNet3Tests: XCTestCase {
                 iksmSession: iksmSession,
                 bulletToken: bulletToken,
                 sessionToken: sessionToken,
-                splatoonToken: splatoonToken,
-                timeInterval: 60
+                gameServiceToken: splatoonToken,
+                gameWebToken: splatoonAccessToken,
+                timeInterval: 0
             )
             let session: SplatNet3 = SplatNet3(account: account)
             let request: CoopHistory = CoopHistory()
@@ -201,8 +217,9 @@ final class SplatNet3Tests: XCTestCase {
                 iksmSession: iksmSession,
                 bulletToken: bulletToken,
                 sessionToken: sessionToken,
-                splatoonToken: splatoonToken,
-                timeInterval: 60
+                gameServiceToken: splatoonToken,
+                gameWebToken: splatoonAccessToken,
+                timeInterval: 0
             )
             let session: SplatNet3 = SplatNet3(account: account)
             let request: FriendList = FriendList()

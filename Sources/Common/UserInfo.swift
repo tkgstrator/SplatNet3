@@ -17,7 +17,8 @@ public struct UserInfo: Codable {
         iksmSession: String?, // For Splatoon2
         bulletToken: String?, // For Splatoon3
         sessionToken: String,
-        splatoonToken: String,
+        gameServiceToken: String,
+        gameWebToken: String,
         timeInterval: Double = 60 * 60 * 1.5
     ) {
         self.nickname = nickname
@@ -29,7 +30,8 @@ public struct UserInfo: Codable {
             iksmSession: iksmSession,
             bulletToken: bulletToken,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
+            gameServiceToken: gameServiceToken,
+            gameWebToken: gameWebToken,
             timeInterval: timeInterval
         )
     }
@@ -43,7 +45,8 @@ public struct UserInfo: Codable {
         iksmSession: String?, // For Splatoon2
         bulletToken: String?, // For Splatoon3
         sessionToken: String,
-        splatoonToken: String,
+        gameServiceToken: String,
+        gameWebToken: String,
         expiresIn: Date
     ) {
         self.nickname = nickname
@@ -55,7 +58,8 @@ public struct UserInfo: Codable {
             iksmSession: iksmSession,
             bulletToken: bulletToken,
             sessionToken: sessionToken,
-            splatoonToken: splatoonToken,
+            gameServiceToken: gameServiceToken,
+            gameWebToken: gameWebToken,
             expiresIn: expiresIn
         )
     }

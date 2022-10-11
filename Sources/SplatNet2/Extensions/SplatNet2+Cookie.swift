@@ -40,6 +40,7 @@ extension SplatNet2 {
         return UserInfo(
             sessionToken: sessionToken,
             splatoonToken: splatoonToken,
+            splatoonAccessToken: splatoonAccessToken,
             iksmSession: iksmSession
         )
     }

@@ -187,6 +187,26 @@ public class CoopHistoryDetail: GraphQL {
             case isMyself = "isMyself"
             case species = "species"
         }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+
+            self.isPlayer = try container.decode(String.self, forKey: .isPlayer)
+            self.byname = try container.decode(String.self, forKey: .byname)
+            self.name = try container.decode(String.self, forKey: .name)
+            self.nameId = try container.decode(String.self, forKey: .nameId)
+            self.nameplate = try container.decode(Common.Nameplate.self, forKey: .nameplate)
+            self.uniform = try container.decode(ImageRef.self, forKey: .uniform)
+
+            let id: String = try container.decode(String.self, forKey: .id)
+
+            guard let decodedId: String = id.base64DecodedString else {
+                throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Invalid user id"))
+            }
+            self.id = decodedId
+            self.isMyself = try container.decode(Bool.self, forKey: .isMyself)
+            self.species = try container.decode(Species.self, forKey: .species)
+        }
     }
 
     // MARK: - HistoryDetailId
