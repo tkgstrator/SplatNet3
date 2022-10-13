@@ -24,7 +24,7 @@ public class CoopSchedule: RequestType {
         public let startTime: Date
         public let endTime: Date
         public let weaponList: [WeaponType]
-        public let stage: StageType
+        public let stageId: StageType
         public let mode: Common.Mode
         public let rule: Common.Rule
 
@@ -39,9 +39,9 @@ public class CoopSchedule: RequestType {
             self.startTime = dateFormatter.date(from: try container.decode(String.self, forKey: .startTime)) ?? Date(timeIntervalSince1970: 0)
             self.endTime = dateFormatter.date(from: try container.decode(String.self, forKey: .endTime)) ?? Date(timeIntervalSince1970: 0)
             self.weaponList = (try container.decode([Int].self, forKey: .weaponList)).compactMap({ WeaponType(id: $0) })
-            self.stage = StageType(id: try container.decode(Int.self, forKey: .stage)) ?? .Unknown
-            self.rule = Common.Rule.REGULAR
+            self.stageId = StageType(id: try container.decode(Int.self, forKey: .stageId)) ?? .Unknown
             self.mode = Common.Mode.REGULAR
+            self.rule = Common.Rule.REGULAR
         }
 
         init(schedule: StageSchedule.Node) {
@@ -53,7 +53,7 @@ public class CoopSchedule: RequestType {
             self.startTime = dateFormatter.date(from: schedule.startTime) ?? Date(timeIntervalSince1970: 0)
             self.endTime = dateFormatter.date(from: schedule.endTime) ?? Date(timeIntervalSince1970: 0)
             self.weaponList = schedule.setting.weapons.compactMap({ $0.id })
-            self.stage = schedule.setting.coopStage.id ?? .Unknown
+            self.stageId = schedule.setting.coopStage.id ?? .Unknown
             /// ここは多分固定
             self.mode = Common.Mode.REGULAR
             /// ルール

@@ -58,9 +58,14 @@ final class SplatNet3Tests: XCTestCase {
     }
 
     func testAllCoopSchedule() async throws {
-        let request: CoopSchedule = CoopSchedule()
-        let response: [CoopSchedule.Response] = try await session.publish(request)
-        print(response)
+        do {
+            let request: CoopSchedule = CoopSchedule()
+            let response: [CoopSchedule.Response] = try await session.request(request)
+            print(response)
+        } catch(let error) {
+            print(error)
+            throw error
+        }
     }
 
     func testLoadJSONForCoopHistoryDetail() throws {
@@ -86,7 +91,8 @@ final class SplatNet3Tests: XCTestCase {
     func testLoadJSONForCoopHistory() throws {
         let data = Data(fileName: "000000", type: .CoopHistory)
         let result: CoopHistory.Response = try decoder.decode(CoopHistory.Response.self, from: data)
-        print(result)
+        let nodes: [String] = result.data.coopResult.historyGroups.nodes.compactMap({ $0.startTime })
+        dump(nodes)
     }
 
     func testLoadJSONForStageSchedule() async throws {

@@ -62,6 +62,7 @@ public class SplatNet2 {
             let result: CoopHistoryDetail.Detail = response.data.coopHistoryDetail
 
             let specialCounts: [[Int]] = result.waveResults.map({ $0.specialWeapons.map({ $0.id })})
+            print(schedule)
 
             self.id = result.id
             self.jobScore = result.jobScore
