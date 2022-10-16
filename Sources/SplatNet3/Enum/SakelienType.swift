@@ -61,7 +61,7 @@ public enum SakelienId: Int, CaseIterable, Codable {
     case SakeArtillery      = 13
     case SakeSaucer         = 14
     case SakelienGolden     = 15
-    case SakeBigMouth       = 16
+    case SakeBigMouth       = 20
     case Sakedozer          = 17
     case SakelienGiant      = 23
 }
