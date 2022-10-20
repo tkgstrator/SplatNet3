@@ -165,7 +165,7 @@ public class SplatNet2 {
         public let specialCounts: [Int]
         public let bossKillCounts: [Int]
         public let bossKillCountsTotal: Int
-        public let species: CoopHistoryDetail.Species
+        public let species: SpeciesType
 
         public init(from player: CoopHistoryDetail.PlayerResult, enemies: [CoopHistoryDetail.EnemyResult], counts: [[Int]]) {
             let specialId: Int? = player.specialWeapon?.id

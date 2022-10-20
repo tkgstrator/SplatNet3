@@ -159,11 +159,6 @@ public class CoopHistoryDetail: GraphQL {
         }
     }
 
-    public enum Species: String, CaseIterable, Codable {
-        case INKLING = "INKLING"
-        case OCTOLING = "OCTOLING"
-    }
-
     // MARK: - ResultPlayer
     public struct ResultPlayer: Codable {
         public let isPlayer: String
@@ -174,7 +169,7 @@ public class CoopHistoryDetail: GraphQL {
         public let uniform: ImageRef
         public let id: String
         public let isMyself: Bool
-        public let species: Species
+        public let species: SpeciesType
 
         enum CodingKeys: String, CodingKey {
             case isPlayer = "__isPlayer"
@@ -205,7 +200,7 @@ public class CoopHistoryDetail: GraphQL {
             }
             self.id = decodedId
             self.isMyself = try container.decode(Bool.self, forKey: .isMyself)
-            self.species = try container.decode(Species.self, forKey: .species)
+            self.species = try container.decode(SpeciesType.self, forKey: .species)
         }
     }
 

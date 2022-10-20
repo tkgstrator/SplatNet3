@@ -1181,6 +1181,4 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case CoopHistory_Wave2 = "f979e54cad66243f388c4b899141cfeb168b7d602f7404e3b00593bcbdae7824"
 	/// WAVE 3
 	case CoopHistory_Wave3 = "c76dc4e8e2a4cb85a80e776484b7d48339b8b2620bffff9ff509b356994f5164"
-    /// ヨコヅナ
-    case CoopHistory_KingSakelien3 = "9bc1c1d0341a2049db2ae54546b7335074dda0d2ea88f32c1499771850b7a904"
 }

@@ -9,7 +9,7 @@ import Foundation
 
 public struct JWT: Codable {
     /// Base64でエンコードされたトークンから生成
-    init(gameWebToken: String) throws {
+    public init(gameWebToken: String) throws {
         let rawTexts: [String] = gameWebToken.components(separatedBy: ".").compactMap({ $0.base64DecodedString })
 
         // 二つに分割できなければ不正なJWTとみなす
@@ -34,6 +34,15 @@ public struct JWT: Codable {
 
     public let header: Header
     public let payload: Payload
+
+    public enum Status: CaseIterable {
+        case Valid
+        case Expired
+    }
+
+    public var status: Status {
+        payload.exp <= Int(Date().timeIntervalSince1970) ? .Expired : .Valid
+    }
 
     public struct Header: Codable {
         public let typ: String

@@ -77,8 +77,7 @@ open class SplatNet3: Authenticator {
 
     /// レギュラースケジュール一括取得
     public func getAllCoopSchedule() async throws -> [CoopSchedule.Response] {
-        let request: CoopSchedule = CoopSchedule()
-        return try await publish(request)
+        return try await request(CoopSchedule())
     }
 
     /// レギュラースケジュール取得
@@ -230,7 +229,7 @@ open class SplatNet3: Authenticator {
     }
 
     /// イカリング3のリクエスト
-    open func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
+    open func publish<T: GraphQL>(_ request: T) async throws -> T.ResponseType {
         // 選択されているアカウントから認証情報を取得
         let credential: OAuthCredential = try {
             guard let account = account else {

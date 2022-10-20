@@ -17,6 +17,7 @@ public enum SPColor {
         public static let SPOrange: Color               = Color("Color/SplatNet2/SPOrange", bundle: .module)
         public static let SPWhite: Color                = Color("Color/SplatNet2/SPWhite", bundle: .module)
         public static let SPYellow: Color               = Color("Color/SplatNet2/SPYellow", bundle: .module)
+        public static let SPRed: Color                  = Color("Color/SplatNet2/SPRed", bundle: .module)
     }
 
     public enum SplatNet3 {

@@ -6,7 +6,6 @@
 //  Copyright © 2022 Magi, Corporation. All rights reserved.
 //
 
-
 import Foundation
 
 public enum EventType: RawRepresentables {
