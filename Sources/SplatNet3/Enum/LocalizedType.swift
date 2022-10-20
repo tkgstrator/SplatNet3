@@ -1175,6 +1175,10 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case Widgets_VshistoryTitle = "6031c92a5f8d7b0a4e8e4932658fae95869535cc20a675e8f51f84a0b845cd25"
 	/// WIN!
 	case Widgets_VshistoryWin = "070dd3cec699a678672bf22af57a410f269ab08b455b6b77d760843f00cd073f"
+	/// ja-JP
+	case SplatNet3_Locale = "0a36005a87296c7edced11a972453133f6becb79f90224e4457da146ec36204d"
+	/// ヨコヅナ
+	case CoopHistory_KingSakelien3 = "9bc1c1d0341a2049db2ae54546b7335074dda0d2ea88f32c1499771850b7a904"
 	/// WAVE 1
 	case CoopHistory_Wave1 = "9fee890ae2d6bb7f916691c0f4cdd948fb2539fe77d57945700aacb53735aca1"
 	/// WAVE 2
