@@ -1,8 +1,6 @@
 [
   {
-    "id": 0,
     "locale": "locale99",
-    "hash": "dee547ff",
     "xcode": "en",
     "internal_code": "USen",
     "event_waves": [
@@ -20,9 +18,7 @@
     ]
   },
   {
-    "id": 31,
     "locale": "locale8",
-    "hash": "d3aaa3e7",
     "xcode": "ja",
     "internal_code": "JPja",
     "event_waves": [
@@ -40,9 +36,7 @@
     ]
   },
   {
-    "id": 56,
     "locale": "locale13",
-    "hash": "a41fb232",
     "xcode": "zh-Hant",
     "internal_code": "CNzh",
     "event_waves": [
@@ -60,9 +54,7 @@
     ]
   },
   {
-    "id": 139,
     "locale": "locale0",
-    "hash": "1118ed16",
     "xcode": "de",
     "internal_code": "EUde",
     "event_waves": [
@@ -80,9 +72,7 @@
     ]
   },
   {
-    "id": 153,
     "locale": "locale12",
-    "hash": "803a6cba",
     "xcode": "zh-Hans",
     "internal_code": "TWzh",
     "event_waves": [
@@ -100,9 +90,7 @@
     ]
   },
   {
-    "id": 277,
     "locale": "locale6",
-    "hash": "58dc66b6",
     "xcode": "fr",
     "internal_code": "EUfr",
     "event_waves": [
@@ -120,9 +108,7 @@
     ]
   },
   {
-    "id": 286,
     "locale": "locale10",
-    "hash": "21d35be9",
     "xcode": "nl",
     "internal_code": "EUnl",
     "event_waves": [
@@ -140,9 +126,7 @@
     ]
   },
   {
-    "id": 303,
     "locale": "locale11",
-    "hash": "14cecdff",
     "xcode": "ru",
     "internal_code": "EUru",
     "event_waves": [
@@ -160,9 +144,7 @@
     ]
   },
   {
-    "id": 401,
     "locale": "locale9",
-    "hash": "3a3c98ac",
     "xcode": "ko",
     "internal_code": "KRko",
     "event_waves": [
@@ -180,9 +162,7 @@
     ]
   },
   {
-    "id": 448,
     "locale": "locale7",
-    "hash": "65a2c7e2",
     "xcode": "it",
     "internal_code": "EUit",
     "event_waves": [
@@ -200,9 +180,7 @@
     ]
   },
   {
-    "id": 479,
     "locale": "locale5",
-    "hash": "0e4bd551",
     "xcode": "fr-CA",
     "internal_code": "USfr",
     "event_waves": [
@@ -220,9 +198,7 @@
     ]
   },
   {
-    "id": 495,
     "locale": "locale1",
-    "hash": "d164251f",
     "xcode": "en-GB",
     "internal_code": "EUen",
     "event_waves": [
@@ -240,9 +216,7 @@
     ]
   },
   {
-    "id": 835,
     "locale": "locale4",
-    "hash": "a890b6bf",
     "xcode": "es-MX",
     "internal_code": "USes",
     "event_waves": [
@@ -260,9 +234,7 @@
     ]
   },
   {
-    "id": 888,
     "locale": "locale3",
-    "hash": "847f8c40",
     "xcode": "es",
     "internal_code": "EUes",
     "event_waves": [

@@ -1,3 +1,4 @@
+from threading import local
 from locales import *
 from nameplate import *
 from badge import *
@@ -41,13 +42,64 @@ def camel_case(dict):
     return dict
 
 
-def get_localized():
-    languages: list[Locale] = get_locales()
+def tuple_to_dict(tuple) -> dict:
+    dict = {}
+    for k, v in tuple:
+        dict[k] = v
+    return dict
 
+
+def get_localized():
+    # Revisionを取得
+    url = "https://api.lp1.av5ja.srv.nintendo.net/?lang=ja-JP"
+    response = requests.get(url)
+    response.encoding = response.apparent_encoding
+    revision = re.search(
+        'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
+    ).group(1)
+
+    # JavaScriptからlocaleとhashを取得
+    base_url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
+    response = requests.get(base_url).text
+    locales = tuple_to_dict(re.findall('([\d]{2,3}):"(locale[\d]{1,2})"', response))
+    hashes = tuple_to_dict(re.findall('([\d]{2,3}):"([a-f0-9]{8})"', response))
+
+    # Internal codeを取得
+    codes = re.findall('"./([a-z]{2}-[A-Z]{2}).json":\[(.*?)\]', response)
+    codes = tuple_to_dict(list(map(lambda x: (x[1].split(",")[-1], x[0]), codes)))
+
+    # イカリング3から言語データのマップを作成
+    data: list[Locale] = get_locales()
+    languages = {}
+    for key in hashes.keys():
+        lang: Locale = list(filter(lambda x: x.locale == locales[key], data))[0]
+        languages[key] = {
+            "locale": locales[key],
+            "hash": hashes[key],
+            "code": codes[key],
+            "xcode": lang.xcode,
+            "internal": lang.internal_code,
+            "event_type": lang.event_waves,
+            "king_sakelien": lang.king_sakelien,
+        }
+    # 英語を追加
+    lang: Locale = list(filter(lambda x: x.locale == "locale99", data))[0]
+    languages[65468] = {
+        "locale": None,
+        "hash": None,
+        "code": "en-US",
+        "xcode": lang.xcode,
+        "internal": lang.internal_code,
+        "event_type": lang.event_waves,
+        "king_sakelien": lang.king_sakelien,
+    }
+
+    languages: list[Language] = list(map(lambda v: Language(**v), languages.values()))
+    print(languages)
     for language in languages:
         # 内部データから検索
         print(f"Downloading {language.xcode}")
-        url = f"https://leanny.github.io/splat3/data/language/{language.internal_code}.json"
+        url = f"https://leanny.github.io/splat3/data/language/{language.internal}.json"
         params = []
 
         res: dict = requests.get(url).json()
@@ -98,10 +150,9 @@ def get_localized():
         k = "T_TitleCoop_45"
         v = "-"
         params.append(format(k, v))
-
         # イカリング3からデータ取得
-        if language.id == 0:
-            url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.dee547ff.js"
+        if language.code == "en-US":
+            url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
         else:
             url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/{language.locale}.{language.hash}.chunk.js"
         # JavaScriptの中身
@@ -111,10 +162,16 @@ def get_localized():
         data = json.loads(match.encode("utf-8").decode("unicode-escape"))
         data = camel_case(data)
         for k, v in data.items():
-            params.append(format(k, v))
+            if k == "CoopHistory_Wave":
+                value = v.split(" ")[0]
+                params.append(format("CoopHistory_Wave1", f"{value} 1"))
+                params.append(format("CoopHistory_Wave2", f"{value} 2"))
+                params.append(format("CoopHistory_Wave3", f"{value} 3"))
+            else:
+                params.append(format(k, v))
 
         # イベント情報を取得
-        for index, wave in enumerate(language.event_waves):
+        for index, wave in enumerate(language.event_type):
             params.append(format(f"CoopHistory_EventWave{index+1}", wave))
 
         for index, sakelien in enumerate(language.king_sakelien):
