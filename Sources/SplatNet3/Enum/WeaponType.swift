@@ -44,9 +44,9 @@ public enum WeaponType: Codable, CaseIterable {
     case Brush_Normal
     case Charger_Quick
     case Charger_Normal
-    case Charger_NormalScope
+//    case Charger_NormalScope
     case Charger_Long
-    case Charger_LongScope
+//    case Charger_LongScope
     case Charger_Light
     case Charger_Keeper
     case Slosher_Strong
@@ -97,11 +97,15 @@ public enum WeaponId: Int, Codable, CaseIterable {
     case Shooter_Short          = 0
     /// わかばシューター
     case Shooter_First          = 10
+    /// シャープマーカー
     case Shooter_Precision      = 20
+    /// プロモデラー
     case Shooter_Blaze          = 30
+    /// スプラシューター
     case Shooter_Normal         = 40
     case Shooter_Gravity        = 50
     case Shooter_QuickMiddle    = 60
+    /// プライムシューター
     case Shooter_Expert         = 70
     case Shooter_Heavy          = 80
     case Shooter_Long           = 90
@@ -122,9 +126,9 @@ public enum WeaponId: Int, Codable, CaseIterable {
     case Brush_Normal           = 1110
     case Charger_Quick          = 2000
     case Charger_Normal         = 2010
-    case Charger_NormalScope    = 2020
+//    case Charger_NormalScope    = 2020
     case Charger_Long           = 2030
-    case Charger_LongScope      = 2040
+//    case Charger_LongScope      = 2040
     case Charger_Light          = 2050
     case Charger_Keeper         = 2060
     case Slosher_Strong         = 3000
@@ -186,9 +190,9 @@ public enum WeaponKey: String, Codable, CaseIterable {
     case Brush_Normal           = "ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22"
     case Charger_Quick          = "0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527"
     case Charger_Normal         = "3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0"
-    case Charger_NormalScope    = "f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a"
+//    case Charger_NormalScope    = "f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a"
     case Charger_Long           = "ed294b2c7b3111988d577d7efddb9e5e475efc5e0932e5416efedc41fd98eb04"
-    case Charger_LongScope      = "ebc007b2f27b0813f0c9ce7371bdab78c62e6a05777c928bf34222a79d99de8f"
+//    case Charger_LongScope      = "ebc007b2f27b0813f0c9ce7371bdab78c62e6a05777c928bf34222a79d99de8f"
     case Charger_Light          = "9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268"
     case Charger_Keeper         = "2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad"
     case Slosher_Strong         = "4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d"

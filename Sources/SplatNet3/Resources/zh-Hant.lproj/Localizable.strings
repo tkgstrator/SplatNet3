@@ -108,6 +108,9 @@
 "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14" = "？？？";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Blaster_LightLong_00
 "954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215" = "快速爆破槍 精英";
 // Blaster_LightShort_00
@@ -118,6 +121,7 @@
 "0d2963b386b6da598b8da1087eab3f48b99256e2e6a20fc8bbe53b34579fb338" = "遠距爆破槍";
 // Blaster_Middle_00
 "29ccca01285a04f42dc15911f3cd1ee940f9ca0e94c75ba07378828afb3165c0" = "火熱爆破槍";
+<<<<<<< HEAD
 =======
 // Blaster_Bear_Coop
 "0962405d6aecff4a075c46e895c42984e33b26c4b2b4b25c5058366db3c35ba4" = "熊先生印章爆破槍";
@@ -152,6 +156,8 @@
 // Blaster_Middle_Msn
 "639134ecb70f38c885e184de64f12f0a1abbe17f8e9154c1ce0ad1af145dd91a" = "火熱爆破槍";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Blaster_RivalLv1_00
 "847de7eb08a3730f0183d5dc97bc1f4e30efb5c246b1daab5b2507ac75e534da" = "-";
 // Blaster_RivalLv2_00
@@ -159,10 +165,14 @@
 // Blaster_Short_00
 "10d4a1584d1428cb164ddfbc5febc9b1e77fd05e2e9ed9de851838a94d202c15" = "新星爆破槍";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Brush_Mini_00
 "260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08" = "巴勃羅";
 // Brush_Normal_00
 "ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22" = "北齋";
+<<<<<<< HEAD
 =======
 // Blaster_Short_Coop
 "292fc1256aa56227c4334031e6db91f3964b6d52ec99850aa96b1755f5cedcef" = "新星爆破槍";
@@ -181,17 +191,23 @@
 // Brush_Normal_Msn
 "0b02004002b03a8a274b6f1e1c9892d74e8827eeb7943e78bf614e040790fa3e" = "北齋";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Brush_RivalLv1_00
 "845e110549fb0e2ac5e9ab8c4590673894ba565bd6101282b3dae13255532f0a" = "-";
 // Brush_RivalLv2_00
 "bf00f251d1a916bdee2928451ba2eb78d925f5f9fb509741e20d26867cbcd8a3" = "-";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Charger_Keeper_00
 "2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad" = "高壓油管槍";
 // Charger_Light_00
 "9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268" = "14式竹筒槍‧甲";
 // Charger_LongScope_00
 "ebc007b2f27b0813f0c9ce7371bdab78c62e6a05777c928bf34222a79d99de8f" = "4K準星槍";
+<<<<<<< HEAD
 =======
 // Charger_Bear_Coop
 "5cc158250a207241f51d767a47bbb6139fe1c4fb652cc182b73aac93baa659c5" = "熊先生印章狙擊槍";
@@ -212,11 +228,16 @@
 // Charger_LongScope_Msn
 "ea762a58d0b18a38237a9b4cea602f8e3a25b42797b5012467296db9e5f81bb0" = "4K準星槍";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Charger_Long_00
 "ed294b2c7b3111988d577d7efddb9e5e475efc5e0932e5416efedc41fd98eb04" = "公升4K";
 // Charger_NormalScope_00
 "f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a" = "斯普拉準星槍";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Charger_Normal_00
 "3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0" = "斯普拉蓄力狙擊槍";
 // Charger_Quick_00
@@ -227,6 +248,7 @@
 "802d3d501738c620b4f709203ccad343490bd3340b2fda21eb38a362320dc6ed" = "開爾文525";
 // Maneuver_Normal_00
 "b43978029ea582de3aca34549cafd810df20082b94104634093392e11e30d9bd" = "斯普拉機動槍";
+<<<<<<< HEAD
 =======
 // Charger_NormalScope_Msn
 "52a38fb641db479524ccb3bf09e42f24500f1bc34f4044dcd911180f83a1c541" = "斯普拉準星槍";
@@ -263,6 +285,8 @@
 // Maneuver_Normal_Msn
 "deae0a114b0258fe57a4d71bda5bbb28d4200ef2bf41f50c6a3739feb124840d" = "斯普拉機動槍";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Maneuver_RivalLv1_00
 "182f2a2385ee9a65c810346e8bf4847db4f233ee8f9428a296e0d67fbbffc8a5" = "-";
 // Maneuver_RivalLv2_00
@@ -270,6 +294,9 @@
 // Maneuver_Short_00
 "f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9" = "濺鍍槍";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Maneuver_Stepper_00
 "e68609e51d30dfb13e1ea996e46995ed1f7cf561caef0fe96314966d0a039109" = "四重彈跳手槍 黑";
 // Roller_Compact_00
@@ -280,6 +307,7 @@
 "8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb" = "可變式滾筒";
 // Roller_Normal_00
 "536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87" = "斯普拉滾筒";
+<<<<<<< HEAD
 =======
 // Maneuver_Short_Coop
 "66d36d5846538605bdc71a105b9e0f3b16ff73f444d866e9c55c155afd1bcd0d" = "濺鍍槍";
@@ -316,6 +344,8 @@
 // Roller_Normal_Msn
 "4451f907a0f620b9f538f1101a24e46d0087478bf525d4378ef7f4cd3b97ac40" = "斯普拉滾筒";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Roller_RivalLv1_00
 "5df4f11097bed1fd45c8fcac52d81c93e6e3d96887adde4d93cad9a54b52eb87" = "-";
 // Roller_RivalLv2_00
@@ -325,10 +355,14 @@
 // Saber_Normal_00
 "ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082" = "工作刮水刀";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shelter_Compact_00
 "7508ba286e5ac5befe63daea807ab54996c3f0ef3577be9ab5d2827c49dedd75" = "特務配件";
 // Shelter_Normal_00
 "15d101d0d11acbb8159e2701282879f2617d90c8573fd2f2239807721ff54ca4" = "遮陽防空傘";
+<<<<<<< HEAD
 =======
 // Saber_Normal_Coop
 "82156a99a334782910a6c3008bc4c7879166c094213271db746a2fda4c88317b" = "工作刮水刀";
@@ -349,6 +383,8 @@
 // Shelter_Normal_Msn
 "f10e7dff6b7af81811709f1f7de1eaf4ae644cea7563e971958bb9717efbc69e" = "遮陽防空傘";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shelter_RivalLv1_00
 "7566050b4b59a79b988f26ab81817b9b90e44dc8d03b9f0f098f916bd530693e" = "-";
 // Shelter_RivalLv2_00
@@ -356,6 +392,9 @@
 // Shelter_Wide_00
 "a7b1903741696c0ebeda76c9e16fa0a81ae4e37f5331ad6282fc2be1ae1c1c59" = "露營防空傘";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shooter_Blaze_00
 "5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f" = "專業模型槍MG";
 // Shooter_Expert_00
@@ -370,6 +409,7 @@
 "fe2b351799aa48fcb48154299ff0ccf0b0413fc291ffc49456e93db29d2f1db5" = ".96加侖";
 // Shooter_Long_00
 "035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59" = "噴射清潔槍";
+<<<<<<< HEAD
 =======
 // Shelter_Wide_Coop
 "fbb751256d0ffeece7d363e742a5bba4007c2da988448952412d67287af0bd6a" = "露營防空傘";
@@ -418,6 +458,8 @@
 // Shooter_Long_Msn
 "4bddec7954b3aaa351f8fd7180fadf4c39d375d07aa1c3dea8926d6bdd04234d" = "噴射清潔槍";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shooter_MissionLv1_00
 "9f789ff48b7cb1ff45cfc194c0ab66ee0536b19a477119e261773707ca8e898a" = "ヒーローシューターLv1";
 // Shooter_MissionLv2_00
@@ -426,6 +468,7 @@
 "b711a1f922ea29aacadab1bb49719b8fc94811be870fbfd0d788ae99b80f2100" = "ヒーローシューターLv3";
 // Shooter_Normal_00
 "e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570" = "斯普拉射擊槍";
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Shooter_Precision_00
 "25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609" = "窄域標記槍";
@@ -443,6 +486,10 @@
 // Shooter_Precision_Msn
 "2611725f8f52a11210d531165b6ad52a14b71aae584ed1240beae61237a49ea8" = "窄域標記槍";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+// Shooter_Precision_00
+"25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609" = "窄域標記槍";
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shooter_QuickMiddle_00
 "e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255" = "N-ZAP85";
 // Shooter_RivalLv1_00
@@ -452,6 +499,9 @@
 // Shooter_Short_00
 "6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65" = "廣域標記槍";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Shooter_TripleMiddle_00
 "418d75d9ca0304922f06eff539c511238b143ef8331969e20d54a9560df57d5a" = "H3捲管槍";
 // Shooter_TripleQuick_00
@@ -462,6 +512,7 @@
 "f3dbd98d5b0e89f7be7eff25a5c63a06045fe64d8ffd5886e79c855e16791563" = "洗筆桶";
 // Slosher_Launcher_00
 "bd2eca9a7b4109c1d96e804c74aaf2ca525011e1348d0b312fe4f034e35e5d4c" = "迴旋潑桶";
+<<<<<<< HEAD
 =======
 // Shooter_Short_Coop
 "368b9b44221b52f8c42a3923e38d5cdcc278562ae0c8f7b5433c336bb3cd707f" = "廣域標記槍";
@@ -500,6 +551,8 @@
 // Slosher_Launcher_Msn
 "e556a3d23befe07a6859469fa6def93012a8f891894a5a2ba124b8a86f4a70c0" = "迴旋潑桶";
 >>>>>>> f286e32 (update: add localized enum)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Slosher_RivalLv1_00
 "0a760da2be247a41eb09f443ca60a28918dfb9b0f866789aca556cf8d11ef686" = "-";
 // Slosher_RivalLv2_00
@@ -507,6 +560,9 @@
 // Slosher_Strong_00
 "4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d" = "飛濺潑桶";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Slosher_Washtub_00
 "1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe" = "爆炸潑桶";
 // Spinner_Downpour_00
@@ -523,6 +579,7 @@
 "676d9f49276f171a93ac06646c0fbdfbeb8c3d0284a057aee306404a6034ffef" = "三發獵魚弓";
 // Stringer_Short_00
 "9baac6cc774d0e6f2ac8f6e217d700e6f1f47320130598c5f1e922210ccdcc89" = "LACT-450";
+<<<<<<< HEAD
 =======
 // Slosher_Strong_Coop
 "b74a5ad30fb72fdec25e5b2953af2da110c3255e4aab4cf68eda8f9b2eb21f07" = "飛濺潑桶";
@@ -3009,6 +3066,8 @@
 >>>>>>> f286e32 (update: add localized enum)
 =======
 >>>>>>> 489e275 (remove: unused translations)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
 // Carousel_CoopHistory
@@ -3415,12 +3474,15 @@
 "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d" = "讀取失敗，請在良好的網路環境下重新再試一次。";
 // Error_NotSupported
 "7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4" = "無法顯示「魷魚圈 3」。請過一段時間後在通訊環境良好的地方再次嘗試。<br />如果問題仍然無法解決，請確認瀏覽器是否已更新至最新版本。<br />如果仍然顯示此畫面，有可能是您的使用環境無法使用「魷魚圈 3」。";
+<<<<<<< HEAD
 =======
 "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d" = "读取失败，请在互联网环境良好的地方再次尝试。";
 >>>>>>> f286e32 (update: add localized enum)
 =======
 "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d" = "讀取失敗，請在良好的網路環境下重新再試一次。";
 >>>>>>> c406a37 (fix: Chinese localized files)
+=======
+>>>>>>> 4fb08e6 (update: 1.0.0-63bad6e1)
 // Error_Reload
 "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8" = "重新讀取";
 // FesRecord_%

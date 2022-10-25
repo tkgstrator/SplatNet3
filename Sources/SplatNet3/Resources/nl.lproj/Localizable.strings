@@ -86,6 +86,148 @@
 "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037" = "Fort Ammoniet";
 // Unknown
 "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14" = "???";
+// Blaster_LightLong_00
+"954a5ea059f841fa5f1cd2596bb32f23b3d3b03fc3fa7972077bdbafe6051215" = "Flitsblaster Pro";
+// Blaster_LightShort_00
+"be8ba95bd3017a83876e7f769ee37ee459ee4b2d6eca03fceeb058c510adbb61" = "Knalblaster";
+// Blaster_Light_00
+"0a929d514403d07e1543e638141ebace947ffd539f5f766b42f4d6577d40d7b8" = "Flitsblaster";
+// Blaster_Long_00
+"0d2963b386b6da598b8da1087eab3f48b99256e2e6a20fc8bbe53b34579fb338" = "Teleblaster";
+// Blaster_Middle_00
+"29ccca01285a04f42dc15911f3cd1ee940f9ca0e94c75ba07378828afb3165c0" = "Klodderblaster";
+// Blaster_RivalLv1_00
+"847de7eb08a3730f0183d5dc97bc1f4e30efb5c246b1daab5b2507ac75e534da" = "-";
+// Blaster_RivalLv2_00
+"a528c934a23ab51f35f0930700319bd0d93910ff3cb1c2fc607b5a748fa4a778" = "-";
+// Blaster_Short_00
+"10d4a1584d1428cb164ddfbc5febc9b1e77fd05e2e9ed9de851838a94d202c15" = "Lunablaster";
+// Brush_Mini_00
+"260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08" = "Inktkwast";
+// Brush_Normal_00
+"ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22" = "Octokwast";
+// Brush_RivalLv1_00
+"845e110549fb0e2ac5e9ab8c4590673894ba565bd6101282b3dae13255532f0a" = "-";
+// Brush_RivalLv2_00
+"bf00f251d1a916bdee2928451ba2eb78d925f5f9fb509741e20d26867cbcd8a3" = "-";
+// Charger_Keeper_00
+"2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad" = "Spetbuizer";
+// Charger_Light_00
+"9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268" = "Bamboem 14-A";
+// Charger_LongScope_00
+"ebc007b2f27b0813f0c9ce7371bdab78c62e6a05777c928bf34222a79d99de8f" = "E-liter 4K met vizier";
+// Charger_Long_00
+"ed294b2c7b3111988d577d7efddb9e5e475efc5e0932e5416efedc41fd98eb04" = "E-liter 4K";
+// Charger_NormalScope_00
+"f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a" = "Schelpschutter";
+// Charger_Normal_00
+"3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0" = "Bloplader";
+// Charger_Quick_00
+"0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527" = "Octopoets";
+// Maneuver_Dual_00
+"b8f50833f99b0db251dc1812e5d13df09b393635b9b6bd684525112cbb38e5e4" = "Dubbelplonzers";
+// Maneuver_Gallon_00
+"802d3d501738c620b4f709203ccad343490bd3340b2fda21eb38a362320dc6ed" = "Kelvin 525";
+// Maneuver_Normal_00
+"b43978029ea582de3aca34549cafd810df20082b94104634093392e11e30d9bd" = "Dubbelknallers";
+// Maneuver_RivalLv1_00
+"182f2a2385ee9a65c810346e8bf4847db4f233ee8f9428a296e0d67fbbffc8a5" = "-";
+// Maneuver_RivalLv2_00
+"216cb5145217187673d04061084db1d0c7049a00f1f2ec7420a25c0739b88890" = "-";
+// Maneuver_Short_00
+"f1c8fc32bd90fc9258dc17e9f9bcfd5e6498f6e283709bf1896b78193b8e39e9" = "Dubbelspatters";
+// Maneuver_Stepper_00
+"e68609e51d30dfb13e1ea996e46995ed1f7cf561caef0fe96314966d0a039109" = "Quadhoppers Zwart";
+// Roller_Compact_00
+"29358fd25b6ad1ba9e99f5721f0248af8bde7f1f757d00cbbc7a8a6be02a880d" = "Carbonroller";
+// Roller_Heavy_00
+"18fdddee9c918842f076c10f12e46d891aca302d2677bf968ee2fe4e65b831a8" = "Dynamoroller";
+// Roller_Hunter_00
+"8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb" = "Flexroller";
+// Roller_Normal_00
+"536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87" = "Klodderroller";
+// Roller_RivalLv1_00
+"5df4f11097bed1fd45c8fcac52d81c93e6e3d96887adde4d93cad9a54b52eb87" = "-";
+// Roller_RivalLv2_00
+"8f3641c11f1c9fbd978cb3b67e0189e299348af9fd64bd24cff2f50275347756" = "-";
+// Saber_Lite_00
+"3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258" = "Wisserbladzwieper";
+// Saber_Normal_00
+"ddd2a4258a70cdaf8a1dbc0ded024db497445d71f950fe7645fa8c69a178a082" = "Stempelzwieper";
+// Shelter_Compact_00
+"7508ba286e5ac5befe63daea807ab54996c3f0ef3577be9ab5d2827c49dedd75" = "Paraplenzer";
+// Shelter_Normal_00
+"15d101d0d11acbb8159e2701282879f2617d90c8573fd2f2239807721ff54ca4" = "Plenzer";
+// Shelter_RivalLv1_00
+"7566050b4b59a79b988f26ab81817b9b90e44dc8d03b9f0f098f916bd530693e" = "-";
+// Shelter_RivalLv2_00
+"d1811a8ea0d68c23932cf4c9c8198a72cd81eafbf151107d905150df92851383" = "-";
+// Shelter_Wide_00
+"a7b1903741696c0ebeda76c9e16fa0a81ae4e37f5331ad6282fc2be1ae1c1c59" = "Kampeerplenzer";
+// Shooter_Blaze_00
+"5ec00bcf96c7a3f731d7a2e67f60f802f33d22f07177b94d5905f471b08b629f" = "Kladderwerper";
+// Shooter_Expert_00
+"5607f7014bbc7339feeb67218c05ef19c7a466152b1bd056a899b955127ea433" = "Superspetter Pro";
+// Shooter_First_00
+"8e134a80cd54f4235329493afd43ff754b367a65e460facfcca862b174754b0e" = "Superspetter jr.";
+// Shooter_Flash_00
+"db9f2ff8fab9f74c05c7589d43f132eacbff94154dcc20e09c864fced36d4d95" = "Floeper";
+// Shooter_Gravity_00
+"01e8399a3c56707b6e9f7500d3d583ba1d400eec06449d8fe047cda1956a4ccc" = ".52 Kaliter";
+// Shooter_Heavy_00
+"fe2b351799aa48fcb48154299ff0ccf0b0413fc291ffc49456e93db29d2f1db5" = ".96 Kaliter";
+// Shooter_Long_00
+"035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59" = "Straalplonzer";
+// Shooter_MissionLv1_00
+"9f789ff48b7cb1ff45cfc194c0ab66ee0536b19a477119e261773707ca8e898a" = "ヒーローシューターLv1";
+// Shooter_MissionLv2_00
+"e4347077cb1cfa9d0a1e5b19f15c0a7097d0a9c8a8648d5d7132bb95e4104717" = "ヒーローシューターLv2";
+// Shooter_MissionLv3_00
+"b711a1f922ea29aacadab1bb49719b8fc94811be870fbfd0d788ae99b80f2100" = "ヒーローシューターLv3";
+// Shooter_Normal_00
+"e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570" = "Superspetter";
+// Shooter_Precision_00
+"25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609" = "Spetterspuit";
+// Shooter_QuickMiddle_00
+"e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255" = "N-ZAP '85";
+// Shooter_RivalLv1_00
+"56c146a599f5ceedd660ed1d3067c2671ba0b51cde3d533e4dd53e8431596883" = "-";
+// Shooter_RivalLv2_00
+"f4813c7b77d59217a7677b6f662b86eb6fa2080ed30896a082fd28bf888531de" = "-";
+// Shooter_Short_00
+"6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65" = "Spettertuit";
+// Shooter_TripleMiddle_00
+"418d75d9ca0304922f06eff539c511238b143ef8331969e20d54a9560df57d5a" = "H-3 Langsnuit";
+// Shooter_TripleQuick_00
+"96833fc0f74242cd2bc73b241aab8a00d499ce9f6557722ef6503e12af8979f4" = "L-3 Stompsnuit";
+// Slosher_Bathtub_00
+"0199e455872acba1ab8ef0040eca7f41afca48c1f9ad2c5d274323d6dbc49133" = "Spatkuip";
+// Slosher_Diffusion_00
+"f3dbd98d5b0e89f7be7eff25a5c63a06045fe64d8ffd5886e79c855e16791563" = "Triomorser";
+// Slosher_Launcher_00
+"bd2eca9a7b4109c1d96e804c74aaf2ca525011e1348d0b312fe4f034e35e5d4c" = "Klotstrommel";
+// Slosher_RivalLv1_00
+"0a760da2be247a41eb09f443ca60a28918dfb9b0f866789aca556cf8d11ef686" = "-";
+// Slosher_RivalLv2_00
+"5c686e96d935c23de9c024d664ba9208a260a6918acdf4f20f0daea8bd70e1b7" = "-";
+// Slosher_Strong_00
+"4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d" = "Morser";
+// Slosher_Washtub_00
+"1e32f5e1e65793585f6423e4fcae1a146a79d2a09e6e15575015af8a2032a4fe" = "Kliederkachel";
+// Spinner_Downpour_00
+"206dbf3b5dfc9962b6a783acf68a856f0c8fbf0c56257c2ca5c25d63198dd6e1" = "Stylospetling";
+// Spinner_Hyper_00
+"34fe0401b6f6a0b09839696fc820ece9570a9d56e3a746b65f0604dec91a9920" = "Blusling";
+// Spinner_Quick_00
+"32dbc48e000d5d2015468e1dafc05e7c24581a73e54e758af0c8b9e2db3db550" = "Mini-Spetling";
+// Spinner_Serein_00
+"be4316928f4b031b470ec2cc2c48fb922a303c882802e32d7fa802249edaa212" = "Nautilus 47";
+// Spinner_Standard_00
+"fd06f01742a3b25ac57941150b3b81d56633831902f2da1f19a6244f2d8dd6fd" = "Spetling";
+// Stringer_Normal_00
+"676d9f49276f171a93ac06646c0fbdfbeb8c3d0284a057aee306404a6034ffef" = "Triospanner";
+// Stringer_Short_00
+"9baac6cc774d0e6f2ac8f6e217d700e6f1f47320130598c5f1e922210ccdcc89" = "RIF-LEX 450";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
 // Carousel_CoopHistory
@@ -456,6 +598,8 @@
 "7311da9a494732f8ea51a008de12c0663ff473738caf79166a4e7a4c81f006a3" = "Enige tijd geduld";
 // Error_NetworkNotAvailable
 "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d" = "Het laden is mislukt. Controleer je internetverbinding en probeer het opnieuw.";
+// Error_NotSupported
+"7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4" = "SplatNet 3 kan niet worden weergegeven. Controleer je internetverbinding en probeer het later opnieuw. Als het probleem niet is verholpen, controleer dan of je de meest recente versie van je internetbrowser gebruikt. Als je dit bericht blijft zien, dan wordt SplatNet 3 mogelijk niet ondersteund door je huidige apparaat of met je huidige instellingen.";
 // Error_Reload
 "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8" = "Opnieuw laden";
 // FesRecord_%
@@ -700,6 +844,8 @@
 "1541397c68241ca3c6d7bbf54c4f2e24c5fe3dfc7f244bf6c17a3147167a951e" = "Maanden";
 // History_Others
 "49603ebeff7e758481937bcd1d5a0a8cfc2d310d7cf8fdf95405447083e0d059" = "Andere wapens";
+// History_Rank
+"ec879a2538a732b65313092a3b84f78328e7ce79a3bc820e8245b4a17ebaf445" = "Niveau";
 // History_Season
 "88478c17f8793593edbaf37885e298a7f2705b71d1387ab85a37e642e15e4bca" = "Seizoen";
 // History_ShowAllBadges
@@ -720,6 +866,8 @@
 "80b465f770274c90e9bc3ef50180c5bf180cc69571d062cdd94a3b72b4444a69" = "Totale aantal overwinningen";
 // History_TurfPoint
 "07ce1796dc5d13831abc2c97942b52a9c4d860141d55311f0453525cf0b75a5f" = "{ 0 } p";
+// History_Udemae
+"21a6021a4d7cf29c8a5906231761dea45f276f2c7a0f4517d6ddbc528d9a1058" = "Rang";
 // History_Weapon
 "b4a52d1c7299854e81fd80530dd03f7d6c6d723ad0eb7158ba81ad10eb17e8db" = "Wapen";
 // History_WeaponUsage

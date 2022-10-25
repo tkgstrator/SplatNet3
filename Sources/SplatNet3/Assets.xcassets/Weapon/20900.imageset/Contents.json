@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Blaster_Bear_Coop.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -363,7 +363,7 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case Error_Error = "d6575457e33f5bd80f6de41a146493d6683b70499bb30aed977c9cacac63d9d0"
 	/// エラーが発生しました
 	case Error_ErrorOccurred = "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf"
-	/// 読み込みに失敗しました
+	/// 読みこみに失敗しました
 	case Error_ErrorReopen = "cc900042cc144f501f15092ca5a9b8edca3e3844d6ec4cda2af0661a5b6d828b"
 	/// ただいまサーバーのメンテナンス中です。時間をおいて再度アクセスしてください。
 	case Error_MaintenanceDescription = "a45102f1353103fdd45e40e9cf995b586e2c91d952a898fb17b8b4b7d4931421"
@@ -371,6 +371,8 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case Error_MaintenanceTitle = "7311da9a494732f8ea51a008de12c0663ff473738caf79166a4e7a4c81f006a3"
 	/// 読みこみに失敗しました。<br />通信環境のよいところで再度お試しください。
 	case Error_NetworkNotAvailable = "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d"
+	/// イカリング３を表示できません。しばらく時間をおいてから通信環境の良い場所で再度お試しください。<br />問題が解決しない場合は、ブラウザが最新版に更新されているか確認してください。<br />それでもこの画面が表示される場合は、ご利用の環境でイカリング３を利用できない可能性があります。
+	case Error_NotSupported = "7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4"
 	/// 再読みこみ
 	case Error_Reload = "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8"
 	/// フェス
@@ -613,6 +615,8 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case History_Monthly = "1541397c68241ca3c6d7bbf54c4f2e24c5fe3dfc7f244bf6c17a3147167a951e"
 	/// その他
 	case History_Others = "49603ebeff7e758481937bcd1d5a0a8cfc2d310d7cf8fdf95405447083e0d059"
+	/// ランク
+	case History_Rank = "ec879a2538a732b65313092a3b84f78328e7ce79a3bc820e8245b4a17ebaf445"
 	/// シーズン
 	case History_Season = "88478c17f8793593edbaf37885e298a7f2705b71d1387ab85a37e642e15e4bca"
 	/// すべてのバッジを見る
@@ -633,6 +637,8 @@ public enum LocalizedText: String, CaseIterable, Identifiable {
 	case History_TotalWin = "80b465f770274c90e9bc3ef50180c5bf180cc69571d062cdd94a3b72b4444a69"
 	/// { 0 }p
 	case History_TurfPoint = "07ce1796dc5d13831abc2c97942b52a9c4d860141d55311f0453525cf0b75a5f"
+	/// ウデマエ
+	case History_Udemae = "21a6021a4d7cf29c8a5906231761dea45f276f2c7a0f4517d6ddbc528d9a1058"
 	/// ブキヒストリー
 	case History_Weapon = "b4a52d1c7299854e81fd80530dd03f7d6c6d723ad0eb7158ba81ad10eb17e8db"
 	/// ブキ使用率
