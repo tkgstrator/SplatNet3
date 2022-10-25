@@ -102,7 +102,9 @@ def get_localized():
             url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.dee547ff.js"
         else:
             url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/{language.locale}.{language.hash}.chunk.js"
+        # JavaScriptの中身
         response = requests.get(url).text
+
         match = re.search("JSON.parse\('(.*)'\)\}\}", response).group(1)
         data = json.loads(match.encode("utf-8").decode("unicode-escape"))
         data = camel_case(data)
@@ -125,6 +127,32 @@ def get_localized():
         ) as f:
             print(f"Converting {language.xcode}")
             f.writelines(params)
+
+
+def get_hashes():
+    url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.dee547ff.js"
+    response = requests.get(url).text
+    # Hash
+    hashes = re.findall('id:"([a-f0-9]{32})",metadata:{},name:"([A-z]*)"', response)
+    makdirs(f"../Sources/SplatNet3/Enum/")
+    with open(f"../Sources/SplatNet3/Enum/SHA256Hash.swift", mode="w") as f:
+        headers = [
+            "//\n",
+            "//  SHA256Hash.swift\n",
+            "//  SplatNet3\n",
+            "//\n",
+            "//  Created by tkgstrator on 2022/09/22\n",
+            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+            "//\n",
+            "\n\n",
+            "import Foundation\n\n",
+            "public enum SHA256Hash: String, CaseIterable {\n",
+        ]
+        f.writelines(headers)
+        hashes = sorted(hashes, key=lambda tup: tup[1].capitalize())
+        for hash in hashes:
+            f.write(f'\tcase {hash[1]} = "{hash[0]}"\n')
+        f.write("}")
 
 
 def get_badge(version: str = "111"):
@@ -245,6 +273,8 @@ def to_dict(obj):
 if __name__ == "__main__":
     # 翻訳ファイル
     get_localized()
+    # ハッシュ
+    get_hashes()
     # バッジ
     # get_badge("111")
     # ネームプレート
