@@ -19,8 +19,8 @@ def get_hash(plain: str) -> str:
 
 
 def format(key: str, value: str) -> str:
-    return f'"{get_hash(key.strip())}" = "{value.strip()}";\n'
-    # return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
+    # return f'"{get_hash(key.strip())}" = "{value.strip()}";\n'
+    return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
 
 
 def get_locales() -> list[Locale]:
@@ -60,9 +60,9 @@ def get_localized():
         for k, v in data.items():
             params.append(format(k, v))
 
-        data = res["CommonMsg/Coop/CoopSkinName"]
-        for k, v in data.items():
-            params.append(format(k, v))
+        # data = res["CommonMsg/Coop/CoopSkinName"]
+        # for k, v in data.items():
+        #     params.append(format(k, v))
 
         data = res["CommonMsg/Coop/CoopStageName"]
         for k, v in data.items():
@@ -70,23 +70,25 @@ def get_localized():
 
         data = res["CommonMsg/Weapon/WeaponName_Main"]
         for k, v in data.items():
-            params.append(format(k, v))
+            if "_00" in k and "Rival" not in k:
+                params.append(format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Special"]
         for k, v in data.items():
-            params.append(format(k, v))
-
-        data = res["CommonMsg/Byname/BynameAdjective"]
-        for k, v in data.items():
-            v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
-            if len(v) != 0:
+            if "_Coop" in k:
                 params.append(format(k, v))
 
-        data = res["CommonMsg/Byname/BynameSubject"]
-        for k, v in data.items():
-            v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
-            if len(v) != 0:
-                params.append(format(k, v))
+        # data = res["CommonMsg/Byname/BynameAdjective"]
+        # for k, v in data.items():
+        #     v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
+        #     if len(v) != 0:
+        #         params.append(format(k, v))
+
+        # data = res["CommonMsg/Byname/BynameSubject"]
+        # for k, v in data.items():
+        #     v = "".join(re.findall("([^\[\]]+(?=\[[^\[\]]+\])|[^\[\]]+$)", v))
+        #     if len(v) != 0:
+        #         params.append(format(k, v))
 
         data = res["CommonMsg/Manual/ManualCoop"]
         for k, v in data.items():
