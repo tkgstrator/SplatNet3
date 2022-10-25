@@ -26,7 +26,7 @@ public enum SakelienType: RawRepresentables {
     }
 
     public var localizedText: String {
-        return NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .main, comment: "")
+        return NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
     }
 
     case SakelienBomber
