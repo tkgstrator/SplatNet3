@@ -46,11 +46,13 @@ public struct Version: RequestType {
 
     public var baseURL = URL(unsafeString: "https://apps.apple.com/")
     public var method: HTTPMethod = .get
-    public var path: String = "app/id1234806557"
+    public var path: String
     public var parameters: Parameters?
     public var headers: [String: String]?
 
-    public init() {}
+    public init(id: String = "1234806557") {
+        self.path = "app/id\(id)"
+    }
 
     // MARK: - Response
     public struct Response: Codable {
@@ -61,7 +63,7 @@ public struct Version: RequestType {
                 self.version = version
                 return
             }
-            self.version = "2.3.0"
+            self.version = "2.3.1"
         }
     }
 }

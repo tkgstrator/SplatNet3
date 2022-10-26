@@ -20,8 +20,12 @@ def get_hash(plain: str) -> str:
 
 
 def format(key: str, value: str) -> str:
-    # return f'"{get_hash(key.strip())}" = "{value.strip()}";\n'
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
+
+
+def loalized_format(key: str, value: str) -> str:
+    key = key.replace("_%", "")
+    return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
 
 
 def get_locales() -> list[Locale]:
@@ -95,22 +99,25 @@ def get_localized():
     }
 
     languages: list[Language] = list(map(lambda v: Language(**v), languages.values()))
-    print(languages)
+
     for language in languages:
         # 内部データから検索
         print(f"Downloading {language.xcode}")
         url = f"https://leanny.github.io/splat3/data/language/{language.internal}.json"
         params = []
+        localized = []
 
         res: dict = requests.get(url).json()
 
         data = res["CommonMsg/Coop/CoopEnemy"]
         for k, v in data.items():
             params.append(format(k, v))
+            localized.append(loalized_format(k, v))
 
         data = res["CommonMsg/Coop/CoopGrade"]
         for k, v in data.items():
             params.append(format(k, v))
+            localized.append(loalized_format(k, v))
 
         # data = res["CommonMsg/Coop/CoopSkinName"]
         # for k, v in data.items():
@@ -119,16 +126,19 @@ def get_localized():
         data = res["CommonMsg/Coop/CoopStageName"]
         for k, v in data.items():
             params.append(format(k, v))
+            localized.append(loalized_format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Main"]
         for k, v in data.items():
             if "_00" in k and "Rival" not in k:
                 params.append(format(k, v))
+                localized.append(loalized_format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Special"]
         for k, v in data.items():
             if "_Coop" in k:
                 params.append(format(k, v))
+                localized.append(loalized_format(k, v))
 
         # data = res["CommonMsg/Byname/BynameAdjective"]
         # for k, v in data.items():
@@ -147,9 +157,12 @@ def get_localized():
             if re.search(r"T_TitleCoop_\d{2}", k) is not None:
                 v = v.split()[1]
                 params.append(format(k, v))
+                localized.append(loalized_format(k, v))
         k = "T_TitleCoop_45"
         v = "-"
         params.append(format(k, v))
+        localized.append(loalized_format(k, v))
+
         # イカリング3からデータ取得
         if language.code == "en-US":
             url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
@@ -167,16 +180,26 @@ def get_localized():
                 params.append(format("CoopHistory_Wave1", f"{value} 1"))
                 params.append(format("CoopHistory_Wave2", f"{value} 2"))
                 params.append(format("CoopHistory_Wave3", f"{value} 3"))
+                localized.append(loalized_format("CoopHistory_Wave1", f"{value} 1"))
+                localized.append(loalized_format("CoopHistory_Wave2", f"{value} 2"))
+                localized.append(loalized_format("CoopHistory_Wave3", f"{value} 3"))
             else:
                 params.append(format(k, v))
+                localized.append(loalized_format(k, v))
 
         # イベント情報を取得
         for index, wave in enumerate(language.event_type):
             params.append(format(f"CoopHistory_EventWave{index+1}", wave))
+            localized.append(loalized_format(f"CoopHistory_EventWave{index+1}", wave))
 
         for index, sakelien in enumerate(language.king_sakelien):
             params.append(format(f"CoopHistory_KingSakelien{index+3}", sakelien))
+            localized.append(
+                loalized_format(f"CoopHistory_KingSakelien{index+3}", sakelien)
+            )
 
+        if language.code == "ja-JP":
+            get_localized_text(localized)
         # ディレクトリ作成
         makdirs(f"../Sources/SplatNet3/Resources/{language.xcode}.lproj")
         # 翻訳ファイルを書き込み
@@ -186,6 +209,28 @@ def get_localized():
         ) as f:
             print(f"Converting {language.xcode}")
             f.writelines(params)
+
+
+def get_localized_text(localized: list[str]):
+    makdirs(f"../Sources/SplatNet3/Enum/")
+    with open(f"../Sources/SplatNet3/Enum/LocalizedType.swift", mode="w") as f:
+        headers = [
+            "//\n",
+            "//  LocalizedType.swift\n",
+            "//  SplatNet3\n",
+            "//\n",
+            "//  Created by tkgstrator on 2022/09/22\n",
+            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+            "//\n",
+            "\n\n",
+            "import Foundation\n\n",
+            "public enum LocalizedType: String, CaseIterable {\n",
+        ]
+        f.writelines(headers)
+        # hashes = sorted(hashes, key=lambda tup: tup[1].capitalize())
+        for line in localized:
+            f.write(line)
+        f.write("}")
 
 
 def get_hashes():

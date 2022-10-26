@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 public extension Text {
-    init(bundle: LocalizedText) {
+    init(bundle: LocalizedType) {
         self.init(NSLocalizedString(bundle.rawValue, bundle: .module, comment: ""))
     }
 }

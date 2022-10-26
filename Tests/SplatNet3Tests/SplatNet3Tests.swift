@@ -22,6 +22,11 @@ final class SplatNet3Tests: XCTestCase {
         return decoder
     }()
 
+    func testContentVersion() async throws {
+        let result: Bool = await VersionUpdater.shared.executeVersionCheck()
+        print(result)
+    }
+
     func testAppVersion() async throws {
         let response: Version.Response = try await session.getVersionFromAppStore()
         print(response)
