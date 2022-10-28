@@ -12,42 +12,41 @@ import Alamofire
 import UIKit
 
 public class VersionUpdater {
-    public static let shared: VersionUpdater = VersionUpdater()
-
-    private init() {}
-
-    @discardableResult
-    public func executeVersionCheck() async -> Bool {
+    public static func executeVersionCheck() {
         let url: URL = URL(unsafeString: "https://apps.apple.com/app/id1641721384")
         let session: Session = Session()
 
-        do {
-            /// 配信されている最新のバージョンを取得
-            let version: Version.Response = Version.Response(from: try await session.request(url)
-                .validationWithNXError()
-                .serializingString()
-                .value)
-            let publishedVersion: String = version.version
-
+        Task {
             /// 起動しているアプリのバージョンを取得
-            guard let currentVersion: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+            guard let response: String = try? await session.request(url).validationWithNXError().serializingString().value,
+                  let currentVersion: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
             else {
-                return false
+                return
             }
+            /// 最新のバージョンを取得
+            let publishedVersion: String = Version.Response(from: response).version
 
-            if publishedVersion != currentVersion {
+            print(publishedVersion, currentVersion)
+            /// 最新のバージョンより下だとアラートを表示する
+            if publishedVersion >= currentVersion {
                 let alert: UIAlertController = await UIAlertController(title: .Common_Ikaring3, message: .Widgets_ErrorsUpdateRequired)
                 let action: UIAlertAction = await UIAlertAction(title: .Landing_OpenApp)
                 let cancel: UIAlertAction = await UIAlertAction(title: .Common_Cancel, style: .cancel)
-                await alert.addAction(action)
                 await alert.addAction(cancel)
-                await UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+                await alert.addAction(action)
+                await UIApplication.shared.rootViewController?.present(alert, animated: true)
             }
-
-            return true
-        } catch {
-            return false
+            return
         }
+    }
+}
+
+public extension UIApplication {
+    var rootViewController: UIViewController? {
+        UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive })?
+            .windows.first?.rootViewController
     }
 }
 
@@ -55,7 +54,10 @@ extension UIAlertAction {
     convenience init(title: LocalizedType) {
         self.init(title: NSLocalizedString(title.rawValue, bundle: .module, comment: ""), style: .default, handler: { _ in
             Task {
-               await UIApplication.shared.openURL(URL(unsafeString: "https://apps.apple.com/app/id1641721384"))
+                let url: URL = URL(unsafeString: "https://apps.apple.com/app/id1641721384")
+                if UIApplication.shared.canOpenURL(url) {
+                    await UIApplication.shared.open(url)
+                }
             }
         })
     }

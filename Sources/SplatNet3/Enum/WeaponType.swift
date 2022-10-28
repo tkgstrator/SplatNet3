@@ -84,7 +84,8 @@ public enum WeaponType: Codable, CaseIterable {
         let lastPathComponent: String = baseURL.lastPathComponent
         let sha256Hash: String = String(lastPathComponent.dropLast(6))
 
-        self.init(hash: sha256Hash)!
+        // 変換不可能な際はランダムブキ画像に置き換える
+        self = WeaponType(hash: sha256Hash) ?? .Random_Green
     }
 }
 
