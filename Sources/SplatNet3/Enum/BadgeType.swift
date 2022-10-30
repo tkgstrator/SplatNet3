@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum BadgeType: Int, CaseIterable, Identifiable, Codable {
+public enum BadgeType: Int, CaseIterable, Identifiable {
 	public var id: Int { rawValue }
 	case CatalogueLevel_Lv00 = 3102000
 	case CatalogueLevel_Lv01 = 3102001

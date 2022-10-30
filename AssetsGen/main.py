@@ -133,12 +133,47 @@ def get_localized():
             if "_00" in k and "Rival" not in k:
                 params.append(format(k, v))
                 localized.append(loalized_format(k, v))
+            elif "Bear_Coop" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Special"]
         for k, v in data.items():
             if "_Coop" in k:
                 params.append(format(k, v))
                 localized.append(loalized_format(k, v))
+        
+        data = res["LayoutMsg/Cmn_Menu_00"]
+        for k, v in data.items():
+            if "L_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+            elif "T_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+        
+        data = res["LayoutMsg/Lobby_MenuMode_00"]
+        for k, v in data.items():
+            if "L_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+            elif "T_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+        
+        data = res["LayoutMsg/Plz_ItemMenu_00"]
+        for k, v in data.items():
+            if "L_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+            elif "T_" in k:
+                params.append(format(k, v))
+                localized.append(loalized_format(k, v))
+        
+        data = res["CommonMsg/Weapon/WeaponParamName"]
+        for k, v in data.items():
+            params.append(format(k, v))
+            localized.append(loalized_format(k, v))
 
         # data = res["CommonMsg/Byname/BynameAdjective"]
         # for k, v in data.items():
@@ -380,6 +415,6 @@ if __name__ == "__main__":
     # ハッシュ
     get_hashes()
     # バッジ
-    # get_badge("111")
+    get_badge("120")
     # ネームプレート
-    # get_nameplate("111")
+    get_nameplate("120")
