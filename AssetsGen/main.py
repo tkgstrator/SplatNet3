@@ -24,7 +24,8 @@ def format(key: str, value: str) -> str:
 
 
 def loalized_format(key: str, value: str) -> str:
-    key = key.replace("_%", "")
+    key = key.replace("_%", "").replace("-", "_").strip()
+    value = value.replace("\n", " ")
     return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
 
 
@@ -340,7 +341,7 @@ def get_badge(version: str = "111"):
             "//\n",
             "\n\n",
             "import Foundation\n\n",
-            "public enum BadgeType: Int, CaseIterable, Identifiable {\n",
+            "public enum BadgeType: Int, CaseIterable, Identifiable, Codable {\n",
             "\tpublic var id: Int { rawValue }\n",
         ]
         f.writelines(headers)
@@ -391,7 +392,7 @@ def get_nameplate(version: str = "111"):
             "//\n",
             "\n\n",
             "import Foundation\n\n",
-            "public enum NamePlateType: Int, CaseIterable, Identifiable {\n",
+            "public enum NamePlateType: Int, CaseIterable, Identifiable, Codable {\n",
             "\tpublic var id: Int { rawValue }\n",
         ]
         f.writelines(headers)
@@ -415,6 +416,6 @@ if __name__ == "__main__":
     # ハッシュ
     get_hashes()
     # バッジ
-    get_badge("120")
+    # get_badge("120")
     # ネームプレート
-    get_nameplate("120")
+    # get_nameplate("120")

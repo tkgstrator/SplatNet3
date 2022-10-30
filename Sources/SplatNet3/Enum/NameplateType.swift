@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum NamePlateType: Int, CaseIterable, Identifiable {
+public enum NamePlateType: Int, CaseIterable, Identifiable, Codable {
 	public var id: Int { rawValue }
 	case Npl_Catalog_Season01_Lv01 = 11001
 	case Npl_Catalog_Season01_Lv02 = 11002

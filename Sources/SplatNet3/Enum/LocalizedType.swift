@@ -241,220 +241,212 @@ public enum LocalizedType: String, CaseIterable {
 	/// ウルトラショット
 	case SpUltraShot_Coop = "9fb7c10f3d6e5ef69b3f1f0380f7293903f50ceacd20b1649b29a90ee6028f57"
 	/// とじる
-	case L_Bottom_00-T_Info_00 = "3439bc91390b79749b53270f21bddb8028aa2d68393455707a52aecf62808a40"
+	case L_Bottom_00_T_Info_00 = "3280f3051bf57a5b27981655675b250ed0306b6e4c8b00f41310467597ff8159"
 	/// もどる
-	case L_Bottom_01-T_Info_00 = "e853d72f6a92778133a276ab1f90ee8f2be750b7d3528c5727f4384663df5a0e"
+	case L_Bottom_01_T_Info_00 = "7cc804b450828f3521c9ddef13ba5b2aa93bdf4c1e1b8ae0955dfab46e3e18b7"
 	/// もどる
-	case L_Bottom_02-T_Info_00 = "db73c26a16d82470bef1e17172d1e476b50182c8632238feafa1c24642bbb8e8"
+	case L_Bottom_02_T_Info_00 = "57e286ee0393119e55a32a9d3383940b212bb150717a1d02eccb5644d9e11ce5"
 	/// もどる
-	case L_Bottom_03-T_Info_00 = "f488910d39ede42a69d853c5c62c854726543d71b348f2469c7e2cb7d88e94a9"
+	case L_Bottom_03_T_Info_00 = "506320d6eeb1174dc279c4ed7d339fccb05ba15622634faf4a9dcc71e3bd3a35"
 	/// もどる
-	case L_Bottom_04-T_Info_00 = "da2945c91bb507287151da1ae4e94b81db7ce98918a763dd7b45f36c806850f7"
+	case L_Bottom_04_T_Info_00 = "205211649aee41392feac9abffa61ed586ac4c84163e781bbb65a320498363d3"
 	/// カスタマイズ
-	case L_Bottom_05-T_Info_00 = "2ebf258b1a2e5032356810857b00e21424730c485a1702f690cb68acc5f8f0a8"
+	case L_Bottom_05_T_Info_00 = "7f45eedf1fba759f495fe9c39eb16dff4349810a63b8c34ddd9a1e31479b3499"
 	/// もどる
-	case L_Bottom_08-T_Info_00 = "1f96ffd1cde8d7468c761a8efcb4c971e9f877304ad721e448d9230b6659dbe0"
+	case L_Bottom_08_T_Info_00 = "c91b42ef48306ff36e01ea366ce113eade0bb4613b5e9c7a104da4bf02258502"
 	/// カードリスト
-	case L_BtnCard_00-T_BlackText_00 = "126c4fb83bb58e5c55444c31e61743cc7434664b23a80752376d0d8fbbfc6cd0"
+	case L_BtnCard_00_T_BlackText_00 = "8150f84a2ff56bffcd7c9a8982609bbce59c222d298fb1845e1fbc3d628b48bf"
 	/// カードリスト
-	case L_BtnCard_00-T_WhiteText_00 = "ad8a4ce633faa75e8c8de1ac8fecbdc67033e9322231c7e3026d18db6fca0f83"
+	case L_BtnCard_00_T_WhiteText_00 = "6000c76435afc2606e49f310666a47f6f117b7e3c44b177395e5f221e851f1f6"
 	/// フェスマッチ
-	case L_BtnFestStage_00-T_BlackText_00 = "e0f50f96b717dad6c6f47845509635dd5094b682c02b1f682f5aa740e92f7e07"
+	case L_BtnFestStage_00_T_BlackText_00 = "05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85"
 	/// フェスマッチ
-	case L_BtnFestStage_00-T_WhiteText_00 = "55be4655cf1fb5c05f3bc67c6a978b07fbde556964bdb94e8d29794659739e27"
+	case L_BtnFestStage_00_T_WhiteText_00 = "187a4b3e835ad7453e9752202ef1ab66da6be4fb72a38fa76fef079ad2ca3150"
 	/// トリカラアタック
-	case L_BtnFestStage_01-T_BlackText_00 = "abf17d0cbe2dd823ecb134911ad1fef39a077248b161cdc39a24419cc03d6334"
+	case L_BtnFestStage_01_T_BlackText_00 = "cd0282186fc415d6b41001ac2d94f68f0a091e699e82714f6c63275f3926059e"
 	/// トリカラアタック
-	case L_BtnFestStage_01-T_WhiteText_00 = "166830f7c5509b11a54089880c01b4fb0b94c06f9cca7597305ef3b8359e9fab"
+	case L_BtnFestStage_01_T_WhiteText_00 = "c92631f8448957caf39b4bf25b3f1a7080a8c4408a034c594a25a8a2eb9c4b21"
 	/// SALMON  RUN
-	case L_BtnFestStage_02-T_BlackText_00 = "0eba99e99ba80601bff9ab7c067593c951b8e996766e75cc89bc987eeda54cce"
+	case L_BtnFestStage_02_T_BlackText_00 = "e9c3e3625fa7ecf844c188e40ec013f40df1b4e437d0ed92209fc6e872771ffc"
 	/// SALMON  RUN
-	case L_BtnFestStage_02-T_WhiteText_00 = "fd95beaa9803c4f80a279d2e264f9d3028d10841c60a73ef8f4c3a01125660f7"
+	case L_BtnFestStage_02_T_WhiteText_00 = "f6acbca9ad9376279d2e13d684e72a051d1c55a8f7e5ce9cc4c22ea94dba96c6"
 	/// ロビー
-	case L_BtnMapL_00-T_BlackText_00 = "8822d64d8b26c0e4488e2e5013897b98158db406d65ab7b668e1f2af27ea6482"
+	case L_BtnMapL_00_T_BlackText_00 = "53e36619c7303219a8f6abb3bc429cc4a0f72cb541a21fe5365c686c711ebd84"
 	/// ロビー
-	case L_BtnMapL_00-T_WhiteText_00 = "73c18ef9e365113138740a22b4d985268bddcb8c50773df2cc9e9aff87d5697c"
+	case L_BtnMapL_00_T_WhiteText_00 = "3ecbb6fff1912e75ff207cbb12e94cb0caed3655930500df0c91ee77de29a601"
 	/// 広場
-	case L_BtnMap_01-T_Text_00 = "4c14b8af22fe8f35e112a040f7801a970d94295d75b3f469f939c78d273a219d"
+	case L_BtnMap_01_T_Text_00 = "0e2e4119de7a3de1e692285779ad86c2d79a63600342e2fa9539daa033cec81a"
 	/// イカッチャ
-	case L_BtnMap_03-T_Text_00 = "32086ee563ffb248d90668371602a4abb516748235617a08a5652bd77488b918"
+	case L_BtnMap_03_T_Text_00 = "efd5cdb6739a567901eef85f77718936effc7993a09e09d35151e8d8d67d76a6"
 	/// クマサン商会
-	case L_BtnMap_04-T_Text_00 = "7d9e8ceea1487897a367fde151977a340cc0b9de10e5628b49d44e7342fdbf7e"
+	case L_BtnMap_04_T_Text_00 = "30d4556314d0a0c1760ac6c06cfdfd1d1b99f989f3026f7d1e784eb0c7e01676"
 	/// ブキ屋
-	case L_BtnMap_05-T_Text_00 = "c35c8e12090e9f5c39e9b4952f51e996508acaee973d5cf8cb04dde4a73b2f36"
+	case L_BtnMap_05_T_Text_00 = "04f0bec25d72ed8a66a43b14679f8484277987bf40a0b4e82a685263f3655ec0"
 	/// アタマ屋
-	case L_BtnMap_06-T_Text_00 = "063e6833274d37e3b63608780de7a69555d15340215c35c78c067430d7c204f9"
+	case L_BtnMap_06_T_Text_00 = "d88c00cab7b3b0bef6cf56cb6613a96333363c0438c3269ae54d59384240e050"
 	/// フク屋
-	case L_BtnMap_07-T_Text_00 = "2f1d4ce0ee8bd92ac1796d39a067477d3600fa0c815f514aa24b7ba6635e3381"
+	case L_BtnMap_07_T_Text_00 = "000d2f84e3fd7175973dc7c57ae069a8bf75dd84c268a2c2a01458780f15e064"
 	/// クツ屋
-	case L_BtnMap_08-T_Text_00 = "782b9d221012ce218a99db9e10da2162475a978e691fb6d181e8adb8ef860a2b"
+	case L_BtnMap_08_T_Text_00 = "4e8718184f1b8caad921ed09294afa938f3affb2397971838d4a537fd45582ef"
 	/// ザッカ屋
-	case L_BtnMap_09-T_Text_00 = "1ca77f1bf15df24864915da7279da6de086e12f49ad8fc74ded50200260bcf67"
+	case L_BtnMap_09_T_Text_00 = "35206c0e269c97481a1a29fb78fd946651740853b50c19821c9fd8fdd613a3e0"
 	/// 変更する
-	case L_BtnNpl_00-T_Edit_00 = "07fa9af04ed9fcd365b8ac48142e68f37b316fdbfdc20044e2749bb20f378e44"
+	case L_BtnNpl_00_T_Edit_00 = "c22fc8d7cfcaad9400742e027ca82378c3a7142cdb9fefc424fc43cb616ef835"
 	/// ノーマル
-	case L_BtnOption_00-T_BtnL_00 = "1e23f9d3c9a333b0d74443f1d90334ebedab973d17eff749d18715f3e1b0c7c4"
+	case L_BtnOption_00_T_BtnL_00 = "7c5f285071fc8be4985f9ce0e00be6cd48bf459229aeccfcd7fea0821c506491"
 	/// リバース
-	case L_BtnOption_00-T_BtnR_00 = "a532dec3a35436248c919317de4444355cae71f3a9f571cbb25cf3210f31e552"
+	case L_BtnOption_00_T_BtnR_00 = "d7236745b4d2c0662792144915ff3a571fb6b1d51ae8dc22f1ba9c6f727f3f29"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]上下操作
-	case L_BtnOption_00-T_Header_00 = "bc2c5d93036266ca1249f1fbcbf76a153a5991ff50a3f31611885550ec5ebd9e"
+	case L_BtnOption_00_T_Header_00 = "a02c5add1590ac11013b9c677eaac64ff439b20401d2db38df1c5d6461d70af8"
 	/// ジャイロ操作がONのときは無効です
-	case L_BtnOption_00-T_Msg_00 = "35dfb499396b816238090e0d0de7766c5def96176247f4d35bf4a24a90d3d394"
+	case L_BtnOption_00_T_Msg_00 = "d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774"
 	/// ノーマル
-	case L_BtnOption_01-T_BtnL_00 = "848d3611a98ef02a72628fa9a91e9f1e1346ff212fb14152ddf400162059f73a"
+	case L_BtnOption_01_T_BtnL_00 = "63e3af0e7738989005b1a8411dbde66f989af7e9303ec3f3494aa1e946eaa0a7"
 	/// リバース
-	case L_BtnOption_01-T_BtnR_00 = "d90cd1336fcdad360c22672985b4f37a0abfc74885df3417f4720e4c77952725"
+	case L_BtnOption_01_T_BtnR_00 = "745708c07907d0ec09043359f5c80980f6c8ba6ea6326be4a15fca15e23ed5e4"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]左右操作
-	case L_BtnOption_01-T_Header_00 = "9ac9fed08f295acc7eb3e6f13facfc4fc13efde0cd1bd156426bc58b46160ec7"
+	case L_BtnOption_01_T_Header_00 = "eb101faef0c343847cde5ec268fe5b97f215886d90044ac6d7d80c50c370fdfb"
 	/// ON
-	case L_BtnOption_02-T_BtnL_00 = "6f9ef8184e2b9806d7ffa27ed0fa88f03150416797b06f8561d33f1dd8266d48"
+	case L_BtnOption_02_T_BtnL_00 = "730f5cd5fc92f4212ad4d2927ea1ebcb08b2019a313154525d81f702e4607528"
 	/// OFF
-	case L_BtnOption_02-T_BtnR_00 = "b3b4cd96ef2700669784e2e86e3d40157bb572086335f6dbc2d7d4b2bf926f5c"
+	case L_BtnOption_02_T_BtnR_00 = "78b09e8a98561f071535d171711edf6e391a6d94208d362b20ddae9ea1d09adb"
 	/// ジャイロ操作
-	case L_BtnOption_02-T_Header_00 = "e4ffebd3b75bce7462abd2be6f8448de8f59e510be03f096472cc016ff33cfbe"
+	case L_BtnOption_02_T_Header_00 = "4945e8ae1ad66d39ccbe7d829dd219b604cd5b72ad04967d0d6cdd2a3bf414c5"
 	/// ノーマル
-	case L_BtnOption_03-T_BtnL_00 = "17ec60392011741e1c3eee586b5924dbe39e687d2db4750ac0d43665e3e544ba"
+	case L_BtnOption_03_T_BtnL_00 = "0c486a0e9955d0bc47b2f2140e9a60465bcac3a8ea875339b0aeee8bbeeac5c7"
 	/// リバース
-	case L_BtnOption_03-T_BtnR_00 = "0297d50015e180c4616d31d6f65aa6075bd0ca495c4a9b0f873ffcbb924238d5"
+	case L_BtnOption_03_T_BtnR_00 = "899b9027097683a4ff413737ca6bffd73660f741c4b15341c90079d144f8677b"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]上下操作
-	case L_BtnOption_03-T_Header_00 = "87ebe03efa86024333ddbf2cac378359e76a06905e6b05e1fbb7d884c6080897"
+	case L_BtnOption_03_T_Header_00 = "8f895629e4a3cfefd0b6991822832b3b397897e82126d8abc79d7490b57fc086"
 	/// ジャイロ操作がONのときは無効です
-	case L_BtnOption_03-T_Msg_00 = "ea88d71188ac955d0b941b640a8a9ad23b2dd4bf3e06347964b7a9930d8414d7"
+	case L_BtnOption_03_T_Msg_00 = "836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8"
 	/// ノーマル
-	case L_BtnOption_04-T_BtnL_00 = "fbf2d34befe0751b8d94e20155adebd8b4b4a3b438e5325d8355be9bf760595c"
+	case L_BtnOption_04_T_BtnL_00 = "a49e94dc64436ccd9e6e017edfbc3e00d996cd8cbe672ec3972de67a59e057c5"
 	/// リバース
-	case L_BtnOption_04-T_BtnR_00 = "4bdc59ae631abd26aa1fe202409c2bffdaa8f0298838bba7b892320a5a46f2b7"
+	case L_BtnOption_04_T_BtnR_00 = "6acd2a1e9ecd2bb5f478fd24d9e2ddf946a40c33eb96dc851798b91ad365da4f"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]左右操作
-	case L_BtnOption_04-T_Header_00 = "815f2ff376f6c82a193dfe6f001470e66b5aa97e7004c16907d11cb9100284ed"
+	case L_BtnOption_04_T_Header_00 = "d148c90dac76a576e52716e5f26e15fc458df04becb8e95774d26a8b46f235e5"
 	/// ON
-	case L_BtnOption_05-T_BtnL_00 = "895a0364a514b3a8768f73654190f7f343e3d82724e979e2231979e8073fa008"
+	case L_BtnOption_05_T_BtnL_00 = "10bb91ba2221e19ce11a33aee8af7176cebc60a41b9f3bd0696bc95b50e8ddb2"
 	/// OFF
-	case L_BtnOption_05-T_BtnR_00 = "4ca8896dafd5e322bb76ebe59d3f6a1200ac71d9410c4c714b1d7df9aa058cad"
+	case L_BtnOption_05_T_BtnR_00 = "4285a13ab34d06705f6fa4b6cd4a694317e05a9e9b7c3e4de9ac060b633948dc"
 	/// ジャイロ操作
-	case L_BtnOption_05-T_Header_00 = "7de63f311eb03b8b54156a7d0e1995508c4f2e9895d73a2046a9429600434711"
+	case L_BtnOption_05_T_Header_00 = "95799f696c68e09fb47c56aa6b7389d54fde4a671add57108a0766f9d647f6f9"
 	/// 表示ON
-	case L_BtnOption_06-T_BtnL_00 = "742d33a8c22c46cd7104d499e789c52649a513669330cf0e6123722e84a31ad8"
+	case L_BtnOption_06_T_BtnL_00 = "44f6675820a8886b6e22725550a0d28ea5f315aead2160fde3d5785921819ba7"
 	/// 表示OFF
-	case L_BtnOption_06-T_BtnR_00 = "e77778e48cfd9198be052077ae6b255d6eeb7465d63ad10654ad66807c93f3ce"
+	case L_BtnOption_06_T_BtnR_00 = "1284fdf3d653f0de6ad2194817474dda0c5eff064e6d1eccd3440a9692a82698"
 	/// 投稿の表示
-	case L_BtnOption_06-T_Header_00 = "715aaf8b335bb72671a2d00b733467c4acd13ed26f20f6e79ad6e4493dac238d"
+	case L_BtnOption_06_T_Header_00 = "adf20868a23b0f6d987ec38e34bd0935d80814e8d07203e2d0555027d7d1ddf2"
 	/// みまもり設定で制限されています
-	case L_BtnOption_06-T_Msg_00 = "38519f346060d63b675c5022366cc775f540571803098fa7b86e4dbd5bc961ec"
+	case L_BtnOption_06_T_Msg_00 = "3fc2dc3c2b7e5673ece749661b3bc729129c7f2139317a6020170ea9b5c9e4c8"
 	/// OFF
-	case L_BtnOption_07-T_BtnL_00 = "acdf70ec50e8424a4cb994f975934a224011708598ae1ba896bb26b9da03ca87"
+	case L_BtnOption_07_T_BtnL_00 = "a416e1047ed347220409f267812c648f427d8fd5a90eafcabd3f3dc0fb976604"
 	/// ON
-	case L_BtnOption_07-T_BtnR_00 = "4afa5c3016a94bcc7b745dd7b0a5612513a5144709a1ca1a1bcc8c465b55298d"
+	case L_BtnOption_07_T_BtnR_00 = "ae9d0e209bb5c4a9a54a21fb383443c1d666751b75d61e1975e4c6237fa6854d"
 	/// 色覚サポート
-	case L_BtnOption_07-T_Header_00 = "166d070939af08618219b2962c0e9e4d372121ae842a34d96a8ebab715e4d14a"
+	case L_BtnOption_07_T_Header_00 = "164f21aa4b4e6c2448984f84628df04b15498b85ceaa7a8130c8deb48f659892"
 	/// 送信ON
-	case L_BtnOption_08-T_BtnL_00 = "d9640e8268fff376bcab6e6347228f5fa4d3719f6d0fe5a9d1a7273158cb5c4e"
+	case L_BtnOption_08_T_BtnL_00 = "34feec6e92e2c598b018af8e4ebb6a2f53f4a19d5707e56324bc68521583a133"
 	/// 送信OFF
-	case L_BtnOption_08-T_BtnR_00 = "362707d634285a9b0cffe38073c9c86e083fcb7c690f2fb8584d30dfc957df2c"
+	case L_BtnOption_08_T_BtnR_00 = "8cc0ec08e2a9048e14665c0c1642ddb4fa65eb4fc4773f9cf729055053f2f962"
 	/// ロビーへの通知
-	case L_BtnOption_08-T_Header_00 = "fcd3a6d3a20d179e99ffefb74a5e3b4ad493fbf73158367fc29f2105e6e011e8"
+	case L_BtnOption_08_T_Header_00 = "e2ee0e3ff62942f693f7951563e858a8e5951de91325fa82d186a9c9bc222dca"
 	/// レギュラーマッチ
-	case L_BtnStage_00-T_BlackText_00 = "912e6813ffbf212c5b5b6983873d8f24f6254c56e119fb40ad6bb55ac5f331a3"
+	case L_BtnStage_00_T_BlackText_00 = "38acd6e71493acfcb8c524e81480704e0896fdcf9ec513d5d6384ba111052272"
 	/// レギュラーマッチ
-	case L_BtnStage_00-T_WhiteText_00 = "3e40e7f93f901e07b8f074ea35b080e03a876456ae4861b1b9264179ef7e9bba"
-	/// バンカラマッチ
-[size=75%]（チャレンジ）[size=100%]
-	case L_BtnStage_01-T_BlackText_00 = "7dda7fb19535ed13ccd65165104ad853d33e2197b1c2977f35675a129a864d9a"
-	/// バンカラマッチ
-[size=75%]（チャレンジ）[size=100%]
-	case L_BtnStage_01-T_WhiteText_00 = "60769df7ab904ac76088fb64eb7a3864f0502bfda2e390a2bfb9f0e2c589f777"
+	case L_BtnStage_00_T_WhiteText_00 = "b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650"
+	/// バンカラマッチ [size=75%]（チャレンジ）[size=100%]
+	case L_BtnStage_01_T_BlackText_00 = "7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9"
+	/// バンカラマッチ [size=75%]（チャレンジ）[size=100%]
+	case L_BtnStage_01_T_WhiteText_00 = "92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7"
 	/// SALMON  RUN
-	case L_BtnStage_04-T_BlackText_00 = "94b427dcbd1daf4f31a1cab32564c924f8a8e9d27531377a11fdf500171622a7"
+	case L_BtnStage_04_T_BlackText_00 = "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430"
 	/// SALMON  RUN
-	case L_BtnStage_04-T_WhiteText_00 = "05b7756f6757eea1e40fa335769f48d2cdfa783ae4dfcb5aac0d37bc082e51bb"
-	/// バンカラマッチ
-[size=75%]（オープン）[size=100%]
-	case L_BtnStage_05-T_BlackText_00 = "d2ea8928437483962201eb54cccefa5d019ea117a247fed8a91de01c2b062b2f"
-	/// バンカラマッチ
-[size=75%]（オープン）[size=100%]
-	case L_BtnStage_05-T_WhiteText_00 = "68732796b161209e70c14cafcb471bb00e1c7bbe9f10301cdc780df5e9cd0220"
+	case L_BtnStage_04_T_WhiteText_00 = "8b08d20b43a9bcf7def3e3a76c08accb35671f2d25d91a77ba9a2cfab434ae93"
+	/// バンカラマッチ [size=75%]（オープン）[size=100%]
+	case L_BtnStage_05_T_BlackText_00 = "55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394"
+	/// バンカラマッチ [size=75%]（オープン）[size=100%]
+	case L_BtnStage_05_T_WhiteText_00 = "d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021"
 	/// MAX
-	case L_Catalog_00-T_Max_00 = "e543c2420c391b0ba8aaa481a018bda892e544a046ac696539bd156024bee214"
+	case L_Catalog_00_T_Max_00 = "edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c"
 	/// カタログレベル
-	case L_Catalog_00-T_Rank_00 = "c4688038f50dc893771a70887870d4d3616ee4574c8060e5fee8deaf40bc68e3"
+	case L_Catalog_00_T_Rank_00 = "54ff8e99336d28e094f640230e844c55bf9f770d2b6c50615daff0d23997e8a9"
 	/// ジャイロ操作感度
-	case L_GaugeOption_00-T_Header_00 = "6a674e04f1f3bbe3dce9daa2749d5cf36fe6a88c2fdf19d479e744429c7d300c"
+	case L_GaugeOption_00_T_Header_00 = "f90bd2500dc28783fd7063c8c3d4d0cc2ae1778e10a9d7d72d098febe00b8566"
 	/// ジャイロ操作がOFFのときは無効です
-	case L_GaugeOption_00-T_Msg_00 = "a375528f6e172f89486dc05db596499369abd46188a4b1127f9327942673ce5c"
+	case L_GaugeOption_00_T_Msg_00 = "bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]操作感度
-	case L_GaugeOption_01-T_Header_00 = "7171608ff6d3e669c676402c12d3289ff3e2d68f775e0a06257413df8a236f65"
+	case L_GaugeOption_01_T_Header_00 = "5e109e142033945dbc4a132edfb607172e496b812c73c0b84991468b9fe0cbcb"
 	/// ジャイロ操作感度
-	case L_GaugeOption_02-T_Header_00 = "0947cd4994ff484464da73661fd5bb03af8af7ea9840d03fb3963639588d5c14"
+	case L_GaugeOption_02_T_Header_00 = "46c9d590eea1b842e79ec953dd66aad815f1d379e104ee8dd61e60b1ec9bf253"
 	/// ジャイロ操作がOFFのときは無効です
-	case L_GaugeOption_02-T_Msg_00 = "10c7da8fbd175427fa5abf90c8fd0d77626eddb4d8618d5889a2daba1f5130a5"
+	case L_GaugeOption_02_T_Msg_00 = "eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1"
 	/// [group=0003 type=0008 params=00 00 00 40 00 00 00 00]操作感度
-	case L_GaugeOption_03-T_Header_00 = "b7e4127fc6d647f10ec7a33b6afee57fac7fa0cfed88fb2a598d1cb2a796ee6b"
+	case L_GaugeOption_03_T_Header_00 = "1655b4537c47418a4f02100cd52900a3edd98a7107a425005554db158cb2780c"
 	/// 次のアイテム
-	case L_NextItem_00-T_NextItem_00 = "6acbb4ceb46f0f4a6403970a842462e4241b212f465b67c42a871cd432db372e"
-	/// TVモード/
-テーブルモード
-	case L_Option_00-T_BlackText_00 = "3279d743a8ccb6ac7f563295253bf13c5a1d19174ab9fdfc607932d8387934df"
-	/// TVモード/
-テーブルモード
-	case L_Option_00-T_WhiteText_00 = "e063f2ea8f03fc2893ed36ad14951d5b3974ff1a86a6ce1ebb58bab2f1180d8e"
+	case L_NextItem_00_T_NextItem_00 = "771290f6a993cba44ca6de810df49af5660e7682a3ceca69834e27d3335f2830"
+	/// TVモード/ テーブルモード
+	case L_Option_00_T_BlackText_00 = "e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2"
+	/// TVモード/ テーブルモード
+	case L_Option_00_T_WhiteText_00 = "dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705"
 	/// 携帯モード
-	case L_Option_01-T_BlackText_00 = "8c7f8f01bad6a4295a2923ec1723377e24c1766f177ab018d6355f1a4c1b02ce"
+	case L_Option_01_T_BlackText_00 = "c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e"
 	/// 携帯モード
-	case L_Option_01-T_WhiteText_00 = "385fab5a85eb6e0c1eea19f478a4b0999595445d1e20bfe299907106d923d381"
+	case L_Option_01_T_WhiteText_00 = "7a1445d885c9536d9a75f6b280c416f1b8af76ec6b09ef524f6a416ad5dc9f55"
 	/// その他
-	case L_Option_02-T_BlackText_00 = "b7a40b3723d11161fca057dcc7d60c5ddcb60504998c4aa9722306b39422011f"
+	case L_Option_02_T_BlackText_00 = "d844678bd4a08d34f56a929aa6b6cddc9237c8f2e866a5efe6f02786a40fb30a"
 	/// その他
-	case L_Option_02-T_WhiteText_00 = "1d5f42ec31793ec96d16e599d9fdaf6294fa35c955573334620fcfa8ff11812e"
+	case L_Option_02_T_WhiteText_00 = "e63d71f890d34b10dd2c5e96cd80ad61ea4f33d262f9e9b7626e186b2845ab7c"
 	/// プレイヤー設定
-	case L_PlayerEdit_00-T_BlackText_00 = "875c326d96bc168eeaa6b85caab1904e8d18fd1c20cc743c7f6a8fd43368aab1"
+	case L_PlayerEdit_00_T_BlackText_00 = "06f5657619f8204c19db278856d3b67d56cc2d30025928af75662c5cc489977e"
 	/// プレイヤー設定
-	case L_PlayerEdit_00-T_WhiteText_00 = "46197d831af3975ced9e294243009657a11cac26bf8fc0c0e52a4eb0ad03be22"
+	case L_PlayerEdit_00_T_WhiteText_00 = "b0794c5401adb428dfc90866b2eab964b25ceec9aa2ed8bfe29424733c65e0d9"
 	/// そうび
-	case L_Player_00-T_BlackText_00 = "9453fbb2ca540b95d01dc27578afda0b7d9cb3f87cf0571e9a3cecf9f3e04a82"
+	case L_Player_00_T_BlackText_00 = "531c0870f983c1e0842f27cc83eb9eeedb478aeed880a23310cf9c09f8f460bc"
 	/// そうび
-	case L_Player_00-T_WhiteText_00 = "b4682e3889f4816d8807dc40889f5796e0c84bf1a59200738887c3d81dce31c3"
+	case L_Player_00_T_WhiteText_00 = "dd1f1199bc84e3f116e719e80e22684102b570bf4d941c489184037441df8531"
 	/// カタログ
-	case L_Player_01-T_BlackText_00 = "14ee4eaba75cc21051a9a125084705f7a9eb019ca96ce6a8f95fced3e267c698"
+	case L_Player_01_T_BlackText_00 = "10dac2091593fb8d823d46f2de8fb9fdf866cc05c8c9d5602cf8950291798874"
 	/// カタログ
-	case L_Player_01-T_WhiteText_00 = "dde64812c4046e6784179ddfbf28c1db875bea9236f690eee8e03599a167465c"
+	case L_Player_01_T_WhiteText_00 = "1fb09684b97650fb299497527eb270c470a56b05be85e22852fce5e07bb5d90c"
 	/// ギアパワー
-	case L_Player_02-T_BlackText_00 = "828143fe6e5a778303e35a29a9b0fa5b8568c4e4d83a8b4f2ec0ef410110f07e"
+	case L_Player_02_T_BlackText_00 = "0f4c2d97d193e9b56460badb947206f4b8807a9ea0c46811641f0454273549a2"
 	/// ギアパワー
-	case L_Player_02-T_WhiteText_00 = "4740475bd70c489efd28b7cfc02812537f848f9499e91277b3d2041faae5e804"
+	case L_Player_02_T_WhiteText_00 = "e0d686cd4d672dbc4382e99c753d71183f82da0e037c16181c37e2afa2fc3abb"
 	/// ナワバトラー
-	case L_Player_03-T_BlackText_00 = "ee887a69c3d940bef9a13be6cba376f62f106f0167f0a06100b4755a510b5472"
+	case L_Player_03_T_BlackText_00 = "3e2eeb8784e0c6b54703655a872a5acd61c5cb980e0d6eb21d6e0e1eb94cbe5f"
 	/// ナワバトラー
-	case L_Player_03-T_WhiteText_00 = "15f50594d3934b0dd2b0dd5fdc2046744d4ad489ded13274f77572b6e2ecde27"
+	case L_Player_03_T_WhiteText_00 = "510a3f4927187e3b35b6d2f9a20d99d26496c696c6f8de1512e0ae3af2753722"
 	/// MAX
-	case L_RankMng_00-T_Max_01 = "85428c3f9c59c4321c486bcb944fc6b8bf6fbefe9c0335d982ef055a094107db"
+	case L_RankMng_00_T_Max_01 = "ffa049bb3c93be0393ce772e9ef9b5564b31d095ca8a7ecad511b5d7d609dcdd"
 	/// ナワバトランク
-	case L_RankMng_00-T_RankHeader_01 = "1cd29f781cb4deed55a95e551af8d8df8459ae77caaafd729f9b7c2529676c8d"
+	case L_RankMng_00_T_RankHeader_01 = "fb23a147f361ead139ead8a08556d82bae3b462b5de4b93b0a147261e336fc8e"
 	/// MAX
-	case L_Rank_00-T_Max_00 = "8ab2c6c0071019a609580bd49682ea400c40cff74c34be281b245c66b3f457e9"
+	case L_Rank_00_T_Max_00 = "67a23744506232f8b11513b699a7fd7a3fd2646025492dbc0e7e95e7dd66e642"
 	/// ランク
-	case L_Rank_00-T_RankHeader_00 = "169a975a8a0a8c9ca680f979c064cc6afa429ee305a1d3ab34606e5d34d6c36f"
+	case L_Rank_00_T_RankHeader_00 = "9e99ac1f280649881ca1cabf48bc0780c51979112ea7bf1f3aa8e24e20fa6e75"
 	/// つぎ
-	case L_Stage_01-T_Mode_01 = "27495d403adee1ac7b83076b5e5219034c3140e86a7506d48cecc39859aac6fd"
+	case L_Stage_01_T_Mode_01 = "4a762127f95f4188eb0b884b545000d69b4f74e697d6a5ac595e39695fd9c1e1"
 	/// そのつぎ
-	case L_Stage_02-T_Mode_01 = "20ffa2a26b3f9569410ded29d3834ec684e7ea9861019c243165a0b856a4ab14"
+	case L_Stage_02_T_Mode_01 = "5692d1d57f10a958899349ba1295854ee4403335825e8321371d2b5f39feb46f"
 	/// いま
-	case L_Stage_03-T_Mode_00 = "b5334b18077a0eaadb3dd29c7d43c82fb1304b03c5b2b9b3879fa612db0d0e3e"
+	case L_Stage_03_T_Mode_00 = "4848f76d9d33fb0f66e2f197d0b146f751d7841664a63fa653d29d882de9aec4"
 	/// マップ
-	case L_Tab_00-T_Text_00 = "88804d3a570495b8d25d6cdae5dbc190a9817974d946e88aae2c8fbe4c700ff0"
+	case L_Tab_00_T_Text_00 = "e5b9c0df9f13289e4ffa6e210cadcbc23f1402a22f29bae723d6ee576617b879"
 	/// ステージ情報
-	case L_Tab_01-T_Text_00 = "d1a42c8fbaec90836d16b6e5a795477c2847bd3c471294aadeba43cf629d2fc0"
+	case L_Tab_01_T_Text_00 = "b11102ff9b2049e80567c0142a905efb6995bb45d6c4f24984806e7d10542622"
 	/// プレイヤー情報
-	case L_Tab_02-T_Text_00 = "e5bcbb82ed3f86c7d4ef215976dfccfb504c9ef2f5b557cdfb65f2a6082d5801"
+	case L_Tab_02_T_Text_00 = "4698521e12b95f234654789b7df1b9077493d5af044210a63e08f43ee521a4da"
 	/// オプション
-	case L_Tab_03-T_Text_00 = "711b677ae02416088d54536cdb5f4470b4e0cd197ef7109a7d6d927faee04b0d"
+	case L_Tab_03_T_Text_00 = "203a7767d22f88f169b52913f7a2faddaee0377ccd1a29db2888111a291af789"
 	/// カタログは ザッカ屋でゲットできます
 	case T_Catalog_00 = "18b0429ae0198a60a536d57dd1e1956e9bfd3124a10867b118871c01598691b3"
 	/// 持っているかけらの数
 	case T_Count_01 = "856153e31daacd337485d538d8d4fef7bb0343f70718c2ea0d9f928386a04812"
-	/// テレビ画面に映したり Switch本体を置いてプレイするときの
-カメラオプションを設定できます
+	/// テレビ画面に映したり Switch本体を置いてプレイするときの カメラオプションを設定できます
 	case T_ExplainCamera_00 = "cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109"
-	/// Switch本体を持ってプレイするときの
-カメラオプションを設定できます
+	/// Switch本体を持ってプレイするときの カメラオプションを設定できます
 	case T_ExplainCamera_01 = "6946f411789959507a28399421c8fbb8c78130d3b931df737ef4551a73391d7b"
 	/// インターネット対戦などで インクカラーが見分けやすくなるよう、色を固定します
 	case T_ExplainCamera_02 = "32cbc5d0f8173137aee6cf5f6ab28220f99b8065d1af98d34dfc99e5f05d8368"
@@ -466,48 +458,46 @@ public enum LocalizedType: String, CaseIterable {
 	case T_MaxNext_00 = "0ba97e74c33bc33a21daa4633d0d77c108238e37a42ee6176b4edbe80b562d99"
 	/// COMPLETE!!
 	case T_Max_00 = "6cb7624db890da289e07db603508c181c6ba920d683c105c3e857dac43b54840"
-	/// ステージ情報がありません
-このモードを遊ぶには インターネットに接続して
-最新のステージ情報を受信する必要があります
+	/// ステージ情報がありません このモードを遊ぶには インターネットに接続して 最新のステージ情報を受信する必要があります
 	case T_OffStage_00 = "a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85"
 	/// ショップ
 	case T_Shop_00 = "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da"
 	/// ウデマエ
 	case T_UdemaeTitle_00 = "0137ce9b6015acdafe7c083ac4591e9592114740e0553d9928ff90d2116a82db"
 	/// キャンセル
-	case L_Btn_00-L_GuideCancel_00-T_Info_00 = "86462edb66aaacc14cd00098536a05324e27f6fca914e3c46e131332856efadc"
+	case L_Btn_00_L_GuideCancel_00_T_Info_00 = "60a6829b53faf7d4362ed02a0482cc77d24fd91e1b43b7b40ae691d1e560a36b"
 	/// トリカラアタック
-	case L_Btn_00-T_Title_00 = "3db3969bf39b7417d7d92db194a7181d67f38ec241834c40da680be6779a0259"
+	case L_Btn_00_T_Title_00 = "af7a16da5148631f10eed1db9eb5d53c77f451d30caf62ec3d4b10c11e795791"
 	/// フレンドと
-	case L_Btn_03-T_Friend_00 = "434f76d0133c838f966b33d1cab80ebb621d3fe609d4de35713929ec56c7569e"
+	case L_Btn_03_T_Friend_00 = "d69ef2b4211597bc6dcfefaae8864a9f34591a471e17358f696cc3503b45474d"
 	/// MAX
-	case L_FestItemAll_00-T_Max_00 = "b4acae5e1931940b3cc91736c1a01a7d62c136d2d2c04ce79baadaa0a3ff2ae8"
+	case L_FestItemAll_00_T_Max_00 = "92acd08fb0ee986a0f1a70b811163a10c9458ef7e703c46e12b00c17069065bb"
 	/// とじる
-	case L_GuideClose_00-T_Info_00 = "a29caeec057f9138087c3fc31d8492f9ea0c3df5c4ce60a35cd0b05d635bcb3d"
+	case L_GuideClose_00_T_Info_00 = "cc760532ab920b96b5faa954ec8b4a3dfcd0f73b968035b4c0720b357a3f5414"
 	/// ほうしゅうとポイント
-	case L_GuideReward_00-T_Info_00 = "e999b9326128f3778b40cea40a3c0d83666da82ad49aff4811419721b939416d"
+	case L_GuideReward_00_T_Info_00 = "9218c34589c59a67fc2aac6c9b572826d58b84c40ae98af59325ea6b04ed398c"
 	/// ひとりで
-	case L_GuideSwitch_00-T_BtnL_00 = "7da8b41b9c18768f475061f456b17e0affa0b0a4eb2b5de2474ed354cf8d6bf4"
+	case L_GuideSwitch_00_T_BtnL_00 = "09cd4b729faf8d2d2216b98317832d9e41a0a75799a41b91efafc019b05aa31f"
 	/// フレンドと
-	case L_GuideSwitch_00-T_BtnR_00 = "935f3f9f5e71fd2a255b2d2f6f7e880321de02ee9c72fe1e0d40c5f3afd1c708"
+	case L_GuideSwitch_00_T_BtnR_00 = "2dcf10ea94501d389cb0b628628c1310ebdf33470cb6d672f175fd5a4ca86395"
 	/// 計測中…
-	case L_PlayerStatus_00-L_Choushi_00-T_FestPowCount_00 = "819e2b2246c44399bfa96f5bee8b061285d2a4f7ef91f1acb301c16eb52fc37b"
+	case L_PlayerStatus_00_L_Choushi_00_T_FestPowCount_00 = "762c3f34982c1c6a13010d8ae9537126f9044b84d14328e04f7eb9e8a6b1f44c"
 	/// こうけん度
-	case L_PlayerStatus_00-L_Choushi_00-T_FestPow_00 = "9f8d5cceeece92da3898b8c208e56151419dd6c88ccb3fecf02e44147f995a07"
+	case L_PlayerStatus_00_L_Choushi_00_T_FestPow_00 = "9bd3b855948b2a09ed5609f6a385a28dc0b15cb24b59af329a1f8b781415e5fb"
 	/// MAX
-	case L_PlayerStatus_00-L_FestRankGauge_00-T_Max_00 = "4d30275d6a6123a70f698e802e8d13fdce5927df4df80023c6e90ee70e234ca3"
+	case L_PlayerStatus_00_L_FestRankGauge_00_T_Max_00 = "69d2eda824d6540e73c770cf2dc3774899e7689004d0580d4f55099c89eedf0d"
 	/// [color=0001]フェス投票[color=ffff]に向かえ！
-	case L_PlayerStatus_00-L_FestRankGauge_00-T_Vote_00 = "19d1fac5ee57c8ae27501df1a750424f7e2de01bc0cc7ba0e15a099cefc905af"
+	case L_PlayerStatus_00_L_FestRankGauge_00_T_Vote_00 = "d8912f52723cd57d95fb57feeb548fe2b0f297b0933537dc2e8c3d16729cf4e5"
 	/// MAX
-	case L_PlayerStatus_00-L_Rank_00-T_Max_00 = "33ae6aad66b8d0c2a196114dc2de208b6a98ee4b3647248c7a4e0bd7f4544b2f"
+	case L_PlayerStatus_00_L_Rank_00_T_Max_00 = "8fc7ee17934badce6ae6770581aa64eaa689fb8a29dcd7badbeb5cb8bf1798e0"
 	/// ランク
-	case L_PlayerStatus_00-L_Rank_00-T_RankHeader_00 = "b628fbef79412134ce0a6861084854443f10251e7ceb08f1e7ce9f6db9c3ab22"
+	case L_PlayerStatus_00_L_Rank_00_T_RankHeader_00 = "4cd04028683ec607799117431d4f4dfe17075cf465cd4c7670f39de1293b46c5"
 	/// ウデマエ
-	case L_PlayerStatus_00-L_Udemae_00-T_UdemaeTitle_00 = "97e56029dc6d73700ff87d85cd5d0594559c4246bd040180216482c8494e20cd"
+	case L_PlayerStatus_00_L_Udemae_00_T_UdemaeTitle_00 = "0396800566937783dc0dcc8d2c6c65a7ea428c7b83bef846f3d5bd8498567bda"
 	/// 評価リセット
-	case L_PlayerStatus_01-L_Info_00-T_Info_00 = "0a197a2817839aad2cc5f971bbbe5ad3716b524dca1f04d91e8cfa84143b103a"
+	case L_PlayerStatus_01_L_Info_00_T_Info_00 = "0a08ea8fa115f6a62637fe951e4e7ba7edc7f1e0a2427343caf68c09d7e9f984"
 	/// 昇格戦
-	case L_Progress_00-T_Title_00 = "c5d5459016c532e4cb84b1f888e6e72dabafb603b976595677ff086809f8a871"
+	case L_Progress_00_T_Title_00 = "94a5d451f292e93a0fab51579a57020382859d61181e9c35e3b447ad0f138898"
 	/// ルール
 	case T_Rule_00 = "00d8f2eead8b70ac7344a4e6a62919632b9a2961d22970d0eb0951ad9199bc8c"
 	/// ステージ
@@ -519,19 +509,19 @@ public enum LocalizedType: String, CaseIterable {
 	/// 支給ブキ
 	case T_Wpn_01 = "284afdade29e22fe5a1f6e8cd7e10a5cf7d93a0df4f7a506fbf2258e6fd859e7"
 	/// もどる
-	case L_Back_00-T_Info_00 = "fefee737cf612e679c57ae2cd673fc5ec4405afdadf152920561e205cc8e0b68"
+	case L_Back_00_T_Info_00 = "1bbe6b41de4a67b55d31fc644fd943c9f4e71b34366c5db140023fdebcdf7a93"
 	/// もどる
-	case L_Back_02-T_Info_00 = "dcafc0e9efdf9519f6c58ea07e2ac55288c42e79807a5f69ec4eb1ee34f08578"
+	case L_Back_02_T_Info_00 = "2d98fec048ebc6be3516927b577c632f3b45fae680ce029d178dfa2303cbc1a9"
 	/// アタマ
-	case L_BtnCategory_01-T_Category_00 = "73133ff26ce30c5d861dabc16e84cf5468cbbdd22c6d49660b3404afa7505499"
+	case L_BtnCategory_01_T_Category_00 = "33699c982aba76871d69aaa6c98347c5c390cc91249503db94cfbb4bce806f6e"
 	/// フク
-	case L_BtnCategory_02-T_Category_00 = "05172fc01f8d792b553a0a9a1883a6245444ed826041595fc9fbc666c6901b9e"
+	case L_BtnCategory_02_T_Category_00 = "de161a26f13ec2867d61b4d92c36c542c2073ddcd0af6a4df7b879e68861ae95"
 	/// クツ
-	case L_BtnCategory_03-T_Category_00 = "8f14bcf7bc77c45dc8200a89da226d7e4fbc7a7fae05b38833f220b3daf86570"
+	case L_BtnCategory_03_T_Category_00 = "e20b1ca6f971b216b49131435117a25bdc4742f3c5602a9478e49b0abd900415"
 	/// 持っているかけら
-	case L_Btn_00-T_Info_00 = "0dcebb7bd1d71d82728f1a2442cdad9a6870b2bdb6e9d728afa8a424ffe57664"
+	case L_Btn_00_T_Info_00 = "406c1bbd30e8290549efc215b353991a7625e072b28995e0c0a37f46759570a8"
 	/// 表示切替
-	case L_Btn_01-T_Info_00 = "0978f3ad2cdc333856bebcc1e16ec7ccf34c32cbae1e09bcf87e0e37170826b9"
+	case L_Btn_01_T_Info_00 = "cdb3d372185799084b4b305884a67130fc1309c293785a57f0b51f57d83a2668"
 	/// 当てはまるものがありません
 	case T_NoSort_00 = "6d2245e65f8b1d5e7d2e8fb26e7f1abdd19940675bce4917366bf1c4790ee375"
 	/// 連射力
