@@ -23,7 +23,7 @@ def format(key: str, value: str) -> str:
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
 
 
-def loalized_format(key: str, value: str) -> str:
+def localized_format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
     value = value.replace("\n", " ")
     return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
@@ -113,12 +113,12 @@ def get_localized():
         data = res["CommonMsg/Coop/CoopEnemy"]
         for k, v in data.items():
             params.append(format(k, v))
-            localized.append(loalized_format(k, v))
+            localized.append(localized_format(k, v))
 
         data = res["CommonMsg/Coop/CoopGrade"]
         for k, v in data.items():
             params.append(format(k, v))
-            localized.append(loalized_format(k, v))
+            localized.append(localized_format(k, v))
 
         # data = res["CommonMsg/Coop/CoopSkinName"]
         # for k, v in data.items():
@@ -127,54 +127,54 @@ def get_localized():
         data = res["CommonMsg/Coop/CoopStageName"]
         for k, v in data.items():
             params.append(format(k, v))
-            localized.append(loalized_format(k, v))
+            localized.append(localized_format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Main"]
         for k, v in data.items():
             if "_00" in k and "Rival" not in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
             elif "Bear_Coop" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
 
         data = res["CommonMsg/Weapon/WeaponName_Special"]
         for k, v in data.items():
             if "_Coop" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
-        
+                localized.append(localized_format(k, v))
+
         data = res["LayoutMsg/Cmn_Menu_00"]
         for k, v in data.items():
             if "L_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
             elif "T_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
-        
+                localized.append(localized_format(k, v))
+
         data = res["LayoutMsg/Lobby_MenuMode_00"]
         for k, v in data.items():
             if "L_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
             elif "T_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
-        
+                localized.append(localized_format(k, v))
+
         data = res["LayoutMsg/Plz_ItemMenu_00"]
         for k, v in data.items():
             if "L_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
             elif "T_" in k:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
-        
+                localized.append(localized_format(k, v))
+
         data = res["CommonMsg/Weapon/WeaponParamName"]
         for k, v in data.items():
             params.append(format(k, v))
-            localized.append(loalized_format(k, v))
+            localized.append(localized_format(k, v))
 
         # data = res["CommonMsg/Byname/BynameAdjective"]
         # for k, v in data.items():
@@ -193,11 +193,11 @@ def get_localized():
             if re.search(r"T_TitleCoop_\d{2}", k) is not None:
                 v = v.split()[1]
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
         k = "T_TitleCoop_45"
         v = "-"
         params.append(format(k, v))
-        localized.append(loalized_format(k, v))
+        localized.append(localized_format(k, v))
 
         # イカリング3からデータ取得
         if language.code == "en-US":
@@ -216,22 +216,22 @@ def get_localized():
                 params.append(format("CoopHistory_Wave1", f"{value} 1"))
                 params.append(format("CoopHistory_Wave2", f"{value} 2"))
                 params.append(format("CoopHistory_Wave3", f"{value} 3"))
-                localized.append(loalized_format("CoopHistory_Wave1", f"{value} 1"))
-                localized.append(loalized_format("CoopHistory_Wave2", f"{value} 2"))
-                localized.append(loalized_format("CoopHistory_Wave3", f"{value} 3"))
+                localized.append(localized_format("CoopHistory_Wave1", f"{value} 1"))
+                localized.append(localized_format("CoopHistory_Wave2", f"{value} 2"))
+                localized.append(localized_format("CoopHistory_Wave3", f"{value} 3"))
             else:
                 params.append(format(k, v))
-                localized.append(loalized_format(k, v))
+                localized.append(localized_format(k, v))
 
         # イベント情報を取得
         for index, wave in enumerate(language.event_type):
             params.append(format(f"CoopHistory_EventWave{index+1}", wave))
-            localized.append(loalized_format(f"CoopHistory_EventWave{index+1}", wave))
+            localized.append(localized_format(f"CoopHistory_EventWave{index+1}", wave))
 
         for index, sakelien in enumerate(language.king_sakelien):
             params.append(format(f"CoopHistory_KingSakelien{index+3}", sakelien))
             localized.append(
-                loalized_format(f"CoopHistory_KingSakelien{index+3}", sakelien)
+                localized_format(f"CoopHistory_KingSakelien{index+3}", sakelien)
             )
 
         if language.code == "ja-JP":
