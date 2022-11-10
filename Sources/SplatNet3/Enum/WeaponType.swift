@@ -9,7 +9,34 @@
 import Foundation
 
 @dynamicMemberLookup
-public enum WeaponType: Codable, CaseIterable {
+public enum WeaponType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
+    public init?(id: Int?) {
+        if let id = id {
+            self.init(WaterId(rawValue: id))
+        }
+
+        return nil
+    }
+
+    public init?(id: Int) {
+        self.init(WeaponId(rawValue: id))
+    }
+
+    public init?(hash: String) {
+        self.init(WeaponKey(rawValue: hash))
+    }
+
+    public subscript<V>(dynamicMember keyPath: KeyPath<WeaponId, V>) -> V? {
+      self[keyPath]
+    }
+
+    public subscript<V>(dynamicMember keyPath: KeyPath<WeaponKey, V>) -> V? {
+      self[keyPath]
+    }
 
     public var localizedText: String {
         NSLocalizedString(self.sha256Hash ?? "Unknown Value", bundle: .module, comment: "")
@@ -90,6 +117,7 @@ public enum WeaponType: Codable, CaseIterable {
 }
 
 public enum WeaponId: Int, Codable, CaseIterable {
+    public var key: Int { rawValue }
     /// 金ランダム
     case Random_Gold            = -2
     /// 緑ランダム
@@ -162,6 +190,7 @@ public enum WeaponId: Int, Codable, CaseIterable {
 }
 
 public enum WeaponKey: String, Codable, CaseIterable {
+    public var sha256Hash: String { rawValue }
     case Random_Gold            = ""
     case Random_Green           = "473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1"
     case Shooter_Short          = "6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65"
@@ -223,48 +252,4 @@ public enum WeaponKey: String, Codable, CaseIterable {
     case Shelter_Bear_Coop      = "3380019464e3111a0f40e633be25f73ad34ec1844d2dc7852a349b29b238932b"
     case Slosher_Bear_Coop      = "bf89bcf3d3a51badd78b436266e6b7927d99ac386e083023df3551da6b39e412"
     case Stringer_Bear_Coop     = "36e03d8d1e6bc4f7449c5450f4410c6c8449cde0548797d22ab641cd488d2060"
-}
-
-public extension WeaponType {
-    /// ブキIDで初期化
-    init?(id: Int) {
-        self.init(WeaponId(rawValue: id))
-    }
-
-    /// SHA256Hashで初期化
-    init?(hash: String) {
-        self.init(WeaponKey(rawValue: hash))
-    }
-
-    subscript<V>(dynamicMember keyPath: KeyPath<WeaponId, V>) -> V? {
-      self[keyPath]
-    }
-
-    subscript<V>(dynamicMember keyPath: KeyPath<WeaponKey, V>) -> V? {
-      self[keyPath]
-    }
-
-    private init?<T>(_ object: T?) where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable {
-      switch object {
-      case let object? where object.offset < Self.allCases.endIndex:
-        self = Self.allCases[object.offset]
-
-      case _:
-        return nil
-      }
-    }
-
-    private subscript<T, V>(_ keyPath: KeyPath<T, V>) -> V? where T: CaseIterable, T.AllCases.Index == AllCases.Index {
-      (offset < T.allCases.endIndex) ? T.allCases[offset][keyPath: keyPath] : nil
-    }
-}
-
-extension WeaponId {
-    /// ブキID
-    public var id: Int { rawValue }
-}
-
-extension WeaponKey {
-    /// ブキKey
-    public var sha256Hash: String { rawValue }
 }

@@ -9,6 +9,10 @@
 import Foundation
 
 public enum EventType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
     public init?(id: Int?) {
         if let id = id {
             self.init(EventId(rawValue: id))
@@ -49,7 +53,7 @@ public enum EventType: RawRepresentables {
 }
 
 public enum EventId: Int, CaseIterable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
     case Water_Levels
     case Rush
     case Goldie_Seeking

@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum LocalizedType: String, CaseIterable {
+public enum LocalizedType: String, CaseIterable, Hashable {
 	/// テッキュウ
 	case SakeArtillery = "2c7a648b4c73f291b5ede9c55f33d4e3f99c263d3a27ef3d2eb2a96d328d66ac"
 	/// ドロシャケ

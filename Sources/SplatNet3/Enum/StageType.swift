@@ -10,6 +10,10 @@
 import Foundation
 
 public enum StageType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
     public init?(id: Int?) {
         if let id = id {
             self.init(StageId(rawValue: id))
@@ -46,7 +50,7 @@ public enum StageType: RawRepresentables {
 }
 
 public enum StageId: Int, CaseIterable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
     
     case Unknown        = -1
     case Tutorial       = 0

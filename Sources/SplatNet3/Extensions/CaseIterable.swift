@@ -16,7 +16,7 @@ public extension CaseIterable where Self: Equatable {
 
 /// 二つのRawValueで初期化できるEnum
 @dynamicMemberLookup
-public protocol RawRepresentables: Codable, CaseIterable, Equatable {
+public protocol RawRepresentables: Codable, CaseIterable, Equatable, Identifiable {
     init?<T>(_ object: T?) where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable
 
     subscript<T, V>(dynamicMember keyPath: KeyPath<T, V>) -> V? where T: CaseIterable, T.AllCases.Index == AllCases.Index, T: Equatable { get }

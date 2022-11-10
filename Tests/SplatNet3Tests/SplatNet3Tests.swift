@@ -23,8 +23,8 @@ final class SplatNet3Tests: XCTestCase {
     }()
 
     func testContentVersion() async throws {
-        let result: Bool = await VersionUpdater.shared.executeVersionCheck()
-        print(result)
+//        let result: Bool = await VersionUpdater.shared.executeVersionCheck()
+//        print(result)
     }
 
     func testAppVersion() async throws {

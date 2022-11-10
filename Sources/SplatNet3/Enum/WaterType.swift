@@ -10,6 +10,10 @@
 import Foundation
 
 public enum WaterType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
     public init?(id: Int?) {
         if let id = id {
             self.init(WaterId(rawValue: id))
@@ -44,7 +48,7 @@ public enum WaterType: RawRepresentables {
 }
 
 public enum WaterId: Int, CaseIterable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
     case Low_Tide
     case Middle_Tide
     case High_Tide

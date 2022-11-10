@@ -9,6 +9,7 @@ import base64
 import hashlib
 import os
 import re
+import deepl
 
 
 def get_base64(plain: str) -> str:

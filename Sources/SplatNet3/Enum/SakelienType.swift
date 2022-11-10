@@ -9,6 +9,10 @@
 import Foundation
 
 public enum SakelienType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+    
     public init?(id: Int) {
         self.init(SakelienId(rawValue: id))
     }
@@ -47,7 +51,7 @@ public enum SakelienType: RawRepresentables {
 }
 
 public enum SakelienId: Int, CaseIterable, Codable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
 
     case SakelienBomber     = 4
     case SakelienCupTwins   = 5

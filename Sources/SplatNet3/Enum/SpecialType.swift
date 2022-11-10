@@ -9,6 +9,10 @@
 import Foundation
 
 public enum SpecialType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
     public init?(id: Int) {
         self.init(SpecialId(rawValue: id))
     }
@@ -48,7 +52,7 @@ public enum SpecialType: RawRepresentables {
 }
 
 public enum SpecialId: Int, CaseIterable, Codable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
     
     case SpUltraShot        = 1
     case SpNiceBall         = 20006

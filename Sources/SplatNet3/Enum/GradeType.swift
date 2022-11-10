@@ -10,6 +10,10 @@
 import Foundation
 
 public enum GradeType: RawRepresentables {
+    public var id: Int { self.rawValue }
+
+    public var rawValue: Int { self.key! }
+
     public init?(id: Int?) {
         if let rawValue = id {
             self.init(id: rawValue)
@@ -50,7 +54,7 @@ public enum GradeType: RawRepresentables {
 }
 
 public enum GradeId: Int, CaseIterable {
-    public var id: Int { rawValue }
+    public var key: Int { rawValue }
 
     case Apprentice         = 0
     case Part_Timer         = 1
