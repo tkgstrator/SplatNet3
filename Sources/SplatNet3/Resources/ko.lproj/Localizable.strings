@@ -228,212 +228,212 @@
 "b1fe96ceaaa727a7cba324f744aa6840618408e3a6fd1d61e21f7b9e16407683" = "트리플 토네이도";
 // SpUltraShot_Coop
 "9fb7c10f3d6e5ef69b3f1f0380f7293903f50ceacd20b1649b29a90ee6028f57" = "울트라 샷";
-// L_Bottom_00-T_Info_00
-"3439bc91390b79749b53270f21bddb8028aa2d68393455707a52aecf62808a40" = "닫기";
-// L_Bottom_01-T_Info_00
-"e853d72f6a92778133a276ab1f90ee8f2be750b7d3528c5727f4384663df5a0e" = "뒤로";
-// L_Bottom_02-T_Info_00
-"db73c26a16d82470bef1e17172d1e476b50182c8632238feafa1c24642bbb8e8" = "뒤로";
-// L_Bottom_03-T_Info_00
-"f488910d39ede42a69d853c5c62c854726543d71b348f2469c7e2cb7d88e94a9" = "뒤로";
-// L_Bottom_04-T_Info_00
-"da2945c91bb507287151da1ae4e94b81db7ce98918a763dd7b45f36c806850f7" = "뒤로";
-// L_Bottom_05-T_Info_00
-"2ebf258b1a2e5032356810857b00e21424730c485a1702f690cb68acc5f8f0a8" = "커스터마이즈";
-// L_Bottom_08-T_Info_00
-"1f96ffd1cde8d7468c761a8efcb4c971e9f877304ad721e448d9230b6659dbe0" = "뒤로";
-// L_BtnCard_00-T_BlackText_00
-"126c4fb83bb58e5c55444c31e61743cc7434664b23a80752376d0d8fbbfc6cd0" = "카드 리스트";
-// L_BtnCard_00-T_WhiteText_00
-"ad8a4ce633faa75e8c8de1ac8fecbdc67033e9322231c7e3026d18db6fca0f83" = "카드 리스트";
-// L_BtnFestStage_00-T_BlackText_00
-"e0f50f96b717dad6c6f47845509635dd5094b682c02b1f682f5aa740e92f7e07" = "페스티벌 매치";
-// L_BtnFestStage_00-T_WhiteText_00
-"55be4655cf1fb5c05f3bc67c6a978b07fbde556964bdb94e8d29794659739e27" = "페스티벌 매치";
-// L_BtnFestStage_01-T_BlackText_00
-"abf17d0cbe2dd823ecb134911ad1fef39a077248b161cdc39a24419cc03d6334" = "트리컬러 어택";
-// L_BtnFestStage_01-T_WhiteText_00
-"166830f7c5509b11a54089880c01b4fb0b94c06f9cca7597305ef3b8359e9fab" = "트리컬러 어택";
-// L_BtnFestStage_02-T_BlackText_00
-"0eba99e99ba80601bff9ab7c067593c951b8e996766e75cc89bc987eeda54cce" = "SALMON RUN";
-// L_BtnFestStage_02-T_WhiteText_00
-"fd95beaa9803c4f80a279d2e264f9d3028d10841c60a73ef8f4c3a01125660f7" = "SALMON RUN";
-// L_BtnMapL_00-T_BlackText_00
-"8822d64d8b26c0e4488e2e5013897b98158db406d65ab7b668e1f2af27ea6482" = "로비";
-// L_BtnMapL_00-T_WhiteText_00
-"73c18ef9e365113138740a22b4d985268bddcb8c50773df2cc9e9aff87d5697c" = "로비";
-// L_BtnMap_01-T_Text_00
-"4c14b8af22fe8f35e112a040f7801a970d94295d75b3f469f939c78d273a219d" = "광장";
-// L_BtnMap_03-T_Text_00
-"32086ee563ffb248d90668371602a4abb516748235617a08a5652bd77488b918" = "스퀴디움";
-// L_BtnMap_04-T_Text_00
-"7d9e8ceea1487897a367fde151977a340cc0b9de10e5628b49d44e7342fdbf7e" = "Mr. 베어 상회";
-// L_BtnMap_05-T_Text_00
-"c35c8e12090e9f5c39e9b4952f51e996508acaee973d5cf8cb04dde4a73b2f36" = "무기점";
-// L_BtnMap_06-T_Text_00
-"063e6833274d37e3b63608780de7a69555d15340215c35c78c067430d7c204f9" = "액세서리 숍";
-// L_BtnMap_07-T_Text_00
-"2f1d4ce0ee8bd92ac1796d39a067477d3600fa0c815f514aa24b7ba6635e3381" = "옷 가게";
-// L_BtnMap_08-T_Text_00
-"782b9d221012ce218a99db9e10da2162475a978e691fb6d181e8adb8ef860a2b" = "신발 가게";
-// L_BtnMap_09-T_Text_00
-"1ca77f1bf15df24864915da7279da6de086e12f49ad8fc74ded50200260bcf67" = "잡화점";
-// L_BtnNpl_00-T_Edit_00
-"07fa9af04ed9fcd365b8ac48142e68f37b316fdbfdc20044e2749bb20f378e44" = "변경하기";
-// L_BtnOption_00-T_BtnL_00
-"1e23f9d3c9a333b0d74443f1d90334ebedab973d17eff749d18715f3e1b0c7c4" = "노멀";
-// L_BtnOption_00-T_BtnR_00
-"a532dec3a35436248c919317de4444355cae71f3a9f571cbb25cf3210f31e552" = "리버스";
-// L_BtnOption_00-T_Header_00
-"bc2c5d93036266ca1249f1fbcbf76a153a5991ff50a3f31611885550ec5ebd9e" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]상하 조작";
-// L_BtnOption_00-T_Msg_00
-"35dfb499396b816238090e0d0de7766c5def96176247f4d35bf4a24a90d3d394" = "자이로 조작이 ON일 때는 무효합니다";
-// L_BtnOption_01-T_BtnL_00
-"848d3611a98ef02a72628fa9a91e9f1e1346ff212fb14152ddf400162059f73a" = "노멀";
-// L_BtnOption_01-T_BtnR_00
-"d90cd1336fcdad360c22672985b4f37a0abfc74885df3417f4720e4c77952725" = "리버스";
-// L_BtnOption_01-T_Header_00
-"9ac9fed08f295acc7eb3e6f13facfc4fc13efde0cd1bd156426bc58b46160ec7" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]좌우 조작";
-// L_BtnOption_02-T_BtnL_00
-"6f9ef8184e2b9806d7ffa27ed0fa88f03150416797b06f8561d33f1dd8266d48" = "ON";
-// L_BtnOption_02-T_BtnR_00
-"b3b4cd96ef2700669784e2e86e3d40157bb572086335f6dbc2d7d4b2bf926f5c" = "OFF";
-// L_BtnOption_02-T_Header_00
-"e4ffebd3b75bce7462abd2be6f8448de8f59e510be03f096472cc016ff33cfbe" = "자이로 조작";
-// L_BtnOption_03-T_BtnL_00
-"17ec60392011741e1c3eee586b5924dbe39e687d2db4750ac0d43665e3e544ba" = "노멀";
-// L_BtnOption_03-T_BtnR_00
-"0297d50015e180c4616d31d6f65aa6075bd0ca495c4a9b0f873ffcbb924238d5" = "리버스";
-// L_BtnOption_03-T_Header_00
-"87ebe03efa86024333ddbf2cac378359e76a06905e6b05e1fbb7d884c6080897" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]상하 조작";
-// L_BtnOption_03-T_Msg_00
-"ea88d71188ac955d0b941b640a8a9ad23b2dd4bf3e06347964b7a9930d8414d7" = "자이로 조작이 ON일 때는 무효합니다";
-// L_BtnOption_04-T_BtnL_00
-"fbf2d34befe0751b8d94e20155adebd8b4b4a3b438e5325d8355be9bf760595c" = "노멀";
-// L_BtnOption_04-T_BtnR_00
-"4bdc59ae631abd26aa1fe202409c2bffdaa8f0298838bba7b892320a5a46f2b7" = "리버스";
-// L_BtnOption_04-T_Header_00
-"815f2ff376f6c82a193dfe6f001470e66b5aa97e7004c16907d11cb9100284ed" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]좌우 조작";
-// L_BtnOption_05-T_BtnL_00
-"895a0364a514b3a8768f73654190f7f343e3d82724e979e2231979e8073fa008" = "ON";
-// L_BtnOption_05-T_BtnR_00
-"4ca8896dafd5e322bb76ebe59d3f6a1200ac71d9410c4c714b1d7df9aa058cad" = "OFF";
-// L_BtnOption_05-T_Header_00
-"7de63f311eb03b8b54156a7d0e1995508c4f2e9895d73a2046a9429600434711" = "자이로 조작";
-// L_BtnOption_06-T_BtnL_00
-"742d33a8c22c46cd7104d499e789c52649a513669330cf0e6123722e84a31ad8" = "표시 ON";
-// L_BtnOption_06-T_BtnR_00
-"e77778e48cfd9198be052077ae6b255d6eeb7465d63ad10654ad66807c93f3ce" = "표시 OFF";
-// L_BtnOption_06-T_Header_00
-"715aaf8b335bb72671a2d00b733467c4acd13ed26f20f6e79ad6e4493dac238d" = "투고 표시";
-// L_BtnOption_06-T_Msg_00
-"38519f346060d63b675c5022366cc775f540571803098fa7b86e4dbd5bc961ec" = "Parental Controls 설정으로 제한되었습니다";
-// L_BtnOption_07-T_BtnL_00
-"acdf70ec50e8424a4cb994f975934a224011708598ae1ba896bb26b9da03ca87" = "OFF";
-// L_BtnOption_07-T_BtnR_00
-"4afa5c3016a94bcc7b745dd7b0a5612513a5144709a1ca1a1bcc8c465b55298d" = "ON";
-// L_BtnOption_07-T_Header_00
-"166d070939af08618219b2962c0e9e4d372121ae842a34d96a8ebab715e4d14a" = "색각 서포트";
-// L_BtnOption_08-T_BtnL_00
-"d9640e8268fff376bcab6e6347228f5fa4d3719f6d0fe5a9d1a7273158cb5c4e" = "송신 ON";
-// L_BtnOption_08-T_BtnR_00
-"362707d634285a9b0cffe38073c9c86e083fcb7c690f2fb8584d30dfc957df2c" = "송신 OFF";
-// L_BtnOption_08-T_Header_00
-"fcd3a6d3a20d179e99ffefb74a5e3b4ad493fbf73158367fc29f2105e6e011e8" = "로비 알림";
-// L_BtnStage_00-T_BlackText_00
-"912e6813ffbf212c5b5b6983873d8f24f6254c56e119fb40ad6bb55ac5f331a3" = "레귤러 매치";
-// L_BtnStage_00-T_WhiteText_00
-"3e40e7f93f901e07b8f074ea35b080e03a876456ae4861b1b9264179ef7e9bba" = "레귤러 매치";
-// L_BtnStage_01-T_BlackText_00
-"7dda7fb19535ed13ccd65165104ad853d33e2197b1c2977f35675a129a864d9a" = "카오폴리스 매치
+// L_Bottom_00_T_Info_00
+"3280f3051bf57a5b27981655675b250ed0306b6e4c8b00f41310467597ff8159" = "닫기";
+// L_Bottom_01_T_Info_00
+"7cc804b450828f3521c9ddef13ba5b2aa93bdf4c1e1b8ae0955dfab46e3e18b7" = "뒤로";
+// L_Bottom_02_T_Info_00
+"57e286ee0393119e55a32a9d3383940b212bb150717a1d02eccb5644d9e11ce5" = "뒤로";
+// L_Bottom_03_T_Info_00
+"506320d6eeb1174dc279c4ed7d339fccb05ba15622634faf4a9dcc71e3bd3a35" = "뒤로";
+// L_Bottom_04_T_Info_00
+"205211649aee41392feac9abffa61ed586ac4c84163e781bbb65a320498363d3" = "뒤로";
+// L_Bottom_05_T_Info_00
+"7f45eedf1fba759f495fe9c39eb16dff4349810a63b8c34ddd9a1e31479b3499" = "커스터마이즈";
+// L_Bottom_08_T_Info_00
+"c91b42ef48306ff36e01ea366ce113eade0bb4613b5e9c7a104da4bf02258502" = "뒤로";
+// L_BtnCard_00_T_BlackText_00
+"8150f84a2ff56bffcd7c9a8982609bbce59c222d298fb1845e1fbc3d628b48bf" = "카드 리스트";
+// L_BtnCard_00_T_WhiteText_00
+"6000c76435afc2606e49f310666a47f6f117b7e3c44b177395e5f221e851f1f6" = "카드 리스트";
+// L_BtnFestStage_00_T_BlackText_00
+"05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85" = "페스티벌 매치";
+// L_BtnFestStage_00_T_WhiteText_00
+"187a4b3e835ad7453e9752202ef1ab66da6be4fb72a38fa76fef079ad2ca3150" = "페스티벌 매치";
+// L_BtnFestStage_01_T_BlackText_00
+"cd0282186fc415d6b41001ac2d94f68f0a091e699e82714f6c63275f3926059e" = "트리컬러 어택";
+// L_BtnFestStage_01_T_WhiteText_00
+"c92631f8448957caf39b4bf25b3f1a7080a8c4408a034c594a25a8a2eb9c4b21" = "트리컬러 어택";
+// L_BtnFestStage_02_T_BlackText_00
+"e9c3e3625fa7ecf844c188e40ec013f40df1b4e437d0ed92209fc6e872771ffc" = "SALMON RUN";
+// L_BtnFestStage_02_T_WhiteText_00
+"f6acbca9ad9376279d2e13d684e72a051d1c55a8f7e5ce9cc4c22ea94dba96c6" = "SALMON RUN";
+// L_BtnMapL_00_T_BlackText_00
+"53e36619c7303219a8f6abb3bc429cc4a0f72cb541a21fe5365c686c711ebd84" = "로비";
+// L_BtnMapL_00_T_WhiteText_00
+"3ecbb6fff1912e75ff207cbb12e94cb0caed3655930500df0c91ee77de29a601" = "로비";
+// L_BtnMap_01_T_Text_00
+"0e2e4119de7a3de1e692285779ad86c2d79a63600342e2fa9539daa033cec81a" = "광장";
+// L_BtnMap_03_T_Text_00
+"efd5cdb6739a567901eef85f77718936effc7993a09e09d35151e8d8d67d76a6" = "스퀴디움";
+// L_BtnMap_04_T_Text_00
+"30d4556314d0a0c1760ac6c06cfdfd1d1b99f989f3026f7d1e784eb0c7e01676" = "Mr. 베어 상회";
+// L_BtnMap_05_T_Text_00
+"04f0bec25d72ed8a66a43b14679f8484277987bf40a0b4e82a685263f3655ec0" = "무기점";
+// L_BtnMap_06_T_Text_00
+"d88c00cab7b3b0bef6cf56cb6613a96333363c0438c3269ae54d59384240e050" = "액세서리 숍";
+// L_BtnMap_07_T_Text_00
+"000d2f84e3fd7175973dc7c57ae069a8bf75dd84c268a2c2a01458780f15e064" = "옷 가게";
+// L_BtnMap_08_T_Text_00
+"4e8718184f1b8caad921ed09294afa938f3affb2397971838d4a537fd45582ef" = "신발 가게";
+// L_BtnMap_09_T_Text_00
+"35206c0e269c97481a1a29fb78fd946651740853b50c19821c9fd8fdd613a3e0" = "잡화점";
+// L_BtnNpl_00_T_Edit_00
+"c22fc8d7cfcaad9400742e027ca82378c3a7142cdb9fefc424fc43cb616ef835" = "변경하기";
+// L_BtnOption_00_T_BtnL_00
+"7c5f285071fc8be4985f9ce0e00be6cd48bf459229aeccfcd7fea0821c506491" = "노멀";
+// L_BtnOption_00_T_BtnR_00
+"d7236745b4d2c0662792144915ff3a571fb6b1d51ae8dc22f1ba9c6f727f3f29" = "리버스";
+// L_BtnOption_00_T_Header_00
+"a02c5add1590ac11013b9c677eaac64ff439b20401d2db38df1c5d6461d70af8" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]상하 조작";
+// L_BtnOption_00_T_Msg_00
+"d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774" = "자이로 조작이 ON일 때는 무효합니다";
+// L_BtnOption_01_T_BtnL_00
+"63e3af0e7738989005b1a8411dbde66f989af7e9303ec3f3494aa1e946eaa0a7" = "노멀";
+// L_BtnOption_01_T_BtnR_00
+"745708c07907d0ec09043359f5c80980f6c8ba6ea6326be4a15fca15e23ed5e4" = "리버스";
+// L_BtnOption_01_T_Header_00
+"eb101faef0c343847cde5ec268fe5b97f215886d90044ac6d7d80c50c370fdfb" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]좌우 조작";
+// L_BtnOption_02_T_BtnL_00
+"730f5cd5fc92f4212ad4d2927ea1ebcb08b2019a313154525d81f702e4607528" = "ON";
+// L_BtnOption_02_T_BtnR_00
+"78b09e8a98561f071535d171711edf6e391a6d94208d362b20ddae9ea1d09adb" = "OFF";
+// L_BtnOption_02_T_Header_00
+"4945e8ae1ad66d39ccbe7d829dd219b604cd5b72ad04967d0d6cdd2a3bf414c5" = "자이로 조작";
+// L_BtnOption_03_T_BtnL_00
+"0c486a0e9955d0bc47b2f2140e9a60465bcac3a8ea875339b0aeee8bbeeac5c7" = "노멀";
+// L_BtnOption_03_T_BtnR_00
+"899b9027097683a4ff413737ca6bffd73660f741c4b15341c90079d144f8677b" = "리버스";
+// L_BtnOption_03_T_Header_00
+"8f895629e4a3cfefd0b6991822832b3b397897e82126d8abc79d7490b57fc086" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]상하 조작";
+// L_BtnOption_03_T_Msg_00
+"836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8" = "자이로 조작이 ON일 때는 무효합니다";
+// L_BtnOption_04_T_BtnL_00
+"a49e94dc64436ccd9e6e017edfbc3e00d996cd8cbe672ec3972de67a59e057c5" = "노멀";
+// L_BtnOption_04_T_BtnR_00
+"6acd2a1e9ecd2bb5f478fd24d9e2ddf946a40c33eb96dc851798b91ad365da4f" = "리버스";
+// L_BtnOption_04_T_Header_00
+"d148c90dac76a576e52716e5f26e15fc458df04becb8e95774d26a8b46f235e5" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]좌우 조작";
+// L_BtnOption_05_T_BtnL_00
+"10bb91ba2221e19ce11a33aee8af7176cebc60a41b9f3bd0696bc95b50e8ddb2" = "ON";
+// L_BtnOption_05_T_BtnR_00
+"4285a13ab34d06705f6fa4b6cd4a694317e05a9e9b7c3e4de9ac060b633948dc" = "OFF";
+// L_BtnOption_05_T_Header_00
+"95799f696c68e09fb47c56aa6b7389d54fde4a671add57108a0766f9d647f6f9" = "자이로 조작";
+// L_BtnOption_06_T_BtnL_00
+"44f6675820a8886b6e22725550a0d28ea5f315aead2160fde3d5785921819ba7" = "표시 ON";
+// L_BtnOption_06_T_BtnR_00
+"1284fdf3d653f0de6ad2194817474dda0c5eff064e6d1eccd3440a9692a82698" = "표시 OFF";
+// L_BtnOption_06_T_Header_00
+"adf20868a23b0f6d987ec38e34bd0935d80814e8d07203e2d0555027d7d1ddf2" = "투고 표시";
+// L_BtnOption_06_T_Msg_00
+"3fc2dc3c2b7e5673ece749661b3bc729129c7f2139317a6020170ea9b5c9e4c8" = "Parental Controls 설정으로 제한되었습니다";
+// L_BtnOption_07_T_BtnL_00
+"a416e1047ed347220409f267812c648f427d8fd5a90eafcabd3f3dc0fb976604" = "OFF";
+// L_BtnOption_07_T_BtnR_00
+"ae9d0e209bb5c4a9a54a21fb383443c1d666751b75d61e1975e4c6237fa6854d" = "ON";
+// L_BtnOption_07_T_Header_00
+"164f21aa4b4e6c2448984f84628df04b15498b85ceaa7a8130c8deb48f659892" = "색각 서포트";
+// L_BtnOption_08_T_BtnL_00
+"34feec6e92e2c598b018af8e4ebb6a2f53f4a19d5707e56324bc68521583a133" = "송신 ON";
+// L_BtnOption_08_T_BtnR_00
+"8cc0ec08e2a9048e14665c0c1642ddb4fa65eb4fc4773f9cf729055053f2f962" = "송신 OFF";
+// L_BtnOption_08_T_Header_00
+"e2ee0e3ff62942f693f7951563e858a8e5951de91325fa82d186a9c9bc222dca" = "로비 알림";
+// L_BtnStage_00_T_BlackText_00
+"38acd6e71493acfcb8c524e81480704e0896fdcf9ec513d5d6384ba111052272" = "레귤러 매치";
+// L_BtnStage_00_T_WhiteText_00
+"b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650" = "레귤러 매치";
+// L_BtnStage_01_T_BlackText_00
+"7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "카오폴리스 매치
 [size=75%](챌린지)[size=100%]";
-// L_BtnStage_01-T_WhiteText_00
-"60769df7ab904ac76088fb64eb7a3864f0502bfda2e390a2bfb9f0e2c589f777" = "카오폴리스 매치
+// L_BtnStage_01_T_WhiteText_00
+"92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "카오폴리스 매치
 [size=75%](챌린지)[size=100%]";
-// L_BtnStage_04-T_BlackText_00
-"94b427dcbd1daf4f31a1cab32564c924f8a8e9d27531377a11fdf500171622a7" = "SALMON RUN";
-// L_BtnStage_04-T_WhiteText_00
-"05b7756f6757eea1e40fa335769f48d2cdfa783ae4dfcb5aac0d37bc082e51bb" = "SALMON RUN";
-// L_BtnStage_05-T_BlackText_00
-"d2ea8928437483962201eb54cccefa5d019ea117a247fed8a91de01c2b062b2f" = "카오폴리스 매치
+// L_BtnStage_04_T_BlackText_00
+"1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "SALMON RUN";
+// L_BtnStage_04_T_WhiteText_00
+"8b08d20b43a9bcf7def3e3a76c08accb35671f2d25d91a77ba9a2cfab434ae93" = "SALMON RUN";
+// L_BtnStage_05_T_BlackText_00
+"55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394" = "카오폴리스 매치
 [size=75%](오픈)[size=100%]";
-// L_BtnStage_05-T_WhiteText_00
-"68732796b161209e70c14cafcb471bb00e1c7bbe9f10301cdc780df5e9cd0220" = "카오폴리스 매치
+// L_BtnStage_05_T_WhiteText_00
+"d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "카오폴리스 매치
 [size=75%](오픈)[size=100%]";
-// L_Catalog_00-T_Max_00
-"e543c2420c391b0ba8aaa481a018bda892e544a046ac696539bd156024bee214" = "MAX";
-// L_Catalog_00-T_Rank_00
-"c4688038f50dc893771a70887870d4d3616ee4574c8060e5fee8deaf40bc68e3" = "카탈로그 레벨";
-// L_GaugeOption_00-T_Header_00
-"6a674e04f1f3bbe3dce9daa2749d5cf36fe6a88c2fdf19d479e744429c7d300c" = "자이로 조작 감도";
-// L_GaugeOption_00-T_Msg_00
-"a375528f6e172f89486dc05db596499369abd46188a4b1127f9327942673ce5c" = "자이로 조작이 OFF일 때는 무효합니다";
-// L_GaugeOption_01-T_Header_00
-"7171608ff6d3e669c676402c12d3289ff3e2d68f775e0a06257413df8a236f65" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]조작 감도";
-// L_GaugeOption_02-T_Header_00
-"0947cd4994ff484464da73661fd5bb03af8af7ea9840d03fb3963639588d5c14" = "자이로 조작 감도";
-// L_GaugeOption_02-T_Msg_00
-"10c7da8fbd175427fa5abf90c8fd0d77626eddb4d8618d5889a2daba1f5130a5" = "자이로 조작이 OFF일 때는 무효합니다";
-// L_GaugeOption_03-T_Header_00
-"b7e4127fc6d647f10ec7a33b6afee57fac7fa0cfed88fb2a598d1cb2a796ee6b" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]조작 감도";
-// L_NextItem_00-T_NextItem_00
-"6acbb4ceb46f0f4a6403970a842462e4241b212f465b67c42a871cd432db372e" = "다음 아이템";
-// L_Option_00-T_BlackText_00
-"3279d743a8ccb6ac7f563295253bf13c5a1d19174ab9fdfc607932d8387934df" = "TV 모드/
+// L_Catalog_00_T_Max_00
+"edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c" = "MAX";
+// L_Catalog_00_T_Rank_00
+"54ff8e99336d28e094f640230e844c55bf9f770d2b6c50615daff0d23997e8a9" = "카탈로그 레벨";
+// L_GaugeOption_00_T_Header_00
+"f90bd2500dc28783fd7063c8c3d4d0cc2ae1778e10a9d7d72d098febe00b8566" = "자이로 조작 감도";
+// L_GaugeOption_00_T_Msg_00
+"bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3" = "자이로 조작이 OFF일 때는 무효합니다";
+// L_GaugeOption_01_T_Header_00
+"5e109e142033945dbc4a132edfb607172e496b812c73c0b84991468b9fe0cbcb" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]조작 감도";
+// L_GaugeOption_02_T_Header_00
+"46c9d590eea1b842e79ec953dd66aad815f1d379e104ee8dd61e60b1ec9bf253" = "자이로 조작 감도";
+// L_GaugeOption_02_T_Msg_00
+"eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1" = "자이로 조작이 OFF일 때는 무효합니다";
+// L_GaugeOption_03_T_Header_00
+"1655b4537c47418a4f02100cd52900a3edd98a7107a425005554db158cb2780c" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]조작 감도";
+// L_NextItem_00_T_NextItem_00
+"771290f6a993cba44ca6de810df49af5660e7682a3ceca69834e27d3335f2830" = "다음 아이템";
+// L_Option_00_T_BlackText_00
+"e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2" = "TV 모드/
 테이블 모드";
-// L_Option_00-T_WhiteText_00
-"e063f2ea8f03fc2893ed36ad14951d5b3974ff1a86a6ce1ebb58bab2f1180d8e" = "TV 모드/
+// L_Option_00_T_WhiteText_00
+"dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "TV 모드/
 테이블 모드";
-// L_Option_01-T_BlackText_00
-"8c7f8f01bad6a4295a2923ec1723377e24c1766f177ab018d6355f1a4c1b02ce" = "휴대 모드";
-// L_Option_01-T_WhiteText_00
-"385fab5a85eb6e0c1eea19f478a4b0999595445d1e20bfe299907106d923d381" = "휴대 모드";
-// L_Option_02-T_BlackText_00
-"b7a40b3723d11161fca057dcc7d60c5ddcb60504998c4aa9722306b39422011f" = "기타";
-// L_Option_02-T_WhiteText_00
-"1d5f42ec31793ec96d16e599d9fdaf6294fa35c955573334620fcfa8ff11812e" = "기타";
-// L_PlayerEdit_00-T_BlackText_00
-"875c326d96bc168eeaa6b85caab1904e8d18fd1c20cc743c7f6a8fd43368aab1" = "플레이어 설정";
-// L_PlayerEdit_00-T_WhiteText_00
-"46197d831af3975ced9e294243009657a11cac26bf8fc0c0e52a4eb0ad03be22" = "플레이어 설정";
-// L_Player_00-T_BlackText_00
-"9453fbb2ca540b95d01dc27578afda0b7d9cb3f87cf0571e9a3cecf9f3e04a82" = "장비";
-// L_Player_00-T_WhiteText_00
-"b4682e3889f4816d8807dc40889f5796e0c84bf1a59200738887c3d81dce31c3" = "장비";
-// L_Player_01-T_BlackText_00
-"14ee4eaba75cc21051a9a125084705f7a9eb019ca96ce6a8f95fced3e267c698" = "카탈로그";
-// L_Player_01-T_WhiteText_00
-"dde64812c4046e6784179ddfbf28c1db875bea9236f690eee8e03599a167465c" = "카탈로그";
-// L_Player_02-T_BlackText_00
-"828143fe6e5a778303e35a29a9b0fa5b8568c4e4d83a8b4f2ec0ef410110f07e" = "기어 파워";
-// L_Player_02-T_WhiteText_00
-"4740475bd70c489efd28b7cfc02812537f848f9499e91277b3d2041faae5e804" = "기어 파워";
-// L_Player_03-T_BlackText_00
-"ee887a69c3d940bef9a13be6cba376f62f106f0167f0a06100b4755a510b5472" = "영역 배틀러";
-// L_Player_03-T_WhiteText_00
-"15f50594d3934b0dd2b0dd5fdc2046744d4ad489ded13274f77572b6e2ecde27" = "영역 배틀러";
-// L_RankMng_00-T_Max_01
-"85428c3f9c59c4321c486bcb944fc6b8bf6fbefe9c0335d982ef055a094107db" = "MAX";
-// L_RankMng_00-T_RankHeader_01
-"1cd29f781cb4deed55a95e551af8d8df8459ae77caaafd729f9b7c2529676c8d" = "영역 배틀러 레벨";
-// L_Rank_00-T_Max_00
-"8ab2c6c0071019a609580bd49682ea400c40cff74c34be281b245c66b3f457e9" = "MAX";
-// L_Rank_00-T_RankHeader_00
-"169a975a8a0a8c9ca680f979c064cc6afa429ee305a1d3ab34606e5d34d6c36f" = "레벨";
-// L_Stage_01-T_Mode_01
-"27495d403adee1ac7b83076b5e5219034c3140e86a7506d48cecc39859aac6fd" = "다음";
-// L_Stage_02-T_Mode_01
-"20ffa2a26b3f9569410ded29d3834ec684e7ea9861019c243165a0b856a4ab14" = "그다음";
-// L_Stage_03-T_Mode_00
-"b5334b18077a0eaadb3dd29c7d43c82fb1304b03c5b2b9b3879fa612db0d0e3e" = "지금";
-// L_Tab_00-T_Text_00
-"88804d3a570495b8d25d6cdae5dbc190a9817974d946e88aae2c8fbe4c700ff0" = "맵";
-// L_Tab_01-T_Text_00
-"d1a42c8fbaec90836d16b6e5a795477c2847bd3c471294aadeba43cf629d2fc0" = "스테이지 정보";
-// L_Tab_02-T_Text_00
-"e5bcbb82ed3f86c7d4ef215976dfccfb504c9ef2f5b557cdfb65f2a6082d5801" = "플레이어 정보";
-// L_Tab_03-T_Text_00
-"711b677ae02416088d54536cdb5f4470b4e0cd197ef7109a7d6d927faee04b0d" = "옵션";
+// L_Option_01_T_BlackText_00
+"c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e" = "휴대 모드";
+// L_Option_01_T_WhiteText_00
+"7a1445d885c9536d9a75f6b280c416f1b8af76ec6b09ef524f6a416ad5dc9f55" = "휴대 모드";
+// L_Option_02_T_BlackText_00
+"d844678bd4a08d34f56a929aa6b6cddc9237c8f2e866a5efe6f02786a40fb30a" = "기타";
+// L_Option_02_T_WhiteText_00
+"e63d71f890d34b10dd2c5e96cd80ad61ea4f33d262f9e9b7626e186b2845ab7c" = "기타";
+// L_PlayerEdit_00_T_BlackText_00
+"06f5657619f8204c19db278856d3b67d56cc2d30025928af75662c5cc489977e" = "플레이어 설정";
+// L_PlayerEdit_00_T_WhiteText_00
+"b0794c5401adb428dfc90866b2eab964b25ceec9aa2ed8bfe29424733c65e0d9" = "플레이어 설정";
+// L_Player_00_T_BlackText_00
+"531c0870f983c1e0842f27cc83eb9eeedb478aeed880a23310cf9c09f8f460bc" = "장비";
+// L_Player_00_T_WhiteText_00
+"dd1f1199bc84e3f116e719e80e22684102b570bf4d941c489184037441df8531" = "장비";
+// L_Player_01_T_BlackText_00
+"10dac2091593fb8d823d46f2de8fb9fdf866cc05c8c9d5602cf8950291798874" = "카탈로그";
+// L_Player_01_T_WhiteText_00
+"1fb09684b97650fb299497527eb270c470a56b05be85e22852fce5e07bb5d90c" = "카탈로그";
+// L_Player_02_T_BlackText_00
+"0f4c2d97d193e9b56460badb947206f4b8807a9ea0c46811641f0454273549a2" = "기어 파워";
+// L_Player_02_T_WhiteText_00
+"e0d686cd4d672dbc4382e99c753d71183f82da0e037c16181c37e2afa2fc3abb" = "기어 파워";
+// L_Player_03_T_BlackText_00
+"3e2eeb8784e0c6b54703655a872a5acd61c5cb980e0d6eb21d6e0e1eb94cbe5f" = "영역 배틀러";
+// L_Player_03_T_WhiteText_00
+"510a3f4927187e3b35b6d2f9a20d99d26496c696c6f8de1512e0ae3af2753722" = "영역 배틀러";
+// L_RankMng_00_T_Max_01
+"ffa049bb3c93be0393ce772e9ef9b5564b31d095ca8a7ecad511b5d7d609dcdd" = "MAX";
+// L_RankMng_00_T_RankHeader_01
+"fb23a147f361ead139ead8a08556d82bae3b462b5de4b93b0a147261e336fc8e" = "영역 배틀러 레벨";
+// L_Rank_00_T_Max_00
+"67a23744506232f8b11513b699a7fd7a3fd2646025492dbc0e7e95e7dd66e642" = "MAX";
+// L_Rank_00_T_RankHeader_00
+"9e99ac1f280649881ca1cabf48bc0780c51979112ea7bf1f3aa8e24e20fa6e75" = "레벨";
+// L_Stage_01_T_Mode_01
+"4a762127f95f4188eb0b884b545000d69b4f74e697d6a5ac595e39695fd9c1e1" = "다음";
+// L_Stage_02_T_Mode_01
+"5692d1d57f10a958899349ba1295854ee4403335825e8321371d2b5f39feb46f" = "그다음";
+// L_Stage_03_T_Mode_00
+"4848f76d9d33fb0f66e2f197d0b146f751d7841664a63fa653d29d882de9aec4" = "지금";
+// L_Tab_00_T_Text_00
+"e5b9c0df9f13289e4ffa6e210cadcbc23f1402a22f29bae723d6ee576617b879" = "맵";
+// L_Tab_01_T_Text_00
+"b11102ff9b2049e80567c0142a905efb6995bb45d6c4f24984806e7d10542622" = "스테이지 정보";
+// L_Tab_02_T_Text_00
+"4698521e12b95f234654789b7df1b9077493d5af044210a63e08f43ee521a4da" = "플레이어 정보";
+// L_Tab_03_T_Text_00
+"203a7767d22f88f169b52913f7a2faddaee0377ccd1a29db2888111a291af789" = "옵션";
 // T_Catalog_00
 "18b0429ae0198a60a536d57dd1e1956e9bfd3124a10867b118871c01598691b3" = "카탈로그는 잡화점에서 획득할 수 있습니다";
 // T_Count_01
@@ -462,40 +462,40 @@
 "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da" = "숍";
 // T_UdemaeTitle_00
 "0137ce9b6015acdafe7c083ac4591e9592114740e0553d9928ff90d2116a82db" = "랭크";
-// L_Btn_00-L_GuideCancel_00-T_Info_00
-"86462edb66aaacc14cd00098536a05324e27f6fca914e3c46e131332856efadc" = "취소";
-// L_Btn_00-T_Title_00
-"3db3969bf39b7417d7d92db194a7181d67f38ec241834c40da680be6779a0259" = "트리컬러 어택";
-// L_Btn_03-T_Friend_00
-"434f76d0133c838f966b33d1cab80ebb621d3fe609d4de35713929ec56c7569e" = "친구와";
-// L_FestItemAll_00-T_Max_00
-"b4acae5e1931940b3cc91736c1a01a7d62c136d2d2c04ce79baadaa0a3ff2ae8" = "MAX";
-// L_GuideClose_00-T_Info_00
-"a29caeec057f9138087c3fc31d8492f9ea0c3df5c4ce60a35cd0b05d635bcb3d" = "닫기";
-// L_GuideReward_00-T_Info_00
-"e999b9326128f3778b40cea40a3c0d83666da82ad49aff4811419721b939416d" = "보상과 포인트";
-// L_GuideSwitch_00-T_BtnL_00
-"7da8b41b9c18768f475061f456b17e0affa0b0a4eb2b5de2474ed354cf8d6bf4" = "혼자서";
-// L_GuideSwitch_00-T_BtnR_00
-"935f3f9f5e71fd2a255b2d2f6f7e880321de02ee9c72fe1e0d40c5f3afd1c708" = "친구와";
-// L_PlayerStatus_00-L_Choushi_00-T_FestPowCount_00
-"819e2b2246c44399bfa96f5bee8b061285d2a4f7ef91f1acb301c16eb52fc37b" = "계측 중…";
-// L_PlayerStatus_00-L_Choushi_00-T_FestPow_00
-"9f8d5cceeece92da3898b8c208e56151419dd6c88ccb3fecf02e44147f995a07" = "공헌도";
-// L_PlayerStatus_00-L_FestRankGauge_00-T_Max_00
-"4d30275d6a6123a70f698e802e8d13fdce5927df4df80023c6e90ee70e234ca3" = "MAX";
-// L_PlayerStatus_00-L_FestRankGauge_00-T_Vote_00
-"19d1fac5ee57c8ae27501df1a750424f7e2de01bc0cc7ba0e15a099cefc905af" = "[color=0001]페스티벌 투표[color=ffff]를 하러 가자!";
-// L_PlayerStatus_00-L_Rank_00-T_Max_00
-"33ae6aad66b8d0c2a196114dc2de208b6a98ee4b3647248c7a4e0bd7f4544b2f" = "MAX";
-// L_PlayerStatus_00-L_Rank_00-T_RankHeader_00
-"b628fbef79412134ce0a6861084854443f10251e7ceb08f1e7ce9f6db9c3ab22" = "레벨";
-// L_PlayerStatus_00-L_Udemae_00-T_UdemaeTitle_00
-"97e56029dc6d73700ff87d85cd5d0594559c4246bd040180216482c8494e20cd" = "랭크";
-// L_PlayerStatus_01-L_Info_00-T_Info_00
-"0a197a2817839aad2cc5f971bbbe5ad3716b524dca1f04d91e8cfa84143b103a" = "평가 리셋";
-// L_Progress_00-T_Title_00
-"c5d5459016c532e4cb84b1f888e6e72dabafb603b976595677ff086809f8a871" = "승급전";
+// L_Btn_00_L_GuideCancel_00_T_Info_00
+"60a6829b53faf7d4362ed02a0482cc77d24fd91e1b43b7b40ae691d1e560a36b" = "취소";
+// L_Btn_00_T_Title_00
+"af7a16da5148631f10eed1db9eb5d53c77f451d30caf62ec3d4b10c11e795791" = "트리컬러 어택";
+// L_Btn_03_T_Friend_00
+"d69ef2b4211597bc6dcfefaae8864a9f34591a471e17358f696cc3503b45474d" = "친구와";
+// L_FestItemAll_00_T_Max_00
+"92acd08fb0ee986a0f1a70b811163a10c9458ef7e703c46e12b00c17069065bb" = "MAX";
+// L_GuideClose_00_T_Info_00
+"cc760532ab920b96b5faa954ec8b4a3dfcd0f73b968035b4c0720b357a3f5414" = "닫기";
+// L_GuideReward_00_T_Info_00
+"9218c34589c59a67fc2aac6c9b572826d58b84c40ae98af59325ea6b04ed398c" = "보상과 포인트";
+// L_GuideSwitch_00_T_BtnL_00
+"09cd4b729faf8d2d2216b98317832d9e41a0a75799a41b91efafc019b05aa31f" = "혼자서";
+// L_GuideSwitch_00_T_BtnR_00
+"2dcf10ea94501d389cb0b628628c1310ebdf33470cb6d672f175fd5a4ca86395" = "친구와";
+// L_PlayerStatus_00_L_Choushi_00_T_FestPowCount_00
+"762c3f34982c1c6a13010d8ae9537126f9044b84d14328e04f7eb9e8a6b1f44c" = "계측 중…";
+// L_PlayerStatus_00_L_Choushi_00_T_FestPow_00
+"9bd3b855948b2a09ed5609f6a385a28dc0b15cb24b59af329a1f8b781415e5fb" = "공헌도";
+// L_PlayerStatus_00_L_FestRankGauge_00_T_Max_00
+"69d2eda824d6540e73c770cf2dc3774899e7689004d0580d4f55099c89eedf0d" = "MAX";
+// L_PlayerStatus_00_L_FestRankGauge_00_T_Vote_00
+"d8912f52723cd57d95fb57feeb548fe2b0f297b0933537dc2e8c3d16729cf4e5" = "[color=0001]페스티벌 투표[color=ffff]를 하러 가자!";
+// L_PlayerStatus_00_L_Rank_00_T_Max_00
+"8fc7ee17934badce6ae6770581aa64eaa689fb8a29dcd7badbeb5cb8bf1798e0" = "MAX";
+// L_PlayerStatus_00_L_Rank_00_T_RankHeader_00
+"4cd04028683ec607799117431d4f4dfe17075cf465cd4c7670f39de1293b46c5" = "레벨";
+// L_PlayerStatus_00_L_Udemae_00_T_UdemaeTitle_00
+"0396800566937783dc0dcc8d2c6c65a7ea428c7b83bef846f3d5bd8498567bda" = "랭크";
+// L_PlayerStatus_01_L_Info_00_T_Info_00
+"0a08ea8fa115f6a62637fe951e4e7ba7edc7f1e0a2427343caf68c09d7e9f984" = "평가 리셋";
+// L_Progress_00_T_Title_00
+"94a5d451f292e93a0fab51579a57020382859d61181e9c35e3b447ad0f138898" = "승급전";
 // T_Rule_00
 "00d8f2eead8b70ac7344a4e6a62919632b9a2961d22970d0eb0951ad9199bc8c" = "룰";
 // T_Stage_00
@@ -506,20 +506,20 @@
 "c795eddd2526266fc6e0bb74c3897dfce83e12915679a299d1f663d28af6f810" = "VS";
 // T_Wpn_01
 "284afdade29e22fe5a1f6e8cd7e10a5cf7d93a0df4f7a506fbf2258e6fd859e7" = "지급 무기";
-// L_Back_00-T_Info_00
-"fefee737cf612e679c57ae2cd673fc5ec4405afdadf152920561e205cc8e0b68" = "뒤로";
-// L_Back_02-T_Info_00
-"dcafc0e9efdf9519f6c58ea07e2ac55288c42e79807a5f69ec4eb1ee34f08578" = "뒤로";
-// L_BtnCategory_01-T_Category_00
-"73133ff26ce30c5d861dabc16e84cf5468cbbdd22c6d49660b3404afa7505499" = "액세서리";
-// L_BtnCategory_02-T_Category_00
-"05172fc01f8d792b553a0a9a1883a6245444ed826041595fc9fbc666c6901b9e" = "옷";
-// L_BtnCategory_03-T_Category_00
-"8f14bcf7bc77c45dc8200a89da226d7e4fbc7a7fae05b38833f220b3daf86570" = "신발";
-// L_Btn_00-T_Info_00
-"0dcebb7bd1d71d82728f1a2442cdad9a6870b2bdb6e9d728afa8a424ffe57664" = "가지고 있는 파편";
-// L_Btn_01-T_Info_00
-"0978f3ad2cdc333856bebcc1e16ec7ccf34c32cbae1e09bcf87e0e37170826b9" = "표시 전환";
+// L_Back_00_T_Info_00
+"1bbe6b41de4a67b55d31fc644fd943c9f4e71b34366c5db140023fdebcdf7a93" = "뒤로";
+// L_Back_02_T_Info_00
+"2d98fec048ebc6be3516927b577c632f3b45fae680ce029d178dfa2303cbc1a9" = "뒤로";
+// L_BtnCategory_01_T_Category_00
+"33699c982aba76871d69aaa6c98347c5c390cc91249503db94cfbb4bce806f6e" = "액세서리";
+// L_BtnCategory_02_T_Category_00
+"de161a26f13ec2867d61b4d92c36c542c2073ddcd0af6a4df7b879e68861ae95" = "옷";
+// L_BtnCategory_03_T_Category_00
+"e20b1ca6f971b216b49131435117a25bdc4742f3c5602a9478e49b0abd900415" = "신발";
+// L_Btn_00_T_Info_00
+"406c1bbd30e8290549efc215b353991a7625e072b28995e0c0a37f46759570a8" = "가지고 있는 파편";
+// L_Btn_01_T_Info_00
+"cdb3d372185799084b4b305884a67130fc1309c293785a57f0b51f57d83a2668" = "표시 전환";
 // T_NoSort_00
 "6d2245e65f8b1d5e7d2e8fb26e7f1abdd19940675bce4917366bf1c4790ee375" = "해당하는 것이 없습니다";
 // Blaze
@@ -614,6 +614,80 @@
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "거대";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
+// Common_Customize
+"e5749152fda778df2b9747aa93c0645cafd85d08774cd6962e98cddcec1c568a" = "Customize";
+// Common_DarkMode
+"33ea6681abc6040a6d4a59ac74a42fd50d9bdb85b2951c6ee18624b90a21fd77" = "Dark mode";
+// Common_GamingMode
+"0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd" = "Gaming mode";
+// Common_Settings
+"bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81" = "App settings";
+// Common_Data_Managements
+"1b5f4155611ed4e69a7ca200da1bcc1e5133406013e9157e116585975a89eaa3" = "Data management";
+// Common_Job_Results
+"c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40" = "Results";
+// Common_Job_Works
+"0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6" = "Shift worked";
+// Common_Privacy_Policy
+"27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d" = "Privacy policy";
+// Common_Wipe_Results
+"101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652" = "Erase results";
+// Common_Wipe_Results_Txt
+"0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "Delete all results in the app.";
+// Common_Unlink_Accounts
+"b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48" = "Unlinking";
+// Common_Unlink_Accounts_Txt
+"024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88" = "Unlinking Nintendo Switch Online accounts(account will not be deleted).";
+// Common_Player_You
+"b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1" = "You";
+// Common_Player_Crew
+"4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847" = "Crew";
+// Common_Defeated_Sakelien_Count
+"7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "Boss salmonids defeated";
+// Common_Death_Count
+"e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c" = "Death counts";
+// Common_Grade_Point
+"38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "Grade points";
+// Common_Grade_Id
+"c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "Grade";
+// Common_Actual_Value
+"5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "Actual value";
+// Common_Estimated_Value
+"bd75b0cd71909ee61794c727e9f0049f3effb1d14aae83ceb07d914c6070910a" = "Estimated value";
+// Common_Supplied_Count
+"144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681" = "Supplied weapons";
+// Common_Clear_Ratio
+"f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "Clearance rate";
+// Common_Golden_Eggs_Collected
+"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "Golden eggs collected";
+// Common_Power_Eggs_Collected
+"215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "Power eggs delivered";
+// Common_Event_Probability
+"e4c910ed916d3db108d31a01a887cc2300cc5c6488814d47b799dedfd746e31e" = "Event frequency";
+// Common_Get_Schedules
+"3c87d33ca26429f39a25bfb0cab95d4fdf9992ea20dff2a222ae34b8695b7b92" = "Sync schedules";
+// Common_Get_Schedules_Txt
+"c469c31538a16e91734a3efa4d52bf816082953a16a4c174ca0f76bcd9a8f0a2" = "Retrieve schedule data";
+// Common_MyPage
+"97b70d696aaee80bbe2969e375814549460a13f8d6766c9fbff4a3a675c71e40" = "My Page";
+// Common_Welcome_App
+"b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1" = "Welcome to Salmonia3";
+// Common_Welcome_App_Txt
+"80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2" = "Enhance your online play experience with the Salmonia3+!";
+// Common_Tracking_Data
+"f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e" = "About Tracking Usage Data";
+// Common_Tracking_Data_Txt
+"64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "If you select Allow, the application collect data, including via cookies, and will send it to the Google Analytics Service server in order to optimize content, products and services.";
+// Common_Sign_In
+"380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d" = "Sign in";
+// Common_Sing_In_Title
+"042695a2f59f9c626bb1801d112b8ab3a29533c61bfd71b13550659aed2d2426" = "Sign in with your Nintendo Account";
+// Common_Sign_In_Txt
+"9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5" = "Your Nintendo Account must be linked to a Nintendo Switch console";
+// Common_Confirm_Danger
+"5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "This operation cannot be undone.";
+// Common_Charts
+"cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "Charts";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "새먼 런";
 // Carousel_FestOpening
@@ -802,8 +876,8 @@
 "7950a6099409e87dacda30fa9c248ef55b154a0942054e1cf1e2e70b98c91ac5" = "옐로";
 // Challenge_YourPoint
 "48775e627fe4cf3832e83faac7646929b111a6824de03b7817ab4b44acbd13f2" = "{ 0 }p가 있습니다";
-// Common_%
-"8b74415a5845dc2a828f6a0b172c2785dcec93d0a3959fcd458dfcfd13fea581" = "{ 0 }%";
+// Common
+"309955e00850b8afeb148450c7208585a85f8b652d5c625c777726f44837f69c" = "{ 0 }%";
 // Common_Cancel
 "dc982f1cb12e7f0a1cc73d9d414c3c62bf0d65e9003622e38e1788809762aa7d" = "취소";
 // Common_ClamBlitz
@@ -984,8 +1058,8 @@
 "7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4" = "오징어넷 3를 표시할 수 없습니다. 잠시 후 통신 환경이 좋은 장소에서 다시 시도해 주십시오.<br />문제가 해결되지 않을 경우, 브라우저가 최신 버전으로 업데이트되어 있는지 확인해 주십시오.<br />그래도 이 화면이 표시될 경우, 이용하시는 환경에서 오징어넷 3를 이용할 수 없을 가능성이 있습니다.";
 // Error_Reload
 "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8" = "새로 고침";
-// FesRecord_%
-"e56d4b8498b52b021eaaab67732fbe670fd5b4b5461a695deb3b9fc7174815ea" = "{ 0 }%";
+// FesRecord
+"e11d11645a075d5c06663ac5703cbda2e0415d8ceb31c0f60d6a5d2cf51917b0" = "{ 0 }%";
 // FesRecord_AppName
 "3de51eb87f23274b60ad95573c477fdb3b1c3ea46f488ed28094596f784cb5be" = "페스티벌";
 // FesRecord_Attack

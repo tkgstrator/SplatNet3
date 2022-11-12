@@ -66,12 +66,24 @@ extension String {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return []
         }
-        guard let matched = regex.firstMatch(in: self, range: NSRange(location: 0, length: self.count)) else {
+        guard let matches = regex.firstMatch(in: self, range: NSRange(location: 0, length: self.count)) else {
             return []
         }
         return group.map { group -> String in
-            (self as NSString).substring(with: matched.range(at: group))
+            (self as NSString).substring(with: matches.range(at: group))
         }
+    }
+
+    public func capture(pattern: String) -> [String] {
+        guard let regex = try? NSRegularExpression(pattern: pattern) else {
+            return []
+        }
+
+        let matches: [NSTextCheckingResult] = regex.matches(in: self, range: NSRange(location: 0, length: self.count))
+
+        return matches.map({ match in
+            (self as NSString).substring(with: match.range)
+        })
     }
 
     /// 文字列をBase64復号して遊んだ時間をUnixTimestampで返す

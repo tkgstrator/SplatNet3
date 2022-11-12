@@ -9,7 +9,6 @@ import base64
 import hashlib
 import os
 import re
-import deepl
 
 
 def get_base64(plain: str) -> str:
@@ -21,6 +20,7 @@ def get_hash(plain: str) -> str:
 
 
 def format(key: str, value: str) -> str:
+    key = key.replace("_%", "").replace("-", "_").strip()
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
 
 
@@ -73,6 +73,7 @@ def get_localized():
     # Internal codeを取得
     codes = re.findall('"./([a-z]{2}-[A-Z]{2}).json":\[(.*?)\]', response)
     codes = tuple_to_dict(list(map(lambda x: (x[1].split(",")[-1], x[0]), codes)))
+    print(codes)
 
     # イカリング3から言語データのマップを作成
     data: list[Locale] = get_locales()
@@ -101,11 +102,13 @@ def get_localized():
     }
 
     languages: list[Language] = list(map(lambda v: Language(**v), languages.values()))
+    deep = json.load(open("output.json", mode="r"))
 
     for language in languages:
         # 内部データから検索
         print(f"Downloading {language.xcode}")
         url = f"https://leanny.github.io/splat3/data/language/{language.internal}.json"
+        print(url)
         params = []
         localized = []
 
@@ -199,6 +202,16 @@ def get_localized():
         v = "-"
         params.append(format(k, v))
         localized.append(localized_format(k, v))
+
+        # DeepL翻訳データを変換
+        try:
+            for k, v in deep[language.code].items():
+                params.append(format(k, v))
+                localized.append(localized_format(k, v))
+        except:
+            for k, v in deep["en-US"].items():
+                params.append(format(k, v))
+                localized.append(localized_format(k, v))
 
         # イカリング3からデータ取得
         if language.code == "en-US":

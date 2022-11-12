@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum LocalizedType: String, CaseIterable, Hashable {
+public enum LocalizedType: String, CaseIterable {
 	/// テッキュウ
 	case SakeArtillery = "2c7a648b4c73f291b5ede9c55f33d4e3f99c263d3a27ef3d2eb2a96d328d66ac"
 	/// ドロシャケ
@@ -616,6 +616,80 @@ public enum LocalizedType: String, CaseIterable, Hashable {
 	case T_TitleCoop_44 = "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449"
 	/// -
 	case T_TitleCoop_45 = "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d"
+	/// カスタマイズ
+	case Common_Customize = "e5749152fda778df2b9747aa93c0645cafd85d08774cd6962e98cddcec1c568a"
+	/// ダークモード
+	case Common_DarkMode = "33ea6681abc6040a6d4a59ac74a42fd50d9bdb85b2951c6ee18624b90a21fd77"
+	/// ゲーミングモード
+	case Common_GamingMode = "0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd"
+	/// アプリ設定
+	case Common_Settings = "bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81"
+	/// データ管理
+	case Common_Data_Managements = "1b5f4155611ed4e69a7ca200da1bcc1e5133406013e9157e116585975a89eaa3"
+	/// 記録
+	case Common_Job_Results = "c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40"
+	/// バイト
+	case Common_Job_Works = "0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6"
+	/// プライバシーポリシー
+	case Common_Privacy_Policy = "27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d"
+	/// リザルト消去
+	case Common_Wipe_Results = "101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652"
+	/// アプリで保存されている全てのリザルトを削除します
+	case Common_Wipe_Results_Txt = "0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8"
+	/// アカウント連携解除
+	case Common_Unlink_Accounts = "b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48"
+	/// アプリとニンテンドースイッチオンラインのアカウント連携を解除します（アカウントは削除されません）
+	case Common_Unlink_Accounts_Txt = "024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88"
+	/// あなた
+	case Common_Player_You = "b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1"
+	/// なかま
+	case Common_Player_Crew = "4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847"
+	/// オオモノシャケを倒した数
+	case Common_Defeated_Sakelien_Count = "7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6"
+	/// 助けられた数
+	case Common_Death_Count = "e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c"
+	/// 評価ポイント
+	case Common_Grade_Point = "38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99"
+	/// 称号
+	case Common_Grade_Id = "c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7"
+	/// 実測値
+	case Common_Actual_Value = "5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86"
+	/// 推定値
+	case Common_Estimated_Value = "bd75b0cd71909ee61794c727e9f0049f3effb1d14aae83ceb07d914c6070910a"
+	/// ブキ支給回数
+	case Common_Supplied_Count = "144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681"
+	/// クリア率
+	case Common_Clear_Ratio = "f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222"
+	/// 金イクラ納品数
+	case Common_Golden_Eggs_Collected = "0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523"
+	/// イクラ獲得数
+	case Common_Power_Eggs_Collected = "215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d"
+	/// イベント発生率
+	case Common_Event_Probability = "e4c910ed916d3db108d31a01a887cc2300cc5c6488814d47b799dedfd746e31e"
+	/// スケジュール取得
+	case Common_Get_Schedules = "3c87d33ca26429f39a25bfb0cab95d4fdf9992ea20dff2a222ae34b8695b7b92"
+	/// 過去のスケジュールデータを取得します
+	case Common_Get_Schedules_Txt = "c469c31538a16e91734a3efa4d52bf816082953a16a4c174ca0f76bcd9a8f0a2"
+	/// マイページ
+	case Common_MyPage = "97b70d696aaee80bbe2969e375814549460a13f8d6766c9fbff4a3a675c71e40"
+	/// ようこそSalmonia3+へ
+	case Common_Welcome_App = "b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1"
+	/// もっと便利なサーモンランライフを！
+	case Common_Welcome_App_Txt = "80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2"
+	/// 利用データの収集について
+	case Common_Tracking_Data = "f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e"
+	/// 許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。
+	case Common_Tracking_Data_Txt = "64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce"
+	/// ログイン
+	case Common_Sign_In = "380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d"
+	/// ニンテンドーアカウントにログイン
+	case Common_Sing_In_Title = "042695a2f59f9c626bb1801d112b8ab3a29533c61bfd71b13550659aed2d2426"
+	/// ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。
+	case Common_Sign_In_Txt = "9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5"
+	/// この操作は取り消せません。続行して良いですか。
+	case Common_Confirm_Danger = "5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106"
+	/// チャート
+	case Common_Charts = "cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467"
 	/// サーモンラン
 	case Carousel_CoopHistory = "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980"
 	/// フェス開催！！
