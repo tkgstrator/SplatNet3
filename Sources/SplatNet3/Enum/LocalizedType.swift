@@ -646,12 +646,14 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_Player_Crew = "4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847"
 	/// オオモノシャケを倒した数
 	case Common_Defeated_Sakelien_Count = "7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6"
-	/// 助けられた数
+	/// 助けられた回数
 	case Common_Death_Count = "e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c"
 	/// 評価ポイント
 	case Common_Grade_Point = "38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99"
 	/// 称号
 	case Common_Grade_Id = "c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7"
+	/// イクラ取得率
+	case Common_Ikura_Ratio = "4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f"
 	/// 実測値
 	case Common_Actual_Value = "5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86"
 	/// 推定値
@@ -683,13 +685,17 @@ public enum LocalizedType: String, CaseIterable {
 	/// ログイン
 	case Common_Sign_In = "380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d"
 	/// ニンテンドーアカウントにログイン
-	case Common_Sing_In_Title = "042695a2f59f9c626bb1801d112b8ab3a29533c61bfd71b13550659aed2d2426"
+	case Common_Sign_In_Title = "f4774a205d9fdc52841bdb71a5ab49e309557bec2c970e37fbe4c3df4af88f25"
 	/// ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。
 	case Common_Sign_In_Txt = "9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5"
 	/// この操作は取り消せません。続行して良いですか。
 	case Common_Confirm_Danger = "5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106"
 	/// チャート
 	case Common_Charts = "cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467"
+	/// すすむ
+	case Common_Next = "5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec"
+	/// レビューを書く
+	case Common_Write_Review = "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd"
 	/// サーモンラン
 	case Carousel_CoopHistory = "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980"
 	/// フェス開催！！

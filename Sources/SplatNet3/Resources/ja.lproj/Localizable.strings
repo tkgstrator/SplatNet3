@@ -645,11 +645,13 @@
 // Common_Defeated_Sakelien_Count
 "7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "オオモノシャケを倒した数";
 // Common_Death_Count
-"e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c" = "助けられた数";
+"e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c" = "助けられた回数";
 // Common_Grade_Point
 "38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "評価ポイント";
 // Common_Grade_Id
 "c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "称号";
+// Common_Ikura_Ratio
+"4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f" = "イクラ取得率";
 // Common_Actual_Value
 "5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "実測値";
 // Common_Estimated_Value
@@ -680,14 +682,18 @@
 "64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。";
 // Common_Sign_In
 "380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d" = "ログイン";
-// Common_Sing_In_Title
-"042695a2f59f9c626bb1801d112b8ab3a29533c61bfd71b13550659aed2d2426" = "ニンテンドーアカウントにログイン";
+// Common_Sign_In_Title
+"f4774a205d9fdc52841bdb71a5ab49e309557bec2c970e37fbe4c3df4af88f25" = "ニンテンドーアカウントにログイン";
 // Common_Sign_In_Txt
 "9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5" = "ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。";
 // Common_Confirm_Danger
 "5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "この操作は取り消せません。続行して良いですか。";
 // Common_Charts
 "cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "チャート";
+// Common_Next
+"5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "すすむ";
+// Common_Write_Review
+"7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "レビューを書く";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "サーモンラン";
 // Carousel_FestOpening

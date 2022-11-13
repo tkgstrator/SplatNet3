@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Shelter_Bear_Coop.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

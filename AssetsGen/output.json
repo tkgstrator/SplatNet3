@@ -15,9 +15,10 @@
     "Common_Player_You": "あなた",
     "Common_Player_Crew": "なかま",
     "Common_Defeated_Sakelien_Count": "オオモノシャケを倒した数",
-    "Common_Death_Count": "助けられた数",
+    "Common_Death_Count": "助けられた回数",
     "Common_Grade_Point": "評価ポイント",
     "Common_Grade_Id": "称号",
+    "Common_Ikura_Ratio": "イクラ取得率",
     "Common_Actual_Value": "実測値",
     "Common_Estimated_Value": "推定値",
     "Common_Supplied_Count": "ブキ支給回数",
@@ -33,10 +34,12 @@
     "Common_Tracking_Data": "利用データの収集について",
     "Common_Tracking_Data_Txt": "許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。",
     "Common_Sign_In": "ログイン",
-    "Common_Sing_In_Title": "ニンテンドーアカウントにログイン",
+    "Common_Sign_In_Title": "ニンテンドーアカウントにログイン",
     "Common_Sign_In_Txt": "ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。",
     "Common_Confirm_Danger": "この操作は取り消せません。続行して良いですか。",
-    "Common_Charts": "チャート"
+    "Common_Charts": "チャート",
+    "Common_Next": "すすむ",
+    "Common_Write_Review": "レビューを書く"
   },
   "en-US": {
     "Common_Customize": "Customize",
@@ -57,6 +60,7 @@
     "Common_Death_Count": "Death counts",
     "Common_Grade_Point": "Grade points",
     "Common_Grade_Id": "Grade",
+    "Common_Ikura_Ratio": "Egg ratio",
     "Common_Actual_Value": "Actual value",
     "Common_Estimated_Value": "Estimated value",
     "Common_Supplied_Count": "Supplied weapons",
@@ -72,10 +76,12 @@
     "Common_Tracking_Data": "About Tracking Usage Data",
     "Common_Tracking_Data_Txt": "If you select Allow, the application collect data, including via cookies, and will send it to the Google Analytics Service server in order to optimize content, products and services.",
     "Common_Sign_In": "Sign in",
-    "Common_Sing_In_Title": "Sign in with your Nintendo Account",
+    "Common_Sign_In_Title": "Sign in with your Nintendo Account",
     "Common_Sign_In_Txt": "Your Nintendo Account must be linked to a Nintendo Switch console",
     "Common_Confirm_Danger": "This operation cannot be undone.",
-    "Common_Charts": "Charts"
+    "Common_Charts": "Charts",
+    "Common_Next": "Next",
+    "Common_Write_Review": "Write a review"
   },
   "en-GB": {
     "Common_Customize": "Customize",
@@ -96,6 +102,7 @@
     "Common_Death_Count": "Death counts",
     "Common_Grade_Point": "Grade points",
     "Common_Grade_Id": "Grade",
+    "Common_Ikura_Ratio": "Egg ratio",
     "Common_Actual_Value": "Actual value",
     "Common_Estimated_Value": "Estimated value",
     "Common_Supplied_Count": "Supplied weapons",
@@ -111,10 +118,12 @@
     "Common_Tracking_Data": "About Tracking Usage Data",
     "Common_Tracking_Data_Txt": "If you select Allow, the application collect data, including via cookies, and will send it to the Google Analytics Service server in order to optimize content, products and services.",
     "Common_Sign_In": "Sign in",
-    "Common_Sing_In_Title": "Sign in with your Nintendo Account",
+    "Common_Sign_In_Title": "Sign in with your Nintendo Account",
     "Common_Sign_In_Txt": "Your Nintendo Account must be linked to a Nintendo Switch console",
     "Common_Confirm_Danger": "This operation cannot be undone.",
-    "Common_Charts": "Charts"
+    "Common_Charts": "Charts",
+    "Common_Next": "Next",
+    "Common_Write_Review": "Write a review"
   },
   "de-DE": {
     "Common_Customize": "Anpassen",
@@ -135,6 +144,7 @@
     "Common_Death_Count": "Der Tod zählt",
     "Common_Grade_Point": "Notenpunkte",
     "Common_Grade_Id": "Klasse",
+    "Common_Ikura_Ratio": "Ei-Verhältnis",
     "Common_Actual_Value": "Tatsächlicher Wert",
     "Common_Estimated_Value": "Geschätzter Wert",
     "Common_Supplied_Count": "Gelieferte Waffen",
@@ -150,10 +160,12 @@
     "Common_Tracking_Data": "Über die Verfolgung von Nutzungsdaten",
     "Common_Tracking_Data_Txt": "Wenn Sie die Option Zulassen wählen, sammelt die Anwendung Daten, auch über Cookies, und sendet sie an den Server des Google Analytics Service, um Inhalte, Produkte und Dienstleistungen zu optimieren.",
     "Common_Sign_In": "Eintragen",
-    "Common_Sing_In_Title": "Melden Sie sich mit Ihrem Nintendo-Konto an",
+    "Common_Sign_In_Title": "Melden Sie sich mit Ihrem Nintendo-Konto an",
     "Common_Sign_In_Txt": "Ihr Nintendo-Konto muss mit einer Nintendo Switch-Konsole verknüpft sein",
     "Common_Confirm_Danger": "Dieser Vorgang kann nicht rückgängig gemacht werden.",
-    "Common_Charts": "Diagramme"
+    "Common_Charts": "Diagramme",
+    "Common_Next": "Weiter",
+    "Common_Write_Review": "Eine Bewertung schreiben"
   },
   "it-IT": {
     "Common_Customize": "Personalizzazione",
@@ -174,6 +186,7 @@
     "Common_Death_Count": "Conteggio dei decessi",
     "Common_Grade_Point": "Punti di valutazione",
     "Common_Grade_Id": "Grado",
+    "Common_Ikura_Ratio": "Rapporto di uova",
     "Common_Actual_Value": "Valore effettivo",
     "Common_Estimated_Value": "Valore stimato",
     "Common_Supplied_Count": "Armi in dotazione",
@@ -189,10 +202,12 @@
     "Common_Tracking_Data": "Informazioni sul tracciamento dei dati di utilizzo",
     "Common_Tracking_Data_Txt": "Se si seleziona Consenti, l'applicazione raccoglierà i dati, anche attraverso i cookie, e li invierà al server di Google Analytics Service al fine di ottimizzare i contenuti, i prodotti e i servizi.",
     "Common_Sign_In": "Accedi",
-    "Common_Sing_In_Title": "Accedi con il tuo account Nintendo",
+    "Common_Sign_In_Title": "Accedere con il proprio account Nintendo",
     "Common_Sign_In_Txt": "L'account Nintendo deve essere collegato a una console Nintendo Switch.",
     "Common_Confirm_Danger": "Questa operazione non può essere annullata.",
-    "Common_Charts": "Grafici"
+    "Common_Charts": "Grafici",
+    "Common_Next": "Avanti",
+    "Common_Write_Review": "Scrivi una recensione"
   },
   "fr-FR": {
     "Common_Customize": "Personnalisez",
@@ -213,6 +228,7 @@
     "Common_Death_Count": "Nombre de décès",
     "Common_Grade_Point": "Points de note",
     "Common_Grade_Id": "Grade",
+    "Common_Ikura_Ratio": "Rapport de l'œuf",
     "Common_Actual_Value": "Valeur réelle",
     "Common_Estimated_Value": "Valeur estimée",
     "Common_Supplied_Count": "Armes fournies",
@@ -228,10 +244,12 @@
     "Common_Tracking_Data": "À propos du suivi des données d'utilisation",
     "Common_Tracking_Data_Txt": "Si vous sélectionnez Autoriser, l'application collecte des données, y compris via des cookies, et les envoie au serveur du service Google Analytics afin d'optimiser le contenu, les produits et les services.",
     "Common_Sign_In": "Se connecter",
-    "Common_Sing_In_Title": "Connectez-vous avec votre compte Nintendo",
+    "Common_Sign_In_Title": "Connectez-vous avec votre compte Nintendo",
     "Common_Sign_In_Txt": "Votre compte Nintendo doit être lié à une console Nintendo Switch.",
     "Common_Confirm_Danger": "Cette opération ne peut être annulée.",
-    "Common_Charts": "Graphiques"
+    "Common_Charts": "Graphiques",
+    "Common_Next": "Suivant",
+    "Common_Write_Review": "Écrire un commentaire"
   },
   "fr-CA": {
     "Common_Customize": "Personnalisez",
@@ -252,6 +270,7 @@
     "Common_Death_Count": "Nombre de décès",
     "Common_Grade_Point": "Points de note",
     "Common_Grade_Id": "Grade",
+    "Common_Ikura_Ratio": "Rapport de l'œuf",
     "Common_Actual_Value": "Valeur réelle",
     "Common_Estimated_Value": "Valeur estimée",
     "Common_Supplied_Count": "Armes fournies",
@@ -267,10 +286,12 @@
     "Common_Tracking_Data": "À propos du suivi des données d'utilisation",
     "Common_Tracking_Data_Txt": "Si vous sélectionnez Autoriser, l'application collecte des données, y compris via des cookies, et les envoie au serveur du service Google Analytics afin d'optimiser le contenu, les produits et les services.",
     "Common_Sign_In": "Se connecter",
-    "Common_Sing_In_Title": "Connectez-vous avec votre compte Nintendo",
+    "Common_Sign_In_Title": "Connectez-vous avec votre compte Nintendo",
     "Common_Sign_In_Txt": "Votre compte Nintendo doit être lié à une console Nintendo Switch.",
     "Common_Confirm_Danger": "Cette opération ne peut être annulée.",
-    "Common_Charts": "Graphiques"
+    "Common_Charts": "Graphiques",
+    "Common_Next": "Suivant",
+    "Common_Write_Review": "Écrire un commentaire"
   },
   "nl-NL": {
     "Common_Customize": "Aanpassen",
@@ -291,6 +312,7 @@
     "Common_Death_Count": "De dood telt",
     "Common_Grade_Point": "Punten",
     "Common_Grade_Id": "Rang",
+    "Common_Ikura_Ratio": "Eierverhouding",
     "Common_Actual_Value": "Werkelijke waarde",
     "Common_Estimated_Value": "Geschatte waarde",
     "Common_Supplied_Count": "Geleverde wapens",
@@ -299,17 +321,19 @@
     "Common_Power_Eggs_Collected": "Geleverde machtseieren",
     "Common_Event_Probability": "Gebeurtenis frequentie",
     "Common_Get_Schedules": "Schema's synchroniseren",
-    "Common_Get_Schedules_Txt": "Schema gegevens ophalen",
+    "Common_Get_Schedules_Txt": "Ophalen roostergegevens",
     "Common_MyPage": "Mijn Pagina",
     "Common_Welcome_App": "Welkom bij Salmonia3",
     "Common_Welcome_App_Txt": "Verbeter uw online speelervaring met de Salmonia3+!",
     "Common_Tracking_Data": "Over het bijhouden van gebruiksgegevens",
     "Common_Tracking_Data_Txt": "Als u Toestaan selecteert, verzamelt de toepassing gegevens, ook via cookies, en stuurt deze naar de server van de Google Analytics Service om de inhoud, producten en diensten te optimaliseren.",
     "Common_Sign_In": "Aanmelden",
-    "Common_Sing_In_Title": "Aanmelden met je Nintendo-account",
+    "Common_Sign_In_Title": "Aanmelden met je Nintendo-account",
     "Common_Sign_In_Txt": "Je Nintendo-account moet gekoppeld zijn aan een Nintendo Switch-console",
     "Common_Confirm_Danger": "Deze operatie kan niet ongedaan worden gemaakt.",
-    "Common_Charts": "Grafieken"
+    "Common_Charts": "Grafieken",
+    "Common_Next": "Volgende",
+    "Common_Write_Review": "Schrijf een review"
   },
   "ru-RU": {
     "Common_Customize": "Настроить",
@@ -330,6 +354,7 @@
     "Common_Death_Count": "Количество смертей",
     "Common_Grade_Point": "Баллы за оценку",
     "Common_Grade_Id": "Класс",
+    "Common_Ikura_Ratio": "Соотношение яиц",
     "Common_Actual_Value": "Фактическое значение",
     "Common_Estimated_Value": "Оценочная стоимость",
     "Common_Supplied_Count": "Поставляемое оружие",
@@ -345,10 +370,12 @@
     "Common_Tracking_Data": "Об отслеживании данных об использовании",
     "Common_Tracking_Data_Txt": "Если вы выберите \"Разрешить\", приложение будет собирать данные, в том числе с помощью файлов cookie, и отправлять их на сервер службы Google Analytics для оптимизации контента, продуктов и услуг.",
     "Common_Sign_In": "Войти",
-    "Common_Sing_In_Title": "Войдите в систему под своей учетной записью Nintendo",
+    "Common_Sign_In_Title": "Войдите в систему под своей учетной записью Nintendo",
     "Common_Sign_In_Txt": "Ваша учетная запись Nintendo должна быть привязана к консоли Nintendo Switch",
     "Common_Confirm_Danger": "Эта операция не может быть отменена.",
-    "Common_Charts": "Графики"
+    "Common_Charts": "Графики",
+    "Common_Next": "Следующий",
+    "Common_Write_Review": "Написать отзыв"
   },
   "zh-CN": {
     "Common_Customize": "定制",
@@ -369,6 +396,7 @@
     "Common_Death_Count": "死亡人数",
     "Common_Grade_Point": "等级分",
     "Common_Grade_Id": "等级",
+    "Common_Ikura_Ratio": "鸡蛋比率",
     "Common_Actual_Value": "实际价值",
     "Common_Estimated_Value": "估计价值",
     "Common_Supplied_Count": "提供的武器",
@@ -384,10 +412,12 @@
     "Common_Tracking_Data": "关于跟踪使用数据",
     "Common_Tracking_Data_Txt": "如果您选择 \"允许\"，本应用程序将收集数据，包括通过cookies，并将其发送到谷歌分析服务服务器，以优化内容、产品和服务。",
     "Common_Sign_In": "登录",
-    "Common_Sing_In_Title": "用你的任天堂账户登录",
+    "Common_Sign_In_Title": "用你的任天堂账户登录",
     "Common_Sign_In_Txt": "您的任天堂账户必须与任天堂Switch主机相连",
     "Common_Confirm_Danger": "这一操作不能被撤销。",
-    "Common_Charts": "图表"
+    "Common_Charts": "图表",
+    "Common_Next": "下一页",
+    "Common_Write_Review": "撰写评论"
   },
   "zh-TW": {
     "Common_Customize": "定制",
@@ -408,6 +438,7 @@
     "Common_Death_Count": "死亡人数",
     "Common_Grade_Point": "等级分",
     "Common_Grade_Id": "等级",
+    "Common_Ikura_Ratio": "鸡蛋比率",
     "Common_Actual_Value": "实际价值",
     "Common_Estimated_Value": "估计价值",
     "Common_Supplied_Count": "提供的武器",
@@ -423,10 +454,12 @@
     "Common_Tracking_Data": "关于跟踪使用数据",
     "Common_Tracking_Data_Txt": "如果您选择 \"允许\"，本应用程序将收集数据，包括通过cookies，并将其发送到谷歌分析服务服务器，以优化内容、产品和服务。",
     "Common_Sign_In": "登录",
-    "Common_Sing_In_Title": "用你的任天堂账户登录",
+    "Common_Sign_In_Title": "用你的任天堂账户登录",
     "Common_Sign_In_Txt": "您的任天堂账户必须与任天堂Switch主机相连",
     "Common_Confirm_Danger": "这一操作不能被撤销。",
-    "Common_Charts": "图表"
+    "Common_Charts": "图表",
+    "Common_Next": "下一页",
+    "Common_Write_Review": "撰写评论"
   },
   "es-ES": {
     "Common_Customize": "Personalice",
@@ -447,6 +480,7 @@
     "Common_Death_Count": "Recuento de muertes",
     "Common_Grade_Point": "Puntos de calificación",
     "Common_Grade_Id": "Grado",
+    "Common_Ikura_Ratio": "Proporción de huevos",
     "Common_Actual_Value": "Valor real",
     "Common_Estimated_Value": "Valor estimado",
     "Common_Supplied_Count": "Armas suministradas",
@@ -462,10 +496,12 @@
     "Common_Tracking_Data": "Sobre el seguimiento de los datos de uso",
     "Common_Tracking_Data_Txt": "Si selecciona Permitir, la aplicación recopilará datos, incluso a través de cookies, y los enviará al servidor del servicio de Google Analytics con el fin de optimizar el contenido, los productos y los servicios.",
     "Common_Sign_In": "Acceder",
-    "Common_Sing_In_Title": "Inicia sesión con tu cuenta Nintendo",
+    "Common_Sign_In_Title": "Inicia sesión con tu cuenta Nintendo",
     "Common_Sign_In_Txt": "Tu cuenta Nintendo debe estar vinculada a una consola Nintendo Switch",
     "Common_Confirm_Danger": "Esta operación no se puede deshacer.",
-    "Common_Charts": "Gráficos"
+    "Common_Charts": "Gráficos",
+    "Common_Next": "Siguiente",
+    "Common_Write_Review": "Escriba un comentario"
   },
   "es-MX": {
     "Common_Customize": "Personalice",
@@ -486,6 +522,7 @@
     "Common_Death_Count": "Recuento de muertes",
     "Common_Grade_Point": "Puntos de calificación",
     "Common_Grade_Id": "Grado",
+    "Common_Ikura_Ratio": "Proporción de huevos",
     "Common_Actual_Value": "Valor real",
     "Common_Estimated_Value": "Valor estimado",
     "Common_Supplied_Count": "Armas suministradas",
@@ -501,9 +538,11 @@
     "Common_Tracking_Data": "Sobre el seguimiento de los datos de uso",
     "Common_Tracking_Data_Txt": "Si selecciona Permitir, la aplicación recopilará datos, incluso a través de cookies, y los enviará al servidor del servicio de Google Analytics con el fin de optimizar el contenido, los productos y los servicios.",
     "Common_Sign_In": "Acceder",
-    "Common_Sing_In_Title": "Inicia sesión con tu cuenta Nintendo",
+    "Common_Sign_In_Title": "Inicia sesión con tu cuenta Nintendo",
     "Common_Sign_In_Txt": "Tu cuenta Nintendo debe estar vinculada a una consola Nintendo Switch",
     "Common_Confirm_Danger": "Esta operación no se puede deshacer.",
-    "Common_Charts": "Gráficos"
+    "Common_Charts": "Gráficos",
+    "Common_Next": "Siguiente",
+    "Common_Write_Review": "Escriba un comentario"
   }
 }

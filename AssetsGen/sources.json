@@ -15,9 +15,10 @@
     "Common_Player_You": "あなた",
     "Common_Player_Crew": "なかま",
     "Common_Defeated_Sakelien_Count": "オオモノシャケを倒した数",
-    "Common_Death_Count": "助けられた数",
+    "Common_Death_Count": "助けられた回数",
     "Common_Grade_Point": "評価ポイント",
     "Common_Grade_Id": "称号",
+    "Common_Ikura_Ratio": "イクラ取得率",
     "Common_Actual_Value": "実測値",
     "Common_Estimated_Value": "推定値",
     "Common_Supplied_Count": "ブキ支給回数",
@@ -33,10 +34,12 @@
     "Common_Tracking_Data": "利用データの収集について",
     "Common_Tracking_Data_Txt": "許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。",
     "Common_Sign_In": "ログイン",
-    "Common_Sing_In_Title": "ニンテンドーアカウントにログイン",
+    "Common_Sign_In_Title": "ニンテンドーアカウントにログイン",
     "Common_Sign_In_Txt": "ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。",
     "Common_Confirm_Danger": "この操作は取り消せません。続行して良いですか。",
-    "Common_Charts": "チャート"
+    "Common_Charts": "チャート",
+    "Common_Next": "すすむ",
+    "Common_Write_Review": "レビューを書く"
   },
   "EN-US": {
     "Common_Customize": "Customize",
@@ -57,6 +60,7 @@
     "Common_Death_Count": "Death counts",
     "Common_Grade_Point": "Grade points",
     "Common_Grade_Id": "Grade",
+    "Common_Ikura_Ratio": "Egg ratio",
     "Common_Actual_Value": "Actual value",
     "Common_Estimated_Value": "Estimated value",
     "Common_Supplied_Count": "Supplied weapons",
@@ -72,9 +76,11 @@
     "Common_Tracking_Data": "About Tracking Usage Data",
     "Common_Tracking_Data_Txt": "If you select Allow, the application collect data, including via cookies, and will send it to the Google Analytics Service server in order to optimize content, products and services.",
     "Common_Sign_In": "Sign in",
-    "Common_Sing_In_Title": "Sign in with your Nintendo Account",
+    "Common_Sign_In_Title": "Sign in with your Nintendo Account",
     "Common_Sign_In_Txt": "Your Nintendo Account must be linked to a Nintendo Switch console",
     "Common_Confirm_Danger": "This operation cannot be undone.",
-    "Common_Charts": "Charts"
+    "Common_Charts": "Charts",
+    "Common_Next": "Next",
+    "Common_Write_Review": "Write a review"
   }
 }
