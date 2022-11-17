@@ -696,6 +696,10 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_Next = "5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec"
 	/// レビューを書く
 	case Common_Write_Review = "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd"
+	/// Salmonia3+
+	case Common_App_Salmonia = "d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446"
+	/// アプリを更新してください
+	case Common_App_Update_Required = "951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e"
 	/// サーモンラン
 	case Carousel_CoopHistory = "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980"
 	/// フェス開催！！

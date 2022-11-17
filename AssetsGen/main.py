@@ -63,6 +63,7 @@ def get_localized():
     revision = re.search(
         'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
     ).group(1)
+    print("Revision:", revision)
 
     # JavaScriptからlocaleとhashを取得
     base_url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"

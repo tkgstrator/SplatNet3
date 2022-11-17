@@ -28,8 +28,8 @@ public class VersionUpdater {
 
             print(publishedVersion, currentVersion)
             /// 最新のバージョンより下だとアラートを表示する
-            if publishedVersion >= currentVersion {
-                let alert: UIAlertController = await UIAlertController(title: .Common_Ikaring3, message: .Widgets_ErrorsUpdateRequired)
+            if publishedVersion > currentVersion {
+                let alert: UIAlertController = await UIAlertController(title: .Common_App_Salmonia, message: .Common_App_Update_Required)
                 let action: UIAlertAction = await UIAlertAction(title: .Landing_OpenApp)
                 let cancel: UIAlertAction = await UIAlertAction(title: .Common_Cancel, style: .cancel)
                 await alert.addAction(cancel)

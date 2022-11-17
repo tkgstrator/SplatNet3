@@ -39,7 +39,9 @@
     "Common_Confirm_Danger": "この操作は取り消せません。続行して良いですか。",
     "Common_Charts": "チャート",
     "Common_Next": "すすむ",
-    "Common_Write_Review": "レビューを書く"
+    "Common_Write_Review": "レビューを書く",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "アプリを更新してください"
   },
   "en-US": {
     "Common_Customize": "Customize",
@@ -81,7 +83,9 @@
     "Common_Confirm_Danger": "This operation cannot be undone.",
     "Common_Charts": "Charts",
     "Common_Next": "Next",
-    "Common_Write_Review": "Write a review"
+    "Common_Write_Review": "Write a review",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Required app upgrade."
   },
   "en-GB": {
     "Common_Customize": "Customize",
@@ -123,7 +127,9 @@
     "Common_Confirm_Danger": "This operation cannot be undone.",
     "Common_Charts": "Charts",
     "Common_Next": "Next",
-    "Common_Write_Review": "Write a review"
+    "Common_Write_Review": "Write a review",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Required app upgrade."
   },
   "de-DE": {
     "Common_Customize": "Anpassen",
@@ -165,7 +171,9 @@
     "Common_Confirm_Danger": "Dieser Vorgang kann nicht rückgängig gemacht werden.",
     "Common_Charts": "Diagramme",
     "Common_Next": "Weiter",
-    "Common_Write_Review": "Eine Bewertung schreiben"
+    "Common_Write_Review": "Eine Bewertung schreiben",
+    "Common_App_Salmonia": "Salmonellen3+",
+    "Common_App_Update_Required": "Erforderliches App-Upgrade."
   },
   "it-IT": {
     "Common_Customize": "Personalizzazione",
@@ -207,7 +215,9 @@
     "Common_Confirm_Danger": "Questa operazione non può essere annullata.",
     "Common_Charts": "Grafici",
     "Common_Next": "Avanti",
-    "Common_Write_Review": "Scrivi una recensione"
+    "Common_Write_Review": "Scrivi una recensione",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Aggiornamento dell'app richiesto."
   },
   "fr-FR": {
     "Common_Customize": "Personnalisez",
@@ -249,7 +259,9 @@
     "Common_Confirm_Danger": "Cette opération ne peut être annulée.",
     "Common_Charts": "Graphiques",
     "Common_Next": "Suivant",
-    "Common_Write_Review": "Écrire un commentaire"
+    "Common_Write_Review": "Écrire un commentaire",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Mise à jour de l'application requise."
   },
   "fr-CA": {
     "Common_Customize": "Personnalisez",
@@ -291,7 +303,9 @@
     "Common_Confirm_Danger": "Cette opération ne peut être annulée.",
     "Common_Charts": "Graphiques",
     "Common_Next": "Suivant",
-    "Common_Write_Review": "Écrire un commentaire"
+    "Common_Write_Review": "Écrire un commentaire",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Mise à jour de l'application requise."
   },
   "nl-NL": {
     "Common_Customize": "Aanpassen",
@@ -321,7 +335,7 @@
     "Common_Power_Eggs_Collected": "Geleverde machtseieren",
     "Common_Event_Probability": "Gebeurtenis frequentie",
     "Common_Get_Schedules": "Schema's synchroniseren",
-    "Common_Get_Schedules_Txt": "Ophalen roostergegevens",
+    "Common_Get_Schedules_Txt": "Schema gegevens ophalen",
     "Common_MyPage": "Mijn Pagina",
     "Common_Welcome_App": "Welkom bij Salmonia3",
     "Common_Welcome_App_Txt": "Verbeter uw online speelervaring met de Salmonia3+!",
@@ -333,7 +347,9 @@
     "Common_Confirm_Danger": "Deze operatie kan niet ongedaan worden gemaakt.",
     "Common_Charts": "Grafieken",
     "Common_Next": "Volgende",
-    "Common_Write_Review": "Schrijf een review"
+    "Common_Write_Review": "Schrijf een review",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Vereiste app upgrade."
   },
   "ru-RU": {
     "Common_Customize": "Настроить",
@@ -375,7 +391,9 @@
     "Common_Confirm_Danger": "Эта операция не может быть отменена.",
     "Common_Charts": "Графики",
     "Common_Next": "Следующий",
-    "Common_Write_Review": "Написать отзыв"
+    "Common_Write_Review": "Написать отзыв",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Требуется обновление приложения."
   },
   "zh-CN": {
     "Common_Customize": "定制",
@@ -401,7 +419,7 @@
     "Common_Estimated_Value": "估计价值",
     "Common_Supplied_Count": "提供的武器",
     "Common_Clear_Ratio": "清理率",
-    "Common_Golden_Eggs_Collected": "收集的金蛋",
+    "Common_Golden_Eggs_Collected": "收集到的金蛋",
     "Common_Power_Eggs_Collected": "交付的动力蛋",
     "Common_Event_Probability": "事件频率",
     "Common_Get_Schedules": "同步时间表",
@@ -417,7 +435,9 @@
     "Common_Confirm_Danger": "这一操作不能被撤销。",
     "Common_Charts": "图表",
     "Common_Next": "下一页",
-    "Common_Write_Review": "撰写评论"
+    "Common_Write_Review": "撰写评论",
+    "Common_App_Salmonia": "沙门氏菌3+",
+    "Common_App_Update_Required": "需要升级的应用程序。"
   },
   "zh-TW": {
     "Common_Customize": "定制",
@@ -443,7 +463,7 @@
     "Common_Estimated_Value": "估计价值",
     "Common_Supplied_Count": "提供的武器",
     "Common_Clear_Ratio": "清理率",
-    "Common_Golden_Eggs_Collected": "收集的金蛋",
+    "Common_Golden_Eggs_Collected": "收集到的金蛋",
     "Common_Power_Eggs_Collected": "交付的动力蛋",
     "Common_Event_Probability": "事件频率",
     "Common_Get_Schedules": "同步时间表",
@@ -459,7 +479,9 @@
     "Common_Confirm_Danger": "这一操作不能被撤销。",
     "Common_Charts": "图表",
     "Common_Next": "下一页",
-    "Common_Write_Review": "撰写评论"
+    "Common_Write_Review": "撰写评论",
+    "Common_App_Salmonia": "沙门氏菌3+",
+    "Common_App_Update_Required": "需要升级的应用程序。"
   },
   "es-ES": {
     "Common_Customize": "Personalice",
@@ -501,7 +523,9 @@
     "Common_Confirm_Danger": "Esta operación no se puede deshacer.",
     "Common_Charts": "Gráficos",
     "Common_Next": "Siguiente",
-    "Common_Write_Review": "Escriba un comentario"
+    "Common_Write_Review": "Escriba un comentario",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Actualización de la aplicación requerida."
   },
   "es-MX": {
     "Common_Customize": "Personalice",
@@ -543,6 +567,8 @@
     "Common_Confirm_Danger": "Esta operación no se puede deshacer.",
     "Common_Charts": "Gráficos",
     "Common_Next": "Siguiente",
-    "Common_Write_Review": "Escriba un comentario"
+    "Common_Write_Review": "Escriba un comentario",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Actualización de la aplicación requerida."
   }
 }

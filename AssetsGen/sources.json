@@ -39,7 +39,9 @@
     "Common_Confirm_Danger": "この操作は取り消せません。続行して良いですか。",
     "Common_Charts": "チャート",
     "Common_Next": "すすむ",
-    "Common_Write_Review": "レビューを書く"
+    "Common_Write_Review": "レビューを書く",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "アプリを更新してください"
   },
   "EN-US": {
     "Common_Customize": "Customize",
@@ -81,6 +83,8 @@
     "Common_Confirm_Danger": "This operation cannot be undone.",
     "Common_Charts": "Charts",
     "Common_Next": "Next",
-    "Common_Write_Review": "Write a review"
+    "Common_Write_Review": "Write a review",
+    "Common_App_Salmonia": "Salmonia3+",
+    "Common_App_Update_Required": "Required app upgrade."
   }
 }

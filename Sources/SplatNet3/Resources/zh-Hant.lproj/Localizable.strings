@@ -661,7 +661,7 @@
 // Common_Clear_Ratio
 "f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "清理率";
 // Common_Golden_Eggs_Collected
-"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "收集的金蛋";
+"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "收集到的金蛋";
 // Common_Power_Eggs_Collected
 "215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "交付的动力蛋";
 // Common_Event_Probability
@@ -694,6 +694,10 @@
 "5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "下一页";
 // Common_Write_Review
 "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "撰写评论";
+// Common_App_Salmonia
+"d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446" = "沙门氏菌3+";
+// Common_App_Update_Required
+"951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e" = "需要升级的应用程序。";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "SALMON RUN";
 // Carousel_FestOpening
