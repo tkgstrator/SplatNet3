@@ -614,90 +614,100 @@
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "巨大タツマキ";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
+// Common_Actual_Value
+"5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "実測値";
+// Common_App_Salmonia
+"d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446" = "Salmonia3+";
+// Common_App_Update_Required
+"951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e" = "アプリを更新してください";
+// Common_Charts
+"cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "チャート";
+// Common_Clear_Ratio
+"f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "クリア率";
+// Common_Confirm_Danger
+"5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "この操作は取り消せません。続行して良いですか。";
 // Common_Customize
 "e5749152fda778df2b9747aa93c0645cafd85d08774cd6962e98cddcec1c568a" = "カスタマイズ";
 // Common_DarkMode
 "33ea6681abc6040a6d4a59ac74a42fd50d9bdb85b2951c6ee18624b90a21fd77" = "ダークモード";
-// Common_GamingMode
-"0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd" = "ゲーミングモード";
-// Common_Settings
-"bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81" = "アプリ設定";
 // Common_Data_Managements
 "1b5f4155611ed4e69a7ca200da1bcc1e5133406013e9157e116585975a89eaa3" = "データ管理";
-// Common_Job_Results
-"c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40" = "記録";
-// Common_Job_Works
-"0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6" = "バイト";
-// Common_Privacy_Policy
-"27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d" = "プライバシーポリシー";
-// Common_Wipe_Results
-"101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652" = "リザルト消去";
-// Common_Wipe_Results_Txt
-"0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "アプリで保存されている全てのリザルトを削除します";
-// Common_Unlink_Accounts
-"b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48" = "アカウント連携解除";
-// Common_Unlink_Accounts_Txt
-"024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88" = "アプリとニンテンドースイッチオンラインのアカウント連携を解除します（アカウントは削除されません）";
-// Common_Player_You
-"b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1" = "あなた";
-// Common_Player_Crew
-"4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847" = "なかま";
-// Common_Defeated_Sakelien_Count
-"7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "オオモノシャケを倒した数";
 // Common_Death_Count
 "e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c" = "助けられた回数";
-// Common_Grade_Point
-"38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "評価ポイント";
-// Common_Grade_Id
-"c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "称号";
-// Common_Ikura_Ratio
-"4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f" = "イクラ取得率";
-// Common_Actual_Value
-"5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "実測値";
+// Common_Defeated_Ratio
+"03999bafcbc531faf523e24902179a738a929260fe7eaa645e84fe768ceb1184" = "オオモノシャケ討伐率";
+// Common_Defeated_Sakelien_Count
+"7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "オオモノシャケを倒した数";
 // Common_Estimated_Value
 "bd75b0cd71909ee61794c727e9f0049f3effb1d14aae83ceb07d914c6070910a" = "推定値";
-// Common_Supplied_Count
-"144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681" = "ブキ支給回数";
-// Common_Clear_Ratio
-"f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "クリア率";
-// Common_Golden_Eggs_Collected
-"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "金イクラ納品数";
-// Common_Power_Eggs_Collected
-"215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "イクラ獲得数";
+// Common_Event_Clear_Ratio
+"3602059e79ece1939f3fbf4eeafd2b842395214884b3ebedd6d38cbe8febff39" = "イベントクリア率";
 // Common_Event_Probability
 "e4c910ed916d3db108d31a01a887cc2300cc5c6488814d47b799dedfd746e31e" = "イベント発生率";
+// Common_GamingMode
+"0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd" = "ゲーミングモード";
 // Common_Get_Schedules
 "3c87d33ca26429f39a25bfb0cab95d4fdf9992ea20dff2a222ae34b8695b7b92" = "スケジュール取得";
 // Common_Get_Schedules_Txt
 "c469c31538a16e91734a3efa4d52bf816082953a16a4c174ca0f76bcd9a8f0a2" = "過去のスケジュールデータを取得します";
+// Common_Golden_Eggs_Collected
+"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "金イクラ納品数";
+// Common_Grade_Id
+"c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "称号";
+// Common_Grade_Point
+"38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "評価ポイント";
+// Common_Ikura_Ratio
+"4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f" = "イクラ取得率";
+// Common_Job_Results
+"c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40" = "記録";
+// Common_Job_Works
+"0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6" = "バイト";
 // Common_MyPage
 "97b70d696aaee80bbe2969e375814549460a13f8d6766c9fbff4a3a675c71e40" = "マイページ";
-// Common_Welcome_App
-"b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1" = "ようこそSalmonia3+へ";
-// Common_Welcome_App_Txt
-"80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2" = "もっと便利なサーモンランライフを！";
-// Common_Tracking_Data
-"f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e" = "利用データの収集について";
-// Common_Tracking_Data_Txt
-"64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。";
+// Common_Next
+"5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "すすむ";
+// Common_Player_Crew
+"4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847" = "なかま";
+// Common_Player_You
+"b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1" = "あなた";
+// Common_Power_Eggs_Collected
+"215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "イクラ獲得数";
+// Common_Privacy_Policy
+"27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d" = "プライバシーポリシー";
+// Common_Save_To_PhotoLibrary
+"2bfdff3f93d4e7f79e5c50ffcce277f6b0a3500e6479c7785c8e4223df61a9b0" = "保存成功しました。";
+// Common_Settings
+"bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81" = "アプリ設定";
 // Common_Sign_In
 "380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d" = "ログイン";
 // Common_Sign_In_Title
 "f4774a205d9fdc52841bdb71a5ab49e309557bec2c970e37fbe4c3df4af88f25" = "ニンテンドーアカウントにログイン";
 // Common_Sign_In_Txt
 "9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5" = "ニンテンドーアカウントはニンテンドースイッチに連携されている必要があります。";
-// Common_Confirm_Danger
-"5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "この操作は取り消せません。続行して良いですか。";
-// Common_Charts
-"cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "チャート";
-// Common_Next
-"5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "すすむ";
+// Common_Supplied_Count
+"144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681" = "ブキ支給回数";
+// Common_Supplied_Main_Prob
+"e0ae11b02ccf0b981281b0f417dff4ccc8df38620d51648958f1a288c7652f53" = "ブキ支給率";
+// Common_Supplied_Special_Prob
+"2b619dc847bd1d597f6217e54257c04a2d8cbd33559b62b75fd8d76831ce4694" = "ブキ支給率";
+// Common_Tracking_Data
+"f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e" = "利用データの収集について";
+// Common_Tracking_Data_Txt
+"64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "許可を選択した場合、アプリケーションはCookieを含むデータを収集し、コンテンツ、製品、サービスを最適化するためにGoogle Analyticsサービスのサーバーに送信します。";
+// Common_Unlink_Accounts
+"b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48" = "アカウント連携解除";
+// Common_Unlink_Accounts_Txt
+"024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88" = "アプリとニンテンドースイッチオンラインのアカウント連携を解除します（アカウントは削除されません）";
+// Common_Welcome_App
+"b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1" = "ようこそSalmonia3+へ";
+// Common_Welcome_App_Txt
+"80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2" = "もっと便利なサーモンランライフを！";
+// Common_Wipe_Results
+"101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652" = "リザルト消去";
+// Common_Wipe_Results_Txt
+"0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "アプリで保存されている全てのリザルトを削除します";
 // Common_Write_Review
 "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "レビューを書く";
-// Common_App_Salmonia
-"d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446" = "Salmonia3+";
-// Common_App_Update_Required
-"951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e" = "アプリを更新してください";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "サーモンラン";
 // Carousel_FestOpening

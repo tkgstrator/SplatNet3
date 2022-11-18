@@ -349,7 +349,6 @@
 [size=75%]（挑戰）[size=100%]";
 // L_BtnStage_01_T_WhiteText_00
 "92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "蠻頹比賽
-[size=75%]（挑戰）[size=100%]";
 // L_BtnStage_04_T_BlackText_00
 "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "SALMON  RUN";
 // L_BtnStage_04_T_WhiteText_00
@@ -359,7 +358,6 @@
 [size=75%]（開放）[size=100%]";
 // L_BtnStage_05_T_WhiteText_00
 "d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "蠻頹比賽
-[size=75%]（開放）[size=100%]";
 // L_Catalog_00_T_Max_00
 "edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c" = "MAX";
 // L_Catalog_00_T_Rank_00
@@ -383,7 +381,6 @@
 桌上模式";
 // L_Option_00_T_WhiteText_00
 "dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "TV模式/
-桌上模式";
 // L_Option_01_T_BlackText_00
 "c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e" = "手提模式";
 // L_Option_01_T_WhiteText_00
@@ -616,90 +613,100 @@
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "巨型龍捲風";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
+// Common_Actual_Value
+"5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "实际价值";
+// Common_App_Salmonia
+"d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446" = "沙门氏菌3+";
+// Common_App_Update_Required
+"951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e" = "需要升级的应用程序。";
+// Common_Charts
+"cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "图表";
+// Common_Clear_Ratio
+"f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "清理率";
+// Common_Confirm_Danger
+"5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "这一操作不能被撤销。";
 // Common_Customize
 "e5749152fda778df2b9747aa93c0645cafd85d08774cd6962e98cddcec1c568a" = "定制";
 // Common_DarkMode
 "33ea6681abc6040a6d4a59ac74a42fd50d9bdb85b2951c6ee18624b90a21fd77" = "黑暗模式";
-// Common_GamingMode
-"0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd" = "游戏模式";
-// Common_Settings
-"bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81" = "应用程序设置";
 // Common_Data_Managements
 "1b5f4155611ed4e69a7ca200da1bcc1e5133406013e9157e116585975a89eaa3" = "数据管理";
-// Common_Job_Results
-"c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40" = "结果";
-// Common_Job_Works
-"0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6" = "工作班次";
-// Common_Privacy_Policy
-"27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d" = "隐私政策";
-// Common_Wipe_Results
-"101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652" = "擦除结果";
-// Common_Wipe_Results_Txt
-"0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "删除应用程序中的所有结果。";
-// Common_Unlink_Accounts
-"b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48" = "解除联系";
-// Common_Unlink_Accounts_Txt
-"024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88" = "解除Nintendo Switch在线账户的联系（账户不会被删除）。";
-// Common_Player_You
-"b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1" = "你";
-// Common_Player_Crew
-"4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847" = "职员";
-// Common_Defeated_Sakelien_Count
-"7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "鲑鱼老大被打败";
 // Common_Death_Count
 "e156b171b454ff0d5752a5bd571d81e0bde2915db9bf674e219f9645d43bca9c" = "死亡人数";
-// Common_Grade_Point
-"38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "等级分";
-// Common_Grade_Id
-"c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "等级";
-// Common_Ikura_Ratio
-"4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f" = "鸡蛋比率";
-// Common_Actual_Value
-"5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "实际价值";
+// Common_Defeated_Ratio
+"03999bafcbc531faf523e24902179a738a929260fe7eaa645e84fe768ceb1184" = "老板被打败的比例";
+// Common_Defeated_Sakelien_Count
+"7213cf21b295ee5940af4c1e031831c800b5b59130f5abff8c41dcc3f342c1d6" = "鲑鱼老大被打败";
 // Common_Estimated_Value
 "bd75b0cd71909ee61794c727e9f0049f3effb1d14aae83ceb07d914c6070910a" = "估计价值";
-// Common_Supplied_Count
-"144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681" = "提供的武器";
-// Common_Clear_Ratio
-"f9c28a7901e031ca691963a7f0303b4591ba4d9aa447423775c749c2feb55222" = "清理率";
-// Common_Golden_Eggs_Collected
-"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "收集到的金蛋";
-// Common_Power_Eggs_Collected
-"215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "交付的动力蛋";
+// Common_Event_Clear_Ratio
+"3602059e79ece1939f3fbf4eeafd2b842395214884b3ebedd6d38cbe8febff39" = "事件清除率";
 // Common_Event_Probability
 "e4c910ed916d3db108d31a01a887cc2300cc5c6488814d47b799dedfd746e31e" = "事件频率";
+// Common_GamingMode
+"0acbe4462b52be9220eb682f01cbfce45f0d22a103a1e558a8f23d3bbb47cebd" = "游戏模式";
 // Common_Get_Schedules
 "3c87d33ca26429f39a25bfb0cab95d4fdf9992ea20dff2a222ae34b8695b7b92" = "同步时间表";
 // Common_Get_Schedules_Txt
 "c469c31538a16e91734a3efa4d52bf816082953a16a4c174ca0f76bcd9a8f0a2" = "检索日程表数据";
+// Common_Golden_Eggs_Collected
+"0bac26472a4bb1235490144e76fde77481e09133787cf642fe1d39c822f84523" = "收集到的金蛋";
+// Common_Grade_Id
+"c7b83eab7e9d76a1bb97e10d31b5986330628fe5e4c0efbe150d6147b8e59bd7" = "等级";
+// Common_Grade_Point
+"38270fddd88ce9994b99794d90ce86b97f11c395d2820518adbd34c47b2a7f99" = "等级分";
+// Common_Ikura_Ratio
+"4e34d6d562b15725caeed8c437b142e493d153e4c255f60180c6780d3f3bad6f" = "鸡蛋比率";
+// Common_Job_Results
+"c79d7c2b65ed25b413ed29ca2dfec39c381086df620221a8755f14731ca9be40" = "结果";
+// Common_Job_Works
+"0be0da8b63e86765c803f1db0bae8b9a9dd3f78698b7acc403e459fae149ece6" = "工作班次";
 // Common_MyPage
 "97b70d696aaee80bbe2969e375814549460a13f8d6766c9fbff4a3a675c71e40" = "我的页面";
-// Common_Welcome_App
-"b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1" = "欢迎来到Salmonia3";
-// Common_Welcome_App_Txt
-"80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2" = "用Salmonia3+增强你的在线游戏体验!";
-// Common_Tracking_Data
-"f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e" = "关于跟踪使用数据";
-// Common_Tracking_Data_Txt
-"64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "如果您选择 "允许"，本应用程序将收集数据，包括通过cookies，并将其发送到谷歌分析服务服务器，以优化内容、产品和服务。";
+// Common_Next
+"5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "下一页";
+// Common_Player_Crew
+"4351e7e04f57e95e9026557c018b02227a4eebd748fecbb1246b2015fb9f6847" = "职员";
+// Common_Player_You
+"b53877adf04081c95ee9976872712a04591ba6ed17947cde3b3cb5e3a8a48eb1" = "你";
+// Common_Power_Eggs_Collected
+"215149cd5aba0da3522ffca495e08ad6e1a037a16940363bff402b39bea9864d" = "交付的动力蛋";
+// Common_Privacy_Policy
+"27795ae26748cf995297e3abc1d7b7b8d1453c229de87dc3de80ded9b512966d" = "隐私政策";
+// Common_Save_To_PhotoLibrary
+"2bfdff3f93d4e7f79e5c50ffcce277f6b0a3500e6479c7785c8e4223df61a9b0" = "已成功保存。";
+// Common_Settings
+"bb1bbe44cab9d06d47ca18ecab78d40061b486b164095069f495f95ddd3cfc81" = "应用程序设置";
 // Common_Sign_In
 "380b8dfeae3108ecd4e3ea2d31170d779132bc0b7c22a2527960646f071d780d" = "登录";
 // Common_Sign_In_Title
 "f4774a205d9fdc52841bdb71a5ab49e309557bec2c970e37fbe4c3df4af88f25" = "用你的任天堂账户登录";
 // Common_Sign_In_Txt
 "9db53d372c8ddb16eb4d074ecec2b103403c49819a946b151da108b7dbf71dc5" = "您的任天堂账户必须与任天堂Switch主机相连";
-// Common_Confirm_Danger
-"5c0f95909b47caffa520f76fbf790ce7567213d73e3f6bdcd3bf51853e760106" = "这一操作不能被撤销。";
-// Common_Charts
-"cd016953d34f1abaecebaa95cca9566e4db57fbb94d7095cc4a886aac9201467" = "图表";
-// Common_Next
-"5d0351718f7428e2d5635d8d8f852ceda4444e429854fae77bc53f8fab3d7bec" = "下一页";
+// Common_Supplied_Count
+"144e6f8d03df98bfdc03901e97f46c5538a286f603017385eaaaa5e2f3f01681" = "提供的武器";
+// Common_Supplied_Main_Prob
+"e0ae11b02ccf0b981281b0f417dff4ccc8df38620d51648958f1a288c7652f53" = "提供的武器";
+// Common_Supplied_Special_Prob
+"2b619dc847bd1d597f6217e54257c04a2d8cbd33559b62b75fd8d76831ce4694" = "提供的特价产品";
+// Common_Tracking_Data
+"f84db2287ea2eb1df6240da08c557632b06d334fc9fd554b0198d79297a0bb3e" = "关于跟踪使用数据";
+// Common_Tracking_Data_Txt
+"64d644ae40059e08670d20625815fb239f79c3200637e87b8bdf7314f101a5ce" = "如果您选择 "允许"，本应用程序将收集数据，包括通过cookies，并将其发送到谷歌分析服务服务器，以优化内容、产品和服务。";
+// Common_Unlink_Accounts
+"b2420f261f0fae3aa1737f086bf010db9d4b20e279bb325c57b20b29f0dc2d48" = "解除联系";
+// Common_Unlink_Accounts_Txt
+"024b4904d1eef02bf8d798e2932cada8978a1f1987ee3f6a52e8188450217a88" = "解除Nintendo Switch在线账户的联系（账户不会被删除）。";
+// Common_Welcome_App
+"b429b2815a5bce840308e1287878959809ec25c39cddc213718645c879f79ca1" = "欢迎来到Salmonia3";
+// Common_Welcome_App_Txt
+"80a64e7ead01f2d79e21e46bb1d964f0f147d560e0bcdd35ad8f90b02bf0feb2" = "用Salmonia3+增强你的在线游戏体验!";
+// Common_Wipe_Results
+"101c7cbbfa13c0d031680fa971c1779acfec4fe3dd0b0681230dbfa359244652" = "擦除结果";
+// Common_Wipe_Results_Txt
+"0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "删除应用程序中的所有结果。";
 // Common_Write_Review
 "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "撰写评论";
-// Common_App_Salmonia
-"d058fb97eef63c24cdd308a8d04085d593d271783a4fa1c8bf53cec8dd7ee446" = "沙门氏菌3+";
-// Common_App_Update_Required
-"951b2d17bf45633f4f883863887c4f8b3836866d30b0511388e50d79652eea0e" = "需要升级的应用程序。";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "鲑鱼跑";
 // Carousel_FestOpening
@@ -1896,3 +1903,4 @@
 "83112387a9106ecf254ca291f831fbbf5925f9712387449de2d8ca75796b6e7c" = "泥鮭魚噴發";
 // CoopHistory_KingSakelien3
 "9bc1c1d0341a2049db2ae54546b7335074dda0d2ea88f32c1499771850b7a904" = "橫綱";
+
