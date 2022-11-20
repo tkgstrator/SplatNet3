@@ -21,12 +21,15 @@ def get_hash(plain: str) -> str:
 
 def format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
+    value = value.replace('"', '')
+    value = value.replace("\n", "")
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
 
 
 def localized_format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
-    value = value.replace("\n", " ")
+    value = value.replace("\n", "")
+    value = value.replace('"', '')
     return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
 
 
@@ -109,7 +112,6 @@ def get_localized():
         # 内部データから検索
         print(f"Downloading {language.xcode}")
         url = f"https://leanny.github.io/splat3/data/language/{language.internal}.json"
-        print(url)
         params = []
         localized = []
 
@@ -203,6 +205,18 @@ def get_localized():
         v = "-"
         params.append(format(k, v))
         localized.append(localized_format(k, v))
+
+        # フォントデータを追加
+        if language.locale == "locale12":
+            params.append(format("Common_Locale_Lang", "1"))
+        elif language.locale == "locale13":
+            params.append(format("Common_Locale_Lang", "2"))
+        else:
+            params.append(format("Common_Locale_Lang", "0"))
+
+        # フォントデータを追加
+        params.append(format("Common_SplatNet3_Locale", language.code))
+        print(language)
 
         # DeepL翻訳データを変換
         try:

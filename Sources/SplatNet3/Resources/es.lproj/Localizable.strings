@@ -247,17 +247,13 @@
 // L_BtnCard_00_T_WhiteText_00
 "6000c76435afc2606e49f310666a47f6f117b7e3c44b177395e5f221e851f1f6" = "Lista de cartas";
 // L_BtnFestStage_00_T_BlackText_00
-"05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85" = "Combate
-temático";
+"05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85" = "Combatetemático";
 // L_BtnFestStage_00_T_WhiteText_00
-"187a4b3e835ad7453e9752202ef1ab66da6be4fb72a38fa76fef079ad2ca3150" = "Combate
-temático";
+"187a4b3e835ad7453e9752202ef1ab66da6be4fb72a38fa76fef079ad2ca3150" = "Combatetemático";
 // L_BtnFestStage_01_T_BlackText_00
-"cd0282186fc415d6b41001ac2d94f68f0a091e699e82714f6c63275f3926059e" = "Ataque
-tricolor";
+"cd0282186fc415d6b41001ac2d94f68f0a091e699e82714f6c63275f3926059e" = "Ataquetricolor";
 // L_BtnFestStage_01_T_WhiteText_00
-"c92631f8448957caf39b4bf25b3f1a7080a8c4408a034c594a25a8a2eb9c4b21" = "Ataque
-tricolor";
+"c92631f8448957caf39b4bf25b3f1a7080a8c4408a034c594a25a8a2eb9c4b21" = "Ataquetricolor";
 // L_BtnFestStage_02_T_BlackText_00
 "e9c3e3625fa7ecf844c188e40ec013f40df1b4e437d0ed92209fc6e872771ffc" = "Salmon Run";
 // L_BtnFestStage_02_T_WhiteText_00
@@ -291,8 +287,7 @@ tricolor";
 // L_BtnOption_00_T_Header_00
 "a02c5add1590ac11013b9c677eaac64ff439b20401d2db38df1c5d6461d70af8" = "Control [group=0003 type=0008 params=00 00 00 40 00 00 00 00] vertical";
 // L_BtnOption_00_T_Msg_00
-"d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774" = "No disponible cuando
-se usa el giroscopio.";
+"d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774" = "No disponible cuandose usa el giroscopio.";
 // L_BtnOption_01_T_BtnL_00
 "63e3af0e7738989005b1a8411dbde66f989af7e9303ec3f3494aa1e946eaa0a7" = "Normal";
 // L_BtnOption_01_T_BtnR_00
@@ -312,8 +307,7 @@ se usa el giroscopio.";
 // L_BtnOption_03_T_Header_00
 "8f895629e4a3cfefd0b6991822832b3b397897e82126d8abc79d7490b57fc086" = "Control [group=0003 type=0008 params=00 00 00 40 00 00 00 00] vertical";
 // L_BtnOption_03_T_Msg_00
-"836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8" = "No disponible cuando
-se usa el giroscopio.";
+"836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8" = "No disponible cuandose usa el giroscopio.";
 // L_BtnOption_04_T_BtnL_00
 "a49e94dc64436ccd9e6e017edfbc3e00d996cd8cbe672ec3972de67a59e057c5" = "Normal";
 // L_BtnOption_04_T_BtnR_00
@@ -333,8 +327,7 @@ se usa el giroscopio.";
 // L_BtnOption_06_T_Header_00
 "adf20868a23b0f6d987ec38e34bd0935d80814e8d07203e2d0555027d7d1ddf2" = "Ver publicaciones";
 // L_BtnOption_06_T_Msg_00
-"3fc2dc3c2b7e5673ece749661b3bc729129c7f2139317a6020170ea9b5c9e4c8" = "Esta función está restringida
-por el control parental.";
+"3fc2dc3c2b7e5673ece749661b3bc729129c7f2139317a6020170ea9b5c9e4c8" = "Esta función está restringidapor el control parental.";
 // L_BtnOption_07_T_BtnL_00
 "a416e1047ed347220409f267812c648f427d8fd5a90eafcabd3f3dc0fb976604" = "No";
 // L_BtnOption_07_T_BtnR_00
@@ -348,27 +341,21 @@ por el control parental.";
 // L_BtnOption_08_T_Header_00
 "e2ee0e3ff62942f693f7951563e858a8e5951de91325fa82d186a9c9bc222dca" = "Notificaciones";
 // L_BtnStage_00_T_BlackText_00
-"38acd6e71493acfcb8c524e81480704e0896fdcf9ec513d5d6384ba111052272" = "Combate
-amistoso";
+"38acd6e71493acfcb8c524e81480704e0896fdcf9ec513d5d6384ba111052272" = "Combateamistoso";
 // L_BtnStage_00_T_WhiteText_00
-"b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650" = "Combate
-amistoso";
+"b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650" = "Combateamistoso";
 // L_BtnStage_01_T_BlackText_00
-"7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Combate caótico
-[size=75%](formal)[size=100%]";
+"7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Combate caótico[size=75%](formal)[size=100%]";
 // L_BtnStage_01_T_WhiteText_00
-"92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Combate caótico
-[size=75%](formal)[size=100%]";
+"92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Combate caótico[size=75%](formal)[size=100%]";
 // L_BtnStage_04_T_BlackText_00
 "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "SALMON RUN";
 // L_BtnStage_04_T_WhiteText_00
 "8b08d20b43a9bcf7def3e3a76c08accb35671f2d25d91a77ba9a2cfab434ae93" = "SALMON RUN";
 // L_BtnStage_05_T_BlackText_00
-"55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394" = "Combate caótico
-[size=75%](informal)[size=100%]";
+"55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394" = "Combate caótico[size=75%](informal)[size=100%]";
 // L_BtnStage_05_T_WhiteText_00
-"d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "Combate caótico
-[size=75%](informal)[size=100%]";
+"d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "Combate caótico[size=75%](informal)[size=100%]";
 // L_Catalog_00_T_Max_00
 "edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c" = "Máx.";
 // L_Catalog_00_T_Rank_00
@@ -376,25 +363,21 @@ amistoso";
 // L_GaugeOption_00_T_Header_00
 "f90bd2500dc28783fd7063c8c3d4d0cc2ae1778e10a9d7d72d098febe00b8566" = "Sensibilidad del giroscopio";
 // L_GaugeOption_00_T_Msg_00
-"bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3" = "Solo disponible cuando
-se usa el giroscopio.";
+"bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3" = "Solo disponible cuandose usa el giroscopio.";
 // L_GaugeOption_01_T_Header_00
 "5e109e142033945dbc4a132edfb607172e496b812c73c0b84991468b9fe0cbcb" = "Sensibilidad de [group=0003 type=0008 params=00 00 00 40 00 00 00 00]";
 // L_GaugeOption_02_T_Header_00
 "46c9d590eea1b842e79ec953dd66aad815f1d379e104ee8dd61e60b1ec9bf253" = "Sensibilidad del giroscopio";
 // L_GaugeOption_02_T_Msg_00
-"eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1" = "Solo disponible cuando
-se usa el giroscopio.";
+"eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1" = "Solo disponible cuandose usa el giroscopio.";
 // L_GaugeOption_03_T_Header_00
 "1655b4537c47418a4f02100cd52900a3edd98a7107a425005554db158cb2780c" = "Sensibilidad de [group=0003 type=0008 params=00 00 00 40 00 00 00 00]";
 // L_NextItem_00_T_NextItem_00
 "771290f6a993cba44ca6de810df49af5660e7682a3ceca69834e27d3335f2830" = "Siguiente nivel";
 // L_Option_00_T_BlackText_00
-"e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2" = "Modo televisor/
-modo sobremesa";
+"e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2" = "Modo televisor/modo sobremesa";
 // L_Option_00_T_WhiteText_00
-"dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "Modo televisor/
-modo sobremesa";
+"dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "Modo televisor/modo sobremesa";
 // L_Option_01_T_BlackText_00
 "c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e" = "Modo portátil";
 // L_Option_01_T_WhiteText_00
@@ -420,11 +403,9 @@ modo sobremesa";
 // L_Player_02_T_WhiteText_00
 "e0d686cd4d672dbc4382e99c753d71183f82da0e037c16181c37e2afa2fc3abb" = "Potenciadores";
 // L_Player_03_T_BlackText_00
-"3e2eeb8784e0c6b54703655a872a5acd61c5cb980e0d6eb21d6e0e1eb94cbe5f" = "Lucha
-carterritorial";
+"3e2eeb8784e0c6b54703655a872a5acd61c5cb980e0d6eb21d6e0e1eb94cbe5f" = "Luchacarterritorial";
 // L_Player_03_T_WhiteText_00
-"510a3f4927187e3b35b6d2f9a20d99d26496c696c6f8de1512e0ae3af2753722" = "Lucha
-carterritorial";
+"510a3f4927187e3b35b6d2f9a20d99d26496c696c6f8de1512e0ae3af2753722" = "Luchacarterritorial";
 // L_RankMng_00_T_Max_01
 "ffa049bb3c93be0393ce772e9ef9b5564b31d095ca8a7ecad511b5d7d609dcdd" = "Máx.";
 // L_RankMng_00_T_RankHeader_01
@@ -448,13 +429,11 @@ carterritorial";
 // L_Tab_03_T_Text_00
 "203a7767d22f88f169b52913f7a2faddaee0377ccd1a29db2888111a291af789" = "Opciones";
 // T_Catalog_00
-"18b0429ae0198a60a536d57dd1e1956e9bfd3124a10867b118871c01598691b3" = "Visita Miscelánea Abisal para obtener
-el catálogo.";
+"18b0429ae0198a60a536d57dd1e1956e9bfd3124a10867b118871c01598691b3" = "Visita Miscelánea Abisal para obtenerel catálogo.";
 // T_Count_01
 "856153e31daacd337485d538d8d4fef7bb0343f70718c2ea0d9f928386a04812" = "Fragmentos que tienes:";
 // T_ExplainCamera_00
-"cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109" = "Configura los ajustes que utilizarás al jugar
-en modo televisor y en modo sobremesa.";
+"cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109" = "Configura los ajustes que utilizarás al jugaren modo televisor y en modo sobremesa.";
 // T_ExplainCamera_01
 "6946f411789959507a28399421c8fbb8c78130d3b931df737ef4551a73391d7b" = "Configura los ajustes que utilizarás al jugar en modo portátil.";
 // T_ExplainCamera_02
@@ -464,14 +443,11 @@ en modo televisor y en modo sobremesa.";
 // T_ExplainCamera_04
 "a6efcb674b8292d97007fc1ded5be17747f487b42773759d35bfab9fdd411d48" = "Se envían al vestíbulo de tus amigos notificaciones con tus datos de juego.";
 // T_MaxNext_00
-"0ba97e74c33bc33a21daa4633d0d77c108238e37a42ee6176b4edbe80b562d99" = "Visita Miscelánea Abisal para obtener el último
-objeto.";
+"0ba97e74c33bc33a21daa4633d0d77c108238e37a42ee6176b4edbe80b562d99" = "Visita Miscelánea Abisal para obtener el últimoobjeto.";
 // T_Max_00
 "6cb7624db890da289e07db603508c181c6ba920d683c105c3e857dac43b54840" = "¡Completado!";
 // T_OffStage_00
-"a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85" = "No hay información disponible sobre
-los escenarios. Conéctate a internet
-para recibir las últimas noticias.";
+"a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85" = "No hay información disponible sobrelos escenarios. Conéctate a internetpara recibir las últimas noticias.";
 // T_Shop_00
 "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da" = "Tiendas";
 // T_UdemaeTitle_00
@@ -628,6 +604,10 @@ para recibir las últimas noticias.";
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "Tornados";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
+// Common_Locale_Lang
+"f34a27fc394c002eabd781f84e3f3a2016bef37bb36b3ac365fbc750b0d627ac" = "0";
+// Common_SplatNet3_Locale
+"59e8ccc95035366a3ff4cf0b1311e349d459a3354c97253b2934ac969b5050b8" = "es-ES";
 // Common_Actual_Value
 "5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "Valor real";
 // Common_App_Salmonia
@@ -722,6 +702,22 @@ para recibir las últimas noticias.";
 "0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "Eliminar todos los resultados en la aplicación.";
 // Common_Write_Review
 "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "Escriba un comentario";
+// Common_Form
+"65126fe9c6e611c757f80c7bd2791532f50a0e25d71691f52d0a749b99ed0c58" = "Formulario";
+// Common_Form_Type
+"aafc2b502bd9a702fe498c57867d9fd24bee252a3e8ff499608b8c4522d15dc0" = "Tipo";
+// Common_Form_Type_Bug
+"20dc13b1da682fbeae2963121ac74af3d3afa5881af0d7abbe1f70ea8baea8ea" = "Bug";
+// Common_Form_Type_Feature
+"4c162fbc69dde39226c9d674bb3a73fad2950c643319cc10cd3607c05e3faa45" = "Característica";
+// Common_Form_Type_Enhancement
+"2a6e7d1f011d552b5455e27f91930b76da7249b93096ed13b5d5f0fd39062a48" = "Mejora";
+// Common_Form_Title
+"79af1c8d40fd2cb694d6796507c189d48820800e1a564046720d1ceab08fceb1" = "Título";
+// Common_Form_Content
+"f719242d0b97030aa72fec90c08b0f94565511b8ac2b6deb155642cdfa5e03b3" = "Contenido";
+// Common_Form_Submit
+"0fade8f6454b7a5527a83f13bb51068ad0aea8b8e60218537718d78816384087" = "Enviar";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "Salmon Run";
 // Carousel_FestOpening

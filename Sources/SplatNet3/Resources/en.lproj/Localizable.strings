@@ -287,8 +287,7 @@
 // L_BtnOption_00_T_Header_00
 "a02c5add1590ac11013b9c677eaac64ff439b20401d2db38df1c5d6461d70af8" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]Up/Down";
 // L_BtnOption_00_T_Msg_00
-"d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774" = "Disabled when motion
-controls are set to ON.";
+"d11141407835a6f03bb0f27017095475dea249eb812d435df965e465101be774" = "Disabled when motioncontrols are set to ON.";
 // L_BtnOption_01_T_BtnL_00
 "63e3af0e7738989005b1a8411dbde66f989af7e9303ec3f3494aa1e946eaa0a7" = "Normal";
 // L_BtnOption_01_T_BtnR_00
@@ -308,8 +307,7 @@ controls are set to ON.";
 // L_BtnOption_03_T_Header_00
 "8f895629e4a3cfefd0b6991822832b3b397897e82126d8abc79d7490b57fc086" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]Up/Down";
 // L_BtnOption_03_T_Msg_00
-"836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8" = "Disabled when motion
-controls are set to ON.";
+"836401c53cd067b01fc12cdd67e797e3152ad512b8c344fd89a680e7b6a99ac8" = "Disabled when motioncontrols are set to ON.";
 // L_BtnOption_04_T_BtnL_00
 "a49e94dc64436ccd9e6e017edfbc3e00d996cd8cbe672ec3972de67a59e057c5" = "Normal";
 // L_BtnOption_04_T_BtnR_00
@@ -347,21 +345,17 @@ controls are set to ON.";
 // L_BtnStage_00_T_WhiteText_00
 "b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650" = "Regular Battle";
 // L_BtnStage_01_T_BlackText_00
-"7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Anarchy Battle
-[size=75%](Series)[size=100%]";
+"7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Anarchy Battle[size=75%](Series)[size=100%]";
 // L_BtnStage_01_T_WhiteText_00
-"92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Anarchy Battle
-[size=75%](Series)[size=100%]";
+"92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Anarchy Battle[size=75%](Series)[size=100%]";
 // L_BtnStage_04_T_BlackText_00
 "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "Salmon Run";
 // L_BtnStage_04_T_WhiteText_00
 "8b08d20b43a9bcf7def3e3a76c08accb35671f2d25d91a77ba9a2cfab434ae93" = "Salmon Run";
 // L_BtnStage_05_T_BlackText_00
-"55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394" = "Anarchy Battle
-[size=75%](Open)[size=100%]";
+"55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394" = "Anarchy Battle[size=75%](Open)[size=100%]";
 // L_BtnStage_05_T_WhiteText_00
-"d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "Anarchy Battle
-[size=75%](Open)[size=100%]";
+"d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021" = "Anarchy Battle[size=75%](Open)[size=100%]";
 // L_Catalog_00_T_Max_00
 "edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c" = "MAX";
 // L_Catalog_00_T_Rank_00
@@ -369,25 +363,21 @@ controls are set to ON.";
 // L_GaugeOption_00_T_Header_00
 "f90bd2500dc28783fd7063c8c3d4d0cc2ae1778e10a9d7d72d098febe00b8566" = "Motion-Control Sensitivity";
 // L_GaugeOption_00_T_Msg_00
-"bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3" = "Disabled when motion controls
-are set to OFF.";
+"bcd419ca0deb0d13c9db76306362154bdfc8610edd04350e30c0e2bcdceae8f3" = "Disabled when motion controlsare set to OFF.";
 // L_GaugeOption_01_T_Header_00
 "5e109e142033945dbc4a132edfb607172e496b812c73c0b84991468b9fe0cbcb" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]Sensitivity";
 // L_GaugeOption_02_T_Header_00
 "46c9d590eea1b842e79ec953dd66aad815f1d379e104ee8dd61e60b1ec9bf253" = "Motion-Control Sensitivity";
 // L_GaugeOption_02_T_Msg_00
-"eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1" = "Disabled when motion controls
-are set to OFF.";
+"eb2d76bdd991e9ec94cab72c2f8bf0bb979708262754fb9f971b17423cfc38d1" = "Disabled when motion controlsare set to OFF.";
 // L_GaugeOption_03_T_Header_00
 "1655b4537c47418a4f02100cd52900a3edd98a7107a425005554db158cb2780c" = "[group=0003 type=0008 params=00 00 00 40 00 00 00 00]Sensitivity";
 // L_NextItem_00_T_NextItem_00
 "771290f6a993cba44ca6de810df49af5660e7682a3ceca69834e27d3335f2830" = "Next Level";
 // L_Option_00_T_BlackText_00
-"e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2" = "TV/Tabletop
-Mode";
+"e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2" = "TV/TabletopMode";
 // L_Option_00_T_WhiteText_00
-"dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "TV/Tabletop
-Mode";
+"dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705" = "TV/TabletopMode";
 // L_Option_01_T_BlackText_00
 "c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e" = "Handheld Mode";
 // L_Option_01_T_WhiteText_00
@@ -443,8 +433,7 @@ Mode";
 // T_Count_01
 "856153e31daacd337485d538d8d4fef7bb0343f70718c2ea0d9f928386a04812" = "Ability Chunks";
 // T_ExplainCamera_00
-"cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109" = "Set your control options when playing on a TV screen or the
-Nintendo Switch console screen.";
+"cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109" = "Set your control options when playing on a TV screen or theNintendo Switch console screen.";
 // T_ExplainCamera_01
 "6946f411789959507a28399421c8fbb8c78130d3b931df737ef4551a73391d7b" = "Control settings for playing in handheld mode.";
 // T_ExplainCamera_02
@@ -458,8 +447,7 @@ Nintendo Switch console screen.";
 // T_Max_00
 "6cb7624db890da289e07db603508c181c6ba920d683c105c3e857dac43b54840" = "COMPLETE!";
 // T_OffStage_00
-"a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85" = "Stage information is not available offline.
-Connect to the internet to get the latest!";
+"a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85" = "Stage information is not available offline.Connect to the internet to get the latest!";
 // T_Shop_00
 "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da" = "Shops";
 // T_UdemaeTitle_00
@@ -616,6 +604,10 @@ Connect to the internet to get the latest!";
 "0a052af0b1322f1d81d2d106879856f0308e7bccf94896ba3c77d220dab6a449" = "Giant";
 // T_TitleCoop_45
 "c3edad579f6ad3d2195a99c6ccbad74d74ddb6121d1476c6270436d90c8a475d" = "-";
+// Common_Locale_Lang
+"f34a27fc394c002eabd781f84e3f3a2016bef37bb36b3ac365fbc750b0d627ac" = "0";
+// Common_SplatNet3_Locale
+"59e8ccc95035366a3ff4cf0b1311e349d459a3354c97253b2934ac969b5050b8" = "en-US";
 // Common_Actual_Value
 "5efeae7f35e33bd46b46753d5f1424b497397641a1310d32f3568564e5df0c86" = "Actual value";
 // Common_App_Salmonia
@@ -710,6 +702,22 @@ Connect to the internet to get the latest!";
 "0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8" = "Delete all results in the app.";
 // Common_Write_Review
 "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd" = "Write a review";
+// Common_Form
+"65126fe9c6e611c757f80c7bd2791532f50a0e25d71691f52d0a749b99ed0c58" = "Form";
+// Common_Form_Type
+"aafc2b502bd9a702fe498c57867d9fd24bee252a3e8ff499608b8c4522d15dc0" = "Type";
+// Common_Form_Type_Bug
+"20dc13b1da682fbeae2963121ac74af3d3afa5881af0d7abbe1f70ea8baea8ea" = "Bug";
+// Common_Form_Type_Feature
+"4c162fbc69dde39226c9d674bb3a73fad2950c643319cc10cd3607c05e3faa45" = "Feature";
+// Common_Form_Type_Enhancement
+"2a6e7d1f011d552b5455e27f91930b76da7249b93096ed13b5d5f0fd39062a48" = "Enhancement";
+// Common_Form_Title
+"79af1c8d40fd2cb694d6796507c189d48820800e1a564046720d1ceab08fceb1" = "Title";
+// Common_Form_Content
+"f719242d0b97030aa72fec90c08b0f94565511b8ac2b6deb155642cdfa5e03b3" = "Content";
+// Common_Form_Submit
+"0fade8f6454b7a5527a83f13bb51068ad0aea8b8e60218537718d78816384087" = "Submit";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "Salmon Run";
 // Carousel_FestOpening

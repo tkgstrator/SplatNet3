@@ -356,17 +356,17 @@ public enum LocalizedType: String, CaseIterable {
 	case L_BtnStage_00_T_BlackText_00 = "38acd6e71493acfcb8c524e81480704e0896fdcf9ec513d5d6384ba111052272"
 	/// レギュラーマッチ
 	case L_BtnStage_00_T_WhiteText_00 = "b5e16bbcddde2d68eb6c7ab69e55224157833a494c27543713859934a0616650"
-	/// バンカラマッチ [size=75%]（チャレンジ）[size=100%]
+	/// バンカラマッチ[size=75%]（チャレンジ）[size=100%]
 	case L_BtnStage_01_T_BlackText_00 = "7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9"
-	/// バンカラマッチ [size=75%]（チャレンジ）[size=100%]
+	/// バンカラマッチ[size=75%]（チャレンジ）[size=100%]
 	case L_BtnStage_01_T_WhiteText_00 = "92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7"
 	/// SALMON  RUN
 	case L_BtnStage_04_T_BlackText_00 = "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430"
 	/// SALMON  RUN
 	case L_BtnStage_04_T_WhiteText_00 = "8b08d20b43a9bcf7def3e3a76c08accb35671f2d25d91a77ba9a2cfab434ae93"
-	/// バンカラマッチ [size=75%]（オープン）[size=100%]
+	/// バンカラマッチ[size=75%]（オープン）[size=100%]
 	case L_BtnStage_05_T_BlackText_00 = "55b413a939c2fb718077f8cea2b0b80377bbb1df154ac470fc0502b2c12ab394"
-	/// バンカラマッチ [size=75%]（オープン）[size=100%]
+	/// バンカラマッチ[size=75%]（オープン）[size=100%]
 	case L_BtnStage_05_T_WhiteText_00 = "d15e5edc040e93823f166c736b437bac33021916a3c0eb1e1990e65326b65021"
 	/// MAX
 	case L_Catalog_00_T_Max_00 = "edcbe940ac1d71c2fedec1c64d0adb5916fad6884cb4b7af939ef55a058a431c"
@@ -386,9 +386,9 @@ public enum LocalizedType: String, CaseIterable {
 	case L_GaugeOption_03_T_Header_00 = "1655b4537c47418a4f02100cd52900a3edd98a7107a425005554db158cb2780c"
 	/// 次のアイテム
 	case L_NextItem_00_T_NextItem_00 = "771290f6a993cba44ca6de810df49af5660e7682a3ceca69834e27d3335f2830"
-	/// TVモード/ テーブルモード
+	/// TVモード/テーブルモード
 	case L_Option_00_T_BlackText_00 = "e1b9fc8c63e8e478f4ef5bcd1cc04f284d7442c9cd01f6cf307dc3b057d6bdc2"
-	/// TVモード/ テーブルモード
+	/// TVモード/テーブルモード
 	case L_Option_00_T_WhiteText_00 = "dff8c227897823403efa71a3860b879f3d4bea2ec13e0b8d1ec51b35c26a9705"
 	/// 携帯モード
 	case L_Option_01_T_BlackText_00 = "c5f154cb6b5ecc7a34a44ee2aab6c8a9cab447d2c937d9a2a0028e9b8f56885e"
@@ -444,9 +444,9 @@ public enum LocalizedType: String, CaseIterable {
 	case T_Catalog_00 = "18b0429ae0198a60a536d57dd1e1956e9bfd3124a10867b118871c01598691b3"
 	/// 持っているかけらの数
 	case T_Count_01 = "856153e31daacd337485d538d8d4fef7bb0343f70718c2ea0d9f928386a04812"
-	/// テレビ画面に映したり Switch本体を置いてプレイするときの カメラオプションを設定できます
+	/// テレビ画面に映したり Switch本体を置いてプレイするときのカメラオプションを設定できます
 	case T_ExplainCamera_00 = "cf3a9223451138f5b69291183c753b0a6d5107deb077729d446c9b7bffec5109"
-	/// Switch本体を持ってプレイするときの カメラオプションを設定できます
+	/// Switch本体を持ってプレイするときのカメラオプションを設定できます
 	case T_ExplainCamera_01 = "6946f411789959507a28399421c8fbb8c78130d3b931df737ef4551a73391d7b"
 	/// インターネット対戦などで インクカラーが見分けやすくなるよう、色を固定します
 	case T_ExplainCamera_02 = "32cbc5d0f8173137aee6cf5f6ab28220f99b8065d1af98d34dfc99e5f05d8368"
@@ -458,7 +458,7 @@ public enum LocalizedType: String, CaseIterable {
 	case T_MaxNext_00 = "0ba97e74c33bc33a21daa4633d0d77c108238e37a42ee6176b4edbe80b562d99"
 	/// COMPLETE!!
 	case T_Max_00 = "6cb7624db890da289e07db603508c181c6ba920d683c105c3e857dac43b54840"
-	/// ステージ情報がありません このモードを遊ぶには インターネットに接続して 最新のステージ情報を受信する必要があります
+	/// ステージ情報がありませんこのモードを遊ぶには インターネットに接続して最新のステージ情報を受信する必要があります
 	case T_OffStage_00 = "a4890c00916778d00fc6c47cb0e90fa86fabb710a361d7d647f7c0127cf23b85"
 	/// ショップ
 	case T_Shop_00 = "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da"
@@ -710,6 +710,22 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_Wipe_Results_Txt = "0a1eb81170c4360d46b8f30770161c4488cede2882663748f56ef7e093cc76d8"
 	/// レビューを書く
 	case Common_Write_Review = "7d67958c81a694b00a8529af243603c7bd25a6998c0b8190aa0d46ad5ee7d0dd"
+	/// フォーム
+	case Common_Form = "65126fe9c6e611c757f80c7bd2791532f50a0e25d71691f52d0a749b99ed0c58"
+	/// 種類
+	case Common_Form_Type = "aafc2b502bd9a702fe498c57867d9fd24bee252a3e8ff499608b8c4522d15dc0"
+	/// バグ修正
+	case Common_Form_Type_Bug = "20dc13b1da682fbeae2963121ac74af3d3afa5881af0d7abbe1f70ea8baea8ea"
+	/// 機能追加
+	case Common_Form_Type_Feature = "4c162fbc69dde39226c9d674bb3a73fad2950c643319cc10cd3607c05e3faa45"
+	/// 改善案
+	case Common_Form_Type_Enhancement = "2a6e7d1f011d552b5455e27f91930b76da7249b93096ed13b5d5f0fd39062a48"
+	/// タイトル
+	case Common_Form_Title = "79af1c8d40fd2cb694d6796507c189d48820800e1a564046720d1ceab08fceb1"
+	/// 内容
+	case Common_Form_Content = "f719242d0b97030aa72fec90c08b0f94565511b8ac2b6deb155642cdfa5e03b3"
+	/// 送信
+	case Common_Form_Submit = "0fade8f6454b7a5527a83f13bb51068ad0aea8b8e60218537718d78816384087"
 	/// サーモンラン
 	case Carousel_CoopHistory = "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980"
 	/// フェス開催！！

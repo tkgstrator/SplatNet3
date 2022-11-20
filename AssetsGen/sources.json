@@ -46,7 +46,15 @@
     "Common_Welcome_App_Txt": "もっと便利なサーモンランライフを！",
     "Common_Wipe_Results": "リザルト消去",
     "Common_Wipe_Results_Txt": "アプリで保存されている全てのリザルトを削除します",
-    "Common_Write_Review": "レビューを書く"
+    "Common_Write_Review": "レビューを書く",
+    "Common_Form": "フォーム",
+    "Common_Form_Type": "種類",
+    "Common_Form_Type_Bug": "バグ修正",
+    "Common_Form_Type_Feature": "機能追加",
+    "Common_Form_Type_Enhancement": "改善案",
+    "Common_Form_Title": "タイトル",
+    "Common_Form_Content": "内容",
+    "Common_Form_Submit": "送信"
   },
   "EN-US": {
     "Common_Actual_Value": "Actual value",
@@ -95,6 +103,14 @@
     "Common_Welcome_App_Txt": "Enhance your online play experience with the Salmonia3+!",
     "Common_Wipe_Results": "Erase results",
     "Common_Wipe_Results_Txt": "Delete all results in the app.",
-    "Common_Write_Review": "Write a review"
+    "Common_Write_Review": "Write a review",
+    "Common_Form": "Form",
+    "Common_Form_Type": "Type",
+    "Common_Form_Type_Bug": "Bug",
+    "Common_Form_Type_Feature": "Feature",
+    "Common_Form_Type_Enhancement": "Enhancement",
+    "Common_Form_Title": "Title",
+    "Common_Form_Content": "Content",
+    "Common_Form_Submit": "Submit"
   }
 }

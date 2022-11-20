@@ -36,7 +36,7 @@
     ]
   },
   {
-    "locale": "locale13",
+    "locale": "locale12",
     "xcode": "zh-Hant",
     "internal_code": "CNzh",
     "event_waves": [
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "locale": "locale12",
+    "locale": "locale13",
     "xcode": "zh-Hans",
     "internal_code": "TWzh",
     "event_waves": [

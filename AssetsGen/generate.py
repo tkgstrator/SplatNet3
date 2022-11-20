@@ -2,6 +2,7 @@ import deepl
 import os
 import json
 from dotenv import load_dotenv
+from googletrans import Translator
 
 if __name__=="__main__":
   load_dotenv()
@@ -16,7 +17,7 @@ if __name__=="__main__":
     output["en-US"] = input["EN-US"]
     # 英語を基準にしないとおかしくなるため
     values = input["EN-US"]
-    target_langs = ["EN-GB", "DE", "IT", "FR", "NL", "RU", "ZH", "ES"]
+    target_langs = ["EN-GB", "DE", "IT", "FR", "NL", "RU", "ES", "ZH"]
     for target_lang in target_langs:
       print(f"Translating {target_lang}")
       results = translator.translate_text(values.values(), target_lang=target_lang, source_lang="EN")
@@ -36,7 +37,11 @@ if __name__=="__main__":
         output['ru-RU'] = dict(zip(values.keys(), results))
       if target_lang == "ZH":
         output['zh-CN'] = dict(zip(values.keys(), results))
-        output['zh-TW'] = dict(zip(values.keys(), results))
+        translator = Translator()
+        translated = []
+        for result in results:
+          translated.append(translator.translate(result, src="zh-cn", dest="zh-tw").text)
+        output['zh-TW'] = dict(zip(values.keys(), translated))
       if target_lang == "ES":
         output['es-ES'] = dict(zip(values.keys(), results))
         output['es-MX'] = dict(zip(values.keys(), results))
