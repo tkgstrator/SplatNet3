@@ -19,6 +19,7 @@ public class SessionToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     public var headers: [String: String]?
 
+    /// トークンコードとベリファイアから初期化
     public init(code: String, verifier: String) {
         self.parameters = [
             "client_id": "71b963c1b7b6d119",

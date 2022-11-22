@@ -7,63 +7,7 @@
 
 import Foundation
 
-public struct UserInfo: Codable {
-    public init(
-        nickname: String,
-        membership: Bool,
-        friendCode: String,
-        thumbnailURL: URL,
-        nsaid: String,
-        iksmSession: String?, // For Splatoon2
-        bulletToken: String?, // For Splatoon3
-        sessionToken: String,
-        gameServiceToken: String,
-        gameWebToken: String,
-        timeInterval: Double = 60 * 60 * 1.5
-    ) {
-        self.nickname = nickname
-        self.membership = membership
-        self.friendCode = friendCode
-        self.thumbnailURL = thumbnailURL
-        self.credential = OAuthCredential(
-            nsaid: nsaid,
-            iksmSession: iksmSession,
-            bulletToken: bulletToken,
-            sessionToken: sessionToken,
-            gameServiceToken: gameServiceToken,
-            gameWebToken: gameWebToken,
-            timeInterval: timeInterval
-        )
-    }
-
-    public init(
-        nickname: String,
-        membership: Bool,
-        friendCode: String,
-        thumbnailURL: URL,
-        nsaid: String,
-        iksmSession: String?, // For Splatoon2
-        bulletToken: String?, // For Splatoon3
-        sessionToken: String,
-        gameServiceToken: String,
-        gameWebToken: String,
-        expiresIn: Date
-    ) {
-        self.nickname = nickname
-        self.membership = membership
-        self.friendCode = friendCode
-        self.thumbnailURL = thumbnailURL
-        self.credential = OAuthCredential(
-            nsaid: nsaid,
-            iksmSession: iksmSession,
-            bulletToken: bulletToken,
-            sessionToken: sessionToken,
-            gameServiceToken: gameServiceToken,
-            gameWebToken: gameWebToken,
-            expiresIn: expiresIn
-        )
-    }
-
+public class UserInfo: SPCredential {
     /// ニックネーム
     public let nickname: String
     /// メンバーシップ加入しているか
@@ -72,10 +16,26 @@ public struct UserInfo: Codable {
     public let friendCode: String
     /// 画像URL
     public let thumbnailURL: URL
-    /// 認証
-    public let credential: OAuthCredential
-    /// サーモンランリザルト
-//    public let coop: CoopInfo
+
+    override init(sessionToken: SessionToken.Response, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, bulletToken: BulletToken.Response) {
+        self.nickname = gameServiceToken.result.user.name
+        self.membership = gameServiceToken.result.user.links.nintendoAccount.membership.active
+        self.friendCode = gameServiceToken.result.user.links.friendCode.id
+        self.thumbnailURL = URL(unsafeString: gameServiceToken.result.user.imageUri)
+        super.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
+    }
+
+    override init(sessionToken: SessionToken.Response, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, iksmSession: IksmSession.Response) {
+        self.nickname = gameServiceToken.result.user.name
+        self.membership = gameServiceToken.result.user.links.nintendoAccount.membership.active
+        self.friendCode = gameServiceToken.result.user.links.friendCode.id
+        self.thumbnailURL = URL(unsafeString: gameServiceToken.result.user.imageUri)
+        super.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, iksmSession: iksmSession)
+    }
+
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
 
 extension UserInfo: Identifiable, Hashable, Equatable {
@@ -91,5 +51,5 @@ extension UserInfo: Identifiable, Hashable, Equatable {
         hasher.combine(id)
     }
 
-    public var id: String { credential.nsaid }
+    public var id: String { nsaid }
 }

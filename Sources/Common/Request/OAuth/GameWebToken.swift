@@ -1,5 +1,5 @@
 //
-//  SplatoonAccessToken.swift
+//  GameWebToken.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
@@ -9,8 +9,8 @@
 import Alamofire
 import Foundation
 
-public class SplatoonAccessToken: RequestType {
-    public typealias ResponseType = SplatoonAccessToken.Response
+public class GameWebToken: RequestType {
+    public typealias ResponseType = GameWebToken.Response
 
     public var method: HTTPMethod = .post
     public var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
@@ -19,7 +19,7 @@ public class SplatoonAccessToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     public var headers: [String: String]?
 
-    public init(imink: Imink.Response, accessToken: SplatoonToken.Response, version: String, authType: OAuthType) {
+    public init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: String, authType: OAuthType) {
         self.headers = [
             "X-Platform": "Android",
             "Authorization": "Bearer \(accessToken.result.webApiServerCredential.accessToken)",

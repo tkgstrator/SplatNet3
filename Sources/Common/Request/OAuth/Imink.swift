@@ -26,7 +26,7 @@ public class Imink: RequestType {
         ]
     }
 
-    public init(accessToken: SplatoonToken.Response) {
+    public init(accessToken: GameServiceToken.Response) {
         self.parameters = [
             "token": accessToken.result.webApiServerCredential.accessToken,
             "hash_method": String(IminkType.app.rawValue),

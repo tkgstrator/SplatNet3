@@ -32,7 +32,7 @@ extension SplatNet2 {
     /// Async/Awaitリクエスト
     public func publish<T: RequestType>(_ request: T) async throws -> T.ResponseType {
         // 選択されているアカウントから認証情報を取得
-        let credential: OAuthCredential = try {
+        let credential: SPCredential = try {
             guard let account = account else {
                 throw Failure.API(error: NXError.API.account)
             }

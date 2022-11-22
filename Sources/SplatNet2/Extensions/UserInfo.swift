@@ -8,11 +8,11 @@
 import Foundation
 import Common
 
-extension OAuthCredential {
+extension SPCredential {
     init(
         sessionToken: SessionToken.Response,
-        splatoonToken: SplatoonToken.Response,
-        splatoonAccessToken: SplatoonAccessToken.Response,
+        splatoonToken: GameServiceToken.Response,
+        splatoonAccessToken: GameWebToken.Response,
         iksmSession: IksmSession.Response
     ) {
         self.init(
@@ -28,8 +28,8 @@ extension OAuthCredential {
 
 extension UserInfo {
     init(sessionToken: SessionToken.Response,
-         splatoonToken: SplatoonToken.Response,
-         splatoonAccessToken: SplatoonAccessToken.Response,
+         splatoonToken: GameServiceToken.Response,
+         splatoonAccessToken: GameWebToken.Response,
          iksmSession: IksmSession.Response
     ) {
         self.init(
@@ -41,8 +41,8 @@ extension UserInfo {
     }
 
     init(sessionToken: String,
-         splatoonToken: SplatoonToken.Response,
-         splatoonAccessToken: SplatoonAccessToken.Response,
+         splatoonToken: GameServiceToken.Response,
+         splatoonAccessToken: GameWebToken.Response,
          iksmSession: IksmSession.Response
     ) {
         self.init(

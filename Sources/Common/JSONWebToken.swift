@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct JWT: Codable {
+/// JSONWebToken
+public struct JSONWebToken: Codable {
     /// Base64でエンコードされたトークンから生成
     public init(gameWebToken: String) throws {
         let rawTexts: [String] = gameWebToken.components(separatedBy: ".").compactMap({ $0.base64DecodedString })

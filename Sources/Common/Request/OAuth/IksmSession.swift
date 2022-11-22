@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import Common
 import Foundation
 
 internal class IksmSession: RequestType {

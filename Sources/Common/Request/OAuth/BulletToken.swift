@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import Common
 import Foundation
 
 internal class BulletToken: RequestType {
@@ -21,7 +20,7 @@ internal class BulletToken: RequestType {
     var headers: [String: String]?
 
     /// レスポンスからリクエスト生成
-    init(accessToken: SplatoonAccessToken.Response, version: String) {
+    init(accessToken: GameWebToken.Response, version: String) {
         self.headers = [
             "X-Web-View-Ver": version,
             "X-NaCountry": "US",

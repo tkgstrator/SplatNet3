@@ -231,7 +231,7 @@ open class SplatNet3: Authenticator {
     /// イカリング3のリクエスト
     open func publish<T: GraphQL>(_ request: T) async throws -> T.ResponseType {
         // 選択されているアカウントから認証情報を取得
-        let credential: OAuthCredential = try {
+        let credential: SPCredential = try {
             guard let account = account else {
                 // アカウントがセットされていなければKeychianから読み込む
                 if let account = keychain.get().first {

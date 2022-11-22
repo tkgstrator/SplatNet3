@@ -19,6 +19,7 @@ public class AccessToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     public var headers: [String: String]?
 
+    /// セッショントークンコードから初期化
     public init(sessionToken: String) {
         self.parameters = [
             "client_id": "71b963c1b7b6d119",
@@ -27,19 +28,16 @@ public class AccessToken: RequestType {
         ]
     }
 
-    public init(sessionToken: SessionToken.Response) {
-        self.parameters = [
-            "client_id": "71b963c1b7b6d119",
-            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer-session-token",
-            "session_token": sessionToken.sessionToken,
-        ]
+    /// セッショントークンコードから初期化
+    public convenience init(sessionToken: SessionToken.Response) {
+        self.init(sessionToken: sessionToken.sessionToken)
     }
 
     public struct Response: Codable {
-        public var accessToken: String
-        public var expiresIn: Int
-        public var idToken: String
-        public var scope: [String]
-        public var tokenType: String
+        public let accessToken: String
+        public let expiresIn: Int
+        public let idToken: String
+        public let scope: [String]
+        public let tokenType: String
     }
 }

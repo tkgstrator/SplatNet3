@@ -17,16 +17,16 @@ extension SplatNet2 {
     }
 
     /// リクエストが失敗したときにリトライするかどうか
-    public func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: OAuthCredential) -> Bool {
+    public func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: SPCredential) -> Bool {
         return false
     }
 
-    public func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
+    public func apply(_ credential: SPCredential, to urlRequest: inout URLRequest) {
         // イカスミセッションを設定
         urlRequest.headers.add(HTTPHeader(name: "cookie", value: "iksm_session=\(credential.iksmSession)"))
     }
 
-    public func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Swift.Result<OAuthCredential, Error>) -> Void) {
+    public func refresh(_ credential: SPCredential, for session: Session, completion: @escaping (Swift.Result<SPCredential, Error>) -> Void) {
         Task { [weak self] in
             do {
                 let response: UserInfo = try await refreshToken(sessionToken: credential.sessionToken)

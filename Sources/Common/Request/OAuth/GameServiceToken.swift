@@ -1,5 +1,5 @@
 //
-//  SplatoonToken.swift
+//  GameServiceToken.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
@@ -9,8 +9,9 @@
 import Alamofire
 import Foundation
 
-public class SplatoonToken: RequestType {
-    public typealias ResponseType = SplatoonToken.Response
+/// SplatoonToken
+public class GameServiceToken: RequestType {
+    public typealias ResponseType = GameServiceToken.Response
 
     public var method: HTTPMethod = .post
     public var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
@@ -35,6 +36,14 @@ public class SplatoonToken: RequestType {
                 "language": "ja-JP",
             ],
         ]
+    }
+
+    public convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: Version.Response) {
+        self.init(imink: imink, accessToken: accessToken.accessToken, version: version.version)
+    }
+
+    public convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: String) {
+        self.init(imink: imink, accessToken: accessToken.accessToken, version: version)
     }
 
     // MARK: - Response
