@@ -9,18 +9,18 @@
 import Alamofire
 import Foundation
 
-/// SplatoonToken
-public class GameServiceToken: RequestType {
-    public typealias ResponseType = GameServiceToken.Response
+/// GameServiceToken
+class GameServiceToken: RequestType {
+    typealias ResponseType = GameServiceToken.Response
 
-    public var method: HTTPMethod = .post
-    public var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
-    public var path: String = "v3/Account/Login"
-    public var parameters: Parameters?
+    var method: HTTPMethod = .post
+    var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
+    var path: String = "v3/Account/Login"
+    var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var headers: [String: String]?
+    var headers: [String: String]?
 
-    public init(imink: Imink.Response, accessToken: String, version: String) {
+    init(imink: Imink.Response, accessToken: String, version: String) {
         self.headers = [
             "X-ProductVersion": "\(version)",
             "X-Platform": "Android",
@@ -38,83 +38,83 @@ public class GameServiceToken: RequestType {
         ]
     }
 
-    public convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: Version.Response) {
+    convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: Version.Response) {
         self.init(imink: imink, accessToken: accessToken.accessToken, version: version.version)
     }
 
-    public convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: String) {
+    convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: String) {
         self.init(imink: imink, accessToken: accessToken.accessToken, version: version)
     }
 
     // MARK: - Response
-    public struct Response: Codable {
-        public let status: Int
-        public let result: Result
-        public let correlationId: String
+    struct Response: Codable {
+        let status: Int
+        let result: Result
+        let correlationId: String
     }
 
     // MARK: - Result
-    public struct Result: Codable {
-        public let user: User
-        public let webApiServerCredential: Credential
-        public let firebaseCredential: Credential
+    struct Result: Codable {
+        let user: User
+        let webApiServerCredential: Credential
+        let firebaseCredential: Credential
     }
 
     // MARK: - Credential
-    public struct Credential: Codable {
-        public let accessToken: String
-        public let expiresIn: Int
+    struct Credential: Codable {
+        let accessToken: String
+        let expiresIn: Int
     }
 
     // MARK: - User
-    public struct User: Codable {
-        public let id: Int
-        public let nsaId: String
-        public let imageUri: String
-        public let name, supportId: String
-        public let isChildRestricted: Bool
-        public let etag: String
-        public let links: Links
-        public let permissions: Permissions
-        public let presence: Presence
+    struct User: Codable {
+        let id: Int
+        let nsaId: String
+        let imageUri: String
+        let name, supportId: String
+        let isChildRestricted: Bool
+        let etag: String
+        let links: Links
+        let permissions: Permissions
+        let presence: Presence
     }
 
     // MARK: - Links
-    public struct Links: Codable {
-        public let nintendoAccount: NintendoAccount
-        public let friendCode: FriendCode
+    struct Links: Codable {
+        let nintendoAccount: NintendoAccount
+        let friendCode: FriendCode
     }
 
     // MARK: - FriendCode
-    public struct FriendCode: Codable {
-        public let regenerable: Bool
-        public let regenerableAt: Int
-        public let id: String
+    struct FriendCode: Codable {
+        let regenerable: Bool
+        let regenerableAt: Int
+        let id: String
     }
 
     // MARK: - NintendoAccount
-    public struct NintendoAccount: Codable {
-        public let membership: Membership
+    struct NintendoAccount: Codable {
+        let membership: Membership
     }
 
     // MARK: - Membership
-    public struct Membership: Codable {
-        public let active: Bool
+    struct Membership: Codable {
+        let active: Bool
     }
 
     // MARK: - Permissions
-    public struct Permissions: Codable {
-        public let presence: String
+    struct Permissions: Codable {
+        let presence: String
     }
 
     // MARK: - Presence
-    public struct Presence: Codable {
-        public let state: String
-        public let updatedAt, logoutAt: Int
-        public let game: Game
+    struct Presence: Codable {
+        let state: String
+        let updatedAt, logoutAt: Int
+        let game: Game
     }
 
     // MARK: - Game
-    public struct Game: Codable {
+    struct Game: Codable {
     }
 }

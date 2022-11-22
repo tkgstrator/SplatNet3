@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-public extension DataRequest {
+extension DataRequest {
     @discardableResult
     func validationWithNXError() -> Self {
         let decoder: JSONDecoder = {

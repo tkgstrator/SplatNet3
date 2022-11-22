@@ -9,17 +9,18 @@
 import Alamofire
 import Foundation
 
-public class GameWebToken: RequestType {
-    public typealias ResponseType = GameWebToken.Response
+/// GameWebToken
+class GameWebToken: RequestType {
+    typealias ResponseType = GameWebToken.Response
 
-    public var method: HTTPMethod = .post
-    public var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
-    public var path: String = "v2/Game/GetWebServiceToken"
-    public var parameters: Parameters?
+    var method: HTTPMethod = .post
+    var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
+    var path: String = "v2/Game/GetWebServiceToken"
+    var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var headers: [String: String]?
+    var headers: [String: String]?
 
-    public init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: String, authType: OAuthType) {
+    init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: String, authType: OAuthType) {
         self.headers = [
             "X-Platform": "Android",
             "Authorization": "Bearer \(accessToken.result.webApiServerCredential.accessToken)",
@@ -35,14 +36,14 @@ public class GameWebToken: RequestType {
         ]
     }
 
-    public struct Response: Codable {
-        public let correlationId: String
-        public let result: AccessToken
-        public let status: Int
+    struct Response: Codable {
+        let correlationId: String
+        let result: AccessToken
+        let status: Int
 
-        public struct AccessToken: Codable {
-            public let accessToken: String
-            public let expiresIn: Int
+        struct AccessToken: Codable {
+            let accessToken: String
+            let expiresIn: Int
         }
     }
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 /// JSONWebToken
-public struct JSONWebToken: Codable {
+struct JSONWebToken: Codable {
     /// Base64でエンコードされたトークンから生成
-    public init(gameWebToken: String) throws {
+    init(gameWebToken: String) throws {
         let rawTexts: [String] = gameWebToken.components(separatedBy: ".").compactMap({ $0.base64DecodedString })
 
         // 二つに分割できなければ不正なJWTとみなす
@@ -33,47 +33,47 @@ public struct JSONWebToken: Codable {
         self.payload = try decoder.decode(Payload.self, from: data[1])
     }
 
-    public let header: Header
-    public let payload: Payload
+    let header: Header
+    let payload: Payload
 
-    public enum Status: CaseIterable {
+    enum Status: CaseIterable {
         case Valid
         case Expired
     }
 
-    public var status: Status {
+    var status: Status {
         payload.exp <= Int(Date().timeIntervalSince1970) ? .Expired : .Valid
     }
 
-    public struct Header: Codable {
-        public let typ: String
-        public let alg: String
-        public let kid: String
-        public let jku: String
+    struct Header: Codable {
+        let typ: String
+        let alg: String
+        let kid: String
+        let jku: String
     }
 
-    public struct Payload: Codable {
-        public let isChildRestricted: Bool
-        public let aud: String
-        public let exp: Int
-        public let iat: Int
-        public let iss: String
-        public let jti: String
-        public let sub: Int64
-        public let links: Link
-        public let typ: String
-        public let membership: Membership
+    struct Payload: Codable {
+        let isChildRestricted: Bool
+        let aud: String
+        let exp: Int
+        let iat: Int
+        let iss: String
+        let jti: String
+        let sub: Int64
+        let links: Link
+        let typ: String
+        let membership: Membership
     }
 
-    public struct Link: Codable {
-        public let networkServiceAccount: NetworkService
+    struct Link: Codable {
+        let networkServiceAccount: NetworkService
     }
 
-    public struct NetworkService: Codable {
-        public let id: String
+    struct NetworkService: Codable {
+        let id: String
     }
 
-    public struct Membership: Codable {
-        public let active: Bool
+    struct Membership: Codable {
+        let active: Bool
     }
 }

@@ -40,8 +40,7 @@ let package = Package(
                 "KeychainAccess",
                 "BetterSafariView",
                 "SwiftyBeaver"
-            ],
-            resources: [.process("Resources")]),
+            ]),
         .target(
             name: "SplatNet2",
             dependencies: [

@@ -11,19 +11,20 @@ import Foundation
 
 public class SPCredential: AuthenticationCredential, Codable {
     /// ユーザーID
-    public var nsaid: String
+    /// ユーザーID
+    var nsaid: String
     /// スプラトゥーン2で使われる認証トークン
-    public var iksmSession: String? = nil
+    var iksmSession: String? = nil
     /// スプラトゥーン3で使われる認証トークン
-    public var bulletToken: String? = nil
+    var bulletToken: String? = nil
     /// セッショントークン
-    public var sessionToken: String
+    var sessionToken: String
     /// スプラトゥーントークン
-    public var gameServiceToken: String
+    var gameServiceToken: String
     /// スプラトゥーンアクセストークン
-    public var gameWebToken: String
+    var gameWebToken: String
     /// 有効期限
-    public var expiration: Date
+    var expiration: Date
 
     /// 認証トークンのリフレッシュが必要かどうか(2時間に1回リフレッシュが必要)
     public var requiresRefresh: Bool {
@@ -31,7 +32,7 @@ public class SPCredential: AuthenticationCredential, Codable {
     }
 
     /// GameWebTokenのリフレッシュが必要かどうか(6.5時間に1回リフレッシュが必要)
-    public var requiresGameWebTokenRefresh: Bool {
+    var requiresGameWebTokenRefresh: Bool {
         guard let gameWebToken: JSONWebToken = try? JSONWebToken(gameWebToken: self.gameWebToken) else {
             return true
         }

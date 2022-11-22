@@ -9,18 +9,19 @@
 import Alamofire
 import Foundation
 
-public class AccessToken: RequestType {
-    public typealias ResponseType = AccessToken.Response
+/// AccessToken
+class AccessToken: RequestType {
+    typealias ResponseType = AccessToken.Response
 
-    public var method: HTTPMethod = .post
-    public var baseURL = URL(unsafeString: "https://accounts.nintendo.com/")
-    public var path: String = "connect/1.0.0/api/token"
-    public var parameters: Parameters?
+    var method: HTTPMethod = .post
+    var baseURL = URL(unsafeString: "https://accounts.nintendo.com/")
+    var path: String = "connect/1.0.0/api/token"
+    var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var headers: [String: String]?
+    var headers: [String: String]?
 
     /// セッショントークンコードから初期化
-    public init(sessionToken: String) {
+    init(sessionToken: String) {
         self.parameters = [
             "client_id": "71b963c1b7b6d119",
             "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer-session-token",
@@ -29,15 +30,15 @@ public class AccessToken: RequestType {
     }
 
     /// セッショントークンコードから初期化
-    public convenience init(sessionToken: SessionToken.Response) {
+    convenience init(sessionToken: SessionToken.Response) {
         self.init(sessionToken: sessionToken.sessionToken)
     }
 
-    public struct Response: Codable {
-        public let accessToken: String
-        public let expiresIn: Int
-        public let idToken: String
-        public let scope: [String]
-        public let tokenType: String
+    struct Response: Codable {
+        let accessToken: String
+        let expiresIn: Int
+        let idToken: String
+        let scope: [String]
+        let tokenType: String
     }
 }

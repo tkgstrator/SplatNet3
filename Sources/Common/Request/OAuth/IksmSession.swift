@@ -9,7 +9,8 @@
 import Alamofire
 import Foundation
 
-internal class IksmSession: RequestType {
+/// IksmSession
+class IksmSession: RequestType {
     typealias ResponseType = IksmSession.Response
 
     var method: HTTPMethod = .get

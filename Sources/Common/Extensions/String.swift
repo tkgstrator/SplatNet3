@@ -11,14 +11,14 @@ import Foundation
 
 extension String {
     /// 長さ128のランダム文字列を生成する
-    public static var randomString: String {
+    static var randomString: String {
         let letters: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         // swiftlint:disable:next force_unwrapping
         return String((0 ..< 128).map({ _ in letters.randomElement()! }))
     }
 
     /// Base64文字列に変換する
-    public var base64EncodedString: String {
+    var base64EncodedString: String {
         // swiftlint:disable:next force_unwrapping
         self.data(using: .utf8)!
             .base64EncodedString()
@@ -27,7 +27,7 @@ extension String {
             .replacingOccurrences(of: "/", with: "_")
     }
 
-    public var sha256Hash: String {
+    var sha256Hash: String {
         NSLocalizedString(
             SHA256
                .hash(data: self.data(using: .utf8)!)
@@ -39,7 +39,7 @@ extension String {
     }
 
     /// Base64文字列から復号する
-    public var base64DecodedString: String? {
+    var base64DecodedString: String? {
         let formatedString: String = self + Array(repeating: "=", count: self.count % 4).joined()
         if let data: Data = Data(base64Encoded: formatedString, options: [.ignoreUnknownCharacters]) {
             return String(data: data, encoding: .utf8)
@@ -48,20 +48,19 @@ extension String {
     }
 
     /// HMAC-SHA256文字列に変換する
-    public var codeChallenge: String {
+    var codeChallenge: String {
         Data(SHA256.hash(data: Data(self.utf8))).base64EncodedString()
             .replacingOccurrences(of: "=", with: "")
             .replacingOccurrences(of: "+", with: "-")
             .replacingOccurrences(of: "/", with: "_")
     }
 
-    /// 正規表現でキャプチャする
+    /// 正規表現でマッチングする
     public func capture(pattern: String, group: Int) -> String? {
-        let result = capture(pattern: pattern, group: [group])
-        return result.isEmpty ? nil : result[0]
+        capture(pattern: pattern, group: [group]).first
     }
 
-    /// 正規表現でキャプチャする
+    /// 正規表現でマッチングする
     public func capture(pattern: String, group: [Int]) -> [String] {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return []
@@ -74,7 +73,8 @@ extension String {
         }
     }
 
-    public func capture(pattern: String) -> [String] {
+    /// 正規表現でマッチングする
+    func capture(pattern: String) -> [String] {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return []
         }
@@ -85,25 +85,25 @@ extension String {
             (self as NSString).substring(with: match.range)
         })
     }
-
-    /// 文字列をBase64復号して遊んだ時間をUnixTimestampで返す
-    public var playTime: Int {
-        let formatter: ISO8601DateFormatter = {
-            let formatter = ISO8601DateFormatter()
-            formatter.formatOptions = [
-                .withDay,
-                .withMonth,
-                .withYear,
-                .withTime,
-            ]
-            return formatter
-        }()
-
-        if let decodedString: String = self.base64DecodedString,
-           let playTime: String = decodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
-           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
-            return Int(timeInterval)
-        }
-        return 0
-    }
+//
+//    /// 文字列をBase64復号して遊んだ時間をUnixTimestampで返す
+//    var playTime: Int {
+//        let formatter: ISO8601DateFormatter = {
+//            let formatter = ISO8601DateFormatter()
+//            formatter.formatOptions = [
+//                .withDay,
+//                .withMonth,
+//                .withYear,
+//                .withTime,
+//            ]
+//            return formatter
+//        }()
+//
+//        if let decodedString: String = self.base64DecodedString,
+//           let playTime: String = decodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
+//           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
+//            return Int(timeInterval)
+//        }
+//        return 0
+//    }
 }

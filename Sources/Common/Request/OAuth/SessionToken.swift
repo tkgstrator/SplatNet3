@@ -9,18 +9,19 @@
 import Alamofire
 import Foundation
 
-public class SessionToken: RequestType {
-    public typealias ResponseType = SessionToken.Response
+/// SessionToken
+class SessionToken: RequestType {
+    typealias ResponseType = SessionToken.Response
 
-    public var method: HTTPMethod = .post
-    public var baseURL = URL(unsafeString: "https://accounts.nintendo.com/")
-    public var path: String = "connect/1.0.0/api/session_token"
-    public var parameters: Parameters?
+    var method: HTTPMethod = .post
+    var baseURL = URL(unsafeString: "https://accounts.nintendo.com/")
+    var path: String = "connect/1.0.0/api/session_token"
+    var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
-    public var headers: [String: String]?
+    var headers: [String: String]?
 
     /// トークンコードとベリファイアから初期化
-    public init(code: String, verifier: String) {
+    init(code: String, verifier: String) {
         self.parameters = [
             "client_id": "71b963c1b7b6d119",
             "session_token_code": code,
@@ -28,8 +29,8 @@ public class SessionToken: RequestType {
         ]
     }
 
-    public struct Response: Codable {
-        public let code: String
-        public let sessionToken: String
+    struct Response: Codable {
+        let code: String
+        let sessionToken: String
     }
 }

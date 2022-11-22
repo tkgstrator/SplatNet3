@@ -33,14 +33,14 @@ public enum Failure {
 
         public init(error: NXError.NSO) {
             self.error = error
-            self.errorDescription = NSLocalizedString(error.rawValue, bundle: .module, comment: "")
+            self.errorDescription = error.rawValue
         }
     }
 
     /// APP用のエラーレスポンス
     public struct APP: FailureResponse {
         public var errorDescription: String? {
-            return NSLocalizedString(errorMessage.rawValue, bundle: .module, comment: "")
+            return errorMessage.rawValue
         }
         public var failureReason: String? = nil
         public var statusCode: Int {

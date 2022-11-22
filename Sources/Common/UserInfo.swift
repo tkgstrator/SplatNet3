@@ -9,13 +9,13 @@ import Foundation
 
 public class UserInfo: SPCredential {
     /// ニックネーム
-    public let nickname: String
+    let nickname: String
     /// メンバーシップ加入しているか
-    public let membership: Bool
+    let membership: Bool
     /// フレンドコード
-    public let friendCode: String
+    let friendCode: String
     /// 画像URL
-    public let thumbnailURL: URL
+    let thumbnailURL: URL
 
     override init(sessionToken: SessionToken.Response, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, bulletToken: BulletToken.Response) {
         self.nickname = gameServiceToken.result.user.name

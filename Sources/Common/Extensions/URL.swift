@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension URL {
+extension URL {
     /// 文字列からUnsafeにURLを作成するイニシャライザ
-    init(unsafeString: String) {
+    public init(unsafeString: String) {
         // swiftlint:disable:next force_unwrapping
         self.init(string: unsafeString)!
     }
@@ -26,6 +26,12 @@ public extension URL {
             "session_token_code_challenge_method": "S256",
             "theme": "login_form",
         ]
-        self.init(string: "https://accounts.nintendo.com/connect/1.0.0/authorize?\(parameters.queryString)")!
+        let queryItems: [URLQueryItem] = parameters.map({ URLQueryItem(name: $0.key, value: $0.value) })
+        let baseURL: URL = URL(unsafeString: "https://accounts.nintendo.com/connect/1.0.0/authorize")
+        // swiftlint:disable:next force_unwrapping
+        var components: URLComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
+        components.queryItems = queryItems
+        // swiftlint:disable:next force_unwrapping
+        self = components.url!
     }
 }
