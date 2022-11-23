@@ -8,24 +8,33 @@
 import SwiftUI
 import WebKit
 
-public struct SPAuthorizeView: UIViewRepresentable {
-    public typealias UIViewType = WKWebView
-    public typealias Completion = (Result<UserInfo, Error>) -> ()
+struct SPAuthorizeView: UIViewRepresentable {
+    typealias UIViewType = WKWebView
+    typealias OnProcess = () -> Void
+    typealias Completion = (Result<UserInfo, Error>) -> ()
 
+    let onProcess: OnProcess
     let completion: Completion
 
-    final public class Coordinator: NSObject, WKURLSchemeHandler {
+    final class Coordinator: NSObject, WKURLSchemeHandler {
         let state: String = String.randomString
         let verifier: String = String.randomString
         let session: Authorize = Authorize()
         let completion: Completion
+        let onProcess: OnProcess
 
-        init(completion: @escaping Completion) {
+        init(onProcess: @escaping OnProcess, completion: @escaping Completion) {
+            self.onProcess = onProcess
             self.completion = completion
         }
 
         /// URLSchemeを踏んだ時に実行される
-        public func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+        func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+            let hosting: UIHostingController = UIHostingController(rootView: SignInView())
+            UIApplication.shared.rootViewController?.present(hosting, animated: true, completion: {
+                print("Dismiss")
+            })
+            print(UIApplication.shared.rootViewController)
             guard let oauthURL: String = urlSchemeTask.request.url?.absoluteString,
                   let sessionTokenCode: String = oauthURL.capture(pattern: "de=(.*)&", group: 1)
             else {
@@ -40,19 +49,19 @@ public struct SPAuthorizeView: UIViewRepresentable {
             }
         }
 
-        public func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
+        func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
         }
     }
 
-    public func makeCoordinator() -> Coordinator {
+    func makeCoordinator() -> Coordinator {
         Coordinator(completion: completion)
     }
 
-    public func makeUIView(context: Context) -> WKWebView {
+    func makeUIView(context: Context) -> WKWebView {
         SPWebView(coordinator: context.coordinator)
     }
 
-    public func updateUIView(_ uiView: WKWebView, context: Context) {
+    func updateUIView(_ uiView: WKWebView, context: Context) {
     }
 }
 
@@ -60,7 +69,9 @@ struct SPAuthorizeView_Previews: PreviewProvider {
     @State private static var isPresented: Bool = false
 
     static var previews: some View {
-        SPAuthorizeView(completion: { account in
+        SPAuthorizeView(onProcess: {
+            
+        }, completion: { account in
             print(account)
         })
     }

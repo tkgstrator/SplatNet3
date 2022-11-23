@@ -94,6 +94,7 @@ open class Authorize {
 
     private func getVersion() async throws -> Version.Response {
         let response: String = try await session.request(Version())
+            .validationWithNXError()
             .serializingString()
             .value
         return Version.Response(from: response)
@@ -101,6 +102,7 @@ open class Authorize {
 
     private func getWebVersion() async throws -> WebVersion.Response {
         let response: String = try await session.request(WebVersion())
+            .validationWithNXError()
             .serializingString(encoding: .utf8)
             .value
         return WebVersion.Response(from: response)
@@ -117,12 +119,12 @@ open class Authorize {
     }
 
     /// GameWebTokenとWebVersionからトークンを生成
-    func getBulletToken(gameWebToken: GameWebToken.Response, version: WebVersion.Response) async throws -> BulletToken.Response {
+    private func getBulletToken(gameWebToken: GameWebToken.Response, version: WebVersion.Response) async throws -> BulletToken.Response {
         try await request(BulletToken(accessToken: gameWebToken, version: version))
     }
 
     /// SessionTokenCodeとVerifierからトークンを生成
-    func getBulletToken(code: String, verifier: String) async throws -> UserInfo {
+    internal func getBulletToken(code: String, verifier: String) async throws -> UserInfo {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
         return try await getBulletToken(sessionToken: sessionToken)
     }
@@ -138,7 +140,6 @@ open class Authorize {
         let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
         /// アカウント情報を保存
         self.account = account
-        dump(account)
         return account
     }
 }

@@ -45,7 +45,7 @@ class Imink: RequestType {
         var path: String {
             switch self {
             case .Imink:
-                return "ff"
+                return "f"
             case .Flapg:
                 return "ika/api/login-main"
             }
