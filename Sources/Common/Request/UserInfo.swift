@@ -66,7 +66,7 @@ public struct UserInfo: SPCredential {
         self.sessionToken = sessionToken.sessionToken
         self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
         self.gameWebToken = gameWebToken.result.accessToken
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 23.5)
     }
 
     public init(from decoder: Decoder) throws {
