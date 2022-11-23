@@ -20,7 +20,7 @@ class GameWebToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     var headers: [String: String]?
 
-    init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: String, authType: OAuthType) {
+    init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: String, contentId: ContentId) {
         self.headers = [
             "X-Platform": "Android",
             "Authorization": "Bearer \(accessToken.result.webApiServerCredential.accessToken)",
@@ -28,12 +28,16 @@ class GameWebToken: RequestType {
         self.parameters = [
             "parameter": [
                 "f": imink.f,
-                "id": authType.rawValue,
+                "id": contentId.rawValue,
                 "registrationToken": accessToken.result.webApiServerCredential.accessToken,
                 "timestamp": imink.timestamp,
                 "requestId": imink.requestId,
             ],
         ]
+    }
+
+    convenience init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: Version.Response, contentId: ContentId) {
+        self.init(imink: imink, accessToken: accessToken, version: version.version, contentId: contentId)
     }
 
     struct Response: Codable {

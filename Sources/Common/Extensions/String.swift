@@ -74,7 +74,7 @@ extension String {
     }
 
     /// 正規表現でマッチングする
-    func capture(pattern: String) -> [String] {
+    public func capture(pattern: String) -> [String] {
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return []
         }

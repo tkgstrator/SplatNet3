@@ -17,7 +17,12 @@ extension DataRequest {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             return decoder
         }()
-        return validate({ request, response, data in
+        return cURLDescription(calling: { requestURL in
+            #if DEBUG
+            print(requestURL)
+            #endif
+        })
+        .validate({ request, response, data in
             DataRequest.ValidationResult(catching: {
                 if let data = data {
                     if let failure = try? decoder.decode(Failure.NSO.self, from: data) {

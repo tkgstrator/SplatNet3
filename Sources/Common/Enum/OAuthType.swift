@@ -9,7 +9,7 @@
 import Foundation
 
 /// トークンを取得するゲームの種類
-enum OAuthType: Int, CaseIterable {
+enum ContentId: Int, CaseIterable {
     case SP2 = 5_741_031_244_955_648
     case SP3 = 4_834_290_508_791_808
 }
