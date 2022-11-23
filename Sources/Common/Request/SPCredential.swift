@@ -9,61 +9,39 @@
 import Foundation
 import Alamofire
 
-public class SPCredential: AuthenticationCredential, Codable {
+protocol SPCredential: AuthenticationCredential, Codable {
     /// ユーザーID
-    var nsaid: String
+    var nsaid: String { get set }
     /// スプラトゥーン2で使われる認証トークン
-    var iksmSession: String? = nil
+    var iksmSession: String? { get set }
     /// スプラトゥーン3で使われる認証トークン
-    var bulletToken: String? = nil
+    var bulletToken: String? { get set }
     /// セッショントークン
-    var sessionToken: String
+    var sessionToken: String { get set }
     /// スプラトゥーントークン
-    var gameServiceToken: String
+    var gameServiceToken: String { get set }
     /// スプラトゥーンアクセストークン
-    var gameWebToken: String
+    var gameWebToken: String { get set }
     /// 有効期限
-    var expiration: Date
+    var expiration: Date { get set }
 
     /// 認証トークンのリフレッシュが必要かどうか(2時間に1回リフレッシュが必要)
-    public var requiresRefresh: Bool {
-        Date(timeIntervalSinceNow: 0) > expiration
-    }
+    var requiresRefresh: Bool { get }
 
     /// GameWebTokenのリフレッシュが必要かどうか(6.5時間に1回リフレッシュが必要)
-    var requiresGameWebTokenRefresh: Bool {
-        guard let gameWebToken: JSONWebToken = try? JSONWebToken(gameWebToken: self.gameWebToken) else {
-            return true
-        }
-        let expiredTime: Date = Date(timeIntervalSince1970: TimeInterval(gameWebToken.payload.exp))
-        return expiredTime <= Date()
-    }
+    var requiresGameWebTokenRefresh: Bool { get }
 
     init(
         sessionToken: SessionToken.Response,
         gameServiceToken: GameServiceToken.Response,
         gameWebToken: GameWebToken.Response,
         bulletToken: BulletToken.Response
-    ) {
-        self.nsaid = gameServiceToken.result.user.nsaId
-        self.sessionToken = sessionToken.sessionToken
-        self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
-        self.gameWebToken = gameWebToken.result.accessToken
-        self.bulletToken = bulletToken.bulletToken
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
-    }
+    )
 
     init(
         sessionToken: SessionToken.Response,
         gameServiceToken: GameServiceToken.Response,
         gameWebToken: GameWebToken.Response,
         iksmSession: IksmSession.Response
-    ) {
-        self.nsaid = gameServiceToken.result.user.nsaId
-        self.sessionToken = sessionToken.sessionToken
-        self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
-        self.gameWebToken = gameWebToken.result.accessToken
-        self.iksmSession = iksmSession.iksmSession
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 23.5)
-    }
+    )
 }
