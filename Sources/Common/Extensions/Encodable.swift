@@ -25,6 +25,7 @@ public extension Encodable {
     func asData() throws -> Data {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
+//            encoder.keyEncodingStrategy = .convertToSnakeCase
             return encoder
         }()
 

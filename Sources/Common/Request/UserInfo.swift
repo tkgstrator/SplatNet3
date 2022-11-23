@@ -34,8 +34,20 @@ public class UserInfo: SPCredential {
         super.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, iksmSession: iksmSession)
     }
 
+    enum CodingKeys: String, CodingKey {
+        case nickname
+        case membership
+        case friendCode
+        case thumbnailURL
+    }
+
     required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.nickname = try container.decode(String.self, forKey: .nickname)
+        self.membership = try container.decode(Bool.self, forKey: .membership)
+        self.friendCode = try container.decode(String.self, forKey: .friendCode)
+        self.thumbnailURL = URL(unsafeString: try container.decode(String.self, forKey: .thumbnailURL))
+        try super.init(from: decoder)
     }
 }
 

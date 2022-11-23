@@ -7,8 +7,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyBeaver
+import KeychainAccess
 
-class Authorize {
+/// 認証用のクラス
+open class Authorize {
+    /// 通信用のセッション
     let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = {
             let config: URLSessionConfiguration = URLSessionConfiguration.default
@@ -19,14 +23,43 @@ class Authorize {
         }()
         return Session(configuration: configuration)
     }()
-
+    /// SwiftyBeaverでログ保存
+    let logger: SwiftyBeaver.Type = SwiftyBeaver.self
+    /// ローカルにログ保存
+    let local: FileDestination = FileDestination()
+    /// コンソールに出力
+    let console: ConsoleDestination = ConsoleDestination()
+    /// Keychainでアカウント管理
+    let keychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
+    /// レスポンスのデコーダー
     let decoder: JSONDecoder = {
         let decoder: JSONDecoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
 
-    init() {}
+    /// ログインしているアカウント
+    var account: UserInfo? {
+        get {
+            keychain.get()
+        }
+        set {
+            keychain.set(newValue)
+        }
+    }
+    /// ローカルにログ保存
+    public init() {
+        self.logger.addDestination(local)
+        self.logger.addDestination(console)
+        dump(account)
+    }
+
+    /// クラウドにログ保存
+    convenience public init(appId: String, appSecret: String, encryptionKey: String) {
+        self.init()
+        let cloud: SBPlatformDestination = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
+        self.logger.addDestination(cloud)
+    }
 
     func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
         try await session.request(request, interceptor: interceptor)
@@ -34,7 +67,6 @@ class Authorize {
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
     }
-
 
     private func getSessionToken(code: String, verifier: String) async throws -> SessionToken.Response {
         try await request(SessionToken(code: code, verifier: verifier))
@@ -103,6 +135,10 @@ class Authorize {
         let gameWebToken: GameWebToken.Response = try await getGameWebToken(accessToken: gameServiceToken, version: version, contentId: .SP3)
         let webVersion: WebVersion.Response = try await getWebVersion()
         let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken, version: webVersion)
-        return UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
+        let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
+        /// アカウント情報を保存
+        self.account = account
+        dump(account)
+        return account
     }
 }
