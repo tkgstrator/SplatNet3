@@ -14,7 +14,7 @@ class GameWebToken: RequestType {
     typealias ResponseType = GameWebToken.Response
 
     var method: HTTPMethod = .post
-    var baseURL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
+    var baseURL: URL = URL(unsafeString: "https://api-lp1.znc.srv.nintendo.net/")
     var path: String = "v2/Game/GetWebServiceToken"
     var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection

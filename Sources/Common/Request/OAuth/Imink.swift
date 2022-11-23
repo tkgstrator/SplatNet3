@@ -14,24 +14,42 @@ class Imink: RequestType {
     typealias ResponseType = Imink.Response
 
     var method: HTTPMethod = .post
-    var baseURL = URL(unsafeString: "https://api.imink.app")
-    var path: String = "f"
+    var baseURL: URL
+    var path: String
     var parameters: Parameters?
     //  swiftlint:disable:next discouraged_optional_collection
     var headers: [String: String]?
 
-    init(accessToken: AccessToken.Response) {
+    init(accessToken: AccessToken.Response, server: ServerType = .Imink) {
+        self.baseURL = URL(unsafeString: server.rawValue)
+        self.path = server.path
         self.parameters = [
             "token": accessToken.accessToken,
             "hash_method": String(IminkType.nso.rawValue),
         ]
     }
 
-    init(accessToken: GameServiceToken.Response) {
+    init(accessToken: GameServiceToken.Response, server: ServerType = .Imink) {
+        self.baseURL = URL(unsafeString: server.rawValue)
+        self.path = server.path
         self.parameters = [
             "token": accessToken.result.webApiServerCredential.accessToken,
             "hash_method": String(IminkType.app.rawValue),
         ]
+    }
+
+    enum ServerType: String, CaseIterable {
+        case Imink  = "https://api.imink.app/"
+        case Flapg  = "https://flapg.com/"
+
+        var path: String {
+            switch self {
+            case .Imink:
+                return "ff"
+            case .Flapg:
+                return "ika/api/login-main"
+            }
+        }
     }
 
     enum IminkType: Int, CaseIterable {

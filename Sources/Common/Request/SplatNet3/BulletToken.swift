@@ -29,7 +29,7 @@ class BulletToken: RequestType {
     }
 
     convenience init(accessToken: GameWebToken.Response, version: WebVersion.Response) {
-        self.init(accessToken: accessToken.result.accessToken, version: version.hash)
+        self.init(accessToken: accessToken.result.accessToken, version: "\(version.version)-\(version.hash)")
     }
 
     /// レスポンスからリクエスト生成

@@ -14,9 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView(content: {
             Form(content: {
-                SPButton(label: {
-                    Text("Sign In")
-                })
+                SPButton(
+                    onSuccess: {},
+                    label: {
+                        Text("Sign In")
+                    })
             })
             .navigationTitle("SplatNet3 Demo")
         })

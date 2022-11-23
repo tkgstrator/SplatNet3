@@ -10,11 +10,19 @@ import WebKit
 
 public struct SPAuthorizeView: UIViewRepresentable {
     public typealias UIViewType = WKWebView
+    public typealias Completion = (Result<UserInfo, Error>) -> ()
+
+    let completion: Completion
 
     final public class Coordinator: NSObject, WKURLSchemeHandler {
         let state: String = String.randomString
         let verifier: String = String.randomString
         let session: Authorize = Authorize()
+        let completion: Completion
+
+        init(completion: @escaping Completion) {
+            self.completion = completion
+        }
 
         /// URLSchemeを踏んだ時に実行される
         public func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
@@ -25,11 +33,9 @@ public struct SPAuthorizeView: UIViewRepresentable {
             }
             Task {
                 do {
-                    print(sessionTokenCode)
-                    let response: BulletToken.Response = try await session.getBulletToken(code: sessionTokenCode, verifier: verifier)
-                    print(response)
+                    completion(.success(try await session.getBulletToken(code: sessionTokenCode, verifier: verifier)))
                 } catch (let error) {
-                    print(error)
+                    completion(.failure(error))
                 }
             }
         }
@@ -39,7 +45,7 @@ public struct SPAuthorizeView: UIViewRepresentable {
     }
 
     public func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(completion: completion)
     }
 
     public func makeUIView(context: Context) -> WKWebView {
@@ -52,7 +58,10 @@ public struct SPAuthorizeView: UIViewRepresentable {
 
 struct SPAuthorizeView_Previews: PreviewProvider {
     @State private static var isPresented: Bool = false
+
     static var previews: some View {
-        SPAuthorizeView()
+        SPAuthorizeView(completion: { account in
+            print(account)
+        })
     }
 }

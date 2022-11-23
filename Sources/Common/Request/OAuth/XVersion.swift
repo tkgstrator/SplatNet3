@@ -13,7 +13,7 @@ import Foundation
 class Version: RequestType {
     typealias ResponseType = Version.Response
 
-    var baseURL = URL(unsafeString: "https://apps.apple.com/")
+    var baseURL: URL = URL(unsafeString: "https://apps.apple.com/")
     var method: HTTPMethod = .get
     var path: String
     var parameters: Parameters?
@@ -28,11 +28,7 @@ class Version: RequestType {
         let version: String
 
         init(from: String) {
-            if let version = from.capture(pattern: #"whats-new__latest__version">Version (.*)</p>"#, group: 1) {
-                self.version = version
-                return
-            }
-            self.version = "2.3.1"
+            self.version = from.capture(pattern: #"whats-new__latest__version">Version (.*)</p>"#, group: 1) ?? "2.3.1"
         }
     }
 }

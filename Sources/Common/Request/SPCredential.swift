@@ -50,7 +50,7 @@ public class SPCredential: AuthenticationCredential, Codable {
         self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
         self.gameWebToken = gameWebToken.result.accessToken
         self.bulletToken = bulletToken.bulletToken
-        self.expiration = Date()
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
     }
 
     init(
@@ -64,6 +64,6 @@ public class SPCredential: AuthenticationCredential, Codable {
         self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
         self.gameWebToken = gameWebToken.result.accessToken
         self.iksmSession = iksmSession.iksmSession
-        self.expiration = Date()
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 23.5)
     }
 }
