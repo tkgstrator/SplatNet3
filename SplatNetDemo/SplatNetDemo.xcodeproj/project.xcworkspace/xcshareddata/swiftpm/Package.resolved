@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "SDBridgeSwift",
+        "repositoryURL": "https://github.com/SDBridge/SDBridgeSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "1413057dfb14162b7650b3c086042a67d53d784e",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "SourceKitten",
         "repositoryURL": "https://github.com/jpsim/SourceKitten.git",
         "state": {

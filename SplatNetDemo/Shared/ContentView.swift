@@ -9,18 +9,36 @@ import SwiftUI
 import Common
 
 struct ContentView: View {
-    @State private var isPresented: Bool = false
-
     var body: some View {
         NavigationView(content: {
             Form(content: {
-                SPButton(
+                SPAuthButton(
                     onSuccess: {},
                     label: {
                         Text("Sign In")
                     })
+                SP3WebButton(label: {
+                    Text("SplatNet3")
+                })
+                FilePickerButton()
             })
             .navigationTitle("SplatNet3 Demo")
+        })
+    }
+}
+
+struct FilePickerButton: View {
+    @State private var isPresented: Bool = false
+
+    var body: some View {
+        Button(action: {
+            isPresented.toggle()
+        }, label: {
+            Text("Import")
+        })
+        .fullScreenCover(isPresented: $isPresented, content: {
+            FilePickerView(fileType: .json, onSelected: { _ in
+            })
         })
     }
 }

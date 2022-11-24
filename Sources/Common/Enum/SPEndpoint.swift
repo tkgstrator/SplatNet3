@@ -67,7 +67,7 @@ enum SPEndpoint: String, CaseIterable, Identifiable {
     var color: Color {
         switch self {
         case .SESSION_TOKEN, .ACCESS_TOKEN:
-            return SPColor.SplatNet3.SPGreen
+            return SPColor.SplatNet3.SPSalmonGreen
         case .GAME_WEB_TOKEN, .GAME_SERVICE_TOKEN, .BULLET_TOKEN:
             return SPColor.SplatNet3.SPRed
         case .WEB_VERSION, .VERSION:

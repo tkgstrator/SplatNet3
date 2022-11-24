@@ -28,15 +28,13 @@ class BulletToken: RequestType {
         ]
     }
 
+    convenience init(accessToken: String, version: WebVersion.Response) {
+        self.init(accessToken: accessToken, version: "\(version.version)-\(version.hash)")
+    }
+
     convenience init(accessToken: GameWebToken.Response, version: WebVersion.Response) {
         self.init(accessToken: accessToken.result.accessToken, version: "\(version.version)-\(version.hash)")
     }
-
-    /// レスポンスからリクエスト生成
-    convenience init(accessToken: GameWebToken.Response, version: Version.Response) {
-        self.init(accessToken: accessToken.result.accessToken, version: version.version)
-    }
-
 
     internal struct Response: Codable {
         let bulletToken: String

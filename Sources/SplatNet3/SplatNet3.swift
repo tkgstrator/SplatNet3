@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Common
+
+open class SplatNet3: SPSession {
+    
+}

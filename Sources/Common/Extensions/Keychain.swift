@@ -18,17 +18,13 @@ extension Keychain {
     }
 
     func get() -> UserInfo? {
-        let decoder: JSONDecoder = {
-            let decoder: JSONDecoder = JSONDecoder()
-//            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return decoder
-        }()
+        let decoder: JSONDecoder = JSONDecoder()
 
         guard let data: Data = try? getData(Keychain.bundleIdentifier) else {
             return nil
         }
+
         do {
-            print(try JSONSerialization.jsonObject(with: data))
             return try decoder.decode(UserInfo.self, from: data)
         } catch (let error) {
             print(error)

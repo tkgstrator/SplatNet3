@@ -51,7 +51,6 @@ open class Authorize {
     public init() {
         self.logger.addDestination(local)
         self.logger.addDestination(console)
-        dump(account)
     }
 
     /// クラウドにログ保存
@@ -59,6 +58,13 @@ open class Authorize {
         self.init()
         let cloud: SBPlatformDestination = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
         self.logger.addDestination(cloud)
+    }
+
+    func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
+        try await session.request(request, interceptor: interceptor)
+            .validationWithNXError()
+            .serializingString(encoding: .utf8)
+            .value
     }
 
     func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
@@ -73,6 +79,10 @@ open class Authorize {
     }
 
     private func getAccessToken(sessionToken: SessionToken.Response) async throws -> AccessToken.Response {
+        try await request(AccessToken(sessionToken: sessionToken))
+    }
+
+    private func getAccessToken(sessionToken: String) async throws -> AccessToken.Response {
         try await request(AccessToken(sessionToken: sessionToken))
     }
 
@@ -93,19 +103,11 @@ open class Authorize {
     }
 
     private func getVersion() async throws -> Version.Response {
-        let response: String = try await session.request(Version())
-            .validationWithNXError()
-            .serializingString()
-            .value
-        return Version.Response(from: response)
+        Version.Response(from: try await request(Version()))
     }
 
     private func getWebVersion() async throws -> WebVersion.Response {
-        let response: String = try await session.request(WebVersion())
-            .validationWithNXError()
-            .serializingString(encoding: .utf8)
-            .value
-        return WebVersion.Response(from: response)
+        WebVersion.Response(from: try await request(WebVersion()))
     }
 
     private func getGameServiceToken(accessToken: AccessToken.Response, version: Version.Response) async throws -> GameServiceToken.Response {
@@ -118,19 +120,35 @@ open class Authorize {
         return try await request(GameWebToken(imink: response, accessToken: accessToken, version: version, contentId: contentId))
     }
 
-    /// GameWebTokenとWebVersionからトークンを生成
     private func getBulletToken(gameWebToken: GameWebToken.Response, version: WebVersion.Response) async throws -> BulletToken.Response {
         try await request(BulletToken(accessToken: gameWebToken, version: version))
     }
 
+    private func getBulletToken(gameWebToken: String, version: WebVersion.Response) async throws -> BulletToken.Response {
+        try await request(BulletToken(accessToken: gameWebToken, version: version))
+    }
+
     /// SessionTokenCodeとVerifierからトークンを生成
-    internal func getBulletToken(code: String, verifier: String) async throws -> UserInfo {
+    internal func getBulletToken(code: String, verifier: String) async throws {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
-        return try await getBulletToken(sessionToken: sessionToken)
+        try await getBulletToken(sessionToken: sessionToken)
     }
 
     /// SessionTokenからトークンを生成
-    func getBulletToken(sessionToken: SessionToken.Response) async throws -> UserInfo {
+    internal func getBulletToken(sessionToken: SessionToken.Response) async throws {
+        try await getBulletToken(sessionToken: sessionToken.sessionToken)
+    }
+
+    /// GameWebTokenからトークンを生成
+    func refreshBulletToken(gameWebToken: String) async throws {
+        let version: WebVersion.Response = try await getWebVersion()
+        let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken, version: version)
+        self.account?.bulletToken = bulletToken.bulletToken
+        self.account?.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
+    }
+
+    /// SessionTokenからトークンを生成
+    func getBulletToken(sessionToken: String) async throws {
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         let version: Version.Response = try await getVersion()
         let gameServiceToken: GameServiceToken.Response =  try await getGameServiceToken(accessToken: accessToken, version: version)
@@ -140,6 +158,5 @@ open class Authorize {
         let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
         /// アカウント情報を保存
         self.account = account
-        return account
     }
 }

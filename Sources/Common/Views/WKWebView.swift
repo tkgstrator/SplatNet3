@@ -20,24 +20,15 @@ class SPWebView: WKWebView, WKNavigationDelegate {
         return indicator
     }()
 
-    init(coordinator: SPAuthorizeView.Coordinator) {
-        let preferences: WKPreferences = WKPreferences()
-        preferences.javaScriptCanOpenWindowsAutomatically = true
-
-        let processPool: WKProcessPool = WKProcessPool()
-
-        let config: WKWebViewConfiguration = WKWebViewConfiguration()
-        config.processPool = processPool
-        config.setURLSchemeHandler(coordinator, forURLScheme: "npf71b963c1b7b6d119")
-        config.applicationNameForUserAgent = "SplatNet/@tkgling"
-        super.init(frame: .zero, configuration: config)
+    init(state: String, verifier: String, configuration: WKWebViewConfiguration) {
+        super.init(frame: .zero, configuration: configuration)
         self.isOpaque = false
         self.backgroundColor = .clear
         self.allowsLinkPreview = false
         self.navigationDelegate = self
         self.scrollView.alwaysBounceVertical = false
 
-        let request: URLRequest = URLRequest(url: URL(state: coordinator.state, verifier: coordinator.verifier))
+        let request: URLRequest = URLRequest(url: URL(state: state, verifier: verifier))
         self.addSubview(indicator)
         self.load(request)
     }

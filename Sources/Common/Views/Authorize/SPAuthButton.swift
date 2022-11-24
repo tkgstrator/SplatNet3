@@ -1,5 +1,5 @@
 //
-//  Authorize.swift
+//  SPAuthButton.swift
 //  
 //
 //  Created by devonly on 2022/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SPButton<Content: View>: View {
+public struct SPAuthButton<Content: View>: View {
     public typealias Completion = (() -> Void)
     @State private var isPresented: Bool = false
     let onSuccess: Completion
@@ -37,16 +37,7 @@ public struct SPButton<Content: View>: View {
             label()
         })
         .sheet(isPresented: $isPresented, content: {
-            SPAuthorizeView(completion: { result in
-                isPresented.toggle()
-                switch result {
-                case .success(let account):
-                    dump(account)
-                    onSuccess()
-                case .failure(let error):
-                    print(error)
-                }
-            })
+            SPAuthorizeView()
         })
     }
 }
