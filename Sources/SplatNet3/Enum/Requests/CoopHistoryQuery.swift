@@ -31,58 +31,53 @@ final class CoopHistoryQuery: GraphQL {
 
     // MARK: - CoopResult
     public struct CoopResult: Codable {
-        public let historyGroupsOnlyFirst: HistoryGroupsOnlyFirst
+        public let historyGroupsOnlyFirst: Node<HistoryGroupsOnlyFirstNode>
         public let regularAverageClearWave: Double
-        public let regularGrade: RegularGrade
+        public let regularGrade: Element<GradeId>
         public let regularGradePoint: Int
         public let monthlyGear: MonthlyGear
         public let scale: Scale
         public let pointCard: PointCard
-        public let historyGroups: HistoryGroups
+        public let historyGroups: Node<HistoryGroup>
     }
 
     // MARK: - HistoryGroups
-    public struct HistoryGroups: Codable {
-        public let nodes: [HistoryGroupsNode]
+    public struct Node<T: Codable>: Codable {
+        public let nodes: [T]
     }
 
     // MARK: - HistoryGroupsNode
-    public struct HistoryGroupsNode: Codable {
+    public struct HistoryGroup: Codable {
         public let startTime: String?
         public let endTime: String?
         public let mode: ModeType
         public let rule: RuleType
         public let highestResult: HighestResult?
-        public let historyDetails: HistoryDetails
+        public let historyDetails: Node<HistoryDetail>
     }
 
     // MARK: - HighestResult
     public struct HighestResult: Codable {
-        public let grade: RegularGrade
+        public let grade: Element<GradeId>
         public let gradePoint: Int
         public let jobScore: Int
     }
 
     // MARK: - RegularGrade
-    public struct RegularGrade: Codable {
+    public struct Element<T: RawRepresentable>: Codable where T.RawValue == Int {
         public let name: String
-        @IntegerRawValue public var id: GradeId
-    }
-
-    // MARK: - HistoryDetails
-    public struct HistoryDetails: Codable {
-        public let nodes: [Node]
+        @IntegerRawValue public var id: T
     }
 
     // MARK: - Node
-    public struct Node: Codable {
+    public struct HistoryDetail: Codable {
         public let id: String
         public let weapons: [Weapon]
-        public let nextHistoryDetail: NextHistoryDetailElement?
-        public let previousHistoryDetail: NextHistoryDetailElement?
+        public let nextHistoryDetail: HistoryDetailElement?
+        public let previousHistoryDetail: HistoryDetailElement?
         public let resultWave: Int
-        public let coopStage: RegularGrade
-        public let afterGrade: RegularGrade?
+//        public let coopStage: RegularGrade
+        public let afterGrade: Element<GradeId>?
         public let afterGradePoint: Int?
         public let gradePointDiff: GradePointDiff?
         public let bossResult: BossResult?
@@ -94,7 +89,7 @@ final class CoopHistoryQuery: GraphQL {
     // MARK: - BossResult
     public struct BossResult: Codable {
         public let hasDefeatBoss: Bool
-        public let boss: RegularGrade
+        public let boss: Element<EnemyId>
     }
 
     public enum GradePointDiff: String, Codable {
@@ -110,7 +105,7 @@ final class CoopHistoryQuery: GraphQL {
     }
 
     // MARK: - NextHistoryDetailElement
-    public struct NextHistoryDetailElement: Codable {
+    public struct HistoryDetailElement: Codable {
         public let id: String
     }
 
@@ -130,26 +125,16 @@ final class CoopHistoryQuery: GraphQL {
         @SHA256HashRawValue public var url: T
     }
 
-    // MARK: - HistoryGroupsOnlyFirst
-    public struct HistoryGroupsOnlyFirst: Codable {
-        public let nodes: [HistoryGroupsOnlyFirstNode]
-    }
-
     // MARK: - HistoryGroupsOnlyFirstNode
     public struct HistoryGroupsOnlyFirstNode: Codable {
-        public let historyDetails: FluffyHistoryDetails
-    }
-
-    // MARK: - FluffyHistoryDetails
-    public struct FluffyHistoryDetails: Codable {
-        public let nodes: [NextHistoryDetailElement]
+        public let historyDetails: Node<HistoryDetailElement>
     }
 
     // MARK: - MonthlyGear
     public struct MonthlyGear: Codable {
 //        public let typename: String
         public let name: String
-        public let image: Image<GradeKey>
+        public let image: Image<GearInfoKey>
     }
 
     // MARK: - PointCard
