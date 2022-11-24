@@ -35,7 +35,7 @@ final class ChallengeRefetchQuery: GraphQL {
         public let id: String
         public let afterGrade: AfterGrade
         public let rule: String
-        public let myResult: MyResult
+        public let myResult: MemberResult
         public let memberResults: [MemberResult]
         public let bossResult: BossResult
         public let enemyResults: [EnemyResult]

@@ -1,0 +1,203 @@
+{
+  "data": {
+    "coopHistoryDetail": {
+      "__typename": "CoopHistoryDetail",
+      "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMFQxNDM0MzNfYzkzYzg5NGItODAxNi00MTZmLTg1NzAtYzVkYjFhOTJjZTUz",
+      "afterGrade": null,
+      "rule": "REGULAR",
+      "myResult": {
+        "player": {
+          "__isPlayer": "CoopPlayer",
+          "byname": "Splatlandian Youth",
+          "name": "devonly",
+          "nameId": "1435",
+          "nameplate": {
+            "badges": [
+              null,
+              null,
+              null
+            ],
+            "background": {
+              "textColor": {
+                "a": 1.0,
+                "b": 1.0,
+                "g": 1.0,
+                "r": 1.0
+              },
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/npl_img/ef8a9390e1a4ee4da709c69cf572586b57b80100f521b16a9d8f2c1b764b0dd9_0.png?Expires=1673308800&Signature=P3pMSyXl7Qf3pk7JhwVPu3CK~DzhT-JK1IvnDcIidPD3~AB5qA~KvANlAdXzFjnjNGxHPU19jI7N24Czx2mjsA4lYOrHhV8derjXeQj48R4gDDuQOLrV1M6Fo15-tBeOKJ8bC8fVpvkwglbAOW628CRPmZauJDsOe~AlRD~IQJuyTcPgKkIQnafVXpTD~3VUDZmhZn6z5Vx0Y21MHfOZLWz4QxEo5o7Heqoyywi~Co88om1SYldPdLNkJkD~ATV7yrHCnxrskgxW~oykb1p6GH1VA24pprZ-mbzktsfkzmWptGq5qrEbpCaPz~6-IKU-sWDgwGBTmJEjfFHVE9hlnw__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "TmFtZXBsYXRlQmFja2dyb3VuZC0yMDAx"
+            }
+          },
+          "uniform": {
+            "name": "Orange Slopsuit",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_skin_img/89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53_0.png?Expires=1673308800&Signature=bvBmFDRGLDBYIggJF08sqpbM7F8zeiIc5eNJMHWSYwXDVNUIfCTNDy2Sjj5dSB3-H0P63RcDiPDu7EeA1SJZalwwf69H-ozEJqEN2eaFCLK0JL1UnqUXpFBKr6gWvC0MKzEJ2rSU-3q8Maq4Le3y0zYKljKeXhYiXbdGwXbCLof66vzMgPfoc2efYTugowTup0S63Sp2cCDe92sflSAuHtOcvYm2Ssm5g4Ivc-IdIEyu4pMJWfZYvFuB7GAfdp4hi-FfruFH028Og8X91tqw8XoilkdS9YdT3oQACoW0APIJZ5pTuMGipXv1ORnQPVIsYD1Iagbge1YRFnzMS4cSYA__&Key-Pair-Id=KNBS2THMRC385"
+            },
+            "id": "Q29vcFVuaWZvcm0tMQ=="
+          },
+          "id": "Q29vcFBsYXllci11LWFnbXdqbnlnaHZ6YmFhdnQ1bW1tOjIwMjIwOTEwVDE0MzQzM19jOTNjODk0Yi04MDE2LTQxNmYtODU3MC1jNWRiMWE5MmNlNTM6dS1hZ213am55Z2h2emJhYXZ0NW1tbQ==",
+          "isMyself": true,
+          "species": "INKLING"
+        },
+        "weapons": [
+          {
+            "name": "Classic Squiffer",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png?Expires=1673308800&Signature=UY8m5xdQ55u0uZRZSeNHL9H46I7TEqgawlF81WhQ2pfhI4bJwzl-NBzAzFYvwqTsrFJr8-nMEPnlSseDYmePK68EqYxjNqgKqBeh53wTUTihE203m1d3dKHM6wxz5U-I8qmlw80oXKQ8QJDLFRrbJHCXLL8eZHj3e5YYbpySzLS5vI0-sPCdhpaKVz5kfDHxHJgAGG9IQx1FIEpBfUjFGpN~Qs1l-1XL1X~N3-hd9ayk76F9YY~FmiLL1R1zf9H1lRLlPP5GkbeyZBXPNRtS1Q4MtiAHliFATMuCU6RI8e1ezL~z5gukHoqjF9fm2Ya3UUKeD5ZCnPdrPECEDSiB5A__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        ],
+        "specialWeapon": {
+          "name": "Triple Inkstrike",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/380e541b5bc5e49d77ff1a616f1343aeba01d500fee36aaddf8f09d74bd3d3bc_0.png?Expires=1673308800&Signature=Tmz7uneGddwCQAY2kRHloLLiA-tSYuGJ-qBvPSZSgB~eg1V9acYh-4i5BWIQsW22lngqih2DInc9UotgxPKdZ9nLQuzblQur2luUG~EjQ8lqDO5NbpkHI54mlyPXz~wVPgRQtreVYhxS3IsA8eRfOE0WEnD3cWQIpcw2Qrzm2SSRAlKFJaOLohtdk6TjjGX782Bglf--kdBif31xC-A5S8s1Fxjy7-Cvj843yCCu~7~M5rOq8hqgJJK8KVyEQjxGRgxN8ud~yXX~seyMLpavUxZBi4MqSyTc9vy4aDiZHzUjWYJwv7gF4eSNPPmmHpKjMtImyLhbflwuPk-huJ6UFg__&Key-Pair-Id=KNBS2THMRC385"
+          },
+          "id": "U3BlY2lhbFdlYXBvbi0yMDAxNA=="
+        },
+        "defeatEnemyCount": 1,
+        "deliverCount": 123,
+        "goldenAssistCount": 0,
+        "goldenDeliverCount": 0,
+        "rescueCount": 0,
+        "rescuedCount": 0
+      },
+      "memberResults": [
+        {
+          "player": {
+            "__isPlayer": "CoopPlayer",
+            "byname": "Splatlandian Tableturf Battler",
+            "name": "\u306f\u3066\u306a\u3093/",
+            "nameId": "1184",
+            "nameplate": {
+              "badges": [
+                null,
+                null,
+                null
+              ],
+              "background": {
+                "textColor": {
+                  "a": 1.0,
+                  "b": 1.0,
+                  "g": 1.0,
+                  "r": 1.0
+                },
+                "image": {
+                  "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/npl_img/dba78c8ed1013d420aacb669d31a002691f2bb4ec0c1c853e34244c40dc68ea8_0.png?Expires=1673308800&Signature=j5nWh6ySG8Ro6MAysNYr3puyu6I9T49qHa4xinujjVT1lkW9siM6GEB-otWXsKZOHiRgH0T9Hgt04OPjuQuiBGMarD4edOXOXBfLxRrYtS4LK7ObMzPkTCwFlaRJZPnxfQ5FfBEKBes5jhU5WDGTSaMAU2etAuaqiJ~HRgJfD2yFjBiCg89hIkybtzTZfo~uAi0rsSXm8dMip3P6bdO8GJRnqFP8VqfAZ~OZg4juE6nf6Ge5eO8Ev7S0IpiP8i9-P5G1SIO~~koAOjoid8zYzTEcwmjSBaW0H0sMfL3mhybGtloU85F4W6laGv97eq1xcKWWWyTM6YGsVRc3Pj15fA__&Key-Pair-Id=KNBS2THMRC385"
+                },
+                "id": "TmFtZXBsYXRlQmFja2dyb3VuZC0x"
+              }
+            },
+            "uniform": {
+              "name": "Orange Slopsuit",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_skin_img/89df74f2b5fbc49f76fb31f730fed012bb77f903746e81df108958010c95ef53_0.png?Expires=1673308800&Signature=bvBmFDRGLDBYIggJF08sqpbM7F8zeiIc5eNJMHWSYwXDVNUIfCTNDy2Sjj5dSB3-H0P63RcDiPDu7EeA1SJZalwwf69H-ozEJqEN2eaFCLK0JL1UnqUXpFBKr6gWvC0MKzEJ2rSU-3q8Maq4Le3y0zYKljKeXhYiXbdGwXbCLof66vzMgPfoc2efYTugowTup0S63Sp2cCDe92sflSAuHtOcvYm2Ssm5g4Ivc-IdIEyu4pMJWfZYvFuB7GAfdp4hi-FfruFH028Og8X91tqw8XoilkdS9YdT3oQACoW0APIJZ5pTuMGipXv1ORnQPVIsYD1Iagbge1YRFnzMS4cSYA__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "Q29vcFVuaWZvcm0tMQ=="
+            },
+            "id": "Q29vcFBsYXllci11LWFnbXdqbnlnaHZ6YmFhdnQ1bW1tOjIwMjIwOTEwVDE0MzQzM19jOTNjODk0Yi04MDE2LTQxNmYtODU3MC1jNWRiMWE5MmNlNTM6dS1hc2N0MzU3c2U2dGxrN2NpYW5tbQ==",
+            "isMyself": false,
+            "species": "INKLING"
+          },
+          "weapons": [
+            {
+              "name": "Bloblobber",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/0199e455872acba1ab8ef0040eca7f41afca48c1f9ad2c5d274323d6dbc49133_0.png?Expires=1673308800&Signature=gwOoXon3bfcCiA7lkqsp0f-gnsI20AADIgMoeru7nA2zNhzxVUKi4EeebNFEUfN7X1kX3QJZpW9F44qhvLL4x8rbG724eUkFaL4mmDNy5wO-lgvrfO4~lZOzyXzTZLK8fNhs8gX8eIklQG~UOxZyoZibv0hXFSyWNHiYT6TkPxYNjRr4Ey1SF21WaZbsLXtcwszQ6IaqxjcW9kWwow4eoLGKK6SKnw4VTa1jgYaH7ZA3TJbiBhk9g9NGBNm9FG-ebRzRl1UD1noJZNyHAGBMcaUFzRfTmcne9KFHOuIN-CwSEm2DNUuiKRggjxDWoTOxPuAMiMMlNHkx3M8pSu5xgg__&Key-Pair-Id=KNBS2THMRC385"
+              }
+            }
+          ],
+          "specialWeapon": {
+            "name": "Killer Wail 5.1",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/fa8d49e8c850ee69f0231976208a913384e73dc0a39e6fb00806f6aa3da8a1ee_0.png?Expires=1673308800&Signature=eQ7ZkvlDltvePOqSW8IGtrYTwPhU3z0ru1eUJdHL50XRY6B8Sbk9hDim~fLStgaRjC4E0svRgN1JzEjLnYB6c4pvaMcBGRc21vty~7eHLat~Pp7yxKm2xYduUSMkYjCC69fUs-lWbElXO6eHgkkkBDSa8ufU4~A~unTR4-RXDUbf-RrMQ9Iureu8NTL4WppdgMOZW5pq-7YLBTpAjqZYKVsettfLwdcZiNqCCGqbGDX4v9Q8-xQt49wlEn8WsbbyMyxlecEhzqcBRGmXrw0iSSYnnAvXKmpUt23c1y8CjOtatC6mtCFxG~hjEHCN4V993CxHv6vFrAVmHkZc2ATw4Q__&Key-Pair-Id=KNBS2THMRC385"
+            },
+            "id": "U3BlY2lhbFdlYXBvbi0yMDAwOQ=="
+          },
+          "defeatEnemyCount": 0,
+          "deliverCount": 170,
+          "goldenAssistCount": 0,
+          "goldenDeliverCount": 0,
+          "rescueCount": 0,
+          "rescuedCount": 0
+        }
+      ],
+      "bossResult": null,
+      "enemyResults": [
+        {
+          "defeatCount": 1,
+          "teamDefeatCount": 1,
+          "popCount": 2,
+          "enemy": {
+            "id": "Q29vcEVuZW15LTE1",
+            "name": "Goldie",
+            "image": {
+              "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/coop_enemy_img/a35aa2982499e9a404fdb81f72fbaf553bc47f7682cc67f9b8c32ca9910e2cbf_0.png?Expires=1673308800&Signature=wKifrTSy0JmGndGigWp0Jb4Zu--FuvJjpRjJ7358koNFlOKS2PwkFsJ7Kr0-m65gN4xsiRchcgZhz~vtaYFlt1BZlQWjpkXuetXhLqZQpk9lqQpWcKK40z~eJVZCXpAaxdIYqu26W8M8mP92c7LHceuGvUIcNFvSAJTBC-dUdG3GaDEnbI5OBwM5qD6dLngVr3X7apFEDAdZxzEPLTFogyCZcvfpQvlez0lkgSiqGoAA6kflxYBgFKVD-q~AseAM7aBfjtKloiUa2r~ObgusKYM3kc4gP-GD-CHInitC-RfaV8oQAAuFu~r4tl9STrioOktDjvWARXAcLFul-L7CJA__&Key-Pair-Id=KNBS2THMRC385"
+            }
+          }
+        }
+      ],
+      "waveResults": [
+        {
+          "waveNumber": 1,
+          "waterLevel": 1,
+          "eventWave": {
+            "name": "Goldie Seeking",
+            "id": "Q29vcEV2ZW50V2F2ZS0y"
+          },
+          "deliverNorm": 4,
+          "goldenPopCount": 27,
+          "teamDeliverCount": 0,
+          "specialWeapons": [
+            {
+              "name": "Killer Wail 5.1",
+              "image": {
+                "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/special_img/blue/fa8d49e8c850ee69f0231976208a913384e73dc0a39e6fb00806f6aa3da8a1ee_0.png?Expires=1673308800&Signature=eQ7ZkvlDltvePOqSW8IGtrYTwPhU3z0ru1eUJdHL50XRY6B8Sbk9hDim~fLStgaRjC4E0svRgN1JzEjLnYB6c4pvaMcBGRc21vty~7eHLat~Pp7yxKm2xYduUSMkYjCC69fUs-lWbElXO6eHgkkkBDSa8ufU4~A~unTR4-RXDUbf-RrMQ9Iureu8NTL4WppdgMOZW5pq-7YLBTpAjqZYKVsettfLwdcZiNqCCGqbGDX4v9Q8-xQt49wlEn8WsbbyMyxlecEhzqcBRGmXrw0iSSYnnAvXKmpUt23c1y8CjOtatC6mtCFxG~hjEHCN4V993CxHv6vFrAVmHkZc2ATw4Q__&Key-Pair-Id=KNBS2THMRC385"
+              },
+              "id": "U3BlY2lhbFdlYXBvbi0yMDAwOQ=="
+            }
+          ]
+        }
+      ],
+      "resultWave": 1,
+      "playedTime": "2022-09-10T14:34:33Z",
+      "coopStage": {
+        "name": "Gone Fission Hydroplant",
+        "image": {
+          "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/stage_img/banner/low_resolution/f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b_3.png?Expires=1673308800&Signature=A-eyu50L3HBdYzDZLFITjC9XF914KEc9lt1CG2kyMMzYNUIub9duxfY9hpI9CdsJNiRbbmVp12XhfBrlZQS1q7o3hOLlc7ro3OenWwuBTlDKcXtzRBwBfXaImf-ZFJgU1oW2FDzfO4YbJyCKxnycXAYE-X7-fIgK-C4sGkB7xSWeXN5kjg0mLK8dx0CfpiU5UekSO3g4z0E-jUo6KTAowaq1BYulA9ssjiMeI1jJ~ycqHd~tfr~2OJ7QGJhqL-eQDBfooT2RLmiqCyWas6QIN1pJpKh~UQVWI2aykn-9hqfiOj6HNGd94gZj87EdqTYAgsQzqVT-2NEyIbQs5PiAfA__&Key-Pair-Id=KNBS2THMRC385"
+        },
+        "id": "Q29vcFN0YWdlLTc="
+      },
+      "dangerRate": 0.2,
+      "scenarioCode": null,
+      "smellMeter": null,
+      "weapons": [
+        {
+          "name": "Classic Squiffer",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/weapon_illust/0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527_0.png?Expires=1673308800&Signature=UY8m5xdQ55u0uZRZSeNHL9H46I7TEqgawlF81WhQ2pfhI4bJwzl-NBzAzFYvwqTsrFJr8-nMEPnlSseDYmePK68EqYxjNqgKqBeh53wTUTihE203m1d3dKHM6wxz5U-I8qmlw80oXKQ8QJDLFRrbJHCXLL8eZHj3e5YYbpySzLS5vI0-sPCdhpaKVz5kfDHxHJgAGG9IQx1FIEpBfUjFGpN~Qs1l-1XL1X~N3-hd9ayk76F9YY~FmiLL1R1zf9H1lRLlPP5GkbeyZBXPNRtS1Q4MtiAHliFATMuCU6RI8e1ezL~z5gukHoqjF9fm2Ya3UUKeD5ZCnPdrPECEDSiB5A__&Key-Pair-Id=KNBS2THMRC385"
+          }
+        },
+        {
+          "name": "Random",
+          "image": {
+            "url": "https://api.lp1.av5ja.srv.nintendo.net/resources/prod/ui_img/473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1_0.png?Expires=1673308800&Signature=UAbFGtK6Mvv8kptSXqzRf7~03iz1-O4IuqwdyUgpA-O7Ik~00rKChsJKjxkoZwGvc2tttpsWIQBjovM~KFGNAhXm94GOBjp0LpfKYZMY45v~zEqd6S-AsY~xTy1vzAduLHKL-ZkFMBTC9Z85-BIhfGYPOrpXBOhgbAVebtjiDNo12NoWy30CQiQl8hwanb1kScBOJ7RXb8zgRPTvrVvQhY9M9as~Le1q92P00JID297d601a4pXNXmacN-XilBXeZt4j8qj2BtD1bsOCH5KYd2f5j6ZkGA6vKUpsj2gyYDr-lozoN6TKMcI-D~b5kwhGlfporGOcgPX3f2G~S7C8Ww__&Key-Pair-Id=KNBS2THMRC385"
+          }
+        }
+      ],
+      "afterGradePoint": null,
+      "scale": null,
+      "jobPoint": null,
+      "jobScore": null,
+      "jobRate": null,
+      "jobBonus": null,
+      "nextHistoryDetail": {
+        "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMFQxNDM4MDBfYzkzYzg5NGItODAxNi00MTZmLTg1NzAtYzVkYjFhOTJjZTUz"
+      },
+      "previousHistoryDetail": {
+        "id": "Q29vcEhpc3RvcnlEZXRhaWwtdS1hZ213am55Z2h2emJhYXZ0NW1tbToyMDIyMDkxMFQxNDMyMDFfYzkzYzg5NGItODAxNi00MTZmLTg1NzAtYzVkYjFhOTJjZTUz"
+      }
+    }
+  }
+}

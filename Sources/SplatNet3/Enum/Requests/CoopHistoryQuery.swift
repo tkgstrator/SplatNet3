@@ -50,10 +50,10 @@ final class CoopHistoryQuery: GraphQL {
     public struct HistoryGroupsNode: Codable {
         public let startTime: String?
         public let endTime: String?
-        public let mode: String
-        public let rule: String
+        public let mode: ModeType
+        public let rule: RuleType
         public let highestResult: HighestResult?
-        public let historyDetails: PurpleHistoryDetails
+        public let historyDetails: HistoryDetails
     }
 
     // MARK: - HighestResult
@@ -65,31 +65,17 @@ final class CoopHistoryQuery: GraphQL {
 
     // MARK: - RegularGrade
     public struct RegularGrade: Codable {
-        public let name: RegularGradeName
-        public let id: ID
+        public let name: String
+        @IntegerConvertible public var id: Int
     }
 
-    public enum ID: String, Codable {
-        case q29VcEVuZW15LTIz   = "Q29vcEVuZW15LTIz"
-        case q29VcEdyYWRlLTg    = "Q29vcEdyYWRlLTg="
-        case q29VcFN0YWdlLTI    = "Q29vcFN0YWdlLTI="
-        case q29VcFN0YWdlLTc    = "Q29vcFN0YWdlLTc="
+    // MARK: - HistoryDetails
+    public struct HistoryDetails: Codable {
+        public let nodes: [Node]
     }
 
-    public enum RegularGradeName: String, Codable {
-        case でんせつ = "でんせつ"
-        case アラマキ砦 = "アラマキ砦"
-        case ムニエル海洋発電所 = "ムニ・エール海洋発電所"
-        case ヨコヅナ = "ヨコヅナ"
-    }
-
-    // MARK: - PurpleHistoryDetails
-    public struct PurpleHistoryDetails: Codable {
-        public let nodes: [PurpleNode]
-    }
-
-    // MARK: - PurpleNode
-    public struct PurpleNode: Codable {
+    // MARK: - Node
+    public struct Node: Codable {
         public let id: String
         public let weapons: [Weapon]
         public let nextHistoryDetail: NextHistoryDetailElement?
@@ -112,9 +98,9 @@ final class CoopHistoryQuery: GraphQL {
     }
 
     public enum GradePointDiff: String, Codable {
-        case down = "DOWN"
-        case keep = "KEEP"
-        case up = "UP"
+        case down   = "DOWN"
+        case keep   = "KEEP"
+        case up     = "UP"
     }
 
     // MARK: - Result
@@ -135,13 +121,13 @@ final class CoopHistoryQuery: GraphQL {
 
     // MARK: - Weapon
     public struct Weapon: Codable {
-        public let name: WeaponName
-        public let image: Image
+        public let name: String
+        public let image: Image<WeaponKey>
     }
 
     // MARK: - Image
-    public struct Image: Codable {
-        public let url: String
+    public struct Image<T: RawRepresentable>: Codable where T.RawValue == String {
+        @SHA256HashConvertible public var url: T
     }
 
     public enum WeaponName: String, Codable {
@@ -171,7 +157,7 @@ final class CoopHistoryQuery: GraphQL {
 
     // MARK: - MonthlyGear
     public struct MonthlyGear: Codable {
-        public let typename: String
+//        public let typename: String
         public let name: String
         public let image: Image
     }

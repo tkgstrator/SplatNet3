@@ -63,15 +63,15 @@ final class StageScheduleQuery: GraphQL {
     }
 
     public enum IsVsSetting: String, Codable {
-        case bankaraMatchSetting = "BankaraMatchSetting"
-        case leagueMatchSetting = "LeagueMatchSetting"
-        case regularMatchSetting = "RegularMatchSetting"
-        case xMatchSetting = "XMatchSetting"
+        case bankara    = "BankaraMatchSetting"
+        case league     = "LeagueMatchSetting"
+        case regular    = "RegularMatchSetting"
+        case xMatch     = "XMatchSetting"
     }
 
     public enum Mode: String, Codable {
-        case challenge = "CHALLENGE"
-        case modeOPEN = "OPEN"
+        case challenge  = "CHALLENGE"
+        case open       = "OPEN"
     }
 
     // MARK: - VsRule

@@ -2,6 +2,7 @@ from threading import local
 from locales import *
 from nameplate import *
 from badge import *
+from gear import *
 from content import *
 import requests
 import json
@@ -57,6 +58,15 @@ def tuple_to_dict(tuple) -> dict:
         dict[k] = v
     return dict
 
+def get_revision() -> str:
+    # Revisionを取得
+    url = "https://api.lp1.av5ja.srv.nintendo.net/?lang=ja-JP"
+    response = requests.get(url)
+    response.encoding = response.apparent_encoding
+    revision = re.search(
+        'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
+    ).group(1)
+    return revision
 
 def get_localized():
     # Revisionを取得
@@ -298,8 +308,8 @@ def get_localized_text(localized: list[str]):
         f.write("}")
 
 
-def get_hashes():
-    url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.dee547ff.js"
+def get_hashes(revision: str):
+    url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
     response = requests.get(url).text
     # Hash
     hashes = re.findall('id:"([a-f0-9]{32})",metadata:{},name:"([A-z]*)"', response)
@@ -326,32 +336,35 @@ def get_hashes():
             value = hash[0]
             f.write(f'\tcase {key} = "{value}"\n')
             # Write Files
-            with open(f"../Sources/SplatNet3/Enum/Requests/{key}.swift", mode="w+") as fw:
-                headers = [
-                    f"//\n",
-                    f"//  {key}.swift\n",
-                    f"//  SplatNet3\n",
-                    f"//\n",
-                    f"//  Created by tkgstrator on 2022/09/22\n",
-                    f"//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-                    f"//\n",
-                    f"\n\n",
-                    f"import Foundation\n",
-                    f"import Alamofire\n",
-                    f"import Common\n\n",
-                    f"final class {key}: GraphQL" + " {\n",
-                    f"\tpublic typealias ResponseType = {key}.Response\n",
-                    f"\tvar hash: SHA256Hash = .{key}\n",
-                    f"\tvar variables: [String: String] = [:]\n",
-                    f"\tvar parameters: Parameters?\n",
-                    f"\n",
-                    "\tinit() {}\n\n",
-                    "\tpublic struct Response: Codable {\n",
-                    "\t}\n",
-                    "}\n",
-                ]
-                fw.writelines(headers)
-                fw.close()
+            try:
+                with open(f"../Sources/SplatNet3/Enum/Requests/{key}.swift", mode="x") as fw:
+                    headers = [
+                        f"//\n",
+                        f"//  {key}.swift\n",
+                        f"//  SplatNet3\n",
+                        f"//\n",
+                        f"//  Created by tkgstrator on 2022/09/22\n",
+                        f"//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+                        f"//\n",
+                        f"\n\n",
+                        f"import Foundation\n",
+                        f"import Alamofire\n",
+                        f"import Common\n\n",
+                        f"final class {key}: GraphQL" + " {\n",
+                        f"\tpublic typealias ResponseType = {key}.Response\n",
+                        f"\tvar hash: SHA256Hash = .{key}\n",
+                        f"\tvar variables: [String: String] = [:]\n",
+                        f"\tvar parameters: Parameters?\n",
+                        f"\n",
+                        "\tinit() {}\n\n",
+                        "\tpublic struct Response: Codable {\n",
+                        "\t}\n",
+                        "}\n",
+                    ]
+                    fw.writelines(headers)
+                    fw.close()
+            except:
+                pass
         f.write("}")
 
 
@@ -408,6 +421,18 @@ def get_badge(version: str = "111"):
         for badge in badges:
             f.write(f"\tcase {badge.Name} = {badge.Id}\n")
         f.write("}")
+
+def get_gears(version: str = "111"):
+    gears = ["Head", "Clothes", "Shoes"]
+    for gear in gears:
+        url = f"https://leanny.github.io/splat3//data/mush/{version}/GearInfo{gear}.json"
+        response = requests.get(url).text.replace("__RowId", "RowId")
+        gears = list(
+            map(
+                lambda gear: GearElement.from_json(json.dumps(gear)).RowId,
+                json.loads(response),
+            )
+        )
 
 
 def get_nameplate(version: str = "111"):
@@ -471,11 +496,13 @@ def to_dict(obj):
 
 
 if __name__ == "__main__":
+    revision = get_revision()
     # 翻訳ファイル
     # get_localized()
     # ハッシュ
-    get_hashes()
+    get_hashes(revision)
     # バッジ
+    get_gears("120")
     # get_badge("120")
     # ネームプレート
     # get_nameplate("120")
