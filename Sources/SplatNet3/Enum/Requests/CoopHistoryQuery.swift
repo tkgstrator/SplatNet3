@@ -66,7 +66,7 @@ final class CoopHistoryQuery: GraphQL {
     // MARK: - RegularGrade
     public struct RegularGrade: Codable {
         public let name: String
-        @IntegerConvertible public var id: Int
+        @IntegerRawValue public var id: GradeId
     }
 
     // MARK: - HistoryDetails
@@ -127,17 +127,7 @@ final class CoopHistoryQuery: GraphQL {
 
     // MARK: - Image
     public struct Image<T: RawRepresentable>: Codable where T.RawValue == String {
-        @SHA256HashConvertible public var url: T
-    }
-
-    public enum WeaponName: String, Codable {
-        case lact450 = "LACT-450"
-        case the96ガロン = ".96ガロン"
-        case クラッシュブラスタ = "クラッシュブラスター"
-        case ドライブワイパ = "ドライブワイパー"
-        case バケットスロッシャ = "バケットスロッシャー"
-        case ボルドマカ = "ボールドマーカー"
-        case ランダム = "ランダム"
+        @SHA256HashRawValue public var url: T
     }
 
     // MARK: - HistoryGroupsOnlyFirst
@@ -159,7 +149,7 @@ final class CoopHistoryQuery: GraphQL {
     public struct MonthlyGear: Codable {
 //        public let typename: String
         public let name: String
-        public let image: Image
+        public let image: Image<GradeKey>
     }
 
     // MARK: - PointCard

@@ -1,7 +1,0 @@
-import os
-
-if __name__=="__main__":
-  files = os.listdir(".")
-  for index, path in enumerate(files):
-    print(index, path)
-    os.rename(path, f"{str(index).zfill(6)}")

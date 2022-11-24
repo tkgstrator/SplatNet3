@@ -27,11 +27,15 @@ final class SplatNet3Tests: XCTestCase {
 
     func testCoopHistoryDetail() throws {
         do {
-            let paths: [URL] = getListContents(.CoopHistoryDetail)
+            let paths: [URL] = getListContents(.CoopHistoryDetail).sorted(by: { $0.absoluteString < $1.absoluteString })
 
             for path in paths {
-                let data: Data = try Data(contentsOf: path)
-                let _ = try decoder.decode(CoopHistoryDetailQuery.Response.self, from: data)
+                try autoreleasepool(invoking: {
+                    let data: Data = try Data(contentsOf: path)
+                    let response = try decoder.decode(CoopHistoryDetailQuery.Response.self, from: data)
+                    dump(response)
+                })
+//                dump(response)
             }
         } catch (let error) {
             print(error)
