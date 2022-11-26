@@ -72,21 +72,21 @@ public struct UserInfo: SPCredential {
         self.bulletToken = bulletToken.bulletToken
         self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
     }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.nickname = try container.decode(String.self, forKey: .nickname)
-        self.membership = try container.decode(Bool.self, forKey: .membership)
-        self.friendCode = try container.decode(String.self, forKey: .friendCode)
-        self.thumbnailURL = URL(unsafeString: try container.decode(String.self, forKey: .thumbnailURL))
-        self.nsaid = try container.decode(String.self, forKey: .nsaid)
-        self.bulletToken = try container.decodeIfPresent(String.self, forKey: .bulletToken)
-        self.iksmSession = try container.decodeIfPresent(String.self, forKey: .iksmSession)
-        self.sessionToken = try container.decode(String.self, forKey: .sessionToken)
-        self.gameServiceToken = try container.decode(String.self, forKey: .gameServiceToken)
-        self.gameWebToken = try container.decode(String.self, forKey: .gameWebToken)
-        self.expiration = try container.decode(Date.self, forKey: .expiration)
-    }
+//
+//    public init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.nickname = try container.decode(String.self, forKey: .nickname)
+//        self.membership = try container.decode(Bool.self, forKey: .membership)
+//        self.friendCode = try container.decode(String.self, forKey: .friendCode)
+//        self.thumbnailURL = URL(unsafeString: try container.decode(String.self, forKey: .thumbnailURL))
+//        self.nsaid = try container.decode(String.self, forKey: .nsaid)
+//        self.bulletToken = try container.decodeIfPresent(String.self, forKey: .bulletToken)
+//        self.iksmSession = try container.decodeIfPresent(String.self, forKey: .iksmSession)
+//        self.sessionToken = try container.decode(String.self, forKey: .sessionToken)
+//        self.gameServiceToken = try container.decode(String.self, forKey: .gameServiceToken)
+//        self.gameWebToken = try container.decode(String.self, forKey: .gameWebToken)
+//        self.expiration = try container.decode(Date.self, forKey: .expiration)
+//    }
 }
 
 extension UserInfo: Identifiable, Hashable, Equatable {

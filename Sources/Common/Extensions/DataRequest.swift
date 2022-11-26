@@ -12,11 +12,7 @@ import Foundation
 extension DataRequest {
     @discardableResult
     func validationWithNXError() -> Self {
-        let decoder: JSONDecoder = {
-            let decoder: JSONDecoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return decoder
-        }()
+        let decoder: SPDecoder = SPDecoder()
         return cURLDescription(calling: { requestURL in
             #if DEBUG
             print(requestURL)

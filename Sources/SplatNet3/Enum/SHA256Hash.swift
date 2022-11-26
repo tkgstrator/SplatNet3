@@ -9,7 +9,8 @@
 
 import Foundation
 
-public enum SHA256Hash: String, CaseIterable {
+public enum SHA256Hash: String, CaseIterable, Identifiable, Codable {
+    public var id: String { rawValue }
 	case BankaraBattleHistoriesQuery = "c1553ac75de0a3ea497cdbafaa93e95b"
 	case BankaraBattleHistoriesRefetchQuery = "d8a8662345593bbbcd63841c91d4c6f5"
 	case BattleHistoryCurrentPlayerQuery = "49dd00428fb8e9b4dde62f585c8de1e0"

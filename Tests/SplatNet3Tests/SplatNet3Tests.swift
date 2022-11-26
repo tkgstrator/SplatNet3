@@ -4,8 +4,7 @@ import XCTest
 @testable import Common
 
 final class SplatNet3Tests: XCTestCase {
-    let decoder: JSONDecoder = JSONDecoder()
-
+    let decoder: SPDecoder = SPDecoder()
     func getListContents(_ type: JSONType) -> [URL] {
         Bundle.module.urls(forResourcesWithExtension: "json", subdirectory: "JSON/\(type.rawValue)") ?? []
     }
@@ -15,6 +14,7 @@ final class SplatNet3Tests: XCTestCase {
             let paths: [URL] = getListContents(.CoopHistory)
 
             for path in paths {
+                print(path)
                 let data: Data = try Data(contentsOf: path)
                 let response = try decoder.decode(CoopHistoryQuery.Response.self, from: data)
                 dump(response)
@@ -35,7 +35,40 @@ final class SplatNet3Tests: XCTestCase {
                     let response = try decoder.decode(CoopHistoryDetailQuery.Response.self, from: data)
                     dump(response)
                 })
-//                dump(response)
+            }
+        } catch (let error) {
+            print(error)
+            throw error
+        }
+    }
+
+    func testFriendList() throws {
+        do {
+            let paths: [URL] = getListContents(.FriendList).sorted(by: { $0.absoluteString < $1.absoluteString })
+
+            for path in paths {
+                try autoreleasepool(invoking: {
+                    let data: Data = try Data(contentsOf: path)
+                    let response = try decoder.decode(FriendListQuery.Response.self, from: data)
+                    dump(response)
+                })
+            }
+        } catch (let error) {
+            print(error)
+            throw error
+        }
+    }
+
+    func testStageSchedule() throws {
+        do {
+            let paths: [URL] = getListContents(.StageSchedule).sorted(by: { $0.absoluteString < $1.absoluteString })
+
+            for path in paths {
+                try autoreleasepool(invoking: {
+                    let data: Data = try Data(contentsOf: path)
+                    let response = try decoder.decode(StageScheduleQuery.Response.self, from: data)
+                    dump(response)
+                })
             }
         } catch (let error) {
             print(error)

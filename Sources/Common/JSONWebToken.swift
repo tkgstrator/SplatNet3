@@ -27,8 +27,7 @@ struct JSONWebToken: Codable {
             throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Invalid JWT format."))
         }
 
-        let decoder: JSONDecoder = JSONDecoder()
-
+        let decoder: SPDecoder = SPDecoder()
         self.header = try decoder.decode(Header.self, from: data[0])
         self.payload = try decoder.decode(Payload.self, from: data[1])
     }

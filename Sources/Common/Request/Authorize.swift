@@ -16,7 +16,7 @@ open class Authorize {
     let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = {
             let config: URLSessionConfiguration = URLSessionConfiguration.default
-            config.httpMaximumConnectionsPerHost = 5
+            config.httpMaximumConnectionsPerHost = 1
             config.timeoutIntervalForRequest = 10
             config.allowsCellularAccess = true
             return config
@@ -32,11 +32,7 @@ open class Authorize {
     /// Keychainでアカウント管理
     let keychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     /// レスポンスのデコーダー
-    let decoder: JSONDecoder = {
-        let decoder: JSONDecoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
+    let decoder: SPDecoder = SPDecoder()
 
     /// ログインしているアカウント
     var account: UserInfo? {
@@ -129,26 +125,34 @@ open class Authorize {
     }
 
     /// SessionTokenCodeとVerifierからトークンを生成
-    internal func getBulletToken(code: String, verifier: String) async throws {
+    @discardableResult
+    internal func getBulletToken(code: String, verifier: String) async throws -> UserInfo {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
-        try await getBulletToken(sessionToken: sessionToken)
+        return try await getBulletToken(sessionToken: sessionToken)
     }
 
     /// SessionTokenからトークンを生成
-    internal func getBulletToken(sessionToken: SessionToken.Response) async throws {
-        try await getBulletToken(sessionToken: sessionToken.sessionToken)
+    @discardableResult
+    internal func getBulletToken(sessionToken: SessionToken.Response) async throws -> UserInfo {
+        return try await getBulletToken(sessionToken: sessionToken.sessionToken)
     }
 
     /// GameWebTokenからトークンを生成
-    func refreshBulletToken(gameWebToken: String) async throws {
+    @discardableResult
+    func refreshBulletToken(gameWebToken: String) async throws -> UserInfo {
+        guard let account = self.account else {
+            throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decode UserInfo"))
+        }
         let version: WebVersion.Response = try await getWebVersion()
         let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken, version: version)
         self.account?.bulletToken = bulletToken.bulletToken
         self.account?.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
+        return account
     }
 
     /// SessionTokenからトークンを生成
-    func getBulletToken(sessionToken: String) async throws {
+    @discardableResult
+    func getBulletToken(sessionToken: String) async throws -> UserInfo {
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         let version: Version.Response = try await getVersion()
         let gameServiceToken: GameServiceToken.Response =  try await getGameServiceToken(accessToken: accessToken, version: version)
@@ -158,5 +162,6 @@ open class Authorize {
         let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, bulletToken: bulletToken)
         /// アカウント情報を保存
         self.account = account
+        return account
     }
 }

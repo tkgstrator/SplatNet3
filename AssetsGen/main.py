@@ -2,6 +2,7 @@ from threading import local
 from locales import *
 from nameplate import *
 from badge import *
+from weapons import *
 from gears import *
 from skins import *
 from content import *
@@ -561,6 +562,36 @@ def get_gears(version: str = "111"):
             f.close()
 
 
+def get_weapons(version: str = "111"):
+    url = f"https://leanny.github.io/splat3/data/mush/{version}/WeaponInfoMain.json"
+    response = requests.get(url).text.replace("__RowId", "RowId")
+    weapons = list(
+        map(
+            lambda nameplate: WeaponElement.from_json(json.dumps(nameplate)),
+            json.loads(response),
+        )
+    )
+    for weapon in weapons:
+        url = f"https://leanny.github.io/splat3/images/weapon_flat/Path_Wst_{weapon.RowId}.png"
+        print(url)
+
+        makdirs(
+            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset"
+        )
+        with open(
+            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/{weapon.RowId}.png",
+            mode="wb",
+        ) as f:
+            f.write(requests.get(url).content)
+
+        with open(
+            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/Contents.json",
+            mode="w",
+        ) as f:
+            content = to_dict(Content(f"{weapon.RowId}"))
+            f.write(json.dumps(content))
+
+
 def get_nameplate(version: str = "111"):
     url = f"https://leanny.github.io/splat3/data/mush/{version}/NamePlateBgInfo.json"
     # そのままだと読み込めないので置換する
@@ -652,4 +683,5 @@ if __name__ == "__main__":
     # ネームプレート
     # get_nameplate("120")
     # スキン
-    get_skins("120")
+    # get_skins("120")
+    get_weapons("120")

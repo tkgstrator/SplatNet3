@@ -10,13 +10,13 @@ import Foundation
 public enum EventId: Int, Identifiable, CaseIterable, Codable {
     public var id: Int { rawValue }
 
-    case Water_Levels
-    case Rush
-    case Goldie_Seeking
-    case Griller
-    case The_Mothership
-    case Fog
-    case Cohock_Charge
-    case Giant
-    case Mudmouth
+    case Water_Levels   = 0
+    case Rush           = 1
+    case Goldie_Seeking = 2
+    case Griller        = 3
+    case The_Mothership = 4
+    case Fog            = 5
+    case Cohock_Charge  = 6
+    case Giant          = 7
+    case Mudmouth       = 8
 }

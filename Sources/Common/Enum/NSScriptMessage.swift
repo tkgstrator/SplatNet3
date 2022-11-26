@@ -43,8 +43,7 @@ enum NSScriptMessage {
             }
         }
 
-        let decoder: JSONDecoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let decoder: SPDecoder = SPDecoder()
 
         /// invokeNativeShareUrl
         if let shareURL: ShareURL = try? decoder.decode(ShareURL.self, from: data) {

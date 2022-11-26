@@ -39,7 +39,7 @@ extension String {
     }
 
     /// Base64文字列から復号する
-    var base64DecodedString: String? {
+    public var base64DecodedString: String? {
         let formatedString: String = self + Array(repeating: "=", count: self.count % 4).joined()
         if let data: Data = Data(base64Encoded: formatedString, options: [.ignoreUnknownCharacters]) {
             return String(data: data, encoding: .utf8)
