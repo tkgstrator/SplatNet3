@@ -63,16 +63,16 @@ struct RequestButton: View {
                 switch hash {
                 case .CoopHistoryDetailQuery:
                     let response = try await session.getAllCoopHistoryDetailQuery()
-                    print(response.count)
+                    dump(response.count)
                 case .CoopHistoryQuery:
                     let response = try await session.getCoopHistoryQuery()
-                    print(response)
+                    dump(response)
                 case .FriendListQuery:
                     let response = try await session.getFriendListQuery()
-                    print(response)
+                    dump(response)
                 case .StageScheduleQuery:
-                    let response = try await session.getStageScheduleQuery()
-                    print(response)
+                    let response = try await session.getCoopStageScheduleQuery()
+                    dump(response)
                 default:
                     break
                 }

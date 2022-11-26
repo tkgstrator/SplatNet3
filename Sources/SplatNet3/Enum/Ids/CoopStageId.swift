@@ -19,4 +19,10 @@ public enum CoopStageId: Int, CaseIterable, Identifiable, Codable {
     case ShakeLift      = 5
     case ShakeRide      = 6
     case ShakeDent      = 7
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let intValue: Int = try container.decode(Int.self)
+        self = Self(rawValue: intValue) ?? .Unknown
+    }
 }

@@ -13,45 +13,48 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
 
     public typealias Credential = UserInfo
 
+    /// - Parameters:
+    ///   - credential: The `Credential`.
+    ///   - urlRequest: The `URLRequest`.
     public func apply(_ credential: UserInfo, to urlRequest: inout URLRequest) {
+        logger.debug("Authenticator: Apply")
         if let bulletToken: String = credential.bulletToken {
             urlRequest.headers.add(.authorization(bearerToken: bulletToken))
             urlRequest.headers.add(.init(name: "X-Web-View-Ver", value: "1.0.0-433ec0e8"))
         }
     }
 
+    /// `Authenticator` logic matches their expectations.
+    ///
+    /// - Parameters:
+    ///   - credential: The `Credential` to refresh.
+    ///   - session:    The `Session` requiring the refresh.
+    ///   - completion: The closure to be executed once the refresh is complete.
     public func refresh(_ credential: UserInfo, for session: Alamofire.Session, completion: @escaping (Result<UserInfo, Error>) -> Void) {
-        if credential.requiresGameWebTokenRefresh {
-            Task {
-                do {
-                    let account: UserInfo = try await getBulletToken(sessionToken: credential.sessionToken)
-                    completion(.success(account))
-                    return
-                } catch(let error) {
-                    completion(.failure(error))
-                    return
-                }
-            }
-        }
-        if credential.requiresRefresh {
-            Task {
-                do {
-                    let account: UserInfo = try await refreshBulletToken(gameWebToken: credential.gameWebToken)
-                    completion(.success(account))
-                    return
-                } catch(let error) {
-                    completion(.failure(error))
-                    return
-                }
+        logger.debug("Authenticator: Refresh -> GameWebToken: \(credential.requiresGameWebTokenRefresh), BulletToken: \(credential.requiresRefresh)")
+        Task {
+            do {
+                let account: UserInfo = try await {
+                    if credential.requiresGameWebTokenRefresh {
+                        return try await getBulletToken(sessionToken: credential.sessionToken)
+                    }
+                    return try await refreshBulletToken(gameWebToken: credential.gameWebToken)
+                }()
+                completion(.success(account))
             }
         }
     }
 
+    /// - Returns: `true` if the `URLRequest` is authenticated with the `Credential`, `false` otherwise.
     public func isRequest(_ urlRequest: URLRequest, authenticatedWith credential: UserInfo) -> Bool {
-        return false
+        logger.debug("Authenticator: isRequest")
+        return true
     }
 
+    /// Returns: `true` if the `URLRequest` failed due to an authentication error, `false` otherwise.
     public func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
+        logger.debug("Authenticator: didRequest: URL -> \(urlRequest.headers)")
+        logger.error(error.localizedDescription)
         return response.statusCode == 401
     }
 
@@ -106,7 +109,7 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
                 .serializingDecodable(T.ResponseType.self, decoder: decoder)
                 .value
             #if DEBUG
-            dump(response)
+//            dump(response)
             #endif
             return response
         } catch(let error) {

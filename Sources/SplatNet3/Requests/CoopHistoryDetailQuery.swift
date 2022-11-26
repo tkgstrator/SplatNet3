@@ -46,7 +46,7 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let waveResults: [WaveResult]
         public let resultWave: Int
         public let playedTime: Date
-//        public let coopStage: Element
+        public let coopStage: CoopStageType
         public let dangerRate: Double
 //        public let scenarioCode: JSONNull?
         public let smellMeter: Int?
@@ -107,9 +107,9 @@ public final class CoopHistoryDetailQuery: GraphQL {
 
     // MARK: - Background
     public struct Background: Codable {
-        public let textColor: TextColor
+        public let textColor: Common.TextColor
         public let image: Image<NameplateKey>
-        public let id: String
+        @IntegerRawValue public var id: NameplateId
     }
 
     // MARK: - Badge
@@ -118,18 +118,10 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let image: Image<BadgeKey>
     }
 
-    // MARK: - TextColor
-    public struct TextColor: Codable {
-        public let a: Double
-        public let b: Double
-        public let g: Double
-        public let r: Double
-    }
-
     // MARK: - WaveResult
     public struct WaveResult: Codable {
         public let waveNumber: Int
-        public let waterLevel: Int
+        public let waterLevel: WaterLevelId
         public let eventWave: CoopHistory.Element<EventId>?
         public let deliverNorm: Int?
         public let goldenPopCount: Int

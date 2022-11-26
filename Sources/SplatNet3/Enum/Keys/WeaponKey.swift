@@ -9,6 +9,7 @@ import Foundation
 
 public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     public var id: String { rawValue }
+
     case Random_Gold            = ""
     case Random_Green           = "473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1"
     case Shooter_Short          = "6e58a0747ab899badcb6f351512c6034e0a49bd6453281f32c7f550a2132fd65"
@@ -68,4 +69,17 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Shelter_Bear_Coop      = "3380019464e3111a0f40e633be25f73ad34ec1844d2dc7852a349b29b238932b"
     case Slosher_Bear_Coop      = "bf89bcf3d3a51badd78b436266e6b7927d99ac386e083023df3551da6b39e412"
     case Stringer_Bear_Coop     = "36e03d8d1e6bc4f7449c5450f4410c6c8449cde0548797d22ab641cd488d2060"
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let stringValue: String = try container.decode(String.self)
+        self = Self(rawValue: stringValue) ?? .Random_Green
+    }
+
+    func asWeaponId() -> WeaponId {
+        guard let index: Int = Self.allCases.firstIndex(of: self) else {
+            return .Random_Green
+        }
+        return WeaponId.allCases[index]
+    }
 }

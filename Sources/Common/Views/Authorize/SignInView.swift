@@ -64,11 +64,17 @@ struct SignInView: View {
         .animation(.default, value: session.requests.count)
         .onAppear(perform: {
             Task {
-                try await session.getBulletToken(code: code, verifier: verifier)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    /// コレ自体が消えるとちょっと問題があるかも
-                    UIApplication.shared.rootViewController?.dismiss(animated: true)
-                })
+                do {
+                    try await session.getBulletToken(code: code, verifier: verifier)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        /// コレ自体が消えるとちょっと問題があるかも
+                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                    })
+                } catch(_) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                    })
+                }
             }
         })
     }

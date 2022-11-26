@@ -24,4 +24,12 @@ public enum Common {
         public let name: String
         public let image: Common.URL<T>
     }
+
+    // MARK: - TextColor
+    public struct TextColor: Codable {
+        public let a: Double
+        public let b: Double
+        public let g: Double
+        public let r: Double
+    }
 }

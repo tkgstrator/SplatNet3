@@ -29,10 +29,15 @@ open class SplatNet3: SPSession {
         try await request(StageScheduleQuery())
     }
 
+    public func getCoopStageScheduleQuery() async throws -> [StageScheduleQuery.CoopSchedule] {
+        try await request(StageScheduleQuery()).data.coopGroupingSchedule.regularSchedules.nodes
+    }
+
     /// バイトりれき詳細を一括取得
     public func getAllCoopHistoryDetailQuery() async throws -> [CoopHistoryDetailQuery.Response] {
         /// バイトりれきを取得
         let history: CoopHistoryQuery.Response = try await getCoopHistoryQuery()
+        let nodes: [CoopHistoryQuery.HistoryGroup] = history.data.coopResult.historyGroups.nodes
         let resultIds: [String] = history.data.coopResult.historyGroups.nodes.flatMap({ $0.historyDetails.nodes.map({ $0.id }) })
         return try await withThrowingTaskGroup(of: CoopHistoryDetailQuery.Response.self, body: { task in
             resultIds.forEach({ resultId in

@@ -123,17 +123,9 @@ final class ChallengeRefetchQuery: GraphQL {
 
     // MARK: - Background
     public struct Background: Codable {
-        public let textColor: TextColor
+        public let textColor: Common.TextColor
         public let image: Image
         public let id: String
-    }
-
-    // MARK: - TextColor
-    public struct TextColor: Codable {
-        public let a: Double
-        public let b: Double
-        public let g: Double
-        public let r: Double
     }
 
     // MARK: - Badge

@@ -673,7 +673,7 @@ def to_dict(obj):
 if __name__ == "__main__":
     revision = get_revision()
     # 翻訳ファイル
-    # get_localized()
+    get_localized()
     # ハッシュ
     # get_hashes(revision)
     # ギア
@@ -684,4 +684,4 @@ if __name__ == "__main__":
     # get_nameplate("120")
     # スキン
     # get_skins("120")
-    get_weapons("120")
+    # get_weapons("120")

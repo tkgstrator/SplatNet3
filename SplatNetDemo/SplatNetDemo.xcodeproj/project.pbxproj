@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		100CED7E28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */; };
-		10251A5928B91AA00095DAA7 /* SwiftyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 10251A5828B91AA00095DAA7 /* SwiftyUI */; };
 		10251A5B28B91AEF0095DAA7 /* SplatNet2 in Frameworks */ = {isa = PBXBuildFile; productRef = 10251A5A28B91AEF0095DAA7 /* SplatNet2 */; };
 		1080DA7B28AE3F0700220903 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7A28AE3F0700220903 /* Tests_iOS.swift */; };
 		1080DA7D28AE3F0700220903 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7C28AE3F0700220903 /* Tests_iOSLaunchTests.swift */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplatNetDemo--iOS--Info.plist"; sourceTree = "<group>"; };
-		10251A5728B91A780095DAA7 /* SwiftyUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftyUI; path = ../../SwiftyUI; sourceTree = "<group>"; };
 		10320C5628D3E01300666F09 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		10320C5728D3E01700666F09 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		10320C5828D3E02C00666F09 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10251A5928B91AA00095DAA7 /* SwiftyUI in Frameworks */,
 				10A6A18228B7A1AB0075563F /* SplatNet3 in Frameworks */,
 				10251A5B28B91AEF0095DAA7 /* SplatNet2 in Frameworks */,
 			);
@@ -175,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				1080DA9F28AE3F2200220903 /* SplatNet */,
-				10251A5728B91A780095DAA7 /* SwiftyUI */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -205,7 +201,6 @@
 			name = "SplatNetDemo (iOS)";
 			packageProductDependencies = (
 				10A6A18128B7A1AB0075563F /* SplatNet3 */,
-				10251A5828B91AA00095DAA7 /* SwiftyUI */,
 				10251A5A28B91AEF0095DAA7 /* SplatNet2 */,
 			);
 			productName = "SplatNetDemo (iOS)";
@@ -802,10 +797,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		10251A5828B91AA00095DAA7 /* SwiftyUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftyUI;
-		};
 		10251A5A28B91AEF0095DAA7 /* SplatNet2 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SplatNet2;

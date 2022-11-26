@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Progress: Identifiable {
-    var id: String { path.rawValue }
+    let id: UUID = UUID()
     let path: SPEndpoint
     var color: Color {
         self.path.color

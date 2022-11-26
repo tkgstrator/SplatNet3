@@ -31,13 +31,13 @@ final class SplatNet3Tests: XCTestCase {
 
             for path in paths {
                 try autoreleasepool(invoking: {
+                    print(path)
                     let data: Data = try Data(contentsOf: path)
                     let response = try decoder.decode(CoopHistoryDetailQuery.Response.self, from: data)
-                    dump(response)
                 })
             }
         } catch (let error) {
-            print(error)
+            print(error.localizedDescription)
             throw error
         }
     }
@@ -50,7 +50,6 @@ final class SplatNet3Tests: XCTestCase {
                 try autoreleasepool(invoking: {
                     let data: Data = try Data(contentsOf: path)
                     let response = try decoder.decode(FriendListQuery.Response.self, from: data)
-                    dump(response)
                 })
             }
         } catch (let error) {
@@ -67,7 +66,6 @@ final class SplatNet3Tests: XCTestCase {
                 try autoreleasepool(invoking: {
                     let data: Data = try Data(contentsOf: path)
                     let response = try decoder.decode(StageScheduleQuery.Response.self, from: data)
-                    dump(response)
                 })
             }
         } catch (let error) {

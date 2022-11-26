@@ -16,7 +16,7 @@ open class Authorize {
     let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = {
             let config: URLSessionConfiguration = URLSessionConfiguration.default
-            config.httpMaximumConnectionsPerHost = 1
+            config.httpMaximumConnectionsPerHost = 5
             config.timeoutIntervalForRequest = 10
             config.allowsCellularAccess = true
             return config
@@ -28,7 +28,11 @@ open class Authorize {
     /// ローカルにログ保存
     let local: FileDestination = FileDestination()
     /// コンソールに出力
-    let console: ConsoleDestination = ConsoleDestination()
+    let console: ConsoleDestination = {
+        let console = ConsoleDestination()
+        console.format = "$DHH:mm:ss$d $L $M $X"
+        return console
+    }()
     /// Keychainでアカウント管理
     let keychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     /// レスポンスのデコーダー
@@ -45,8 +49,10 @@ open class Authorize {
     }
     /// ローカルにログ保存
     public init() {
-        self.logger.addDestination(local)
-        self.logger.addDestination(console)
+        if self.logger.destinations.isEmpty {
+            self.logger.addDestination(local)
+            self.logger.addDestination(console)
+        }
     }
 
     /// クラウドにログ保存
@@ -140,6 +146,7 @@ open class Authorize {
     /// GameWebTokenからトークンを生成
     @discardableResult
     func refreshBulletToken(gameWebToken: String) async throws -> UserInfo {
+        logger.debug("Refresh Bullet Token: with Game Web Token")
         guard let account = self.account else {
             throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decode UserInfo"))
         }
@@ -153,6 +160,7 @@ open class Authorize {
     /// SessionTokenからトークンを生成
     @discardableResult
     func getBulletToken(sessionToken: String) async throws -> UserInfo {
+        logger.debug("Get Bullet Token: with Session Token")
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         let version: Version.Response = try await getVersion()
         let gameServiceToken: GameServiceToken.Response =  try await getGameServiceToken(accessToken: accessToken, version: version)

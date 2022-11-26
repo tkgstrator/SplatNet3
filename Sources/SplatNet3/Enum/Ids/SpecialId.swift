@@ -18,4 +18,10 @@ public enum SpecialId: Int, CaseIterable, Identifiable, Codable {
     case SpChariot          = 20012
     case SpSkewer           = 20013
     case SpTripleTornado    = 20014
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let intValue: Int = try container.decode(Int.self)
+        self = Self(rawValue: intValue) ?? .SpUltraShot
+    }
 }
