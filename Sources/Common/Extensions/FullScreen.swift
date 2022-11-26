@@ -111,6 +111,7 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
             self.backgroundColor = backgroundColor
             self.userInterfaceStyle = colorScheme
             super.init(nibName: nil, bundle: .main)
+            self.overrideUserInterfaceStyle = colorScheme
             self.isModalInPresentation = isModalInPresentation
         }
 

@@ -48,7 +48,7 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let playedTime: Date
         public let coopStage: CoopStageType
         public let dangerRate: Double
-//        public let scenarioCode: JSONNull?
+        public let scenarioCode: String?
         public let smellMeter: Int?
         public let weapons: [WeaponType]
         public let afterGradePoint: Int?

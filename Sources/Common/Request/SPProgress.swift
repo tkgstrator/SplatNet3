@@ -1,5 +1,5 @@
 //
-//  Progress.swift
+//  SPProgress.swift
 //  
 //
 //  Created by devonly on 2022/11/23.
@@ -8,23 +8,27 @@
 import Foundation
 import SwiftUI
 
-struct Progress: Identifiable {
-    let id: UUID = UUID()
-    let path: SPEndpoint
-    var color: Color {
+public struct SPProgress: Identifiable {
+    public let id: UUID = UUID()
+    public let path: SPEndpoint
+    public var color: Color {
         self.path.color
     }
-    var type: ProgressAPIType {
+    public var type: ProgressAPIType {
         self.path.type
     }
-    fileprivate(set) var progress: ProgressType = .PROGRESS
+    public var progress: ProgressType = .PROGRESS
 
     init<T: RequestType>(_ request: T) {
         self.path = SPEndpoint(request: request)
     }
+
+    public init(_ endpoint: SPEndpoint) {
+        self.path = endpoint
+    }
 }
 
-extension Array where Element == Progress {
+public extension Array where Element == SPProgress {
     /// 通信成功
     mutating func success() {
         if let index: Int = self.lastIndex(where: { $0.progress == .PROGRESS }) {

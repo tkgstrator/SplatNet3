@@ -11,6 +11,13 @@ import Foundation
 import Alamofire
 import Common
 
+public protocol PartialHistoryGroup: Codable {
+    var startTime: Date? { get }
+    var endTime: Date? { get }
+    var mode: ModeType { get }
+    var rule: RuleType { get }
+}
+
 public final class CoopHistoryQuery: GraphQL {
 	public typealias ResponseType = CoopHistoryQuery.Response
     public var hash: SHA256Hash = .CoopHistoryQuery
@@ -41,8 +48,23 @@ public final class CoopHistoryQuery: GraphQL {
         public let historyGroups: Common.Node<HistoryGroup>
     }
 
-    // MARK: - HistoryGroupsNode
-    public struct HistoryGroup: Codable {
+    // MARK: - CoopSchedule
+    public struct CoopSchedule: PartialHistoryGroup {
+        public let startTime: Date?
+        public let endTime: Date?
+        public let mode: ModeType
+        public let rule: RuleType
+
+        init(history: HistoryGroup) {
+            self.startTime = history.startTime
+            self.endTime = history.endTime
+            self.mode = history.mode
+            self.rule = history.rule
+        }
+    }
+
+    // MARK: - HistoryGroup
+    public struct HistoryGroup: PartialHistoryGroup {
         public let startTime: Date?
         public let endTime: Date?
         public let mode: ModeType
@@ -65,7 +87,7 @@ public final class CoopHistoryQuery: GraphQL {
         public let nextHistoryDetail: CoopHistory.HistoryDetailElement?
         public let previousHistoryDetail: CoopHistory.HistoryDetailElement?
         public let resultWave: Int
-//        public let coopStage: RegularGrade
+        public let coopStage: CoopHistory.Element<CoopStageId>
         public let afterGrade: GradeType?
         public let afterGradePoint: Int?
         public let gradePointDiff: GradePointDiff?
@@ -106,5 +128,11 @@ public final class CoopHistoryQuery: GraphQL {
         public let rescueCount: Int
         public let regularPoint: Int
         public let totalPoint: Int
+    }
+}
+
+extension CoopHistoryQuery.HistoryGroup {
+    func asSchedule() -> CoopHistoryQuery.CoopSchedule {
+        CoopHistoryQuery.CoopSchedule(history: self)
     }
 }

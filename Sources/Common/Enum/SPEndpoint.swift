@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 /// エンドポイント
-enum SPEndpoint: String, CaseIterable, Identifiable {
+public enum SPEndpoint: String, CaseIterable, Identifiable {
     public var id: String { rawValue }
     /// SessionToken
     case SESSION_TOKEN          = "api/session_token"
@@ -75,7 +75,7 @@ enum SPEndpoint: String, CaseIterable, Identifiable {
         case .F:
             return SPColor.SplatNet3.SPPink
         default:
-            return SPColor.SplatNet3.SPYellow
+            return SPColor.SplatNet3.SPPurple
         }
     }
 }

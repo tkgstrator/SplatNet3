@@ -13,7 +13,7 @@ import KeychainAccess
 /// 認証用のクラス
 open class Authorize {
     /// 通信用のセッション
-    let session: Alamofire.Session = {
+    public let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = {
             let config: URLSessionConfiguration = URLSessionConfiguration.default
             config.httpMaximumConnectionsPerHost = 5
@@ -24,22 +24,22 @@ open class Authorize {
         return Session(configuration: configuration)
     }()
     /// SwiftyBeaverでログ保存
-    let logger: SwiftyBeaver.Type = SwiftyBeaver.self
+    public let logger: SwiftyBeaver.Type = SwiftyBeaver.self
     /// ローカルにログ保存
     let local: FileDestination = FileDestination()
     /// コンソールに出力
     let console: ConsoleDestination = {
         let console = ConsoleDestination()
-        console.format = "$DHH:mm:ss$d $L $M $X"
+        console.format = "$DHH:mm:ss$d $L$c $N.$F:$l - $M"
         return console
     }()
     /// Keychainでアカウント管理
     let keychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)
     /// レスポンスのデコーダー
-    let decoder: SPDecoder = SPDecoder()
+    public let decoder: SPDecoder = SPDecoder()
 
     /// ログインしているアカウント
-    var account: UserInfo? {
+    public var account: UserInfo? {
         get {
             keychain.get()
         }

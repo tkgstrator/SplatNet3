@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 open class SPSession: Authorize, Authenticator, ObservableObject {
-    @Published var requests: [Progress] = []
+    @Published public var requests: [SPProgress] = []
 
     public typealias Credential = UserInfo
 
@@ -60,7 +60,7 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
 
     override func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
         DispatchQueue.main.async(execute: {
-            self.requests.append(Progress(request))
+            self.requests.append(SPProgress(request))
         })
         do {
             let response: String = try await super.request(request, interceptor: interceptor)
@@ -79,7 +79,7 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
     /// RequestInterceptorでリクエストを送る
     override func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
         DispatchQueue.main.async(execute: {
-            self.requests.append(Progress(request))
+            self.requests.append(SPProgress(request))
         })
         do {
             let response: T.ResponseType = try await super.request(request, interceptor: interceptor)
@@ -91,29 +91,6 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
             DispatchQueue.main.async(execute: {
                 self.requests.failure()
             })
-            throw error
-        }
-    }
-
-    /// AuthenticationInterceptorでリクエストを送る
-    public func request<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        let interceptor: AuthenticationInterceptor<SPSession>? = {
-            guard let account = self.account else {
-                return nil
-            }
-            return AuthenticationInterceptor(authenticator: self, credential: account)
-        }()
-        do {
-            let response = try await session.request(request, interceptor: interceptor)
-                .validationWithNXError()
-                .serializingDecodable(T.ResponseType.self, decoder: decoder)
-                .value
-            #if DEBUG
-//            dump(response)
-            #endif
-            return response
-        } catch(let error) {
-            logger.error(error.localizedDescription)
             throw error
         }
     }

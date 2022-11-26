@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     /// モーダルをUIKit風に表示する
     func fullScreen<Content: View>(
         isPresented: Binding<Bool>,

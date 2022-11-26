@@ -11,7 +11,7 @@ import Foundation
 
 extension DataRequest {
     @discardableResult
-    func validationWithNXError() -> Self {
+    public func validationWithNXError() -> Self {
         let decoder: SPDecoder = SPDecoder()
         return cURLDescription(calling: { requestURL in
             #if DEBUG

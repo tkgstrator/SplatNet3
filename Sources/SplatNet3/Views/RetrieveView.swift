@@ -1,24 +1,23 @@
 //
-//  SignInView.swift
+//  RetrieveView.swift
 //  
 //
-//  Created by devonly on 2022/11/23.
+//  Created by devonly on 2022/11/26.
 //
 
-import Foundation
-import UIKit
 import SwiftUI
+import Common
 
-struct SignInView: View {
-    @StateObject var session: SPSession = SPSession()
-    let code: String
-    let verifier: String
+struct RetrieveView: View {
+    @Environment(\.dismiss) var dismiss
+    @StateObject var session: SplatNet3 = SplatNet3()
 
     func makeBody(request: SPProgress) -> some View {
         switch request.progress {
         case .PROGRESS:
             return ProgressView()
                 .frame(width: 24, height: 24, alignment: .center)
+                .opacity(1.0)
                 .asAnyView()
         case .SUCCESS:
             return Image(systemName: "checkmark.circle")
@@ -58,6 +57,7 @@ struct SignInView: View {
                     makeBody(request: request)
                 })
             })
+            ProgressView("", value: session.current, total: session.maximum == .zero ? 1 : session.maximum)
         })
         .frame(width: 320)
         .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
@@ -66,14 +66,14 @@ struct SignInView: View {
         .onAppear(perform: {
             Task {
                 do {
-                    try await session.getBulletToken(code: code, verifier: verifier)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        /// コレ自体が消えるとちょっと問題があるかも
-                        UIApplication.shared.rootViewController?.dismiss(animated: true)
-                    })
-                } catch(_) {
+                    let results: [CoopResult] = try await session.getAllCoopHistoryDetailQuery()
+                    dump(results)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                        dismiss()
+                    })
+                } catch {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        dismiss()
                     })
                 }
             }
@@ -85,11 +85,17 @@ extension View {
     func asAnyView() -> AnyView {
         AnyView(self)
     }
-}
 
-struct SignInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView(code: "", verifier: "")
+    public func fullScreen(isPresented: Binding<Bool>) -> some View {
+        self
+            .fullScreen(isPresented: isPresented, content: {
+                RetrieveView()
+            })
     }
 }
 
+//struct RetrieveViews: PreviewProvider {
+//    static var previews: some View {
+//        RetrieveView()
+//    }
+//}

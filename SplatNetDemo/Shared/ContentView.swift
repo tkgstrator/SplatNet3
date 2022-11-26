@@ -53,7 +53,7 @@ struct RequestView: View {
 }
 
 struct RequestButton: View {
-    @State private var isPresented: Bool = true
+    @State private var isPresented: Bool = false
     let session: SplatNet3
     let hash: SHA256Hash
 
@@ -62,8 +62,7 @@ struct RequestButton: View {
             Task {
                 switch hash {
                 case .CoopHistoryDetailQuery:
-                    let response = try await session.getAllCoopHistoryDetailQuery()
-                    dump(response.count)
+                    isPresented.toggle()
                 case .CoopHistoryQuery:
                     let response = try await session.getCoopHistoryQuery()
                     dump(response)
@@ -81,10 +80,8 @@ struct RequestButton: View {
             HStack(content: {
                 Text(String(describing: hash))
                     .lineLimit(1)
-                Spacer()
-                Image(systemName: isPresented ? "questionmark.circle" : "checkmark.circle")
-                    .foregroundColor(isPresented ? .red : .green)
             })
+            .fullScreen(isPresented: $isPresented)
         })
     }
 }
