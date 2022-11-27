@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-open class SPSession: Authorize, Authenticator, ObservableObject {
+open class SPSession: OAuthSession, Authenticator, ObservableObject {
     @Published public var requests: [SPProgress] = []
 
     public typealias Credential = UserInfo
@@ -58,12 +58,12 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
         return response.statusCode == 401
     }
 
-    override func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
+    open override func download<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
         DispatchQueue.main.async(execute: {
             self.requests.append(SPProgress(request))
         })
         do {
-            let response: String = try await super.request(request, interceptor: interceptor)
+            let response: String = try await super.download(request, interceptor: interceptor)
             DispatchQueue.main.async(execute: {
                 self.requests.success()
             })
@@ -77,12 +77,12 @@ open class SPSession: Authorize, Authenticator, ObservableObject {
     }
 
     /// RequestInterceptorでリクエストを送る
-    override func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
+    open override func publish<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
         DispatchQueue.main.async(execute: {
             self.requests.append(SPProgress(request))
         })
         do {
-            let response: T.ResponseType = try await super.request(request, interceptor: interceptor)
+            let response: T.ResponseType = try await super.publish(request, interceptor: interceptor)
             DispatchQueue.main.async(execute: {
                 self.requests.success()
             })

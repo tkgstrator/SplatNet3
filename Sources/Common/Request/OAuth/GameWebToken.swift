@@ -36,10 +36,6 @@ class GameWebToken: RequestType {
         ]
     }
 
-    convenience init(imink: Imink.Response, accessToken: GameServiceToken.Response, version: Version.Response, contentId: ContentId) {
-        self.init(imink: imink, accessToken: accessToken, version: version.version, contentId: contentId)
-    }
-
     struct Response: Codable {
         let correlationId: String
         let result: AccessToken

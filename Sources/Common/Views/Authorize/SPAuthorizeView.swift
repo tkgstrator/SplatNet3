@@ -8,16 +8,18 @@
 import SwiftUI
 import WebKit
 
-struct SPAuthorizeView: UIViewControllerRepresentable {
+public struct SPAuthorizeView: UIViewControllerRepresentable {
     typealias UIViewType = WKWebView
     typealias OnProcess = () -> Void
     typealias Completion = (Result<UserInfo, Error>) -> ()
 
-    func makeUIViewController(context: Context) -> SPWebViewController {
+    public init() {}
+    
+    public func makeUIViewController(context: Context) -> SPWebViewController {
         SPWebViewController()
     }
 
-    func updateUIViewController(_ uiViewController: SPWebViewController, context: Context) {
+    public func updateUIViewController(_ uiViewController: SPWebViewController, context: Context) {
     }
 }
 

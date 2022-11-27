@@ -29,11 +29,6 @@ class AccessToken: RequestType {
         ]
     }
 
-    /// セッショントークンコードから初期化
-    convenience init(sessionToken: SessionToken.Response) {
-        self.init(sessionToken: sessionToken.sessionToken)
-    }
-
     struct Response: Codable {
         let accessToken: String
         let expiresIn: Int

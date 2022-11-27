@@ -66,7 +66,7 @@ struct SignInView: View {
         .onAppear(perform: {
             Task {
                 do {
-                    try await session.getBulletToken(code: code, verifier: verifier)
+                    try await session.getCookie(code: code, verifier: verifier)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         /// コレ自体が消えるとちょっと問題があるかも
                         UIApplication.shared.rootViewController?.dismiss(animated: true)

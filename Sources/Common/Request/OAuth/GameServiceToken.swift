@@ -42,10 +42,6 @@ class GameServiceToken: RequestType {
         self.init(imink: imink, accessToken: accessToken.accessToken, version: version.version)
     }
 
-    convenience init(imink: Imink.Response, accessToken: AccessToken.Response, version: String) {
-        self.init(imink: imink, accessToken: accessToken.accessToken, version: version)
-    }
-
     // MARK: - Response
     struct Response: Codable {
         let status: Int

@@ -10,11 +10,11 @@ import WebKit
 import UIKit
 import SwiftUI
 
-class SPWebViewController: UIViewController, WKURLSchemeHandler {
+public class SPWebViewController: UIViewController, WKURLSchemeHandler {
     let state: String = String.randomString
     let verifier: String = String.randomString
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         let configuration: WKWebViewConfiguration = WKWebViewConfiguration()
         configuration.setURLSchemeHandler(self, forURLScheme: "npf71b963c1b7b6d119")
@@ -27,7 +27,7 @@ class SPWebViewController: UIViewController, WKURLSchemeHandler {
     }
 
     /// URLSchemeを踏んだ時に実行される
-    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+    public func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         guard let oauthURL: String = urlSchemeTask.request.url?.absoluteString,
               let code: String = oauthURL.capture(pattern: "de=(.*)&", group: 1)
         else {
@@ -44,6 +44,6 @@ class SPWebViewController: UIViewController, WKURLSchemeHandler {
         }
     }
 
-    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
+    public func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
     }
 }

@@ -32,10 +32,6 @@ class BulletToken: RequestType {
         self.init(accessToken: accessToken, version: "\(version.version)-\(version.hash)")
     }
 
-    convenience init(accessToken: GameWebToken.Response, version: WebVersion.Response) {
-        self.init(accessToken: accessToken.result.accessToken, version: "\(version.version)-\(version.hash)")
-    }
-
     internal struct Response: Codable {
         let bulletToken: String
         let lang: String

@@ -69,11 +69,13 @@ struct RetrieveView: View {
                     let results: [CoopResult] = try await session.getAllCoopHistoryDetailQuery()
                     dump(results)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        dismiss()
+                        isPresented.toggle()
+//                        dismiss()
                     })
                 } catch {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        dismiss()
+                        isPresented.toggle()
+//                        dismiss()
                     })
                 }
             }
@@ -87,8 +89,7 @@ extension View {
     }
 
     public func fullScreen(isPresented: Binding<Bool>, session: SplatNet3) -> some View {
-        self
-            .fullScreen(isPresented: isPresented, content: {
+        self.fullScreen(isPresented: isPresented, content: {
                 RetrieveView(session: session)
             })
     }

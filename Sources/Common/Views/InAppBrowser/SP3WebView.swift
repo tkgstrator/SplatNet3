@@ -28,7 +28,7 @@ public struct SP3WebView: UIViewControllerRepresentable {
     public final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         private var bridge: WebViewJavascriptBridge
         private var observer: NSKeyValueObservation?
-        private let session: Authorize = Authorize()
+        private let session: OAuthSession = OAuthSession()
         private let account: UserInfo?
         private let configuration: WKWebViewConfiguration = WKWebViewConfiguration()
         private var cookie: HTTPCookie {

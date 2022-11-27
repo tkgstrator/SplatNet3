@@ -12,7 +12,7 @@ public struct SP3WebButton<Content: View>: View {
     public typealias Label = () -> Content
     @State private var isPresented: Bool = false
     let label: Label
-    let session: Authorize = Authorize()
+    let session: OAuthSession = OAuthSession()
 
     public init(label: @escaping Label) {
         self.label = label
