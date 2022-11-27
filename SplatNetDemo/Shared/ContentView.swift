@@ -8,8 +8,11 @@
 import SwiftUI
 import Common
 import SplatNet3
+import RealmSwift
 
 struct ContentView: View {
+    @ObservedResults(RealmCoopResult.self) var results
+
     var body: some View {
         NavigationView(content: {
             Form(content: {
@@ -22,10 +25,23 @@ struct ContentView: View {
                     Text("SplatNet3")
                 })
                 FilePickerButton()
+                FileExportButton()
+                Button(action: {
+                    Task {
+                        await RealmService.shared.deleteAll()
+                    }
+                }, label: {
+                    Text("Delete All")
+                })
                 NavigationLink(destination: {
                     RequestView()
                 }, label: {
                     Text("RequestView")
+                })
+                HStack(content: {
+                    Text("リザルト件数")
+                    Spacer()
+                    Text("\(results.count)")
                 })
             })
             .navigationTitle("SplatNet3 Demo")
@@ -33,8 +49,24 @@ struct ContentView: View {
     }
 }
 
+struct FileExportButton: View {
+    @State private var isPresented: Bool = false
+
+    var body: some View {
+        Button(action: {
+            Task {
+                let path: URL = try await RealmService.shared.exports()
+                let controller: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
+                UIApplication.shared.rootViewController?.popover(controller, animated: true)
+            }
+        }, label: {
+            Text("Export")
+        })
+    }
+}
+
 struct RequestView: View {
-    @StateObject var session: SplatNet3 = SplatNet3()
+    @StateObject var session: Session = Session()
 
     var body: some View {
         List(content: {
@@ -54,7 +86,7 @@ struct RequestView: View {
 
 struct RequestButton: View {
     @State private var isPresented: Bool = false
-    let session: SplatNet3
+    let session: Session
     let hash: SHA256Hash
 
     var body: some View {
@@ -81,7 +113,7 @@ struct RequestButton: View {
                 Text(String(describing: hash))
                     .lineLimit(1)
             })
-            .fullScreen(isPresented: $isPresented)
+            .fullScreen(isPresented: $isPresented, session: session)
         })
     }
 }
@@ -96,7 +128,10 @@ struct FilePickerButton: View {
             Text("Import")
         })
         .fullScreenCover(isPresented: $isPresented, content: {
-            FilePickerView(fileType: .json, onSelected: { _ in
+            FilePickerView(fileType: .json, onSelected: { url in
+                Task {
+                    try await RealmService.shared.imports(contentsOf: url)
+                }
             })
         })
     }

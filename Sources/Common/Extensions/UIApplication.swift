@@ -19,3 +19,16 @@ extension UIApplication {
             .rootViewController
     }
 }
+
+extension UIViewController {
+    public func popover(_ viewControllerToPresent: UIActivityViewController, animated: Bool) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let popover = viewControllerToPresent.popoverPresentationController {
+                popover.sourceView = viewControllerToPresent.view
+                popover.barButtonItem = .none
+                popover.sourceRect = viewControllerToPresent.accessibilityFrame
+            }
+        }
+        present(viewControllerToPresent, animated: animated)
+    }
+}

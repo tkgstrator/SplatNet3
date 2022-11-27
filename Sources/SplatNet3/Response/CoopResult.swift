@@ -9,7 +9,7 @@ import Foundation
 
 public struct CoopResult: Codable {
     public let id: String
-    public let scale: CoopHistory.Scale?
+    public let scale: [Int?]
     public let jobScore: Int?
     public let grade: GradeId?
     public let kumaPoint: Int?
@@ -31,7 +31,7 @@ public struct CoopResult: Codable {
     public let smellMeter: Int?
     public let scenarioCode: String?
 
-    public struct Schedule: Codable {
+    public struct Schedule: Codable, Hashable {
         public let startTime: Date?
         public let endTime: Date?
         public let mode: ModeType
@@ -56,6 +56,7 @@ public struct CoopResult: Codable {
         public let name: String
         public let nameId: String
         public let nameplate: Nameplate
+        public let goldenIkuraAssistNum: Int
         public let goldenIkuraNum: Int
         public let ikuraNum: Int
         public let deadCount: Int
@@ -86,13 +87,14 @@ public struct CoopResult: Codable {
                 )
             )
             self.goldenIkuraNum = content.goldenDeliverCount
+            self.goldenIkuraAssistNum = content.goldenAssistCount
             self.ikuraNum = content.deliverCount
             self.deadCount = content.rescuedCount
             self.helpCount = content.rescueCount
             self.weaponList = content.weapons.map({ $0.image.url.asWeaponId() })
             self.special = content.specialWeapon?.id ?? .SpUltraShot
             self.specialCounts = specialCounts.map({ $0.filter({ $0 == content.specialWeapon?.id }).count })
-            self.bossKillCounts = results.isEmpty ? Array(repeating: 0, count: 15) : results.bossKillCounts()
+            self.bossKillCounts = content.player.isMyself ? results.bossKillCounts() : Array(repeating: 0, count: 15)
             self.uniform = content.player.uniform.id
             self.bossKillCountsTotal = content.defeatEnemyCount
             self.species = content.player.species
@@ -108,9 +110,17 @@ public struct CoopResult: Codable {
         public let quotaNum: Int?
         public let goldenIkuraPopNum: Int
 
-        init(content: CoopHistoryDetailQuery.WaveResult) {
+        init(content: CoopHistoryDetailQuery.WaveResult, resultWave: Int, bossDefeated: Bool?) {
             self.id = content.waveNumber
-            self.isClear = false
+            self.isClear = {
+                // EX-WAVEがあれば
+                if let bossDefeated = bossDefeated {
+                    // EX-WAVEの結果はbossDefeated、それ以外はクリア
+                    return content.waveNumber == 4 ? bossDefeated : true
+                }
+                // それ以外は失敗したWAVEかどうか
+                return !(content.waveNumber == resultWave)
+            }()
             self.waterLevel = content.waterLevel
             self.eventType = content.eventWave?.id ?? .Water_Levels
             self.goldenIkuraNum = content.teamDeliverCount
@@ -145,10 +155,10 @@ public struct CoopResult: Codable {
 
     public init(history: CoopHistoryQuery.CoopSchedule, content: CoopHistoryDetailQuery.CoopHistoryDetail) {
         self.id = content.id
-        self.scale = content.scale
+        self.scale = [content.scale?.bronze, content.scale?.silver, content.scale?.gold]
         self.jobScore = content.jobScore
         self.kumaPoint = content.jobPoint
-        self.waveDetails = content.waveResults.map({ WaveResult(content: $0) })
+        self.waveDetails = content.waveResults.map({ WaveResult(content: $0, resultWave: content.resultWave, bossDefeated: content.bossResult?.hasDefeatBoss) })
         self.jobResult = JobResult(content: content)
         let specialCounts: [[SpecialId]] = content.waveResults.map({ $0.specialWeapons.map({ $0.id }) })
         self.myResult = PlayerResult(content: content.myResult, results: content.enemyResults, specialCounts: specialCounts)

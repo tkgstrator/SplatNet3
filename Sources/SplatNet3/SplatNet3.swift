@@ -38,10 +38,12 @@ open class SplatNet3: SPSession {
     }
 
     /// スケジュール取得
+    @discardableResult
     public func getStageScheduleQuery() async throws -> StageScheduleQuery.Response {
         try await request(StageScheduleQuery())
     }
 
+    @discardableResult
     public func getCoopStageScheduleQuery() async throws -> [StageScheduleQuery.CoopSchedule] {
         try await request(StageScheduleQuery()).data.coopGroupingSchedule.regularSchedules.nodes
     }

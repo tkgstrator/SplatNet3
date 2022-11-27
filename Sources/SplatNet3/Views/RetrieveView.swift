@@ -10,7 +10,7 @@ import Common
 
 struct RetrieveView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var session: SplatNet3 = SplatNet3()
+    @StateObject var session: SplatNet3
 
     func makeBody(request: SPProgress) -> some View {
         switch request.progress {
@@ -86,10 +86,10 @@ extension View {
         AnyView(self)
     }
 
-    public func fullScreen(isPresented: Binding<Bool>) -> some View {
+    public func fullScreen(isPresented: Binding<Bool>, session: SplatNet3) -> some View {
         self
             .fullScreen(isPresented: isPresented, content: {
-                RetrieveView()
+                RetrieveView(session: session)
             })
     }
 }

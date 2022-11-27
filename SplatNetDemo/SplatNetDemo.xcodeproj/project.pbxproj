@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		100CED7E28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */; };
 		10251A5B28B91AEF0095DAA7 /* SplatNet2 in Frameworks */ = {isa = PBXBuildFile; productRef = 10251A5A28B91AEF0095DAA7 /* SplatNet2 */; };
+		102F389A29327EDF001E1FD5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 102F389929327EDF001E1FD5 /* RealmSwift */; };
+		102F389C29327F05001E1FD5 /* RealmCoopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F389B29327F05001E1FD5 /* RealmCoopResult.swift */; };
+		102F389D29327F05001E1FD5 /* RealmCoopResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F389B29327F05001E1FD5 /* RealmCoopResult.swift */; };
+		102F38A029327F16001E1FD5 /* RealmCoopPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F389F29327F16001E1FD5 /* RealmCoopPlayer.swift */; };
+		102F38A129327F16001E1FD5 /* RealmCoopPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F389F29327F16001E1FD5 /* RealmCoopPlayer.swift */; };
+		102F38A329327F28001E1FD5 /* RealmCoopSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A229327F28001E1FD5 /* RealmCoopSchedule.swift */; };
+		102F38A429327F28001E1FD5 /* RealmCoopSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A229327F28001E1FD5 /* RealmCoopSchedule.swift */; };
+		102F38A629327F44001E1FD5 /* RealmCoopWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A529327F44001E1FD5 /* RealmCoopWave.swift */; };
+		102F38A729327F44001E1FD5 /* RealmCoopWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A529327F44001E1FD5 /* RealmCoopWave.swift */; };
+		102F38A9293281EA001E1FD5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A8293281EA001E1FD5 /* RealmService.swift */; };
+		102F38AA293281EA001E1FD5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38A8293281EA001E1FD5 /* RealmService.swift */; };
+		102F38AC29328951001E1FD5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38AB29328951001E1FD5 /* Session.swift */; };
+		102F38AD29328951001E1FD5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F38AB29328951001E1FD5 /* Session.swift */; };
 		1080DA7B28AE3F0700220903 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7A28AE3F0700220903 /* Tests_iOS.swift */; };
 		1080DA7D28AE3F0700220903 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA7C28AE3F0700220903 /* Tests_iOSLaunchTests.swift */; };
 		1080DA8728AE3F0700220903 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1080DA8628AE3F0700220903 /* Tests_macOS.swift */; };
@@ -43,6 +56,12 @@
 
 /* Begin PBXFileReference section */
 		100CED7D28AE4BDE003CD7F9 /* SplatNetDemo--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplatNetDemo--iOS--Info.plist"; sourceTree = "<group>"; };
+		102F389B29327F05001E1FD5 /* RealmCoopResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoopResult.swift; sourceTree = "<group>"; };
+		102F389F29327F16001E1FD5 /* RealmCoopPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoopPlayer.swift; sourceTree = "<group>"; };
+		102F38A229327F28001E1FD5 /* RealmCoopSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoopSchedule.swift; sourceTree = "<group>"; };
+		102F38A529327F44001E1FD5 /* RealmCoopWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCoopWave.swift; sourceTree = "<group>"; };
+		102F38A8293281EA001E1FD5 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		102F38AB29328951001E1FD5 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		10320C5628D3E01300666F09 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		10320C5728D3E01700666F09 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		10320C5828D3E02C00666F09 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -77,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				102F389A29327EDF001E1FD5 /* RealmSwift in Frameworks */,
 				10A6A18228B7A1AB0075563F /* SplatNet3 in Frameworks */,
 				10251A5B28B91AEF0095DAA7 /* SplatNet2 in Frameworks */,
 			);
@@ -106,6 +126,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		102F389E29327F0A001E1FD5 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				102F389B29327F05001E1FD5 /* RealmCoopResult.swift */,
+				102F389F29327F16001E1FD5 /* RealmCoopPlayer.swift */,
+				102F38A229327F28001E1FD5 /* RealmCoopSchedule.swift */,
+				102F38A529327F44001E1FD5 /* RealmCoopWave.swift */,
+				102F38A8293281EA001E1FD5 /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		1080DA5C28AE3F0600220903 = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +155,10 @@
 		1080DA6128AE3F0600220903 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				102F389E29327F0A001E1FD5 /* Realm */,
 				1080DA6228AE3F0600220903 /* SplatNetDemoApp.swift */,
 				1080DA6328AE3F0600220903 /* ContentView.swift */,
+				102F38AB29328951001E1FD5 /* Session.swift */,
 				1080DA6428AE3F0700220903 /* Assets.xcassets */,
 				10D7A0C928BACEB200DB86CF /* Localizable.strings */,
 			);
@@ -202,6 +236,7 @@
 			packageProductDependencies = (
 				10A6A18128B7A1AB0075563F /* SplatNet3 */,
 				10251A5A28B91AEF0095DAA7 /* SplatNet2 */,
+				102F389929327EDF001E1FD5 /* RealmSwift */,
 			);
 			productName = "SplatNetDemo (iOS)";
 			productReference = 1080DA6928AE3F0700220903 /* SplatNetDemo.app */;
@@ -308,6 +343,9 @@
 				"en-GB",
 			);
 			mainGroup = 1080DA5C28AE3F0600220903;
+			packageReferences = (
+				102F389829327EDF001E1FD5 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 1080DA6A28AE3F0700220903 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,7 +400,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1080DA8C28AE3F0700220903 /* ContentView.swift in Sources */,
+				102F38A629327F44001E1FD5 /* RealmCoopWave.swift in Sources */,
+				102F38A9293281EA001E1FD5 /* RealmService.swift in Sources */,
 				1080DA8A28AE3F0700220903 /* SplatNetDemoApp.swift in Sources */,
+				102F38AC29328951001E1FD5 /* Session.swift in Sources */,
+				102F389C29327F05001E1FD5 /* RealmCoopResult.swift in Sources */,
+				102F38A029327F16001E1FD5 /* RealmCoopPlayer.swift in Sources */,
+				102F38A329327F28001E1FD5 /* RealmCoopSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +415,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1080DA8D28AE3F0700220903 /* ContentView.swift in Sources */,
+				102F38A729327F44001E1FD5 /* RealmCoopWave.swift in Sources */,
+				102F38AA293281EA001E1FD5 /* RealmService.swift in Sources */,
 				1080DA8B28AE3F0700220903 /* SplatNetDemoApp.swift in Sources */,
+				102F38AD29328951001E1FD5 /* Session.swift in Sources */,
+				102F389D29327F05001E1FD5 /* RealmCoopResult.swift in Sources */,
+				102F38A129327F16001E1FD5 /* RealmCoopPlayer.swift in Sources */,
+				102F38A429327F28001E1FD5 /* RealmCoopSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,10 +846,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		102F389829327EDF001E1FD5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		10251A5A28B91AEF0095DAA7 /* SplatNet2 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SplatNet2;
+		};
+		102F389929327EDF001E1FD5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 102F389829327EDF001E1FD5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		10A6A18128B7A1AB0075563F /* SplatNet3 */ = {
 			isa = XCSwiftPackageProductDependency;
