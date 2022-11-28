@@ -7,65 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		103ECC9F2933B54B009A3E94 /* SplatNet3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ECC9E2933B54B009A3E94 /* SplatNet3DemoApp.swift */; };
-		103ECCA12933B54B009A3E94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ECCA02933B54B009A3E94 /* ContentView.swift */; };
-		103ECCA32933B54B009A3E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103ECCA22933B54B009A3E94 /* Assets.xcassets */; };
-		103ECCA62933B54B009A3E94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103ECCA52933B54B009A3E94 /* Preview Assets.xcassets */; };
-		103ECCB02933B54C009A3E94 /* SplatNet3DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ECCAF2933B54C009A3E94 /* SplatNet3DemoTests.swift */; };
-		103ECCBA2933B54C009A3E94 /* SplatNet3DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ECCB92933B54C009A3E94 /* SplatNet3DemoUITests.swift */; };
-		103ECCBC2933B54C009A3E94 /* SplatNet3DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ECCBB2933B54C009A3E94 /* SplatNet3DemoUITestsLaunchTests.swift */; };
-		10762C992933B979004CA2E0 /* SplatNet3 in Frameworks */ = {isa = PBXBuildFile; productRef = 10762C982933B979004CA2E0 /* SplatNet3 */; };
+		106D5790293430B90088D018 /* SplatNet3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D578F293430B90088D018 /* SplatNet3DemoApp.swift */; };
+		106D5792293430B90088D018 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D5791293430B90088D018 /* ContentView.swift */; };
+		106D5794293430BB0088D018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D5793293430BB0088D018 /* Assets.xcassets */; };
+		106D5798293430BB0088D018 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D5797293430BB0088D018 /* Preview Assets.xcassets */; };
+		106D57A2293430BB0088D018 /* SplatNet3DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57A1293430BB0088D018 /* SplatNet3DemoTests.swift */; };
+		106D57AC293430BB0088D018 /* SplatNet3DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57AB293430BB0088D018 /* SplatNet3DemoUITests.swift */; };
+		106D57AE293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57AD293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift */; };
+		106D57BE293430ED0088D018 /* SplatNet3 in Frameworks */ = {isa = PBXBuildFile; productRef = 106D57BD293430ED0088D018 /* SplatNet3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		103ECCAC2933B54C009A3E94 /* PBXContainerItemProxy */ = {
+		106D579E293430BB0088D018 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 103ECC932933B54B009A3E94 /* Project object */;
+			containerPortal = 106D5784293430B90088D018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 103ECC9A2933B54B009A3E94;
+			remoteGlobalIDString = 106D578B293430B90088D018;
 			remoteInfo = SplatNet3Demo;
 		};
-		103ECCB62933B54C009A3E94 /* PBXContainerItemProxy */ = {
+		106D57A8293430BB0088D018 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 103ECC932933B54B009A3E94 /* Project object */;
+			containerPortal = 106D5784293430B90088D018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 103ECC9A2933B54B009A3E94;
+			remoteGlobalIDString = 106D578B293430B90088D018;
 			remoteInfo = SplatNet3Demo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		103ECC9B2933B54B009A3E94 /* SplatNet3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatNet3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		103ECC9E2933B54B009A3E94 /* SplatNet3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoApp.swift; sourceTree = "<group>"; };
-		103ECCA02933B54B009A3E94 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		103ECCA22933B54B009A3E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		103ECCA52933B54B009A3E94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		103ECCAB2933B54C009A3E94 /* SplatNet3DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatNet3DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		103ECCAF2933B54C009A3E94 /* SplatNet3DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoTests.swift; sourceTree = "<group>"; };
-		103ECCB52933B54C009A3E94 /* SplatNet3DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatNet3DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		103ECCB92933B54C009A3E94 /* SplatNet3DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoUITests.swift; sourceTree = "<group>"; };
-		103ECCBB2933B54C009A3E94 /* SplatNet3DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		103ECCCD2933B957009A3E94 /* SplatNet3 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SplatNet3; path = ../SplatNet3; sourceTree = "<group>"; };
-		10762C972933B974004CA2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		106D578C293430B90088D018 /* SplatNet3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatNet3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		106D578F293430B90088D018 /* SplatNet3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoApp.swift; sourceTree = "<group>"; };
+		106D5791293430B90088D018 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		106D5793293430BB0088D018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		106D5795293430BB0088D018 /* SplatNet3Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplatNet3Demo.entitlements; sourceTree = "<group>"; };
+		106D5797293430BB0088D018 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		106D579D293430BB0088D018 /* SplatNet3DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatNet3DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		106D57A1293430BB0088D018 /* SplatNet3DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoTests.swift; sourceTree = "<group>"; };
+		106D57A7293430BB0088D018 /* SplatNet3DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatNet3DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		106D57AB293430BB0088D018 /* SplatNet3DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoUITests.swift; sourceTree = "<group>"; };
+		106D57AD293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatNet3DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		106D57BB293430D70088D018 /* SplatNet3 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SplatNet3; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		103ECC982933B54B009A3E94 /* Frameworks */ = {
+		106D5789293430B90088D018 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10762C992933B979004CA2E0 /* SplatNet3 in Frameworks */,
+				106D57BE293430ED0088D018 /* SplatNet3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCA82933B54C009A3E94 /* Frameworks */ = {
+		106D579A293430BB0088D018 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCB22933B54C009A3E94 /* Frameworks */ = {
+		106D57A4293430BB0088D018 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -75,74 +75,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		103ECC922933B54B009A3E94 = {
+		106D5783293430B90088D018 = {
 			isa = PBXGroup;
 			children = (
-				103ECCC82933B55C009A3E94 /* Packages */,
-				103ECC9D2933B54B009A3E94 /* SplatNet3Demo */,
-				103ECCAE2933B54C009A3E94 /* SplatNet3DemoTests */,
-				103ECCB82933B54C009A3E94 /* SplatNet3DemoUITests */,
-				103ECC9C2933B54B009A3E94 /* Products */,
-				103ECCCA2933B576009A3E94 /* Frameworks */,
+				106D57BA293430D70088D018 /* Packages */,
+				106D578E293430B90088D018 /* SplatNet3Demo */,
+				106D57A0293430BB0088D018 /* SplatNet3DemoTests */,
+				106D57AA293430BB0088D018 /* SplatNet3DemoUITests */,
+				106D578D293430B90088D018 /* Products */,
+				106D57BC293430ED0088D018 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		103ECC9C2933B54B009A3E94 /* Products */ = {
+		106D578D293430B90088D018 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				103ECC9B2933B54B009A3E94 /* SplatNet3Demo.app */,
-				103ECCAB2933B54C009A3E94 /* SplatNet3DemoTests.xctest */,
-				103ECCB52933B54C009A3E94 /* SplatNet3DemoUITests.xctest */,
+				106D578C293430B90088D018 /* SplatNet3Demo.app */,
+				106D579D293430BB0088D018 /* SplatNet3DemoTests.xctest */,
+				106D57A7293430BB0088D018 /* SplatNet3DemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		103ECC9D2933B54B009A3E94 /* SplatNet3Demo */ = {
+		106D578E293430B90088D018 /* SplatNet3Demo */ = {
 			isa = PBXGroup;
 			children = (
-				10762C972933B974004CA2E0 /* Info.plist */,
-				103ECC9E2933B54B009A3E94 /* SplatNet3DemoApp.swift */,
-				103ECCA02933B54B009A3E94 /* ContentView.swift */,
-				103ECCA22933B54B009A3E94 /* Assets.xcassets */,
-				103ECCA42933B54B009A3E94 /* Preview Content */,
+				106D578F293430B90088D018 /* SplatNet3DemoApp.swift */,
+				106D5791293430B90088D018 /* ContentView.swift */,
+				106D5793293430BB0088D018 /* Assets.xcassets */,
+				106D5795293430BB0088D018 /* SplatNet3Demo.entitlements */,
+				106D5796293430BB0088D018 /* Preview Content */,
 			);
 			path = SplatNet3Demo;
 			sourceTree = "<group>";
 		};
-		103ECCA42933B54B009A3E94 /* Preview Content */ = {
+		106D5796293430BB0088D018 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				103ECCA52933B54B009A3E94 /* Preview Assets.xcassets */,
+				106D5797293430BB0088D018 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		103ECCAE2933B54C009A3E94 /* SplatNet3DemoTests */ = {
+		106D57A0293430BB0088D018 /* SplatNet3DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				103ECCAF2933B54C009A3E94 /* SplatNet3DemoTests.swift */,
+				106D57A1293430BB0088D018 /* SplatNet3DemoTests.swift */,
 			);
 			path = SplatNet3DemoTests;
 			sourceTree = "<group>";
 		};
-		103ECCB82933B54C009A3E94 /* SplatNet3DemoUITests */ = {
+		106D57AA293430BB0088D018 /* SplatNet3DemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				103ECCB92933B54C009A3E94 /* SplatNet3DemoUITests.swift */,
-				103ECCBB2933B54C009A3E94 /* SplatNet3DemoUITestsLaunchTests.swift */,
+				106D57AB293430BB0088D018 /* SplatNet3DemoUITests.swift */,
+				106D57AD293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift */,
 			);
 			path = SplatNet3DemoUITests;
 			sourceTree = "<group>";
 		};
-		103ECCC82933B55C009A3E94 /* Packages */ = {
+		106D57BA293430D70088D018 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				103ECCCD2933B957009A3E94 /* SplatNet3 */,
+				106D57BB293430D70088D018 /* SplatNet3 */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		103ECCCA2933B576009A3E94 /* Frameworks */ = {
+		106D57BC293430ED0088D018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -152,13 +152,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		103ECC9A2933B54B009A3E94 /* SplatNet3Demo */ = {
+		106D578B293430B90088D018 /* SplatNet3Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 103ECCBF2933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3Demo" */;
+			buildConfigurationList = 106D57B1293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3Demo" */;
 			buildPhases = (
-				103ECC972933B54B009A3E94 /* Sources */,
-				103ECC982933B54B009A3E94 /* Frameworks */,
-				103ECC992933B54B009A3E94 /* Resources */,
+				106D5788293430B90088D018 /* Sources */,
+				106D5789293430B90088D018 /* Frameworks */,
+				106D578A293430B90088D018 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -166,72 +166,72 @@
 			);
 			name = SplatNet3Demo;
 			packageProductDependencies = (
-				10762C982933B979004CA2E0 /* SplatNet3 */,
+				106D57BD293430ED0088D018 /* SplatNet3 */,
 			);
 			productName = SplatNet3Demo;
-			productReference = 103ECC9B2933B54B009A3E94 /* SplatNet3Demo.app */;
+			productReference = 106D578C293430B90088D018 /* SplatNet3Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		103ECCAA2933B54C009A3E94 /* SplatNet3DemoTests */ = {
+		106D579C293430BB0088D018 /* SplatNet3DemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 103ECCC22933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3DemoTests" */;
+			buildConfigurationList = 106D57B4293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3DemoTests" */;
 			buildPhases = (
-				103ECCA72933B54C009A3E94 /* Sources */,
-				103ECCA82933B54C009A3E94 /* Frameworks */,
-				103ECCA92933B54C009A3E94 /* Resources */,
+				106D5799293430BB0088D018 /* Sources */,
+				106D579A293430BB0088D018 /* Frameworks */,
+				106D579B293430BB0088D018 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				103ECCAD2933B54C009A3E94 /* PBXTargetDependency */,
+				106D579F293430BB0088D018 /* PBXTargetDependency */,
 			);
 			name = SplatNet3DemoTests;
 			productName = SplatNet3DemoTests;
-			productReference = 103ECCAB2933B54C009A3E94 /* SplatNet3DemoTests.xctest */;
+			productReference = 106D579D293430BB0088D018 /* SplatNet3DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		103ECCB42933B54C009A3E94 /* SplatNet3DemoUITests */ = {
+		106D57A6293430BB0088D018 /* SplatNet3DemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 103ECCC52933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3DemoUITests" */;
+			buildConfigurationList = 106D57B7293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3DemoUITests" */;
 			buildPhases = (
-				103ECCB12933B54C009A3E94 /* Sources */,
-				103ECCB22933B54C009A3E94 /* Frameworks */,
-				103ECCB32933B54C009A3E94 /* Resources */,
+				106D57A3293430BB0088D018 /* Sources */,
+				106D57A4293430BB0088D018 /* Frameworks */,
+				106D57A5293430BB0088D018 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				103ECCB72933B54C009A3E94 /* PBXTargetDependency */,
+				106D57A9293430BB0088D018 /* PBXTargetDependency */,
 			);
 			name = SplatNet3DemoUITests;
 			productName = SplatNet3DemoUITests;
-			productReference = 103ECCB52933B54C009A3E94 /* SplatNet3DemoUITests.xctest */;
+			productReference = 106D57A7293430BB0088D018 /* SplatNet3DemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		103ECC932933B54B009A3E94 /* Project object */ = {
+		106D5784293430B90088D018 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					103ECC9A2933B54B009A3E94 = {
-						CreatedOnToolsVersion = 14.0.1;
+					106D578B293430B90088D018 = {
+						CreatedOnToolsVersion = 14.1;
 					};
-					103ECCAA2933B54C009A3E94 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 103ECC9A2933B54B009A3E94;
+					106D579C293430BB0088D018 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 106D578B293430B90088D018;
 					};
-					103ECCB42933B54C009A3E94 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 103ECC9A2933B54B009A3E94;
+					106D57A6293430BB0088D018 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 106D578B293430B90088D018;
 					};
 				};
 			};
-			buildConfigurationList = 103ECC962933B54B009A3E94 /* Build configuration list for PBXProject "SplatNet3Demo" */;
+			buildConfigurationList = 106D5787293430B90088D018 /* Build configuration list for PBXProject "SplatNet3Demo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,36 +239,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 103ECC922933B54B009A3E94;
-			productRefGroup = 103ECC9C2933B54B009A3E94 /* Products */;
+			mainGroup = 106D5783293430B90088D018;
+			productRefGroup = 106D578D293430B90088D018 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				103ECC9A2933B54B009A3E94 /* SplatNet3Demo */,
-				103ECCAA2933B54C009A3E94 /* SplatNet3DemoTests */,
-				103ECCB42933B54C009A3E94 /* SplatNet3DemoUITests */,
+				106D578B293430B90088D018 /* SplatNet3Demo */,
+				106D579C293430BB0088D018 /* SplatNet3DemoTests */,
+				106D57A6293430BB0088D018 /* SplatNet3DemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		103ECC992933B54B009A3E94 /* Resources */ = {
+		106D578A293430B90088D018 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103ECCA62933B54B009A3E94 /* Preview Assets.xcassets in Resources */,
-				103ECCA32933B54B009A3E94 /* Assets.xcassets in Resources */,
+				106D5798293430BB0088D018 /* Preview Assets.xcassets in Resources */,
+				106D5794293430BB0088D018 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCA92933B54C009A3E94 /* Resources */ = {
+		106D579B293430BB0088D018 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCB32933B54C009A3E94 /* Resources */ = {
+		106D57A5293430BB0088D018 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,49 +278,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		103ECC972933B54B009A3E94 /* Sources */ = {
+		106D5788293430B90088D018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103ECCA12933B54B009A3E94 /* ContentView.swift in Sources */,
-				103ECC9F2933B54B009A3E94 /* SplatNet3DemoApp.swift in Sources */,
+				106D5792293430B90088D018 /* ContentView.swift in Sources */,
+				106D5790293430B90088D018 /* SplatNet3DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCA72933B54C009A3E94 /* Sources */ = {
+		106D5799293430BB0088D018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103ECCB02933B54C009A3E94 /* SplatNet3DemoTests.swift in Sources */,
+				106D57A2293430BB0088D018 /* SplatNet3DemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		103ECCB12933B54C009A3E94 /* Sources */ = {
+		106D57A3293430BB0088D018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103ECCBC2933B54C009A3E94 /* SplatNet3DemoUITestsLaunchTests.swift in Sources */,
-				103ECCBA2933B54C009A3E94 /* SplatNet3DemoUITests.swift in Sources */,
+				106D57AE293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift in Sources */,
+				106D57AC293430BB0088D018 /* SplatNet3DemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		103ECCAD2933B54C009A3E94 /* PBXTargetDependency */ = {
+		106D579F293430BB0088D018 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 103ECC9A2933B54B009A3E94 /* SplatNet3Demo */;
-			targetProxy = 103ECCAC2933B54C009A3E94 /* PBXContainerItemProxy */;
+			target = 106D578B293430B90088D018 /* SplatNet3Demo */;
+			targetProxy = 106D579E293430BB0088D018 /* PBXContainerItemProxy */;
 		};
-		103ECCB72933B54C009A3E94 /* PBXTargetDependency */ = {
+		106D57A9293430BB0088D018 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 103ECC9A2933B54B009A3E94 /* SplatNet3Demo */;
-			targetProxy = 103ECCB62933B54C009A3E94 /* PBXContainerItemProxy */;
+			target = 106D578B293430B90088D018 /* SplatNet3Demo */;
+			targetProxy = 106D57A8293430BB0088D018 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		103ECCBD2933B54C009A3E94 /* Debug */ = {
+		106D57AF293430BB0088D018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -370,17 +370,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		103ECCBE2933B54C009A3E94 /* Release */ = {
+		106D57B0293430BB0088D018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -424,77 +422,92 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		103ECCC02933B54C009A3E94 /* Debug */ = {
+		106D57B2293430BB0088D018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SplatNet3Demo/SplatNet3Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplatNet3Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SplatNet3Demo/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		103ECCC12933B54C009A3E94 /* Release */ = {
+		106D57B3293430BB0088D018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SplatNet3Demo/SplatNet3Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplatNet3Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SplatNet3Demo/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		103ECCC32933B54C009A3E94 /* Debug */ = {
+		106D57B5293430BB0088D018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -503,10 +516,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,7 +530,7 @@
 			};
 			name = Debug;
 		};
-		103ECCC42933B54C009A3E94 /* Release */ = {
+		106D57B6293430BB0088D018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -523,10 +539,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,7 +553,7 @@
 			};
 			name = Release;
 		};
-		103ECCC62933B54C009A3E94 /* Debug */ = {
+		106D57B8293430BB0088D018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -542,9 +561,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,7 +575,7 @@
 			};
 			name = Debug;
 		};
-		103ECCC72933B54C009A3E94 /* Release */ = {
+		106D57B9293430BB0088D018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -560,9 +583,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9HU6JZF2Q;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = work.tkgstrator.SplatNet3DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -573,38 +600,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		103ECC962933B54B009A3E94 /* Build configuration list for PBXProject "SplatNet3Demo" */ = {
+		106D5787293430B90088D018 /* Build configuration list for PBXProject "SplatNet3Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				103ECCBD2933B54C009A3E94 /* Debug */,
-				103ECCBE2933B54C009A3E94 /* Release */,
+				106D57AF293430BB0088D018 /* Debug */,
+				106D57B0293430BB0088D018 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		103ECCBF2933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3Demo" */ = {
+		106D57B1293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				103ECCC02933B54C009A3E94 /* Debug */,
-				103ECCC12933B54C009A3E94 /* Release */,
+				106D57B2293430BB0088D018 /* Debug */,
+				106D57B3293430BB0088D018 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		103ECCC22933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3DemoTests" */ = {
+		106D57B4293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3DemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				103ECCC32933B54C009A3E94 /* Debug */,
-				103ECCC42933B54C009A3E94 /* Release */,
+				106D57B5293430BB0088D018 /* Debug */,
+				106D57B6293430BB0088D018 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		103ECCC52933B54C009A3E94 /* Build configuration list for PBXNativeTarget "SplatNet3DemoUITests" */ = {
+		106D57B7293430BB0088D018 /* Build configuration list for PBXNativeTarget "SplatNet3DemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				103ECCC62933B54C009A3E94 /* Debug */,
-				103ECCC72933B54C009A3E94 /* Release */,
+				106D57B8293430BB0088D018 /* Debug */,
+				106D57B9293430BB0088D018 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -612,11 +639,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		10762C982933B979004CA2E0 /* SplatNet3 */ = {
+		106D57BD293430ED0088D018 /* SplatNet3 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SplatNet3;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 103ECC932933B54B009A3E94 /* Project object */;
+	rootObject = 106D5784293430B90088D018 /* Project object */;
 }

@@ -2,7 +2,8 @@
 //  ContentView.swift
 //  SplatNet3Demo
 //
-//  Created by devonly on 2022/11/28.
+//  Created by tkgstrator on 2022/11/28.
+//  
 //
 
 import SwiftUI

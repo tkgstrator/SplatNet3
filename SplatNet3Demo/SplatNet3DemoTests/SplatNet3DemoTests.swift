@@ -1,12 +1,12 @@
 //
 //  SplatNet3DemoTests.swift
-//  SplatNet3DemoTests
+//  SplatNet3Demo
 //
-//  Created by devonly on 2022/11/28.
+//  Created by tkgstrator on 2022/11/28.
+//  
 //
 
 import XCTest
-@testable import SplatNet3Demo
 
 final class SplatNet3DemoTests: XCTestCase {
 
@@ -28,7 +28,7 @@ final class SplatNet3DemoTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
