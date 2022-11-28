@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class MyOutfitDetailQuery: GraphQL {
 	public typealias ResponseType = MyOutfitDetailQuery.Response

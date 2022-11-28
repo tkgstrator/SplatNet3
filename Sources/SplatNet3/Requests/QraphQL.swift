@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 public protocol GraphQL: RequestType {
     var hash: SHA256Hash { get }

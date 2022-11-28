@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class HeroHistoryRefetchQuery: GraphQL {
 	public typealias ResponseType = HeroHistoryRefetchQuery.Response

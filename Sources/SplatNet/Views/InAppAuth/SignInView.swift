@@ -12,6 +12,7 @@ import SwiftUI
 
 struct SignInView: View {
     @StateObject var session: SPSession = SPSession()
+    @Environment(\.dismiss) var dismiss
     let code: String
     let verifier: String
     let contentId: ContentId
@@ -77,6 +78,7 @@ struct SignInView: View {
                 } catch(let error) {
                     print(error)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        dismiss()
 //                        UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })
                 }

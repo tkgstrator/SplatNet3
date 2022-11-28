@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class DownloadSearchReplayQuery: GraphQL {
 	public typealias ResponseType = DownloadSearchReplayQuery.Response

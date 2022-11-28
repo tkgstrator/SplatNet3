@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 public final class FriendListQuery: GraphQL {
 	public typealias ResponseType = FriendListQuery.Response

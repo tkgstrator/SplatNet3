@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class BankaraBattleHistoriesRefetchQuery: GraphQL {
 	public typealias ResponseType = BankaraBattleHistoriesRefetchQuery.Response

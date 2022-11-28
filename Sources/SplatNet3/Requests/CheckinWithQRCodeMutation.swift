@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class CheckinWithQRCodeMutation: GraphQL {
 	public typealias ResponseType = CheckinWithQRCodeMutation.Response

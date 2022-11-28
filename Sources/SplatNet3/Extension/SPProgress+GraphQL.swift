@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Common
+import SplatNet
 
 extension SPProgress {
     init<T: GraphQL>(_ request: T) {

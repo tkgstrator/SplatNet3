@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class CatalogQuery: GraphQL {
 	public typealias ResponseType = CatalogQuery.Response

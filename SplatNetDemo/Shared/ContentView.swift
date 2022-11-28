@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Common
+import SplatNet
 import SplatNet3
 import RealmSwift
 

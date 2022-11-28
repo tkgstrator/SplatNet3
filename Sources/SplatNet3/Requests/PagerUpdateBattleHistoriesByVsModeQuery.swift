@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class PagerUpdateBattleHistoriesByVsModeQuery: GraphQL {
 	public typealias ResponseType = PagerUpdateBattleHistoriesByVsModeQuery.Response

@@ -105,20 +105,20 @@ extension Authorize {
     /// ハッシュ取得
     func getHash(accessToken: AccessToken.Response) async throws -> Imink.Response {
         do {
-            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
             print(error)
-            return try await request(Imink(accessToken: accessToken, server: .Imink))
+            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
         }
     }
 
     /// ハッシュ取得
     func getHash(accessToken: GameServiceToken.Response) async throws -> Imink.Response {
         do {
-            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
             print(error)
-            return try await request(Imink(accessToken: accessToken, server: .Imink))
+            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
         }
     }
 

@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class WeaponRecordQuery: GraphQL {
 	public typealias ResponseType = WeaponRecordQuery.Response

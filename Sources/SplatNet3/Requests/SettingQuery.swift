@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class SettingQuery: GraphQL {
 	public typealias ResponseType = SettingQuery.Response

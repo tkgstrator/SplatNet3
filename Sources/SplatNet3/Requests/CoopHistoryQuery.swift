@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 public protocol PartialHistoryGroup: Codable {
     var startTime: Date? { get }

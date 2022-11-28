@@ -7,7 +7,7 @@
 
 import Foundation
 import RealmSwift
-import Common
+import SplatNet
 import SplatNet3
 import SwiftUI
 

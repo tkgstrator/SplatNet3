@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class SupportButton_SupportChallengeMutation: GraphQL {
 	public typealias ResponseType = SupportButton_SupportChallengeMutation.Response

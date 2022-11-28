@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class CheckinQuery: GraphQL {
 	public typealias ResponseType = CheckinQuery.Response

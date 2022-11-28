@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class HeroHistoryQuery: GraphQL {
 	public typealias ResponseType = HeroHistoryQuery.Response

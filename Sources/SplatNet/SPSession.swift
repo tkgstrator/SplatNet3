@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 
 open class SPSession: Authorize, ObservableObject {
-    @Published var requests: [SPProgress] = []
+    @Published public var requests: [SPProgress] = []
 
     override func request(_ request: IksmSession) async -> [String : String]? {
         requests.append(SPProgress(request))

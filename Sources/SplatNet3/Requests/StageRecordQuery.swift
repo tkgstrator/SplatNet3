@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class StageRecordQuery: GraphQL {
 	public typealias ResponseType = StageRecordQuery.Response

@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class GesotownQuery: GraphQL {
 	public typealias ResponseType = GesotownQuery.Response

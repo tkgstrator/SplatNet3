@@ -2,7 +2,7 @@ import XCTest
 @testable import Alamofire
 @testable import SplatNet2
 @testable import SalmonStats
-@testable import Common
+@testable import SplatNet
 
 final class SplatNetTests: XCTestCase {
     func testExample() throws {

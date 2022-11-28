@@ -9,7 +9,8 @@
 import Foundation
 
 /// トークンを取得するゲームの種類
-public enum ContentId: Int, CaseIterable {
+public enum ContentId: Int, CaseIterable, Identifiable {
+    public var id: Int { rawValue } 
     ///  スプラトゥーン2
     case SP2 = 5_741_031_244_955_648
     ///  スプラトゥーン3

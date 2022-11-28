@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class VsHistoryDetailQuery: GraphQL {
 	public typealias ResponseType = VsHistoryDetailQuery.Response

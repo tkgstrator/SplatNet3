@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class ReplayUploadedReplayListRefetchQuery: GraphQL {
 	public typealias ResponseType = ReplayUploadedReplayListRefetchQuery.Response

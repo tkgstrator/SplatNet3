@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import Common
+import SplatNet
 
 struct RetrieveView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var session: SplatNet3
+    @StateObject var session: SPSession
 
     func makeBody(request: SPProgress) -> some View {
         switch request.progress {
@@ -57,7 +57,7 @@ struct RetrieveView: View {
                     makeBody(request: request)
                 })
             })
-            ProgressView("", value: session.current, total: session.maximum == .zero ? 1 : session.maximum)
+            //            ProgressView("", value: session.current, total: session.maximum == .zero ? 1 : session.maximum)
         })
         .frame(width: 320)
         .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
@@ -66,16 +66,16 @@ struct RetrieveView: View {
         .onAppear(perform: {
             Task {
                 do {
-                    let results: [CoopResult] = try await session.getAllCoopHistoryDetailQuery()
-                    dump(results)
+                    //                    let results: [CoopResult] = try await session.getAllCoopHistoryDetailQuery()
+                    //                    dump(results)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        isPresented.toggle()
-//                        dismiss()
+                        //                        isPresented.toggle()
+                        //                        dismiss()
                     })
                 } catch {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        isPresented.toggle()
-//                        dismiss()
+                        //                        isPresented.toggle()
+                        //                        dismiss()
                     })
                 }
             }
@@ -88,11 +88,11 @@ extension View {
         AnyView(self)
     }
 
-    public func fullScreen(isPresented: Binding<Bool>, session: SplatNet3) -> some View {
-        self.fullScreen(isPresented: isPresented, content: {
-                RetrieveView(session: session)
-            })
-    }
+//    public func fullScreen(isPresented: Binding<Bool>, session: SPSession) -> some View {
+//        self.fullScreen(isPresented: isPresented, content: {
+//            RetrieveView(session: session)
+//        })
+//    }
 }
 
 //struct RetrieveViews: PreviewProvider {

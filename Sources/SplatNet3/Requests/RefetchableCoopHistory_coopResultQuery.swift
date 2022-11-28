@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class RefetchableCoopHistory_coopResultQuery: GraphQL {
 	public typealias ResponseType = RefetchableCoopHistory_coopResultQuery.Response

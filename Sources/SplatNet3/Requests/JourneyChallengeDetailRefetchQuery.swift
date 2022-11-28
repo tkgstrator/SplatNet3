@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class JourneyChallengeDetailRefetchQuery: GraphQL {
 	public typealias ResponseType = JourneyChallengeDetailRefetchQuery.Response

@@ -351,7 +351,7 @@ def get_hashes(revision: str):
                         f"\n\n",
                         f"import Foundation\n",
                         f"import Alamofire\n",
-                        f"import Common\n\n",
+                        f"import SplatNet\n\n",
                         f"final class {key}: GraphQL" + " {\n",
                         f"\tpublic typealias ResponseType = {key}.Response\n",
                         f"\tvar hash: SHA256Hash = .{key}\n",

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Common
+import SplatNet
 
 public enum CoopHistory {
     // MARK: - Scale

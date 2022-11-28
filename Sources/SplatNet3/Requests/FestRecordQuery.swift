@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class FestRecordQuery: GraphQL {
 	public typealias ResponseType = FestRecordQuery.Response

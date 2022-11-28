@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class HomeQuery: GraphQL {
 	public typealias ResponseType = HomeQuery.Response

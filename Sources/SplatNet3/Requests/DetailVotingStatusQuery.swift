@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class DetailVotingStatusQuery: GraphQL {
 	public typealias ResponseType = DetailVotingStatusQuery.Response

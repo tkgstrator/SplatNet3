@@ -13,17 +13,15 @@ import SplatNet3
 struct ContentView: View {
     var body: some View {
         Form(content: {
-            Section(content: {
-                OAuthButton(contentId: .SP2)
-                InAppBrower(contentId: .SP2)
-            }, header: {
-                Text("SP2")
-            })
-            Section(content: {
-                OAuthButton(contentId: .SP3)
-                InAppBrower(contentId: .SP3)
-            }, header: {
-                Text("SP3")
+            ForEach(ContentId.allCases, content: { contentId in
+                Section(content: {
+                    InAppBrower(contentId: contentId)
+                    ForEach(AuthType.allCases, content: { authType in
+                        OAuthButton(contentId: contentId, authType: authType)
+                    })
+                }, header: {
+                    Text(String(describing: contentId))
+                })
             })
         })
     }
@@ -46,6 +44,7 @@ struct InAppBrower: View {
 struct OAuthButton: View {
     @State private var isPresented: Bool = false
     let contentId: ContentId
+    let authType: AuthType
 
     var body: some View {
         Button(action: {
@@ -53,7 +52,7 @@ struct OAuthButton: View {
         }, label: {
             Text("OAuth")
         })
-        .authorize(isPresented: $isPresented, contentId: contentId)
+        .authorize(isPresented: $isPresented, contentId: contentId, using: authType)
     }
 }
 

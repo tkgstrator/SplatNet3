@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class MyOutfitCommonDataFilteringConditionQuery: GraphQL {
 	public typealias ResponseType = MyOutfitCommonDataFilteringConditionQuery.Response

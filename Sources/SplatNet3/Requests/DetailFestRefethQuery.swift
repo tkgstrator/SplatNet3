@@ -9,7 +9,7 @@
 
 import Foundation
 import Alamofire
-import Common
+import SplatNet
 
 final class DetailFestRefethQuery: GraphQL {
 	public typealias ResponseType = DetailFestRefethQuery.Response

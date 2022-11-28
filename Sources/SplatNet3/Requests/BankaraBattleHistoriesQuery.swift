@@ -9,7 +9,6 @@
 
 import Foundation
 import Alamofire
-import Common
 
 final class BankaraBattleHistoriesQuery: GraphQL {
 	public typealias ResponseType = BankaraBattleHistoriesQuery.Response
