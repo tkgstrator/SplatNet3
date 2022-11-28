@@ -1,8 +1,9 @@
 //
 //  Keychain.swift
-//  
+//  SplatNet3
 //
-//  Created by devonly on 2022/11/23.
+//  Created by tkgstrator on 2021/07/13.
+//  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
 import Foundation

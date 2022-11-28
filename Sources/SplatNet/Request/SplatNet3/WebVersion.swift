@@ -9,6 +9,7 @@
 import Alamofire
 import Foundation
 
+/// WebVersion
 public class WebVersion: RequestType {
     public typealias ResponseType = WebVersion.Response
 

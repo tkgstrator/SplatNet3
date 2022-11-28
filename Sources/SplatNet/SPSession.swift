@@ -1,15 +1,16 @@
 //
 //  Session.swift
-//  
+//  SplatNet3
 //
-//  Created by devonly on 2022/11/28.
-//  
+//  Created by tkgstrator on 2021/07/13.
+//  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
 import Foundation
 import Alamofire
+import KeychainAccess
 
-open class SPSession: RequestInterceptor {
+open class SPSession: ObservableObject, RequestInterceptor {
     let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
@@ -18,18 +19,35 @@ open class SPSession: RequestInterceptor {
         configuration.allowsCellularAccess = true
         return Alamofire.Session(configuration: configuration)
     }()
+
+    let keychain: Keychain = Keychain(service: Bundle.module.bundleIdentifier!)
     let decoder: SPDecoder = SPDecoder()
+    var account: UserInfo? {
+        get {
+            keychain.get()
+        }
+    }
 
     open func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
         try await session.request(request, interceptor: interceptor)
+            .validationWithNXError()
             .serializingDecodable(T.ResponseType.self, decoder: decoder)
             .value
     }
 
     open func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
         try await session.request(request, interceptor: interceptor)
+            .validationWithNXError()
             .serializingString(encoding: .utf8)
             .value
+    }
+
+    func request(_ request: IksmSession) async -> [String: String]? {
+        await session.request(request)
+            .validationWithNXError()
+            .serializingString()
+            .response
+            .response?.allHeaderFields as? [String: String]
     }
 
     open func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
@@ -48,17 +66,19 @@ extension SPSession {
 
     func getHash(accessToken: AccessToken.Response) async throws -> Imink.Response {
         do {
-            return try await request(Imink(accessToken: accessToken, server: .Flapg))
-        } catch {
-            return try await request(Imink(accessToken: accessToken, server: .Imink), interceptor: self)
+            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+        } catch(let error) {
+            print(error)
+            return try await request(Imink(accessToken: accessToken, server: .Imink))
         }
     }
 
     func getHash(accessToken: GameServiceToken.Response) async throws -> Imink.Response {
         do {
-            return try await request(Imink(accessToken: accessToken, server: .Flapg))
-        } catch {
-            return try await request(Imink(accessToken: accessToken, server: .Imink), interceptor: self)
+            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+        } catch(let error) {
+            print(error)
+            return try await request(Imink(accessToken: accessToken, server: .Imink))
         }
     }
 
@@ -83,22 +103,45 @@ extension SPSession {
     }
 
     func getBulletToken(gameWebToken: GameWebToken.Response) async throws -> BulletToken.Response {
-        let response: WebVersion.Response = try await request(WebVersion())
+        let response: WebVersion.Response = try await getWebVersion()
         return try await request(BulletToken(accessToken: gameWebToken.result.accessToken, version: response))
-
     }
 
-    func refresh(code: String, verifier: String) async throws {
+    func getBulletToken(gameWebToken: String) async throws -> BulletToken.Response {
+        let response: WebVersion.Response = try await getWebVersion()
+        return try await request(BulletToken(accessToken: gameWebToken, version: response))
+    }
+
+    func getIksmSession(gameWebToken: GameWebToken.Response) async throws -> IksmSession.Response {
+        let headers: [String: String]? = await request(IksmSession(accessToken: gameWebToken.result.accessToken))
+        return try IksmSession.Response(headers: headers)
+    }
+
+    func getCookie(code: String, verifier: String, contentId: ContentId) async throws {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
-        try await refresh(sessionToken: sessionToken.sessionToken)
+        try await refresh(sessionToken: sessionToken.sessionToken, contentId: contentId)
     }
 
-    func refresh(sessionToken: String) async throws {
+    func refresh(gameWebToken: String) async throws {
+        let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
+    }
+
+    func refresh(sessionToken: String, contentId: ContentId) async throws {
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         let version: XVersion.Response = try await getXVersion()
         let gameServiceToken: GameServiceToken.Response = try await getGameServiceToken(accessToken: accessToken, version: version)
-        let gameWebToken: GameWebToken.Response = try await getGameWebToken(accessToken: gameServiceToken, version: version, contentId: .SP3)
-        let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
-        print(bulletToken)
+        let gameWebToken: GameWebToken.Response = try await getGameWebToken(accessToken: gameServiceToken, version: version, contentId: contentId)
+        switch contentId {
+        case .SP2:
+            let iksmSession: IksmSession.Response = try await getIksmSession(gameWebToken: gameWebToken)
+            let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, iksmSession: iksmSession)
+            print(account)
+            self.keychain.set(account)
+        case .SP3:
+            let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
+            let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken.result.accessToken, bulletToken: bulletToken)
+            print(account)
+            self.keychain.set(account)
+        }
     }
 }

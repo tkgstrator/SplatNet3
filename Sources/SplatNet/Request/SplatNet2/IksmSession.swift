@@ -28,7 +28,16 @@ class IksmSession: RequestType {
     }
 
     internal struct Response: Codable {
-        var iksmSession: String
-        var nsaid: String
+        let iksmSession: String
+
+        init(headers: [String: String]?) throws {
+            let url: URL = URL(unsafeString: "https://app.splatoon2.nintendo.net/")
+            guard let headers = headers,
+                  let iksmSession = HTTPCookie.cookies(withResponseHeaderFields: headers, for: url).first?.value
+            else {
+                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "No iksm session is included."))
+            }
+            self.iksmSession = iksmSession
+        }
     }
 }

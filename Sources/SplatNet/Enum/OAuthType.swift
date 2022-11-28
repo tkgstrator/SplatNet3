@@ -9,7 +9,18 @@
 import Foundation
 
 /// トークンを取得するゲームの種類
-enum ContentId: Int, CaseIterable {
+public enum ContentId: Int, CaseIterable {
+    ///  スプラトゥーン2
     case SP2 = 5_741_031_244_955_648
+    ///  スプラトゥーン3
     case SP3 = 4_834_290_508_791_808
+
+    var requestURL: URL {
+        switch self {
+        case .SP2:
+            return URL(unsafeString: "https://app.splatoon2.nintendo.net/")
+        case .SP3:
+            return URL(unsafeString: "https://api.lp1.av5ja.srv.nintendo.net/")
+        }
+    }
 }

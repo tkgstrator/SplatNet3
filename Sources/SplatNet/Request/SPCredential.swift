@@ -32,14 +32,14 @@ protocol SPCredential: AuthenticationCredential, Codable {
     var requiresGameWebTokenRefresh: Bool { get }
 
     init(
-        sessionToken: SessionToken.Response,
+        sessionToken: String,
         gameServiceToken: GameServiceToken.Response,
-        gameWebToken: GameWebToken.Response,
+        gameWebToken: String,
         bulletToken: BulletToken.Response
     )
 
     init(
-        sessionToken: SessionToken.Response,
+        sessionToken: String,
         gameServiceToken: GameServiceToken.Response,
         gameWebToken: GameWebToken.Response,
         iksmSession: IksmSession.Response

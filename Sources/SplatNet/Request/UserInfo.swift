@@ -45,7 +45,7 @@ public struct UserInfo: SPCredential {
         return Date(timeIntervalSince1970: TimeInterval(token.payload.exp)) <= Date()
     }
 
-    init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response) {
+    init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: String) {
         self.nickname = gameServiceToken.result.user.name
         self.membership = gameServiceToken.result.user.links.nintendoAccount.membership.active
         self.friendCode = gameServiceToken.result.user.links.friendCode.id
@@ -53,23 +53,17 @@ public struct UserInfo: SPCredential {
         self.nsaid = gameServiceToken.result.user.nsaId
         self.sessionToken = sessionToken
         self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
-        self.gameWebToken = gameWebToken.result.accessToken
+        self.gameWebToken = gameWebToken
         self.expiration = Date(timeIntervalSince1970: 0)
     }
 
-    init(sessionToken: SessionToken.Response, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, bulletToken: BulletToken.Response) {
-        self.init(sessionToken: sessionToken.sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken)
-        self.bulletToken = bulletToken.bulletToken
+    init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, iksmSession: IksmSession.Response) {
+        self.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken.result.accessToken)
+        self.iksmSession = iksmSession.iksmSession
         self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
     }
 
-    init(sessionToken: SessionToken.Response, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, iksmSession: IksmSession.Response) {
-        self.init(sessionToken: sessionToken.sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken)
-        self.iksmSession = iksmSession.iksmSession
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 23.5)
-    }
-
-    init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, bulletToken: BulletToken.Response) {
+    init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: String, bulletToken: BulletToken.Response) {
         self.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken)
         self.bulletToken = bulletToken.bulletToken
         self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
