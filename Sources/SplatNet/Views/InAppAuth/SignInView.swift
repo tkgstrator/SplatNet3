@@ -41,30 +41,30 @@ struct SignInView: View {
 
     var body: some View {
         VStack(content: {
-//            ForEach(session.requests, content: { request in
-//                HStack(content: {
-//                    RoundedRectangle(cornerRadius: 4)
-//                        .frame(width: 60, height: 24, alignment: .center)
-//                        .foregroundColor(request.color)
-//                        .overlay(content: {
-//                            Text(request.type.rawValue)
-//                                .foregroundColor(.white)
-//                                .bold()
-//                                .font(.body)
-//                        })
-//                    Text(request.path.rawValue)
-//                        .font(.body)
-//                        .frame(width: 220, height: nil, alignment: .leading)
-//                        .lineLimit(1)
-//                        .foregroundColor(.white)
-//                    makeBody(request: request)
-//                })
-//            })
+            ForEach(session.requests, content: { request in
+                HStack(content: {
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 60, height: 24, alignment: .center)
+                        .foregroundColor(request.color)
+                        .overlay(content: {
+                            Text(request.type.rawValue)
+                                .foregroundColor(.white)
+                                .bold()
+                                .font(.body)
+                        })
+                    Text(request.path.rawValue)
+                        .font(.body)
+                        .frame(width: 220, height: nil, alignment: .leading)
+                        .lineLimit(1)
+                        .foregroundColor(.white)
+                    makeBody(request: request)
+                })
+            })
         })
         .frame(width: 320)
         .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
         .background(SPColor.SplatNet3.SPBackground.cornerRadius(12))
-//        .animation(.default, value: session.requests.count)
+        .animation(.default, value: session.requests.count)
         .onAppear(perform: {
             Task {
                 do {

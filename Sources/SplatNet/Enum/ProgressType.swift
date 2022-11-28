@@ -20,4 +20,5 @@ public enum ProgressAPIType: String, CaseIterable {
     case APP    = "APP"
     case API    = "API"
     case IMINK  = "IMINK"
+    case FLAPG  = "FLAPG"
 }

@@ -2,7 +2,7 @@
 //  SwiftUIView.swift
 //  
 //
-//  Created by Shota Morimoto on 2022/11/28.
+//  Created by devonly on 2022/11/28.
 //  
 //
 

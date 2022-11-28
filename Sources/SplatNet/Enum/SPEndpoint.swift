@@ -16,8 +16,10 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
     case SESSION_TOKEN          = "api/session_token"
     /// AccessToken
     case ACCESS_TOKEN           = "api/token"
-    /// F
+    /// IMINK
     case F                      = "f"
+    /// FLAPG
+    case FLAPG                  = "ika/api/login-main"
     /// GameServiceToken
     case GAME_SERVICE_TOKEN     = "v3/Account/Login"
     /// GameWebToken
@@ -60,6 +62,8 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return .API
         case .F:
             return .IMINK
+        case .FLAPG:
+            return .FLAPG
         default:
             return .API
         }
@@ -73,7 +77,7 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return SPColor.SplatNet3.SPRed
         case .WEB_VERSION, .VERSION:
             return SPColor.SplatNet3.SPBlue
-        case .F:
+        case .F, .FLAPG:
             return SPColor.SplatNet3.SPPink
         default:
             return SPColor.SplatNet3.SPPurple
