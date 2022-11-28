@@ -27,7 +27,7 @@ public class WebVersion: RequestType {
         // ハッシュ
         let hash: String
 
-        init(from context: String) {
+        init(context: String) {
             self.version = "1.0.0"
             self.hash = context.capture(pattern: #"main.([a-f0-9]{8}).js"#, group: 1) ?? "3934eff1"
         }

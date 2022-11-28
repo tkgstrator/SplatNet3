@@ -10,8 +10,8 @@ import Alamofire
 import Foundation
 
 /// Version(X-Product-Version)
-class Version: RequestType {
-    typealias ResponseType = Version.Response
+class XVersion: RequestType {
+    typealias ResponseType = XVersion.Response
 
     var baseURL: URL = URL(unsafeString: "https://apps.apple.com/")
     var method: HTTPMethod = .get
@@ -27,8 +27,8 @@ class Version: RequestType {
     struct Response: Codable {
         let version: String
 
-        init(from: String) {
-            self.version = from.capture(pattern: #"whats-new__latest__version">Version (.*)</p>"#, group: 1) ?? "2.3.1"
+        init(context: String) {
+            self.version = context.capture(pattern: #"whats-new__latest__version">Version (.*)</p>"#, group: 1) ?? "2.3.1"
         }
     }
 }

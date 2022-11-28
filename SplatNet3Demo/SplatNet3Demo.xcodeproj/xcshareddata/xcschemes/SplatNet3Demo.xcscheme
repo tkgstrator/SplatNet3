@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1400"
+   LastUpgradeVersion = "1410"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "103ECC9A2933B54B009A3E94"
+               BlueprintIdentifier = "106D578B293430B90088D018"
                BuildableName = "SplatNet3Demo.app"
                BlueprintName = "SplatNet3Demo"
                ReferencedContainer = "container:SplatNet3Demo.xcodeproj">
@@ -33,7 +33,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "103ECCAA2933B54C009A3E94"
+               BlueprintIdentifier = "106D579C293430BB0088D018"
                BuildableName = "SplatNet3DemoTests.xctest"
                BlueprintName = "SplatNet3DemoTests"
                ReferencedContainer = "container:SplatNet3Demo.xcodeproj">
@@ -44,7 +44,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "103ECCB42933B54C009A3E94"
+               BlueprintIdentifier = "106D57A6293430BB0088D018"
                BuildableName = "SplatNet3DemoUITests.xctest"
                BlueprintName = "SplatNet3DemoUITests"
                ReferencedContainer = "container:SplatNet3Demo.xcodeproj">
@@ -53,9 +53,9 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -66,7 +66,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "103ECC9A2933B54B009A3E94"
+            BlueprintIdentifier = "106D578B293430B90088D018"
             BuildableName = "SplatNet3Demo.app"
             BlueprintName = "SplatNet3Demo"
             ReferencedContainer = "container:SplatNet3Demo.xcodeproj">
@@ -83,7 +83,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "103ECC9A2933B54B009A3E94"
+            BlueprintIdentifier = "106D578B293430B90088D018"
             BuildableName = "SplatNet3Demo.app"
             BlueprintName = "SplatNet3Demo"
             ReferencedContainer = "container:SplatNet3Demo.xcodeproj">
@@ -91,7 +91,7 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
