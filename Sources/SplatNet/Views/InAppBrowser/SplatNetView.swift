@@ -11,52 +11,39 @@ import UIKit
 import WebKit
 import SDBridgeSwift
 
-public struct SplatNetView: UIViewControllerRepresentable {
+struct SplatNetView: UIViewControllerRepresentable {
     let contentId: ContentId
 
-    public init(contentId: ContentId) {
+    init(contentId: ContentId) {
         self.contentId = contentId
     }
 
-    public func makeUIViewController(context: Context) -> WebViewController {
+    func makeUIViewController(context: Context) -> WebViewController {
         WebViewController(contentId: contentId)
     }
 
-    public func updateUIViewController(_ uiViewController: WebViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: WebViewController, context: Context) {
     }
 
-    public final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+    final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         private var bridge: WebViewJavascriptBridge
         private var observer: NSKeyValueObservation?
         private let session: SPSession = SPSession()
         private let contentId: ContentId
         private let configuration: WKWebViewConfiguration = WKWebViewConfiguration()
-//        private var cookie: HTTPCookie {
-////            guard let gtoken: String = account?.gameWebToken else {
-////                return HTTPCookie()
-////            }
-//
-//            return HTTPCookie(properties: [
-//                HTTPCookiePropertyKey.name: "_gtoken",
-//                HTTPCookiePropertyKey.value: gtoken,
-//                HTTPCookiePropertyKey.domain: URL(string: "https://api.lp1.av5ja.srv.nintendo.net/")!.host!,
-//                HTTPCookiePropertyKey.path: "/"])!
-//        }
 
-        override public func viewDidLoad() {
+        override func viewDidLoad() {
             super.viewDidLoad()
         }
 
-        override public func viewDidAppear(_ animated: Bool) {
+        override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            self.parent?.navigationController?.navigationBar.backgroundColor = .red
-            self.parent?.navigationController?.navigationBar.barTintColor = .red
-            self.parent?.navigationController?.navigationBar.tintColor = .red
         }
 
-        override public func viewWillAppear(_ animated: Bool) {
+        override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             let button = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(close))
+            /// イカリング3の場合はナビゲーションバーを表示しない
             self.parent?.navigationController?.setNavigationBarHidden(contentId == .SP3, animated: true)
             self.parent?.navigationItem.rightBarButtonItem = button
             self.parent?.navigationItem.rightBarButtonItem?.tintColor = .white
@@ -67,13 +54,14 @@ public struct SplatNetView: UIViewControllerRepresentable {
         }
 
         init(contentId: ContentId) {
-            /// URLを設定
+            /// リクエスト
             var request: URLRequest = URLRequest(url: contentId.requestURL)
             self.contentId = contentId
             let webView: WKWebView = WKWebView(frame: .zero, configuration: configuration)
             self.bridge = WebViewJavascriptBridge(webView: webView)
 
             super.init(nibName: nil, bundle: nil)
+            /// コンソールでデータを受け取ったらJavaScriptを実行する
             self.bridge.consolePipeClosure = { content in
                 self.evaluateJavaScript(content)
             }
@@ -83,13 +71,15 @@ public struct SplatNetView: UIViewControllerRepresentable {
             webView.backgroundColor = UIColor(SPColor.SplatNet3.SPBackground)
             webView.uiDelegate = self
             webView.navigationDelegate = self
-            self.view = webView
 
+            /// どちらの場合でもX-GameWebTokenを利用してアクセスする
             if let account = session.account {
                 switch contentId {
                 case .SP2:
+                    /// ヘッダーを更新
                     request.headers.add(name: "X-GameWebToken", value: account.gameWebToken)
                 case .SP3:
+                    /// クッキーを設定
                     let cookie = HTTPCookie(properties: [
                         HTTPCookiePropertyKey.name: "_gtoken",
                         HTTPCookiePropertyKey.value: account.gameWebToken,
@@ -99,6 +89,7 @@ public struct SplatNetView: UIViewControllerRepresentable {
                 }
             }
             webView.load(request)
+            self.view = webView
         }
 
         required init?(coder: NSCoder) {
@@ -128,6 +119,7 @@ public struct SplatNetView: UIViewControllerRepresentable {
             }
         }
 
+        /// ビューが切り替わったときにトークンを再生成するかどうかをチェックする
         override public func viewDidLayoutSubviews() {
 //            guard let webView: WKWebView = self.view as? WKWebView,
 //                  let account: UserInfo = account,
@@ -173,8 +165,9 @@ struct SplatNetView_Previews: PreviewProvider {
     }
 }
 
-public extension View {
-    func openInAppBrowser(isPresented: Binding<Bool>, contentId: ContentId) -> some View {
+extension View {
+    /// イカリング2, イカリング3を開く
+    public func openInAppBrowser(isPresented: Binding<Bool>, contentId: ContentId) -> some View {
         self.fullScreenCover(isPresented: isPresented, content: {
             NavigationView(content: {
                 SplatNetView(contentId: contentId)
@@ -184,6 +177,7 @@ public extension View {
         })
     }
 
+    /// ナビゲーションバーの色を変更する(iOS16以上のみ効く)
     func toolBarBackground() -> some View {
         if #available(iOS 16.0, *) {
             return self
