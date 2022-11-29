@@ -1070,22 +1070,16 @@
 "526e505f8816a1ef36d3b648adc3a31bcc69c4da79ab8d779c8074547b902657" = "Alta marea";
 // Error_BackToHome
 "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0" = "Torna alla pagina iniziale";
-// Error_CurrentlyNotAvailable
-"34b89df6875cbe1ec65e9b19a3744f68947d2d3416a85fd0fd5b95c208d74072" = "Al momento non disponibile. Riprova più tardi.";
 // Error_Error
 "d6575457e33f5bd80f6de41a146493d6683b70499bb30aed977c9cacac63d9d0" = "Errore";
 // Error_ErrorOccurred
 "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf" = "Si è verificato un errore.";
-// Error_ErrorReopen
-"cc900042cc144f501f15092ca5a9b8edca3e3844d6ec4cda2af0661a5b6d828b" = "Errore di caricamento.";
 // Error_MaintenanceDescription
 "a45102f1353103fdd45e40e9cf995b586e2c91d952a898fb17b8b4b7d4931421" = "Sono in corso dei lavori di manutenzione sul server. Riprova più tardi.";
 // Error_MaintenanceTitle
 "7311da9a494732f8ea51a008de12c0663ff473738caf79166a4e7a4c81f006a3" = "Attendi...";
 // Error_NetworkNotAvailable
 "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d" = "Caricamento fallito. Controlla la tua connessione a Internet e riprova.";
-// Error_NotSupported
-"7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4" = "Impossibile visualizzare SplatNet 3. Controlla la tua connessione a Internet e attendi qualche minuto prima di riprovare. Se il problema persiste, controlla il tuo browser Internet e assicurati che sia aggiornato alla versione più recente. Se ricevi ancora questo messaggio, SplatNet 3 potrebbe non essere compatibile con le tue impostazioni o con il tuo dispositivo.";
 // Error_Reload
 "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8" = "Aggiorna";
 // FesRecord
@@ -1178,8 +1172,6 @@
 "4b7193190e4857b0fa985df52b998f76a7ffa6865b936a5051758e05ce82042a" = "Sta giocando";
 // FriendList_IsLocked
 "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e" = "Con codice";
-// FriendList_NoFriends
-"194677bb0f36b580e4e3e61453d9ca87c6934d5f954946b585ca8679f1e50d48" = "Lo stato dei tuoi amici apparirà qui.";
 // FriendList_Offline
 "f1e2f1ebce51fc39de9a3556b341eed19e7182b120d49fe21c5500b2d39cd454" = "Offline";
 // FriendList_Online
@@ -1330,8 +1322,6 @@
 "1541397c68241ca3c6d7bbf54c4f2e24c5fe3dfc7f244bf6c17a3147167a951e" = "Mensile";
 // History_Others
 "49603ebeff7e758481937bcd1d5a0a8cfc2d310d7cf8fdf95405447083e0d059" = "Altre armi";
-// History_Rank
-"ec879a2538a732b65313092a3b84f78328e7ce79a3bc820e8245b4a17ebaf445" = "Livello";
 // History_Season
 "88478c17f8793593edbaf37885e298a7f2705b71d1387ab85a37e642e15e4bca" = "Stagionale";
 // History_ShowAllBadges
@@ -1352,8 +1342,6 @@
 "80b465f770274c90e9bc3ef50180c5bf180cc69571d062cdd94a3b72b4444a69" = "Vittorie totali";
 // History_TurfPoint
 "07ce1796dc5d13831abc2c97942b52a9c4d860141d55311f0453525cf0b75a5f" = "{ 0 }p";
-// History_Udemae
-"21a6021a4d7cf29c8a5906231761dea45f276f2c7a0f4517d6ddbc528d9a1058" = "Rango";
 // History_Weapon
 "b4a52d1c7299854e81fd80530dd03f7d6c6d723ad0eb7158ba81ad10eb17e8db" = "Armi";
 // History_WeaponUsage

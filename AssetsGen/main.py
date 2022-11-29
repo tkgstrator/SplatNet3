@@ -57,8 +57,7 @@ def tuple_to_dict(tuple) -> dict:
         dict[k] = v
     return dict
 
-
-def get_localized():
+def get_revision() -> str:
     # Revisionを取得
     url = "https://api.lp1.av5ja.srv.nintendo.net/?lang=ja-JP"
     response = requests.get(url)
@@ -67,7 +66,9 @@ def get_localized():
         'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
     ).group(1)
     print("Revision:", revision)
+    return revision
 
+def get_localized(revision):
     # JavaScriptからlocaleとhashを取得
     base_url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
     response = requests.get(base_url).text
@@ -77,7 +78,6 @@ def get_localized():
     # Internal codeを取得
     codes = re.findall('"./([a-z]{2}-[A-Z]{2}).json":\[(.*?)\]', response)
     codes = tuple_to_dict(list(map(lambda x: (x[1].split(",")[-1], x[0]), codes)))
-    print(codes)
 
     # イカリング3から言語データのマップを作成
     data: list[Locale] = get_locales()
@@ -216,7 +216,6 @@ def get_localized():
 
         # フォントデータを追加
         params.append(format("Common_SplatNet3_Locale", language.code))
-        print(language)
 
         # DeepL翻訳データを変換
         try:
@@ -238,6 +237,10 @@ def get_localized():
 
         match = re.search("JSON.parse\('(.*)'\)\}\}", response).group(1)
         data = json.loads(match.encode("utf-8").decode("unicode-escape"))
+        makdirs(f"resources/{revision}")
+        with open(f"resources/{revision}/{language.hash}.json", mode="w") as w:
+            w.write(json.dumps(data, indent=2, ensure_ascii=False))
+            
         data = camel_case(data)
         for k, v in data.items():
             if k == "CoopHistory_Wave":
@@ -298,8 +301,8 @@ def get_localized_text(localized: list[str]):
         f.write("}")
 
 
-def get_hashes():
-    url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.dee547ff.js"
+def get_hashes(revision):
+    url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
     response = requests.get(url).text
     # Hash
     hashes = re.findall('id:"([a-f0-9]{32})",metadata:{},name:"([A-z]*)"', response)
@@ -440,10 +443,11 @@ def to_dict(obj):
 
 
 if __name__ == "__main__":
+    revision = get_revision() 
     # 翻訳ファイル
-    get_localized()
+    # get_localized(revision)
     # ハッシュ
-    get_hashes()
+    get_hashes(revision)
     # バッジ
     # get_badge("120")
     # ネームプレート
