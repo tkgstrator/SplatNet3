@@ -44,17 +44,7 @@ open class SplatNet3: Authenticator {
     }()
 
     /// WebVersion(ヘッダーに利用されるがどのように使われるのかは不明)
-    public var version: String {
-        get {
-            let version: WebVersion.Response = keychain.getVersion()
-            return "\(version.version)-\(version.hash)"
-        }
-
-        set {
-            let version: WebVersion.Response = WebVersion.Response(rawValue: newValue)
-            try? keychain.setVersion(version)
-        }
-    }
+    public var version: String = "2.0.0-8a061f6c"
 
     /// エラーログをローカルに保存する
     public init() {

@@ -20,7 +20,7 @@ public enum SHA256Hash: String, CaseIterable {
 	case CheckinQuery = "af8cac2c2554e22e2bbada19392083a2"
 	case CheckinWithQRCodeMutation = "8e3fecf7cfce83f6831b17e9052791d0"
 	case ConfigureAnalyticsQuery = "f8ae00773cc412a50dd41a6d9a159ddd"
-	case CoopHistoryDetailQuery = "f3799a033f0a7ad4b1b396f9a3bafb1e"
+	case CoopHistoryDetailQuery = "3cc5f826a6646b85f3ae45db51bd0707"
 	case CoopHistoryDetailRefetchQuery = "d3188df2fd4436870936b109675e2849"
 	case CoopHistoryQuery = "817618ce39bcf5570f52a97d73301b30"
 	case CoopPagerLatestCoopQuery = "82385ab3c3444c857bd35a8d87dbc700"

@@ -71,8 +71,8 @@ public class SplatNet2 {
             self.jobBonus = result.jobBonus
             self.dangerRate = result.dangerRate
             self.playTime = Int(formatter.date(from: result.playedTime)!.timeIntervalSince1970)
-            self.myResult = PlayerResult(from: result.myResult, enemies: result.enemyResults, counts: specialCounts)
-            self.otherResults = result.memberResults.map({ PlayerResult(from: $0, enemies: result.enemyResults, counts: specialCounts) })
+            self.myResult = PlayerResult(from: result.myResult, enemies: result.enemyResults, counts: specialCounts, isMyself: true)
+            self.otherResults = result.memberResults.map({ PlayerResult(from: $0, enemies: result.enemyResults, counts: specialCounts, isMyself: false) })
             self.waveDetails = result.waveResults.map({ WaveResult(from: $0) })
             self.bossCounts = result.enemyResults.popCounts()
             self.bossKillCounts = result.enemyResults.teamDefeatedCounts()
@@ -167,11 +167,11 @@ public class SplatNet2 {
         public let bossKillCountsTotal: Int
         public let species: SpeciesType
 
-        public init(from player: CoopHistoryDetail.PlayerResult, enemies: [CoopHistoryDetail.EnemyResult], counts: [[Int]]) {
-            let specialId: Int? = player.specialWeapon?.id
+        public init(from player: CoopHistoryDetail.PlayerResult, enemies: [CoopHistoryDetail.EnemyResult], counts: [[Int]], isMyself: Bool) {
+            let specialId: Int? = player.specialWeapon?.weaponId
 
             self.id = player.player.id
-            self.isMyself = player.player.isMyself
+            self.isMyself = isMyself
             self.nameId = player.player.nameId
             self.name = player.player.name
             self.byname = player.player.byname
@@ -189,7 +189,7 @@ public class SplatNet2 {
             }()
             self.weaponList = player.weapons.compactMap({ WeaponType(id: $0.id) })
             self.bossKillCountsTotal = player.defeatEnemyCount
-            self.bossKillCounts = player.player.isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)
+            self.bossKillCounts = isMyself ? enemies.defeatedCounts() : Array(repeating: 0, count: 15)
             self.species = player.player.species
             self.specialCounts = counts.map({ ids in ids.filter({ $0 == specialId }).count })
         }

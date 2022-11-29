@@ -100,7 +100,7 @@ public class CoopHistoryDetail: GraphQL {
     public struct PlayerResult: Codable {
         public let player: ResultPlayer
         public let weapons: [ImageRef]
-        public let specialWeapon: ImageRef?
+        public let specialWeapon: WeaponRef?
         public let defeatEnemyCount: Int
         public let deliverCount: Int
         public let goldenAssistCount: Int
@@ -120,6 +120,20 @@ public class CoopHistoryDetail: GraphQL {
         public let hasDefeatBoss: Bool
         public let boss: ImageRef
     }
+
+    // MARK: - WeaponRef
+    public struct WeaponRef: Codable {
+        public let name: String
+        public let image: Common.Image
+        public let weaponId: Int
+
+        enum CodingKeys: String, CodingKey {
+            case name
+            case image
+            case weaponId
+        }
+    }
+
 
     // MARK: - Ref
     public struct ImageRef: Codable {
@@ -168,7 +182,7 @@ public class CoopHistoryDetail: GraphQL {
         public let nameplate: Common.Nameplate
         public let uniform: ImageRef
         public let id: String
-        public let isMyself: Bool
+//        public let isMyself: Bool
         public let species: SpeciesType
 
         enum CodingKeys: String, CodingKey {
@@ -179,7 +193,7 @@ public class CoopHistoryDetail: GraphQL {
             case nameplate = "nameplate"
             case uniform = "uniform"
             case id = "id"
-            case isMyself = "isMyself"
+//            case isMyself = "isMyself"
             case species = "species"
         }
 
@@ -199,7 +213,7 @@ public class CoopHistoryDetail: GraphQL {
                 throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Invalid user id"))
             }
             self.id = decodedId
-            self.isMyself = try container.decode(Bool.self, forKey: .isMyself)
+//            self.isMyself = try container.decode(Bool.self, forKey: .isMyself)
             self.species = try container.decode(SpeciesType.self, forKey: .species)
         }
     }
