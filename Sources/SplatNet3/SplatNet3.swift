@@ -58,6 +58,7 @@ open class SplatNet3: Authenticator {
         /// クラウドにエラーを保存
         let cloud = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
         self.logger.addDestination(cloud)
+        self.logger.addDestination(ConsoleDestination())
     }
 
     /// アカウントを利用して初期化

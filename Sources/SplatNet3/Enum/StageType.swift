@@ -46,6 +46,10 @@ public enum StageType: RawRepresentables {
     case Tutorial
     case Shakeup
     case Shakespiral
+    case Shakeship
+    case Shakehouse
+    case Shakelift
+    case Shakeride
     case Shakedent
 }
 

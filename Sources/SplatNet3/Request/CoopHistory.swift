@@ -116,7 +116,7 @@ public class CoopHistory: GraphQL {
         /// メンバーリザルト
         public let memberResults: [Result]
         /// WAVEリザルト
-        public let waveResults: [WaveResult]
+//        public let waveResults: [WaveResult]
     }
 
     public enum GradePointDiff: String, Codable {

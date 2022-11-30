@@ -89,15 +89,15 @@ public enum LocalizedType: String, CaseIterable {
 	/// でんせつ アルバイター
 	case Grade_Arbeiter_08 = "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0"
 	/// ムニ・エール海洋発電所
-	case Shakedent = "8fe373c92b524b39cbae4d90aabdc718e705ef11bbfb2fab46c8fb88c735a401"
+	case Cop_Shakedent = "f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b"
 	/// アラマキ砦
-	case Shakespiral = "c60554392a0da8bde91b6bd61a43f346041e9482d324808bd5a5d167196ed0b8"
+	case Cop_Shakespiral = "3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec"
 	/// シェケナダム
-	case Shakeup = "c746835556967c7c22178163baa18db46375eb31322627626006392f23457aa7"
+	case Cop_Shakeup = "be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e"
 	/// アラマキ砦
-	case Tutorial = "c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037"
+	case Cop_Tutorial = "744f65e62b538b63128469805c23592429f9830de7a1c12fdc910941fbeedfc4"
 	/// ？？？
-	case Unknown = "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14"
+	case Cop_Unknown = "ffa84f05a6437395a0a128cad1a99e8dd0f303ce4fd687fa648617a0075d7ad9"
 	/// クマサン印のブラスター
 	case Blaster_Bear_Coop = "0962405d6aecff4a075c46e895c42984e33b26c4b2b4b25c5058366db3c35ba4"
 	/// Rブラスターエリート
@@ -726,6 +726,10 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_Form_Content = "f719242d0b97030aa72fec90c08b0f94565511b8ac2b6deb155642cdfa5e03b3"
 	/// 送信
 	case Common_Form_Submit = "0fade8f6454b7a5527a83f13bb51068ad0aea8b8e60218537718d78816384087"
+	/// ビッグランから街を守れ！
+	case Carousel_BigrunOpening = "65716f2b4646c082eb2317b09ff051ff5665ae3d975c1656c53c2929af51cbab"
+	/// ビッグラン結果発表！
+	case Carousel_BigrunResult = "39fd7bc4c0123462fce5a7b9a6fe6eacc89dbb71e6af54d6e3b9c59a5c7fde66"
 	/// サーモンラン
 	case Carousel_CoopHistory = "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980"
 	/// フェス開催！！
@@ -768,6 +772,8 @@ public enum LocalizedType: String, CaseIterable {
 	case Catalog_AppName = "021340297d3697c3bfd0f8fae384a5194e969a9dc0d713a03b3a37cd06244826"
 	/// 引き換えできます
 	case Catalog_Available = "de69d0524558ef5bd90e9b23f589f3736d881ddefc35e943007da8103fa570f7"
+	/// ビッグラン開催中！ポイント<em>1.2倍</em>！
+	case Catalog_BigrunBonus = "7d6e795b071fa52b0adf1a89d695502dba6623b925e92885879331cdfc4bdb6b"
 	/// カタログレベルを上げて<br />ミステリーボックスをゲット！
 	case Catalog_BonusDescription = "0c5dc764b022dd76c274eb206b13712cd9868a03ec1e8b08fecd26e895f0d9c3"
 	/// レベル10ごとにミステリーボックスをゲットできます
@@ -828,6 +834,68 @@ public enum LocalizedType: String, CaseIterable {
 	case Challenge_Black = "6eb771e981bf41b9bd75433bc989bfc6c93cd2b5399571e8775ce339f079ee44"
 	/// ブルー
 	case Challenge_Blue = "b82832424dafc3fe76dab2e23a741b823a20060acbf3f80ec2f1277bc1ae0be7"
+	/// オレンジの空がオイリーだよね～。
+	case Challenge_Challenge210Description = "023060b23ec43872b5a15a5ad3208a0953c26605903f926383d2ad45228d9ca8"
+	/// 二つ名
+	case Challenge_Challenge210Reward = "05b5d193a7de62de796766a911aad9897168c90b0f3afd8694d3869e9af1351c"
+	/// シェケナダム
+	case Challenge_Challenge210Title = "81a48fe7f465913e2f89f9ec368c56a3aae92f2aa10040cff7cda1d9ae44e9fc"
+	/// アートに触れるとハートの中心まで火が通るカンジするよね～！
+	case Challenge_Challenge21Description = "4178c738336dc9c78210b718fca502b22d1a2fa29307ee25d5beccc1e0355080"
+	/// めちゃ映えフォト
+	case Challenge_Challenge21Reward = "9cc2d0427935dda391ab08dd3249b020f37cae99810fa48129e964c480accc1e"
+	/// キンメダイ美術館
+	case Challenge_Challenge21Title = "5f32839f65ac4aa35230eb7444a3e588ba748ee0f366e2c1802f4967884c5fc2"
+	/// ここの食堂はフライがイケてるバクアゲスポットなんだ～。
+	case Challenge_Challenge22Description = "b8bf327b51e5386ff7bf2046b8b6ca86b628643cf74814bc96b9ab4f92c31237"
+	/// 拾ったステッカー
+	case Challenge_Challenge22Reward = "b833298e49e680b658591db904196b4d2793e4f57954b64c20929dc1a64e4858"
+	/// 海女美術大学
+	case Challenge_Challenge22Title = "b4402d4085246e84fa61207d801a55888c9b8dd292d55143494a6e4701847960"
+	/// 橋の上は風が強くてコロモがめっちゃ飛ばされるんだよね！
+	case Challenge_Challenge23Description = "1ffd251fb44630fa2c56ed64577e04dafb28f0db670946a304e47d64d47ff6b3"
+	/// めちゃ映えフォト
+	case Challenge_Challenge23Reward = "e23e8830ea7afa0b825ec0082a10dbb8b24075b7ee1c38008dc24543f4e71ae7"
+	/// マサバ海峡大橋
+	case Challenge_Challenge23Title = "ee690b9f7c872befeddbfac12e3f117f8a047ab45f0e6c7cc6dcd2f8792f8596"
+	/// 溶接の音とアゲる音って似てるから、テンションがバチバチアガっちゃうよ！
+	case Challenge_Challenge24Description = "2191d11f81327aff543e1f7023fd56acf24cb8aa60d9fed613a4feed683a28ed"
+	/// 拾ったステッカー
+	case Challenge_Challenge24Reward = "cc216030b916bfdccc5622fd1ba1fd01ff4e406678dcd6f6401add31fdf88533"
+	/// チョウザメ造船
+	case Challenge_Challenge24Title = "c4727db07085e5e4e253972200cdc73a90c46db034073d0a218acecd7704b007"
+	/// 夕飯時にフライの香りがすると、すぐ家に帰りたくなるよね～。
+	case Challenge_Challenge25Description = "161f09bd7118653047877470eb6152314447b1fd406f788ab0c2da672b92fc0f"
+	/// めちゃ映えフォト
+	case Challenge_Challenge25Reward = "746b1bd969e24722aa155eadb17fc84a27ac71dc8f6bf4a0c28dbcc346a014cc"
+	/// ヒラメが丘団地
+	case Challenge_Challenge25Title = "a767e5f2ee29b6461e08729333636f3bd3fd7760ffe12f61225942963e6b0c4a"
+	/// あ！新しいアゲ油売ってる！！
+	case Challenge_Challenge26Description = "640f275e5104024a5a869b41f8a5c5ff1c6dc2b671c0e4a29fcd5bdaddb1d210"
+	/// 拾ったステッカー
+	case Challenge_Challenge26Reward = "80d79761fe2bb818ce21f81dff3bc6b08bc8bc10da553c90bfef50c0bd91928b"
+	/// ザトウマーケット
+	case Challenge_Challenge26Title = "27e691c0ddc6c9e214a3ea4477013621f53f6601e6bd738ee4617c86ecacfab3"
+	/// こんなアガる要素しかない場所、アガり過ぎ注意報だよ～！ジュワワ～！！！
+	case Challenge_Challenge27Description = "d703de600484ecc43502b326e72716b2d68d9655da554335363ead03452f46ec"
+	/// めちゃ映えフォト
+	case Challenge_Challenge27Reward = "83bef88bb0372026e35c3d973d7bc534b82ae6949490234cb722c79af394e9ff"
+	/// マヒマヒリゾート＆スパ
+	case Challenge_Challenge27Title = "76c5921917d14d3469024af06c16f3f01ef303b66c8dcb3ab470e4e7852bb367"
+	/// ジェットコースターに乗った後って、ナゼか身軽に感じるんだよね～。
+	case Challenge_Challenge28Description = "5c8cbf95cef72f853cb72c057bf8c33775c5e8a0674c9fa80499d77b201c4064"
+	/// グラフィティ壁紙
+	case Challenge_Challenge28Reward = "45270d0d68def01a32a5f504f24150322714c1478db491bc3324698caec32920"
+	/// スメーシーワールド
+	case Challenge_Challenge28Title = "8708f2c9badc6ddc9bcc7bd530cce613db5cbe0d376641cff5f6549acf8b7863"
+	/// ハイカラ地方にもサクサク稼げるバイトがあるんだね～！って、ココどこ～？
+	case Challenge_Challenge29Description = "d33114d5b4765567072dc6965283bee6ea0713cfa68e5d370ca97d2b15a4b6ab"
+	/// めちゃたそがれフォト
+	case Challenge_Challenge29Reward = "3f215868c8f9218f28edcfaefd8dbf7d0d4684d0a03d4ed11ece28a91febbd9f"
+	/// 難破船ドン・ブラコ
+	case Challenge_Challenge29Title = "0005c13badd6e553a0fefe2e35612bf404fbf358aa9bbdbe46071e34ee45f143"
+	/// 難破船ドン・ブラコ
+	case Cop_Shakeship = "1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961"
 	/// チャレンジャー
 	case Challenge_Challenger = "03dcce15138fb3b0e2f9af1d203bf047e81fae1fa555eae03702a2af84a76d31"
 	/// 支援するチャレンジを選ぶ
@@ -864,6 +932,12 @@ public enum LocalizedType: String, CaseIterable {
 	case Challenge_HowToPlay = "8c7a86fda1d02ee05f57ee64ed1b31fed5e8535a193eb019566a6864af4c7c49"
 	/// ジャーニー { 0 }
 	case Challenge_Journey = "c90de202477e1a2f325779f2c462b27f657ae64e7ded41e7e9b897087a48b17d"
+	/// 「チャレンジャー・ロブ」としての次の目的地は『ハイカラ地方』に決めたよ～。<br />ってわけで、この旅を引き続き支援してくれるサポーターをパリッと募集するよ！<br />ハイカラ地方は、僕が旅を始める前に住んでた街もあるんだけど、いまもハイカラな香りたっぷりのツヤツヤアゲアゲな場所なんだよね～。<br />そういった思い出の場所を巡りながら、「過去の自分」も見つめ直して「いまの自分」を更にアゲ直したいんだよね！<br />この「二度アゲの旅」、ガチでホットっしょ？！ってことでヨロシク～！
+	case Challenge_Journey2Description = "b1662b37fccdf6c7c4db8365db8aea9a57b70cd5d0dbc6d74e4a28d38218a70d"
+	/// キミのおかげで、二度アゲの旅もカリッと終えられたよ！アリガト～！<br />お礼にコレ、アゲちゃうよ！<br />ロビー端末に送っておいたから受け取ってね～。
+	case Challenge_Journey2Gratitude = "560d08121f0ea3608adf4f835fae8c257546453d0474914feaaea43f7bf774bb"
+	/// 旅の途中<br />～どの道を塗るかより、塗った道をどう進むか～
+	case Challenge_Journey2Title = "e51eb3bd85e9454f343c728471321e877bfa75e77ab7162795e983aa21bd74f4"
 	/// 支援者求ム！
 	case Challenge_LookingForSupporters = "9428acca90a2f268f1e95f96ed9ed474cca7ae3993a422b955e7d058dca86bbb"
 	/// オレンジ
@@ -922,6 +996,10 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_ClamBlitz = "ab3dd376051b175e0288535e904b147ee2a8fe4ff62ad02798d8c643b82b920a"
 	/// 閉じる
 	case Common_Close = "194798a449260d31cae468c90d48cefa382ec1bee6271b60bf572cc5bd367e6e"
+	/// : 
+	case Common_ColonRule = "7736c1bca0b9225541312685b13fc235c88eb59f011307c5d2b1491fcada1804"
+	/// ビッグラン
+	case Common_CoopBigRun = "ad2043c403722dd9a407ae67237c8473ba14a1dff11cd96a71e6635b8068c9bc"
 	/// QRコードは、株式会社デンソーウェーブの登録商標です。
 	case Common_CopyrightQrCode = "a0ceff43cc9aee0c64a16c9c470d273318a06fd6b7e6205485748418c43093c8"
 	/// 決定
@@ -950,6 +1028,8 @@ public enum LocalizedType: String, CaseIterable {
 	case Common_TowerControl = "b7ce484e91b947be80eed3da423d9dc48d1a2461f6ca8a00b62d6f7dae95ea71"
 	/// トリカラアタック
 	case Common_Tricolor = "688936714bb17943ad1dea6152e8a70cb67867f1e4c878e0bf0ada66e7b73977"
+	/// トリカラマッチ
+	case Common_TricolorMatch = "cad84d342b626e377b667664602f045b98bd34911231ebe325cad4f59324c6d5"
 	/// ナワバリバトル
 	case Common_TurfWar = "d56bb2cec41f8e51fea6baf198a44fcd2c86a8aed103a77ec827bc13654b9c16"
 	/// 出現数
@@ -958,6 +1038,8 @@ public enum LocalizedType: String, CaseIterable {
 	case CoopHistory_AvailableBoss = "e4af6a135c415dbfcbf3a5c471f1db0665928ca0eb69750e0f1c3e69351d7ea2"
 	/// 平均クリアWAVE数
 	case CoopHistory_AverageClearWaves = "f26e723e3d12c84d1e76236dd5397f6aeee7f24fb9cb60b719d80289007f061e"
+	/// ビッグラン
+	case CoopHistory_Bigrun = "be44fce78caaa899a9cb21328bc7c6fa9d1a20ff38e217a1269bca8f1ef189db"
 	/// クリアボーナス
 	case CoopHistory_Bonus = "5d0366ef86558784abb26b56f07864bd88db105b9edb27052680ffe823aaea50"
 	/// オカシラシャケ出現！
@@ -1078,16 +1160,22 @@ public enum LocalizedType: String, CaseIterable {
 	case CoopHistory_WaveLevel2 = "526e505f8816a1ef36d3b648adc3a31bcc69c4da79ab8d779c8074547b902657"
 	/// ホームに戻る
 	case Error_BackToHome = "0bce96d0cedd38c8e753ad447caac101193e478e4334b785c0f9e2db08d0c0f0"
+	/// 現在利用できません。しばらくお待ちください
+	case Error_CurrentlyNotAvailable = "34b89df6875cbe1ec65e9b19a3744f68947d2d3416a85fd0fd5b95c208d74072"
 	/// エラー
 	case Error_Error = "d6575457e33f5bd80f6de41a146493d6683b70499bb30aed977c9cacac63d9d0"
 	/// エラーが発生しました
 	case Error_ErrorOccurred = "a27ab853a910159dce2145925fd76fd1b3746cb06872243b5900a967a695afdf"
+	/// 読みこみに失敗しました
+	case Error_ErrorReopen = "cc900042cc144f501f15092ca5a9b8edca3e3844d6ec4cda2af0661a5b6d828b"
 	/// ただいまサーバーのメンテナンス中です。時間をおいて再度アクセスしてください。
 	case Error_MaintenanceDescription = "a45102f1353103fdd45e40e9cf995b586e2c91d952a898fb17b8b4b7d4931421"
 	/// しばらくお待ちください
 	case Error_MaintenanceTitle = "7311da9a494732f8ea51a008de12c0663ff473738caf79166a4e7a4c81f006a3"
 	/// 読みこみに失敗しました。<br />通信環境のよいところで再度お試しください。
 	case Error_NetworkNotAvailable = "dccb4751830e1e3506758f2233709d145ac0d62298700bbf44818fb9a2e0059d"
+	/// イカリング３を表示できません。しばらく時間をおいてから通信環境の良い場所で再度お試しください。<br />問題が解決しない場合は、ブラウザが最新版に更新されているか確認してください。<br />それでもこの画面が表示される場合は、ご利用の環境でイカリング３を利用できない可能性があります。
+	case Error_NotSupported = "7d42616ad52dc0761717f3dd32f80210f4875ad00f00b23cfdcf7922d8fff8b4"
 	/// 再読みこみ
 	case Error_Reload = "d593a2e951da1dff7d3dded0b7c3e247fedae7db75603bc3c76afa6ef8c37aa8"
 	/// { 0 }%
@@ -1106,6 +1194,8 @@ public enum LocalizedType: String, CaseIterable {
 	case FesRecord_ContributionChallenge = "4b894931324f4576a30e064259312a1cbe417d5626a1b03f3a3fe278e1abd814"
 	/// こうけん度 オープン
 	case FesRecord_ContributionRegular = "5719f56b34ca699e7d5c79193ab959535346389d66f4bb3de40c8f1354fc7003"
+	/// こうけん度 トリカラマッチ
+	case FesRecord_ContributionTricolor = "5b53120d711083de3afe9af4af2eb001664aa809ff19ad6fd9070ecc4e6fb1a9"
 	/// 守備
 	case FesRecord_Defense = "6fc56979e505bc6dfa726794de758e57a94177480beff760e0f8a439720a85dd"
 	/// { 0 }{ 1 }パワー
@@ -1166,6 +1256,10 @@ public enum LocalizedType: String, CaseIterable {
 	case FesRecord_WinTeam = "9176a119abf1fe90c0f7df04bf22dbda9524f6f7e4bc79d650018b906caad62f"
 	/// あなたのきろく
 	case FesRecord_YourRecord = "bad6cc13f2c9e3e71b9b9582b47a26a973d7a00f1495242255aad392bbea4fd7"
+	/// <em>ビッグラン</em>警報発令！シャケの接近に注意！
+	case Footer_BigrunAnnouncement = "00fb40cd2560e50922a6bce110c1b02d794adea29f3b2e1f75003a32b8432d67"
+	/// <em>ビッグラン</em>発生中！シャケから街を守れ！
+	case Footer_BigrunNowOpening = "d78c59728ebdea5bd6371e81416144c6d775562d4f4a278667995c4e0c4c3c29"
 	/// もうすぐ <em>{ 0 }</em> が終了します。
 	case Footer_EndOfSeason = "3ae0d4bad7b067c820a6c761e4d250af9034f9d427ae552413097f02a714974c"
 	/// <em>{ 0 }</em> フェス開催！アンケートに回答してフレンドと一緒に参加しよう！
@@ -1180,6 +1274,8 @@ public enum LocalizedType: String, CaseIterable {
 	case FriendList_InVsGame = "4b7193190e4857b0fa985df52b998f76a7ffa6865b936a5051758e05ce82042a"
 	/// パスワードつき
 	case FriendList_IsLocked = "655db994ae710df80352a66318f826b98b6088742660fbcf86bb8a8fc60b3c2e"
+	/// フレンドのプレイ状況がここに表示されます
+	case FriendList_NoFriends = "194677bb0f36b580e4e3e61453d9ca87c6934d5f954946b585ca8679f1e50d48"
 	/// オフライン
 	case FriendList_Offline = "f1e2f1ebce51fc39de9a3556b341eed19e7182b120d49fe21c5500b2d39cd454"
 	/// オンライン
@@ -1318,10 +1414,14 @@ public enum LocalizedType: String, CaseIterable {
 	case History_Badge = "bc888c57524445881e954afd493364718923c4ec4a7b21603ce8fa81ea07bb84"
 	/// { 0 }<small>回</small>
 	case History_Count = "d8151df786a02c632586e7c26e4d3c8fd0df8f8adb19b98f380a1862ba318db9"
+	/// 推定順位
+	case History_EstimatedRanking = "9f762b45d39f06720dfd745baddf7c49a3246898cc31ea52fb4f606394f8feb8"
 	/// もっともよく使ったブキ
 	case History_FrequentlyUsedWeapon = "33be67a6de9fcb6dfb7ceef6ec422d88f406305e72fa3dcb013bca8deac440e3"
 	/// 最高ウデマエ
 	case History_HighestUdemae = "8ae83a282c86ef1bf846d2e3009ada60853fea49efd29f98b2343d9fa079b2d3"
+	/// 最高Xランキング・最高Xパワー
+	case History_HighestXranking = "28be94cb1135fc93701cee21647303749de1aadf2f162bf916ddf7179aac7cde"
 	/// 最近 3ヶ月
 	case History_Latest = "fd43994417f5d8896e09959c16d30939030ccd993f5f1e781619ea54a4b38e1b"
 	/// 最近ゲットしたバッジ
@@ -1330,6 +1430,10 @@ public enum LocalizedType: String, CaseIterable {
 	case History_Monthly = "1541397c68241ca3c6d7bbf54c4f2e24c5fe3dfc7f244bf6c17a3147167a951e"
 	/// その他
 	case History_Others = "49603ebeff7e758481937bcd1d5a0a8cfc2d310d7cf8fdf95405447083e0d059"
+	/// ランク
+	case History_Rank = "ec879a2538a732b65313092a3b84f78328e7ce79a3bc820e8245b4a17ebaf445"
+	/// { 0 }<small>位</small>
+	case History_Ranking = "b7ddc8f53317c370e3a029cc4007aed139e394be3298f99b31661258aaae1f63"
 	/// シーズン
 	case History_Season = "88478c17f8793593edbaf37885e298a7f2705b71d1387ab85a37e642e15e4bca"
 	/// すべてのバッジを見る
@@ -1338,6 +1442,8 @@ public enum LocalizedType: String, CaseIterable {
 	case History_ShowLess = "2b761bd2b058055e2fd44ffdd382795033e24c2d6eb22554b95b92c6703e541c"
 	/// もっと見る
 	case History_ShowMore = "496ee6a57c9e57bc0acea170f6e9eeb2a7789ff9a069b2ca146d79b274059ba2"
+	/// Xランキングを見る
+	case History_ShowXranking = "e57dc39c6c7219de45a7b6684c47c5854042145d818db0df95fecc31d90caffe"
 	/// { 0 } からプレイ（{ 1 } 更新）
 	case History_Since = "598884ef7c80fd7be04ef1f286bb2599278787803bce3652aa96a8258b85dc51"
 	/// サマリー
@@ -1350,10 +1456,14 @@ public enum LocalizedType: String, CaseIterable {
 	case History_TotalWin = "80b465f770274c90e9bc3ef50180c5bf180cc69571d062cdd94a3b72b4444a69"
 	/// { 0 }p
 	case History_TurfPoint = "07ce1796dc5d13831abc2c97942b52a9c4d860141d55311f0453525cf0b75a5f"
+	/// ウデマエ
+	case History_Udemae = "21a6021a4d7cf29c8a5906231761dea45f276f2c7a0f4517d6ddbc528d9a1058"
 	/// ブキヒストリー
 	case History_Weapon = "b4a52d1c7299854e81fd80530dd03f7d6c6d723ad0eb7158ba81ad10eb17e8db"
 	/// ブキ使用率
 	case History_WeaponUsage = "cf96c683fe80dc3b943a30df6019235f9d37d8a3cb79dcab5bab7079b988b62f"
+	/// Xマッチ
+	case History_Xmatch = "f3c158521bb0712bf5d704481aae41a7a09963ae51936893ea86dda428e1c69c"
 	/// ※アプリをインストールしていない方は、このボタンを押しても開きません
 	case Landing_Caution = "7d24b25eabb992ea79b17d066a4bd56c367c3c1e42c575e4d681d7db3892b547"
 	/// Apple、Appleロゴ、App Storeは、Apple Inc.の商標です。Google Play および Google Play ロゴは Google LLC の商標です。
@@ -1636,12 +1746,22 @@ public enum LocalizedType: String, CaseIterable {
 	case StageSchedule_League = "3712aec44b25f9fb81517e0658ac9f98625dfbcbe494193798a4bc92b85b3511"
 	/// つぎ
 	case StageSchedule_Next = "ecbaabceb0ed5e6b497a98c6250a8a2a9b24a993633f597a94fd96d16201b62d"
+	/// ビッグラン接近中！
+	case StageSchedule_NoticeBigrun = "354c85e49263e617f5170203218d4efbdce290b0601481a84484289a8720ec2e"
+	/// 期間限定バイト開催予告！
+	case StageSchedule_NoticeLimited = "7796a5b645e835309eed8211584cde901cc792c671153ed551d05cea422a0898"
 	/// フェスマッチ開催中！
 	case StageSchedule_NowClosed = "53387853b53c8884f9a3e3994170ada076c9e4d33e713f75807b97bbf5b5f9a8"
 	/// オープン！
 	case StageSchedule_Open = "94c40ccbbd87eda3b9d0de5efc8028015b7eb9a44b2d6ecb136793754586d073"
+	/// ビッグラン発生中！
+	case StageSchedule_OpenBigrun = "5e129780c4791eed9fc99d6ca79bebbab47f82447fa676323632f0525b97b5e8"
+	/// 期間限定バイト開催中！
+	case StageSchedule_OpenLimited = "61e69e829b077095634c735f8f25431459b460ad855183b9e866892833977db4"
 	/// プライベートマッチ
 	case StageSchedule_Private = "770948cc44ea0d73c2a649d9441551932b3919393d5f347f410bb9f81d612883"
+	/// ビッグランがやってくる！！バイト大募集 { 0 }
+	case StageSchedule_Recruit = "e457bc446e327c9f5bbe2f4306f2228466f236b524f939669bc3b02a14d5bef8"
 	/// レギュラーマッチ
 	case StageSchedule_Regular = "e9680058d0336f426765b542402cd5db9958b2995d46ab7da26c19fb5c22abb9"
 	/// フェスのきろくを見る
@@ -1698,6 +1818,8 @@ public enum LocalizedType: String, CaseIterable {
 	case VSHistory_EquippedGear = "8d6ec2c41c2f0de034bfb0ab399ad020025f82278c3cf3ce6aecb6a15bec1876"
 	/// そうびしていたブキ
 	case VSHistory_EquippedWeapon = "97c00cfc3ea8394a13303602aa202a33d994c6bd3aa5be05008c2aa8e3365170"
+	/// { 0 }人の { 1 } パワー 推定 { 2 }
+	case VSHistory_EstimatedRoomPower = "f7a58dfc5dce24125748d61062b2772e411f3aa7b4d70802612456b42ee23596"
 	/// フェスマッチ（チャレンジ）
 	case VSHistory_FesChallenge = "e484328375edebc7ec6635e148394c9ec8b06b0a9ac72533482aec56b0ef66d5"
 	/// フェスマッチ（オープン）
@@ -1732,6 +1854,8 @@ public enum LocalizedType: String, CaseIterable {
 	case VSHistory_LatestTab = "fb9af75d654d6d0d55fdd61076053dedeb375305e892c2173e8295cac037e0eb"
 	/// LOSE...
 	case VSHistory_Lose = "cba9de8f2cd7345abd56500e8784a5608f9906937f3f7a52a4daa76178fde787"
+	/// Xパワー計測中
+	case VSHistory_Measurement = "246eb5adc5115124683d6eb50f2eb72c1cee73aa8abfa3b36a13247534dbe2f7"
 	/// 次のバトル
 	case VSHistory_NextBattle = "983efa5094f5f16b194c76aa462dd2dceb5f0b57247e086794c56616b98d5ce9"
 	/// バトルのきろくがありません
@@ -1740,6 +1864,8 @@ public enum LocalizedType: String, CaseIterable {
 	case VSHistory_NotAvailable = "7975246140d003c121a0de9b681d638508cf29219527d7bcf1b362d2746a8daf"
 	/// 閲覧できるバトルのきろくは、モードごとに最新の50戦までです。
 	case VSHistory_NotAvailableDescription = "49102643b4364bdc31c8ecc73feb752a4dcbef03e382c67344b96beec9d1a9de"
+	/// （おそろいボーナス x{ 0 }）
+	case VSHistory_OutfitBonus = "887f3673ecf72ade3035b7933cb9aa943219a921a6e3022d4c01a02507655d6e"
 	/// 前のバトル
 	case VSHistory_PreviousBattle = "1857f34d1137fd47f31da2f57dab17f63cd80bff32ba70dcca5dc2ba3f7ed96a"
 	/// プライベートマッチ
@@ -1760,12 +1886,22 @@ public enum LocalizedType: String, CaseIterable {
 	case VSHistory_UdemaePoint = "350a4395a5416a2911252300487f2f8a3b133fc58de2cf16713a6dcddaa7ac39"
 	/// { 0 }p
 	case VSHistory_UdemaePointScore = "da9fae0bfa8b3fd6a7fa0da81da14321d946aa25eb05c54d5c2ed5fb8e4b9d93"
+	/// 挑戦中止
+	case VSHistory_UdemaeReset = "6c0f553dbfcafd883551da4c8c64dd134a3a71b1d4893190d001e5988647eb8f"
 	/// ウデマエアップ！
 	case VSHistory_UdemaeUp = "c5a04c6c1bdb81c29c5365ee2611b758b7de5cd547dc18c27c1e34d2100be5ef"
 	/// WIN!
 	case VSHistory_Win = "a2f6a907beb844b206f0faaf126a46d89b57ab729a2c36c2eadc097b693afeb2"
 	/// 勝敗数について
 	case VSHistory_WinMeterGuide = "fee51d1d05dee211c7a8f9755956ddf21dc66cbbb673e8960ff6e277f82b8c93"
+	/// { 0 }連勝
+	case VSHistory_Wins = "82d0b66d23e71b707df04d359942a295c875b09954efd0b7d3036ecd9fa399cb"
+	/// おうかん
+	case VSHistory_Xcrown = "2ed41d87c90bfa1c6fc302022b563d5f8bf16b6f130bfe04a12666a9566586e2"
+	/// Xマッチ
+	case VSHistory_Xmatch = "db6e760ce021cbf01d2b2af0622fe36e7ce159813729ce0be9a4141cd663b91f"
+	/// Xパワー { 0 }
+	case VSHistory_Xpower = "6725bbd5521daed0aea6e78bbb0a94be60a353be27c75ce4b405937212eb482c"
 	/// イカリング３はスプラトゥーン3と連動するサービスです。<br />ここで紹介したもの以外にもさまざまな機能があります。
 	case Welcome_About = "f1586186e0c39db69a43dacc571c0a2f8514ebe856861f3cfabaf1cceb2128bb"
 	/// バトルの戦績やスケジュールをチェックして<br />ライバルに差をつけろ！
@@ -1794,6 +1930,48 @@ public enum LocalizedType: String, CaseIterable {
 	case Welcome_Store1 = "98ab8d5fc0c7c01c529f4c59d07fb7af3517c1dae2b880f1f1e7fa6447767a9f"
 	/// ウィジェット
 	case Welcome_Widgets = "e42570b0044521021434c0b5d16d577d81861fe1f5c4eb594a025d305122c7fb"
+	/// すべて表示
+	case XRanking_All = "108a270a7ea1532cbee7cb22f5100bd0fed5c2d9047d6bb9638c2df02331de7d"
+	/// Xランキング
+	case XRanking_AppName = "f67402d45003f8a73a909d2b8c4eb6b697e1e579512d23b63860fc868ac8f8ab"
+	/// グループ・アロメ
+	case XRanking_Atlantic = "d554c59d8f5e639a2da276e9a9fb431b22369039608e450eb7078b81c1d24e4e"
+	/// 推定{ 0 }位
+	case XRanking_EstimatedRank = "d2019b64d564b7bd8598b0369cfdabd03536bf96bdbdafcb62af0fe6dc21d6f8"
+	/// 計測中
+	case XRanking_Measurement = "8f108d92036ede9dc96fe14abf4f6b971aacd4d1f3751e40d132e72045206e03"
+	/// 開催中！！
+	case XRanking_Open = "e872ea8c34a157481e7ad5fa5194d49021b88b8a1959e97a292e892dfe2e22ca"
+	/// グループ・ヤコ
+	case XRanking_Pacific = "40cffafbcd041c642c261c9d4259b6adba995cb8d22d2ad9cd761ad6362f8b09"
+	/// 過去のランキング
+	case XRanking_PastRankings = "d93b09867f866ea8b934b2c6851011aacd0deaadaa83f0f836450e14a9652fb5"
+	/// { 0 } - { 1 }
+	case XRanking_Period = "1b9fef59e0774d07828d956fa30e503158f9511b5be8a292f943773e5cb6373e"
+	/// { 0 }<small>位</small>
+	case XRanking_Rank = "6c9d28c93c2cdf7718198c8772e17066c1930cd1ac6ecb645ae1cf2728ec27dd"
+	/// グループ
+	case XRanking_Region = "e4f6e8191c589b7f352dfd0f704f2af46f36bfed8d3d7e6b31643116a2dea051"
+	/// ランキングを見る
+	case XRanking_SeeRanking = "8d35a1562990005e4e5c08f78c26a71a6b6e7e6bcf1966e6432050c17a563636"
+	/// ブキトップを見る
+	case XRanking_SeeWeaponTop = "cd782e5cfbdba510ba8eceaecec5ee6a743e17eea82e27ae4925bea139287a09"
+	/// ブキを選ぶ
+	case XRanking_SelectWeapon = "2dd5860d0f646daeb6c9b7b7b74406df9caecb2b23adb2fef91009d380787ef3"
+	/// Xランキング
+	case XRanking_Title = "4b2f052902d83c96e45922047e4a065fa509ebba026c2d8a5a1a78183fd7e107"
+	/// トップ 500
+	case XRanking_Top500 = "93ed7413501a7b60670168f20c728d4503e4917a95a0ebf862a2f4e20c2b803f"
+	/// トッププレイヤー
+	case XRanking_TopPlayers = "def0451fc831c43db70fd463504f5269113bd67808bb53dfbf609323a0e55f51"
+	/// ブキトップ プレイヤー
+	case XRanking_WeaponTop = "4aa907af052fceb0fb9e7bc06df23959b425fe3e135c61fe414ba67f7754651b"
+	/// ブキトップ プレイヤー
+	case XRanking_WeaponTopSingular = "e6d6b1b10ff3a61eab22a33a9c62347649fa520e9d6913d4b0fff3de8e34f540"
+	/// おうかん
+	case XRanking_Xcrown = "72f6e32e0341165cb9efc7239a72a4089bf2b4c165188f0485d856efbb6fcce2"
+	/// <small>Xパワー</small> { 0 }
+	case XRanking_Xpower = "f2c1f13dcc6e78013b42ef07eab51de9d321092dada3931caa25d8394e31215c"
 	/// イカリング３のアルバムの画像を表示します。
 	case Widgets_AlbumDescription = "6c09243d6c1861e27d63284d905217bc0d017867ee2716a7241d2d633005300a"
 	/// スプラトゥーン3でイカした写真を<br />撮影するとココに表示されるぞ！

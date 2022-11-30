@@ -121,7 +121,7 @@ public class StageSchedule: GraphQL {
     // MARK: - CoopGroupingSchedule
     public struct CoopGroupingSchedule: Codable {
         public let regularSchedules: SchedulesNode
-        public let bigRunSchedules: SchedulesNode
+//        public let bigRunSchedules: SchedulesNode
     }
 
     // MARK: - RegularSchedules
@@ -144,15 +144,15 @@ public class StageSchedule: GraphQL {
 
     // MARK: - CoopStage
     public struct CoopStage: Codable {
-        public let name: String
-        public let coopStageId: Int
-        public let thumbnailImage: Icon
-        public let image: Icon
         public let id: StageType?
+        public let image: Icon
+        public let name: String
+//        public let coopStageId: Int
+        public let thumbnailImage: Icon
 
         enum CodingKeys: String, CodingKey {
             case name = "name"
-            case coopStageId = "coopStageId"
+//            case coopStageId = "coopStageId"
             case thumbnailImage = "thumbnailImage"
             case image = "image"
             case id = "id"
@@ -161,10 +161,20 @@ public class StageSchedule: GraphQL {
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             self.name = try container.decode(String.self, forKey: .name)
-            self.coopStageId = try container.decode(Int.self, forKey: .coopStageId)
+//            self.coopStageId = try container.decode(Int.self, forKey: .coopStageId)
             self.thumbnailImage = try container.decode(Icon.self, forKey: .thumbnailImage)
             self.image = try container.decode(Icon.self, forKey: .image)
-            self.id = StageType(id: coopStageId)
+            self.id = try {
+                let stringValue: String = try container.decode(String.self, forKey: .id)
+                guard let decoded: String = stringValue.base64DecodedString,
+                      let idValue: String = decoded.capture(pattern: "([0-9]*)$", group: 1),
+                      let intValue: Int = Int(idValue),
+                      let rawValue: StageType = StageType(id: intValue)
+                else {
+                    return .Unknown
+                }
+                return rawValue
+            }()
         }
 
     }

@@ -1,4 +1,4 @@
-from threading import local
+# from threading import local
 from locales import *
 from nameplate import *
 from badge import *
@@ -10,6 +10,11 @@ import hashlib
 import os
 import re
 
+def get_merged_json(locale: str) -> json:
+    # JSONをマージして読み込み
+    revisions = os.listdir("resources")
+    data = list(map(lambda x: json.load(open(f"resources/{x}/{locale}.json")), revisions))
+    return {**data[0], **data[1]}
 
 def get_base64(plain: str) -> str:
     return base64.b64encode(plain.encode())
@@ -96,7 +101,7 @@ def get_localized(revision):
     # 英語を追加
     lang: Locale = list(filter(lambda x: x.locale == "locale99", data))[0]
     languages[65468] = {
-        "locale": None,
+        "locale": "locale14",
         "hash": None,
         "code": "en-US",
         "xcode": lang.xcode,
@@ -133,6 +138,7 @@ def get_localized(revision):
 
         data = res["CommonMsg/Coop/CoopStageName"]
         for k, v in data.items():
+            k = f"Cop_{k}"
             params.append(format(k, v))
             localized.append(localized_format(k, v))
 
@@ -238,12 +244,18 @@ def get_localized(revision):
         match = re.search("JSON.parse\('(.*)'\)\}\}", response).group(1)
         data = json.loads(match.encode("utf-8").decode("unicode-escape"))
         makdirs(f"resources/{revision}")
-        with open(f"resources/{revision}/{language.hash}.json", mode="w") as w:
+        with open(f"resources/{revision}/{language.locale}.json", mode="w") as w:
             w.write(json.dumps(data, indent=2, ensure_ascii=False))
-            
-        data = camel_case(data)
+        
+        data = camel_case(get_merged_json(language.locale))
         for k, v in data.items():
-            if k == "CoopHistory_Wave":
+            if k == "Challenge_Challenge29Title":
+                params.append(format(k, v))
+                localized.append(localized_format(k, v))
+                k = "Cop_Shakeship"
+                params.append(format(k, v))
+                localized.append(localized_format(k, v))
+            elif k == "CoopHistory_Wave":
                 value = v.split(" ")[0]
                 params.append(format("CoopHistory_Wave1", f"{value} 1"))
                 params.append(format("CoopHistory_Wave2", f"{value} 2"))
@@ -443,11 +455,11 @@ def to_dict(obj):
 
 
 if __name__ == "__main__":
-    revision = get_revision() 
+    revision = get_revision()
     # 翻訳ファイル
-    # get_localized(revision)
+    get_localized(revision)
     # ハッシュ
-    get_hashes(revision)
+    # get_hashes(revision)
     # バッジ
     # get_badge("120")
     # ネームプレート

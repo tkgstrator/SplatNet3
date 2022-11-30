@@ -50,6 +50,20 @@ final class SplatNet3Tests: XCTestCase {
     }
 
     func testStageSchedule() throws {
+        do {
+            let paths: [URL] = getListContents(.StageSchedule).sorted(by: { $0.absoluteString < $1.absoluteString })
+
+            for path in paths {
+                try autoreleasepool(invoking: {
+                    print(path)
+                    let data: Data = try Data(contentsOf: path)
+                    let response = try decoder.decode(StageSchedule.Response.self, from: data)
+                })
+            }
+        } catch (let error) {
+            print(error.localizedDescription)
+            throw error
+        }
     }
 }
 
