@@ -60,10 +60,10 @@ public enum StageId: Int, CaseIterable {
     case Tutorial       = 0
     case Shakeup        = 1
     case Shakespiral    = 2
-    case Shakeship      = 3
+    case Shakeship      = 6
     case Shakehouse     = 4
     case Shakelift      = 5
-    case Shakeride      = 6
+    case Shakeride      = 3
     case Shakedent      = 7
 }
 
@@ -74,7 +74,7 @@ public enum StageKey: String, CaseIterable {
     case Tutorial       = "744f65e62b538b63128469805c23592429f9830de7a1c12fdc910941fbeedfc4"
     case Shakeup        = "be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e"
     case Shakespiral    = "3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec"
-    case Shakeship      = "03b4f02f9fbd8e0979139c8911f5413b3cc60b836035f382f476c0db255401fa"
+    case Shakeship      = "1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961"
     case Shakehouse     = "913f866ec025356131b85c94d185e3f361c28053a7c65a72b2d861f2c3f0d277"
     case Shakelift      = "b28206c853a342f236a6b64a4768451c60ba09341cb6e7c11e8e1a5353cfaa77"
     case Shakeride      = "0b0376955f3909e9e95b81c640c66094f8f5d6b316d4fdf89f865dd332d6a13a"

@@ -150,6 +150,8 @@ public enum Common {
         case REGULAR
         /// プライベートバイト
         case PRIVATE_CUSTOM
+        /// プライベートバイト
+        case PRIVATE_SCENARIO
     }
 
     /// サーモンランのルール

@@ -44,15 +44,6 @@ public class VersionUpdater {
                 await alert.addAction(action)
                 await UIApplication.shared.rootViewController?.present(alert, animated: true)
             }
-//            /// 最新のバージョンより高いとアラートを表示する
-//            if publishedVersion < currentVersion {
-//                let alert: UIAlertController = await UIAlertController(title: .Common_App_Salmonia, message: .Common_Welcome_App)
-//                let action: UIAlertAction = await UIAlertAction(title: .Landing_OpenApp)
-//                let cancel: UIAlertAction = await UIAlertAction(title: .Common_Cancel, style: .cancel)
-//                await alert.addAction(cancel)
-//                await alert.addAction(action)
-//                await UIApplication.shared.rootViewController?.present(alert, animated: true)
-//            }
             return
         }
     }

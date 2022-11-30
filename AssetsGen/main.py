@@ -456,6 +456,7 @@ def to_dict(obj):
 
 if __name__ == "__main__":
     revision = get_revision()
+    print(revision)
     # 翻訳ファイル
     get_localized(revision)
     # ハッシュ

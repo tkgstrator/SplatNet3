@@ -79,7 +79,7 @@ public class SplatNet2 {
             self.grade = GradeType(id: result.afterGrade?.id)
             self.scale = [result.scale?.bronze, result.scale?.silver, result.scale?.gold]
             self.jobResult = JobResult(from: result)
-            self.schedule = Schedule(schedule: schedule)
+            self.schedule = Schedule(schedule: schedule, scenarioCode: result.scenarioCode)
             self.smellMeter = result.smellMeter
             self.scenarioCode = result.scenarioCode
 
@@ -98,10 +98,15 @@ public class SplatNet2 {
         public let weaponLists: [WeaponType]
         public let stage: StageType
 
-        public init(schedule: CoopHistoryElement) {
+        public init(schedule: CoopHistoryElement, scenarioCode: String?) {
             self.startTime = schedule.startTime
             self.endTime = schedule.endTime
-            self.mode = schedule.mode
+            self.mode = {
+                if schedule.mode == .PRIVATE_SCENARIO && scenarioCode == nil {
+                    return .PRIVATE_CUSTOM
+                }
+                return schedule.mode
+            }()
             self.rule = schedule.rule
             self.weaponLists = schedule.weaponList
             self.stage = schedule.stage
