@@ -460,8 +460,8 @@ if __name__ == "__main__":
     # 翻訳ファイル
     get_localized(revision)
     # ハッシュ
-    # get_hashes(revision)
+    get_hashes(revision)
     # バッジ
-    # get_badge("120")
+    get_badge("200")
     # ネームプレート
-    # get_nameplate("120")
+    get_nameplate("200")

@@ -76,8 +76,12 @@
 "b4b150ab7addb3281db723372902472c65a673a61d1750d1f729e427aaeebc08" = "Prodige +3";
 // Grade_Arbeiter_08
 "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0" = "Légende";
+// Cop_Carousel
+"2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071" = "Parc Carapince";
 // Cop_Shakedent
 "f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b" = "Centrale Anguilla";
+// Cop_Shakeship
+"1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961" = "Épave des braves";
 // Cop_Shakespiral
 "3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec" = "Bastion colimaçon";
 // Cop_Shakeup
@@ -118,6 +122,8 @@
 "f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a" = "Concentraceur zoom";
 // Charger_Normal_00
 "3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0" = "Concentraceur";
+// Charger_Pencil_00
+"082489b182fbbabddde40831dac5867d6acc4778b6a38d8f5c8d445455d638eb" = "Crayon X - 5H";
 // Charger_Quick_00
 "0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527" = "Lignizateur alpha";
 // Maneuver_Dual_00
@@ -138,6 +144,10 @@
 "8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb" = "Flexi-rouleau";
 // Roller_Normal_00
 "536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87" = "Rouleau";
+// Roller_Wide_00
+"137559b59547c853e04c6cc8239cff648d2f6b297edb15d45504fae91dfc9765" = "Rouleau large";
+// Saber_Bear_Coop
+"480bc1dfb0beed1ce4625a6a6b035e4bac711de019bb9b0e5125e4e7e39e0719" = "Éclatana M. Ours Cie";
 // Saber_Lite_00
 "3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258" = "Éclatana Doto";
 // Saber_Normal_00
@@ -174,6 +184,8 @@
 "e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570" = "Liquéficateur";
 // Shooter_Precision_00
 "25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609" = "Marqueur léger";
+// Shooter_QuickLong_00
+"8034dd1acde77c1a2df32197c12faa5ba1d65b43d008edd1b40f16fa8d106944" = "Lanceur spatial";
 // Shooter_QuickMiddle_00
 "e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255" = "N-ZAP 85";
 // Shooter_Short_00
@@ -246,6 +258,10 @@
 "8150f84a2ff56bffcd7c9a8982609bbce59c222d298fb1845e1fbc3d628b48bf" = "Liste de cartes";
 // L_BtnCard_00_T_WhiteText_00
 "6000c76435afc2606e49f310666a47f6f117b7e3c44b177395e5f221e851f1f6" = "Liste de cartes";
+// L_BtnCatalog_00_T_BlackText_00
+"c1ab3aaf6a390e9522541c40273e656e75ef3f45e31627e7f2d546a91bde5da4" = "Plus d'infos";
+// L_BtnCatalog_00_T_WhiteText_00
+"4fba2ccf6653a67ff4758828f2becf440432ff2c9bc050e9c21703c2e399680c" = "Plus d'infos";
 // L_BtnFestStage_00_T_BlackText_00
 "05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85" = "Festimatch";
 // L_BtnFestStage_00_T_WhiteText_00
@@ -348,6 +364,10 @@
 "7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Match anarchie[size=75%](Série)[size=100%]";
 // L_BtnStage_01_T_WhiteText_00
 "92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Match anarchie[size=75%](Série)[size=100%]";
+// L_BtnStage_02_T_BlackText_00
+"98a1f7364d1ece9f749fa2d908f83b7d72a46adc76ad92846c30097d6b3aea2a" = "Match X";
+// L_BtnStage_02_T_WhiteText_00
+"19b38daa7853ad534ffb56f221119929b3628fd3ab1e8c8cdf30c7ada35b2eca" = "Match X";
 // L_BtnStage_04_T_BlackText_00
 "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "Salmon Run";
 // L_BtnStage_04_T_WhiteText_00
@@ -452,6 +472,8 @@
 "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da" = "Boutiques";
 // T_UdemaeTitle_00
 "0137ce9b6015acdafe7c083ac4591e9592114740e0553d9928ff90d2116a82db" = "Rang";
+// T_XPower_00
+"59df499af5ac36499906998051e3bfd2f03f5b9f5f822714548b2c03a51e178d" = "Force X";
 // L_Btn_00_L_GuideCancel_00_T_Info_00
 "60a6829b53faf7d4362ed02a0482cc77d24fd91e1b43b7b40ae691d1e560a36b" = "Annuler";
 // L_Btn_00_T_Title_00
@@ -462,12 +484,16 @@
 "92acd08fb0ee986a0f1a70b811163a10c9458ef7e703c46e12b00c17069065bb" = "MAX";
 // L_GuideClose_00_T_Info_00
 "cc760532ab920b96b5faa954ec8b4a3dfcd0f73b968035b4c0720b357a3f5414" = "Retour";
+// L_GuideManual_01_T_Info_00
+"26910492bec47055f063f91bd90825eb1c43e18f893127ea3a4849cb67a021e0" = "Règles";
 // L_GuideReward_00_T_Info_00
 "9218c34589c59a67fc2aac6c9b572826d58b84c40ae98af59325ea6b04ed398c" = "Récompenses et points";
 // L_GuideSwitch_00_T_BtnL_00
 "09cd4b729faf8d2d2216b98317832d9e41a0a75799a41b91efafc019b05aa31f" = "Solo";
 // L_GuideSwitch_00_T_BtnR_00
 "2dcf10ea94501d389cb0b628628c1310ebdf33470cb6d672f175fd5a4ca86395" = "Entre amis";
+// L_HighScore_00_T_Score_00
+"9fe3f39d667dfef30d6b2fcf3a3dd0c844fce4ffc4c02c5a8bc95242561ec7fc" = "Record";
 // L_PlayerStatus_00_L_Choushi_00_T_FestPowCount_00
 "762c3f34982c1c6a13010d8ae9537126f9044b84d14328e04f7eb9e8a6b1f44c" = "Calcul...";
 // L_PlayerStatus_00_L_Choushi_00_T_FestPow_00
@@ -486,6 +512,8 @@
 "0a08ea8fa115f6a62637fe951e4e7ba7edc7f1e0a2427343caf68c09d7e9f984" = "Me rétrograder";
 // L_Progress_00_T_Title_00
 "94a5d451f292e93a0fab51579a57020382859d61181e9c35e3b447ad0f138898" = "Match de rang";
+// L_Reset_00_T_Info_00
+"f209af1ea1b3d496b32c4ffac6647a16ba95d91b18e3f05013e4deb9c0e2dcf4" = "Réinitialiser le rang";
 // T_Rule_00
 "00d8f2eead8b70ac7344a4e6a62919632b9a2961d22970d0eb0951ad9199bc8c" = "Mode";
 // T_Stage_00
