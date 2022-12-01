@@ -14,7 +14,7 @@
 		106D57A2293430BB0088D018 /* SplatNet3DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57A1293430BB0088D018 /* SplatNet3DemoTests.swift */; };
 		106D57AC293430BB0088D018 /* SplatNet3DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57AB293430BB0088D018 /* SplatNet3DemoUITests.swift */; };
 		106D57AE293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D57AD293430BB0088D018 /* SplatNet3DemoUITestsLaunchTests.swift */; };
-		106D57BE293430ED0088D018 /* SplatNet3 in Frameworks */ = {isa = PBXBuildFile; productRef = 106D57BD293430ED0088D018 /* SplatNet3 */; };
+		10B7A7AA29350C9B00E32BD3 /* SplatNet3 in Frameworks */ = {isa = PBXBuildFile; productRef = 10B7A7A929350C9B00E32BD3 /* SplatNet3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106D57BE293430ED0088D018 /* SplatNet3 in Frameworks */,
+				10B7A7AA29350C9B00E32BD3 /* SplatNet3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +166,7 @@
 			);
 			name = SplatNet3Demo;
 			packageProductDependencies = (
-				106D57BD293430ED0088D018 /* SplatNet3 */,
+				10B7A7A929350C9B00E32BD3 /* SplatNet3 */,
 			);
 			productName = SplatNet3Demo;
 			productReference = 106D578C293430B90088D018 /* SplatNet3Demo.app */;
@@ -639,7 +639,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		106D57BD293430ED0088D018 /* SplatNet3 */ = {
+		10B7A7A929350C9B00E32BD3 /* SplatNet3 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SplatNet3;
 		};

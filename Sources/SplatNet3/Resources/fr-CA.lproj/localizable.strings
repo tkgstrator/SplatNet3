@@ -76,16 +76,20 @@
 "b4b150ab7addb3281db723372902472c65a673a61d1750d1f729e427aaeebc08" = "Prodige +3";
 // Grade_Arbeiter_08
 "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0" = "Légende";
-// Shakedent
-"8fe373c92b524b39cbae4d90aabdc718e705ef11bbfb2fab46c8fb88c735a401" = "Centrale Anguilla";
-// Shakespiral
-"c60554392a0da8bde91b6bd61a43f346041e9482d324808bd5a5d167196ed0b8" = "Bastion colimaçon";
-// Shakeup
-"c746835556967c7c22178163baa18db46375eb31322627626006392f23457aa7" = "Barrage salmonoïde";
-// Tutorial
-"c26982b1425da26a9637dd69da684a036c8b67a1ddf2c3d09b915a96e4b58037" = "Bastion colimaçon";
-// Unknown
-"b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14" = "???";
+// Cop_Carousel
+"2276a46e42a11637776ebc15cf2d46a589f1dba34a76d5c940c418ed7371d071" = "Parc Carapince";
+// Cop_Shakedent
+"f1e4df4cff1dc5e0acc66a9654fecf949224f7e4f6bd36305d4600ac3fa3db7b" = "Centrale Anguilla";
+// Cop_Shakeship
+"1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961" = "Épave des braves";
+// Cop_Shakespiral
+"3418d2d89ef84288c78915b9acb63b4ad48df7bfcb48c27d6597920787e147ec" = "Bastion colimaçon";
+// Cop_Shakeup
+"be584c7c7f547b8cbac318617f646680541f88071bc71db73cd461eb3ea6326e" = "Barrage salmonoïde";
+// Cop_Tutorial
+"744f65e62b538b63128469805c23592429f9830de7a1c12fdc910941fbeedfc4" = "Bastion colimaçon";
+// Cop_Unknown
+"ffa84f05a6437395a0a128cad1a99e8dd0f303ce4fd687fa648617a0075d7ad9" = "???";
 // Blaster_Bear_Coop
 "0962405d6aecff4a075c46e895c42984e33b26c4b2b4b25c5058366db3c35ba4" = "Blasteur M. Ours Cie";
 // Blaster_LightLong_00
@@ -118,6 +122,8 @@
 "f6354a66c47ec15517bb457e3c48c97c3ff62d34ff38879dbb3e1665dea1be5a" = "Concentraceur zoom";
 // Charger_Normal_00
 "3f99800b569e286305669b7ab28dc3ff0f0b1b015600569d5ac30ab8a97047a0" = "Concentraceur";
+// Charger_Pencil_00
+"082489b182fbbabddde40831dac5867d6acc4778b6a38d8f5c8d445455d638eb" = "Crayon X - 5H";
 // Charger_Quick_00
 "0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527" = "Lignizateur alpha";
 // Maneuver_Dual_00
@@ -138,6 +144,10 @@
 "8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb" = "Flexi-rouleau";
 // Roller_Normal_00
 "536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87" = "Rouleau";
+// Roller_Wide_00
+"137559b59547c853e04c6cc8239cff648d2f6b297edb15d45504fae91dfc9765" = "Rouleau large";
+// Saber_Bear_Coop
+"480bc1dfb0beed1ce4625a6a6b035e4bac711de019bb9b0e5125e4e7e39e0719" = "Éclatana M. Ours Cie";
 // Saber_Lite_00
 "3aa72d418643038a9e3248af734b0d6a0bf3d3bf9793d75912b1b959f93c2258" = "Éclatana Doto";
 // Saber_Normal_00
@@ -174,6 +184,8 @@
 "e3874d7d504acf89488ad7f68d29a348caea1a41cd43bd9a272069b0c0466570" = "Liquéficateur";
 // Shooter_Precision_00
 "25e98eaba1e17308db191b740d9b89e6a977bfcd37c8dc1d65883731c0c72609" = "Marqueur léger";
+// Shooter_QuickLong_00
+"8034dd1acde77c1a2df32197c12faa5ba1d65b43d008edd1b40f16fa8d106944" = "Lanceur spatial";
 // Shooter_QuickMiddle_00
 "e6dbf73aa6ff9d1feb61fcabadb2d31e08b228a9736b4f5d8a5baeab9b493255" = "N-ZAP 85";
 // Shooter_Short_00
@@ -246,6 +258,10 @@
 "8150f84a2ff56bffcd7c9a8982609bbce59c222d298fb1845e1fbc3d628b48bf" = "Liste de cartes";
 // L_BtnCard_00_T_WhiteText_00
 "6000c76435afc2606e49f310666a47f6f117b7e3c44b177395e5f221e851f1f6" = "Liste de cartes";
+// L_BtnCatalog_00_T_BlackText_00
+"c1ab3aaf6a390e9522541c40273e656e75ef3f45e31627e7f2d546a91bde5da4" = "Plus d'infos";
+// L_BtnCatalog_00_T_WhiteText_00
+"4fba2ccf6653a67ff4758828f2becf440432ff2c9bc050e9c21703c2e399680c" = "Plus d'infos";
 // L_BtnFestStage_00_T_BlackText_00
 "05f0db1b84f78f1c1d8f2751410f82893a41b1943c9da1e6f12a044aa5204e85" = "Festimatch";
 // L_BtnFestStage_00_T_WhiteText_00
@@ -348,6 +364,10 @@
 "7c5188f4962943ff4cf21903bb2af8449b84c0027d2df9efdb75841ac8e422e9" = "Match anarchie[size=75%](Série)[size=100%]";
 // L_BtnStage_01_T_WhiteText_00
 "92b90fcf1f9b3fc2d7771426c264ed0b29217cad7405a05c09e4c7838d68b0b7" = "Match anarchie[size=75%](Série)[size=100%]";
+// L_BtnStage_02_T_BlackText_00
+"98a1f7364d1ece9f749fa2d908f83b7d72a46adc76ad92846c30097d6b3aea2a" = "Match X";
+// L_BtnStage_02_T_WhiteText_00
+"19b38daa7853ad534ffb56f221119929b3628fd3ab1e8c8cdf30c7ada35b2eca" = "Match X";
 // L_BtnStage_04_T_BlackText_00
 "1215f2a2263806547fcaf64bf6c760d71f9256eb82d1dbf31663924660346430" = "Salmon Run";
 // L_BtnStage_04_T_WhiteText_00
@@ -452,6 +472,8 @@
 "623f24840e888d54b58dafe07284fac66530da2ef16e99c4fb05dff08bfcc5da" = "Boutiques";
 // T_UdemaeTitle_00
 "0137ce9b6015acdafe7c083ac4591e9592114740e0553d9928ff90d2116a82db" = "Rang";
+// T_XPower_00
+"59df499af5ac36499906998051e3bfd2f03f5b9f5f822714548b2c03a51e178d" = "Force X";
 // L_Btn_00_L_GuideCancel_00_T_Info_00
 "60a6829b53faf7d4362ed02a0482cc77d24fd91e1b43b7b40ae691d1e560a36b" = "Annuler";
 // L_Btn_00_T_Title_00
@@ -462,12 +484,16 @@
 "92acd08fb0ee986a0f1a70b811163a10c9458ef7e703c46e12b00c17069065bb" = "MAX";
 // L_GuideClose_00_T_Info_00
 "cc760532ab920b96b5faa954ec8b4a3dfcd0f73b968035b4c0720b357a3f5414" = "Retour";
+// L_GuideManual_01_T_Info_00
+"26910492bec47055f063f91bd90825eb1c43e18f893127ea3a4849cb67a021e0" = "Règles";
 // L_GuideReward_00_T_Info_00
 "9218c34589c59a67fc2aac6c9b572826d58b84c40ae98af59325ea6b04ed398c" = "Récompenses et points";
 // L_GuideSwitch_00_T_BtnL_00
 "09cd4b729faf8d2d2216b98317832d9e41a0a75799a41b91efafc019b05aa31f" = "Solo";
 // L_GuideSwitch_00_T_BtnR_00
 "2dcf10ea94501d389cb0b628628c1310ebdf33470cb6d672f175fd5a4ca86395" = "Entre amis";
+// L_HighScore_00_T_Score_00
+"9fe3f39d667dfef30d6b2fcf3a3dd0c844fce4ffc4c02c5a8bc95242561ec7fc" = "Record";
 // L_PlayerStatus_00_L_Choushi_00_T_FestPowCount_00
 "762c3f34982c1c6a13010d8ae9537126f9044b84d14328e04f7eb9e8a6b1f44c" = "Calcul...";
 // L_PlayerStatus_00_L_Choushi_00_T_FestPow_00
@@ -486,6 +512,8 @@
 "0a08ea8fa115f6a62637fe951e4e7ba7edc7f1e0a2427343caf68c09d7e9f984" = "Me rétrograder";
 // L_Progress_00_T_Title_00
 "94a5d451f292e93a0fab51579a57020382859d61181e9c35e3b447ad0f138898" = "Match de rang";
+// L_Reset_00_T_Info_00
+"f209af1ea1b3d496b32c4ffac6647a16ba95d91b18e3f05013e4deb9c0e2dcf4" = "Réinitialiser le rang";
 // T_Rule_00
 "00d8f2eead8b70ac7344a4e6a62919632b9a2961d22970d0eb0951ad9199bc8c" = "Mode";
 // T_Stage_00
@@ -718,6 +746,10 @@
 "f719242d0b97030aa72fec90c08b0f94565511b8ac2b6deb155642cdfa5e03b3" = "Contenu";
 // Common_Form_Submit
 "0fade8f6454b7a5527a83f13bb51068ad0aea8b8e60218537718d78816384087" = "Soumettre";
+// Carousel_BigrunOpening
+"65716f2b4646c082eb2317b09ff051ff5665ae3d975c1656c53c2929af51cbab" = "Protège la ville pendant le Big Run!";
+// Carousel_BigrunResult
+"39fd7bc4c0123462fce5a7b9a6fe6eacc89dbb71e6af54d6e3b9c59a5c7fde66" = "Résultats du Big Run publiés!";
 // Carousel_CoopHistory
 "54c15b526d57f8415ad0e45a09b8abc79bf8e15fb94502b32845d266b6abd980" = "Salmon Run";
 // Carousel_FestOpening
@@ -760,6 +792,8 @@
 "021340297d3697c3bfd0f8fae384a5194e969a9dc0d713a03b3a37cd06244826" = "Catalogue";
 // Catalog_Available
 "de69d0524558ef5bd90e9b23f589f3736d881ddefc35e943007da8103fa570f7" = "Échangeable";
+// Catalog_BigrunBonus
+"7d6e795b071fa52b0adf1a89d695502dba6623b925e92885879331cdfc4bdb6b" = "Big Run en cours! Remporte <em>1,2 x</em> plus de points!";
 // Catalog_BonusDescription
 "0c5dc764b022dd76c274eb206b13712cd9868a03ec1e8b08fecd26e895f0d9c3" = "Augmente ton niveau de catalogue<br />pour obtenir une boîte mystère!";
 // Catalog_BonusGuide
@@ -837,7 +871,7 @@
 // Challenge_DownloadGraffiti
 "ff02adaf81bd6a3681ec63cedcd5d1bf749c1752edc183345a9704adefcd2be2" = "Télécharger un graffiti";
 // Challenge_DownloadIcon
-"ef189d46d17c843a99c63e019f463c405046fcda2ecea094f537aaa16e335766" = "Icônes de téléchargement";
+"ef189d46d17c843a99c63e019f463c405046fcda2ecea094f537aaa16e335766" = "Télécharger icônes";
 // Challenge_DownloadWallpaper
 "6315b655fc4188cefffdead75b92282f26707ad635c982c061ee7c3171d45793" = "Télécharger un fond d'écran";
 // Challenge_Green
@@ -914,6 +948,10 @@
 "ab3dd376051b175e0288535e904b147ee2a8fe4ff62ad02798d8c643b82b920a" = "Pluie de palourdes";
 // Common_Close
 "194798a449260d31cae468c90d48cefa382ec1bee6271b60bf572cc5bd367e6e" = "Fermer";
+// Common_ColonRule
+"7736c1bca0b9225541312685b13fc235c88eb59f011307c5d2b1491fcada1804" = ":";
+// Common_CoopBigRun
+"ad2043c403722dd9a407ae67237c8473ba14a1dff11cd96a71e6635b8068c9bc" = "Big Run";
 // Common_CopyrightQrCode
 "a0ceff43cc9aee0c64a16c9c470d273318a06fd6b7e6205485748418c43093c8" = "QR Code is a registered trademark of DENSO WAVE INCORPORATED.";
 // Common_Decide
@@ -942,6 +980,8 @@
 "b7ce484e91b947be80eed3da423d9dc48d1a2461f6ca8a00b62d6f7dae95ea71" = "Expédition risquée";
 // Common_Tricolor
 "688936714bb17943ad1dea6152e8a70cb67867f1e4c878e0bf0ada66e7b73977" = "Match tricolore";
+// Common_TricolorMatch
+"cad84d342b626e377b667664602f045b98bd34911231ebe325cad4f59324c6d5" = "Match tricolore";
 // Common_TurfWar
 "d56bb2cec41f8e51fea6baf198a44fcd2c86a8aed103a77ec827bc13654b9c16" = "Guerre de territoire";
 // CoopHistory_Available
@@ -950,6 +990,8 @@
 "e4af6a135c415dbfcbf3a5c471f1db0665928ca0eb69750e0f1c3e69351d7ea2" = "Salmonarque combattu";
 // CoopHistory_AverageClearWaves
 "f26e723e3d12c84d1e76236dd5397f6aeee7f24fb9cb60b719d80289007f061e" = "Vagues terminées (moyenne) :";
+// CoopHistory_Bigrun
+"be44fce78caaa899a9cb21328bc7c6fa9d1a20ff38e217a1269bca8f1ef189db" = "Big Run";
 // CoopHistory_Bonus
 "5d0366ef86558784abb26b56f07864bd88db105b9edb27052680ffe823aaea50" = "Récomp.";
 // CoopHistory_BossAvailable
@@ -979,13 +1021,13 @@
 // CoopHistory_Gj
 "ced932db1385fc8665e7edbc0b523d88a94cef162c51b0cb4bda178d52fd0a4c" = "✓";
 // CoopHistory_GoToStats
-"15eee8b21abbd205aaf45a11bd06f18e67d0400713ff3d0c2a6a8fe7d2503db8" = "Retour aux stats de boulots";
+"15eee8b21abbd205aaf45a11bd06f18e67d0400713ff3d0c2a6a8fe7d2503db8" = "Retour aux stats de missions";
 // CoopHistory_GoldenDeliverCount
 "4fa84ccad3c92f49eb64bbb307dd4f078c7f9322504a2c141c1e453e38beb518" = "Œufs dorés collectés";
 // CoopHistory_HighestScore
-"f7ed5bab435462795c8962dbb9d24f00c2d35ce28654834aff813fa14054607b" = "Record absolu";
+"f7ed5bab435462795c8962dbb9d24f00c2d35ce28654834aff813fa14054607b" = "Record";
 // CoopHistory_History
-"8746c22624c816c12b84fcb35b7d56d3d99dc606745dae487c5aa4bb72e2c21d" = "Stats de boulots";
+"8746c22624c816c12b84fcb35b7d56d3d99dc606745dae487c5aa4bb72e2c21d" = "Stats de missions";
 // CoopHistory_JobPoint
 "caf0b2c820a6325c0dc60c84343482159cd86a2be67d346e49284220bf7efde5" = "Tes points";
 // CoopHistory_JobRatio
@@ -993,7 +1035,7 @@
 // CoopHistory_KumaPointCard
 "accd2ee923711fe8e56c5385c2d7597805e7c2f46bfdcc4594fa6ceec4ea8dd2" = "Carte point M. Ours";
 // CoopHistory_Latest
-"e747cf93bccda792b8af592e41180e549b783d5c15c3c784a0d0cc23c274792b" = "Dernier boulot";
+"e747cf93bccda792b8af592e41180e549b783d5c15c3c784a0d0cc23c274792b" = "Dernière mission";
 // CoopHistory_Limited
 "41e7ebd5bdf3f53d546aa522e27c984c13d82061220959daced0dfc2a6dc561d" = "Pour une durée limitée";
 // CoopHistory_MonthlyReward
@@ -1003,9 +1045,9 @@
 // CoopHistory_Ng
 "62fb5468d494570317b66c52262bafabbc5beab85e158f4924632eff3319b653" = "✘";
 // CoopHistory_NoData
-"fcd6d8b46ad72c4b578d176172bd0c4b0a5fb8a5cd78f601768aa07338bba867" = "Aucune stat de boulot disponible.";
+"fcd6d8b46ad72c4b578d176172bd0c4b0a5fb8a5cd78f601768aa07338bba867" = "Aucune stat de mission disponible.";
 // CoopHistory_NotAvailable
-"f010b9dbc508c750c4bdf8f12f61001571da2eb46fb5fcae2b52018f96e7751a" = "Les stats de boulots ne sont pas disponibles.";
+"f010b9dbc508c750c4bdf8f12f61001571da2eb46fb5fcae2b52018f96e7751a" = "Les stats de missions ne sont pas disponibles.";
 // CoopHistory_NotAvailableDescription
 "4c054e1a7c398cefa72e192ea509c736d0c820450ff8eb899b773093b0d93cf0" = "Seules les 50 entrées les plus récentes sont disponibles.";
 // CoopHistory_NotDefeated
@@ -1029,7 +1071,7 @@
 // CoopHistory_RecruitTitle
 "252ce5c46b194e1f162b9975e59154ee25f9360e2c1baadfc08a76f378e271ab" = "La collecte d'œufs, un travail de rêve!";
 // CoopHistory_Regular
-"b17ef6b50176fc4b8cb03fd628fa2f60800890f7d1bf7ba2dafa1b3f874ce60b" = "Boulot normal";
+"b17ef6b50176fc4b8cb03fd628fa2f60800890f7d1bf7ba2dafa1b3f874ce60b" = "Mission normale";
 // CoopHistory_RegularPoint
 "7f69e7bd10f36ab2d86032dd0f81fd3b431803ebf28bb14d9850f5d6fded64d4" = "Points actuels";
 // CoopHistory_RescueCount
@@ -1104,6 +1146,8 @@
 "4b894931324f4576a30e064259312a1cbe417d5626a1b03f3a3fe278e1abd814" = "Contribution (défi)";
 // FesRecord_ContributionRegular
 "5719f56b34ca699e7d5c79193ab959535346389d66f4bb3de40c8f1354fc7003" = "Contribution (ouvert)";
+// FesRecord_ContributionTricolor
+"5b53120d711083de3afe9af4af2eb001664aa809ff19ad6fd9070ecc4e6fb1a9" = "Contribution (match tricolore)";
 // FesRecord_Defense
 "6fc56979e505bc6dfa726794de758e57a94177480beff760e0f8a439720a85dd" = "En défense";
 // FesRecord_FestPower
@@ -1164,6 +1208,10 @@
 "9176a119abf1fe90c0f7df04bf22dbda9524f6f7e4bc79d650018b906caad62f" = "<span>{ 0 }</span> l'emporte!";
 // FesRecord_YourRecord
 "bad6cc13f2c9e3e71b9b9582b47a26a973d7a00f1495242255aad392bbea4fd7" = "Tes stats";
+// Footer_BigrunAnnouncement
+"00fb40cd2560e50922a6bce110c1b02d794adea29f3b2e1f75003a32b8432d67" = "Alerte <em>Big Run</em>! Gare aux salmonoïdes!";
+// Footer_BigrunNowOpening
+"d78c59728ebdea5bd6371e81416144c6d775562d4f4a278667995c4e0c4c3c29" = "<em>Big Run</em> en cours! Protège la ville des salmonoïdes!";
 // Footer_EndOfSeason
 "3ae0d4bad7b067c820a6c761e4d250af9034f9d427ae552413097f02a714974c" = "<em>{ 0 }</em> bientôt terminée!";
 // Footer_FestAnnouncement
@@ -1318,10 +1366,14 @@
 "bc888c57524445881e954afd493364718923c4ec4a7b21603ce8fa81ea07bb84" = "Badges";
 // History_Count
 "d8151df786a02c632586e7c26e4d3c8fd0df8f8adb19b98f380a1862ba318db9" = "{ 0 }<small> fois</small>";
+// History_EstimatedRanking
+"9f762b45d39f06720dfd745baddf7c49a3246898cc31ea52fb4f606394f8feb8" = "Classement estimé";
 // History_FrequentlyUsedWeapon
 "33be67a6de9fcb6dfb7ceef6ec422d88f406305e72fa3dcb013bca8deac440e3" = "Armes de prédilection";
 // History_HighestUdemae
 "8ae83a282c86ef1bf846d2e3009ada60853fea49efd29f98b2343d9fa079b2d3" = "Record absolu";
+// History_HighestXranking
+"28be94cb1135fc93701cee21647303749de1aadf2f162bf916ddf7179aac7cde" = "Meilleur classement X / Force X max";
 // History_Latest
 "fd43994417f5d8896e09959c16d30939030ccd993f5f1e781619ea54a4b38e1b" = "Trois derniers mois";
 // History_LatestBadge
@@ -1332,6 +1384,8 @@
 "49603ebeff7e758481937bcd1d5a0a8cfc2d310d7cf8fdf95405447083e0d059" = "Autres armes";
 // History_Rank
 "ec879a2538a732b65313092a3b84f78328e7ce79a3bc820e8245b4a17ebaf445" = "Niveau";
+// History_Ranking
+"b7ddc8f53317c370e3a029cc4007aed139e394be3298f99b31661258aaae1f63" = "{ 0 }";
 // History_Season
 "88478c17f8793593edbaf37885e298a7f2705b71d1387ab85a37e642e15e4bca" = "Saison";
 // History_ShowAllBadges
@@ -1340,6 +1394,8 @@
 "2b761bd2b058055e2fd44ffdd382795033e24c2d6eb22554b95b92c6703e541c" = "Masquer";
 // History_ShowMore
 "496ee6a57c9e57bc0acea170f6e9eeb2a7789ff9a069b2ca146d79b274059ba2" = "Plus";
+// History_ShowXranking
+"e57dc39c6c7219de45a7b6684c47c5854042145d818db0df95fecc31d90caffe" = "Voir le classement de matchs X";
 // History_Since
 "598884ef7c80fd7be04ef1f286bb2599278787803bce3652aa96a8258b85dc51" = "Joue depuis le { 0 } (Réactualisé le { 1 })";
 // History_Summary
@@ -1358,6 +1414,8 @@
 "b4a52d1c7299854e81fd80530dd03f7d6c6d723ad0eb7158ba81ad10eb17e8db" = "Stats - armes";
 // History_WeaponUsage
 "cf96c683fe80dc3b943a30df6019235f9d37d8a3cb79dcab5bab7079b988b62f" = "Fréquence d'utilisation - armes";
+// History_Xmatch
+"f3c158521bb0712bf5d704481aae41a7a09963ae51936893ea86dda428e1c69c" = "Match X";
 // Landing_Caution
 "7d24b25eabb992ea79b17d066a4bd56c367c3c1e42c575e4d681d7db3892b547" = "Si l'application n'est pas installée, appuyer sur ce bouton n'aura aucun effet.";
 // Landing_Copyright
@@ -1640,12 +1698,22 @@
 "3712aec44b25f9fb81517e0658ac9f98625dfbcbe494193798a4bc92b85b3511" = "Match de ligue";
 // StageSchedule_Next
 "ecbaabceb0ed5e6b497a98c6250a8a2a9b24a993633f597a94fd96d16201b62d" = "Suivant";
+// StageSchedule_NoticeBigrun
+"354c85e49263e617f5170203218d4efbdce290b0601481a84484289a8720ec2e" = "Big Run en approche!";
+// StageSchedule_NoticeLimited
+"7796a5b645e835309eed8211584cde901cc792c671153ed551d05cea422a0898" = "Offre d'emploi à durée limitée!";
 // StageSchedule_NowClosed
 "53387853b53c8884f9a3e3994170ada076c9e4d33e713f75807b97bbf5b5f9a8" = "Festival en cours!";
 // StageSchedule_Open
 "94c40ccbbd87eda3b9d0de5efc8028015b7eb9a44b2d6ecb136793754586d073" = "Actuel";
+// StageSchedule_OpenBigrun
+"5e129780c4791eed9fc99d6ca79bebbab47f82447fa676323632f0525b97b5e8" = "Big Run en cours!";
+// StageSchedule_OpenLimited
+"61e69e829b077095634c735f8f25431459b460ad855183b9e866892833977db4" = "Offre d'emploi disponible!";
 // StageSchedule_Private
 "770948cc44ea0d73c2a649d9441551932b3919393d5f347f410bb9f81d612883" = "Match privé";
+// StageSchedule_Recruit
+"e457bc446e327c9f5bbe2f4306f2228466f236b524f939669bc3b02a14d5bef8" = "Un Big Run est en cours! M. Ours Cie embauche, tous types de profils acceptés! ({ 0 })";
 // StageSchedule_Regular
 "e9680058d0336f426765b542402cd5db9958b2995d46ab7da26c19fb5c22abb9" = "Match classique";
 // StageSchedule_SeeFestivalRecord
@@ -1667,7 +1735,7 @@
 // VSHistory_333x
 "dc5dee801710edf17ef1cdf794aa5861734fe8ef3b13a587c2c74da0cd4bb71f" = "Match ×333";
 // VSHistory_AnnotationExemption
-"345d3e19fb0ec9e90449e1d379176c7a688a35adf9d5ca26155a13b0d41a76e5" = "Le match est considéré comme une égalité, car des joueurs se sont déconnectés tôt dans la partie.";
+"345d3e19fb0ec9e90449e1d379176c7a688a35adf9d5ca26155a13b0d41a76e5" = "Aucune défaite ne sera comptabilisée, car un ou plusieurs joueurs n'ont pas pu poursuivre le match.";
 // VSHistory_AnnotationNocontest
 "5eae85742cc0226a885daaa41367423d21d59db06f3b725f383e946ed0b60543" = "Match annulé.";
 // VSHistory_AnnotationPenalty
@@ -1736,6 +1804,8 @@
 "fb9af75d654d6d0d55fdd61076053dedeb375305e892c2173e8295cac037e0eb" = "Derniers";
 // VSHistory_Lose
 "cba9de8f2cd7345abd56500e8784a5608f9906937f3f7a52a4daa76178fde787" = "DÉFAITE";
+// VSHistory_Measurement
+"246eb5adc5115124683d6eb50f2eb72c1cee73aa8abfa3b36a13247534dbe2f7" = "Calcul de la Force X...";
 // VSHistory_NextBattle
 "983efa5094f5f16b194c76aa462dd2dceb5f0b57247e086794c56616b98d5ce9" = "Suivant";
 // VSHistory_NoData
@@ -1744,6 +1814,8 @@
 "7975246140d003c121a0de9b681d638508cf29219527d7bcf1b362d2746a8daf" = "Données de match indisponibles";
 // VSHistory_NotAvailableDescription
 "49102643b4364bdc31c8ecc73feb752a4dcbef03e382c67344b96beec9d1a9de" = "Seules les 50 entrées les plus récentes sont disponibles.";
+// VSHistory_OutfitBonus
+"887f3673ecf72ade3035b7933cb9aa943219a921a6e3022d4c01a02507655d6e" = "(Bonus de synergie x{ 0 })";
 // VSHistory_PreviousBattle
 "1857f34d1137fd47f31da2f57dab17f63cd80bff32ba70dcca5dc2ba3f7ed96a" = "Précédent";
 // VSHistory_Private
@@ -1764,12 +1836,22 @@
 "350a4395a5416a2911252300487f2f8a3b133fc58de2cf16713a6dcddaa7ac39" = "Points de rang";
 // VSHistory_UdemaePointScore
 "da9fae0bfa8b3fd6a7fa0da81da14321d946aa25eb05c54d5c2ed5fb8e4b9d93" = "{ 0 } p.";
+// VSHistory_UdemaeReset
+"6c0f553dbfcafd883551da4c8c64dd134a3a71b1d4893190d001e5988647eb8f" = "Série interrompue";
 // VSHistory_UdemaeUp
 "c5a04c6c1bdb81c29c5365ee2611b758b7de5cd547dc18c27c1e34d2100be5ef" = "Tu t'améliores!";
 // VSHistory_Win
 "a2f6a907beb844b206f0faaf126a46d89b57ab729a2c36c2eadc097b693afeb2" = "VICTOIRE";
 // VSHistory_WinMeterGuide
 "fee51d1d05dee211c7a8f9755956ddf21dc66cbbb673e8960ff6e277f82b8c93" = "Victoires et défaites";
+// VSHistory_Wins
+"82d0b66d23e71b707df04d359942a295c875b09954efd0b7d3036ecd9fa399cb" = "Victoires consécutives : { 0 }";
+// VSHistory_Xcrown
+"2ed41d87c90bfa1c6fc302022b563d5f8bf16b6f130bfe04a12666a9566586e2" = "Couronne";
+// VSHistory_Xmatch
+"db6e760ce021cbf01d2b2af0622fe36e7ce159813729ce0be9a4141cd663b91f" = "Match X";
+// VSHistory_Xpower
+"6725bbd5521daed0aea6e78bbb0a94be60a353be27c75ce4b405937212eb482c" = "Force X : { 0 }";
 // Welcome_About
 "f1586186e0c39db69a43dacc571c0a2f8514ebe856861f3cfabaf1cceb2128bb" = "SplatNet 3 est un service associé à Splatoon 3.<br />Les fonctionnalités décrites ici sont loin d'être exhaustives!";
 // Welcome_Feature1
@@ -1798,104 +1880,48 @@
 "98ab8d5fc0c7c01c529f4c59d07fb7af3517c1dae2b880f1f1e7fa6447767a9f" = "Boutique My Nintendo";
 // Welcome_Widgets
 "e42570b0044521021434c0b5d16d577d81861fe1f5c4eb594a025d305122c7fb" = "Widgets";
-// Widgets_AlbumDescription
-"6c09243d6c1861e27d63284d905217bc0d017867ee2716a7241d2d633005300a" = "Voir les images de l'album de SplatNet 3.";
-// Widgets_AlbumNoPhoto
-"6f7c3e4dc7c2f3230df2721bfb2b24974f905fe7e5562c1132cf96e4f93c13be" = "Tes super photos de Splatoon 3 apparaîtront ici!";
-// Widgets_AlbumTitle
-"5745e6cf37326c23451541a24e62fbe7a015f8abdd199bec0bfd3ffd357e82cf" = "Album";
-// Widgets_EquipmentsDescription
-"d1fbfc8e580ef35db68e106cc2601a066e4e803be4fa742727d1d62c771bf21d" = "Voir ton équipement actuel dans Splatoon 3.";
-// Widgets_EquipmentsTitle
-"2bfe76ed6ddd1566c623f14278a4de2fe048dfdd3cbd3b12a7247649134eeaf1" = "Équipement actuel";
-// Widgets_ErrorsNoData
-"00636b567577ae85a5f92c98d13764f5473f4bfde3774b175011517d85c88e76" = "Ce widget est associé à Splatoon 3. Les données qui l'alimentent sont recueillies pendant que tu joues au jeu.";
-// Widgets_ErrorsNotLoggedIn
-"e16e3edf25cb3432920a65718fb19df7aaba5995ed6990244cb3ae7adb18d2ee" = "Connecte-toi à l'application pour téléphone intelligent Nintendo Switch Online.";
-// Widgets_ErrorsOutOfService
-"4fcecec3697493df4e1fda59f02338b7cf16696e01cf8ba990571e610140726e" = "Actuellement indisponible";
-// Widgets_ErrorsUpdateRequired
-"db5f6fa63acf6ad564d9f41d5283a85031c9be2e0f09f25ac90ab99dea6bb831" = "Tu dois mettre à jour l'application pour téléphone intelligent Nintendo Switch Online.";
-// Widgets_Loading
-"9349870f0195bee06c49131a5336eae5ba5b03c9c3fbbccfbda932a43f04b43b" = "Chargement...";
-// Widgets_StagesBankara
-"c5ecb1b4810d0f52ecd11939d4af015d25015fd30829466c4829d06733cb0684" = "Match anarchie";
-// Widgets_StagesCoop
-"286c2474225a669afe85633b852854d922eb33b161ba8906c2ec1b374ca124a1" = "Salmon Run";
-// Widgets_StagesDatetimeFormat
-"089496aa094f44d5a25c4c6bcef4f095fb41a03d64e6a6c4b3f7929161445d6b" = "dd-MM HH:mm";
-// Widgets_StagesDescription
-"9f3d2ff275a87c51ac27240808495e799692e064f5448d00a987794361fb4e06" = "Voir l'horaire des cartes de Splatoon 3.";
-// Widgets_StagesDescriptionAndroid
-"25baf3fc9e3f022c47ce979100714188f3862eb99d7e27169750f1a27d1ee944" = "Voir l'horaire des cartes de Splatoon 3 ainsi que l'équipement actuel.";
-// Widgets_StagesFestMatch
-"763425040e9bdc92a8f175290e573dfa7bf36222e6d430ed25426571a660ce11" = "Festival en cours!";
-// Widgets_StagesFestMatchAnnounced
-"e21cb454675a1a3ca9d423b7d6ad61763bc603234a6be4210a47e3070141780b" = "Un festival commence bientôt!";
-// Widgets_StagesLeague
-"26f950bb5bea0406794b88b21b9b334b4db78eab374fc2c09e0f413ef810006b" = "Match de ligue";
-// Widgets_StagesNoData
-"6d32bd24432306144ff77e5199964b3b6fd266dc029f47ecfbe9e3d3e96888a2" = "Horaire indisponible.";
-// Widgets_StagesNowOpen
-"b147f1ec29300a8cf8222869add46c81d904fa3bfd3b188bba41130c48b8e955" = "Actuel";
-// Widgets_StagesPreviewScheduleStage1
-"bffcbdb807e53d78f5db771cc2e68b826ad8cb837a48b206eeabc995a2eea8d4" = "Réservoir Rigadelle";
-// Widgets_StagesPreviewScheduleStage2
-"8c64d754ab7c76dcde432978b0c6a7a4ff1c4f722620c99593674347e54465b8" = "Marché Grefin";
-// Widgets_StagesPreviewScheduleStage3
-"1de10cb35874019501a557930d1c5f5c6a46e2ae08d3dab34565d5e895e5b8c7" = "Banlieue Balibot";
-// Widgets_StagesPreviewScheduleStage4
-"b339fc000476662de2a06e1b6daa0dddbd299c301a7c264dbbed2117e18d9ea8" = "Canyon aux colonnes";
-// Widgets_StagesPreviewScheduleTimeSpan1
-"1ddee39ff22001a2c34d3309c0c18d10a542c9876830282bc15f47c200bd1d37" = "10:00 - 12:00";
-// Widgets_StagesPreviewScheduleTimeSpan2
-"3d673645e01b21ab1b24b1a1170ad35990e80881f8d3b3385a5ac835d0848996" = "12:00 - 14:00";
-// Widgets_StagesRegular
-"8c7e00412205d8cc588f8cfc055814a6f66d2042a283133d8b4ebc425499fcf8" = "Match classique";
-// Widgets_StagesSeparator
-"13341de71f4147b50bd652103f6928235a1ee4b8e744a36d5fc1027d4274d3df" = "à";
-// Widgets_StagesSettingsMode
-"58bb3c55c46c45eb1f85e03cd168472573a795cbd8ab563641a45a89280409c4" = "Mode";
-// Widgets_StagesSuppliedWeapons
-"106d2be15bb4291f3f35964f64083926f5c96134efabfec1cfd5df8ca7f2296a" = "Armes fournies";
-// Widgets_StagesTimeFormat
-"74c680f8ebb5c4c5459281187004195627ec983a6400927be8b134b139c2132d" = "HH:mm";
-// Widgets_StagesTitle
-"953ba00b840ad1d122137d29e4a7e010d2a82ddbc1d2c478e46691c9b4b5bbf0" = "Horaire des cartes";
-// Widgets_StagesXmatch
-"24c92756a447af77bd0ee4813acea59b0ee79c46da27dc2338442a2cc38293d6" = "Match X";
-// Widgets_StagesYearDatetimeFormat
-"6c98b27367a580a45b4b38ea053c013b04005a45f9423c76a040998fbc355d87" = "dd-MM-yyyy HH:mm";
-// Widgets_VsCount
-"c3850f235408152b3f7c2748c7074073acbd6f10a0e1cb19f2867debab77a556" = "Progression : %@";
-// Widgets_VsKnockout
-"fe6b79f8de685535d889b6305d2adef95046d24b54766b47a202bb8c2a2f47ef" = "K.-O.!";
-// Widgets_VsNoData
-"7c36cc1f37bba317e2bdda5da7da8646b77346f0bb3fa5e4f8d62560e0722db9" = "Il n'existe aucune donnée de match à afficher.";
-// Widgets_VsPercent
-"9aafbe17c231bce2b5ff24b329ac2a71f57eb074f366528fb985121b5c2b43de" = "%@ %";
-// Widgets_VsPreviewRule
-"991278172c454764a87345457c7ef0a00b881307625708c19f6cdfd84447aff8" = "Guerre de territoire";
-// Widgets_VsPreviewVsLosePercent
-"de5c52694163632f5728890d838f9acf32c4b7ec8118ce6906a8c8e6623feaba" = "38,4 %";
-// Widgets_VsPreviewVsLoseTurfPoint
-"2a7e76ac62d56c224cc06841479d63a59253e61d5daf32ed796c051c6a96e775" = "533 p.";
-// Widgets_VsPreviewVsWinPercent
-"2fbf1401be2e9e8644e5634db29d95519e0ccb7e2d3536c688e78b24c615f856" = "63,7 %";
-// Widgets_VsPreviewVsWinTurfPoint
-"beecb6ce10d6357350b542efd299d60e2ca736511a1be3026b3af0da39b3225e" = "1162 p.";
-// Widgets_VsTurfPoint
-"55e91d93cd74b5c8cb05ccb216b58b78b7f12e2a605b084a045c48f244676d2c" = "%@ p.";
-// Widgets_VshistoryDescription
-"9dea92299d637fcfcd8b8c8d844e00e2a903c5ab19fc57ab06af0676ca6cf106" = "Consulter le journal de matchs de Splatoon 3.";
-// Widgets_VshistoryDraw
-"b4a40bebf1aab30af3e46559314211b21231f62be22cddea66f0327b85636363" = "ÉGALITÉ";
-// Widgets_VshistoryLose
-"80272cfbe2df2b4396b14845e50496c0e2fb3bcfd0b6995f9ff1dc58458ca023" = "DÉFAITE";
-// Widgets_VshistoryTitle
-"6031c92a5f8d7b0a4e8e4932658fae95869535cc20a675e8f51f84a0b845cd25" = "Journal de matchs";
-// Widgets_VshistoryWin
-"070dd3cec699a678672bf22af57a410f269ab08b455b6b77d760843f00cd073f" = "VICTOIRE";
+// XRanking_All
+"108a270a7ea1532cbee7cb22f5100bd0fed5c2d9047d6bb9638c2df02331de7d" = "Tout afficher";
+// XRanking_AppName
+"f67402d45003f8a73a909d2b8c4eb6b697e1e579512d23b63860fc868ac8f8ab" = "Classements X";
+// XRanking_Atlantic
+"d554c59d8f5e639a2da276e9a9fb431b22369039608e450eb7078b81c1d24e4e" = "Division Tentatek";
+// XRanking_EstimatedRank
+"d2019b64d564b7bd8598b0369cfdabd03536bf96bdbdafcb62af0fe6dc21d6f8" = "Classement estimé : { 0 }";
+// XRanking_Measurement
+"8f108d92036ede9dc96fe14abf4f6b971aacd4d1f3751e40d132e72045206e03" = "Calcul...";
+// XRanking_Open
+"e872ea8c34a157481e7ad5fa5194d49021b88b8a1959e97a292e892dfe2e22ca" = "En cours!";
+// XRanking_Pacific
+"40cffafbcd041c642c261c9d4259b6adba995cb8d22d2ad9cd761ad6362f8b09" = "Division Pionic";
+// XRanking_PastRankings
+"d93b09867f866ea8b934b2c6851011aacd0deaadaa83f0f836450e14a9652fb5" = "Anciens classements";
+// XRanking_Period
+"1b9fef59e0774d07828d956fa30e503158f9511b5be8a292f943773e5cb6373e" = "{ 0 } - { 1 }";
+// XRanking_Rank
+"6c9d28c93c2cdf7718198c8772e17066c1930cd1ac6ecb645ae1cf2728ec27dd" = "#{ 0 }";
+// XRanking_Region
+"e4f6e8191c589b7f352dfd0f704f2af46f36bfed8d3d7e6b31643116a2dea051" = "Division";
+// XRanking_SeeRanking
+"8d35a1562990005e4e5c08f78c26a71a6b6e7e6bcf1966e6432050c17a563636" = "Voir le classement";
+// XRanking_SeeWeaponTop
+"cd782e5cfbdba510ba8eceaecec5ee6a743e17eea82e27ae4925bea139287a09" = "Spécialistes de chaque arme";
+// XRanking_SelectWeapon
+"2dd5860d0f646daeb6c9b7b7b74406df9caecb2b23adb2fef91009d380787ef3" = "Sélectionner une arme";
+// XRanking_Title
+"4b2f052902d83c96e45922047e4a065fa509ebba026c2d8a5a1a78183fd7e107" = "Classements X";
+// XRanking_Top500
+"93ed7413501a7b60670168f20c728d4503e4917a95a0ebf862a2f4e20c2b803f" = "Top 500";
+// XRanking_TopPlayers
+"def0451fc831c43db70fd463504f5269113bd67808bb53dfbf609323a0e55f51" = "Top du top";
+// XRanking_WeaponTop
+"4aa907af052fceb0fb9e7bc06df23959b425fe3e135c61fe414ba67f7754651b" = "Spécialistes de chaque arme";
+// XRanking_WeaponTopSingular
+"e6d6b1b10ff3a61eab22a33a9c62347649fa520e9d6913d4b0fff3de8e34f540" = "Spécialiste de cette arme";
+// XRanking_Xcrown
+"72f6e32e0341165cb9efc7239a72a4089bf2b4c165188f0485d856efbb6fcce2" = "Couronne";
+// XRanking_Xpower
+"f2c1f13dcc6e78013b42ef07eab51de9d321092dada3931caa25d8394e31215c" = "<small>Force X :</small> { 0 }";
 // CoopHistory_EventWave1
 "fd468293bf7ee52c7b0ac1a2cdc3c14f0024817c58e96e82bd4b6411f9119d66" = "Frenesíes";
 // CoopHistory_EventWave2

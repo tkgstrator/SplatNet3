@@ -1,10 +1,7 @@
-from threading import local
+# from threading import local
 from locales import *
 from nameplate import *
 from badge import *
-from weapons import *
-from gears import *
-from skins import *
 from content import *
 import requests
 import json
@@ -12,6 +9,18 @@ import base64
 import hashlib
 import os
 import re
+
+
+def get_merged_json(locale: str) -> json:
+    # JSONをマージして読み込み
+    revisions = os.listdir("resources")
+    locales = list(
+        map(lambda x: json.load(open(f"resources/{x}/{locale}.json")), revisions)
+    )
+    output = {}
+    for locale in locales:
+        output.update(locale)
+    return output
 
 
 def get_base64(plain: str) -> str:
@@ -24,7 +33,7 @@ def get_hash(plain: str) -> str:
 
 def format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
-    value = value.replace('"', '')
+    value = value.replace('"', "")
     value = value.replace("\n", "")
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
 
@@ -32,7 +41,7 @@ def format(key: str, value: str) -> str:
 def localized_format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
     value = value.replace("\n", "")
-    value = value.replace('"', '')
+    value = value.replace('"', "")
     return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
 
 
@@ -60,6 +69,7 @@ def tuple_to_dict(tuple) -> dict:
         dict[k] = v
     return dict
 
+
 def get_revision() -> str:
     # Revisionを取得
     url = "https://api.lp1.av5ja.srv.nintendo.net/?lang=ja-JP"
@@ -68,18 +78,11 @@ def get_revision() -> str:
     revision = re.search(
         'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
     ).group(1)
+    print("Revision:", revision)
     return revision
 
-def get_localized():
-    # Revisionを取得
-    url = "https://api.lp1.av5ja.srv.nintendo.net/?lang=ja-JP"
-    response = requests.get(url)
-    response.encoding = response.apparent_encoding
-    revision = re.search(
-        'src="/static/js/main\.([a-f0-9]{8}).js"', response.text
-    ).group(1)
-    print("Revision:", revision)
 
+def get_localized(revision):
     # JavaScriptからlocaleとhashを取得
     base_url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
     response = requests.get(base_url).text
@@ -89,7 +92,6 @@ def get_localized():
     # Internal codeを取得
     codes = re.findall('"./([a-z]{2}-[A-Z]{2}).json":\[(.*?)\]', response)
     codes = tuple_to_dict(list(map(lambda x: (x[1].split(",")[-1], x[0]), codes)))
-    print(codes)
 
     # イカリング3から言語データのマップを作成
     data: list[Locale] = get_locales()
@@ -108,7 +110,7 @@ def get_localized():
     # 英語を追加
     lang: Locale = list(filter(lambda x: x.locale == "locale99", data))[0]
     languages[65468] = {
-        "locale": None,
+        "locale": "locale14",
         "hash": None,
         "code": "en-US",
         "xcode": lang.xcode,
@@ -145,6 +147,7 @@ def get_localized():
 
         data = res["CommonMsg/Coop/CoopStageName"]
         for k, v in data.items():
+            k = f"Cop_{k}"
             params.append(format(k, v))
             localized.append(localized_format(k, v))
 
@@ -228,7 +231,6 @@ def get_localized():
 
         # フォントデータを追加
         params.append(format("Common_SplatNet3_Locale", language.code))
-        print(language)
 
         # DeepL翻訳データを変換
         try:
@@ -250,7 +252,11 @@ def get_localized():
 
         match = re.search("JSON.parse\('(.*)'\)\}\}", response).group(1)
         data = json.loads(match.encode("utf-8").decode("unicode-escape"))
-        data = camel_case(data)
+        makdirs(f"resources/{revision}")
+        with open(f"resources/{revision}/{language.locale}.json", mode="w") as w:
+            w.write(json.dumps(data, indent=2, ensure_ascii=False))
+
+        data = camel_case(get_merged_json(language.locale))
         for k, v in data.items():
             if k == "CoopHistory_Wave":
                 value = v.split(" ")[0]
@@ -310,7 +316,7 @@ def get_localized_text(localized: list[str]):
         f.write("}")
 
 
-def get_hashes(revision: str):
+def get_hashes(revision):
     url = f"https://api.lp1.av5ja.srv.nintendo.net/static/js/main.{revision}.js"
     response = requests.get(url).text
     # Hash
@@ -331,47 +337,13 @@ def get_hashes(revision: str):
         ]
         f.writelines(headers)
         hashes = sorted(hashes, key=lambda tup: tup[1].capitalize())
-
         for hash in hashes:
-            # Key + Value
-            key = hash[1][0].upper() + hash[1][1:]
-            value = hash[0]
-            f.write(f'\tcase {key} = "{value}"\n')
-            # Write Files
-            try:
-                with open(f"../Sources/SplatNet3/Enum/Requests/{key}.swift", mode="x") as fw:
-                    headers = [
-                        f"//\n",
-                        f"//  {key}.swift\n",
-                        f"//  SplatNet3\n",
-                        f"//\n",
-                        f"//  Created by tkgstrator on 2022/09/22\n",
-                        f"//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-                        f"//\n",
-                        f"\n\n",
-                        f"import Foundation\n",
-                        f"import Alamofire\n",
-                        f"import SplatNet\n\n",
-                        f"final class {key}: GraphQL" + " {\n",
-                        f"\tpublic typealias ResponseType = {key}.Response\n",
-                        f"\tvar hash: SHA256Hash = .{key}\n",
-                        f"\tvar variables: [String: String] = [:]\n",
-                        f"\tvar parameters: Parameters?\n",
-                        f"\n",
-                        "\tinit() {}\n\n",
-                        "\tpublic struct Response: Codable {\n",
-                        "\t}\n",
-                        "}\n",
-                    ]
-                    fw.writelines(headers)
-                    fw.close()
-            except:
-                pass
+            f.write(f'\tcase {hash[1]} = "{hash[0]}"\n')
         f.write("}")
 
 
 def get_badge(version: str = "111"):
-    url = f"https://leanny.github.io/splat3/data/mush/{version}/BadgeInfo.json"
+    url = f"https://leanny.github.io/splat3//data/mush/{version}/BadgeInfo.json"
     # そのままだと読み込めないので置換する
     response = (
         requests.get(url)
@@ -403,11 +375,12 @@ def get_badge(version: str = "111"):
         ) as f:
             content = to_dict(Content(f"{badge.Name}"))
             f.write(json.dumps(content))
+
     makdirs(f"../Sources/SplatNet3/Enum/")
-    with open(f"../Sources/SplatNet3/Enum/Keys/BadgeKey.swift", mode="w") as f:
+    with open(f"../Sources/SplatNet3/Enum/BadgeType.swift", mode="w") as f:
         headers = [
             "//\n",
-            "//  BadgeKey.swift\n",
+            "//  BadgeType.swift\n",
             "//  SplatNet3\n",
             "//\n",
             "//  Created by tkgstrator on 2022/09/22\n",
@@ -415,25 +388,7 @@ def get_badge(version: str = "111"):
             "//\n",
             "\n\n",
             "import Foundation\n\n",
-            "public enum BadgeKey: String, CaseIterable, Identifiable, Codable {\n",
-            "\tpublic var id: String { rawValue }\n",
-        ]
-        f.writelines(headers)
-        for badge in badges:
-            f.write(f"\tcase {badge.Name} = \"{get_hash(badge.Name)}\"\n")
-        f.write("}")
-    with open(f"../Sources/SplatNet3/Enum/Ids/BadgeId.swift", mode="w") as f:
-        headers = [
-            "//\n",
-            "//  BadgeId.swift\n",
-            "//  SplatNet3\n",
-            "//\n",
-            "//  Created by tkgstrator on 2022/09/22\n",
-            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
-            "import Foundation\n\n",
-            "public enum BadgeId: Int, CaseIterable, Identifiable, Codable {\n",
+            "public enum BadgeType: Int, CaseIterable, Identifiable, Codable {\n",
             "\tpublic var id: Int { rawValue }\n",
         ]
         f.writelines(headers)
@@ -441,159 +396,9 @@ def get_badge(version: str = "111"):
             f.write(f"\tcase {badge.Name} = {badge.Id}\n")
         f.write("}")
 
-def get_skins(version: str = "111"):
-    url = f"https://leanny.github.io/splat3/data/mush/{version}/CoopSkinInfo.json"
-    response = requests.get(url).text.replace("__RowId", "RowId")
-    elements = list(
-        map(
-            lambda gear: GearElement.from_json(json.dumps(gear)),
-            json.loads(response),
-        )
-    )
-    with open(f"../Sources/SplatNet3/Enum/Keys/SkinInfoKey.swift", mode="w") as f:
-        headers = [
-            "//\n",
-            f"//  SkinInfoKey.swift\n",
-            "//  SplatNet3\n",
-            "//\n",
-            "//  Created by tkgstrator on 2022/09/22\n",
-            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
-            "import Foundation\n\n",
-            f"public enum SkinInfoKey: String, CaseIterable, Identifiable, Codable" + " {\n",
-            "\tpublic var id: String { rawValue }\n",
-        ]
-        f.writelines(headers)
-        for element in elements:
-            f.write(f"\tcase {element.RowId} = \"{get_hash(element.RowId)}\"\n")
-        f.write("}")
-        f.close()
-    with open(f"../Sources/SplatNet3/Enum/Ids/SkinInfoId.swift", mode="w") as f:
-        headers = [
-            "//\n",
-            f"//  SkinInfoId.swift\n",
-            "//  SplatNet3\n",
-            "//\n",
-            "//  Created by tkgstrator on 2022/09/22\n",
-            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
-            "import Foundation\n\n",
-            f"public enum SkinInfoId: Int, CaseIterable, Identifiable, Codable" + " {\n",
-            "\tpublic var id: Int { rawValue }\n",
-        ]
-        f.writelines(headers)
-        for element in elements:
-            f.write(f"\tcase {element.RowId} = {element.Id}\n")
-        f.write("}")
-        f.close()
-
-
-def get_gears(version: str = "111"):
-    results = []
-    gears = ["Head", "Clothes", "Shoes"]
-    for gear in gears:
-        url = f"https://leanny.github.io/splat3/data/mush/{version}/GearInfo{gear}.json"
-        response = requests.get(url).text.replace("__RowId", "RowId")
-        elements = list(
-            map(
-                lambda gear: GearElement.from_json(json.dumps(gear)),
-                json.loads(response),
-            )
-        )
-        results.extend(elements)
-        with open(f"../Sources/SplatNet3/Enum/Keys/GearInfo{gear}Key.swift", mode="w") as f:
-            headers = [
-                "//\n",
-                f"//  GearInfo{gear}Key.swift\n",
-                "//  SplatNet3\n",
-                "//\n",
-                "//  Created by tkgstrator on 2022/09/22\n",
-                "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-                "//\n",
-                "\n\n",
-                "import Foundation\n\n",
-                f"public enum GearInfo{gear}Key: String, CaseIterable, Identifiable, Codable" + " {\n",
-                "\tpublic var id: String { rawValue }\n",
-            ]
-            f.writelines(headers)
-            for element in elements:
-                f.write(f"\tcase {element.RowId} = \"{get_hash(element.RowId)}\"\n")
-            f.write("}")
-            f.close()
-        with open(f"../Sources/SplatNet3/Enum/Ids/GearInfo{gear}Id.swift", mode="w") as f:
-            headers = [
-                "//\n",
-                f"//  GearInfo{gear}Id.swift\n",
-                "//  SplatNet3\n",
-                "//\n",
-                "//  Created by tkgstrator on 2022/09/22\n",
-                "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-                "//\n",
-                "\n\n",
-                "import Foundation\n\n",
-                f"public enum GearInfo{gear}Id: Int, CaseIterable, Identifiable, Codable" + " {\n",
-                "\tpublic var id: Int { rawValue }\n",
-            ]
-            f.writelines(headers)
-            for element in elements:
-                f.write(f"\tcase {element.RowId} = {element.Id}\n")
-            f.write("}")
-            f.close()
-        with open(f"../Sources/SplatNet3/Enum/Keys/GearInfoKey.swift", mode="w") as f:
-            headers = [
-                "//\n",
-                f"//  GearInfoKey.swift\n",
-                "//  SplatNet3\n",
-                "//\n",
-                "//  Created by tkgstrator on 2022/09/22\n",
-                "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-                "//\n",
-                "\n\n",
-                "import Foundation\n\n",
-                f"public enum GearInfoKey: String, CaseIterable, Identifiable, Codable" + " {\n",
-                "\tpublic var id: String { rawValue }\n",
-            ]
-            f.writelines(headers)
-            for element in results:
-                f.write(f"\tcase {element.RowId} = \"{get_hash(element.RowId)}\"\n")
-            f.write("}")
-            f.close()
-
-
-def get_weapons(version: str = "111"):
-    url = f"https://leanny.github.io/splat3/data/mush/{version}/WeaponInfoMain.json"
-    response = requests.get(url).text.replace("__RowId", "RowId")
-    weapons = list(
-        map(
-            lambda nameplate: WeaponElement.from_json(json.dumps(nameplate)),
-            json.loads(response),
-        )
-    )
-    for weapon in weapons:
-        url = f"https://leanny.github.io/splat3/images/weapon_flat/Path_Wst_{weapon.RowId}.png"
-        print(url)
-
-        makdirs(
-            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset"
-        )
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/{weapon.RowId}.png",
-            mode="wb",
-        ) as f:
-            f.write(requests.get(url).content)
-
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/Contents.json",
-            mode="w",
-        ) as f:
-            content = to_dict(Content(f"{weapon.RowId}"))
-            f.write(json.dumps(content))
-
 
 def get_nameplate(version: str = "111"):
-    url = f"https://leanny.github.io/splat3/data/mush/{version}/NamePlateBgInfo.json"
+    url = f"https://leanny.github.io/splat3//data/mush/{version}/NamePlateBgInfo.json"
     # そのままだと読み込めないので置換する
     response = requests.get(url).text.replace("__RowId", "RowId")
     nameplates = list(
@@ -623,10 +428,10 @@ def get_nameplate(version: str = "111"):
             f.write(json.dumps(content))
 
     makdirs(f"../Sources/SplatNet3/Enum/")
-    with open(f"../Sources/SplatNet3/Enum/Ids/NameplateId.swift", mode="w") as f:
+    with open(f"../Sources/SplatNet3/Enum/NameplateType.swift", mode="w") as f:
         headers = [
             "//\n",
-            "//  NameplateId.swift\n",
+            "//  NameplateType.swift\n",
             "//  SplatNet3\n",
             "//\n",
             "//  Created by tkgstrator on 2022/09/22\n",
@@ -634,30 +439,12 @@ def get_nameplate(version: str = "111"):
             "//\n",
             "\n\n",
             "import Foundation\n\n",
-            "public enum NameplateId: Int, CaseIterable, Identifiable, Codable {\n",
+            "public enum NamePlateType: Int, CaseIterable, Identifiable, Codable {\n",
             "\tpublic var id: Int { rawValue }\n",
         ]
         f.writelines(headers)
         for nameplate in nameplates:
             f.write(f"\tcase {nameplate.RowId} = {nameplate.Id}\n")
-        f.write("}")
-    with open(f"../Sources/SplatNet3/Enum/Keys/NameplateKey.swift", mode="w") as f:
-        headers = [
-            "//\n",
-            "//  NameplateKey.swift\n",
-            "//  SplatNet3\n",
-            "//\n",
-            "//  Created by tkgstrator on 2022/09/22\n",
-            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
-            "import Foundation\n\n",
-            "public enum NameplateKey: String, CaseIterable, Identifiable, Codable {\n",
-            "\tpublic var id: String { rawValue }\n",
-        ]
-        f.writelines(headers)
-        for nameplate in nameplates:
-            f.write(f"\tcase {nameplate.RowId} = \"{get_hash(nameplate.RowId)}\"\n")
         f.write("}")
 
 
@@ -672,16 +459,12 @@ def to_dict(obj):
 
 if __name__ == "__main__":
     revision = get_revision()
+    print(revision)
     # 翻訳ファイル
-    get_localized()
+    get_localized(revision)
     # ハッシュ
-    # get_hashes(revision)
-    # ギア
-    # get_gears("120")
+    get_hashes(revision)
     # バッジ
-    # get_badge("120")
+    get_badge("200")
     # ネームプレート
-    # get_nameplate("120")
-    # スキン
-    # get_skins("120")
-    # get_weapons("120")
+    get_nameplate("200")
