@@ -465,6 +465,6 @@ if __name__ == "__main__":
     # ハッシュ
     get_hashes(revision)
     # バッジ
-    get_badge("200")
+    # get_badge("200")
     # ネームプレート
-    get_nameplate("200")
+    # get_nameplate("200")
