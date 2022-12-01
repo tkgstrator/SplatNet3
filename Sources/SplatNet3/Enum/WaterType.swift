@@ -47,7 +47,7 @@ public enum WaterType: RawRepresentables {
     case High_Tide
 }
 
-public enum WaterId: Int, CaseIterable {
+public enum WaterId: Int, CaseIterable, Codable {
     public var key: Int { rawValue }
     case Low_Tide
     case Middle_Tide

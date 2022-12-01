@@ -13,8 +13,11 @@ import re
 def get_merged_json(locale: str) -> json:
     # JSONをマージして読み込み
     revisions = os.listdir("resources")
-    data = list(map(lambda x: json.load(open(f"resources/{x}/{locale}.json")), revisions))
-    return {**data[0], **data[1]}
+    locales = list(map(lambda x: json.load(open(f"resources/{x}/{locale}.json")), revisions))
+    output = {}
+    for locale in locales:
+        output.update(locale)
+    return output
 
 def get_base64(plain: str) -> str:
     return base64.b64encode(plain.encode())
@@ -249,13 +252,7 @@ def get_localized(revision):
         
         data = camel_case(get_merged_json(language.locale))
         for k, v in data.items():
-            if k == "Challenge_Challenge29Title":
-                params.append(format(k, v))
-                localized.append(localized_format(k, v))
-                k = "Cop_Shakeship"
-                params.append(format(k, v))
-                localized.append(localized_format(k, v))
-            elif k == "CoopHistory_Wave":
+            if k == "CoopHistory_Wave":
                 value = v.split(" ")[0]
                 params.append(format("CoopHistory_Wave1", f"{value} 1"))
                 params.append(format("CoopHistory_Wave2", f"{value} 2"))
@@ -462,6 +459,6 @@ if __name__ == "__main__":
     # ハッシュ
     get_hashes(revision)
     # バッジ
-    get_badge("200")
+    # get_badge("200")
     # ネームプレート
-    get_nameplate("200")
+    # get_nameplate("200")

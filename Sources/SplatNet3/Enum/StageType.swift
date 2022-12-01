@@ -53,7 +53,7 @@ public enum StageType: RawRepresentables {
     case Shakedent
 }
 
-public enum StageId: Int, CaseIterable {
+public enum StageId: Int, CaseIterable, Codable {
     public var key: Int { rawValue }
     
     case Unknown        = -1

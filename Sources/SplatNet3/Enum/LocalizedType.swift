@@ -922,8 +922,6 @@ public enum LocalizedType: String, CaseIterable {
 	case Challenge_Challenge29Reward = "3f215868c8f9218f28edcfaefd8dbf7d0d4684d0a03d4ed11ece28a91febbd9f"
 	/// 難破船ドン・ブラコ
 	case Challenge_Challenge29Title = "0005c13badd6e553a0fefe2e35612bf404fbf358aa9bbdbe46071e34ee45f143"
-	/// 難破船ドン・ブラコ
-	case Cop_Shakeship = "1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961"
 	/// チャレンジャー
 	case Challenge_Challenger = "03dcce15138fb3b0e2f9af1d203bf047e81fae1fa555eae03702a2af84a76d31"
 	/// 支援するチャレンジを選ぶ

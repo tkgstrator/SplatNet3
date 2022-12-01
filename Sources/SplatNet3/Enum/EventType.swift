@@ -52,7 +52,7 @@ public enum EventType: RawRepresentables {
     case Mudmouth
 }
 
-public enum EventId: Int, CaseIterable {
+public enum EventId: Int, CaseIterable, Codable {
     public var key: Int { rawValue }
     case Water_Levels
     case Rush
