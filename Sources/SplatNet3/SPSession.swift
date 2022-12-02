@@ -15,32 +15,48 @@ open class SPSession: Authorize, ObservableObject {
     public override init() {}
 
     override func request(_ request: IksmSession) async -> [String : String]? {
-        requests.append(SPProgress(request))
+        DispatchQueue.main.async(execute: {
+            self.requests.append(SPProgress(request))
+        })
         let response: [String: String]? = await super.request(request)
-        requests.success()
+        DispatchQueue.main.async(execute: {
+            self.requests.success()
+        })
         return response
     }
 
     override open func request<T>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType where T : RequestType {
         do {
-            requests.append(SPProgress(request))
+            DispatchQueue.main.async(execute: {
+                self.requests.append(SPProgress(request))
+            })
             let response: T.ResponseType = try await super.request(request)
-            requests.success()
+            DispatchQueue.main.async(execute: {
+                self.requests.success()
+            })
             return response
         } catch(let error) {
-            requests.failure()
+            DispatchQueue.main.async(execute: {
+                self.requests.failure()
+            })
             throw error
         }
     }
 
     override open func request<T>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String where T : RequestType {
         do {
-            requests.append(SPProgress(request))
+            DispatchQueue.main.async(execute: {
+                self.requests.append(SPProgress(request))
+            })
             let response: String = try await super.request(request)
-            requests.success()
+            DispatchQueue.main.async(execute: {
+                self.requests.success()
+            })
             return response
         } catch(let error) {
-            requests.failure()
+            DispatchQueue.main.async(execute: {
+                self.requests.failure()
+            })
             throw error
         }
     }

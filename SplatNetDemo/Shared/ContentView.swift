@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import SplatNet
-import SplatNet3
+
+3
 import RealmSwift
 
 struct ContentView: View {

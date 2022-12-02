@@ -35,7 +35,8 @@ let package = Package(
                 "SwiftyBeaver",
                 "SDBridgeSwift",
                 "BetterSafariView"
-            ]),
+            ],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "SplatNet3Tests",
             dependencies: ["SplatNet3"]),

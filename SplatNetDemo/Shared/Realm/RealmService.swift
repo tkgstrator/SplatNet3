@@ -7,8 +7,8 @@
 
 import Foundation
 import RealmSwift
-import SplatNet
-import SplatNet3
+
+3
 import SwiftUI
 
 public actor RealmService: ObservableObject {

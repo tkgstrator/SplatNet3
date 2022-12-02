@@ -69,7 +69,7 @@ struct SignInView: View {
         .onAppear(perform: {
             Task {
                 do {
-                    try await session.getCookie(code: code, verifier: verifier, contentId: contentId)
+//                    try await session.getCookie(code: code, verifier: verifier, contentId: contentId)
 //                    try await session.getCookie(code: code, verifier: verifier)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         /// コレ自体が消えるとちょっと問題があるかも

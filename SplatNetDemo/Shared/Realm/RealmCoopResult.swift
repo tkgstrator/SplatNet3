@@ -7,7 +7,7 @@
 
 import Foundation
 import RealmSwift
-import SplatNet3
+3
 
 final class RealmCoopResult: Object, Identifiable, Codable {
     @Persisted(primaryKey: true) var id: String

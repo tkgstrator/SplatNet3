@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SplatNet3
+3
 
 struct ContentView: View {
     var body: some View {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SplatNet3
+3
 
 public class Session: SplatNet3 {
     override public func getAllCoopHistoryDetailQuery() async throws -> [CoopResult] {

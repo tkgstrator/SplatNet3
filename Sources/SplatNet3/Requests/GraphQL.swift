@@ -1,13 +1,13 @@
 //
 //  GraphQL.swift
-//  
+//  SplatNet2
 //
-//  Created by devonly on 2022/11/24.
+//  Created by tkgstrator on 2021/07/03.
+//  Copyright © 2021 Magi, Corporation. All rights reserved.
 //
 
 import Foundation
 import Alamofire
-
 
 public protocol GraphQL: RequestType {
     var hash: SHA256Hash { get }

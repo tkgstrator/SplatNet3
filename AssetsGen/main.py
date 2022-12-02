@@ -287,7 +287,7 @@ def get_localized(revision):
         makdirs(f"../Sources/SplatNet3/Resources/{language.xcode}.lproj")
         # 翻訳ファイルを書き込み
         with open(
-            f"../Sources/SplatNet3/Resources/{language.xcode}.lproj/localizable.strings",
+            f"../Sources/SplatNet3/Resources/{language.xcode}.lproj/Localizable.strings",
             mode="w",
         ) as f:
             print(f"Converting {language.xcode}")
@@ -338,7 +338,48 @@ def get_hashes(revision):
         f.writelines(headers)
         hashes = sorted(hashes, key=lambda tup: tup[1].capitalize())
         for hash in hashes:
-            f.write(f'\tcase {hash[1]} = "{hash[0]}"\n')
+            key = hash[1][0].upper() + hash[1][1:]
+            value = hash[0]
+            f.write(f'\tcase {key} = "{value}"\n')
+        f.write("}")
+        f.close()
+
+        for hash in hashes:
+            # Key + Value
+            key = hash[1][0].upper() + hash[1][1:]
+            value = hash[0]
+            f.write(f'\tcase {key} = "{value}"\n')
+            # Write Files
+            try:
+                with open(
+                    f"../Sources/SplatNet3/Requests/SplatNet3/{key}.swift", mode="x"
+                ) as fw:
+                    headers = [
+                        f"//\n",
+                        f"//  {key}.swift\n",
+                        f"//  SplatNet3\n",
+                        f"//\n",
+                        f"//  Created by tkgstrator on 2022/09/22\n",
+                        f"//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+                        f"//\n",
+                        f"\n\n",
+                        f"import Foundation\n",
+                        f"import Alamofire\n\n",
+                        f"final class {key}: GraphQL" + " {\n",
+                        f"\tpublic typealias ResponseType = {key}.Response\n",
+                        f"\tvar hash: SHA256Hash = .{key}\n",
+                        f"\tvar variables: [String: String] = [:]\n",
+                        f"\tvar parameters: Parameters?\n",
+                        f"\n",
+                        "\tinit() {}\n\n",
+                        "\tpublic struct Response: Codable {\n",
+                        "\t}\n",
+                        "}\n",
+                    ]
+                    fw.writelines(headers)
+                    fw.close()
+            except:
+                pass
         f.write("}")
 
 
@@ -463,7 +504,7 @@ if __name__ == "__main__":
     # 翻訳ファイル
     get_localized(revision)
     # ハッシュ
-    get_hashes(revision)
+    # get_hashes(revision)
     # バッジ
     # get_badge("200")
     # ネームプレート

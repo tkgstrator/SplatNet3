@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public class Session: SPSession, Authenticator {
+open class SP3Session: SPSession, Authenticator {
     public typealias Credential = UserInfo
 
     public func apply(_ credential: UserInfo, to urlRequest: inout URLRequest) {
@@ -38,7 +38,7 @@ public class Session: SPSession, Authenticator {
     }
 
     func request<T: RequestType>(_ request: T) async throws -> T.ResponseType {
-        let interceptor: AuthenticationInterceptor<Session>? = {
+        let interceptor: AuthenticationInterceptor<SP3Session>? = {
             guard let account = account else {
                 return nil
             }
@@ -49,7 +49,52 @@ public class Session: SPSession, Authenticator {
             .value
     }
 
-    public func getCoopHistoryQuery() async throws -> CoopHistoryQuery.CoopResult {
+    private func getCoopStageScheduleQuery() async throws -> [StageScheduleQuery.CoopSchedule] {
+        return try await request(StageScheduleQuery()).data.coopGroupingSchedule.regularSchedules.nodes
+    }
+
+    private func getCoopHistoryQuery() async throws -> CoopHistoryQuery.CoopResult {
         return try await request(CoopHistoryQuery()).data.coopResult
+    }
+
+    private func getCoopHistoryDetailQuery(resultId: String) async throws -> CoopHistoryDetailQuery.CoopHistoryDetail {
+        return try await request(CoopHistoryDetailQuery(resultId: resultId)).data.coopHistoryDetail
+    }
+
+    private func getCoopHistoryDetailQuery(
+        schedule: CoopHistoryQuery.CoopSchedule,
+        result: CoopHistoryQuery.HistoryDetail
+    ) async throws -> CoopResult {
+        let result: CoopHistoryDetailQuery.CoopHistoryDetail = try await request(CoopHistoryDetailQuery(resultId: result.id)).data.coopHistoryDetail
+        return CoopResult(history: schedule, content: result)
+    }
+
+    open func getAllCoopHistoryDetailQuery() async throws -> [CoopResult] {
+        let nodes: [CoopHistoryQuery.HistoryGroup] = try await getCoopHistoryQuery().historyGroups.nodes
+        let resultIds: [String] = nodes.flatMap({ $0.historyDetails.nodes.map({ $0.id }) })
+        // 最大値の設定
+        DispatchQueue.main.async(execute: {
+            self.requests.append(SPProgress(.COOP_RESULT))
+        })
+        let response: [CoopResult] = try await withThrowingTaskGroup(of: CoopResult.self, body: { task in
+            /// リクエストの追加
+            nodes.forEach({ node in
+                node.historyDetails.nodes.forEach({ result in
+                    task.addTask(operation: { [self] in
+                        return try await getCoopHistoryDetailQuery(schedule: node.asSchedule(), result: result)
+                    })
+                })
+            })
+
+            /// リクエストの実行
+            return try await task.reduce(into: [CoopResult]()) { results, result in
+                results.append(result)
+                let count: Int = results.count
+            }
+        })
+        DispatchQueue.main.async(execute: {
+            self.requests.success()
+        })
+        return response
     }
 }

@@ -1,8 +1,8 @@
 import XCTest
 @testable import Alamofire
-@testable import SplatNet2
+@testable 2
 @testable import SalmonStats
-@testable import SplatNet
+@testable 
 
 final class SplatNetTests: XCTestCase {
     func testExample() throws {

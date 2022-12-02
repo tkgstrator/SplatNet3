@@ -1,5 +1,5 @@
 //
-//  PhotoAlbumQuery.swift
+//  CoopHistoryDetailRefetchQuery.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2022/09/22
@@ -10,10 +10,9 @@
 import Foundation
 import Alamofire
 
-
-final class PhotoAlbumQuery: GraphQL {
-	public typealias ResponseType = PhotoAlbumQuery.Response
-	var hash: SHA256Hash = .PhotoAlbumQuery
+final class CoopHistoryDetailRefetchQuery: GraphQL {
+	public typealias ResponseType = CoopHistoryDetailRefetchQuery.Response
+	var hash: SHA256Hash = .CoopHistoryDetailRefetchQuery
 	var variables: [String: String] = [:]
 	var parameters: Parameters?
 

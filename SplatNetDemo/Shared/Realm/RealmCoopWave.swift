@@ -7,7 +7,7 @@
 
 import Foundation
 import RealmSwift
-import SplatNet3
+3
 
 final class RealmCoopWave: Object, Identifiable, Codable {
     @Persisted var id: Int

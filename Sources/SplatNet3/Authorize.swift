@@ -55,7 +55,7 @@ open class Authorize {
     }
 
     /// SP2/3: URLSchemeを使って認証情報を取得
-    func getCookie(code: String, verifier: String, contentId: ContentId) async throws {
+    private func getCookie(code: String, verifier: String, contentId: ContentId) async throws {
         let sessionToken: SessionToken.Response = try await getSessionToken(code: code, verifier: verifier)
 //        return try await refresh(sessionToken: sessionToken.sessionToken, contentId: contentId)
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 import RealmSwift
-import SplatNet3
+3
 
 class RealmCoopSchedule: Object, Codable {
     @Persisted(indexed: true) var startTime: Date?

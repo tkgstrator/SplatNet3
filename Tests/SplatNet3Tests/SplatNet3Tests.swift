@@ -1,5 +1,5 @@
 import XCTest
-@testable import SplatNet3
+@testable 3
 
 final class SplatNet3Tests: XCTestCase {
     func testExample() throws {
