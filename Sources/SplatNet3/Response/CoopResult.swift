@@ -72,10 +72,11 @@ public struct CoopResult: Codable {
         init(
             content: CoopHistoryDetailQuery.MemberResult,
             results: [CoopHistoryDetailQuery.EnemyResult],
-            specialCounts: [[SpecialId]]
+            specialCounts: [[SpecialId]],
+            isMyself: Bool
         ) {
             self.id = content.player.id
-            self.isMyself = content.player.isMyself
+            self.isMyself = isMyself
             self.byname = content.player.byname
             self.name = content.player.name
             self.nameId = content.player.nameId
@@ -92,9 +93,9 @@ public struct CoopResult: Codable {
             self.deadCount = content.rescuedCount
             self.helpCount = content.rescueCount
             self.weaponList = content.weapons.map({ $0.image.url.asWeaponId() })
-            self.special = content.specialWeapon?.id ?? .SpUltraShot
-            self.specialCounts = specialCounts.map({ $0.filter({ $0 == content.specialWeapon?.id }).count })
-            self.bossKillCounts = content.player.isMyself ? results.bossKillCounts() : Array(repeating: 0, count: 15)
+            self.special = content.specialWeapon?.weaponId ?? .SpUltraShot
+            self.specialCounts = specialCounts.map({ $0.filter({ $0 == content.specialWeapon?.weaponId }).count })
+            self.bossKillCounts = isMyself ? results.bossKillCounts() : Array(repeating: 0, count: 15)
             self.uniform = content.player.uniform.id
             self.bossKillCountsTotal = content.defeatEnemyCount
             self.species = content.player.species
@@ -154,15 +155,15 @@ public struct CoopResult: Codable {
     }
 
     public init(history: CoopHistoryQuery.CoopSchedule, content: CoopHistoryDetailQuery.CoopHistoryDetail) {
-        self.id = content.id
+        self.id = content.id.description
         self.scale = [content.scale?.bronze, content.scale?.silver, content.scale?.gold]
         self.jobScore = content.jobScore
         self.kumaPoint = content.jobPoint
         self.waveDetails = content.waveResults.map({ WaveResult(content: $0, resultWave: content.resultWave, bossDefeated: content.bossResult?.hasDefeatBoss) })
         self.jobResult = JobResult(content: content)
         let specialCounts: [[SpecialId]] = content.waveResults.map({ $0.specialWeapons.map({ $0.id }) })
-        self.myResult = PlayerResult(content: content.myResult, results: content.enemyResults, specialCounts: specialCounts)
-        self.otherResults = content.memberResults.map({ PlayerResult(content: $0, results: [], specialCounts: specialCounts) })
+        self.myResult = PlayerResult(content: content.myResult, results: content.enemyResults, specialCounts: specialCounts, isMyself: true)
+        self.otherResults = content.memberResults.map({ PlayerResult(content: $0, results: [], specialCounts: specialCounts, isMyself: false) })
         self.grade = content.afterGrade?.id
         self.gradePoint = content.afterGradePoint
         self.jobRate = content.jobRate

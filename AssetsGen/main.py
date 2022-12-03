@@ -3,6 +3,7 @@ from locales import *
 from nameplate import *
 from badge import *
 from content import *
+from weapons import *
 import requests
 import json
 import base64
@@ -36,6 +37,13 @@ def format(key: str, value: str) -> str:
     value = value.replace('"', "")
     value = value.replace("\n", "")
     return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
+
+
+def plain(key: str, value: str) -> str:
+    key = key.replace("_%", "").replace("-", "_").strip()
+    value = value.replace('"', "")
+    value = value.replace("\n", "")
+    return f'// {key}\n"{key.strip()}" = "{value.strip()}";\n'
 
 
 def localized_format(key: str, value: str) -> str:
@@ -138,6 +146,7 @@ def get_localized(revision):
 
         data = res["CommonMsg/Coop/CoopGrade"]
         for k, v in data.items():
+            params.append(plain(k, v))
             params.append(format(k, v))
             localized.append(localized_format(k, v))
 
@@ -308,12 +317,44 @@ def get_localized_text(localized: list[str]):
             "\n\n",
             "import Foundation\n\n",
             "public enum LocalizedType: String, CaseIterable {\n",
+            '\tpublic var localized: String { NSLocalizedString(rawValue, bundle: .module, comment: "") }\n',
         ]
         f.writelines(headers)
         # hashes = sorted(hashes, key=lambda tup: tup[1].capitalize())
         for line in localized:
             f.write(line)
         f.write("}")
+
+
+def get_weapons(version: str):
+    url = f"https://leanny.github.io/splat3/data/mush/{version}/WeaponInfoMain.json"
+    response = requests.get(url).text.replace("__RowId", "RowId")
+    weapons: list[WeaponElement] = list(
+        map(
+            lambda weapon: WeaponElement.from_json(json.dumps(weapon)),
+            json.loads(response),
+        )
+    )
+    for weapon in weapons:
+        if "_00" in weapon.RowId:
+            url = f"https://leanny.github.io/splat3/images/weapon_flat/Path_Wst_{weapon.RowId}.png"
+            print(url)
+
+            makdirs(
+                f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset"
+            )
+            with open(
+                f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/{weapon.RowId}.png",
+                mode="wb",
+            ) as f:
+                f.write(requests.get(url).content)
+
+            with open(
+                f"../Sources/SplatNet3/Assets.xcassets/Weapons/{weapon.Id}.imageset/Contents.json",
+                mode="w",
+            ) as f:
+                content = to_dict(Content(f"{weapon.RowId}"))
+                f.write(json.dumps(content))
 
 
 def get_hashes(revision):
@@ -348,7 +389,6 @@ def get_hashes(revision):
             # Key + Value
             key = hash[1][0].upper() + hash[1][1:]
             value = hash[0]
-            f.write(f'\tcase {key} = "{value}"\n')
             # Write Files
             try:
                 with open(
@@ -380,7 +420,6 @@ def get_hashes(revision):
                     fw.close()
             except:
                 pass
-        f.write("}")
 
 
 def get_badge(version: str = "111"):
@@ -504,7 +543,9 @@ if __name__ == "__main__":
     # 翻訳ファイル
     get_localized(revision)
     # ハッシュ
-    # get_hashes(revision)
+    get_hashes(revision)
+    # ブキ
+    # get_weapons("200")
     # バッジ
     # get_badge("200")
     # ネームプレート

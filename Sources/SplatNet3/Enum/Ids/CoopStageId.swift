@@ -12,13 +12,13 @@ public enum CoopStageId: Int, CaseIterable, Identifiable, Codable {
 
     case Unknown        = -1
     case Tutorial       = 0
-    case ShakeUp        = 1
-    case ShakeSpiral    = 2
-    case ShakeShip      = 3
-    case ShakeHouse     = 4
-    case ShakeLift      = 5
-    case ShakeRide      = 6
-    case ShakeDent      = 7
+    case Shakeup        = 1
+    case Shakespiral    = 2
+    case Shakehouse     = 3
+    case Shakelift      = 4
+    case Shakeride      = 5
+    case Shakeship      = 6
+    case Shakedent      = 7
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

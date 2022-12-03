@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "1a29476c1ab5fdbc813e2df99cd290ce56dfe29755b97f671a7250e5f77f4961_0.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "compression-type" : "lossless",
+    "preserves-vector-representation" : true
+  }
+}

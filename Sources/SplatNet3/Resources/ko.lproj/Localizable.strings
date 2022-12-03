@@ -41,39 +41,75 @@
 // Sakerocket
 "faed7977b2144ac5979de0ca7d23aefd507e517c3fbe19431054ac5a6ba300fa" = "박쥐";
 // Grade_00
+"Grade_00" = "초보";
+// Grade_00
 "b4f1e5a491aa8f1952352fb4831a4e6a82817bc1179b51739928c6c5a1deb484" = "초보";
+// Grade_01
+"Grade_01" = "견습";
 // Grade_01
 "a7d6f7f0e87585179ae1e746afef2b67af4eddabd90cb06e1fe9761aef1cce07" = "견습";
 // Grade_02
+"Grade_02" = "일반";
+// Grade_02
 "8ced40cefb44e796793d62be1647ee6dd8b16ff92dec956aaebc96efdae9f112" = "일반";
+// Grade_03
+"Grade_03" = "전문";
 // Grade_03
 "8de95a5c09c429d4a508124c1792240b1559224e21f5450fa6c0776939b85287" = "전문";
 // Grade_04
+"Grade_04" = "달인";
+// Grade_04
 "ac6997f9bc8f0852d0df6f70137d09f3154dc271c1b9f670dbd1570d69dc8e3a" = "달인";
+// Grade_05
+"Grade_05" = "달인 +1";
 // Grade_05
 "533d5cce4a7efad282acfbbf2188e92653cc91232dfd55d1b0053d9c1aaa51da" = "달인 +1";
 // Grade_06
+"Grade_06" = "달인 +2";
+// Grade_06
 "97aef457a99b051b0ec454e0e44f038d4acce212f82fd6a968f4206e949bbed2" = "달인 +2";
+// Grade_07
+"Grade_07" = "달인 +3";
 // Grade_07
 "ee9651050a08fe058782eea37b988dfe7466760ca4dbb84acb45b19bc1c8476e" = "달인 +3";
 // Grade_08
+"Grade_08" = "전설";
+// Grade_08
 "0c80649527617f716da3ce8142a0924c37cfe598b43da69c2721b7899487b5fc" = "전설";
+// Grade_Arbeiter_00
+"Grade_Arbeiter_00" = "초보 아르바이트생";
 // Grade_Arbeiter_00
 "964c8f17803119b4aeeac69680e07de5f98a6a1729b256e62453fbcd9ab76ae6" = "초보 아르바이트생";
 // Grade_Arbeiter_01
+"Grade_Arbeiter_01" = "견습 아르바이트생";
+// Grade_Arbeiter_01
 "e2788fec80db2a24cdec147445ab06d56d7c9d0e74fcdea0b37c0f250404ce5c" = "견습 아르바이트생";
+// Grade_Arbeiter_02
+"Grade_Arbeiter_02" = "일반 아르바이트생";
 // Grade_Arbeiter_02
 "fd12bd7197e7b8b68bf7f816337f764ca65563d84da07185b284666ec221c672" = "일반 아르바이트생";
 // Grade_Arbeiter_03
+"Grade_Arbeiter_03" = "전문 아르바이트생";
+// Grade_Arbeiter_03
 "8b24a3bb25b38f418381b46d557bf331a8c9ce7d57ddbd3a1775086f4c677213" = "전문 아르바이트생";
+// Grade_Arbeiter_04
+"Grade_Arbeiter_04" = "달인 아르바이트생";
 // Grade_Arbeiter_04
 "1bace486c17f8533514e6566c8954d945041e5c456d4f21725591dbf68fbf863" = "달인 아르바이트생";
 // Grade_Arbeiter_05
+"Grade_Arbeiter_05" = "달인 아르바이트생 +1";
+// Grade_Arbeiter_05
 "6844588f7c8bcc9344daedd93cc4ac7d657e928b1c9fea0c29cbc8e6434454c4" = "달인 아르바이트생 +1";
+// Grade_Arbeiter_06
+"Grade_Arbeiter_06" = "달인 아르바이트생 +2";
 // Grade_Arbeiter_06
 "a3d6cf43d6e3866778c7db7836c316b63e269ca209cf2b5c8199d2964c90c9da" = "달인 아르바이트생 +2";
 // Grade_Arbeiter_07
+"Grade_Arbeiter_07" = "달인 아르바이트생 +3";
+// Grade_Arbeiter_07
 "b4b150ab7addb3281db723372902472c65a673a61d1750d1f729e427aaeebc08" = "달인 아르바이트생 +3";
+// Grade_Arbeiter_08
+"Grade_Arbeiter_08" = "전설의 아르바이트생";
 // Grade_Arbeiter_08
 "cabe998b30dcace3cf7206a06733ea84e3e070fbc3289db72c6929f43cc752e0" = "전설의 아르바이트생";
 // Cop_Carousel
@@ -854,6 +890,66 @@
 "6eb771e981bf41b9bd75433bc989bfc6c93cd2b5399571e8775ce339f079ee44" = "블랙";
 // Challenge_Blue
 "b82832424dafc3fe76dab2e23a741b823a20060acbf3f80ec2f1277bc1ae0be7" = "블루";
+// Challenge_Challenge210Description
+"023060b23ec43872b5a15a5ad3208a0953c26605903f926383d2ad45228d9ca8" = "오렌지빛 하늘이 꼭 튀김용 기름 같아～";
+// Challenge_Challenge210Reward
+"05b5d193a7de62de796766a911aad9897168c90b0f3afd8694d3869e9af1351c" = "별명";
+// Challenge_Challenge210Title
+"81a48fe7f465913e2f89f9ec368c56a3aae92f2aa10040cff7cda1d9ae44e9fc" = "셰케나 댐";
+// Challenge_Challenge21Description
+"4178c738336dc9c78210b718fca502b22d1a2fa29307ee25d5beccc1e0355080" = "예술 작품을 보면 가슴 속 깊은 곳이 뜨거워지는 것 같아～!";
+// Challenge_Challenge21Reward
+"9cc2d0427935dda391ab08dd3249b020f37cae99810fa48129e964c480accc1e" = "SNS 감성 사진";
+// Challenge_Challenge21Title
+"5f32839f65ac4aa35230eb7444a3e588ba748ee0f366e2c1802f4967884c5fc2" = "도미 미술관";
+// Challenge_Challenge22Description
+"b8bf327b51e5386ff7bf2046b8b6ca86b628643cf74814bc96b9ab4f92c31237" = "이곳 식당은 어메이징한 튀김으로 유명한 맛집이야～";
+// Challenge_Challenge22Reward
+"b833298e49e680b658591db904196b4d2793e4f57954b64c20929dc1a64e4858" = "주운 스티커";
+// Challenge_Challenge22Title
+"b4402d4085246e84fa61207d801a55888c9b8dd292d55143494a6e4701847960" = "해녀 미술 대학";
+// Challenge_Challenge23Description
+"1ffd251fb44630fa2c56ed64577e04dafb28f0db670946a304e47d64d47ff6b3" = "다리 위는 바람이 강해서 튀김옷이 날아가 버릴 것 같아!";
+// Challenge_Challenge23Reward
+"e23e8830ea7afa0b825ec0082a10dbb8b24075b7ee1c38008dc24543f4e71ae7" = "SNS 감성 사진";
+// Challenge_Challenge23Title
+"ee690b9f7c872befeddbfac12e3f117f8a047ab45f0e6c7cc6dcd2f8792f8596" = "고등어 해협 대교";
+// Challenge_Challenge24Description
+"2191d11f81327aff543e1f7023fd56acf24cb8aa60d9fed613a4feed683a28ed" = "용접 소리가 꼭 튀김 튀기는 소리 같아서 듣기 좋아!";
+// Challenge_Challenge24Reward
+"cc216030b916bfdccc5622fd1ba1fd01ff4e406678dcd6f6401add31fdf88533" = "주운 스티커";
+// Challenge_Challenge24Title
+"c4727db07085e5e4e253972200cdc73a90c46db034073d0a218acecd7704b007" = "철갑상어 조선소";
+// Challenge_Challenge25Description
+"161f09bd7118653047877470eb6152314447b1fd406f788ab0c2da672b92fc0f" = "저녁 때 튀김 냄새가 나면 얼른 집에 가고 싶어져～";
+// Challenge_Challenge25Reward
+"746b1bd969e24722aa155eadb17fc84a27ac71dc8f6bf4a0c28dbcc346a014cc" = "SNS 감성 사진";
+// Challenge_Challenge25Title
+"a767e5f2ee29b6461e08729333636f3bd3fd7760ffe12f61225942963e6b0c4a" = "넙치 언덕 단지";
+// Challenge_Challenge26Description
+"640f275e5104024a5a869b41f8a5c5ff1c6dc2b671c0e4a29fcd5bdaddb1d210" = "앗! 처음 보는 튀김용 기름을 팔고 있잖아?!";
+// Challenge_Challenge26Reward
+"80d79761fe2bb818ce21f81dff3bc6b08bc8bc10da553c90bfef50c0bd91928b" = "주운 스티커";
+// Challenge_Challenge26Title
+"27e691c0ddc6c9e214a3ea4477013621f53f6601e6bd738ee4617c86ecacfab3" = "혹등 마켓";
+// Challenge_Challenge27Description
+"d703de600484ecc43502b326e72716b2d68d9655da554335363ead03452f46ec" = "이렇게 신나는 것들로 가득한 곳에서는 너무 흥분하지 않도록 조심해야 해～!!!";
+// Challenge_Challenge27Reward
+"83bef88bb0372026e35c3d973d7bc534b82ae6949490234cb722c79af394e9ff" = "SNS 감성 사진";
+// Challenge_Challenge27Title
+"76c5921917d14d3469024af06c16f3f01ef303b66c8dcb3ab470e4e7852bb367" = "만새기 리조트＆스파";
+// Challenge_Challenge28Description
+"5c8cbf95cef72f853cb72c057bf8c33775c5e8a0674c9fa80499d77b201c4064" = "제트 코스터를 타고 나면 어쩐지 몸이 가볍게 느껴져～";
+// Challenge_Challenge28Reward
+"45270d0d68def01a32a5f504f24150322714c1478db491bc3324698caec32920" = "그라피티 배경 화면";
+// Challenge_Challenge28Title
+"8708f2c9badc6ddc9bcc7bd530cce613db5cbe0d376641cff5f6549acf8b7863" = "초밥 월드";
+// Challenge_Challenge29Description
+"d33114d5b4765567072dc6965283bee6ea0713cfa68e5d370ca97d2b15a4b6ab" = "오더폴리스 지방에도 벌이가 짭짤한 아르바이트가 있구나～! 어, 그런데 여기는 어디지～?";
+// Challenge_Challenge29Reward
+"3f215868c8f9218f28edcfaefd8dbf7d0d4684d0a03d4ed11ece28a91febbd9f" = "해 질 녘 사진";
+// Challenge_Challenge29Title
+"0005c13badd6e553a0fefe2e35612bf404fbf358aa9bbdbe46071e34ee45f143" = "난파선 돈 브라코";
 // Challenge_Challenger
 "03dcce15138fb3b0e2f9af1d203bf047e81fae1fa555eae03702a2af84a76d31" = "챌린저";
 // Challenge_ChooseChallenge
@@ -890,6 +986,12 @@
 "8c7a86fda1d02ee05f57ee64ed1b31fed5e8535a193eb019566a6864af4c7c49" = "열심히 칠해서 모은 포인트로 롭의 여행을 응원하자!<br />여행의 추억도 획득할 수 있을지 모른다!";
 // Challenge_Journey
 "c90de202477e1a2f325779f2c462b27f657ae64e7ded41e7e9b897087a48b17d" = "저니 { 0 }";
+// Challenge_Journey2Description
+"b1662b37fccdf6c7c4db8365db8aea9a57b70cd5d0dbc6d74e4a28d38218a70d" = "「챌린저 롭」의 다음 목적지는 『오더폴리스 지방』으로 결정했어～<br />그런 이유로 이 여행을 계속해서 지원해 줄 서포터를 모집하고 있지!<br />오더폴리스 지방은 내가 여행을 시작하기 전에 살던 타운인데, 지금도 스타일리시하고 반지르르한 멋쟁이들로 가득한 곳이야～<br />그런 추억의 장소를 순회하며 「과거의 자신」을 돌아보고 「지금의 자신」을 더욱 발전시켜 나가고 싶어!<br />이 「두 번째 여행」 정말 재밌을 것 같지 않아?! 이번에도 잘 부탁할게～!";
+// Challenge_Journey2Gratitude
+"560d08121f0ea3608adf4f835fae8c257546453d0474914feaaea43f7bf774bb" = "네 덕분에 두 번째 여행도 무사히 끝마칠 수 있었어! 고마워～!<br />답례로 이것을 줄게!<br />로비 단말기에 보내 뒀으니까 받아 줘～";
+// Challenge_Journey2Title
+"e51eb3bd85e9454f343c728471321e877bfa75e77ab7162795e983aa21bd74f4" = "여행의 도중<br />～어느 길을 칠하느냐보다, 칠한 길을 어떻게 나아갈 것인가～";
 // Challenge_LookingForSupporters
 "9428acca90a2f268f1e95f96ed9ed474cca7ae3993a422b955e7d058dca86bbb" = "서포터 구함!";
 // Challenge_Orange
@@ -1025,7 +1127,7 @@
 // CoopHistory_GoldenDeliverCount
 "4fa84ccad3c92f49eb64bbb307dd4f078c7f9322504a2c141c1e453e38beb518" = "모은 황금 연어알";
 // CoopHistory_HighestScore
-"f7ed5bab435462795c8962dbb9d24f00c2d35ce28654834aff813fa14054607b" = "하이 스코어";
+"f7ed5bab435462795c8962dbb9d24f00c2d35ce28654834aff813fa14054607b" = "최고 기록";
 // CoopHistory_History
 "8746c22624c816c12b84fcb35b7d56d3d99dc606745dae487c5aa4bb72e2c21d" = "아르바이트 히스토리";
 // CoopHistory_JobPoint
@@ -1735,7 +1837,7 @@
 // VSHistory_333x
 "dc5dee801710edf17ef1cdf794aa5861734fe8ef3b13a587c2c74da0cd4bb71f" = "333배 매치";
 // VSHistory_AnnotationExemption
-"345d3e19fb0ec9e90449e1d379176c7a688a35adf9d5ca26155a13b0d41a76e5" = "통신을 종료한 플레이어가 있으므로 패배로 카운트되지 않았습니다";
+"345d3e19fb0ec9e90449e1d379176c7a688a35adf9d5ca26155a13b0d41a76e5" = "장시간 적은 인원수로 플레이했으므로 패배로 카운트되지 않았습니다";
 // VSHistory_AnnotationNocontest
 "5eae85742cc0226a885daaa41367423d21d59db06f3b725f383e946ed0b60543" = "시합이 무효 처리되었습니다";
 // VSHistory_AnnotationPenalty
@@ -1770,6 +1872,8 @@
 "8d6ec2c41c2f0de034bfb0ab399ad020025f82278c3cf3ce6aecb6a15bec1876" = "장비했던 기어";
 // VSHistory_EquippedWeapon
 "97c00cfc3ea8394a13303602aa202a33d994c6bd3aa5be05008c2aa8e3365170" = "장비했던 무기";
+// VSHistory_EstimatedRoomPower
+"f7a58dfc5dce24125748d61062b2772e411f3aa7b4d70802612456b42ee23596" = "{ 0 }명의 { 1 } 파워 추정 { 2 }";
 // VSHistory_FesChallenge
 "e484328375edebc7ec6635e148394c9ec8b06b0a9ac72533482aec56b0ef66d5" = "페스티벌 매치(챌린지)";
 // VSHistory_FesOpen
@@ -1922,6 +2026,104 @@
 "72f6e32e0341165cb9efc7239a72a4089bf2b4c165188f0485d856efbb6fcce2" = "왕관";
 // XRanking_Xpower
 "f2c1f13dcc6e78013b42ef07eab51de9d321092dada3931caa25d8394e31215c" = "<small>X 파워</small> { 0 }";
+// Widgets_AlbumDescription
+"6c09243d6c1861e27d63284d905217bc0d017867ee2716a7241d2d633005300a" = "오징어넷 3의 앨범 이미지를 표시합니다.";
+// Widgets_AlbumNoPhoto
+"6f7c3e4dc7c2f3230df2721bfb2b24974f905fe7e5562c1132cf96e4f93c13be" = "스플래툰 3에서 어메이징한 사진을<br />촬영하면 이곳에 표시된다!";
+// Widgets_AlbumTitle
+"5745e6cf37326c23451541a24e62fbe7a015f8abdd199bec0bfd3ffd357e82cf" = "앨범";
+// Widgets_EquipmentsDescription
+"d1fbfc8e580ef35db68e106cc2601a066e4e803be4fa742727d1d62c771bf21d" = "스플래툰 3의 현재 장비를 표시합니다.";
+// Widgets_EquipmentsTitle
+"2bfe76ed6ddd1566c623f14278a4de2fe048dfdd3cbd3b12a7247649134eeaf1" = "현재 장비";
+// Widgets_ErrorsNoData
+"00636b567577ae85a5f92c98d13764f5473f4bfde3774b175011517d85c88e76" = "이 위젯은 스플래툰 3의 휴대 서비스입니다. 게임을 플레이하면 데이터가 축적되어 이용할 수 있게 됩니다.";
+// Widgets_ErrorsNotLoggedIn
+"e16e3edf25cb3432920a65718fb19df7aaba5995ed6990244cb3ae7adb18d2ee" = "스마트폰 앱 『Nintendo Switch Online』에 로그인해 주십시오";
+// Widgets_ErrorsOutOfService
+"4fcecec3697493df4e1fda59f02338b7cf16696e01cf8ba990571e610140726e" = "현재 이용할 수 없습니다";
+// Widgets_ErrorsUpdateRequired
+"db5f6fa63acf6ad564d9f41d5283a85031c9be2e0f09f25ac90ab99dea6bb831" = "Nintendo Switch Online 앱을 업데이트해 주십시오";
+// Widgets_Loading
+"9349870f0195bee06c49131a5336eae5ba5b03c9c3fbbccfbda932a43f04b43b" = "로딩 중";
+// Widgets_StagesBankara
+"c5ecb1b4810d0f52ecd11939d4af015d25015fd30829466c4829d06733cb0684" = "카오폴리스 매치";
+// Widgets_StagesCoop
+"286c2474225a669afe85633b852854d922eb33b161ba8906c2ec1b374ca124a1" = "새먼 런";
+// Widgets_StagesDatetimeFormat
+"089496aa094f44d5a25c4c6bcef4f095fb41a03d64e6a6c4b3f7929161445d6b" = "M/d HH:mm";
+// Widgets_StagesDescription
+"9f3d2ff275a87c51ac27240808495e799692e064f5448d00a987794361fb4e06" = "스플래툰 3의 스테이지 스케줄을 표시합니다.";
+// Widgets_StagesDescriptionAndroid
+"25baf3fc9e3f022c47ce979100714188f3862eb99d7e27169750f1a27d1ee944" = "스플래툰 3의 스테이지 스케줄과 현재 장비를 표시합니다.";
+// Widgets_StagesFestMatch
+"763425040e9bdc92a8f175290e573dfa7bf36222e6d430ed25426571a660ce11" = "페스티벌 매치 개최 중!";
+// Widgets_StagesFestMatchAnnounced
+"e21cb454675a1a3ca9d423b7d6ad61763bc603234a6be4210a47e3070141780b" = "페스티벌 매치 개최 예정";
+// Widgets_StagesLeague
+"26f950bb5bea0406794b88b21b9b334b4db78eab374fc2c09e0f413ef810006b" = "리그 매치";
+// Widgets_StagesNoData
+"6d32bd24432306144ff77e5199964b3b6fd266dc029f47ecfbe9e3d3e96888a2" = "스케줄이 없습니다";
+// Widgets_StagesNowOpen
+"b147f1ec29300a8cf8222869add46c81d904fa3bfd3b188bba41130c48b8e955" = "오픈!";
+// Widgets_StagesPreviewScheduleStage1
+"bffcbdb807e53d78f5db771cc2e68b826ad8cb837a48b206eeabc995a2eea8d4" = "맛조개 방수로";
+// Widgets_StagesPreviewScheduleStage2
+"8c64d754ab7c76dcde432978b0c6a7a4ff1c4f722620c99593674347e54465b8" = "대치 시장";
+// Widgets_StagesPreviewScheduleStage3
+"1de10cb35874019501a557930d1c5f5c6a46e2ae08d3dab34565d5e895e5b8c7" = "메기 지구";
+// Widgets_StagesPreviewScheduleStage4
+"b339fc000476662de2a06e1b6daa0dddbd299c301a7c264dbbed2117e18d9ea8" = "석순 대협곡";
+// Widgets_StagesPreviewScheduleTimeSpan1
+"1ddee39ff22001a2c34d3309c0c18d10a542c9876830282bc15f47c200bd1d37" = "09:00 - 11:00";
+// Widgets_StagesPreviewScheduleTimeSpan2
+"3d673645e01b21ab1b24b1a1170ad35990e80881f8d3b3385a5ac835d0848996" = "11:00 - 13:00";
+// Widgets_StagesRegular
+"8c7e00412205d8cc588f8cfc055814a6f66d2042a283133d8b4ebc425499fcf8" = "레귤러 매치";
+// Widgets_StagesSeparator
+"13341de71f4147b50bd652103f6928235a1ee4b8e744a36d5fc1027d4274d3df" = "-";
+// Widgets_StagesSettingsMode
+"58bb3c55c46c45eb1f85e03cd168472573a795cbd8ab563641a45a89280409c4" = "표시 모드";
+// Widgets_StagesSuppliedWeapons
+"106d2be15bb4291f3f35964f64083926f5c96134efabfec1cfd5df8ca7f2296a" = "지급 무기";
+// Widgets_StagesTimeFormat
+"74c680f8ebb5c4c5459281187004195627ec983a6400927be8b134b139c2132d" = "HH:mm";
+// Widgets_StagesTitle
+"953ba00b840ad1d122137d29e4a7e010d2a82ddbc1d2c478e46691c9b4b5bbf0" = "스테이지 스케줄";
+// Widgets_StagesXmatch
+"24c92756a447af77bd0ee4813acea59b0ee79c46da27dc2338442a2cc38293d6" = "X 매치";
+// Widgets_StagesYearDatetimeFormat
+"6c98b27367a580a45b4b38ea053c013b04005a45f9423c76a040998fbc355d87" = "yyyy M/d HH:mm";
+// Widgets_VsCount
+"c3850f235408152b3f7c2748c7074073acbd6f10a0e1cb19f2867debab77a556" = "%@ 카운트";
+// Widgets_VsKnockout
+"fe6b79f8de685535d889b6305d2adef95046d24b54766b47a202bb8c2a2f47ef" = "녹아웃!";
+// Widgets_VsNoData
+"7c36cc1f37bba317e2bdda5da7da8646b77346f0bb3fa5e4f8d62560e0722db9" = "배틀 기록이 없습니다";
+// Widgets_VsPercent
+"9aafbe17c231bce2b5ff24b329ac2a71f57eb074f366528fb985121b5c2b43de" = "%@%";
+// Widgets_VsPreviewRule
+"991278172c454764a87345457c7ef0a00b881307625708c19f6cdfd84447aff8" = "영역 배틀";
+// Widgets_VsPreviewVsLosePercent
+"de5c52694163632f5728890d838f9acf32c4b7ec8118ce6906a8c8e6623feaba" = "38.4%";
+// Widgets_VsPreviewVsLoseTurfPoint
+"2a7e76ac62d56c224cc06841479d63a59253e61d5daf32ed796c051c6a96e775" = "533p";
+// Widgets_VsPreviewVsWinPercent
+"2fbf1401be2e9e8644e5634db29d95519e0ccb7e2d3536c688e78b24c615f856" = "63.7%";
+// Widgets_VsPreviewVsWinTurfPoint
+"beecb6ce10d6357350b542efd299d60e2ca736511a1be3026b3af0da39b3225e" = "1162p";
+// Widgets_VsTurfPoint
+"55e91d93cd74b5c8cb05ccb216b58b78b7f12e2a605b084a045c48f244676d2c" = "%@p";
+// Widgets_VshistoryDescription
+"9dea92299d637fcfcd8b8c8d844e00e2a903c5ab19fc57ab06af0676ca6cf106" = "스플래툰 3의 배틀 기록을 표시합니다.";
+// Widgets_VshistoryDraw
+"b4a40bebf1aab30af3e46559314211b21231f62be22cddea66f0327b85636363" = "DRAW";
+// Widgets_VshistoryLose
+"80272cfbe2df2b4396b14845e50496c0e2fb3bcfd0b6995f9ff1dc58458ca023" = "LOSE…";
+// Widgets_VshistoryTitle
+"6031c92a5f8d7b0a4e8e4932658fae95869535cc20a675e8f51f84a0b845cd25" = "배틀 기록";
+// Widgets_VshistoryWin
+"070dd3cec699a678672bf22af57a410f269ab08b455b6b77d760843f00cd073f" = "WIN!";
 // CoopHistory_EventWave1
 "fd468293bf7ee52c7b0ac1a2cdc3c14f0024817c58e96e82bd4b6411f9119d66" = "러시";
 // CoopHistory_EventWave2

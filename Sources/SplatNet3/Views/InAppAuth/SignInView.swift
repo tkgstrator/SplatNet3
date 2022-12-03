@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import UIKit
 import SwiftUI
 
 struct SignInView: View {
-    @StateObject var session: SPSession = SPSession()
     @Environment(\.dismiss) var dismiss
+    @StateObject var session: SP3Session = SP3Session()
     let code: String
     let verifier: String
     let contentId: ContentId
@@ -69,17 +68,14 @@ struct SignInView: View {
         .onAppear(perform: {
             Task {
                 do {
-//                    try await session.getCookie(code: code, verifier: verifier, contentId: contentId)
-//                    try await session.getCookie(code: code, verifier: verifier)
+                    try await session.getCookie(code: code, verifier: verifier, contentId: contentId)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        /// コレ自体が消えるとちょっと問題があるかも
                         UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })
                 } catch(let error) {
                     print(error)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        dismiss()
-//                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                        UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })
                 }
             }
@@ -87,16 +83,11 @@ struct SignInView: View {
     }
 }
 
-extension View {
-    func asAnyView() -> AnyView {
-        AnyView(self)
-    }
-}
 
-struct SignInView_Previews: PreviewProvider {
-    static let session: SPSession = SPSession()
-    static var previews: some View {
-        SignInView(code: "", verifier: "", contentId: .SP3)
-    }
-}
+//struct SignInView_Previews: PreviewProvider {
+//    static let session: SPSession = SPSession()
+//    static var previews: some View {
+//        SignInView(code: "", verifier: "", contentId: .SP3)
+//    }
+//}
 

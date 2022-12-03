@@ -13,6 +13,7 @@ public enum ModeType: String, CaseIterable, Codable {
     case UNKNOWN
     case REGULAR
     case PRIVATE_CUSTOM
+    case PRIVATE_SCENARIO
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

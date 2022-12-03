@@ -18,6 +18,38 @@ extension UIApplication {
             .first?
             .rootViewController
     }
+
+    private func findVisibleViewController(viewController: UIViewController) -> UIViewController {
+        /// UINavigationController
+        if let navigationController = viewController as? UINavigationController,
+           let visibleController = navigationController.visibleViewController
+        {
+            return findVisibleViewController(viewController: visibleController)
+        }
+
+        /// UITabBarController
+        if let tabBarController = viewController as? UITabBarController,
+           let selectedTabController = tabBarController.selectedViewController
+        {
+            return findVisibleViewController(viewController: selectedTabController)
+        }
+
+        /// PresentedViewController
+        if let presentedViewController = viewController.presentedViewController {
+            return findVisibleViewController(viewController: presentedViewController)
+        }
+
+        return viewController
+    }
+
+    public func dismiss() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootViewController = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController
+        {
+            let visibleViewController = findVisibleViewController(viewController: rootViewController)
+            visibleViewController.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 extension UIViewController {

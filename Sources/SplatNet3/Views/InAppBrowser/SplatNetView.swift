@@ -6,10 +6,10 @@
 //  
 //
 
-import SwiftUI
-import UIKit
 import WebKit
 import SDBridgeSwift
+import SwiftUI
+import UIKit
 
 struct SplatNetView: UIViewControllerRepresentable {
     let contentId: ContentId
@@ -28,7 +28,7 @@ struct SplatNetView: UIViewControllerRepresentable {
     final class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         private var bridge: WebViewJavascriptBridge
         private var observer: NSKeyValueObservation?
-        private let session: SPSession = SPSession()
+        private let session: SP3Session = SP3Session()
         private let contentId: ContentId
         private let configuration: WKWebViewConfiguration = WKWebViewConfiguration()
 

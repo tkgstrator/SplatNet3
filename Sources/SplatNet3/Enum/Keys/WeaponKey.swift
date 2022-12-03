@@ -22,6 +22,7 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Shooter_Expert         = "5607f7014bbc7339feeb67218c05ef19c7a466152b1bd056a899b955127ea433"
     case Shooter_Heavy          = "fe2b351799aa48fcb48154299ff0ccf0b0413fc291ffc49456e93db29d2f1db5"
     case Shooter_Long           = "035920eb9428955c25aecb8a56c2b1b58f3e322af3657d921db1778de4b80c59"
+    case Shooter_QuickLong      = "8034dd1acde77c1a2df32197c12faa5ba1d65b43d008edd1b40f16fa8d106944"
     case Blaster_Short          = "10d4a1584d1428cb164ddfbc5febc9b1e77fd05e2e9ed9de851838a94d202c15"
     case Blaster_Middle         = "29ccca01285a04f42dc15911f3cd1ee940f9ca0e94c75ba07378828afb3165c0"
     case Blaster_Long           = "0d2963b386b6da598b8da1087eab3f48b99256e2e6a20fc8bbe53b34579fb338"
@@ -35,6 +36,7 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Roller_Normal          = "536b28d9dd9fc6633a4bea4a141d63942a0ba3470fc504e5b0d02ee408798a87"
     case Roller_Heavy           = "18fdddee9c918842f076c10f12e46d891aca302d2677bf968ee2fe4e65b831a8"
     case Roller_Hunter          = "8351e99589f03f49b5d681d36b083aaffd9c486a0558ab957ac44b0db0bb58bb"
+    case Roller_Wide            = "137559b59547c853e04c6cc8239cff648d2f6b297edb15d45504fae91dfc9765"
     case Brush_Mini             = "260428edbf919f5c9e8c8517516d6a7a8133cf7348d216768ab4fb9434053f08"
     case Brush_Normal           = "ce0bb38588e497586a60f16e0aca914f181f42be29953742fd4a55a97e2ebd22"
     case Charger_Quick          = "0cdd6036a6677d68bf28e1014b09a6f5a043e969027e532cd008049baace6527"
@@ -42,6 +44,7 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Charger_Long           = "ed294b2c7b3111988d577d7efddb9e5e475efc5e0932e5416efedc41fd98eb04"
     case Charger_Light          = "9c71334ea792864a00531040e0d05a183512e11277fd1fa681170874ba039268"
     case Charger_Keeper         = "2b349390a464710982d7e1496130898e7b5a66c301aa44fc9e19332d42e360ad"
+    case Charger_Pencil         = "082489b182fbbabddde40831dac5867d6acc4778b6a38d8f5c8d445455d638eb"
     case Slosher_Strong         = "4a8bf6b4ad3b2942728bbd270bf64d5848b64f3c843a3b12ef83c0ebb5de1b3d"
     case Slosher_Diffusion      = "f3dbd98d5b0e89f7be7eff25a5c63a06045fe64d8ffd5886e79c855e16791563"
     case Slosher_Launcher       = "bd2eca9a7b4109c1d96e804c74aaf2ca525011e1348d0b312fe4f034e35e5d4c"
@@ -69,6 +72,7 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Shelter_Bear_Coop      = "3380019464e3111a0f40e633be25f73ad34ec1844d2dc7852a349b29b238932b"
     case Slosher_Bear_Coop      = "bf89bcf3d3a51badd78b436266e6b7927d99ac386e083023df3551da6b39e412"
     case Stringer_Bear_Coop     = "36e03d8d1e6bc4f7449c5450f4410c6c8449cde0548797d22ab641cd488d2060"
+    case Saber_Bear_Coop        = "480bc1dfb0beed1ce4625a6a6b035e4bac711de019bb9b0e5125e4e7e39e0719"
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

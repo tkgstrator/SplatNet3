@@ -10,7 +10,10 @@ import SwiftUI
 
 struct RetrieveView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var session: SPSession
+    @Binding var isPresented: Bool
+    @State private var value: Float = .zero
+    @State private var total: Float = 1
+    @StateObject var session: SP3Session
 
     func makeBody(request: SPProgress) -> some View {
         switch request.progress {
@@ -57,25 +60,39 @@ struct RetrieveView: View {
                     makeBody(request: request)
                 })
             })
-            //            ProgressView("", value: session.current, total: session.maximum == .zero ? 1 : session.maximum)
+            ProgressView("", value: value, total: total)
         })
         .frame(width: 320)
         .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
         .background(SPColor.SplatNet3.SPBackground.cornerRadius(12))
         .animation(.default, value: session.requests.count)
+        .onDisappear(perform: {
+            self.session.requests.removeAll()
+        })
         .onAppear(perform: {
+            withAnimation(.none) {
+                self.total = 1
+                self.value = 0
+            }
             Task {
                 do {
-                    //                    let results: [CoopResult] = try await session.getAllCoopHistoryDetailQuery()
-                    //                    dump(results)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        //                        isPresented.toggle()
-                        //                        dismiss()
+                    try await session.getCoopStageScheduleQuery()
+                    try await session.getAllCoopHistoryDetailQuery(completion: { value, total in
+                        withAnimation(.default) {
+                            self.value = value
+                            self.total = total
+                        }
                     })
-                } catch {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        //                        isPresented.toggle()
-                        //                        dismiss()
+//                        UIApplication.shared.dismiss()
+//                        dismiss()
+                        isPresented.toggle()
+                    })
+                } catch(let error) {
+                    print(error)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                        dismiss()
+                        isPresented.toggle()
                     })
                 }
             }
@@ -84,12 +101,11 @@ struct RetrieveView: View {
 }
 
 extension View {
-
-//    public func fullScreen(isPresented: Binding<Bool>, session: SPSession) -> some View {
-//        self.fullScreen(isPresented: isPresented, content: {
-//            RetrieveView(session: session)
-//        })
-//    }
+    public func fullScreen(isPresented: Binding<Bool>, session: SP3Session) -> some View {
+        self.fullScreen(isPresented: isPresented, content: {
+            RetrieveView(isPresented: isPresented, session: session)
+        })
+    }
 }
 
 //struct RetrieveViews: PreviewProvider {

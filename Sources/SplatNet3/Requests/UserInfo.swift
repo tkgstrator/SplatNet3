@@ -33,7 +33,7 @@ public struct UserInfo: SPCredential {
     var expiration: Date
     /// リフレッシュが必要かどうか
     public var requiresRefresh: Bool {
-        print("BulletToken", expiration, Date())
+        print("BulletToken", expiration, Date(), expiration <= Date(timeIntervalSinceNow: 0))
         return expiration <= Date(timeIntervalSinceNow: 0)
     }
 
@@ -41,7 +41,7 @@ public struct UserInfo: SPCredential {
         guard let token: JSONWebToken = try? JSONWebToken(gameWebToken: gameWebToken) else {
             return true
         }
-        print("GameWebToken", expiration, Date())
+        print("GameWebToken", Date(timeIntervalSince1970: TimeInterval(token.payload.exp)), Date(), Date(timeIntervalSince1970: TimeInterval(token.payload.exp)) <= Date())
         return Date(timeIntervalSince1970: TimeInterval(token.payload.exp)) <= Date()
     }
 
@@ -54,19 +54,19 @@ public struct UserInfo: SPCredential {
         self.sessionToken = sessionToken
         self.gameServiceToken = gameServiceToken.result.webApiServerCredential.accessToken
         self.gameWebToken = gameWebToken
-        self.expiration = Date(timeIntervalSince1970: 0)
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2)
     }
 
     init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: GameWebToken.Response, iksmSession: IksmSession.Response) {
         self.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken.result.accessToken)
         self.iksmSession = iksmSession.iksmSession
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2)
     }
 
     init(sessionToken: String, gameServiceToken: GameServiceToken.Response, gameWebToken: String, bulletToken: BulletToken.Response) {
         self.init(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken)
         self.bulletToken = bulletToken.bulletToken
-        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2.5)
+        self.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2)
     }
 }
 

@@ -8,11 +8,10 @@
 
 import Foundation
 import WebKit
-import UIKit
 import SwiftUI
 
 public class SPWebViewController: UIViewController, WKURLSchemeHandler {
-    @StateObject var session: SPSession = SPSession()
+    @StateObject var session: SP3Session = SP3Session()
     let state: String = String.randomString
     let verifier: String = String.randomString
     let contentId: ContentId
@@ -41,7 +40,6 @@ public class SPWebViewController: UIViewController, WKURLSchemeHandler {
         else {
             return
         }
-        print(code)
         Task {
             let hosting: UIHostingController = UIHostingController(rootView: SignInView(code: code, verifier: verifier, contentId: contentId))
             hosting.isModalInPresentation = true

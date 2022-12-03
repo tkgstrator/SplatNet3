@@ -108,10 +108,9 @@ public final class StageScheduleQuery: GraphQL {
     // MARK: - CoopStage
     public struct CoopStage: Codable {
         @IntegerRawValue public var id: CoopStageId
+        public let image: Common.URL<CoopStageKey>
         public let name: String
-        public let coopStageId: CoopStageId
-        public let thumbnailImage: Common.URL<CoopStageThumbnailKey>
-        public let image: Common.URL<CoopStageThumbnailKey>
+        public let thumbnailImage: Common.URL<CoopStageKey>
     }
 
     // MARK: - UserIcon

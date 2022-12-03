@@ -113,7 +113,7 @@ struct RequestButton: View {
                 Text(String(describing: hash))
                     .lineLimit(1)
             })
-            .fullScreen(isPresented: $isPresented, session: session)
+            .fullScreen(isPresented: $isPresented)
         })
     }
 }

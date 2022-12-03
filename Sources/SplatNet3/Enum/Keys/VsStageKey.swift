@@ -21,12 +21,12 @@ public enum VsStageKey: String, CaseIterable, Identifiable, Codable {
     case Stage05
     /// ナメロウ金属
     case Stage06 = "de1f212e9ff0648f36cd3b8e0917ef36b3bd51445159297dcb948f34a09f2f05"
-    ///
-    case Stage07
+    /// クサヤ温泉
+    case Stage07 = "cd84d711b47a424334569ac20f33f8e0ab6a652dc07854dcd36508a0081e9034"
     ///
     case Stage08
-    ///
-    case Stage09
+    /// ヒラメが丘団地
+    case Stage09 = "488017f3ce712fca9fb37d61fe306343054449bb2d2bb1751d95f54a98564cae"
     /// マサバ海峡大橋
     case Stage10 = "1db8ab338b64b464df50e7f9e270e59423ff8caac6f09679a24f1b7acf3a82f3"
     /// キンメダイ美術館

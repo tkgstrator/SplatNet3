@@ -82,7 +82,7 @@ public final class CoopHistoryQuery: GraphQL {
 
     // MARK: - HistoryDetail
     public struct HistoryDetail: Codable {
-        public let id: String
+        public let id: Common.ResultId
         public let weapons: [WeaponType]
         public let nextHistoryDetail: CoopHistory.HistoryDetailElement?
         public let previousHistoryDetail: CoopHistory.HistoryDetailElement?
@@ -94,7 +94,6 @@ public final class CoopHistoryQuery: GraphQL {
         public let bossResult: CoopHistory.BossResult?
         public let myResult: Result
         public let memberResults: [Result]
-        public let waveResults: [WaveResult]
     }
 
     public enum GradePointDiff: String, Codable {

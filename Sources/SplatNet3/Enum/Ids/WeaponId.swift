@@ -21,6 +21,7 @@ public enum WeaponId: Int, Codable, Identifiable, CaseIterable {
     case Shooter_Expert         = 70
     case Shooter_Heavy          = 80
     case Shooter_Long           = 90
+    case Shooter_QuickLong      = 100
     case Blaster_Short          = 200
     case Blaster_Middle         = 210
     case Blaster_Long           = 220
@@ -34,6 +35,7 @@ public enum WeaponId: Int, Codable, Identifiable, CaseIterable {
     case Roller_Normal          = 1010
     case Roller_Heavy           = 1020
     case Roller_Hunter          = 1030
+    case Roller_Wide            = 1040
     case Brush_Mini             = 1100
     case Brush_Normal           = 1110
     case Charger_Quick          = 2000
@@ -41,6 +43,7 @@ public enum WeaponId: Int, Codable, Identifiable, CaseIterable {
     case Charger_Long           = 2030
     case Charger_Light          = 2050
     case Charger_Keeper         = 2060
+    case Charger_Pencil         = 2070
     case Slosher_Strong         = 3000
     case Slosher_Diffusion      = 3010
     case Slosher_Launcher       = 3020
@@ -68,4 +71,5 @@ public enum WeaponId: Int, Codable, Identifiable, CaseIterable {
     case Shelter_Bear_Coop      = 26900
     case Slosher_Bear_Coop      = 23900
     case Stringer_Bear_Coop     = 27900
+    case Saber_Bear_Coop        = 28900
 }

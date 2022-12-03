@@ -35,7 +35,7 @@ public final class CoopHistoryDetailQuery: GraphQL {
 
     // MARK: - CoopHistoryDetail
     public struct CoopHistoryDetail: Codable {
-        public let id: String
+        public let id: Common.ResultId
         public let afterGrade: GradeType?
         public let rule: RuleType
         public let myResult: MemberResult
@@ -94,7 +94,6 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let nameplate: Nameplate
         public let uniform: SkinType
         public let id: String
-        public let isMyself: Bool
         public let species: SpeciesType
     }
 
@@ -125,6 +124,6 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let deliverNorm: Int?
         public let goldenPopCount: Int
         public let teamDeliverCount: Int?
-        public let specialWeapons: [SpecialType]
+        public let specialWeapons: [SpecialTypes]
     }
 }

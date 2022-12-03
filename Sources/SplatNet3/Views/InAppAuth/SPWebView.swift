@@ -9,7 +9,6 @@
 import Foundation
 import WebKit
 import SwiftUI
-import UIKit
 
 class SPWebView: WKWebView, WKNavigationDelegate {
     let indicator: UIActivityIndicatorView = {

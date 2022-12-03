@@ -16,6 +16,13 @@ public enum CoopHistory {
     }
 
     // MARK: - Content
+    public struct SPWeapon<T: RawRepresentable, S: RawRepresentable>: Codable where T.RawValue == String, S.RawValue == Int, S: Codable {
+        public let name: String
+        public let weaponId: S
+        public let image: Common.URL<T>
+    }
+
+    // MARK: - Content
     public struct Content<T: RawRepresentable, S: RawRepresentable>: Codable where T.RawValue == String, S.RawValue == Int {
         public let name: String
         @IntegerRawValue public var id: S
