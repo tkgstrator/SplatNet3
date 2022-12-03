@@ -24,6 +24,7 @@ extension Keychain {
         }
         /// アップデートする
         account.bulletToken = bulletToken.bulletToken
+        account.expiration = Date(timeIntervalSinceNow: 60 * 60 * 2)
         self.set(account)
         return account
     }

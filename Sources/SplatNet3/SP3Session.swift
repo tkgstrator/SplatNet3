@@ -69,6 +69,10 @@ open class SP3Session: Session,  ObservableObject {
         }
     }
 
+    @discardableResult
+    public func getAllCoopStageScheduleQuery() async throws -> [CoopSchedule] {
+        return try await request(CoopStageScheduleQuery())
+    }
 
     @discardableResult
     open func getCoopStageScheduleQuery() async throws -> [CoopSchedule] {
