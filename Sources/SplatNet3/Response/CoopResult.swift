@@ -62,7 +62,7 @@ public struct CoopResult: Codable {
         public let deadCount: Int
         public let helpCount: Int
         public let weaponList: [WeaponId]
-        public let special: SpecialId
+        public let special: SpecialId?
         public let specialCounts: [Int]
         public let bossKillCounts: [Int]
         public let bossKillCountsTotal: Int
@@ -93,7 +93,7 @@ public struct CoopResult: Codable {
             self.deadCount = content.rescuedCount
             self.helpCount = content.rescueCount
             self.weaponList = content.weapons.map({ $0.image.url.asWeaponId() })
-            self.special = content.specialWeapon?.weaponId ?? .SpUltraShot
+            self.special = content.specialWeapon?.weaponId
             self.specialCounts = specialCounts.map({ $0.filter({ $0 == content.specialWeapon?.weaponId }).count })
             self.bossKillCounts = isMyself ? results.bossKillCounts() : Array(repeating: 0, count: 15)
             self.uniform = content.player.uniform.id
