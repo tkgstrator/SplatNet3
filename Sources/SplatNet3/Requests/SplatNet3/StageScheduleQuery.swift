@@ -47,7 +47,7 @@ public final class StageScheduleQuery: GraphQL {
     // MARK: - CoopGroupingSchedule
     public struct CoopGroupingSchedule: Codable {
         public let regularSchedules: Common.Node<CoopSchedule>
-//        public let bigRunSchedules: Schedules
+        public let bigRunSchedules: Common.Node<CoopSchedule>
     }
 
     // MARK: - BankaraSchedulesNode
@@ -129,6 +129,20 @@ public final class StageScheduleQuery: GraphQL {
     public struct Setting: Codable {
         public let coopStage: CoopStage
         public let weapons: [WeaponType]
+        public let isCoopSetting: CoopSetting
+
+        enum CodingKeys: String, CodingKey {
+            case coopStage
+            case weapons
+            case isCoopSetting  = "__isCoopSetting"
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.coopStage = try container.decode(StageScheduleQuery.CoopStage.self, forKey: StageScheduleQuery.Setting.CodingKeys.coopStage)
+            self.weapons = try container.decode([WeaponType].self, forKey: StageScheduleQuery.Setting.CodingKeys.weapons)
+            self.isCoopSetting = try container.decode(CoopSetting.self, forKey: .isCoopSetting)
+        }
     }
 
     // MARK: - Stats

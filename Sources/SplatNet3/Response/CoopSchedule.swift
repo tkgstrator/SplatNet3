@@ -15,6 +15,7 @@ public struct CoopSchedule: Codable {
     public let rareWeapon: WeaponId?
     public let mode: ModeType
     public let rule: RuleType
+    public let setting: CoopSetting
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -25,6 +26,7 @@ public struct CoopSchedule: Codable {
         self.rareWeapon = try container.decodeIfPresent(WeaponId.self, forKey: .rareWeapon)
         self.mode = .REGULAR
         self.rule = .REGULAR
+        self.setting = try container.decodeIfPresent(CoopSetting.self, forKey: .setting) ?? .CoopNormalSetting
     }
 
     init(schedule: StageScheduleQuery.CoopSchedule) {
@@ -35,5 +37,6 @@ public struct CoopSchedule: Codable {
         self.rule = .REGULAR
         self.weaponList = schedule.setting.weapons.map({ $0.image.url.asWeaponId() })
         self.rareWeapon = nil
+        self.setting = schedule.setting.isCoopSetting
     }
 }
