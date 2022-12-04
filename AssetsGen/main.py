@@ -336,7 +336,11 @@ def get_weapons(version: str):
         )
     )
     for weapon in weapons:
-        if "_00" in weapon.RowId:
+        if (
+            "_00" in weapon.RowId
+            and "Rival" not in weapon.RowId
+            and "Mission" not in weapon.RowId
+        ):
             url = f"https://leanny.github.io/splat3/images/weapon_flat/Path_Wst_{weapon.RowId}.png"
             print(url)
 
@@ -371,8 +375,7 @@ def get_hashes(revision):
             "//\n",
             "//  Created by tkgstrator on 2022/09/22\n",
             "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
+            "//\n\n",
             "import Foundation\n\n",
             "public enum SHA256Hash: String, CaseIterable {\n",
         ]
@@ -438,42 +441,58 @@ def get_badge(version: str = "111"):
         )
     )
 
-    for badge in badges:
-        url = f"https://leanny.github.io/splat3/images/badge/Badge_{badge.Name}.png"
-        print(url)
+    # for badge in badges:
+    #     url = f"https://leanny.github.io/splat3/images/badge/Badge_{badge.Name}.png"
+    #     print(url)
 
-        makdirs(f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset")
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset/{badge.Name}.png",
-            mode="wb",
-        ) as f:
-            f.write(requests.get(url).content)
+    #     makdirs(f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset")
+    #     with open(
+    #         f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset/{badge.Name}.png",
+    #         mode="wb",
+    #     ) as f:
+    #         f.write(requests.get(url).content)
 
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset/Contents.json",
-            mode="w",
-        ) as f:
-            content = to_dict(Content(f"{badge.Name}"))
-            f.write(json.dumps(content))
+    #     with open(
+    #         f"../Sources/SplatNet3/Assets.xcassets/Badges/{badge.Id}.imageset/Contents.json",
+    #         mode="w",
+    #     ) as f:
+    #         content = to_dict(Content(f"{badge.Name}"))
+    #         f.write(json.dumps(content))
 
-    makdirs(f"../Sources/SplatNet3/Enum/")
-    with open(f"../Sources/SplatNet3/Enum/BadgeType.swift", mode="w") as f:
+    makdirs(f"../Sources/SplatNet3/Enum/Ids")
+    with open(f"../Sources/SplatNet3/Enum/Ids/BadgeId.swift", mode="w") as f:
         headers = [
             "//\n",
-            "//  BadgeType.swift\n",
+            "//  BadgeId.swift\n",
             "//  SplatNet3\n",
             "//\n",
             "//  Created by tkgstrator on 2022/09/22\n",
             "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
-            "//\n",
-            "\n\n",
+            "//\n\n",
             "import Foundation\n\n",
-            "public enum BadgeType: Int, CaseIterable, Identifiable, Codable {\n",
+            "public enum BadgeId: Int, CaseIterable, Identifiable, Codable {\n",
             "\tpublic var id: Int { rawValue }\n",
         ]
         f.writelines(headers)
         for badge in badges:
             f.write(f"\tcase {badge.Name} = {badge.Id}\n")
+        f.write("}")
+    with open(f"../Sources/SplatNet3/Enum/Keys/BadgeKey.swift", mode="w") as f:
+        headers = [
+            "//\n",
+            "//  BadgeKey.swift\n",
+            "//  SplatNet3\n",
+            "//\n",
+            "//  Created by tkgstrator on 2022/09/22\n",
+            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+            "//\n\n",
+            "import Foundation\n\n",
+            "public enum BadgeKey: String, CaseIterable, Identifiable, Codable {\n",
+            "\tpublic var id: String { rawValue }\n",
+        ]
+        f.writelines(headers)
+        for badge in badges:
+            f.write(f'\tcase {badge.Name} = "{get_hash(badge.Name)}"\n')
         f.write("}")
 
 
@@ -488,30 +507,47 @@ def get_nameplate(version: str = "111"):
         )
     )
 
-    for nameplate in nameplates:
-        url = f"https://leanny.github.io/splat3/images/npl/{nameplate.RowId}.png"
+    # for nameplate in nameplates:
+    #     url = f"https://leanny.github.io/splat3/images/npl/{nameplate.RowId}.png"
 
-        makdirs(
-            f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset"
-        )
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset/{nameplate.RowId}.png",
-            mode="wb",
-        ) as f:
-            f.write(requests.get(url).content)
+    #     makdirs(
+    #         f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset"
+    #     )
+    #     with open(
+    #         f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset/{nameplate.RowId}.png",
+    #         mode="wb",
+    #     ) as f:
+    #         f.write(requests.get(url).content)
 
-        with open(
-            f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset/Contents.json",
-            mode="w",
-        ) as f:
-            content = to_dict(Content(f"{nameplate.RowId}"))
-            f.write(json.dumps(content))
+    #     with open(
+    #         f"../Sources/SplatNet3/Assets.xcassets/NamePlates/{nameplate.Id}.imageset/Contents.json",
+    #         mode="w",
+    #     ) as f:
+    #         content = to_dict(Content(f"{nameplate.RowId}"))
+    #         f.write(json.dumps(content))
 
-    makdirs(f"../Sources/SplatNet3/Enum/")
-    with open(f"../Sources/SplatNet3/Enum/NameplateType.swift", mode="w") as f:
+    makdirs(f"../Sources/SplatNet3/Enum/Ids")
+    with open(f"../Sources/SplatNet3/Enum/Ids/NameplateId.swift", mode="w") as f:
         headers = [
             "//\n",
-            "//  NameplateType.swift\n",
+            "//  NameplateId.swift\n",
+            "//  SplatNet3\n",
+            "//\n",
+            "//  Created by tkgstrator on 2022/09/22\n",
+            "//  Copyright © 2022 Magi, Corporation. All rights reserved.\n",
+            "//\n\n",
+            "import Foundation\n\n",
+            "public enum NameplateId: Int, CaseIterable, Identifiable, Codable {\n",
+            "\tpublic var id: Int { rawValue }\n",
+        ]
+        f.writelines(headers)
+        for nameplate in nameplates:
+            f.write(f"\tcase {nameplate.RowId} = {nameplate.Id}\n")
+        f.write("}")
+    with open(f"../Sources/SplatNet3/Enum/Keys/NameplateKey.swift", mode="w") as f:
+        headers = [
+            "//\n",
+            "//  NameplateKey.swift\n",
             "//  SplatNet3\n",
             "//\n",
             "//  Created by tkgstrator on 2022/09/22\n",
@@ -519,12 +555,12 @@ def get_nameplate(version: str = "111"):
             "//\n",
             "\n\n",
             "import Foundation\n\n",
-            "public enum NamePlateType: Int, CaseIterable, Identifiable, Codable {\n",
-            "\tpublic var id: Int { rawValue }\n",
+            "public enum NameplateKey: String, CaseIterable, Identifiable, Codable {\n",
+            "\tpublic var id: String { rawValue }\n",
         ]
         f.writelines(headers)
         for nameplate in nameplates:
-            f.write(f"\tcase {nameplate.RowId} = {nameplate.Id}\n")
+            f.write(f'\tcase {nameplate.RowId} = "{get_hash(nameplate.RowId)}"\n')
         f.write("}")
 
 
@@ -547,6 +583,6 @@ if __name__ == "__main__":
     # ブキ
     # get_weapons("200")
     # バッジ
-    # get_badge("200")
+    get_badge("200")
     # ネームプレート
-    # get_nameplate("200")
+    get_nameplate("200")
