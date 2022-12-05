@@ -84,14 +84,11 @@ struct RetrieveView: View {
                         }
                     })
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                        UIApplication.shared.dismiss()
-//                        dismiss()
                         isPresented.toggle()
                     })
                 } catch(let error) {
-                    print(error)
+                    SwiftyLogger.error(error.localizedDescription)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                        dismiss()
                         isPresented.toggle()
                     })
                 }

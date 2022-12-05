@@ -73,7 +73,7 @@ struct SignInView: View {
                         UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })
                 } catch(let error) {
-                    print(error)
+                    SwiftyLogger.error(error.localizedDescription)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                         UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import KeychainAccess
+import SwiftyBeaver
 
 /// 基本となるリクエストなどが定義されたクラス
 open class Session {
@@ -22,37 +23,50 @@ open class Session {
         return Alamofire.Session(configuration: configuration)
     }()
 
+    /// キーチェイン
     private let keychain: Keychain = Keychain(service: Bundle.module.bundleIdentifier!)
+
+    /// デコーダー
     public let decoder: SPDecoder = SPDecoder()
+
+    /// アカウント
     public var account: UserInfo? {
         get {
             keychain.get()
         }
     }
 
+    init() {}
+
     /// 一般的に使うリクエスト
     open func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
-        try await session.request(request, interceptor: interceptor)
-            .validationWithNXError()
-            .serializingDecodable(T.ResponseType.self, decoder: decoder)
-            .value
+        try await withSwiftyLogger(execute: {
+            try await session.request(request, interceptor: interceptor)
+                .validationWithNXError()
+                .serializingDecodable(T.ResponseType.self, decoder: decoder)
+                .value
+        })
     }
 
     /// 文字列を取得するためのリクエスト
     open func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> String {
-        try await session.request(request, interceptor: interceptor)
-            .validationWithNXError()
-            .serializingString(encoding: .utf8)
-            .value
+        try await withSwiftyLogger(execute: {
+            try await session.request(request, interceptor: interceptor)
+                .validationWithNXError()
+                .serializingString(encoding: .utf8)
+                .value
+        })
     }
 
     /// イカスミセッション専用のリクエスト
     func request(_ request: IksmSession) async -> [String: String]? {
-        await session.request(request)
-            .validationWithNXError()
-            .serializingString()
-            .response
-            .response?.allHeaderFields as? [String: String]
+        try? await withSwiftyLogger(execute: {
+            await session.request(request)
+                .validationWithNXError()
+                .serializingString()
+                .response
+                .response?.allHeaderFields as? [String: String]
+        })
     }
 
     /// SP2/3: URLSchemeを使って認証情報を取得
@@ -91,13 +105,11 @@ open class Session {
         case .SP2:
             let iksmSession: IksmSession.Response = try await getIksmSession(gameWebToken: gameWebToken)
             let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, iksmSession: iksmSession)
-            print(account)
             self.keychain.set(account)
             return account
         case .SP3:
             let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
             let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken.result.accessToken, bulletToken: bulletToken)
-            print(account)
             self.keychain.set(account)
             return account
         }
@@ -106,6 +118,15 @@ open class Session {
 
 /// 秘匿したい関数を定義したExtension
 extension Session: RequestInterceptor {
+    private func withSwiftyLogger<T>(execute: () async throws -> T) async throws -> T {
+        do {
+            return try await execute()
+        } catch(let error) {
+            SwiftyBeaver.error(error.localizedDescription)
+            throw error
+        }
+    }
+
     /// 通信失敗した場合のリトライ
     public func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
         completion(request.retryCount == 0 ? .retryWithDelay(0.5) : .doNotRetry)
@@ -126,7 +147,7 @@ extension Session: RequestInterceptor {
         do {
             return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
-            print(error)
+            SwiftyLogger.error(error.localizedDescription)
             return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
         }
     }
@@ -136,7 +157,7 @@ extension Session: RequestInterceptor {
         do {
             return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
-            print(error)
+            SwiftyLogger.error(error.localizedDescription)
             return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
         }
     }

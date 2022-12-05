@@ -14,10 +14,4 @@ public enum ModeType: String, CaseIterable, Codable {
     case REGULAR
     case PRIVATE_CUSTOM
     case PRIVATE_SCENARIO
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let stringValue: String = try container.decode(String.self)
-        self = Self(rawValue: stringValue) ?? .UNKNOWN
-    }
 }

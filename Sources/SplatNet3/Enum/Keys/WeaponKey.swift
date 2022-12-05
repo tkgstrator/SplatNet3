@@ -74,12 +74,6 @@ public enum WeaponKey: String, Codable, CaseIterable, Identifiable {
     case Stringer_Bear_Coop     = "36e03d8d1e6bc4f7449c5450f4410c6c8449cde0548797d22ab641cd488d2060"
     case Saber_Bear_Coop        = "480bc1dfb0beed1ce4625a6a6b035e4bac711de019bb9b0e5125e4e7e39e0719"
 
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let stringValue: String = try container.decode(String.self)
-        self = Self(rawValue: stringValue) ?? .Random_Green
-    }
-
     func asWeaponId() -> WeaponId {
         guard let index: Int = Self.allCases.firstIndex(of: self) else {
             return .Random_Green

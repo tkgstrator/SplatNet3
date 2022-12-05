@@ -9,6 +9,7 @@ import Foundation
 
 public enum VsStageKey: String, CaseIterable, Identifiable, Codable {
     public var id: String { rawValue }
+    case Stage00 = ""
     /// ユノハナ大渓谷
     case Stage01 = "35f9ca08ccc2bf759774ab2cb886567c117b9287875ca92fb590c1294ddcdc1e"
     /// ゴンズイ地区

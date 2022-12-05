@@ -49,7 +49,7 @@ public actor RealmService: ObservableObject {
             try data.write(to: path, options: .atomic)
             return path
         } catch(let error) {
-            print(error)
+            SwiftyLogger.error(error.localizedDescription)
             throw error
         }
     }

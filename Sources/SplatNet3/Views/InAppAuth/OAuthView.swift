@@ -64,7 +64,7 @@ extension View {
                         hosting.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
                         UIApplication.shared.rootViewController?.present(hosting, animated: true)
                     case .failure(let error):
-                        print(error)
+                        SwiftyLogger.error(error.localizedDescription)
                     }
                 })
             })

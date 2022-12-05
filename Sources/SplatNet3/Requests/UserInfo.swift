@@ -33,7 +33,6 @@ public struct UserInfo: SPCredential {
     var expiration: Date
     /// リフレッシュが必要かどうか
     public var requiresRefresh: Bool {
-        print("BulletToken", expiration, Date(), expiration <= Date(timeIntervalSinceNow: 0))
         return expiration <= Date(timeIntervalSinceNow: 0)
     }
 
@@ -41,7 +40,6 @@ public struct UserInfo: SPCredential {
         guard let token: JSONWebToken = try? JSONWebToken(gameWebToken: gameWebToken) else {
             return true
         }
-        print("GameWebToken", Date(timeIntervalSince1970: TimeInterval(token.payload.exp)), Date(), Date(timeIntervalSince1970: TimeInterval(token.payload.exp)) <= Date())
         return Date(timeIntervalSince1970: TimeInterval(token.payload.exp)) <= Date()
     }
 

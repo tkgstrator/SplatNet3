@@ -20,7 +20,9 @@ open class SP3Session: Session,  ObservableObject {
 
     @Published var requests: [SPProgress] = []
 
-    public override init() {}
+    public override init() {
+        super.init()
+    }
 
     override func request(_ request: IksmSession) async -> [String : String]? {
         DispatchQueue.main.async(execute: {

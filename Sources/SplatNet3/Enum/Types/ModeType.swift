@@ -12,10 +12,4 @@ public enum RuleType: String, CaseIterable, Codable {
 
     case UNKNOWN
     case REGULAR
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let stringValue: String = try container.decode(String.self)
-        self = Self(rawValue: stringValue) ?? .UNKNOWN
-    }
 }

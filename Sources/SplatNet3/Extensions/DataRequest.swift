@@ -8,6 +8,7 @@
 
 import Alamofire
 import Foundation
+import SwiftyBeaver
 
 extension DataRequest {
     @discardableResult
@@ -16,7 +17,7 @@ extension DataRequest {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return cURLDescription(calling: { requestURL in
             #if DEBUG
-            print(requestURL)
+            SwiftyBeaver.self.debug(requestURL)
             #endif
         })
         .validate({ request, response, data in

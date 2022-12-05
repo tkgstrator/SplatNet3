@@ -14,10 +14,4 @@ public enum VsModeKey: String, CaseIterable, Identifiable, Codable {
     case REGULAR
     case BANKARA
     case PRIVATE
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let stringValue: String = try container.decode(String.self)
-        self = Self(rawValue: stringValue) ?? .UNKNOWN
-    }
 }
