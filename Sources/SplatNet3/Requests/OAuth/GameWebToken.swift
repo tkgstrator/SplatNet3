@@ -20,9 +20,10 @@ class GameWebToken: RequestType {
     //  swiftlint:disable:next discouraged_optional_collection
     var headers: [String: String]?
 
-    init(imink: Imink.Response, accessToken: GameServiceToken.Response, contentId: ContentId) {
+    init(imink: Imink.Response, accessToken: GameServiceToken.Response, contentId: ContentId, version: XVersion.Response) {
         self.headers = [
             "X-Platform": "Android",
+            "X-ProductVersion": "\(version.version)",
             "Authorization": "Bearer \(accessToken.result.webApiServerCredential.accessToken)",
         ]
         self.parameters = [

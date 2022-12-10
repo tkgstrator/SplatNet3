@@ -37,11 +37,11 @@ if __name__=="__main__":
         output['ru-RU'] = dict(zip(values.keys(), results))
       if target_lang == "ZH":
         output['zh-CN'] = dict(zip(values.keys(), results))
-        translator = Translator()
-        translated = []
-        for result in results:
-          translated.append(translator.translate(result, src="zh-cn", dest="zh-tw").text)
-        output['zh-TW'] = dict(zip(values.keys(), translated))
+        # google = Translator()
+        # translated = []
+        # for result in results:
+        #   translated.append(google.translate(result, src="zh-cn", dest="zh-tw").text)
+        # output['zh-TW'] = dict(zip(values.keys(), translated))
       if target_lang == "ES":
         output['es-ES'] = dict(zip(values.keys(), results))
         output['es-MX'] = dict(zip(values.keys(), results))

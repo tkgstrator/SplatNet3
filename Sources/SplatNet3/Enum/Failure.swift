@@ -9,15 +9,38 @@
 import Foundation
 
 enum Failure {
-    struct NSO: Codable, Error {
-        let errorDescription: NXErrorDescription
+    struct NSO: Codable, Error, LocalizedError {
+        let errorMessage: NXErrorDescription
         let error: NXError
+
+        var errorDescription: String? {
+            errorMessage.rawValue
+        }
+
+        var failureReason: String? {
+            error.rawValue
+        }
+
+        enum CodingKeys: String, CodingKey {
+            case errorMessage   = "errorDescription"
+            case error          = "error"
+        }
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.errorMessage = try container.decode(NXErrorDescription.self, forKey: .errorMessage)
+            self.error = try container.decode(NXError.self, forKey: .error)
+        }
     }
 
-    struct APP: Codable, Error {
+    struct APP: Codable, Error, LocalizedError {
         let errorMessage: NXErrorMessage
-        let statusCode: Int
+        let status: Int
         let correlationId: String
+
+        var errorDescription: String? {
+            errorMessage.rawValue
+        }
     }
 
     struct API: Codable, Error {

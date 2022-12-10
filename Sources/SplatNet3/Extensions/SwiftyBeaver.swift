@@ -16,7 +16,17 @@ public let SwiftyLogger: SwiftyBeaver.Type = {
     return logger
 }()
 
+public extension SwiftyBeaver {
+    class func addDestination(appId: String, appSecret: String, encryptionKey: String) {
+        let format: String = "$DHH:mm:ss.SSS$d $N.$F:$l - $M"
+        let platform: SBPlatformDestination = SBPlatformDestination(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
+        platform.format = format
+        self.addDestination(platform)
+    }
+}
+
 extension ConsoleDestination {
+    /// コンソールには全て出力
     convenience init(format: String) {
         self.init()
         self.format = format
@@ -25,17 +35,19 @@ extension ConsoleDestination {
 }
 
 extension FileDestination {
+    /// ファイルにはInfo以上を出力
     convenience init(format: String) {
         self.init()
         self.format = format
-        self.minLevel = .warning
+        self.minLevel = .info
     }
 }
 
 extension SBPlatformDestination {
+    /// クラウドにはWarning以上を出力
     convenience init(format: String, appId: String, appSecret: String, encryptionKey: String) {
         self.init(appID: appId, appSecret: appSecret, encryptionKey: encryptionKey)
         self.format = format
-        self.minLevel = .error
+        self.minLevel = .warning
     }
 }

@@ -78,7 +78,9 @@ open class SP3Session: Session,  ObservableObject {
 
     @discardableResult
     open func getCoopStageScheduleQuery() async throws -> [CoopSchedule] {
-        return try await request(StageScheduleQuery()).data.coopGroupingSchedule.regularSchedules.nodes.map({ CoopSchedule(schedule: $0) })
+        let response: StageScheduleQuery.CoopGroupingSchedule = try await request(StageScheduleQuery()).data.coopGroupingSchedule
+        let nodes: [StageScheduleQuery.CoopSchedule] = response.bigRunSchedules.nodes + response.regularSchedules.nodes
+        return nodes.map({ CoopSchedule(schedule: $0) })
     }
 
     @discardableResult
@@ -110,7 +112,6 @@ open class SP3Session: Session,  ObservableObject {
                     }
                 })
             })
-
             return try await task.reduce(into: [CoopResult]()) { results, result in
                 results.append(result)
                 completion(Float(results.count), Float(resultIds.count))

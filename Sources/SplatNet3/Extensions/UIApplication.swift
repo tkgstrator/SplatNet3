@@ -19,41 +19,41 @@ extension UIApplication {
             .rootViewController
     }
 
-    private func findVisibleViewController(viewController: UIViewController) -> UIViewController {
-        /// UINavigationController
-        if let navigationController = viewController as? UINavigationController,
-           let visibleController = navigationController.visibleViewController
-        {
-            return findVisibleViewController(viewController: visibleController)
+    public var presentedViewController: UIViewController? {
+        if let current = rootViewController?.presentedViewController {
+            return current
         }
-
-        /// UITabBarController
-        if let tabBarController = viewController as? UITabBarController,
-           let selectedTabController = tabBarController.selectedViewController
-        {
-            return findVisibleViewController(viewController: selectedTabController)
-        }
-
-        /// PresentedViewController
-        if let presentedViewController = viewController.presentedViewController {
-            return findVisibleViewController(viewController: presentedViewController)
-        }
-
-        return viewController
+        return rootViewController
     }
 
-    public func dismiss() {
+    public func popToRootView() {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootViewController = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController
+           let rootViewController = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController,
+           let navigationController = findNavigationController(rootViewController)
         {
-            let visibleViewController = findVisibleViewController(viewController: rootViewController)
-            visibleViewController.dismiss(animated: true, completion: nil)
+            navigationController.popToRootViewController(animated: true)
         }
+    }
+
+    private func findNavigationController(_ viewController: UIViewController?) -> UINavigationController? {
+        guard let viewController = viewController else {
+            return nil
+        }
+
+        if let navigationController = viewController as? UINavigationController {
+            return navigationController
+        }
+
+        for childViewController in viewController.children {
+            return findNavigationController(childViewController)
+        }
+
+        return nil
     }
 }
 
 extension UIViewController {
-    public func popover(_ viewControllerToPresent: UIActivityViewController, animated: Bool) {
+    public func popover(_ viewControllerToPresent: UIActivityViewController, animated: Bool, completion: (() -> Void)? = nil) {
         if UIDevice.current.userInterfaceIdiom == .pad {
             if let popover = viewControllerToPresent.popoverPresentationController {
                 popover.sourceView = viewControllerToPresent.view
@@ -61,6 +61,6 @@ extension UIViewController {
                 popover.sourceRect = viewControllerToPresent.accessibilityFrame
             }
         }
-        present(viewControllerToPresent, animated: animated)
+        present(viewControllerToPresent, animated: animated, completion: completion)
     }
 }

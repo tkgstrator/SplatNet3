@@ -12,6 +12,7 @@ public enum Common {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd'T'HHmmss"
+        formatter.timeZone = TimeZone(identifier: "UTC")
         return formatter
     }()
 

@@ -20,6 +20,8 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
     case F                      = "f"
     /// FLAPG
     case FLAPG                  = "ika/api/login-main"
+    /// Results
+    case NXAPI                  = "api/znca/f"
     /// GameServiceToken
     case GAME_SERVICE_TOKEN     = "v3/Account/Login"
     /// GameWebToken
@@ -64,6 +66,8 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return .IMINK
         case .FLAPG:
             return .FLAPG
+        case .NXAPI:
+            return .NXAPI
         default:
             return .API
         }
@@ -77,7 +81,7 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return SPColor.SplatNet3.SPRed
         case .WEB_VERSION, .VERSION:
             return SPColor.SplatNet3.SPBlue
-        case .F, .FLAPG:
+        case .F, .FLAPG, .NXAPI:
             return SPColor.SplatNet3.SPPink
         default:
             return SPColor.SplatNet3.SPPurple

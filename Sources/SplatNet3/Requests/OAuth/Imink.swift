@@ -41,6 +41,7 @@ class Imink: RequestType {
     enum ServerType: String, CaseIterable {
         case Imink  = "https://api.imink.app/"
         case Flapg  = "https://flapg.com/"
+        case Nxapi  = "https://nxapi-znca-api.fancy.org.uk"
 
         var path: String {
             switch self {
@@ -48,6 +49,8 @@ class Imink: RequestType {
                 return "f"
             case .Flapg:
                 return "ika/api/login-main"
+            case .Nxapi:
+                return "api/znca/f"
             }
         }
     }

@@ -7,8 +7,6 @@
 
 import Foundation
 import RealmSwift
-
-3
 import SwiftUI
 
 public actor RealmService: ObservableObject {
@@ -30,6 +28,7 @@ public actor RealmService: ObservableObject {
         let encoder: JSONEncoder = {
             let encoder: JSONEncoder = JSONEncoder()
             encoder.keyEncodingStrategy = .convertToSnakeCase
+            encoder.dataEncodingStrategy
             encoder.dateEncodingStrategy = .iso8601
             return encoder
         }()

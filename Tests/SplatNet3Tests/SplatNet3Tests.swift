@@ -39,6 +39,23 @@ final class SplatNet3Tests: XCTestCase {
         }
     }
 
+    func testSplatNet3() throws {
+        do {
+            let paths: [URL] = getListContents(.SplatNet3).sorted(by: { $0.absoluteString < $1.absoluteString })
+
+            for path in paths {
+                try autoreleasepool(invoking: {
+                    let data: Data = try Data(contentsOf: path)
+                    let response = try decoder.decode([CoopHistoryDetailQuery.Response].self, from: data)
+                })
+            }
+        } catch (let error) {
+            print(error)
+            SwiftyLogger.error(error.localizedDescription)
+            throw error
+        }
+    }
+
     func testFriendList() throws {
     }
 
@@ -65,4 +82,5 @@ enum JSONType: String, CaseIterable, Codable {
     case FriendList
     case StageSchedule
     case Schedule
+    case SplatNet3
 }

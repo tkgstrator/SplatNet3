@@ -23,10 +23,11 @@ public struct CoopSchedule: Codable {
         self.startTime = try container.decode(Date.self, forKey: .startTime)
         self.endTime = try container.decode(Date.self, forKey: .endTime)
         self.weaponList = try container.decode([WeaponId].self, forKey: .weaponList)
-        self.rareWeapon = try container.decodeIfPresent(WeaponId.self, forKey: .rareWeapon)
+        self.rareWeapon = try container.decode(WeaponId.self, forKey: .rareWeapon)
+        let setting: CoopSetting = try container.decode(CoopSetting.self, forKey: .setting)
         self.mode = .REGULAR
-        self.rule = .REGULAR
-        self.setting = try container.decodeIfPresent(CoopSetting.self, forKey: .setting) ?? .CoopNormalSetting
+        self.rule = setting == .CoopBigRunSetting ? .BIG_RUN : .REGULAR
+        self.setting = setting
     }
 
     init(schedule: StageScheduleQuery.CoopSchedule) {
@@ -34,7 +35,7 @@ public struct CoopSchedule: Codable {
         self.startTime = schedule.startTime
         self.endTime = schedule.endTime
         self.mode = .REGULAR
-        self.rule = .REGULAR
+        self.rule = schedule.setting.isCoopSetting == .CoopNormalSetting ? .REGULAR : .BIG_RUN
         self.weaponList = schedule.setting.weapons.map({ $0.image.url.asWeaponId() })
         self.rareWeapon = nil
         self.setting = schedule.setting.isCoopSetting

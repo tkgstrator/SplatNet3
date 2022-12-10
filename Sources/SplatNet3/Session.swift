@@ -114,6 +114,11 @@ open class Session {
             return account
         }
     }
+
+    /// 保存されているアカウント全削除
+    public func removeAll() {
+        try? keychain.removeAll()
+    }
 }
 
 /// 秘匿したい関数を定義したExtension
@@ -147,8 +152,13 @@ extension Session: RequestInterceptor {
         do {
             return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
-            SwiftyLogger.error(error.localizedDescription)
-            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            do {
+                SwiftyLogger.error(error.localizedDescription)
+                return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            } catch(let error) {
+                SwiftyLogger.error(error.localizedDescription)
+                return try await request(Imink(accessToken: accessToken, server: .Nxapi))
+            }
         }
     }
 
@@ -157,8 +167,13 @@ extension Session: RequestInterceptor {
         do {
             return try await request(Imink(accessToken: accessToken, server: .Imink))
         } catch(let error) {
-            SwiftyLogger.error(error.localizedDescription)
-            return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            do {
+                SwiftyLogger.error(error.localizedDescription)
+                return try await request(Imink(accessToken: accessToken, server: .Flapg), interceptor: self)
+            } catch(let error) {
+                SwiftyLogger.error(error.localizedDescription)
+                return try await request(Imink(accessToken: accessToken, server: .Nxapi))
+            }
         }
     }
 
@@ -183,7 +198,7 @@ extension Session: RequestInterceptor {
     /// GameWebToken取得
     func getGameWebToken(accessToken: GameServiceToken.Response, version: XVersion.Response, contentId: ContentId) async throws -> GameWebToken.Response {
         let response : Imink.Response = try await getHash(accessToken: accessToken)
-        return try await request(GameWebToken(imink: response, accessToken: accessToken, contentId: contentId))
+        return try await request(GameWebToken(imink: response, accessToken: accessToken, contentId: contentId, version: version))
     }
 
     /// BulletToken取得

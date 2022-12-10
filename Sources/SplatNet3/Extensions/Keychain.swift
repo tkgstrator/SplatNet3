@@ -12,12 +12,14 @@ import KeychainAccess
 extension Keychain {
     static let bundleIdentifier: String = "SPLATNET_ACCOUNTS"
 
+    /// アカウント書き込み
     func set(_ account: UserInfo?) {
         if let account = account {
             try? set(try account.asData(), key: Keychain.bundleIdentifier)
         }
     }
 
+    /// アカウントアップデート
     func update(_ bulletToken: BulletToken.Response) throws -> UserInfo {
         guard var account: UserInfo = self.get() else {
             throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Account Not Found"))
@@ -29,6 +31,7 @@ extension Keychain {
         return account
     }
 
+    /// アカウント取得
     func get() -> UserInfo? {
         let decoder: JSONDecoder = JSONDecoder()
 

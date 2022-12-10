@@ -21,4 +21,5 @@ public enum ProgressAPIType: String, CaseIterable {
     case API    = "API"
     case IMINK  = "IMINK"
     case FLAPG  = "FLAPG"
+    case NXAPI  = "NXAPI"
 }

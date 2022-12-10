@@ -36,21 +36,21 @@ def format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
     value = value.replace('"', "")
     value = value.replace("\n", "")
-    return f'// {key}\n"{get_hash(key.strip())}" = "{value.strip()}";\n'
+    return f'"{key.strip()}" = "{value.strip()}";\n'
 
 
 def plain(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
     value = value.replace('"', "")
     value = value.replace("\n", "")
-    return f'// {key}\n"{key.strip()}" = "{value.strip()}";\n'
+    return f'"{key.strip()}" = "{value.strip()}";\n'
 
 
 def localized_format(key: str, value: str) -> str:
     key = key.replace("_%", "").replace("-", "_").strip()
     value = value.replace("\n", "")
     value = value.replace('"', "")
-    return f'\t/// {value}\n\tcase {key} = "{get_hash(key)}"\n'
+    return f'\t/// {value}\n\tcase {key} = "{key}"\n'
 
 
 def get_locales() -> list[Locale]:
@@ -300,7 +300,7 @@ def get_localized(revision):
             mode="w",
         ) as f:
             print(f"Converting {language.xcode}")
-            f.writelines(params)
+            f.writelines(sorted(params))
 
 
 def get_localized_text(localized: list[str]):
@@ -579,10 +579,10 @@ if __name__ == "__main__":
     # 翻訳ファイル
     get_localized(revision)
     # ハッシュ
-    get_hashes(revision)
+    # get_hashes(revision)
     # ブキ
     # get_weapons("200")
     # バッジ
-    get_badge("200")
+    # get_badge("200")
     # ネームプレート
-    get_nameplate("200")
+    # get_nameplate("200")

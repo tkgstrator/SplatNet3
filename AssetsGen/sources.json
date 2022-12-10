@@ -44,8 +44,8 @@
     "Common_Unlink_Accounts_Txt": "アプリとニンテンドースイッチオンラインのアカウント連携を解除します（アカウントは削除されません）",
     "Common_Welcome_App": "ようこそSalmonia3+へ",
     "Common_Welcome_App_Txt": "もっと便利なサーモンランライフを！",
-    "Common_Wipe_Results": "リザルト消去",
-    "Common_Wipe_Results_Txt": "アプリで保存されている全てのリザルトを削除します",
+    "Common_Wipe_Data": "データ消去",
+    "Common_Wipe_Data_Txt": "アプリで保存されているデータを削除します",
     "Common_Write_Review": "レビューを書く",
     "Common_Form": "フォーム",
     "Common_Form_Type": "種類",
@@ -54,7 +54,15 @@
     "Common_Form_Type_Enhancement": "改善案",
     "Common_Form_Title": "タイトル",
     "Common_Form_Content": "内容",
-    "Common_Form_Submit": "送信"
+    "Common_Form_Submit": "送信",
+    "Common_Restore": "復元",
+    "Common_Restore_Txt": "バックアップからリザルトを復元します",
+    "Common_Backup": "バックアップ",
+    "Common_Backup_Txt": "リザルトをバックアップします",
+    "Common_Log": "ログ",
+    "Common_Log_Txt": "開発者にログを送信します（個人を特定する情報は含まれません）",
+    "Common_Backup_Compress": "圧縮(ZIP)",
+    "Common_Backup_No_Compress": "非圧縮(JSON)"
   },
   "EN-US": {
     "Common_Actual_Value": "Actual value",
@@ -101,8 +109,8 @@
     "Common_Unlink_Accounts_Txt": "Unlinking Nintendo Switch Online accounts(account will not be deleted).",
     "Common_Welcome_App": "Welcome to Salmonia3",
     "Common_Welcome_App_Txt": "Enhance your online play experience with the Salmonia3+!",
-    "Common_Wipe_Results": "Erase results",
-    "Common_Wipe_Results_Txt": "Delete all results in the app.",
+    "Common_Wipe_Data": "Erase results",
+    "Common_Wipe_Data_Txt": "Delete all results in the app.",
     "Common_Write_Review": "Write a review",
     "Common_Form": "Form",
     "Common_Form_Type": "Type",
@@ -111,6 +119,14 @@
     "Common_Form_Type_Enhancement": "Enhancement",
     "Common_Form_Title": "Title",
     "Common_Form_Content": "Content",
-    "Common_Form_Submit": "Submit"
+    "Common_Form_Submit": "Submit",
+    "Common_Restore": "Restore",
+    "Common_Restore_Txt": "Restore all of data from backup",
+    "Common_Backup": "Backup",
+    "Common_Backup_Txt": "Backup results",
+    "Common_Log": "Log",
+    "Common_Log_Txt": "Send logs to developers(Not included the personal data)",
+    "Common_Backup_Compress": "Compress(ZIP)",
+    "Common_Backup_No_Compress": "Plain(JSON)"
   }
 }

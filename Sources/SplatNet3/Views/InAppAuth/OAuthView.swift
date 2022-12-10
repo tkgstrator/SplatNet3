@@ -54,6 +54,7 @@ extension View {
                     switch result {
                     case .success(let url):
                         guard let code = url.absoluteString.capture(pattern: "de=(.*)&", group: 1) else {
+                            SwiftyLogger.error("The callbackURLScheme does not include session token code.")
                             return
                         }
                         let hosting: UIHostingController = UIHostingController(rootView: SignInView(code: code, verifier: verifier, contentId: contentId))
@@ -64,7 +65,9 @@ extension View {
                         hosting.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
                         UIApplication.shared.rootViewController?.present(hosting, animated: true)
                     case .failure(let error):
-                        SwiftyLogger.error(error.localizedDescription)
+                        if (error as NSError).code != 1 {
+                            SwiftyLogger.error(error.localizedDescription)
+                        }
                     }
                 })
             })

@@ -85,25 +85,12 @@ extension String {
             (self as NSString).substring(with: match.range)
         })
     }
-//
-//    /// 文字列をBase64復号して遊んだ時間をUnixTimestampで返す
-//    var playTime: Int {
-//        let formatter: ISO8601DateFormatter = {
-//            let formatter = ISO8601DateFormatter()
-//            formatter.formatOptions = [
-//                .withDay,
-//                .withMonth,
-//                .withYear,
-//                .withTime,
-//            ]
-//            return formatter
-//        }()
-//
-//        if let decodedString: String = self.base64DecodedString,
-//           let playTime: String = decodedString.capture(pattern: #":(\d{8}T\d{6})_"#, group: 1),
-//           let timeInterval: TimeInterval = formatter.date(from: playTime)?.timeIntervalSince1970 {
-//            return Int(timeInterval)
-//        }
-//        return 0
-//    }
+
+    public init(format: String, _ arguments: CVarArg?) {
+        if let arguments = arguments {
+            self.init(format: format, arguments)
+        } else {
+            self.init("-")
+        }
+    }
 }
