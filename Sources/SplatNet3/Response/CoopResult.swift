@@ -50,7 +50,7 @@ public struct CoopResult: Codable {
     }
 
     public struct PlayerResult: Codable {
-        public let id: String
+        public let id: Common.PlayerId
         public let isMyself: Bool
         public let byname: String
         public let name: String

@@ -24,10 +24,8 @@ protocol SPCredential: AuthenticationCredential, Codable {
     var gameWebToken: String { get set }
     /// 有効期限
     var expiration: Date { get set }
-
     /// 認証トークンのリフレッシュが必要かどうか(2時間に1回リフレッシュが必要)
     var requiresRefresh: Bool { get }
-
     /// GameWebTokenのリフレッシュが必要かどうか(6.5時間に1回リフレッシュが必要)
     var requiresGameWebTokenRefresh: Bool { get }
 

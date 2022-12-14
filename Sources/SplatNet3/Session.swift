@@ -87,9 +87,11 @@ open class Session {
             throw DecodingError.valueNotFound(UserInfo.self, .init(codingPath: [], debugDescription: "Account Not Found"))
         }
         if account.requiresGameWebTokenRefresh {
+            SwiftyLogger.info("GameWebToken is expired.")
             return try await refresh(sessionToken: account.sessionToken, contentId: contentId)
         }
         if account.requiresRefresh {
+            SwiftyLogger.info("Bullet token is expired.")
             return try await refresh(gameWebToken: account.gameWebToken)
         }
         return account

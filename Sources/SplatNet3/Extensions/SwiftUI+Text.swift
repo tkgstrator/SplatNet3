@@ -16,21 +16,33 @@ public extension Text {
     init(_ value: EnemyId) {
         let index: Int = EnemyId.allCases.firstIndex(of: value) ?? 0
         let enemyKey: EnemyKey = EnemyKey.allCases[index]
-        self.init(NSLocalizedString(String(describing: enemyKey), bundle: .module, comment: ""))
+        self.init(NSLocalizedString("CoopEnemy_\(String(describing: enemyKey))", bundle: .module, comment: ""))
     }
 
     /// 称号をテキストに変換
     init(_ value: GradeId?) {
         if let value = value {
-            self.init(NSLocalizedString("Grade_0\(value.id)", bundle: .module, comment: ""))
+            self.init(NSLocalizedString("CoopGrade_Grade_0\(value.id)", bundle: .module, comment: ""))
         } else {
             self.init("-")
         }
     }
 
+    init(_ waterLevel: WaterLevelId) {
+        self.init(NSLocalizedString("CoopHistory_WaveLevel\(waterLevel.rawValue)", bundle: .module, comment: ""))
+    }
+
+    init(_ eventType: EventId) {
+        if eventType == .Water_Levels {
+            self.init("-")
+        } else {
+            self.init(NSLocalizedString("CoopEvent_\(eventType.rawValue)", bundle: .module, comment: ""))
+        }
+    }
+
     /// ステージ名をテキストに変換
     init(_ value: CoopStageId) {
-        self.init(NSLocalizedString("Cop_\(String(describing: value))", bundle: .module, comment: ""))
+        self.init(NSLocalizedString("CoopStage_\(String(describing: value))", bundle: .module, comment: ""))
     }
 
     /// 任意のオプショナル型を変換

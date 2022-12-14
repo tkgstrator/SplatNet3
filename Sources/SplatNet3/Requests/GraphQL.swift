@@ -45,7 +45,7 @@ public extension GraphQL {
         request.allHTTPHeaderFields = headers
         // UAを設定
         request.headers.update(.userAgent("SplatNet3/@tkgling"))
-        request.headers.add(name: "X-Web-View-Ver", value: "2.0.0-18810d39")
+        request.headers.add(name: "X-Web-View-Ver", value: "2.0.0-bd36a652")
         // パラメータを設定
         let parameters: Parameters = [
             "variables": variables,

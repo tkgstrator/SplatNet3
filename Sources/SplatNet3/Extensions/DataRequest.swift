@@ -20,7 +20,10 @@ extension DataRequest {
         })
         .validate({ request, response, data in
             DataRequest.ValidationResult(catching: {
-                if let targetURL = request?.url {
+                if let targetURL = request?.url,
+                   targetURL.lastPathComponent != "graphql"
+                {
+                    /// アクセスしたURLをログに保存
                     SwiftyLogger.info("RequestURL: \(targetURL)")
                 }
                 if let data = data {
@@ -28,6 +31,7 @@ extension DataRequest {
                        url.lastPathComponent != "graphql",
                        let response = try? JSONSerialization.jsonObject(with: data)
                     {
+                        /// 取得したデータをログに保存
                         SwiftyLogger.verbose(response)
                     }
 

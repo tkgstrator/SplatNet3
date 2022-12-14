@@ -23,7 +23,7 @@ public struct CoopSchedule: Codable {
         self.startTime = try container.decode(Date.self, forKey: .startTime)
         self.endTime = try container.decode(Date.self, forKey: .endTime)
         self.weaponList = try container.decode([WeaponId].self, forKey: .weaponList)
-        self.rareWeapon = try container.decode(WeaponId.self, forKey: .rareWeapon)
+        self.rareWeapon = try container.decodeIfPresent(WeaponId.self, forKey: .rareWeapon)
         let setting: CoopSetting = try container.decode(CoopSetting.self, forKey: .setting)
         self.mode = .REGULAR
         self.rule = setting == .CoopBigRunSetting ? .BIG_RUN : .REGULAR

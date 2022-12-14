@@ -15,19 +15,22 @@ public enum Common {
         formatter.timeZone = TimeZone(identifier: "UTC")
         return formatter
     }()
-
-    // MARK: - ResultId
-    public struct ResultId: Codable, CustomStringConvertible, Equatable {
-        public let resultType: ResultType
-        public let prefix: String
+    // MARK: - PlayerId
+    public struct PlayerId: Codable, CustomStringConvertible, Equatable {
+        /// 常にCoopPlayer
+        public let id: IdType
+        /// 常に自分のID
+        public let playerId: String
+        /// プレイヤーのID
         public let uid: String
+        /// 遊んだ時間
         public let playTime: Date
-        public let codes: [String]
+        /// リザルトごとの固有のID
+        public let uuid: String
 
         public var description: String {
             let playTime: String = Common.dateFormatter.string(from: playTime)
-            let code: String = codes.joined(separator: "-")
-            return "\(resultType.rawValue)-\(prefix)-\(uid):\(playTime)_\(code)".base64EncodedString
+            return "\(id.rawValue)-u-\(playerId):\(playTime)_\(uuid):u-\(uid)".base64EncodedString
         }
 
         public init(from decoder: Decoder) throws {
@@ -36,21 +39,58 @@ public enum Common {
                 throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
             }
             guard let rawValue: String = stringValue.capture(pattern: #"^([A-z]*)-"#, group: 1),
-                  let resultType: ResultType = ResultType(rawValue: rawValue),
-                  let prefix: String = stringValue.capture(pattern: #"-([A-z]*)-"#, group: 1),
-                  let uid: String = stringValue.capture(pattern: #"-([A-z0-9]*):"#, group: 1),
+                  let id: IdType = IdType(rawValue: rawValue),
                   let playTime: String = stringValue.capture(pattern: #":([A-z0-9].*?)_"#, group: 1),
                   let playTime: Date = Common.dateFormatter.date(from: playTime),
-                  let codes: String = stringValue.capture(pattern: #"_([a-z0-9\-].*)"#, group: 1)
+                  let playerId: String = stringValue.capture(pattern: #"u-([0-9a-z]*)"#, group: 1),
+                  let uid: String = stringValue.capture(pattern: #":u-([0-9a-z]*)"#, group: 1),
+                  let uuid: String = stringValue.capture(pattern: #"_([a-z0-9\-].*):"#, group: 1)
             else {
                 throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
             }
 
-            self.resultType = resultType
+            self.id = id
+            self.playTime = playTime
+            self.uuid = uuid
+            self.playerId = playerId
+            self.uid = uid
+        }
+    }
+
+    // MARK: - ResultId
+    public struct ResultId: Codable, CustomStringConvertible, Equatable {
+        public let id: IdType
+        public let prefix: String
+        public let uid: String
+        public let playTime: Date
+        public let uuid: String
+
+        public var description: String {
+            let playTime: String = Common.dateFormatter.string(from: playTime)
+            return "\(id.rawValue)-\(prefix)-\(uid):\(playTime)_\(uuid)".base64EncodedString
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            guard let stringValue = try container.decode(String.self).base64DecodedString else {
+                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
+            }
+            guard let rawValue: String = stringValue.capture(pattern: #"^([A-z]*)-"#, group: 1),
+                  let id: IdType = IdType(rawValue: rawValue),
+                  let prefix: String = stringValue.capture(pattern: #"-([A-z]*)-"#, group: 1),
+                  let uid: String = stringValue.capture(pattern: #"-([A-z0-9]*):"#, group: 1),
+                  let playTime: String = stringValue.capture(pattern: #":([A-z0-9].*?)_"#, group: 1),
+                  let playTime: Date = Common.dateFormatter.date(from: playTime),
+                  let uuid: String = stringValue.capture(pattern: #"_([a-z0-9\-].*)"#, group: 1)
+            else {
+                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
+            }
+
+            self.id = id
             self.prefix = prefix
             self.uid = uid
             self.playTime = playTime
-            self.codes = codes.components(separatedBy: "-").map({ String($0) })
+            self.uuid = uuid
         }
     }
 

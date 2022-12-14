@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum ResultType: String, CaseIterable, Codable, Identifiable {
+public enum IdType: String, CaseIterable, Codable, Identifiable {
     public var id: String { rawValue }
     case CoopHistoryDetail
+    case CoopPlayer
 }

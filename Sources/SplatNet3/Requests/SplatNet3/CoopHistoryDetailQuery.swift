@@ -88,12 +88,12 @@ public final class CoopHistoryDetailQuery: GraphQL {
 
     // MARK: - ResultPlayer
     public struct ResultPlayer: Codable {
+        public let id: Common.PlayerId
         public let byname: String
         public let name: String
         public let nameId: String
         public let nameplate: Nameplate
         public let uniform: SkinType
-        public let id: String
         public let species: SpeciesType
     }
 
