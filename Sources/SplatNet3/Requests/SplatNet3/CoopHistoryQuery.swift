@@ -105,7 +105,7 @@ public final class CoopHistoryQuery: GraphQL {
     // MARK: - Result
     public struct Result: Codable {
         public let deliverCount: Int
-        public let goldenDeliverCount: Int
+//        public let goldenDeliverCount: Int
     }
 
     // MARK: - WaveResult
