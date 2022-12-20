@@ -39,7 +39,7 @@ public final class CoopHistoryQuery: GraphQL {
     // MARK: - CoopResult
     public struct CoopResult: Codable {
         public let historyGroupsOnlyFirst: Common.Node<HistoryGroupsOnlyFirstNode>
-        public let regularAverageClearWave: Double
+        public let regularAverageClearWave: Decimal
         public let regularGrade: GradeType
         public let regularGradePoint: Int
         public let monthlyGear: GearType

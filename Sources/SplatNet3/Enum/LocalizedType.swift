@@ -1,7 +1,7 @@
 //
 //  SHA256Hash.swift
 //
-//  Created by tkgstrator on 2022/12/14
+//  Created by tkgstrator on 2022/12/15
 //  Copyright @2022 Magi, Corporation. All rights reserved.
 //
 
@@ -1419,4 +1419,26 @@ public enum LocalizedType: String, CaseIterable, Identifiable, Codable {
 	case Custom_MyPage
 	/// よくあるご質問
 	case Custom_FAQ
+	/// 最高評価ポイント
+	case Custom_Max_Grade_Point
+	/// 最高評価
+	case Custom_Max_Grade
+	/// カンスト回数
+	case Custom_Max_Grade_Count
+	/// クリア率
+	case Custom_Avg_Clear_Ratio
+	/// 最高金イクラ納品数
+	case Custom_Max_Golden_Eggs
+	/// 最高イクラ獲得数
+	case Custom_Max_Power_Eggs
+	/// ログ消去
+	case Custom_Wipe_Log
+	/// 保存されているログを消去します。
+	case Custom_Wipe_Log_Txt
+	/// ログ
+	case Custom_Size_Log
+	/// データベース
+	case Custom_Size_Realm
+	/// すべて
+	case Custom_Wipe_All
 }

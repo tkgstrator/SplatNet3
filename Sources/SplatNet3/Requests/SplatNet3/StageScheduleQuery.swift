@@ -141,15 +141,20 @@ public final class StageScheduleQuery: GraphQL {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             self.coopStage = try container.decode(StageScheduleQuery.CoopStage.self, forKey: StageScheduleQuery.Setting.CodingKeys.coopStage)
             self.weapons = try container.decode([WeaponType].self, forKey: StageScheduleQuery.Setting.CodingKeys.weapons)
-            self.isCoopSetting = try container.decode(CoopSetting.self, forKey: .isCoopSetting)
+            self.isCoopSetting = {
+                if let setting: CoopSetting = try? container.decode(CoopSetting.self, forKey: .isCoopSetting) {
+                    return setting
+                }
+                return .CoopNormalSetting
+            }()
         }
     }
 
     // MARK: - Stats
     public struct Stats: Codable {
-//        public let winRateAr: JSONNull?
-//        public let winRateLF: JSONNull?
-//        public let winRateGl: JSONNull?
-//        public let winRateCl: JSONNull?
+        public let winRateAr: Decimal?
+        public let winRateLF: Decimal?
+        public let winRateGl: Decimal?
+        public let winRateCl: Decimal?
     }
 }

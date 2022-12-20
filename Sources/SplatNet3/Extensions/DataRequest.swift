@@ -31,20 +31,21 @@ extension DataRequest {
                        url.lastPathComponent != "graphql",
                        let response = try? JSONSerialization.jsonObject(with: data)
                     {
+                        #if DEBUG
                         /// 取得したデータをログに保存
                         SwiftyLogger.verbose(response)
+                        #endif
                     }
 
                     if let failure = try? decoder.decode(Failure.NSO.self, from: data) {
-                        SwiftyBeaver.error(failure)
                         throw failure
                     }
                     if let failure = try? decoder.decode(Failure.APP.self, from: data) {
-                        SwiftyBeaver.error(failure)
                         throw failure
                     }
                 }
                 if (response.statusCode < 200) || (response.statusCode >= 400) {
+                    SwiftyLogger.error("Unacceptable status code: \(response.statusCode)")
                     throw Failure.API(statusCode: response.statusCode)
                 }
             })

@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-
 struct RetrieveView: View {
+    @EnvironmentObject var session: SP3Session
     @Environment(\.dismiss) var dismiss
     @Binding var isPresented: Bool
     @State private var value: Float = .zero
     @State private var total: Float = 1
-    @StateObject var session: SP3Session
 
     func makeBody(request: SPProgress) -> some View {
         switch request.progress {
@@ -83,13 +82,15 @@ struct RetrieveView: View {
                             self.total = total
                         }
                     })
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         isPresented.toggle()
+                        dismiss()
                     })
                 } catch(let error) {
-                    SwiftyLogger.error(error.localizedDescription)
+                    SwiftyLogger.error(error)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                         isPresented.toggle()
+                        dismiss()
                     })
                 }
             }
@@ -100,7 +101,8 @@ struct RetrieveView: View {
 extension View {
     public func fullScreen(isPresented: Binding<Bool>, session: SP3Session) -> some View {
         self.fullScreen(isPresented: isPresented, content: {
-            RetrieveView(isPresented: isPresented, session: session)
+            RetrieveView(isPresented: isPresented)
+                .environmentObject(session)
         })
     }
 }

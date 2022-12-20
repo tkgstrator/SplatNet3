@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 
 struct SignInView: View {
+    @EnvironmentObject var session: SP3Session
     @Environment(\.dismiss) var dismiss
-    @StateObject var session: SP3Session = SP3Session()
     let code: String
     let verifier: String
     let contentId: ContentId
@@ -65,6 +65,9 @@ struct SignInView: View {
         .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
         .background(SPColor.SplatNet3.SPBackground.cornerRadius(12))
         .animation(.default, value: session.requests.count)
+        .onDisappear(perform: {
+            session.requests.removeAll()
+        })
         .onAppear(perform: {
             Task {
                 do {
@@ -73,7 +76,85 @@ struct SignInView: View {
                         UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })
                 } catch(let error) {
-                    SwiftyLogger.error(error.localizedDescription)
+                    SwiftyLogger.error(error)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                    })
+                }
+            }
+        })
+    }
+}
+
+struct _SignInView: View {
+    @StateObject var session: SP3Session = SP3Session()
+    @Environment(\.dismiss) var dismiss
+    let sessionToken: String
+    let contentId: ContentId
+
+    init(sessionToken: String, contentId: ContentId = .SP3) {
+        self.sessionToken = sessionToken
+        self.contentId = contentId
+    }
+
+    func makeBody(request: SPProgress) -> some View {
+        switch request.progress {
+        case .PROGRESS:
+            return ProgressView()
+                .frame(width: 24, height: 24, alignment: .center)
+                .asAnyView()
+        case .SUCCESS:
+            return Image(systemName: "checkmark.circle")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.green)
+                .frame(width: 24, height: 24, alignment: .center)
+                .asAnyView()
+        case .FAILURE:
+            return Image(systemName: "xmark.circle")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.red)
+                .frame(width: 24, height: 24, alignment: .center)
+                .asAnyView()
+        }
+    }
+
+    var body: some View {
+        VStack(content: {
+            ForEach(session.requests, content: { request in
+                HStack(content: {
+                    RoundedRectangle(cornerRadius: 4)
+                        .frame(width: 60, height: 24, alignment: .center)
+                        .foregroundColor(request.color)
+                        .overlay(content: {
+                            Text(request.type.rawValue)
+                                .foregroundColor(.white)
+                                .bold()
+                                .font(.body)
+                        })
+                    Text(request.path.rawValue)
+                        .font(.body)
+                        .frame(width: 220, height: nil, alignment: .leading)
+                        .lineLimit(1)
+                        .foregroundColor(.white)
+                    makeBody(request: request)
+                })
+            })
+        })
+        .frame(width: 320)
+        .padding(EdgeInsets(top: 20, leading: 12, bottom: 20, trailing: 12))
+        .background(SPColor.SplatNet3.SPBackground.cornerRadius(12))
+        .animation(.default, value: session.requests.count)
+        .onAppear(perform: {
+            Task {
+                do {
+                    try await session.refresh(sessionToken: sessionToken, contentId: contentId)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        UIApplication.shared.rootViewController?.dismiss(animated: true)
+                    })
+                } catch(let error) {
+                    SwiftyLogger.error(error)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                         UIApplication.shared.rootViewController?.dismiss(animated: true)
                     })

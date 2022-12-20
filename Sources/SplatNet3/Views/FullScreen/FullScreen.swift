@@ -58,7 +58,8 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
         case true:
             uiViewController.present()
         case false:
-            uiViewController.dismiss()
+            break
+//            uiViewController.dismiss()
         }
     }
 

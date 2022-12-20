@@ -46,7 +46,7 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let resultWave: Int
         public let playedTime: Date
         public let coopStage: CoopStageType
-        public let dangerRate: Double
+        public let dangerRate: Decimal
         public let scenarioCode: String?
         public let smellMeter: Int?
         public let weapons: [WeaponType]
@@ -54,7 +54,7 @@ public final class CoopHistoryDetailQuery: GraphQL {
         public let scale: CoopHistory.Scale?
         public let jobPoint: Int?
         public let jobScore: Int?
-        public let jobRate: Double?
+        public let jobRate: Decimal?
         public let jobBonus: Int?
         public let nextHistoryDetail: CoopHistory.HistoryDetailElement?
         public let previousHistoryDetail: CoopHistory.HistoryDetailElement?

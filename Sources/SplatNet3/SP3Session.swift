@@ -9,12 +9,8 @@
 import Foundation
 import Alamofire
 
-//public protocol SP3RequestDelegate: AnyObject {
-//    func getAllCoopHistoryDetailQuery() async throws -> [CoopResult]
-//}
-
 /// SP3用のセッションクラス
-open class SP3Session: Session,  ObservableObject {
+open class SP3Session: Session {
     public typealias Credential = UserInfo
     public typealias Completion = (Float, Float) -> Void
 
@@ -117,6 +113,7 @@ open class SP3Session: Session,  ObservableObject {
                 completion(Float(results.count), Float(resultIds.count))
             }
         })
+        try await uploadResults(response)
         DispatchQueue.main.async(execute: {
             self.requests.success()
         })
@@ -140,6 +137,7 @@ extension SP3Session: Authenticator {
     public func apply(_ credential: UserInfo, to urlRequest: inout URLRequest) {
         if let bulletToken: String = credential.bulletToken {
             urlRequest.headers.add(.authorization(bearerToken: bulletToken))
+            urlRequest.headers.add(name: "X-Web-View-Ver", value: version)
         }
     }
 
@@ -196,11 +194,23 @@ extension SP3Session: Authenticator {
         return try await request(CoopHistoryDetailQuery(resultId: resultId)).data.coopHistoryDetail
     }
 
+    @discardableResult
+    private func uploadResults(_ results: [CoopResult]) async throws -> [CoopStatsResultsQuery.Response] {
+        return try await request(CoopStatsResultsQuery(results: results))
+    }
+
+    @discardableResult
+    private func uploadResult(_ result: CoopResult) async throws -> [CoopStatsResultsQuery.Response] {
+        return try await request(CoopStatsResultsQuery(result: result))
+    }
+
     private func getCoopHistoryDetailQuery(
         schedule: CoopHistoryQuery.CoopSchedule,
         result: CoopHistoryQuery.HistoryDetail
     ) async throws -> CoopResult {
-        let result: CoopHistoryDetailQuery.CoopHistoryDetail = try await request(CoopHistoryDetailQuery(resultId: result.id.description)).data.coopHistoryDetail
-        return CoopResult(history: schedule, content: result)
+        return CoopResult(
+            history: schedule,
+            content: try await request(CoopHistoryDetailQuery(resultId: result.id.description)).data.coopHistoryDetail
+        )
     }
 }

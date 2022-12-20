@@ -68,8 +68,8 @@ public enum WeaponId: Int, Codable, Identifiable, CaseIterable {
     case Saber_Lite             = 8010
     case Blaster_Bear_Coop      = 20900
     case Charger_Bear_Coop      = 22900
-    case Shelter_Bear_Coop      = 26900
     case Slosher_Bear_Coop      = 23900
+    case Shelter_Bear_Coop      = 26900
     case Stringer_Bear_Coop     = 27900
     case Saber_Bear_Coop        = 28900
 }

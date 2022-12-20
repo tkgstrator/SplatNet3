@@ -10,16 +10,37 @@ import Foundation
 import KeychainAccess
 
 extension Keychain {
-    static let bundleIdentifier: String = "SPLATNET_ACCOUNTS"
+    static private let bundle: String = "X-Web-View-Ver"
 
-    /// アカウント書き込み
-    func set(_ account: UserInfo?) {
-        if let account = account {
-            try? set(try account.asData(), key: Keychain.bundleIdentifier)
+    /// X-Web-View-Ver
+    var version: String {
+        get {
+            (try? get(Keychain.bundle)) ?? "2.0.0-bd36a652"
         }
+        set {
+            if let data: Data = newValue.data(using: .utf8) {
+                try? set(data, key: Keychain.bundle)
+            } else {
+                try? set("2.0.0-bd36a652".data(using: .utf8)!, key: Keychain.bundle)
+            }
+        }
+    }
+    
+    /// アカウント書き込み
+    @discardableResult
+    func set(_ account: UserInfo?) -> UserInfo? {
+        if let account = account {
+            try? set(try account.asData(), key: Bundle.main.bundleIdentifier!)
+        }
+        return account
+    }
+
+    func delete() {
+        try? remove(Bundle.main.bundleIdentifier!)
     }
 
     /// アカウントアップデート
+    @discardableResult
     func update(_ bulletToken: BulletToken.Response) throws -> UserInfo {
         guard var account: UserInfo = self.get() else {
             throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Account Not Found"))
@@ -35,7 +56,7 @@ extension Keychain {
     func get() -> UserInfo? {
         let decoder: JSONDecoder = JSONDecoder()
 
-        guard let data: Data = try? getData(Keychain.bundleIdentifier) else {
+        guard let data: Data = try? getData(Bundle.main.bundleIdentifier!) else {
             return nil
         }
 

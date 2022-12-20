@@ -74,6 +74,6 @@ public enum CoopHistory {
 
     // MARK: - HistoryDetailElement
     public struct HistoryDetailElement: Codable {
-        public let id: String
+        public let id: Common.ResultId
     }
 }

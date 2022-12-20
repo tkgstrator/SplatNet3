@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension UIApplication {
     public var rootViewController: UIViewController? {
@@ -24,6 +25,17 @@ extension UIApplication {
             return current
         }
         return rootViewController
+    }
+
+    public func authorize(sessionToken: String, contentId: ContentId) {
+        let hosting: UIHostingController = UIHostingController(rootView: _SignInView(sessionToken: sessionToken))
+        hosting.modalPresentationStyle = .overFullScreen
+        hosting.modalTransitionStyle = .coverVertical
+        hosting.overrideUserInterfaceStyle = .dark
+        hosting.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.presentedViewController?.present(hosting, animated: true)
+        })
     }
 
     public func popToRootView() {

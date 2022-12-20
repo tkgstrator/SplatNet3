@@ -15,6 +15,7 @@ public enum Common {
         formatter.timeZone = TimeZone(identifier: "UTC")
         return formatter
     }()
+
     // MARK: - PlayerId
     public struct PlayerId: Codable, CustomStringConvertible, Equatable {
         /// 常にCoopPlayer
@@ -35,9 +36,13 @@ public enum Common {
 
         public init(from decoder: Decoder) throws {
             let container = try decoder.singleValueContainer()
-            guard let stringValue = try container.decode(String.self).base64DecodedString else {
-                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
-            }
+            let stringValue = try {
+                let stringValue: String = try container.decode(String.self)
+                guard let value: String = stringValue.base64DecodedString else {
+                    return stringValue
+                }
+                return value
+            }()
             guard let rawValue: String = stringValue.capture(pattern: #"^([A-z]*)-"#, group: 1),
                   let id: IdType = IdType(rawValue: rawValue),
                   let playTime: String = stringValue.capture(pattern: #":([A-z0-9].*?)_"#, group: 1),
@@ -46,7 +51,7 @@ public enum Common {
                   let uid: String = stringValue.capture(pattern: #":u-([0-9a-z]*)"#, group: 1),
                   let uuid: String = stringValue.capture(pattern: #"_([a-z0-9\-].*):"#, group: 1)
             else {
-                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
+                throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Could not decoded."))
             }
 
             self.id = id
@@ -73,7 +78,7 @@ public enum Common {
         public init(from decoder: Decoder) throws {
             let container = try decoder.singleValueContainer()
             guard let stringValue = try container.decode(String.self).base64DecodedString else {
-                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
+                throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Could not decoded."))
             }
             guard let rawValue: String = stringValue.capture(pattern: #"^([A-z]*)-"#, group: 1),
                   let id: IdType = IdType(rawValue: rawValue),
@@ -83,7 +88,7 @@ public enum Common {
                   let playTime: Date = Common.dateFormatter.date(from: playTime),
                   let uuid: String = stringValue.capture(pattern: #"_([a-z0-9\-].*)"#, group: 1)
             else {
-                throw DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "Could not decoded."))
+                throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath, debugDescription: "Could not decoded."))
             }
 
             self.id = id
@@ -112,9 +117,9 @@ public enum Common {
 
     // MARK: - TextColor
     public struct TextColor: Codable {
-        public let a: Double
-        public let b: Double
-        public let g: Double
-        public let r: Double
+        public let a: Decimal
+        public let b: Decimal
+        public let g: Decimal
+        public let r: Decimal
     }
 }

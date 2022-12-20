@@ -39,7 +39,7 @@ public enum AuthType: Int, CaseIterable, Identifiable {
 }
 
 extension View {
-    public func authorize(isPresented: Binding<Bool>, contentId: ContentId, using: AuthType = .webkit) -> some View {
+    public func authorize(isPresented: Binding<Bool>, contentId: ContentId, session: SP3Session, using: AuthType = .webkit) -> some View {
         switch using {
         case .safari:
             return self.sheet(isPresented: isPresented, content: {
@@ -57,7 +57,9 @@ extension View {
                             SwiftyLogger.error("The callbackURLScheme does not include session token code.")
                             return
                         }
-                        let hosting: UIHostingController = UIHostingController(rootView: SignInView(code: code, verifier: verifier, contentId: contentId))
+                        let hosting: UIHostingController = UIHostingController(
+                            rootView: SignInView(code: code, verifier: verifier, contentId: contentId).environmentObject(session)
+                        )
                         hosting.isModalInPresentation = true
                         hosting.modalTransitionStyle = .coverVertical
                         hosting.modalPresentationStyle = .overFullScreen
@@ -66,7 +68,7 @@ extension View {
                         UIApplication.shared.rootViewController?.present(hosting, animated: true)
                     case .failure(let error):
                         if (error as NSError).code != 1 {
-                            SwiftyLogger.error(error.localizedDescription)
+                            SwiftyLogger.error(error)
                         }
                     }
                 })

@@ -29,7 +29,9 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
     /// X-Product-Version
     case VERSION                = "app/id1234806557"
     /// WebVersion
-    case WEB_VERSION            = "api/web_version"
+    case WEB_VERSION            = "api/version"
+    /// WebRevision
+    case WEB_REVISION           = "api/revision"
     /// BulletToken
     case BULLET_TOKEN           = "api/bullet_tokens"
     /// Schedule
@@ -40,6 +42,8 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
     case COOP_RESULT            = "api/results"
     /// Unknown
     case UNKNOWN                = "unknown"
+    /// Salmon Stats
+    case STATS                  = "api/salmonstats"
 
     init<T: RequestType>(request: T) {
         let path: String = request.path.replacingOccurrences(of: "connect/1.0.0/", with: "")
@@ -47,10 +51,22 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             self = value
             return
         }
+        /// Salmon Stats
+        if path.contains("results") {
+            self = .STATS
+            return
+        }
+        /// Web Revision
+        if path.contains("main") {
+            self = .WEB_REVISION
+            return
+        }
+        /// Web Version
         if path.isEmpty {
             self = .WEB_VERSION
             return
         }
+        /// Others
         self = .UNKNOWN
     }
 
@@ -60,7 +76,7 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return .NSO
         case .GAME_WEB_TOKEN, .GAME_SERVICE_TOKEN, .BULLET_TOKEN:
             return .APP
-        case .WEB_VERSION, .VERSION:
+        case .WEB_VERSION, .VERSION, .WEB_REVISION:
             return .API
         case .F:
             return .IMINK
@@ -79,7 +95,7 @@ public enum SPEndpoint: String, CaseIterable, Identifiable {
             return SPColor.SplatNet3.SPSalmonGreen
         case .GAME_WEB_TOKEN, .GAME_SERVICE_TOKEN, .BULLET_TOKEN:
             return SPColor.SplatNet3.SPRed
-        case .WEB_VERSION, .VERSION:
+        case .WEB_VERSION, .VERSION, .WEB_REVISION, .STATS:
             return SPColor.SplatNet3.SPBlue
         case .F, .FLAPG, .NXAPI:
             return SPColor.SplatNet3.SPPink

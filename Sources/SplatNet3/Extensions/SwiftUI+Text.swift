@@ -36,7 +36,7 @@ public extension Text {
         if eventType == .Water_Levels {
             self.init("-")
         } else {
-            self.init(NSLocalizedString("CoopEvent_\(eventType.rawValue)", bundle: .module, comment: ""))
+            self.init(NSLocalizedString("CoopEvent_\(String(describing: eventType))", bundle: .module, comment: ""))
         }
     }
 

@@ -9,10 +9,9 @@
 import Foundation
 import Alamofire
 import KeychainAccess
-import SwiftyBeaver
 
 /// 基本となるリクエストなどが定義されたクラス
-open class Session {
+open class Session: ObservableObject {
     /// 通信用のセッション
     public let session: Alamofire.Session = {
         let configuration: URLSessionConfiguration = URLSessionConfiguration.default
@@ -26,17 +25,21 @@ open class Session {
     /// キーチェイン
     private let keychain: Keychain = Keychain(service: Bundle.module.bundleIdentifier!)
 
+    /// X-Web-View-Ver
+    public var version: String {
+        keychain.version
+    }
+
     /// デコーダー
     public let decoder: SPDecoder = SPDecoder()
 
-    /// アカウント
-    public var account: UserInfo? {
-        get {
-            keychain.get()
-        }
-    }
+    /// アカウント情報
+    @Published public var account: UserInfo?
 
-    init() {}
+    init() {
+        // 起動時にアカウントを読み込み
+        self.account = keychain.get()
+    }
 
     /// 一般的に使うリクエスト
     open func request<T: RequestType>(_ request: T, interceptor: RequestInterceptor? = nil) async throws -> T.ResponseType {
@@ -79,11 +82,15 @@ open class Session {
     /// SP3: GameWebTokenを使って認証情報を取得
     public func refresh(gameWebToken: String) async throws -> UserInfo {
         let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
-        return try keychain.update(bulletToken)
+        let account: UserInfo = try keychain.update(bulletToken)
+        /// アップデートしたアカウントで上書き
+        self.account = account
+        return account
     }
 
+    /// SP2/3: トークンが切れたときにリフレッシュする
     public func refresh(contentId: ContentId) async throws -> UserInfo {
-        guard let account = self.account else {
+        guard let account = keychain.get() else {
             throw DecodingError.valueNotFound(UserInfo.self, .init(codingPath: [], debugDescription: "Account Not Found"))
         }
         if account.requiresGameWebTokenRefresh {
@@ -98,6 +105,7 @@ open class Session {
     }
 
     /// SP2/3: SessionTokenを使って認証情報を取得
+    @discardableResult
     public func refresh(sessionToken: String, contentId: ContentId) async throws -> UserInfo {
         let accessToken: AccessToken.Response = try await getAccessToken(sessionToken: sessionToken)
         let version: XVersion.Response = try await getXVersion()
@@ -107,19 +115,21 @@ open class Session {
         case .SP2:
             let iksmSession: IksmSession.Response = try await getIksmSession(gameWebToken: gameWebToken)
             let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken, iksmSession: iksmSession)
-            self.keychain.set(account)
+            /// ログイン時はアカウントを上書き
+            self.account = keychain.set(account)
             return account
         case .SP3:
             let bulletToken: BulletToken.Response = try await getBulletToken(gameWebToken: gameWebToken)
             let account: UserInfo = UserInfo(sessionToken: sessionToken, gameServiceToken: gameServiceToken, gameWebToken: gameWebToken.result.accessToken, bulletToken: bulletToken)
-            self.keychain.set(account)
+            /// ログイン時はアカウントを上書き
+            self.account = keychain.set(account)
             return account
         }
     }
 
     /// 保存されているアカウント全削除
     public func removeAll() {
-        try? keychain.removeAll()
+        self.account = nil
     }
 }
 
@@ -129,7 +139,7 @@ extension Session: RequestInterceptor {
         do {
             return try await execute()
         } catch(let error) {
-            SwiftyBeaver.error(error.localizedDescription)
+            SwiftyLogger.error(error.localizedDescription)
             throw error
         }
     }
@@ -191,6 +201,11 @@ extension Session: RequestInterceptor {
         return WebVersion.Response(context: response)
     }
 
+    func getWebRevision(hash: String) async throws -> WebRevision.Response {
+        let response: String = try await request(WebRevision(hash: hash))
+        return WebRevision.Response(context: response)
+    }
+
     /// GameServiceToken取得
     func getGameServiceToken(accessToken: AccessToken.Response, version: XVersion.Response) async throws -> GameServiceToken.Response {
         let response : Imink.Response = try await getHash(accessToken: accessToken)
@@ -206,13 +221,15 @@ extension Session: RequestInterceptor {
     /// BulletToken取得
     func getBulletToken(gameWebToken: GameWebToken.Response) async throws -> BulletToken.Response {
         let response: WebVersion.Response = try await getWebVersion()
-        return try await request(BulletToken(accessToken: gameWebToken.result.accessToken, version: response))
+        let revision: WebRevision.Response = try await getWebRevision(hash: response.hash)
+        return try await request(BulletToken(accessToken: gameWebToken.result.accessToken, version: revision))
     }
 
     /// BulletToken取得
     func getBulletToken(gameWebToken: String) async throws -> BulletToken.Response {
         let response: WebVersion.Response = try await getWebVersion()
-        return try await request(BulletToken(accessToken: gameWebToken, version: response))
+        let revision: WebRevision.Response = try await getWebRevision(hash: response.hash)
+        return try await request(BulletToken(accessToken: gameWebToken, version: revision))
     }
 
     /// IksmSession取得

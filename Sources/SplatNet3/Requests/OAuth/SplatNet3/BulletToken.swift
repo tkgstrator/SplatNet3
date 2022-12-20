@@ -28,8 +28,8 @@ class BulletToken: RequestType {
         ]
     }
 
-    convenience init(accessToken: String, version: WebVersion.Response) {
-        self.init(accessToken: accessToken, version: "\(version.version)-\(version.hash)")
+    convenience init(accessToken: String, version: WebRevision.Response) {
+        self.init(accessToken: accessToken, version: version.description)
     }
 
     internal struct Response: Codable {

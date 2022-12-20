@@ -10,13 +10,13 @@ import Foundation
 
 public struct UserInfo: SPCredential {
     /// ニックネーム
-    let nickname: String
+    public let nickname: String
     /// メンバーシップ加入しているか
     let membership: Bool
     /// フレンドコード
-    let friendCode: String
+    public let friendCode: String
     /// 画像URL
-    let thumbnailURL: URL
+    public let thumbnailURL: URL
     /// ID
     var nsaid: String
     /// イカスミセッション

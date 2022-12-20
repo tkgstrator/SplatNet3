@@ -12,10 +12,10 @@ import UniformTypeIdentifiers
 
 public struct FilePickerView: View {
     public typealias Completeion = (URL) -> ()
-    let fileType: UTType
+    let fileType: [UTType]
     let onSelected: (URL) -> ()
 
-    public init(fileType: UTType, onSelected: @escaping Completeion) {
+    public init(fileType: [UTType], onSelected: @escaping Completeion) {
         self.fileType = fileType
         self.onSelected = onSelected
     }
@@ -26,7 +26,7 @@ public struct FilePickerView: View {
 }
 
 private struct _FilePickerView: UIViewControllerRepresentable {
-    let fileType: UTType
+    let fileType: [UTType]
     let onSelected: (URL) -> ()
 
     func makeCoordinator() -> Coordinator {
@@ -37,7 +37,7 @@ private struct _FilePickerView: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let controller: UIDocumentPickerViewController = UIDocumentPickerViewController(forOpeningContentTypes: [.json], asCopy: true)
+        let controller: UIDocumentPickerViewController = UIDocumentPickerViewController(forOpeningContentTypes: fileType, asCopy: true)
         controller.delegate = context.coordinator
         return controller
     }

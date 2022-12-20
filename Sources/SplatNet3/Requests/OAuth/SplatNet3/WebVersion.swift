@@ -1,5 +1,5 @@
 //
-//  BulletToken.swift
+//  WebVersion.swift
 //  SplatNet3
 //
 //  Created by tkgstrator on 2021/07/13.
@@ -23,14 +23,10 @@ public class WebVersion: RequestType {
     public init() { }
 
     public struct Response: Codable {
-        // バージョン
-        let version: String
-        // ハッシュ
         let hash: String
 
         init(context: String) {
-            self.version = "2.0.0"
-            self.hash = context.capture(pattern: #"main.([a-f0-9]{8}).js"#, group: 1) ?? "3934eff1"
+            self.hash = context.capture(pattern: #"main\.([a-z0-9]{8})\.js"#, group: 1) ?? "bd36a652"
         }
     }
 }
