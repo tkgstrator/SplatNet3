@@ -9,6 +9,8 @@ import Foundation
 
 public enum SpecialKey: String, CaseIterable, Identifiable, Codable {
     public var id: String { rawValue }
+    
+    case SpRandom           = "473fffb2442075078d8bb7125744905abdeae651b6a5b7453ae295582e45f7d1"
     case SpUltraShot        = "7269f1fa71d746d7b86ca2a71fc24c6ea4c764077ee50d692f80eddeaff90f1d"
     case SpShockSonar       = "463eedc60013608666b260c79ac8c352f9795c3d0cce074d3fbbdbd2c054a56d"
     case SpNiceBall         = "bd327d1b64372dedefd32adb28bea62a5b6152d93aada5d9fc4f669a1955d6d4"

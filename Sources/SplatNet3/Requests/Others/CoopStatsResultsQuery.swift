@@ -34,7 +34,7 @@ public class CoopStatsResultsQuery: RequestType {
     }
 
     public struct Response: Codable {
-        public let id: String
+        public let uuid: String
         public let salmonId: Int
     }
 }

@@ -52,6 +52,7 @@ public struct CoopResult: Codable {
 
     public struct PlayerResult: Codable {
         public let id: String
+        public let pid: String
         public let isMyself: Bool
         public let byname: String
         public let name: String
@@ -76,7 +77,8 @@ public struct CoopResult: Codable {
             specialCounts: [[SpecialId]],
             isMyself: Bool
         ) {
-            self.id = content.player.id.uid
+            self.id = content.player.id.description
+            self.pid = content.player.id.uid
             self.isMyself = isMyself
             self.byname = content.player.byname
             self.name = content.player.name
@@ -156,7 +158,7 @@ public struct CoopResult: Codable {
     }
 
     public init(history: CoopHistoryQuery.CoopSchedule, content: CoopHistoryDetailQuery.CoopHistoryDetail) {
-        self.id = content.id.description.base64DecodedString!
+        self.id = content.id.description
         self.uuid = content.id.uuid
         self.scale = [content.scale?.bronze, content.scale?.silver, content.scale?.gold]
         self.jobScore = content.jobScore

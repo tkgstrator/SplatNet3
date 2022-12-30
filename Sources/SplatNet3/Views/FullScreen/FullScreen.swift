@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FullScreen<Content: View>: UIViewControllerRepresentable {
-    @Environment(\.colorScheme) var colorScheme
     @Binding var isPresented: Bool
     let content: Content
     let transitionStyle: UIModalTransitionStyle
@@ -42,7 +41,6 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
             presentationStyle: presentationStyle,
             isModalInPresentation: isModalInPresentation,
             backgroundColor: backgroundColor,
-            colorScheme: .dark,
             content: content
         )
     }
@@ -95,14 +93,12 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
         let transitionStyle: UIModalTransitionStyle
         let presentationStyle: UIModalPresentationStyle
         let backgroundColor: UIColor
-        let userInterfaceStyle: UIUserInterfaceStyle
 
         init(coordinator: FullScreen<Content>.Coordinator,
              transitionStyle: UIModalTransitionStyle,
              presentationStyle: UIModalPresentationStyle,
              isModalInPresentation: Bool,
              backgroundColor: UIColor,
-             colorScheme: UIUserInterfaceStyle,
              content: Content
         ) {
             self.coordinator = coordinator
@@ -110,9 +106,7 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
             self.transitionStyle = transitionStyle
             self.presentationStyle = presentationStyle
             self.backgroundColor = backgroundColor
-            self.userInterfaceStyle = colorScheme
             super.init(nibName: nil, bundle: .main)
-            self.overrideUserInterfaceStyle = colorScheme
             self.isModalInPresentation = isModalInPresentation
         }
 
@@ -142,7 +136,6 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
             hosting.modalPresentationStyle = presentationStyle
             hosting.modalTransitionStyle = transitionStyle
             hosting.view.backgroundColor = backgroundColor
-            hosting.overrideUserInterfaceStyle = userInterfaceStyle
             hosting.presentationController?.delegate = coordinator as UIAdaptivePresentationControllerDelegate
 
             if !self.isModalInPresentation {
@@ -164,14 +157,3 @@ struct FullScreen<Content: View>: UIViewControllerRepresentable {
     }
 }
 
-
-private extension ColorScheme {
-    var userInterfaceStyle: UIUserInterfaceStyle {
-        switch self {
-        case .light:
-            return .light
-        case .dark:
-            return .dark
-        }
-    }
-}

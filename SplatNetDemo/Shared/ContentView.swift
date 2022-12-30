@@ -56,8 +56,8 @@ struct FileExportButton: View {
         Button(action: {
             Task {
                 let path: URL = try await RealmService.shared.exports()
-                let controller: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
-                UIApplication.shared.rootViewController?.popover(controller, animated: true)
+                let activity: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
+                UIApplication.shared.rootViewController?.popover(activity, animated: true)
             }
         }, label: {
             Text("Export")

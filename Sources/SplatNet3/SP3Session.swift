@@ -80,7 +80,7 @@ open class SP3Session: Session {
     }
 
     @discardableResult
-    open func getAllCoopHistoryDetailQuery(playTime: Date? = nil, completion: Completion) async throws -> [CoopResult] {
+    open func getAllCoopHistoryDetailQuery(playTime: Date? = nil, upload: Bool = false, completion: Completion) async throws -> [CoopResult] {
         completion(0, 1)
         let nodes: [CoopHistoryQuery.HistoryGroup] = try await getCoopHistoryQuery().historyGroups.nodes
         let resultIds: [Common.ResultId] = {
@@ -113,7 +113,9 @@ open class SP3Session: Session {
                 completion(Float(results.count), Float(resultIds.count))
             }
         })
-        try await uploadResults(response)
+        if upload {
+            try await uploadResults(response)
+        }
         DispatchQueue.main.async(execute: {
             self.requests.success()
         })
@@ -190,7 +192,7 @@ extension SP3Session: Authenticator {
         return try await request(CoopHistoryQuery()).data.coopResult
     }
 
-    private func getCoopHistoryDetailQuery(resultId: String) async throws -> CoopHistoryDetailQuery.CoopHistoryDetail {
+    private func getCoopHistoryDetailQuery(resultId: Common.ResultId) async throws -> CoopHistoryDetailQuery.CoopHistoryDetail {
         return try await request(CoopHistoryDetailQuery(resultId: resultId)).data.coopHistoryDetail
     }
 
@@ -210,7 +212,7 @@ extension SP3Session: Authenticator {
     ) async throws -> CoopResult {
         return CoopResult(
             history: schedule,
-            content: try await request(CoopHistoryDetailQuery(resultId: result.id.description)).data.coopHistoryDetail
+            content: try await request(CoopHistoryDetailQuery(resultId: result.id)).data.coopHistoryDetail
         )
     }
 }

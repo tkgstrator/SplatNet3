@@ -10,6 +10,10 @@ import UIKit
 import SwiftUI
 
 extension UIApplication {
+    public var window: UIWindow? {
+        UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first?.windows.first
+    }
+
     public var rootViewController: UIViewController? {
         UIApplication.shared.connectedScenes
             .filter({ $0.activationState == .foregroundActive })
@@ -76,3 +80,4 @@ extension UIViewController {
         present(viewControllerToPresent, animated: animated, completion: completion)
     }
 }
+

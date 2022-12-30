@@ -31,7 +31,7 @@ public enum Common {
 
         public var description: String {
             let playTime: String = Common.dateFormatter.string(from: playTime)
-            return "\(id.rawValue)-u-\(playerId):\(playTime)_\(uuid):u-\(uid)".base64EncodedString
+            return "\(id.rawValue)-u-\(playerId):\(playTime)_\(uuid):u-\(uid)"
         }
 
         public init(from decoder: Decoder) throws {
@@ -72,7 +72,7 @@ public enum Common {
 
         public var description: String {
             let playTime: String = Common.dateFormatter.string(from: playTime)
-            return "\(id.rawValue)-\(prefix)-\(uid):\(playTime)_\(uuid)".base64EncodedString
+            return "\(id.rawValue)-\(prefix)-\(uid):\(playTime)_\(uuid)"
         }
 
         public init(from decoder: Decoder) throws {
